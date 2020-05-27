@@ -1,5 +1,5 @@
 ﻿---
-id: react-native-invoking
+id: invoking
 title: Invoking
 ---
 This page describes in detail all the different methods that can be used to invoke the SDK.

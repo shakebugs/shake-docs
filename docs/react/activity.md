@@ -1,5 +1,5 @@
 ﻿---
-id: react-native-activity
+id: activity
 title: Activity history
 ---
 Shake diligently tracks user's interaction with your app, their network traffic and system events, and automatically attaches all of those to every bug report.
@@ -7,7 +7,7 @@ Shake diligently tracks user's interaction with your app, their network traffic 
 ## Introduction
 You can inspect all events that lead to a bug being reported. A link to Activity history is located in the top right corner:
 
-![alt text](assets/activity_screen.png)
+![Activity screen](../assets/activity_screen.png)
 
 ## Android
 ### User actions

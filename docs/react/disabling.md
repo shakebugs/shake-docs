@@ -1,5 +1,5 @@
 ﻿---
-id: react-native-disabling
+id: disabling
 title: Disabling
 ---
 This page is about enabling and disabling your users from using Shake.

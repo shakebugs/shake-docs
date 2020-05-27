@@ -1,5 +1,5 @@
 ﻿---
-id: react-native-permissions
+id: permissions
 title: Permissions
 ---
 This page covers how Shake reports to you on the status of a user's permissions listed below.
@@ -34,4 +34,4 @@ For visual clarity on the Dashboard, Shake lists precisely those permissions tha
 
 The ones you don't see listed in a report were either denied or not requested at all.
 
-![alt text](assets/permissions_screen.png)
+![Permissions screen](../assets/permissions_screen.png)

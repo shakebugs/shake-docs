@@ -1,5 +1,5 @@
 ﻿---
-id: react-native-setup
+id: setup
 title: Setup
 ---
 ## Install
