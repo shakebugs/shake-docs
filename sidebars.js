@@ -1,6 +1,18 @@
 module.exports = {
     someSidebar: {
-        Android: ['doc1', 'doc2', 'doc3'],
+        Android: [
+            'android/setup',
+            'android/invoke',
+            'android/disable',
+            'android/silent-reports',
+            'android/inspect',
+            'android/screenshot',
+            'android/permissions',
+            'android/activity',
+            'android/essentials',
+            'android/attachments',
+            'android/quick-facts',
+        ],
         iOS: ['doc1', 'doc2', 'doc3'],
         "React Native": [
             'react/setup',

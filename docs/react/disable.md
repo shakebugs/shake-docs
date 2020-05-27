@@ -4,6 +4,9 @@ title: Disable
 ---
 This page is about enabling and disabling your users from using Shake.
 
+For example, maybe you're building a new Airbnb and want hosts to be able to report bugs back to you, 
+but don't want to show Shake to the guests. You can user enable and disable methods to accomplish that requirement.
+
 ## Enable
 Call the `Shake.start()` if you want to enable Shake in your application.
 
