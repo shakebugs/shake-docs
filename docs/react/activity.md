@@ -45,7 +45,7 @@ System events are tracked automatically and require no additional setup.
 User actions are tracked automatically and require no additional setup.
 
 ### Network requests
-Network requests are tracked automatically and require no additional setup.
+Network requests tracking is currently not available for iOS.
 
 ### System events
 System events are tracked automatically and require no additional setup.

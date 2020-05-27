@@ -29,7 +29,7 @@ The Shake SDK tracks the status of these  iOS permissions, and reports to you wh
 * Media library access
 * Microphone access
 
-## Dashboard
+## Permissions on Dashboard
 For visual clarity on the Dashboard, Shake lists precisely those permissions that a user has explicitly granted access to.
 
 The ones you don't see listed in a report were either denied or not requested at all.

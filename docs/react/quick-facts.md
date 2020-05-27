@@ -14,7 +14,7 @@ This is where you will see Quick facts on your web Dashboard:
 ![Quick facts screen](../assets/quick_facts_screen.png)
 
 ## Set quick facts
-To set the Quick facts, call the `Shake.setQuickFacts()` method passing your Quick facts as String 
+To set the Quick facts, call the `Shake.setQuickFacts()` method passing your Quick facts as text 
 containing data you want to receive on your web Dashboard. Be careful only to call it once, 
 since any subsequent calls will override the former ones.
 

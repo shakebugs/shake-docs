@@ -24,6 +24,106 @@ Terminal:
 react-native link @shakebugs/react-native-shake
 ```
 
+Install pods from the project root directory:
+
+Terminal
+```bash
+cd ios && pod install && cd ..
+```
+
+## Initialize
+### Android
+Normally, initialization is done using `react-native link @shakebugs/react-native-shake` or `react-native add-shake` commands.
+If you want to initialize Shake manually, you can do it following way.
+
+Include Shake maven repository to your project-level build.gradle file: 
+
+build.gradle
+```javascript {16}
+allprojects {
+   repositories {
+       mavenLocal()
+       maven {
+           // All of React Native (JS, Obj-C sources, Android binaries) is installed from npm
+           url("$rootDir/../node_modules/react-native/android")
+       }
+       maven {
+           // Android JSC is installed from npm
+           url("$rootDir/../node_modules/jsc-android/dist")
+       }
+
+       google()
+       jcenter()
+       maven { url 'https://www.jitpack.io' }
+       maven { url 'https://dl.bintray.com/shake/shake' }                                             
+   }
+}
+```
+
+Add the following dependency to your app-level Build.gradle file: 
+
+app/build.gradle
+```javascript {2}
+dependencies {
+  implementation 'com.shakebugs.android:shake:9.0.+'                         
+}
+```
+
+If you do not have multiDexEnabled, update app level build.gradle:
+
+app/build.gradle
+```javascript {7}
+defaultConfig {
+  applicationId "com.shakebugs.react.example"
+  minSdkVersion rootProject.ext.minSdkVersion
+  targetSdkVersion rootProject.ext.targetSdkVersion
+  versionCode 6
+  versionName "2.3.2"
+  multiDexEnabled true                                                        
+}
+```
+
+Set an invocation event and initialize the SDK: 
+
+MainApplication.java     
+```java {1,2,9,10}
+import com.shakebugs.shake.Shake;                                          
+import com.shakebugs.shake.ShakeInvocationEvent;                            
+
+@Override
+public void onCreate() {
+ super.onCreate();
+ SoLoader.init(this, /* native exopackage */ false);
+ initializeFlipper(this, getReactNativeHost().getReactInstanceManager());
+ Shake.setInvocationEvents(ShakeInvocationEvent.BUTTON);                    
+ Shake.start(this);                                                        
+}
+``` 
+
+Now build your project and see everything work! This first run will automatically add your app to your [Shake Dashboard](https://app.shakebugs.com) based on your app bundle ID.
+
+### iOS
+Call `Shake.start()` method whenever you want to enable Shake:
+
+```javascript {2,6}
+Import React, {Component} from 'react';
+import Shake, {ShakeInvocationEvent} from '@shakebugs/react-native-shake';
+Import {View} from 'react-native';
+export default class App extends Component<{}> {
+	componentDidMount() {
+		Shake.start();                                                          
+	}
+    render() {
+        return (
+            <View style={styles.container}>
+            </View>
+        );
+    }
+}
+```
+
+This first run will automatically add your app to your [Shake Dashboard](https://app.shakebugs.com) based on your app bundle ID.
+
 ## Add Client ID and Client secret key 
 
 ### Android
@@ -116,78 +216,3 @@ MainApplication.java
 After executing npm install, find `Shake.xcodeproj` in `$rootDir/node_modules/react-native/shake/ios/`. Add it to the `Libraries` folder of your app project. 
 
 Navigate to the `Building phases` tab and add `libShake.a` to the `Link Binary With Libraries` section. 
-
-## Manual initialization
-
-Normally, initialization is done using `react-native link @shakebugs/react-native-shake` or `react-native add-shake` commands.
-If you want to initialize Shake manually, you can do it following way.
-
-### Android
-Include Shake maven repository to your project-level build.gradle file: 
-
-build.gradle
-```javascript {16}
-allprojects {
-   repositories {
-       mavenLocal()
-       maven {
-           // All of React Native (JS, Obj-C sources, Android binaries) is installed from npm
-           url("$rootDir/../node_modules/react-native/android")
-       }
-       maven {
-           // Android JSC is installed from npm
-           url("$rootDir/../node_modules/jsc-android/dist")
-       }
-
-       google()
-       jcenter()
-       maven { url 'https://www.jitpack.io' }
-       maven { url 'https://dl.bintray.com/shake/shake' }                                             
-   }
-}
-```
-
-Add the following dependency to your app-level Build.gradle file: 
-
-app/build.gradle
-```javascript {2}
-dependencies {
-  implementation 'com.shakebugs.android:shake:9.0.+'                         
-}
-```
-
-If you do not have multiDexEnabled, update app level build.gradle:
-
-app/build.gradle
-```javascript {7}
-defaultConfig {
-  applicationId "com.shakebugs.react.example"
-  minSdkVersion rootProject.ext.minSdkVersion
-  targetSdkVersion rootProject.ext.targetSdkVersion
-  versionCode 6
-  versionName "2.3.2"
-  multiDexEnabled true                                                        
-}
-```
-
-Set an invocation event and initialize the SDK: 
-
-MainApplication.java     
-```java {1,2,9,10}
-import com.shakebugs.shake.Shake;                                          
-import com.shakebugs.shake.ShakeInvocationEvent;                            
-
-@Override
-public void onCreate() {
- super.onCreate();
- SoLoader.init(this, /* native exopackage */ false);
- initializeFlipper(this, getReactNativeHost().getReactInstanceManager());
- Shake.setInvocationEvents(ShakeInvocationEvent.BUTTON);                    
- Shake.start(this);                                                        
-}
-``` 
-
-Now build your project and see everything work! This first run will automatically add your app to your Shake Dashboard based on your app bundle ID.
-
-### iOS
-No additional steps required
