@@ -11,6 +11,6 @@ data developers receive with Shake SDK, and you will find this data at the top o
 
 ![Bug screen](../assets/bug_screen.png)
 
-User drawing on the screenshot
+## User drawing on the screenshot
 When users shake their phone and the SDK pops up, they are encouraged to additionally mark a 
 spot on the screenshot that seems odd to them.

@@ -18,17 +18,6 @@ The Shake SDK tracks the status of these dangerous Android permissions, and repo
 * SMS
 * STORAGE
 
-## Tracking useful permissions on iOS
-The Shake SDK tracks the status of these  iOS permissions, and reports to you whether a user has or hasn't granted your app access to them:
-
-* Calendar access
-* Camera access
-* Contacts access
-* Photo library access
-* Location access
-* Media library access
-* Microphone access
-
 ## Permissions on Dashboard
 For visual clarity on the Dashboard, Shake lists precisely those permissions that a user has explicitly granted access to.
 

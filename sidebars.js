@@ -11,6 +11,8 @@ module.exports = {
             'android/activity',
             'android/essentials',
             'android/attachments',
+            'android/blackbox',
+            'android/metadata',
             'android/quick-facts',
         ],
         iOS: ['doc1', 'doc2', 'doc3'],
