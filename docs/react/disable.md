@@ -16,8 +16,7 @@ Shake will be enabled immediately, which means:
 
 So let's suppose you want to allow Shake to your users, but not to guests. You would do this: 
 
-App.js
-```javascript
+```javascript title="App.js"
 loggedInSuccessfully = (user) => {
   if (user.type !== "GUEST") {
     Shake.start()
@@ -34,8 +33,7 @@ Shake will be disabled immediately, which means:
 
 So let's suppose you want to allow Shake to your users, but not to guests. You would do this: 
 
-App.js
-```javascript
+```javascript title="App.js"
 loggedInSuccessfully = (user) => {
   if (user.type === "GUEST") {
     Shake.stop()

@@ -16,8 +16,7 @@ User actions are tracked automatically and require no additional setup.
 ### Network requests
 If you want to see a user's network traffic, add the following import and enable the network tracker: 
 
-App.js
-```javascript {3,7}
+```javascript {3,7} title="App.js"
 import React, {Component} from 'react';
 import {Text, View} from 'react-native';
 import {NetworkTracker} from '@shakebugs/react-native-shake';

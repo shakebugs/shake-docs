@@ -7,16 +7,14 @@ This page describes in detail all the different methods that can be used to invo
 ## Invoking
 The default action by which SDK is manually invoked is when a user shakes their device.
 
-App.js
-```javascript
+```javascript title="App.js"
 Shake.setInvocationEvents([
     ShakeInvocationEvent.SHAKE])
 ```
 
 You can also choose another action — or more than one — that manually invokes the SDK.
 
-App.js
-```javascript
+```javascript title="App.js"
 Shake.setInvocationEvents([
     ShakeInvocationEvent.SHAKE,
     ShakeInvocationEvent.BUTTON,

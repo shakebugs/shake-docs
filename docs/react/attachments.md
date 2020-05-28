@@ -20,8 +20,7 @@ If you attach files this way, the filename shown on the web Dashboard will be de
 To attach files this way, call the `Shake.attachFiles()` method as shown in the example below.
 Be careful though, any subsequent calls will override former ones already in place: 
 
-App.js
-```javascript {1,9}
+```javascript {1,9} title="App.js"
 import Shake from '@shakebugs/react-native-shake';
 import RNFS from 'react-native-fs';
 
@@ -44,8 +43,7 @@ Files can be attached with the desired filename and an absolute file path to you
 In order to attach files this way, call `Shake.attachFilesWithName()` method as shown in the example below. 
 But be careful only to call it once, since any subsequent calls will override the former ones.
 
-App.js
-```javascript {1,9,10,11}
+```javascript {1,9,10,11} title="App.js"
 import Shake from '@shakebugs/react-native-shake';
 import RNFS from 'react-native-fs';
 

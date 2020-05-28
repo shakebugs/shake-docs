@@ -20,8 +20,7 @@ containing data you want to receive on your web Dashboard.
 You can set quick facts anywhere within your app, but be careful because any 
 subsequent calls with the same key will override the former text value.
 
-App.js
-```javascript {1,6}
+```javascript {1,6} title="App.js"
 import Shake from '@shakebugs/react-native-shake';
 
 onLoginPress = async (username, password) => {

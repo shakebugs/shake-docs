@@ -5,29 +5,25 @@ title: Setup
 ## Install
 Execute the npm install command in your terminal: 
 
-Terminal
-```bash
+```bash title="Terminal"
 npm install @shakebugs/react-native-shake
 ```
 
 If you are using a React Native version 0.60 or greater, you should also run add command:
 
-Terminal
-```bash
+```bash title="Terminal"
 react-native add-shake
 ```
 
 If you are using a React Native version older than 0.60, you should also run link command:
 
-Terminal:
-```bash
+```bash title="Terminal"
 react-native link @shakebugs/react-native-shake
 ```
 
 Install pods from the project root directory:
 
-Terminal
-```bash
+```bash title="Terminal"
 cd ios && pod install && cd ..
 ```
 
@@ -38,8 +34,7 @@ If you want to initialize Shake manually, you can do it following way.
 
 Include Shake maven repository to your project-level build.gradle file: 
 
-build.gradle
-```javascript {16}
+```javascript {16} title="build.gradle"
 allprojects {
    repositories {
        mavenLocal()
@@ -62,8 +57,7 @@ allprojects {
 
 Add the following dependency to your app-level Build.gradle file: 
 
-app/build.gradle
-```javascript {2}
+```javascript {2} title="app/build.gradle"
 dependencies {
   implementation 'com.shakebugs.android:shake:9.0.+'                         
 }
@@ -71,8 +65,7 @@ dependencies {
 
 If you do not have multiDexEnabled, update app level build.gradle:
 
-app/build.gradle
-```javascript {7}
+```javascript {7} title="app/build.gradle"
 defaultConfig {
   applicationId "com.shakebugs.react.example"
   minSdkVersion rootProject.ext.minSdkVersion
@@ -85,8 +78,7 @@ defaultConfig {
 
 Set an invocation event and initialize the SDK: 
 
-MainApplication.java     
-```java {1,2,9,10}
+```java {1,2,9,10} title="MainApplication.java"
 import com.shakebugs.shake.Shake;                                          
 import com.shakebugs.shake.ShakeInvocationEvent;                            
 
@@ -105,7 +97,7 @@ Now build your project and see everything work! This first run will automaticall
 ### iOS
 Call `Shake.start()` method whenever you want to enable Shake:
 
-```javascript {2,6}
+```javascript {2,6} title="App.js"
 Import React, {Component} from 'react';
 import Shake, {ShakeInvocationEvent} from '@shakebugs/react-native-shake';
 Import {View} from 'react-native';
@@ -129,8 +121,7 @@ This first run will automatically add your app to your [Shake Dashboard](https:/
 ### Android
 Open your AndroidManifest.xml file. Paste this and replace `sign-in-to-see-your-api-client-id-here`and `sign-in-to-see-your-api-client-secret-here` with the actual values you have in Your settings.
 
-AndroidManifest.xml
-```xml {13,14,15,16,17,18}
+```xml {13-18} title="AndroidManifest.xml"
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
   <application
     android:allowBackup="true"
@@ -157,7 +148,7 @@ AndroidManifest.xml
 ### iOS
 Open your workspace and in the `Project Navigator`, right click on `Info.plist`, and `Open as › Source code`. Paste this but replace `sign-in-to-see-your-api-client-id-here` and `sign-in-to-see-your-api-client-secret-here` with the actual values you have in Your settings.
 
-```xml {4,5,6,7,8,9,10}
+```xml {4-10} title="Info.plist"
 <?xml version="1.0" encoding="utf-8" ?>
 <plist version="1.0">
   <dict>
@@ -179,18 +170,16 @@ If you want to link it manually, you can do it following way.
 ### Android
 Add the following lines of code to your settings.gradle file:
 
-settings.gradle
-```js
+```js title="settings.gradle"
 include ':@shakebugs_react-native-shake'
 project(':@shakebugs_react-native-shake').projectDir = new File(rootProject.projectDir, '../node_modules/@shakebugs/react-native-shake/android')
 ```
 
 Then, include the following dependency to app-level build.gradle file:
 
-build.gradle
-```javascript {2}
+```javascript {2} title="app/build.gradle"
 dependencies {
-    implementation project(':@shakebugs_react-native-shake')                                    👈
+    implementation project(':@shakebugs_react-native-shake')                                    
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation "com.android.support:appcompat-v7:${rootProject.ext.supportLibVersion}"
     implementation "com.facebook.react:react-native:+"  // From node_modules
@@ -199,14 +188,13 @@ dependencies {
 
 Update the `getPackages()` method:
 
-MainApplication.java 
-```java {6}
+```java {6} title="MainApplication.java"
  @Override protected List<ReactPackage> getPackages() { 
     @SuppressWarnings("UnnecessaryLocalVariable")  
     List<ReactPackage> packages = new PackageList(this).getPackages();
     // Packages that cannot be autolinked yet can be added manually here, for example:
     // packages.add(new MyReactNativePackage());
-    packages.add(new ShakePackage());                                                            👈
+    packages.add(new ShakePackage());                                                            
     return packages;
  } 
 ```
