@@ -92,7 +92,8 @@ public void onCreate() {
 }
 ``` 
 
-Now build your project and see everything work! This first run will automatically add your app to your [Shake Dashboard](https://app.shakebugs.com) based on your app bundle ID.
+Now build your project and see everything work! This first run will automatically add your app 
+to your [Shake Dashboard](https://app.shakebugs.com) based on your app bundle ID.
 
 ### iOS
 Call `Shake.start()` method whenever you want to enable Shake:
@@ -119,7 +120,8 @@ This first run will automatically add your app to your [Shake Dashboard](https:/
 ## Add Client ID and Client secret key 
 
 ### Android
-Open your AndroidManifest.xml file. Paste this and replace `sign-in-to-see-your-api-client-id-here`and `sign-in-to-see-your-api-client-secret-here` with the actual values you have in Your settings.
+Open your AndroidManifest.xml file. Paste this and replace `sign-in-to-see-your-api-client-id-here`and 
+`sign-in-to-see-your-api-client-secret-here` with the actual values you have in Your settings.
 
 ```xml {13-18} title="AndroidManifest.xml"
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
@@ -146,7 +148,9 @@ Open your AndroidManifest.xml file. Paste this and replace `sign-in-to-see-your-
 ```
 
 ### iOS
-Open your workspace and in the `Project Navigator`, right click on `Info.plist`, and `Open as › Source code`. Paste this but replace `sign-in-to-see-your-api-client-id-here` and `sign-in-to-see-your-api-client-secret-here` with the actual values you have in Your settings.
+Open your workspace and in the `Project Navigator`, right click on `Info.plist`, and `Open as › Source code`. 
+Paste this but replace `sign-in-to-see-your-api-client-id-here` and `sign-in-to-see-your-api-client-secret-here` 
+with the actual values you have in Your settings.
 
 ```xml {4-10} title="Info.plist"
 <?xml version="1.0" encoding="utf-8" ?>
@@ -201,6 +205,7 @@ Update the `getPackages()` method:
 
 ### iOS
 
-After executing npm install, find `Shake.xcodeproj` in `$rootDir/node_modules/react-native/shake/ios/`. Add it to the `Libraries` folder of your app project. 
+After executing npm install, find `Shake.xcodeproj` in `$rootDir/node_modules/react-native/shake/ios/`. 
+Add it to the `Libraries` folder of your app project. 
 
 Navigate to the `Building phases` tab and add `libShake.a` to the `Link Binary With Libraries` section. 

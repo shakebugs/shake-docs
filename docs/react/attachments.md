@@ -15,7 +15,8 @@ XMPP logs, a user's profile photo, or whatever you might want to inspect later o
 ## Methods
 ### Attaching a file with a default name
 Files can be attached with an absolute file path to your file. 
-If you attach files this way, the filename shown on the web Dashboard will be determined automatically from the passed file's name.
+If you attach files this way, the filename shown on the web Dashboard 
+will be determined automatically from the passed file's name.
 
 To attach files this way, call the `Shake.attachFiles()` method as shown in the example below.
 Be careful though, any subsequent calls will override former ones already in place: 

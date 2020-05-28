@@ -5,7 +5,8 @@ title: Permissions
 This page covers how Shake reports to you on the status of a user's permissions listed below.
 
 ## Tracking dangerous permissions on Android 
-The Shake SDK tracks the status of these dangerous Android permissions, and reports to you whether a user has or hasn't granted your app access to them:
+The Shake SDK tracks the status of these dangerous Android permissions, 
+and reports to you whether a user has or hasn't granted your app access to them:
 
 * CALENDAR
 * CALL_LOG
@@ -19,7 +20,8 @@ The Shake SDK tracks the status of these dangerous Android permissions, and repo
 * STORAGE
 
 ## Tracking useful permissions on iOS
-The Shake SDK tracks the status of these  iOS permissions, and reports to you whether a user has or hasn't granted your app access to them:
+The Shake SDK tracks the status of these  iOS permissions, and reports to 
+you whether a user has or hasn't granted your app access to them:
 
 * Calendar access
 * Camera access

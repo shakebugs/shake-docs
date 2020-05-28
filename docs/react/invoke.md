@@ -23,7 +23,8 @@ Shake.setInvocationEvents([
 
 :::important
 
-In order for the `Shake.setInvocationEvents` method to work as intended on Android, you first need to call `Shake.stop()` and then `Shake.start()` once you’ve set the desired invocation method.
+In order for the `Shake.setInvocationEvents` method to work as intended on Android, 
+you first need to call `Shake.stop()` and then `Shake.start()` once you’ve set the desired invocation method.
 
 :::
 
