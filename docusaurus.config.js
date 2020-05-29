@@ -8,7 +8,7 @@ module.exports = {
   projectName: 'docusaurus', // Usually your repo name.
   themeConfig: {
     prism: {
-      additionalLanguages: ['kotlin', 'java', 'swift'],
+      additionalLanguages: ['groovy', 'kotlin', 'java', 'swift'],
     },
     navbar: {
       title: 'My Site',

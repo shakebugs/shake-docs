@@ -34,7 +34,7 @@ Shake.getReportConfiguration().setEnableInspectScreen(false);
 
 <TabItem value="kotlin">
 
-```java title="App.kt"
+```kotlin title="App.kt"
 Shake.getReportConfiguration().isEnableInspectScreen = false
 ```
 

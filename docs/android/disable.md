@@ -42,7 +42,7 @@ public void loggedInSuccessfully(User user) {
 
 <TabItem value="kotlin">
 
-```java {3} title="App.kt"
+```kotlin {3} title="App.kt"
 override fun loggedInSuccessfully(user: User) {
   if (user.getUserType() == GUEST) {
     Shake.setEnabled(false)
@@ -86,7 +86,7 @@ public void loggedInSuccessfully(User user) {
 
 <TabItem value="kotlin">
 
-```java {3} title="App.kt"
+```kotlin {3} title="App.kt"
 override fun loggedInSuccessfully(user: User) {
   if (user.getUserType() == GUEST) {
     Shake.setEnabled(false)

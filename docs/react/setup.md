@@ -34,7 +34,7 @@ If you want to initialize Shake manually, you can do it following way.
 
 Include Shake maven repository to your project-level build.gradle file: 
 
-```javascript {16} title="build.gradle"
+```groovy {16} title="build.gradle"
 allprojects {
    repositories {
        mavenLocal()
@@ -57,7 +57,7 @@ allprojects {
 
 Add the following dependency to your app-level Build.gradle file: 
 
-```javascript {2} title="app/build.gradle"
+```groovy {2} title="app/build.gradle"
 dependencies {
   implementation 'com.shakebugs.android:shake:9.0.+'                         
 }
@@ -65,7 +65,7 @@ dependencies {
 
 If you do not have multiDexEnabled, update app level build.gradle:
 
-```javascript {7} title="app/build.gradle"
+```groovy {7} title="app/build.gradle"
 defaultConfig {
   applicationId "com.shakebugs.react.example"
   minSdkVersion rootProject.ext.minSdkVersion
@@ -174,14 +174,14 @@ If you want to link it manually, you can do it following way.
 ### Android
 Add the following lines of code to your settings.gradle file:
 
-```js title="settings.gradle"
+```groovy title="settings.gradle"
 include ':@shakebugs_react-native-shake'
 project(':@shakebugs_react-native-shake').projectDir = new File(rootProject.projectDir, '../node_modules/@shakebugs/react-native-shake/android')
 ```
 
 Then, include the following dependency to app-level build.gradle file:
 
-```javascript {2} title="app/build.gradle"
+```groovy {2} title="app/build.gradle"
 dependencies {
     implementation project(':@shakebugs_react-native-shake')                                    
     implementation fileTree(dir: "libs", include: ["*.jar"])

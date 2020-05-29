@@ -57,7 +57,7 @@ Shake.onPrepareData(new ShakeReportData() {
 
 <TabItem value="kotlin">
 
-```java title="App.kt"
+```kotlin title="App.kt"
 Shake.onPrepareData(object: ShakeReportData {
   override fun attachedFiles(): List<ShakeFile> {
     val shakeFileOne = ShakeFile(File("PathToYourFile"))
@@ -108,7 +108,7 @@ Shake.onPrepareData(new ShakeReportData() {
 
 <TabItem value="kotlin">
 
-```java title="App.kt"
+```kotlin title="App.kt"
 Shake.onPrepareData(object: ShakeReportData {
   override fun attachedFiles(): List<ShakeFile> {
     val shakeFileOne = ShakeFile("fileOne", File("PathToYourFile"))

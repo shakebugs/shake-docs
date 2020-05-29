@@ -74,7 +74,7 @@ OkHttpClient okHttpClient = new OkHttpClient()
 
 <TabItem value="kotlin">
 
-```java {3} title="App.kt"
+```kotlin {3} title="App.kt"
 val okHttpClient = OkHttpClient()
   .newBuilder()
   .addInterceptor(ShakeNetworkInterceptor())
@@ -105,7 +105,7 @@ Shake.handleNetworkRequest(HttpURLConnection connection, String requestBody, Str
 
 <TabItem value="kotlin">
 
-```java title="App.kt"
+```kotlin title="App.kt"
 Shake.handleNetworkRequest(connection: HttpURLConnection, requestBody: String, responseBody: String)
 ```
 
@@ -137,7 +137,7 @@ startActivity(new Intent("android.settings.ACTION_NOTIFICATION_LISTENER_SETTINGS
 
 <TabItem value="kotlin">
 
-```java title="App.kt"
+```kotlin title="App.kt"
 startActivity(Intent("android.settings.ACTION_NOTIFICATION_LISTENER_SETTINGS"))
 ```
 
@@ -172,7 +172,7 @@ Shake.handleNotification(String notificationTitle, String notificationDescriptio
 
 <TabItem value="kotlin">
 
-```java title="App.kt"
+```kotlin title="App.kt"
 Shake.handleNotification(notificationTitle: String, notificationDescription: String)
 ```
 
@@ -202,7 +202,7 @@ Shake.log(LogLevel.INFO, "Log message goes here!");
 
 <TabItem value="kotlin">
 
-```java title="App.kt"
+```kotlin title="App.kt"
 Shake.log(LogLevel.INFO, "Log message goes here!")
 ```
 
@@ -231,7 +231,7 @@ Shake.getReportConfiguration().setEnableActivityHistory(false);
 
 <TabItem value="kotlin">
 
-```java title="App.kt"
+```kotlin title="App.kt"
 Shake.getReportConfiguration().isEnableActivityHistory = false
 ```
 

@@ -37,7 +37,7 @@ Shake.start(this);
 
 <TabItem value="kotlin">
 
-```java title="App.kt"
+```kotlin title="App.kt"
 Shake.getReportConfiguration().isInvokeShakeOnShakeDeviceEvent = true
 Shake.getReportConfiguration().isInvokeShakeOnScreenshot = true
 Shake.start(this)
@@ -71,7 +71,7 @@ Shake.getReportConfiguration().setInvokeShakeOnRightEdgePan(true);
 
 <TabItem value="kotlin">
 
-```java title="App.kt"
+```kotlin title="App.kt"
 Shake.getReportConfiguration().isInvokeShakeOnShakeDeviceEvent = true
 Shake.getReportConfiguration().isShowFloatingReportButton = true
 Shake.getReportConfiguration().isInvokeShakeOnScreenshot = true
@@ -122,7 +122,7 @@ private ShakeReportData createShakeReportData() {
 
 <TabItem value="kotlin">
 
-```java {2,3,6-17} title="App.kt"
+```kotlin {2,3,6-17} title="App.kt"
 fun example()  {
   Shake.setMetadata("key", "value")
   Shake.show(createShakeReportData())

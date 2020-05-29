@@ -69,7 +69,7 @@ Shake.getReportConfiguration().setEnableBlackBox(false);
 
 <TabItem value="kotlin">
 
-```java title="App.kt"
+```kotlin title="App.kt"
 Shake.getReportConfiguration().isEnableBlackBox = false
 ```
 

@@ -29,7 +29,7 @@ Shake.silentReport(String description, ShakeReportData reportData, ShakeReportCo
 
 <TabItem value="kotlin">
 
-```java title="App.kt"
+```kotlin title="App.kt"
 Shake.silentReport(description: String,reportData: ShakeReportData, configuration: ShakeReportConfiguration)
 ```
 
@@ -80,7 +80,7 @@ private ShakeReportData createShakeReportData() {
 
 <TabItem value="kotlin">
 
-```java {2-7,10-23} title="App.kt"
+```kotlin {2-7,10-23} title="App.kt"
 fun example() {
   val configuration = ShakeReportConfiguration()
   configuration.blackBoxData = true
@@ -133,7 +133,7 @@ configuration.showReportSentMessage = true;
 
 <TabItem value="kotlin">
 
-```java title="App.kt"
+```kotlin title="App.kt"
 val configuration = ShakeReportConfiguration()
 configuration.showReportSentMessage = true
 ```

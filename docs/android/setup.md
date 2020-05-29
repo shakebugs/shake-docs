@@ -8,7 +8,7 @@ Whether you are using Java or Kotlin, you can follow the steps below.
 ##  Install
 Add Maven repository to your top-level build.gradle file
 
-```javascript {3} title="build.gradle"
+```groovy {3} title="build.gradle"
 allprojects {
   repositories {
     maven { url 'https://dl.bintray.com/shake/shake' }
@@ -18,7 +18,7 @@ allprojects {
 
 Add Shake dependency to your app build.gradle file
 
-```javascript {2} title="build.gradle"
+```groovy {2} title="build.gradle"
 dependencies {
   implementation 'com.shakebugs.android:shake:12.0.1'
 }
@@ -27,7 +27,7 @@ dependencies {
 ## ProGuard
 If you use ProGuard optimizer, you have to add this rule
 
-```javascript title="proguard-rules.pro"
+``` title="proguard-rules.pro"
 -keep public class com.shakebugs.shake.internal.data.** {
     public protected private *;
 }
@@ -98,7 +98,7 @@ public class App extends Application {
 
 <TabItem value="kotlin">
 
-```java {2,8} title="App.kt"
+```kotlin {2,8} title="App.kt"
 import android.app.Application
 import com.shakebugs.shake.Shake
 

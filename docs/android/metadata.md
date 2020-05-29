@@ -47,7 +47,7 @@ public void onLoginSuccessful(User user) {
 
 <TabItem value="kotlin">
 
-```java {2} title="App.kt"
+```kotlin {2} title="App.kt"
 fun onLoginSuccessful(user: User) {
   Shake.setMetadata("userid", user.id)
 }

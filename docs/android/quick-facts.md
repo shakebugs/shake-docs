@@ -55,7 +55,7 @@ private ShakeReportData createShakeReportData() {
 
 <TabItem value="kotlin">
 
-```java {2} title="App.kt"
+```kotlin {2} title="App.kt"
 Shake.onPrepareData(createShakeReportData())
 
 private fun createShakeReportData(): ShakeReportData {
