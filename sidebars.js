@@ -13,9 +13,21 @@ module.exports = {
             'android/attachments',
             'android/blackbox',
             'android/metadata',
-            'android/quick-facts',
+            'android/quick-facts'
         ],
-        iOS: ['doc1', 'doc2', 'doc3'],
+        iOS: [
+            'ios/setup',
+            'ios/invoke',
+            'ios/disable',
+            'ios/inspect',
+            'ios/screenshot',
+            'ios/permissions',
+            'ios/activity',
+            'ios/essentials',
+            'ios/attachments',
+            'ios/blackbox',
+            'ios/quick-facts'
+        ],
         "React Native": [
             'react/setup',
             'react/invoke',
@@ -26,7 +38,7 @@ module.exports = {
             'react/activity',
             'react/essentials',
             'react/attachments',
-            'react/quick-facts',
+            'react/quick-facts'
         ],
     },
 };

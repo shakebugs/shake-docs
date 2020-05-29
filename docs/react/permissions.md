@@ -4,6 +4,14 @@ title: Permissions
 ---
 This page covers how Shake reports to you on the status of a user's permissions listed below.
 
+## Introduction
+Shake precisely lists permissions that a user has explicitly granted access to.
+The ones you don't see listed in a report were either denied or not requested at all.
+
+You can review user granted permissions on the Dashboard.
+
+![Permissions screen](../assets/permissions_screen.png)
+
 ## Tracking dangerous permissions on Android 
 The Shake SDK tracks the status of these dangerous Android permissions, 
 and reports to you whether a user has or hasn't granted your app access to them:
@@ -30,10 +38,3 @@ you whether a user has or hasn't granted your app access to them:
 * Location access
 * Media library access
 * Microphone access
-
-## Permissions on Dashboard
-For visual clarity on the Dashboard, Shake lists precisely those permissions that a user has explicitly granted access to.
-
-The ones you don't see listed in a report were either denied or not requested at all.
-
-![Permissions screen](../assets/permissions_screen.png)

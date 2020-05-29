@@ -12,16 +12,15 @@ You can review user granted permissions on the Dashboard.
 
 ![Permissions screen](../assets/permissions_screen.png)
 
-## Tracking dangerous permissions on Android 
-The Shake SDK tracks the status of these dangerous Android permissions, and reports to you whether a user has or hasn't granted your app access to them:
+## Tracking useful permissions on iOS
+The Shake SDK tracks the status of these  iOS permissions, and reports to 
+you whether a user has or hasn't granted your app access to them:
 
-* CALENDAR
-* CALL_LOG
-* CAMERA
-* CONTACTS
-* LOCATION
-* MICROPHONE
-* PHONE
-* SENSORS
-* SMS
-* STORAGE
+* Calendar access
+* Camera access
+* Contacts access
+* Photo library access
+* Location access
+* Media library access
+* Microphone access
+

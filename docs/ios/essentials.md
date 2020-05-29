@@ -10,6 +10,6 @@ You will find Essentials listed on the right side of your web Dashboard, and the
 ![Essentials screen](../assets/essentials_screen.png)
 
 ## Custom data
-If you want the SDK to attach any other variable to your bug reports, you can absolutely do that as well! Read about sending custom data with [Metadata](android/metadata.md).
+If you want the SDK to attach any other variable to your bug reports, you can absolutely do that as well! Read about sending custom data with [Quick facts](ios/quick-facts.md).
 
-Do you also want to attach custom files, like images? Visit [Attachments](android/attachments.md).
+Do you also want to attach custom files, like images? Visit [Attachments](ios/attachments.md).
