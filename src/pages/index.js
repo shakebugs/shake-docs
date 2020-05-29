@@ -8,32 +8,31 @@ import styles from './styles.module.css';
 
 const features = [
   {
-    title: <>Easy to Use</>,
-    imageUrl: 'img/undraw_docusaurus_mountain.svg',
+    title: <>Plug 'n' play</>,
+    imageUrl: 'img/feature-simple.svg',
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+          Minutes from now, your entire app development team will stop wasting hoooours of debugging time each week.
       </>
     ),
   },
   {
-    title: <>Focus on What Matters</>,
-    imageUrl: 'img/undraw_docusaurus_tree.svg',
+    title: <>Reliable and light</>,
+   imageUrl: 'img/feature-reliable.svg',
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+          Just as you, we as ambitious engineers are driven by perfection.
+          We spend half of our hours just on testing the SDK while decreasing its size too.
       </>
     ),
   },
   {
-    title: <>Powered by React</>,
-    imageUrl: 'img/undraw_docusaurus_react.svg',
+    title: <>100% Customizable</>,
+    imageUrl: 'img/feature-customizable.svg',
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+          Every app has its own variables, of course.
+          That's why we made it easy-peasy to send yourself a value of any variable you want from a user's device.
       </>
     ),
   },
@@ -54,42 +53,48 @@ function Feature({imageUrl, title, description}) {
   );
 }
 
+function Button(text, url) {
+    return <Link
+        className={classnames(
+            'button button--outline button--secondary button--lg',
+            styles.getStarted,
+        )}
+        to={useBaseUrl(url)}>
+        {text}
+    </Link>;
+}
+
 function Home() {
   const context = useDocusaurusContext();
   const {siteConfig = {}} = context;
   return (
     <Layout
-      title={`Hello from ${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />">
-      <header className={classnames('hero hero--primary', styles.heroBanner)}>
-        <div className="container">
-          <h1 className="hero__title">{siteConfig.title}</h1>
-          <p className="hero__subtitle">{siteConfig.tagline}</p>
-          <div className={styles.buttons}>
-            <Link
-              className={classnames(
-                'button button--outline button--secondary button--lg',
-                styles.getStarted,
-              )}
-              to={useBaseUrl('docs/')}>
-              Get Started
-            </Link>
-          </div>
-        </div>
-      </header>
-      <main>
-        {features && features.length > 0 && (
-          <section className={styles.features}>
+        title={`Hello from ${siteConfig.title}`}
+        description="Description will go into a meta tag in <head />">
+        <header className={classnames('hero hero--primary', styles.heroBanner)}>
             <div className="container">
-              <div className="row">
-                {features.map((props, idx) => (
-                  <Feature key={idx} {...props} />
-                ))}
-              </div>
+                <h1 className="hero__title">{siteConfig.title}</h1>
+                <p className="hero__subtitle">{siteConfig.tagline}</p>
+                <div className={styles.buttons}>
+                    {Button("Android", "docs/android/setup")}
+                    {Button("iOS", "docs/ios/setup")}
+                    {Button("React Native", "docs/react/setup")}
+                </div>
             </div>
-          </section>
-        )}
-      </main>
+        </header>
+        <main>
+            {features && features.length > 0 && (
+                <section className={styles.features}>
+                    <div className="container">
+                        <div className="row">
+                            {features.map((props, idx) => (
+                                <Feature key={idx} {...props} />
+                            ))}
+                        </div>
+                    </div>
+                </section>
+            )}
+        </main>
     </Layout>
   );
 }
