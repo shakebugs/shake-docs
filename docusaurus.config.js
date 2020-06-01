@@ -18,7 +18,7 @@ module.exports = {
       },
       links: [
         {
-          to: 'docs/',
+          to: 'docs/android/setup',
           activeBasePath: 'docs',
           label: 'Docs',
           position: 'left',
@@ -111,7 +111,6 @@ module.exports = {
       {
         docs: {
           // It is recommended to set document id as docs home page (`docs/` path).
-          homePageId: 'setup',
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           editUrl:
