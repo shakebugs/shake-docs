@@ -11,7 +11,7 @@ It's a text object which you can shape any way you want, and you can put anythin
 
 This is where you will see Quick facts on your web Dashboard:
 
-![Quick facts screen](../assets/quick_facts_screen.png)
+![Quick facts screen](/screens/quick_facts_screen.png)
 
 ## Usage
 To set the Quick facts, call the `Shake.setQuickFacts()` method passing your Quick facts as a text 

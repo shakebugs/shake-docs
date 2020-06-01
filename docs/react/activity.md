@@ -9,7 +9,7 @@ and automatically attaches all of those to every bug report.
 You can inspect all events that lead to a bug being reported. 
 A link to Activity history is located in the top right corner:
 
-![Activity screen](../assets/activity_screen.png)
+![Activity screen](/screens/activity_screen.png)
 
 ## Android
 ### User actions

@@ -7,7 +7,7 @@ The Inspect bug screen allows users to see the details of a bug from their devic
 ## Introduction
 Your users can inspect a bug — see its [Essentials](android/essentials.md) and [Metadata](android/metadata.md) — before submitting it. The Inspect bug screen is part of the SDK Wrap-up screen:
 
-![Inspect screen](../assets/inspect_screen.png)
+![Inspect screen](/screens/inspect_screen.png)
 
 ## Visiblity
 If you don’t want the screen to show when submitting a bug report, you can hide it using the following method:

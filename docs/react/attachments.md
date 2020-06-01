@@ -10,7 +10,7 @@ However, you can instruct Shake SDK to create and attach custom files that you n
 XMPP logs, a user's profile photo, or whatever you might want to inspect later on.
  All attached files will appear in the center of your web Dashboard.
 
-![Attachments screen](../assets/attachments_screen.png)
+![Attachments screen](/screens/attachments_screen.png)
 
 ## Methods
 ### Attaching a file with a default name

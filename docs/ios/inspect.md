@@ -7,4 +7,4 @@ The Inspect bug screen allows users to see the details of a bug from their devic
 ## Introduction
 Your users can inspect a bug — see its [Essentials](ios/essentials.md) and [Quick facts](ios/quick-facts.md) — before submitting it. The Inspect bug screen is part of the SDK Wrap-up screen:
 
-![Inspect screen](../assets/inspect_screen.png)
+![Inspect screen](/screens/inspect_screen.png)

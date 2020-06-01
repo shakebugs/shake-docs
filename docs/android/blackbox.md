@@ -9,7 +9,7 @@ profile covering the last 60 seconds before a bug was submitted.
 Black box includes device and app data, like memory load and connectivity status.
 You'll find the charts right below the screenshot.
 
-![Blackbox screen](../assets/blackbox_screen.png)
+![Blackbox screen](/screens/blackbox_screen.png)
 
 ## Data
 ### Device memory usage

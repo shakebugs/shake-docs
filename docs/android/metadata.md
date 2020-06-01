@@ -11,7 +11,7 @@ It's a String pair which you can shape any way you want, and you can put anythin
 
 You can find Metadata below [Blackbox](android/blackbox.md) on the web Dashboard, as shown below:
 
-![Metadata screen](../assets/metadata_screen.png)
+![Metadata screen](/screens/metadata_screen.png)
 
 ## Usage
 Call the `Shake.setMetadata()` method passing your desired data you want to 

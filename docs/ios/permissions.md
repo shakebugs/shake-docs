@@ -10,7 +10,7 @@ The ones you don't see listed in a report were either denied or not requested at
 
 You can review user granted permissions on the Dashboard.
 
-![Permissions screen](../assets/permissions_screen.png)
+![Permissions screen](/screens/permissions_screen.png)
 
 ## Tracking useful permissions on iOS
 The Shake SDK tracks the status of these  iOS permissions, and reports to 

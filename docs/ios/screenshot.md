@@ -9,7 +9,7 @@ This page covers the most obvious content pieces found in every bug report sent 
 User's screenshot and their brief description of what's happened are 2 most common pieces of
 data developers receive with Shake SDK, and you will find this data at the top of your Dashboard.
 
-![Bug screen](../assets/bug_screen.png)
+![Bug screen](/screens/bug_screen.png)
 
 ## User drawing on the screenshot
 When users shake their phone and the SDK pops up, they are encouraged to additionally mark a 
