@@ -15,7 +15,7 @@ If you are using a React Native version 0.60 or greater, you should also run add
 react-native add-shake
 ```
 
-If you are using a React Native version older than 0.60, you should also run link command:
+If you are using a React Native version older than 0.60, you should instead run link command:
 
 ```bash title="Terminal"
 react-native link @shakebugs/react-native-shake
