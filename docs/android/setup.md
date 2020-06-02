@@ -85,7 +85,6 @@ import android.app.Application;
 import com.shakebugs.shake.Shake;
 
 public class App extends Application {
-
   @Override
   public void onCreate() {
     super.onCreate();
@@ -103,7 +102,6 @@ import android.app.Application
 import com.shakebugs.shake.Shake
 
 class App : Application() {
-
   override fun onCreate() {
     super.onCreate()
     Shake.start(this)
