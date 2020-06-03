@@ -23,7 +23,14 @@ module.exports = {
             'android/android-releases'
         ],
         iOS: [
-            'ios/setup',
+            {
+                "type": "category",
+                "label": "Setup",
+                "items": [
+                    'ios/setup-cocoapods',
+                    'ios/setup-manually',
+                ]
+            },
             {
                 "type": "category",
                 "label": "SDK",

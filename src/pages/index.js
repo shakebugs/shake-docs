@@ -77,7 +77,7 @@ function Home() {
                 <p className="hero__subtitle">{siteConfig.tagline}</p>
                 <div className={styles.buttons}>
                     {Button("Android", "docs/android/setup")}
-                    {Button("iOS", "docs/ios/setup")}
+                    {Button("iOS", "docs/ios/setup-cocoapods")}
                     {Button("React Native", "docs/react/setup")}
                 </div>
             </div>
