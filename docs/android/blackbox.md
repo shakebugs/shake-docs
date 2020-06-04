@@ -62,6 +62,7 @@ import TabItem from '@theme/TabItem';
 <TabItem value="java">
 
 ```java title="App.java"
+// highlight-next-line
 Shake.getReportConfiguration().setEnableBlackBox(false);
 ```
 
@@ -70,6 +71,7 @@ Shake.getReportConfiguration().setEnableBlackBox(false);
 <TabItem value="kotlin">
 
 ```kotlin title="App.kt"
+// highlight-next-line
 Shake.getReportConfiguration().isEnableBlackBox = false
 ```
 

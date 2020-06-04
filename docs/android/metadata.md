@@ -37,9 +37,10 @@ import TabItem from '@theme/TabItem';
 
 <TabItem value="java">
 
-```java {2} title="App.java"
+```java title="App.java"
 public void onLoginSuccessful(User user) {
-  Shake.setMetadata("userid", user.id);
+    // highlight-next-line
+    Shake.setMetadata("userid", user.id);
 }
 ```
 
@@ -47,9 +48,10 @@ public void onLoginSuccessful(User user) {
 
 <TabItem value="kotlin">
 
-```kotlin {2} title="App.kt"
+```kotlin title="App.kt"
 fun onLoginSuccessful(user: User) {
-  Shake.setMetadata("userid", user.id)
+    // highlight-next-line
+    Shake.setMetadata("userid", user.id)
 }
 ```
 

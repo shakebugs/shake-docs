@@ -27,9 +27,10 @@ import TabItem from '@theme/TabItem';
 
 <TabItem value="java">
 
-```java {3} title="MainActivity.java"
+```java title="MainActivity.java"
 @Override
 public boolean dispatchTouchEvent(MotionEvent event) {
+  // highlight-next-line
   Shake.handleTouchEvent(event, this);
   return super.dispatchTouchEvent(event);
 }
@@ -39,8 +40,9 @@ public boolean dispatchTouchEvent(MotionEvent event) {
 
 <TabItem value="kotlin">
 
-```java {2} title="MainActivity.kt"
+```java title="MainActivity.kt"
 override fun dispatchTouchEvent(event: MotionEvent): Boolean {
+  // highlight-next-line
   Shake.handleTouchEvent(event, this)
   return super.dispatchTouchEvent(event)
 }
@@ -63,9 +65,10 @@ If you want to see user's network traffic to fix bugs more efficiently, add this
 
 <TabItem value="java">
 
-```java {3} title="App.java"
+```java title="App.java"
 OkHttpClient okHttpClient = new OkHttpClient()
   .newBuilder()
+  // highlight-next-line
   .addInterceptor(new ShakeNetworkInterceptor())
   .build();
 ```
@@ -74,9 +77,10 @@ OkHttpClient okHttpClient = new OkHttpClient()
 
 <TabItem value="kotlin">
 
-```kotlin {3} title="App.kt"
+```kotlin title="App.kt"
 val okHttpClient = OkHttpClient()
   .newBuilder()
+  // highlight-next-line
   .addInterceptor(ShakeNetworkInterceptor())
   .build()
 ```
@@ -98,7 +102,12 @@ If you don’t use OkHttpClient, use this method to forward requests to Shake:
 <TabItem value="java">
 
 ```java title="App.java"
-Shake.handleNetworkRequest(HttpURLConnection connection, String requestBody, String responseBody);
+// highlight-start
+Shake.handleNetworkRequest(
+    HttpURLConnection connection,
+    String requestBody,
+    String responseBody);
+// highlight-end
 ```
 
 </TabItem>
@@ -106,7 +115,12 @@ Shake.handleNetworkRequest(HttpURLConnection connection, String requestBody, Str
 <TabItem value="kotlin">
 
 ```kotlin title="App.kt"
-Shake.handleNetworkRequest(connection: HttpURLConnection, requestBody: String, responseBody: String)
+// highlight-start
+Shake.handleNetworkRequest(
+    connection: HttpURLConnection,
+    requestBody: String,
+    responseBody: String)
+// highlight-end
 ```
 
 </TabItem>
@@ -130,6 +144,7 @@ In order for Shake to track user notifications throughout your app, add this lin
 <TabItem value="java">
 
 ```java title="App.java"
+// highlight-next-line
 startActivity(new Intent("android.settings.ACTION_NOTIFICATION_LISTENER_SETTINGS"));
 ```
 
@@ -138,6 +153,7 @@ startActivity(new Intent("android.settings.ACTION_NOTIFICATION_LISTENER_SETTINGS
 <TabItem value="kotlin">
 
 ```kotlin title="App.kt"
+// highlight-next-line
 startActivity(Intent("android.settings.ACTION_NOTIFICATION_LISTENER_SETTINGS"))
 ```
 
@@ -165,6 +181,7 @@ If you want Shake to manually handle notification tracking, you can use this met
 <TabItem value="java">
 
 ```java title="App.java"
+// highlight-next-line
 Shake.handleNotification(String notificationTitle, String notificationDescription);
 ```
 
@@ -173,6 +190,7 @@ Shake.handleNotification(String notificationTitle, String notificationDescriptio
 <TabItem value="kotlin">
 
 ```kotlin title="App.kt"
+// highlight-next-line
 Shake.handleNotification(notificationTitle: String, notificationDescription: String)
 ```
 
@@ -195,6 +213,7 @@ Here’s an example of how this would look like in code:
 <TabItem value="java">
 
 ```java title="App.java"
+// highlight-next-line
 Shake.log(LogLevel.INFO, "Log message goes here!");
 ```
 
@@ -203,6 +222,7 @@ Shake.log(LogLevel.INFO, "Log message goes here!");
 <TabItem value="kotlin">
 
 ```kotlin title="App.kt"
+// highlight-next-line
 Shake.log(LogLevel.INFO, "Log message goes here!")
 ```
 
@@ -224,6 +244,7 @@ Activity history is enabled by default, however, you can use the method below to
 <TabItem value="java">
 
 ```java title="App.java"
+// highlight-next-line
 Shake.getReportConfiguration().setEnableActivityHistory(false);
 ```
 
@@ -232,6 +253,7 @@ Shake.getReportConfiguration().setEnableActivityHistory(false);
 <TabItem value="kotlin">
 
 ```kotlin title="App.kt"
+// highlight-next-line
 Shake.getReportConfiguration().isEnableActivityHistory = false
 ```
 

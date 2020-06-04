@@ -29,6 +29,7 @@ import TabItem from '@theme/TabItem';
 <TabItem value="objectivec">
 
 ```objectivec title="AppDelegate.m"
+// highlight-next-line
 [SHKShake startWithInvocationEvents: ShakeInvocationEventShake | ShakeInvocationEventScreenshot];
 ```
 
@@ -37,6 +38,7 @@ import TabItem from '@theme/TabItem';
 <TabItem value="swift">
 
 ```swift title="AppDelegate.swift"
+// highlight-next-line
 Shake.start(withInvocationEvents: [.shake, .screenshot])
 ```
 
@@ -57,6 +59,7 @@ Here’s a list of all available ones below, feel free to use any combination of
 <TabItem value="objectivec">
 
 ```objectivec title="AppDelegate.m"
+// highlight-next-line
 [SHKShake startWithInvocationEvents: ShakeInvocationEventShake | ShakeInvocationEventScreenshot | ShakeInvocationEventButton];
 ```
 
@@ -65,6 +68,7 @@ Here’s a list of all available ones below, feel free to use any combination of
 <TabItem value="swift">
 
 ```swift title="AppDelegate.swift"
+// highlight-next-line
 Shake.start(withInvocationEvents: [.shake, .screenshot, .button])
 ```
 
