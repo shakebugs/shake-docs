@@ -55,7 +55,7 @@ allprojects {
        jcenter()
        maven { url 'https://www.jitpack.io' }
        // highlight-next-line
-       maven { url 'https://dl.bintray.com/shake/shake' }                                             
+       maven { url 'https://dl.bintray.com/shake/shake' }
    }
 }
 ```
@@ -80,7 +80,7 @@ defaultConfig {
   versionCode 6
   versionName "2.3.2"
   // highlight-next-line
-  multiDexEnabled true                                                        
+  multiDexEnabled true
 }
 ```
 
@@ -204,7 +204,7 @@ Then, include the following dependency to app-level build.gradle file:
 ```groovy title="app/build.gradle"
 dependencies {
     // highlight-next-line
-    implementation project(':@shakebugs_react-native-shake')                                    
+    implementation project(':@shakebugs_react-native-shake')
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation "com.android.support:appcompat-v7:${rootProject.ext.supportLibVersion}"
     implementation "com.facebook.react:react-native:+"  // From node_modules
@@ -214,13 +214,13 @@ dependencies {
 Update the `getPackages()` method:
 
 ```java title="MainApplication.java"
- @Override protected List<ReactPackage> getPackages() { 
-    @SuppressWarnings("UnnecessaryLocalVariable")  
+ @Override protected List<ReactPackage> getPackages() {
+    @SuppressWarnings("UnnecessaryLocalVariable")
     List<ReactPackage> packages = new PackageList(this).getPackages();
     // Packages that cannot be autolinked yet can be added manually here, for example:
     // packages.add(new MyReactNativePackage());
     // highlight-next-line
-    packages.add(new ShakePackage());                                                            
+    packages.add(new ShakePackage());                                                 
     return packages;
  } 
 ```
