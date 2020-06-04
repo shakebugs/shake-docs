@@ -80,7 +80,7 @@ import TabItem from '@theme/TabItem';
 
 <TabItem value="java">
 
-```java {2,9} title="App.java"
+```java {2,8} title="App.java"
 import android.app.Application;
 import com.shakebugs.shake.Shake;
 
@@ -97,7 +97,7 @@ public class App extends Application {
 
 <TabItem value="kotlin">
 
-```kotlin {2,8} title="App.kt"
+```kotlin {2,7} title="App.kt"
 import android.app.Application
 import com.shakebugs.shake.Shake
 
