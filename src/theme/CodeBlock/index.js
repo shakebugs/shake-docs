@@ -7,46 +7,15 @@
 
 /* eslint-disable jsx-a11y/no-noninteractive-tabindex */
 
-import React, {useEffect, useState, useRef} from 'react';
+import React, {useEffect, useState} from 'react';
 import classnames from 'classnames';
 import Highlight, {defaultProps} from 'prism-react-renderer';
 import rangeParser from 'parse-numeric-range';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import usePrismTheme from '@theme/hooks/usePrismTheme';
+import CopyButton from "../CopyButton";
 
 import styles from './styles.module.css';
-
-function copyTextToClipboard(text) {
-  let dummy = document.createElement("textarea");
-
-  document.body.appendChild(dummy);
-
-  dummy.value = text;
-  dummy.select();
-  document.execCommand("copy");
-
-  document.body.removeChild(dummy);
-}
-
-const CopyButton = (props) => {
-  const button = useRef(null);
-
-  const [showCopied, setShowCopied] = useState(false);
-
-  const onCopyClick = () => {
-    copyTextToClipboard(props.text);
-
-    setShowCopied(true);
-    setTimeout(() => setShowCopied(false), 2000);
-  };
-
-  return <button
-      ref={button}
-      className={styles.copyButton}
-      onClick={onCopyClick}>
-    {showCopied ? "Copied":"Copy"}
-  </button>
-};
 
 const highlightLinesRangeRegex = /{([\d,-]+)}/;
 const getHighlightDirectiveRegex = (
@@ -273,7 +242,7 @@ export default ({children, className: languageClassName, metastring}) => {
     }).join("\n");
 
     return <div className={styles.copyButtonContent}>
-      <CopyButton text={chunkText}/>
+      <CopyButton text={chunkText} style={styles.copyButton}/>
       {renderRegularChunk(chunk, getTokenProps)}
     </div>
   }
