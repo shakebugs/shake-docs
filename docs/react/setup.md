@@ -66,7 +66,7 @@ Add the following dependency to your app-level Build.gradle file:
 dependencies {
   // highlight-next-line
   implementation 'com.shakebugs.android:shake:9.0.+'
-  ...                         
+  ...
 }
 ```
 
@@ -88,7 +88,7 @@ Set an invocation event and initialize the SDK:
 
 ```java title="MainApplication.java"
 // highlight-start
-import com.shakebugs.shake.Shake;                                          
+import com.shakebugs.shake.Shake;
 import com.shakebugs.shake.ShakeInvocationEvent;
 // highlight-end                            
 
@@ -98,9 +98,9 @@ public void onCreate() {
  SoLoader.init(this, /* native exopackage */ false);
  initializeFlipper(this, getReactNativeHost().getReactInstanceManager());
  // highlight-start
- Shake.setInvocationEvents(ShakeInvocationEvent.BUTTON);                    
+ Shake.setInvocationEvents(ShakeInvocationEvent.BUTTON);
  Shake.start(this);
-// highlight-end                                                        
+// highlight-end
 }
 ``` 
 
@@ -118,7 +118,7 @@ Import {View} from 'react-native';
 export default class App extends Component<{}> {
 	componentDidMount() {
         // highlight-next-line
-		Shake.start();                                                          
+		Shake.start()
 	}
     render() {
         return (
@@ -154,7 +154,7 @@ Open your AndroidManifest.xml file. Paste this and replace `sign-in-to-see-your-
       <meta-data                                                             
         android:name="com.shakebugs.APIClientID"
         android:value="sign-in-to-see-your-api-client-id-here" />
-      <meta-data                                                             
+      <meta-data
         android:name="com.shakebugs.APIClientSecret"
         android:value="sign-in-to-see-your-api-client-secret-here" />
         // highlight-end
@@ -175,9 +175,9 @@ with the actual values you have in Your settings.
       // highlight-start
       <key>Shake</key>
       <dict>
-        <key>APIClientID</key>                                                
+        <key>APIClientID</key>
         <string>sign-in-to-see-your-api-client-id-here</string>
-        <key>APIClientSecret</key>                                            
+        <key>APIClientSecret</key>
         <string>sign-in-to-see-your-api-client-secret-here</string>
       </dict>
       // highlight-end
@@ -220,7 +220,7 @@ Update the `getPackages()` method:
     // Packages that cannot be autolinked yet can be added manually here, for example:
     // packages.add(new MyReactNativePackage());
     // highlight-next-line
-    packages.add(new ShakePackage());                                                 
+    packages.add(new ShakePackage());
     return packages;
  } 
 ```
