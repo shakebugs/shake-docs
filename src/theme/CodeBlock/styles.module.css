@@ -59,7 +59,7 @@ div:hover > .copyButton {
   font-family: var(--ifm-font-family-monospace);
   font-size: inherit;
   line-height: var(--ifm-pre-line-height);
-  white-space: pre;
+  white-space: pre-wrap;
   float: left;
   min-width: 100%;
   padding: var(--ifm-pre-padding);
