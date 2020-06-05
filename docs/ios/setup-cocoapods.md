@@ -62,9 +62,9 @@ with the actual values you have in [Your settings](https://app.shakebugs.com/set
       // highlight-start
       <key>Shake</key>
       <dict>
-        <key>APIClientID</key>                                                
+        <key>APIClientID</key>
         <string>sign-in-to-see-your-api-client-id-here</string>
-        <key>APIClientSecret</key>                                            
+        <key>APIClientSecret</key>         
         <string>sign-in-to-see-your-api-client-secret-here</string>
       </dict>
       // highlight-end

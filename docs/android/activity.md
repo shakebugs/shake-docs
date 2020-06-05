@@ -144,8 +144,10 @@ In order for Shake to track user notifications throughout your app, add this lin
 <TabItem value="java">
 
 ```java title="App.java"
-// highlight-next-line
-startActivity(new Intent("android.settings.ACTION_NOTIFICATION_LISTENER_SETTINGS"));
+// highlight-start
+startActivity(new Intent("android.settings." +
+    "ACTION_NOTIFICATION_LISTENER_SETTINGS"));
+// highlight-end
 ```
 
 </TabItem>
@@ -153,8 +155,10 @@ startActivity(new Intent("android.settings.ACTION_NOTIFICATION_LISTENER_SETTINGS
 <TabItem value="kotlin">
 
 ```kotlin title="App.kt"
-// highlight-next-line
-startActivity(Intent("android.settings.ACTION_NOTIFICATION_LISTENER_SETTINGS"))
+// highlight-start
+startActivity(Intent("android.settings." +
+    "ACTION_NOTIFICATION_LISTENER_SETTINGS"))
+// highlight-end
 ```
 
 </TabItem>
@@ -182,7 +186,10 @@ If you want Shake to manually handle notification tracking, you can use this met
 
 ```java title="App.java"
 // highlight-next-line
-Shake.handleNotification(String notificationTitle, String notificationDescription);
+Shake.handleNotification(
+    String notificationTitle,
+    String notificationDescription
+);
 ```
 
 </TabItem>
@@ -191,7 +198,10 @@ Shake.handleNotification(String notificationTitle, String notificationDescriptio
 
 ```kotlin title="App.kt"
 // highlight-next-line
-Shake.handleNotification(notificationTitle: String, notificationDescription: String)
+Shake.handleNotification(
+    notificationTitle: String,
+    notificationDescription: String
+)
 ```
 
 </TabItem>
