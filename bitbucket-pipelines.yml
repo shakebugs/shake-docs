@@ -16,7 +16,6 @@ definitions:
       script:
         - pipe: atlassian/aws-cloudfront-invalidate:0.1.1
           variables:
-            AWS_DEFAULT_REGION: $AWS_DEFAULT_REGION
             DISTRIBUTION_ID: "EDTJ9RZYTIO05"
             PATHS: "/index.html /assets/*"
     - step: &slack-notification
