@@ -1,0 +1,27 @@
+image: node:10.15.3
+
+pipelines:
+  branches:
+    staging:
+      - step:
+          caches:
+            - node
+          script:
+            - npm install
+            - npm run build
+            - pipe: atlassian/aws-s3-deploy:0.4.3
+              variables:
+                S3_BUCKET: 'my-bucket-name'
+                LOCAL_PATH: 'build'
+    master:
+      - step:
+          caches:
+            - node
+          script:
+            - npm install
+            - npm run build
+            - pipe: atlassian/aws-s3-deploy:0.4.3
+              variables:
+                S3_BUCKET: 'my-bucket-name'
+                LOCAL_PATH: 'build'
+
