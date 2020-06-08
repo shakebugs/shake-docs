@@ -1,27 +1,46 @@
 image: node:10.15.3
 
+definitions:
+  steps:
+    - step: &s3-deploy
+        name: Deploy S3
+        script:
+          - npm install
+          - npm run build
+          - pipe: atlassian/aws-s3-deploy:0.4.3
+            variables:
+              S3_BUCKET: "$BUCKET_NAME"
+              LOCAL_PATH: "build"
+    - step: &cloudfront-invalidate
+      name: Cloudfront invalidate
+      script:
+        - pipe: atlassian/aws-cloudfront-invalidate:0.1.1
+          variables:
+            AWS_DEFAULT_REGION: $AWS_DEFAULT_REGION
+            DISTRIBUTION_ID: "EDTJ9RZYTIO05"
+            PATHS: "/index.html /assets/*"
+    - step: &slack-notification
+        name: Slack notification
+        script:
+          - pipe: atlassian/slack-notify:0.3.2
+            variables:
+              WEBHOOK_URL: "$SLACK_WEBHOOK"
+              MESSAGE: "Build succeeded"
 pipelines:
   branches:
-    staging:
+    uat:
       - step:
+          deployment: test
           caches:
             - node
           script:
-            - npm install
-            - npm run build
-            - pipe: atlassian/aws-s3-deploy:0.4.3
-              variables:
-                S3_BUCKET: 'my-bucket-name'
-                LOCAL_PATH: 'build'
+            - *s3-deploy
+            - *cloudfront-invalidate
     master:
       - step:
+          deployment: production
           caches:
             - node
           script:
-            - npm install
-            - npm run build
-            - pipe: atlassian/aws-s3-deploy:0.4.3
-              variables:
-                S3_BUCKET: 'my-bucket-name'
-                LOCAL_PATH: 'build'
-
+            - *s3-deploy
+            - *cloudfront-invalidate
