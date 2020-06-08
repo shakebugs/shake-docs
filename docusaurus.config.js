@@ -55,7 +55,7 @@ module.exports = {
           items: [
             {
               label: 'Demo',
-              href: 'https://demo.shakebugs.com/shyp-agency/772GYQPA/5',
+              href: 'https://demo.shakebugs.com',
             },
             {
               label: 'Plans',
@@ -88,10 +88,6 @@ module.exports = {
           title: 'Resources',
           items: [
             {
-              label: 'Documentation',
-              href: '#',
-            },
-            {
               label: 'Help center',
               href: 'https://help.shakebugs.com/',
             },
@@ -112,9 +108,6 @@ module.exports = {
         docs: {
           // It is recommended to set document id as docs home page (`docs/` path).
           sidebarPath: require.resolve('./sidebars.js'),
-          // Please change this to your repo.
-          editUrl:
-            'https://bitbucket.org/decodehq/shake-docs',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
