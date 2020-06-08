@@ -4,56 +4,34 @@ pipelines:
   branches:
     uat:
       - step:
-          name: Build
-          caches:
-            - node
-          script:
-            - npm install
-            - npm run build
-      - step:
           name: Deploy to S3
           deployment: test
           caches:
             - node
           script:
+            - npm install
+            - npm run build
             - pipe: atlassian/aws-s3-deploy:0.4.3
               variables:
                 S3_BUCKET: "$BUCKET_NAME"
                 LOCAL_PATH: "build"
-      - step:
-          name: Invalidate Cloudfront
-          deployment: test
-          caches:
-            - node
-          script:
             - pipe: atlassian/aws-cloudfront-invalidate:0.3.2
               variables:
                 DISTRIBUTION_ID: "$DISTRIBUTION_ID"
                 PATHS: "/index.html /assets/*"
     master:
       - step:
-          name: Build
-          caches:
-            - node
-          script:
-            - npm install
-            - npm run build
-      - step:
           name: Deploy to S3
           deployment: production
           caches:
             - node
           script:
+            - npm install
+            - npm run build
             - pipe: atlassian/aws-s3-deploy:0.4.3
               variables:
                 S3_BUCKET: "$BUCKET_NAME"
                 LOCAL_PATH: "build"
-      - step:
-          name: Invalidate Cloudfront
-          deployment: production
-          caches:
-            - node
-          script:
             - pipe: atlassian/aws-cloudfront-invalidate:0.3.2
               variables:
                 DISTRIBUTION_ID: "$DISTRIBUTION_ID"
