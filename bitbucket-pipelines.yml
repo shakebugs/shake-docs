@@ -4,6 +4,7 @@ pipelines:
   branches:
     uat:
       - step:
+          name: Deploy to S3
           deployment: test
           caches:
             - node
@@ -14,12 +15,16 @@ pipelines:
               variables:
                 S3_BUCKET: "$BUCKET_NAME"
                 LOCAL_PATH: "build"
+      - step:
+          name: Invalidate Cloudfront
+          script:
             - pipe: atlassian/aws-cloudfront-invalidate:0.3.2
               variables:
                 DISTRIBUTION_ID: "EDTJ9RZYTIO05"
                 PATHS: "/index.html /assets/*"
     master:
       - step:
+          name: Deploy to S3
           deployment: production
           caches:
             - node
@@ -30,6 +35,9 @@ pipelines:
               variables:
                 S3_BUCKET: "$BUCKET_NAME"
                 LOCAL_PATH: "build"
+      - step:
+          name: Invalidate Cloudfront
+          script:
             - pipe: atlassian/aws-cloudfront-invalidate:0.3.2
               variables:
                 DISTRIBUTION_ID: "EDTJ9RZYTIO05"
