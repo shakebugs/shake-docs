@@ -21,7 +21,8 @@ will be determined automatically from the passed file's name.
 To attach files this way, call the `Shake.attachFiles()` method as shown in the example below.
 Be careful though, any subsequent calls will override former ones already in place: 
 
-```javascript {1,9} title="App.js"
+```javascript title="App.js"
+// highlight-next-line
 import Shake from '@shakebugs/react-native-shake';
 import RNFS from 'react-native-fs';
 
@@ -30,6 +31,7 @@ attachLogFile = (data) => {
   RNFS.writeFile(path, data, 'utf8')
     .then((success) => {
       console.log('File written');
+      // highlight-next-line
       Shake.attachFiles([path]);
     })
     .catch((error) => {
@@ -44,7 +46,8 @@ Files can be attached with the desired filename and an absolute file path to you
 In order to attach files this way, call `Shake.attachFilesWithName()` method as shown in the example below. 
 But be careful only to call it once, since any subsequent calls will override the former ones.
 
-```javascript {1,9,10,11} title="App.js"
+```javascript title="App.js"
+// highlight-next-line
 import Shake from '@shakebugs/react-native-shake';
 import RNFS from 'react-native-fs';
 
@@ -53,9 +56,11 @@ attachLogFile = (data) => {
   RNFS.writeFile(path, data, 'utf8')
     .then((success) => {
       console.log('File written');
+      // highlight-start
       Shake.attachFilesWithName({
         "log": path
       });
+      // highlight-end
     })
     .catch((error) => {
         console.log('Failed to create log file');

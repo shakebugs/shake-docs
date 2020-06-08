@@ -28,9 +28,11 @@ import TabItem from '@theme/TabItem';
 <TabItem value="java">
 
 ```java title="App.java"
+// highlight-start
 Shake.getReportConfiguration().setInvokeShakeOnShakeDeviceEvent(true);
 Shake.getReportConfiguration().setInvokeShakeOnScreenshot(true);
 Shake.start(this);
+// highlight-end
 ```
 
 </TabItem>
@@ -38,9 +40,11 @@ Shake.start(this);
 <TabItem value="kotlin">
 
 ```kotlin title="App.kt"
+// highlight-start
 Shake.getReportConfiguration().isInvokeShakeOnShakeDeviceEvent = true
 Shake.getReportConfiguration().isInvokeShakeOnScreenshot = true
 Shake.start(this)
+// highlight-end
 ```
 
 </TabItem>
@@ -61,10 +65,12 @@ Here’s a list of all available ones below, feel free to use any combination of
 <TabItem value="java">
 
 ```java title="App.java"
+// highlight-start
 Shake.getReportConfiguration().setInvokeShakeOnShakeDeviceEvent(true);
 Shake.getReportConfiguration().setShowFloatingReportButton(true);
 Shake.getReportConfiguration().setInvokeShakeOnScreenshot(true);
 Shake.getReportConfiguration().setInvokeShakeOnRightEdgePan(true);
+// highlight-end
 ```
 
 </TabItem>
@@ -72,10 +78,12 @@ Shake.getReportConfiguration().setInvokeShakeOnRightEdgePan(true);
 <TabItem value="kotlin">
 
 ```kotlin title="App.kt"
+// highlight-start
 Shake.getReportConfiguration().isInvokeShakeOnShakeDeviceEvent = true
 Shake.getReportConfiguration().isShowFloatingReportButton = true
 Shake.getReportConfiguration().isInvokeShakeOnScreenshot = true
 Shake.getReportConfiguration().isInvokeShakeOnRightEdgePan = true
+// highlight-end
 ```
 
 </TabItem>
@@ -96,15 +104,19 @@ optionally attaching files and/or Metadata. Here’s an example:
 
 <TabItem value="java">
 
-```java {2,3,6-19} title="App.java"
+```java title="App.java"
 public void example() {
+  // highlight-start
   Shake.setMetadata("key", "value");
   Shake.show(createShakeReportData());
+  // highlight-end
 }
-        
+
+// highlight-start
 private ShakeReportData createShakeReportData() {
   return new ShakeReportData() {
-    // From SDK Version 12.0 Quick facts are deprecated, so they're set to return null in this code example.
+    // From SDK Version 12.0 Quick facts are deprecated,
+    // so they're set to return null in this code example.
     @Override
     public String quickFacts() {
       return null;
@@ -116,21 +128,26 @@ private ShakeReportData createShakeReportData() {
     }
   };
 }
+// highlight-end
 ```
 
 </TabItem>
 
 <TabItem value="kotlin">
 
-```kotlin {2,3,6-17} title="App.kt"
+```kotlin title="App.kt"
 fun example()  {
+  // highlight-start
   Shake.setMetadata("key", "value")
   Shake.show(createShakeReportData())
+  // highlight-end
 }
         
+// highlight-start
 private fun createShakeReportData(): ShakeReportData {
   return object : ShakeReportData {
-    // From SDK Version 12.0 Quick facts are deprecated, so they're set to return null in this code example.
+    // From SDK Version 12.0 Quick facts are deprecated,
+    // so they're set to return null in this code example.
     override fun quickFacts(): String {
       return null
     }
@@ -140,6 +157,7 @@ private fun createShakeReportData(): ShakeReportData {
     }
   }
 }
+// highlight-end
 ```
 
 </TabItem>

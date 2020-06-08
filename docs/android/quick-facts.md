@@ -39,8 +39,10 @@ import TabItem from '@theme/TabItem';
 <TabItem value="java">
 
 ```java title="App.java"
+// highlight-next-line
 Shake.onPrepareData(createShakeReportData());
 
+// highlight-start
 private ShakeReportData createShakeReportData() {
   return new ShakeReportData() {
     @Override
@@ -49,15 +51,18 @@ private ShakeReportData createShakeReportData() {
       }
   };
 }
+// highlight-end
 ```
 
 </TabItem>
 
 <TabItem value="kotlin">
 
-```kotlin {2} title="App.kt"
+```kotlin title="App.kt"
+// highlight-next-line
 Shake.onPrepareData(createShakeReportData())
 
+// highlight-start
 private fun createShakeReportData(): ShakeReportData {
   return object : ShakeReportData {
     override fun quickFacts(): String {
@@ -69,6 +74,7 @@ private fun createShakeReportData(): ShakeReportData {
     }
   }
 }
+// highlight-end
 ```
 
 </TabItem>

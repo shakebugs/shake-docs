@@ -30,9 +30,10 @@ import TabItem from '@theme/TabItem';
 
 <TabItem value="java">
 
-```java {3} title="App.java"
+```java title="App.java"
 public void loggedInSuccessfully(User user) {
   if (user.getUserType() != GUEST) {
+    // highlight-next-line
     Shake.setEnabled(true);
   }
 }
@@ -42,9 +43,10 @@ public void loggedInSuccessfully(User user) {
 
 <TabItem value="kotlin">
 
-```kotlin {3} title="App.kt"
+```kotlin title="App.kt"
 override fun loggedInSuccessfully(user: User) {
   if (user.getUserType() == GUEST) {
+    // highlight-next-line
     Shake.setEnabled(false)
   }
 }
@@ -74,9 +76,10 @@ So let's suppose you want to allow Shake to your users, but not to guests. You w
 
 <TabItem value="java">
 
-```java {3} title="App.java"
+```java title="App.java"
 public void loggedInSuccessfully(User user) {
   if (user.getUserType() == GUEST) {
+    // highlight-next-line    
     Shake.setEnabled(false);
   }
 }
@@ -86,9 +89,10 @@ public void loggedInSuccessfully(User user) {
 
 <TabItem value="kotlin">
 
-```kotlin {3} title="App.kt"
+```kotlin title="App.kt"
 override fun loggedInSuccessfully(user: User) {
   if (user.getUserType() == GUEST) {
+    // highlight-next-line
     Shake.setEnabled(false)
   }
 }

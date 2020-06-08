@@ -27,6 +27,7 @@ import TabItem from '@theme/TabItem';
 <TabItem value="java">
 
 ```java title="App.java"
+// highlight-next-line
 Shake.getReportConfiguration().setEnableInspectScreen(false);
 ```
 
@@ -35,6 +36,7 @@ Shake.getReportConfiguration().setEnableInspectScreen(false);
 <TabItem value="kotlin">
 
 ```kotlin title="App.kt"
+// highlight-next-line
 Shake.getReportConfiguration().isEnableInspectScreen = false
 ```
 
