@@ -1,29 +1,31 @@
 module.exports = {
-  title: 'My Site',
-  tagline: 'The tagline of my site',
-  url: 'https://your-docusaurus-test-site.com',
+  title: 'We focus on one thing only. Bug reporting.',
+  tagline: 'And that dedication is why teams put us in their apps time and time again.',
+  url: 'https://www.shakebugs.com/',
   baseUrl: '/',
   favicon: 'img/favicon.ico',
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
+  organizationName: 'shakebugs', // Usually your GitHub org/user name.
+  projectName: 'shake-docs', // Usually your repo name.
   themeConfig: {
+    prism: {
+      additionalLanguages: ['groovy', 'kotlin', 'java', 'swift'],
+    },
     navbar: {
-      title: 'My Site',
+      title: 'Shake',
       logo: {
-        alt: 'My Site Logo',
+        alt: 'Shake logo',
         src: 'img/logo.svg',
       },
       links: [
         {
-          to: 'docs/',
+          to: 'docs/android/setup',
           activeBasePath: 'docs',
           label: 'Docs',
           position: 'left',
         },
-        {to: 'blog', label: 'Blog', position: 'left'},
         {
-          href: 'https://github.com/facebook/docusaurus',
-          label: 'GitHub',
+          href: 'https://bitbucket.org/decodehq/shake-docs/src/master/',
+          label: 'Bitbucket',
           position: 'right',
         },
       ],
@@ -35,47 +37,72 @@ module.exports = {
           title: 'Docs',
           items: [
             {
-              label: 'Style Guide',
-              to: 'docs/',
+              label: 'Android',
+              to: 'docs/android/setup',
             },
             {
-              label: 'Second Doc',
-              to: 'docs/doc2/',
-            },
-          ],
-        },
-        {
-          title: 'Community',
-          items: [
-            {
-              label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+              label: 'iOS',
+              to: 'docs/ios/setup',
             },
             {
-              label: 'Discord',
-              href: 'https://discordapp.com/invite/docusaurus',
-            },
-            {
-              label: 'Twitter',
-              href: 'https://twitter.com/docusaurus',
+              label: 'React Native',
+              to: 'docs/react/setup',
             },
           ],
         },
         {
-          title: 'More',
+          title: 'Product',
           items: [
             {
-              label: 'Blog',
-              to: 'blog',
+              label: 'Demo',
+              href: 'https://demo.shakebugs.com/shyp-agency/772GYQPA/5',
             },
             {
-              label: 'GitHub',
-              href: 'https://github.com/facebook/docusaurus',
+              label: 'Plans',
+              href: 'https://www.shakebugs.com/pricing',
+            },
+            {
+              label: 'Integrations',
+              href: 'https://www.shakebugs.com/integrations',
+            },
+            {
+              label: 'Security',
+              href: 'https://www.shakebugs.com/security',
+            },
+          ],
+        },
+        {
+          title: 'Features',
+          items: [
+            {
+              label: 'Why Shake',
+              href: 'https://www.shakebugs.com/why-shake',
+            },
+            {
+              label: 'Roadmap',
+              href: 'https://www.shakebugs.com/roadmap',
+            },
+          ],
+        },
+        {
+          title: 'Resources',
+          items: [
+            {
+              label: 'Documentation',
+              href: '#',
+            },
+            {
+              label: 'Help center',
+              href: 'https://help.shakebugs.com/',
+            },
+            {
+              label: 'Legal',
+              href: 'https://app.shakebugs.com/legal',
             },
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Shake, Inc. Built with Docusaurus.`,
     },
   },
   presets: [
@@ -84,17 +111,10 @@ module.exports = {
       {
         docs: {
           // It is recommended to set document id as docs home page (`docs/` path).
-          homePageId: 'doc1',
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           editUrl:
-            'https://github.com/facebook/docusaurus/edit/master/website/',
-        },
-        blog: {
-          showReadingTime: true,
-          // Please change this to your repo.
-          editUrl:
-            'https://github.com/facebook/docusaurus/edit/master/website/blog/',
+            'https://bitbucket.org/decodehq/shake-docs',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
