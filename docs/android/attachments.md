@@ -42,6 +42,7 @@ import TabItem from '@theme/TabItem';
 <TabItem value="java">
 
 ```java title="App.java"
+// highlight-start
 Shake.onPrepareData(new ShakeReportData() {
   @Override
   public List<ShakeFile> attachedFiles() {
@@ -51,6 +52,7 @@ Shake.onPrepareData(new ShakeReportData() {
     return Arrays.asList(shakeFileOne, shakeFileTwo);
   }
 });
+// highlight-end
 ```
 
 </TabItem>
@@ -58,6 +60,7 @@ Shake.onPrepareData(new ShakeReportData() {
 <TabItem value="kotlin">
 
 ```kotlin title="App.kt"
+// highlight-start
 Shake.onPrepareData(object: ShakeReportData {
   override fun attachedFiles(): List<ShakeFile> {
     val shakeFileOne = ShakeFile(File("PathToYourFile"))
@@ -65,6 +68,7 @@ Shake.onPrepareData(object: ShakeReportData {
     return listOf(shakeFileOne, shakeFileTwo)
   }
 })
+// highlight-end
 ```
 
 </TabItem>
@@ -93,6 +97,7 @@ but be careful only to call it once since any subsequent calls will override the
 <TabItem value="java">
 
 ```java title="App.java"
+// highlight-start
 Shake.onPrepareData(new ShakeReportData() {
   @Override
   public List<ShakeFile> attachedFiles() {
@@ -102,6 +107,7 @@ Shake.onPrepareData(new ShakeReportData() {
     return Arrays.asList(shakeFileOne, shakeFileTwo);
   }
 });
+// highlight-end
 ```
 
 </TabItem>
@@ -109,6 +115,7 @@ Shake.onPrepareData(new ShakeReportData() {
 <TabItem value="kotlin">
 
 ```kotlin title="App.kt"
+// highlight-start
 Shake.onPrepareData(object: ShakeReportData {
   override fun attachedFiles(): List<ShakeFile> {
     val shakeFileOne = ShakeFile("fileOne", File("PathToYourFile"))
@@ -116,6 +123,7 @@ Shake.onPrepareData(object: ShakeReportData {
     return listOf(shakeFileOne, shakeFileTwo)
   }
 })
+// highlight-end
 ```
 
 </TabItem>

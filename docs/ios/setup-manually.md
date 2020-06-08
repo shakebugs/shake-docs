@@ -20,22 +20,26 @@ Open your workspace and in the Project Navigator, right click on `Info.plist`, a
 Paste this but replace `sign-in-to-see-your-api-client-id-here` and `sign-in-to-see-your-api-client-secret-here` 
 with the actual values you have in [Your settings](https://app.shakebugs.com/settings/workspace#general).
 
-```xml {4-10} title="Info.plist"
+```xml title="Info.plist"
 <?xml version="1.0" encoding="utf-8" ?>
 <plist version="1.0">
   <dict>
+      // highlight-start
       <key>Shake</key>
       <dict>
-        <key>APIClientID</key>                                                
+        <key>APIClientID</key>
         <string>sign-in-to-see-your-api-client-id-here</string>
-        <key>APIClientSecret</key>                                            
+        <key>APIClientSecret</key>
         <string>sign-in-to-see-your-api-client-secret-here</string>
       </dict>
+      // highlight-end
   </dict>
 </plist>
 ```
 
 ### Initialize Shake
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 <Tabs
   groupId="ios"
@@ -48,12 +52,14 @@ with the actual values you have in [Your settings](https://app.shakebugs.com/set
 
 <TabItem value="objectivec">
 
-```objectivec {2,6} title="AppDelegate.m"
+```objectivec title="AppDelegate.m"
 #import "AppDelegate.h"
+// highlight-next-line
 @import Shake;
 
 @implementation AppDelegate
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+  // highlight-next-line
   [SHKShake start];
   return YES;
 }
@@ -64,8 +70,9 @@ with the actual values you have in [Your settings](https://app.shakebugs.com/set
 
 <TabItem value="swift">
 
-```swift {2,9} title="AppDelegate.swift"
+```swift title="AppDelegate.swift"
 import UIKit
+// highlight-next-line
 import Shake
 
 @UIApplicationMain
@@ -73,6 +80,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   func application(
     _ application: UIApplication,
     didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+      // highlight-next-line
       Shake.start()
       return true
   }

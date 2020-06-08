@@ -22,7 +22,13 @@ import TabItem from '@theme/TabItem';
 <TabItem value="java">
 
 ```java title="App.java"
-Shake.silentReport(String description, ShakeReportData reportData, ShakeReportConfiguration configuration);
+// highlight-start
+Shake.silentReport(
+    String description,
+    ShakeReportData reportData,
+    ShakeReportConfiguration configuration
+);
+// highlight-end
 ```
 
 </TabItem>
@@ -30,7 +36,13 @@ Shake.silentReport(String description, ShakeReportData reportData, ShakeReportCo
 <TabItem value="kotlin">
 
 ```kotlin title="App.kt"
-Shake.silentReport(description: String,reportData: ShakeReportData, configuration: ShakeReportConfiguration)
+// highlight-start
+Shake.silentReport(
+    description: String,
+    reportData: ShakeReportData,
+    configuration: ShakeReportConfiguration
+)
+// highlight-end
 ```
 
 </TabItem>
@@ -50,16 +62,19 @@ If you decide to do so, your code should look something like this example:
 
 <TabItem value="java">
 
-```java {2-7,10-23} title="App.java"
+```java title="App.java"
 public void example() {
+  // highlight-start
   ShakeReportConfiguration configuration = new ShakeReportConfiguration();
   configuration.blackBoxData = true;
   configuration.activityHistoryData = true;
   configuration.screenshot = true;
   Shake.silentReport("description", createShakeReportData(), configuration);
   Shake.setMetadata("key", "value");
+  // highlight-end
 }
         
+// highlight-start
 private ShakeReportData createShakeReportData() {
   return new ShakeReportData() {
     /* From SDK Version 12.0 Quick facts are deprecated, so they're set to
@@ -74,22 +89,26 @@ private ShakeReportData createShakeReportData() {
     }
   };
 }
+// highlight-end
 ```
 
 </TabItem>
 
 <TabItem value="kotlin">
 
-```kotlin {2-7,10-23} title="App.kt"
+```kotlin title="App.kt"
 fun example() {
+  // highlight-start
   val configuration = ShakeReportConfiguration()
   configuration.blackBoxData = true
   configuration.activityHistoryData = true
   configuration.screenshot = true
   Shake.silentReport("description", createShakeReportData(), configuration)
   Shake.setMetadata("key", "value")
+  // highlight-end
 }
         
+// highlight-start
 private fun createShakeReportData(): ShakeReportData {
   return object : ShakeReportData {
     /* From SDK Version 12.0 Quick facts are deprecated, so they're set to
@@ -103,6 +122,7 @@ private fun createShakeReportData(): ShakeReportData {
     }
   }
 }
+// highlight-end
 ```
 
 </TabItem>
@@ -125,8 +145,10 @@ However, you can choose to display a small and non-intrusive message saying
 <TabItem value="java">
 
 ```java title="App.java"
+// highlight-start
 ShakeReportConfiguration configuration = new ShakeReportConfiguration();
 configuration.showReportSentMessage = true;
+// highlight-end
 ```
 
 </TabItem>
@@ -134,8 +156,10 @@ configuration.showReportSentMessage = true;
 <TabItem value="kotlin">
 
 ```kotlin title="App.kt"
+// highlight-start
 val configuration = ShakeReportConfiguration()
 configuration.showReportSentMessage = true
+// highlight-end
 ```
 
 </TabItem>

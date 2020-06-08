@@ -15,18 +15,22 @@ To customize invocation events, pass `ShakeInvocationEvent` to `Shake.setInvocat
 method when starting the SDK.
 
 ```javascript title="App.js"
+// highlight-start
 Shake.setInvocationEvents([
     ShakeInvocationEvent.SHAKE,
     ShakeInvocationEvent.SCREENSHOT])
+// highlight-end
 ```
 
 Here’s a list of all available ones below, feel free to use any combination of these.
 
 ```javascript title="App.js"
+// highlight-start
 Shake.setInvocationEvents([
     ShakeInvocationEvent.SHAKE,
     ShakeInvocationEvent.BUTTON,
     ShakeInvocationEvent.SCREENSHOT])
+// highlight-end
 ```
 
 :::note

@@ -19,6 +19,7 @@ So let's suppose you want to allow Shake to your users, but not to guests. You w
 ```javascript title="App.js"
 loggedInSuccessfully = (user) => {
   if (user.type !== "GUEST") {
+    // highlight-next-line
     Shake.start()
   }
 }
@@ -36,6 +37,7 @@ So let's suppose you want to allow Shake to your users, but not to guests. You w
 ```javascript title="App.js"
 loggedInSuccessfully = (user) => {
   if (user.type === "GUEST") {
+    // highlight-next-line
     Shake.stop()
   }
 }

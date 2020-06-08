@@ -30,9 +30,10 @@ import TabItem from '@theme/TabItem';
 
 <TabItem value="objectivec">
 
-```objectivec {3} title="AppDelegate.m"
+```objectivec title="AppDelegate.m"
 (void) loggedInSuccessfullyWithUser: (User *) user {
   if (user.kind != UserKindGuest) {
+    // highlight-next-line
     [SHKShake stop];
   }
 }
@@ -42,9 +43,10 @@ import TabItem from '@theme/TabItem';
 
 <TabItem value="swift">
 
-```swift {3} title="AppDelegate.swift"
+```swift title="AppDelegate.swift"
 override fun loggedInSuccessfully(user: User) {
   if user.kind != .guest  {
+    // highlight-next-line
     Shake.start();
   }
 }
@@ -73,9 +75,10 @@ So let's suppose you want to allow Shake to your users, but not to guests. You w
 
 <TabItem value="objectivec">
 
-```objectivec {3} title="AppDelegate.m"
+```objectivec title="AppDelegate.m"
 (void) loggedInSuccessfullyWithUser: (User *) user {
   if (user.kind == UserKindGuest) {
+    // highlight-next-line
     [SHKShake stop];
   }
 }
@@ -85,9 +88,10 @@ So let's suppose you want to allow Shake to your users, but not to guests. You w
 
 <TabItem value="swift">
 
-```swift {3} title="AppDelegate.swift"
+```swift title="AppDelegate.swift"
 override fun loggedInSuccessfully(user: User) {
   if user.kind == .guest  {
+    // highlight-next-line
     Shake.stop();
   }
 }
