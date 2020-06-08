@@ -18,7 +18,7 @@ pipelines:
             - pipe: atlassian/aws-cloudfront-invalidate:0.3.2
               variables:
                 DISTRIBUTION_ID: "$DISTRIBUTION_ID"
-                PATHS: "/index.html /assets/*"
+                PATHS: "/*"
     master:
       - step:
           name: Deploy to S3
@@ -35,4 +35,4 @@ pipelines:
             - pipe: atlassian/aws-cloudfront-invalidate:0.3.2
               variables:
                 DISTRIBUTION_ID: "$DISTRIBUTION_ID"
-                PATHS: "/index.html /assets/*"
+                PATHS: "/*"
