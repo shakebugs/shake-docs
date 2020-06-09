@@ -2,6 +2,8 @@
 id: metadata
 title: Metadata
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 This page explains how to send a value of any variable you wish from a user's app to your web Dashboard.
 
 ## Introduction
@@ -11,7 +13,11 @@ It's a String pair which you can shape any way you want, and you can put anythin
 
 You can find Metadata below [Blackbox](android/blackbox.md) on the web Dashboard, as shown below:
 
-![Metadata screen](/screens/metadata_screen.png)
+<img
+  alt="Metadata screen"
+  src={useBaseUrl('screens/metadata_screen.png')}
+/>
+
 
 ## Usage
 Call the `Shake.setMetadata()` method passing your desired data you want to 

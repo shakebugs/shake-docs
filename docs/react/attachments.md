@@ -2,6 +2,8 @@
 id: attachments
 title: Attachments
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 This page explains how to instruct the SDK to attach a file to your bug report and send it to your web Dashboard.
 
 ## Introduction
@@ -10,7 +12,11 @@ However, you can instruct Shake SDK to create and attach custom files that you n
 XMPP logs, a user's profile photo, or whatever you might want to inspect later on.
  All attached files will appear in the center of your web Dashboard.
 
-![Attachments screen](/screens/attachments_screen.png)
+<img
+  alt="Attachments screen"
+  src={useBaseUrl('screens/attachments_screen.png')}
+/>
+
 
 ## Methods
 ### Attaching a file with a default name

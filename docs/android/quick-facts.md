@@ -2,6 +2,8 @@
 id: quick-facts
 title: Quick facts
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 :::warning
 
 From SDK Version 12.0 Quick facts are deprecated, please use [Metadata](android/metadata.md) instead.
@@ -15,7 +17,11 @@ It's a text object which you can shape any way you want, and you can put anythin
 
 This is where you will see Quick facts on your web Dashboard:
 
-![Quick facts screen](/screens/quick_facts_screen.png)
+<img
+  alt="Quick facts screen"
+  src={useBaseUrl('screens/quick_facts_screen.png')}
+/>
+
 
 ## Usage
 Call the `Shake.setQuickFacts()` method passing your quick facts as a text 

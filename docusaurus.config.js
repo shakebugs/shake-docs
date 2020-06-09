@@ -2,7 +2,7 @@ module.exports = {
   title: 'We focus on one thing only. Bug reporting.',
   tagline: 'And that dedication is why teams put us in their apps time and time again.',
   url: 'https://www.shakebugs.com/',
-  baseUrl: '/',
+  baseUrl: '/docs/',
   favicon: 'img/favicon.ico',
   organizationName: 'shakebugs', // Usually your GitHub org/user name.
   projectName: 'shake-docs', // Usually your repo name.
@@ -18,7 +18,7 @@ module.exports = {
       },
       links: [
         {
-          to: 'docs/android/setup',
+          to: 'android/setup',
           activeBasePath: 'docs',
           label: 'Docs',
           position: 'left',
@@ -38,15 +38,15 @@ module.exports = {
           items: [
             {
               label: 'Android',
-              to: 'docs/android/setup',
+              to: 'android/setup',
             },
             {
               label: 'iOS',
-              to: 'docs/ios/setup',
+              to: 'ios/setup-cocoapods',
             },
             {
               label: 'React Native',
-              to: 'docs/react/setup',
+              to: 'react/setup',
             },
           ],
         },
@@ -55,7 +55,7 @@ module.exports = {
           items: [
             {
               label: 'Demo',
-              href: 'https://demo.shakebugs.com/shyp-agency/772GYQPA/5',
+              href: 'https://demo.shakebugs.com',
             },
             {
               label: 'Plans',
@@ -88,10 +88,6 @@ module.exports = {
           title: 'Resources',
           items: [
             {
-              label: 'Documentation',
-              href: '#',
-            },
-            {
               label: 'Help center',
               href: 'https://help.shakebugs.com/',
             },
@@ -110,11 +106,8 @@ module.exports = {
       '@docusaurus/preset-classic',
       {
         docs: {
-          // It is recommended to set document id as docs home page (`docs/` path).
+          routeBasePath: '/',
           sidebarPath: require.resolve('./sidebars.js'),
-          // Please change this to your repo.
-          editUrl:
-            'https://bitbucket.org/decodehq/shake-docs',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),

@@ -2,6 +2,8 @@
 id: quick-facts
 title: Quick facts
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 This page explains how to send a value of any variable you wish from a user's app to your web Dashboard.
 
 ## Introduction
@@ -11,7 +13,11 @@ It's a text object which you can shape any way you want, and you can put anythin
 
 This is where you will see Quick facts on your web Dashboard:
 
-![Quick facts screen](/screens/quick_facts_screen.png)
+<img
+  alt="Quick facts screen"
+  src={useBaseUrl('screens/quick_facts_screen.png')}
+/>
+
 
 ## Usage
 To set the Quick facts, call the `Shake.setQuickFacts()` method passing your Quick facts as a text 
