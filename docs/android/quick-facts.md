@@ -4,7 +4,7 @@ title: Quick facts
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-:::warning
+:::caution
 
 From SDK Version 12.0 Quick facts are deprecated, please use [Metadata](/android/metadata.md) instead.
 
