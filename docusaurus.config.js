@@ -25,8 +25,8 @@ module.exports = {
           position: 'left',
         },
         {
-          href: 'https://bitbucket.org/decodehq/shake-docs/src/master/',
-          label: 'Bitbucket',
+          href: 'https://app.shakebugs.com/',
+          label: 'Dashboard',
           position: 'right',
         },
       ],
