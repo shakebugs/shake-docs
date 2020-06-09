@@ -13,6 +13,7 @@ definitions:
             variables:
               S3_BUCKET: "$BUCKET_NAME"
               LOCAL_PATH: "build"
+              FOLDER: "docs"
           - pipe: atlassian/aws-cloudfront-invalidate:0.3.2
             variables:
               DISTRIBUTION_ID: "$DISTRIBUTION_ID"
