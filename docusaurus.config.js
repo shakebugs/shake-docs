@@ -8,6 +8,7 @@ module.exports = {
   projectName: 'shake-docs', // Usually your repo name.
   themeConfig: {
     prism: {
+      theme: require('prism-react-renderer/themes/dracula'),
       additionalLanguages: ['groovy', 'kotlin', 'java', 'swift'],
     },
     navbar: {
