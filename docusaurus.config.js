@@ -11,7 +11,12 @@ module.exports = {
       theme: require('prism-react-renderer/themes/dracula'),
       additionalLanguages: ['groovy', 'kotlin', 'java', 'swift'],
     },
+    algolia: {
+      apiKey: 'api-key',
+      indexName: 'index-name',
+    },
     navbar: {
+      hideOnScroll: true,
       title: 'Shake',
       logo: {
         alt: 'Shake logo',
