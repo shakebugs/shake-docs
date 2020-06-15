@@ -8,6 +8,7 @@ module.exports = {
   projectName: 'shake-docs', // Usually your repo name.
   themeConfig: {
     prism: {
+      theme: require('prism-react-renderer/themes/dracula'),
       additionalLanguages: ['groovy', 'kotlin', 'java', 'swift'],
     },
     navbar: {
@@ -24,8 +25,8 @@ module.exports = {
           position: 'left',
         },
         {
-          href: 'https://bitbucket.org/decodehq/shake-docs/src/master/',
-          label: 'Bitbucket',
+          href: 'https://app.shakebugs.com/',
+          label: 'Dashboard',
           position: 'right',
         },
       ],

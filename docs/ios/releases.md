@@ -11,7 +11,7 @@ February 14, 2020
 
 **What's new**
 
-Shake is now fully equipped to track user’s full [Activity history](ios/activity.md) — 
+Shake is now fully equipped to track user’s full [Activity history](/ios/activity.md) — 
 browse user's interactions with your app, their network requests and system events prior to a bug being reported.
 
 **Resolved issues**
@@ -39,7 +39,7 @@ Shake now officially, and nicely, works on your tablet apps
 
 Putting our best foot forward. 
 Just like before an airplane crash, Shake now records a user's detailed environment profile covering the last 60 seconds 
-before a bug was submitted. This feature is called — you’ve guessed it — [Black box](ios/blackbox.md).
+before a bug was submitted. This feature is called — you’ve guessed it — [Black box](/ios/blackbox.md).
 
 **Resolved issues**
 
@@ -52,7 +52,7 @@ June 24, 2019
 
 Shake is now a tiny bit cooler because you can also use it in landscape mode.
 
-With [Quick facts](android/quick-facts.md), you can now send a value of literally any variable from a user's app to your web Dashboard.
+With [Quick facts](/android/quick-facts.md), you can now send a value of literally any variable from a user's app to your web Dashboard.
 
 ### 5.0
 May 29, 2019
@@ -106,7 +106,7 @@ January 28, 2019
 **What's new**
 
 If your users want to report bugs by taking a screenshot — instead of shaking their phone — you are all in luck 
-because Shake SDK can now be invoked that way too. Head over to [Invoke](ios/invoke.md) to choose your desired SDK invoke gesture.
+because Shake SDK can now be invoked that way too. Head over to [Invoke](/ios/invoke.md) to choose your desired SDK invoke gesture.
 
 **Resolved issues**
 

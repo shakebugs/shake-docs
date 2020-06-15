@@ -18,6 +18,6 @@ and these include data like user's OS, location, memory status, etc.
 
 ## Custom data
 If you want the SDK to attach any other variable to your bug reports, 
-you can absolutely do that as well! Read about sending custom data with [Quick facts](react/quick-facts.md).
+you can absolutely do that as well! Read about sending custom data with [Quick facts](/react/quick-facts.md).
 
-Do you also want to attach custom files, like images? Visit [Attachments](react/attachments.md).
+Do you also want to attach custom files, like images? Visit [Attachments](/react/attachments.md).

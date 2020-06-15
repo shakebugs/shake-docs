@@ -4,14 +4,14 @@ title: Quick facts
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-:::warning
+:::caution
 
-From SDK Version 12.0 Quick facts are deprecated, please use [Metadata](android/metadata.md) instead.
+From SDK Version 12.0 Quick facts are deprecated, please use [Metadata](/android/metadata.md) instead.
 
 :::
 
 ## Introduction
-Every app is unique so the [Essentials](android/essentials.md) sent with each bug report are often not enough. 
+Every app is unique so the [Essentials](/android/essentials.md) sent with each bug report are often not enough. 
 That's why the Shake SDK allows you to send yourself any custom data from the app using Quick facts.
 It's a text object which you can shape any way you want, and you can put anything you want into it.
 
