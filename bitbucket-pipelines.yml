@@ -16,7 +16,7 @@ definitions:
           - pipe: atlassian/aws-cloudfront-invalidate:0.3.2
             variables:
               DISTRIBUTION_ID: "$DISTRIBUTION_ID"
-              PATHS: "/*"
+              PATHS: "/docs/*"
 pipelines:
   branches:
     uat:
