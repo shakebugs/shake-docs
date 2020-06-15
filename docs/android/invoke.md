@@ -192,3 +192,10 @@ Because of that, if you opt for this invocation method, the storage permission w
 :::
 
 4. **Right Edge Pan** - Invoke Shake with a one-finger swiping gesture from the right edge of the screen.
+
+:::note
+
+The right edge pan gesture won’t work if performed over a ListView or ScrollView.
+You can use one of the alternative ways to invoke Shake instead.
+
+:::
