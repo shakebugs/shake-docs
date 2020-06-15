@@ -23,3 +23,30 @@
   margin: 0 calc(-1 * var(--ifm-pre-padding));
   padding: 0 var(--ifm-pre-padding);
 }
+
+@font-face {
+  font-family: 'Inconsolata';
+  src: url('/docs/fonts/Inconsolata.ttf');
+}
+
+@font-face {
+  font-family: 'HKGrotesk-Regular';
+  src: url('/docs/fonts/HKGrotesk-Regular.otf');
+}
+
+@font-face {
+  font-family: 'HKGrotesk-SemiBold';
+  src: url('/docs/fonts/HKGrotesk-SemiBold.otf');
+}
+
+body {
+  font-family: "HKGrotesk-Regular";
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "HKGrotesk-SemiBold";
+}
+
+div[class*='codeBlock'], code{
+  font-family: "Inconsolata";
+}
