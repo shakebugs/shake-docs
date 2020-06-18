@@ -20,8 +20,11 @@ This is where you will see Quick facts on your web Dashboard:
 
 
 ## Usage
-To set the Quick facts, call the `Shake.setQuickFacts()` method passing your Quick facts as a text 
-containing data you want to receive on your web Dashboard.
+To set the Quick facts, use the following method  
+`
+Shake.setShakeReportData(ReadableArray filesArray, String quickFacts)
+`  
+Pass your Quick facts as a text containing data you want to receive on your web Dashboard.
  
 You can set quick facts anywhere within your app, but be careful because any 
 subsequent calls with the same key will override the former text value.
@@ -34,7 +37,7 @@ onLoginPress = async (username, password) => {
   const user = await login(username, password);
   if (user) {
     // highlight-next-line
-    Shake.setQuickFacts("Logged user: " + user.id);
+    Shake.setShakeReportData([], "Logged user: " + user.id);
     navigateToHome();
   } else {
     console.log("Wrong credentials.");

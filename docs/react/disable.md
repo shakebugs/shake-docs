@@ -8,7 +8,7 @@ For example, maybe you're building a new Airbnb and want hosts to be able to rep
 but don't want to show Shake to the guests. You can user enable and disable methods to accomplish that requirement.
 
 ## Enable
-Call the `Shake.start()` if you want to enable Shake in your application.
+Call the `Shake.setEnabled` if you want to enable Shake in your application.
 
 Shake will be enabled immediately, which means:
 1. Shake can be invoked
@@ -20,15 +20,15 @@ So let's suppose you want to allow Shake to your users, but not to guests. You w
 loggedInSuccessfully = (user) => {
   if (user.type !== "GUEST") {
     // highlight-next-line
-    Shake.start()
+    Shake.setEnabled(true)
   }
 }
 ```     
 
 ## Disable
-Call the `Shake.stop()` if you want to disable Shake in your application.
+Call the `Shake.setEnabled()` if you want to disable Shake in your application.
  
-Shake will be disabled immediately, which means:
+Shake will be immediately disabled, which means:
 1. Shake can't be invoked any more
 1. Shake stops tracking all data
 
@@ -38,7 +38,7 @@ So let's suppose you want to allow Shake to your users, but not to guests. You w
 loggedInSuccessfully = (user) => {
   if (user.type === "GUEST") {
     // highlight-next-line
-    Shake.stop()
+    Shake.setEnabled(false)
   }
 }
 ```                    

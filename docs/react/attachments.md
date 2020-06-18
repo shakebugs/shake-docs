@@ -24,7 +24,7 @@ Files can be attached with an absolute file path to your file.
 If you attach files this way, the filename shown on the web Dashboard 
 will be determined automatically from the passed file's name.
 
-To attach files this way, call the `Shake.attachFiles()` method as shown in the example below.
+To attach files this way, call the `Shake.setShakeReportData` method as shown in the example below.
 Be careful though, any subsequent calls will override former ones already in place: 
 
 ```javascript title="App.js"
@@ -38,7 +38,7 @@ attachLogFile = (data) => {
     .then((success) => {
       console.log('File written');
       // highlight-next-line
-      Shake.attachFiles([path]);
+      Shake.setShakeReportData([path], 'quick facts');
     })
     .catch((error) => {
         console.log('Failed to create log file');
@@ -49,7 +49,7 @@ attachLogFile = (data) => {
 ### Attaching a file with a custom name
 Files can be attached with the desired filename and an absolute file path to your file.
 
-In order to attach files this way, call `Shake.attachFilesWithName()` method as shown in the example below. 
+In order to attach files this way, call `Shake.setShakeReportData` method as shown in the example below. 
 But be careful only to call it once, since any subsequent calls will override the former ones.
 
 ```javascript title="App.js"
@@ -63,9 +63,12 @@ attachLogFile = (data) => {
     .then((success) => {
       console.log('File written');
       // highlight-start
-      Shake.attachFilesWithName({
-        "log": path
-      });
+      const setReportData = () => {
+        Shake.setShakeReportData([
+        ShakeFile.create(path),
+        ShakeFile.create(path, "customName")
+        ], "Test quick facts");
+      };
       // highlight-end
     })
     .catch((error) => {

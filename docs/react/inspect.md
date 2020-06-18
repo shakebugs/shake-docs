@@ -14,3 +14,12 @@ Your users can inspect a bug — see its [Essentials](/react/essentials.md) and 
   src={useBaseUrl('screens/inspect_screen.png')}
 />
 
+![Inspect screen](/screens/inspect_screen.png)
+
+### Disable
+Inspect screen can be disabled using method shown below.  
+```javascript
+//highlight-next-line
+Shake.setEnableInspectScreen(false)
+```
+

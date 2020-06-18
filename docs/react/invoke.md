@@ -2,46 +2,32 @@
 id: invoke
 title: Invoke
 ---
-This page describes in detail all the different methods that can be used to invoke the SDK.
+There are various ways of invoking and interacting with the Shake SDK.
 
 ## Invoking
-By default, the SDK is invoked when a user shakes their device.
-You don't need to code anything, but if you want to, you can customize that.
+By default, Shake SDK can be invoked using Shake's "Bug" button, which appears automatically when you start Shake.
+There are two other Shake invocation events described below.  
+You can invoke Shake SDK either by shaking the device, or taking a screenshot. 
+To customize invocation behaviour you have the following 3 methods at your disposal.
 
-Let's look at an example.
+`Shake.setShowFloatingReportButton(bool showFloatingReportButton)
+`
+`Shake.setInvokeShakeOnShaking(bool invokeOnShake)
+`
+`Shake.setInvokeShakeOnScreenshot(bool invokeOnScreenshot)
+`
 
-You want your users to invoke SDK either when they shake their device, or when they take a screenshot. 
-To customize invocation events, pass `ShakeInvocationEvent` to `Shake.setInvocationEvents()` 
-method when starting the SDK.
-
+For example if you'd like to use all of the invocation events mentioned above you can enable them like this
 ```javascript title="App.js"
 // highlight-start
-Shake.setInvocationEvents([
-    ShakeInvocationEvent.SHAKE,
-    ShakeInvocationEvent.SCREENSHOT])
+Shake.setShowFloatingReportButton(true);
+Shake.setInvokeShakeOnShaking(true);
+Shake.setInvokeShakeOnScreenshot(true);
 // highlight-end
 ```
-
-Here’s a list of all available ones below, feel free to use any combination of these.
-
-```javascript title="App.js"
-// highlight-start
-Shake.setInvocationEvents([
-    ShakeInvocationEvent.SHAKE,
-    ShakeInvocationEvent.BUTTON,
-    ShakeInvocationEvent.SCREENSHOT])
-// highlight-end
-```
-
-:::note
-
-In order for the `Shake.setInvocationEvents` method to work as intended on Android, 
-you first need to call `Shake.stop()` and then `Shake.start()` once you’ve set the desired invocation method.
-
-:::
 
 ## Actions
-1. **Shake** - the default, shaking gesture causes the SDK to pop up.
-1. **Button** - this invocation event will create the floating button on top of your app's UI which users can clearly see at all times.
+1. **Shake** - shaking gesture causes the SDK to pop up.
+1. **Button** - default action, creates the floating button on top of your app's UI which users can clearly see at all times.
  This button can be dragged to a more suitable position.
 1. **Screenshot** - the SDK will be invoked when users make a screenshot while using your app.

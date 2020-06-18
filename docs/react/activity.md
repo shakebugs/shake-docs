@@ -17,6 +17,12 @@ A link to Activity history is located in the top right corner:
 />
 
 
+### Disable
+Activity history can be disabled as shown below.  
+```javascript
+//highlight-next-line
+Shake.setEnableActivityHistory(false)
+```
 ## Android
 ### User actions
 User actions are tracked automatically and require no additional setup.
