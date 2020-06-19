@@ -42,7 +42,13 @@ App orientation is captured every 2 seconds.
 
 ## Disabling
 Black box is enabled by default, however, you can use the method below to disable it.
+
 ```javascript title="App.js"
 // highlight-next-line
-Shake.setEnableBlackBox(false)
+import Shake from '@shakebugs/react-native-shake';
+
+const disableBlackbox = () => {
+    // highlight-next-line
+    Shake.setEnableBlackBox(false)
+}
 ```
