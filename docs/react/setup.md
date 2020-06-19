@@ -3,7 +3,7 @@ id: setup
 title: Setup
 ---
 ## Install
-Execute the npm install command in your terminal: 
+Execute the npm install command in your terminal:
 
 ```bash title="Terminal"
 // highlight-next-line
@@ -36,7 +36,7 @@ cd ios && pod install && cd ..
 Normally, initialization is done using `react-native link @shakebugs/react-native-shake` or `react-native add-shake` commands.
 If you want to initialize Shake manually, you can do it following way.
 
-Include Shake maven repository to your project-level build.gradle file: 
+Include Shake maven repository to your project-level build.gradle file:
 
 ```groovy title="build.gradle"
 allprojects {
@@ -60,12 +60,12 @@ allprojects {
 }
 ```
 
-Add the following dependency to your app-level Build.gradle file: 
+Add the following dependency to your app-level Build.gradle file:
 
 ```groovy title="app/build.gradle"
 dependencies {
   // highlight-next-line
-  implementation 'com.shakebugs.android:shake:9.0.+'
+  implementation 'com.shakebugs.android:shake:10.0.+'
   ...
 }
 ```
@@ -77,44 +77,41 @@ defaultConfig {
   applicationId "com.shakebugs.react.example"
   minSdkVersion rootProject.ext.minSdkVersion
   targetSdkVersion rootProject.ext.targetSdkVersion
-  versionCode 6
-  versionName "2.3.2"
+  versionCode 1
+  versionName "1.0.0"
   // highlight-next-line
   multiDexEnabled true
 }
 ```
 
-Set an invocation event and initialize the SDK: 
+Set an invocation event and initialize the SDK:
 
 ```java title="MainApplication.java"
-// highlight-start
-import com.shakebugs.shake.Shake;
-import com.shakebugs.shake.ShakeInvocationEvent;
-// highlight-end                            
+// highlight-next-line
+import com.shakebugs.shake.Shake;                         
 
 @Override
 public void onCreate() {
  super.onCreate();
  SoLoader.init(this, /* native exopackage */ false);
  initializeFlipper(this, getReactNativeHost().getReactInstanceManager());
- // highlight-start
- Shake.setInvocationEvents(ShakeInvocationEvent.BUTTON);
+ // highlight-next-line
  Shake.start(this);
-// highlight-end
 }
-``` 
+```
 
-Now build your project and see everything work! This first run will automatically add your app 
+Now build your project and see everything work! This first run will automatically add your app
 to your [Shake Dashboard](https://app.shakebugs.com) based on your app bundle ID.
 
 ### iOS
 Call `Shake.start()` method whenever you want to enable Shake:
 
 ```javascript title="App.js"
-Import React, {Component} from 'react';
+import React, {Component} from 'react';
+import {View} from 'react-native';
 // highlight-next-line
-import Shake, {ShakeInvocationEvent} from '@shakebugs/react-native-shake';
-Import {View} from 'react-native';
+import Shake from '@shakebugs/react-native-shake';
+
 export default class App extends Component<{}> {
 	componentDidMount() {
         // highlight-next-line
@@ -131,10 +128,10 @@ export default class App extends Component<{}> {
 
 This first run will automatically add your app to your [Shake Dashboard](https://app.shakebugs.com) based on your app bundle ID.
 
-## Add Client ID and Client secret key 
+## Add Client ID and Client secret key
 
 ### Android
-Open your AndroidManifest.xml file. Paste this and replace `sign-in-to-see-your-api-client-id-here`and 
+Open your AndroidManifest.xml file. Paste this and replace `sign-in-to-see-your-api-client-id-here`and
 `sign-in-to-see-your-api-client-secret-here` with the actual values you have in Your settings.
 
 ```xml title="AndroidManifest.xml"
@@ -164,8 +161,8 @@ Open your AndroidManifest.xml file. Paste this and replace `sign-in-to-see-your-
 ```
 
 ### iOS
-Open your workspace and in the `Project Navigator`, right click on `Info.plist`, and `Open as › Source code`. 
-Paste this but replace `sign-in-to-see-your-api-client-id-here` and `sign-in-to-see-your-api-client-secret-here` 
+Open your workspace and in the `Project Navigator`, right click on `Info.plist`, and `Open as › Source code`.
+Paste this but replace `sign-in-to-see-your-api-client-id-here` and `sign-in-to-see-your-api-client-secret-here`
 with the actual values you have in Your settings.
 
 ```xml title="Info.plist"
@@ -227,7 +224,7 @@ Update the `getPackages()` method:
 
 ### iOS
 
-After executing npm install, find `Shake.xcodeproj` in `$rootDir/node_modules/react-native/shake/ios/`. 
-Add it to the `Libraries` folder of your app project. 
+After executing npm install, find `Shake.xcodeproj` in `$rootDir/node_modules/react-native/shake/ios/`.
+Add it to the `Libraries` folder of your app project.
 
-Navigate to the `Building phases` tab and add `libShake.a` to the `Link Binary With Libraries` section. 
+Navigate to the `Building phases` tab and add `libShake.a` to the `Link Binary With Libraries` section.

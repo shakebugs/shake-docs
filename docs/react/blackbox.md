@@ -1,13 +1,18 @@
 ---
-id: black-box
+id: blackbox
 title: Black box
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 Just like before an airplane crash, Shake records a detailed environment profile covering the last 60 seconds before a bug was submitted.
 
 ## Introduction
 Black box includes device and app data, like memory load and connectivity status. You'll find the charts right below the screenshot.
 
-![Black box screen](/screens/blackbox_screen.png)
+<img
+  alt="Blackbox screen"
+  src={useBaseUrl('screens/blackbox_screen.png')}
+/>
 
 ## What do charts show?
 ### Device memory usage
@@ -35,8 +40,9 @@ This chart shows the orientation state of your app, such as whether the app is i
 
 App orientation is captured every 2 seconds.
 
-## Enabling and disabling
+## Disabling
 Black box is enabled by default, however, you can use the method below to disable it.
-```javascript
-Shake.setBlackBoxEnabled(false)
+```javascript title="App.js"
+// highlight-next-line
+Shake.setEnableBlackBox(false)
 ```

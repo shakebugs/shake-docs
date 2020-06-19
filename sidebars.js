@@ -64,7 +64,7 @@ module.exports = {
                     'react/essentials',
                     'react/attachments',
                     'react/quick-facts',
-                    'react/black-box'
+                    'react/blackbox'
                 ]
             },
             'react/react-releases'

@@ -4,11 +4,11 @@ title: Activity history
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Shake diligently tracks user's interaction with your app, their network traffic and system events, 
+Shake diligently tracks user's interaction with your app, their network traffic and system events,
 and automatically attaches all of those to every bug report.
 
 ## Introduction
-You can inspect all events that lead to a bug being reported. 
+You can inspect all events that lead to a bug being reported.
 A link to Activity history is located in the top right corner:
 
 <img
@@ -16,19 +16,12 @@ A link to Activity history is located in the top right corner:
   src={useBaseUrl('screens/activity_screen.png')}
 />
 
-
-### Disable
-Activity history can be disabled as shown below.  
-```javascript
-//highlight-next-line
-Shake.setEnableActivityHistory(false)
-```
 ## Android
 ### User actions
 User actions are tracked automatically and require no additional setup.
 
 ### Network requests
-If you want to see a user's network traffic, add the following import and enable the network tracker: 
+If you want to see a user's network traffic, add the following import and enable the network tracker:
 
 ```javascript title="App.js"
 import React, {Component} from 'react';
@@ -71,3 +64,9 @@ In a Free workspace, you can see up to 20 events that lead to every bug.
   In a Premium workspace you can browse the entire activity history.
 :::
 
+## Disabling
+Activity history is enabled by default, however, you can use the method below to disable it:
+```javascript
+//highlight-next-line
+Shake.setEnableActivityHistory(false)
+```
