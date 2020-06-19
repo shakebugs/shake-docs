@@ -15,12 +15,33 @@ To customize invocation behaviour you have the following 3 methods at your dispo
 
 
 For example if you'd like to use all of the invocation events mentioned above you can enable them like this
+
 ```javascript title="App.js"
-// highlight-start
-Shake.setShowFloatingReportButton(true);
-Shake.setInvokeShakeOnShaking(true);
-Shake.setInvokeShakeOnScreenshot(true);
-// highlight-end
+// highlight-next-line
+import Shake from '@shakebugs/react-native-shake';
+
+const setInvocationActions = () => {
+    // highlight-start
+    Shake.setShowFloatingReportButton(true);
+    Shake.setInvokeShakeOnShaking(true);
+    Shake.setInvokeShakeOnScreenshot(true);
+    // highlight-end
+}
+```
+
+You can also check which of these action are enabled:
+
+```javascript title="App.js"
+// highlight-next-line
+import Shake from '@shakebugs/react-native-shake';
+
+const getInvocationActions = async () => {
+    // highlight-start
+    await Shake.isShowFloatingReportButton();
+    await Shake.isInvokeShakeOnShaking();
+    await Shake.isInvokeShakeOnScreenshot();
+    // highlight-end
+}
 ```
 
 ## Actions
