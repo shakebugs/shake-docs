@@ -39,11 +39,10 @@ Here’s an example:
 // highlight-next-line
 import Shake from '@shakebugs/react-native-shake';
 
-// highlight-start
-const runShakeSdk = () => {
+const reportBug = () => {
+    // highlight-next-line
     Shake.show();
 }
-// highlight-end
 ```
 
 

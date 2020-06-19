@@ -21,7 +21,7 @@ A link to Activity history is located in the top right corner:
 User actions are tracked automatically and require no additional setup.
 
 ### Network requests
-If you want to see a user's network traffic, add the following import and enable the network tracker:
+Network reuqests tracking is enabled by default, but if you want you can change that:
 
 ```javascript title="App.js"
 import React, {Component} from 'react';
@@ -30,9 +30,14 @@ import {Text, View} from 'react-native';
 import {NetworkTracker} from '@shakebugs/react-native-shake';
 
 export default class App extends Component<{}> {
-  componentDidMount() {
+  const enableNetworkTracker = () => {
     // highlight-next-line
-    NetworkTracker.enable();
+    NetworkTracker.setEnabled(true);
+  }
+  
+  const disableNetworkTracker = () => {
+    // highlight-next-line
+    NetworkTracker.setEnabled(false);
   }
   
   render () {
@@ -66,7 +71,13 @@ In a Free workspace, you can see up to 20 events that lead to every bug.
 
 ## Disabling
 Activity history is enabled by default, however, you can use the method below to disable it:
-```javascript
-//highlight-next-line
-Shake.setEnableActivityHistory(false)
+
+```javascript title="App.js"
+// highlight-next-line
+import Shake from '@shakebugs/react-native-shake';
+
+const disableActivityHistory = () => {
+    // highlight-next-line
+    Shake.setEnableActivityHistory(false)
+}
 ```

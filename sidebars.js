@@ -57,6 +57,7 @@ module.exports = {
                 "items": [
                     'react/invoke',
                     'react/disable',
+                    'react/silent-reports',
                     'react/inspect',
                     'react/screenshot',
                     'react/permissions',
