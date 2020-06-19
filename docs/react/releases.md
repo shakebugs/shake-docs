@@ -11,5 +11,5 @@ June 17, 2020
 
 **What's new**
 
-You can now use Shake React Native SDK in the React Native applications. Check [Setup](react/setup.md) guide and follow step by step
+You can now use Shake React Native SDK in the React Native applications. Check [Setup](/react/setup.md) guide and follow step by step
 guide to integrate Shake SDK into your React Native application.

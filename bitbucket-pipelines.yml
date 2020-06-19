@@ -11,12 +11,12 @@ definitions:
           - npm run build
           - pipe: atlassian/aws-s3-deploy:0.4.3
             variables:
-              S3_BUCKET: "$BUCKET_NAME"
+              S3_BUCKET: "$BUCKET_NAME/docs"
               LOCAL_PATH: "build"
           - pipe: atlassian/aws-cloudfront-invalidate:0.3.2
             variables:
               DISTRIBUTION_ID: "$DISTRIBUTION_ID"
-              PATHS: "/*"
+              PATHS: "/docs/*"
 pipelines:
   branches:
     uat:

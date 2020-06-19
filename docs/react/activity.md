@@ -2,6 +2,8 @@
 id: activity
 title: Activity history
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 Shake diligently tracks user's interaction with your app, their network traffic and system events, 
 and automatically attaches all of those to every bug report.
 
@@ -9,7 +11,11 @@ and automatically attaches all of those to every bug report.
 You can inspect all events that lead to a bug being reported. 
 A link to Activity history is located in the top right corner:
 
-![Activity screen](/screens/activity_screen.png)
+<img
+  alt="Activity screen"
+  src={useBaseUrl('screens/activity_screen.png')}
+/>
+
 
 ## Android
 ### User actions

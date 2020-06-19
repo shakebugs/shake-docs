@@ -2,12 +2,18 @@
 id: inspect
 title: Inspect
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 The Inspect bug screen allows users to see the details of a bug from their device without reporting it.
 
 ## Introduction
-Your users can inspect a bug — see its [Essentials](android/essentials.md) and [Metadata](android/metadata.md) — before submitting it. The Inspect bug screen is part of the SDK Wrap-up screen:
+Your users can inspect a bug — see its [Essentials](/android/essentials.md) and [Metadata](android/metadata.md) — before submitting it. The Inspect bug screen is part of the SDK Wrap-up screen:
 
-![Inspect screen](/screens/inspect_screen.png)
+<img
+  alt="Inspect screen"
+  src={useBaseUrl('screens/inspect_screen.png')}
+/>
+
 
 ## Visiblity
 If you don’t want the screen to show when submitting a bug report, you can hide it using the following method:
