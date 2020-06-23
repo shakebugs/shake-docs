@@ -2,12 +2,18 @@
 id: black-box
 title: Black box
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 Just like before an airplane crash, Shake records a detailed environment profile covering the last 60 seconds before a bug was submitted.
 
 ## Introduction
 Black box includes device and app data, like memory load and connectivity status. You'll find the charts right below the screenshot.
 
-![Black box screen](/screens/blackbox_screen.png)
+<img
+  alt="Inspect screen"
+  src={useBaseUrl('screens/blackbox_screen.png')}
+/>
+
 
 ## What do charts show?
 ### Device memory usage
