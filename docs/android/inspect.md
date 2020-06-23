@@ -15,7 +15,7 @@ Your users can inspect a bug — see its [Essentials](/android/essentials.md) an
 />
 
 
-## Visiblity
+## Visibility
 If you don’t want the screen to show when submitting a bug report, you can hide it using the following method:
 
 import Tabs from '@theme/Tabs';
