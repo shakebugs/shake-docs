@@ -16,10 +16,11 @@ module.exports = {
       logo: {
         alt: 'Shake logo',
         src: 'img/logo.svg',
+        href: 'https://www.shakebugs.com/',
       },
       links: [
         {
-          to: 'android/setup',
+          to: '/',
           activeBasePath: 'docs',
           label: 'Docs',
           position: 'left',

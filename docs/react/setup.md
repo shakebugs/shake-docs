@@ -3,7 +3,7 @@ id: setup
 title: Setup
 ---
 ## Install
-Execute the npm install command in your terminal: 
+Execute the npm install command in your terminal:
 
 ```bash title="Terminal"
 // highlight-next-line
@@ -36,7 +36,7 @@ cd ios && pod install && cd ..
 Normally, initialization is done using `react-native link @shakebugs/react-native-shake` or `react-native add-shake` commands.
 If you want to initialize Shake manually, you can do it following way.
 
-Include Shake maven repository to your project-level build.gradle file: 
+Include Shake maven repository to your project-level build.gradle file:
 
 ```groovy title="build.gradle"
 allprojects {
@@ -60,7 +60,7 @@ allprojects {
 }
 ```
 
-Add the following dependency to your app-level Build.gradle file: 
+Add the following dependency to your app-level Build.gradle file:
 
 ```groovy title="app/build.gradle"
 dependencies {
@@ -84,7 +84,7 @@ defaultConfig {
 }
 ```
 
-Set an invocation event and initialize the SDK: 
+Set an invocation event and initialize the SDK:
 
 ```java title="MainApplication.java"
 // highlight-start
@@ -102,9 +102,9 @@ public void onCreate() {
  Shake.start(this);
 // highlight-end
 }
-``` 
+```
 
-Now build your project and see everything work! This first run will automatically add your app 
+Now build your project and see everything work! This first run will automatically add your app
 to your [Shake Dashboard](https://app.shakebugs.com) based on your app bundle ID.
 
 ### iOS
@@ -131,11 +131,11 @@ export default class App extends Component<{}> {
 
 This first run will automatically add your app to your [Shake Dashboard](https://app.shakebugs.com) based on your app bundle ID.
 
-## Add Client ID and Client secret key 
+## Add Client ID and Secret
 
 ### Android
-Open your AndroidManifest.xml file. Paste this and replace `sign-in-to-see-your-api-client-id-here`and 
-`sign-in-to-see-your-api-client-secret-here` with the actual values you have in Your settings.
+Open your AndroidManifest.xml file. Paste this and replace `your-api-client-id`and
+`your-api-client-secret` with the actual values you have in [your workspace settings](https://app.shakebugs.com/settings/workspace#general).
 
 ```xml title="AndroidManifest.xml"
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
@@ -153,10 +153,10 @@ Open your AndroidManifest.xml file. Paste this and replace `sign-in-to-see-your-
       // highlight-start
       <meta-data                                                             
         android:name="com.shakebugs.APIClientID"
-        android:value="sign-in-to-see-your-api-client-id-here" />
+        android:value="your-api-client-id" />
       <meta-data
         android:name="com.shakebugs.APIClientSecret"
-        android:value="sign-in-to-see-your-api-client-secret-here" />
+        android:value="your-api-client-secret" />
         // highlight-end
   </application>
   <uses-permission android:name="android.permission.INTERNET" />
@@ -164,9 +164,9 @@ Open your AndroidManifest.xml file. Paste this and replace `sign-in-to-see-your-
 ```
 
 ### iOS
-Open your workspace and in the `Project Navigator`, right click on `Info.plist`, and `Open as › Source code`. 
-Paste this but replace `sign-in-to-see-your-api-client-id-here` and `sign-in-to-see-your-api-client-secret-here` 
-with the actual values you have in Your settings.
+Open your workspace and in the `Project Navigator`, right click on `Info.plist`, and `Open as › Source code`.
+Paste this but replace `your-api-client-id` and `your-api-client-secret`
+with the actual values you have in [your workspace settings](https://app.shakebugs.com/settings/workspace#general).
 
 ```xml title="Info.plist"
 <?xml version="1.0" encoding="utf-8" ?>
@@ -176,9 +176,9 @@ with the actual values you have in Your settings.
       <key>Shake</key>
       <dict>
         <key>APIClientID</key>
-        <string>sign-in-to-see-your-api-client-id-here</string>
+        <string>your-api-client-id</string>
         <key>APIClientSecret</key>
-        <string>sign-in-to-see-your-api-client-secret-here</string>
+        <string>your-api-client-secret</string>
       </dict>
       // highlight-end
   </dict>
@@ -227,7 +227,7 @@ Update the `getPackages()` method:
 
 ### iOS
 
-After executing npm install, find `Shake.xcodeproj` in `$rootDir/node_modules/react-native/shake/ios/`. 
-Add it to the `Libraries` folder of your app project. 
+After executing npm install, find `Shake.xcodeproj` in `$rootDir/node_modules/react-native/shake/ios/`.
+Add it to the `Libraries` folder of your app project.
 
-Navigate to the `Building phases` tab and add `libShake.a` to the `Link Binary With Libraries` section. 
+Navigate to the `Building phases` tab and add `libShake.a` to the `Link Binary With Libraries` section.

@@ -6,7 +6,7 @@ We support integrating Shake into your Xcode project using CocoaPods.
 
 :::note
 
-Not using CocoaPods yet? Follow their brief [installation guide](https://guides.cocoapods.org/using/getting-started.html#installation), 
+Not using CocoaPods yet? Follow their brief [installation guide](https://guides.cocoapods.org/using/getting-started.html#installation),
 then run `pod init` in the root of your project and you're done — let's move on.
 
 :::
@@ -47,13 +47,13 @@ pod 'Shake'
 </TabItem>
 </Tabs>
 
-Run the `pod install` command in your terminal. 
+Run the `pod install` command in your terminal.
 After the installation also run `pod update Shake` to be perfectly sure you're using the latest version.
 
-### Add Client ID and Client secret key
+### Add Client ID and Secret
 Open your workspace and in the Project Navigator, right click on `Info.plist`, and `Open as › Source code`.
-Paste this but replace `sign-in-to-see-your-api-client-id-here` and `sign-in-to-see-your-api-client-secret-here` 
-with the actual values you have in [Your settings](https://app.shakebugs.com/settings/workspace#general).
+Paste this but replace `your-api-client-id` and `your-api-client-secret`
+with the actual values you have in [your workspace settings](https://app.shakebugs.com/settings/workspace#general).
 
 ```xml title="Info.plist"
 <?xml version="1.0" encoding="utf-8" ?>
@@ -63,9 +63,9 @@ with the actual values you have in [Your settings](https://app.shakebugs.com/set
       <key>Shake</key>
       <dict>
         <key>APIClientID</key>
-        <string>sign-in-to-see-your-api-client-id-here</string>
+        <string>your-api-client-id</string>
         <key>APIClientSecret</key>         
-        <string>sign-in-to-see-your-api-client-secret-here</string>
+        <string>your-api-client-secret</string>
       </dict>
       // highlight-end
   </dict>
@@ -122,5 +122,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 </TabItem>
 </Tabs>
 
-Now select `Product › Run` in the menu bar. This first run will automatically 
+Now select `Product › Run` in the menu bar. This first run will automatically
 add your app to your Shake Dashboard based on your app bundle ID.
