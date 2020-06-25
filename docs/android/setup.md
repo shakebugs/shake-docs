@@ -1,13 +1,11 @@
 ﻿---
 id: setup
-title: Setup
+title: Install Shake
 ---
 This page describes how to install the Shake SDK into your Android application via Gradle.
 Whether you are using Java or Kotlin, you can follow the steps below.
 
-##  Install
-Add Maven repository to your top-level build.gradle file
-
+## Add Maven repository to your top-level build.gradle file
 ```groovy title="build.gradle"
 allprojects {
   repositories {
@@ -17,16 +15,15 @@ allprojects {
 }
 ```
 
-Add Shake dependency to your app build.gradle file
-
+## Add Shake dependency to your app-level build.gradle file
 ```groovy title="build.gradle"
 dependencies {
   // highlight-next-line
-  implementation 'com.shakebugs.android:shake:12.0.1'
+  implementation 'com.shakebugs.android:shake:12.0.3'
 }
 ```
 
-## ProGuard
+<span class="tag-button yellow-tag-button">Optional</span>&nbsp;
 If you use ProGuard optimizer, you have to add this rule
 
 ```bash title="proguard-rules.pro"
@@ -37,8 +34,7 @@ If you use ProGuard optimizer, you have to add this rule
 // highlight-end
 ```
 
-## Add Client ID and Secret
-Add Client ID and Secret to AndroidManifest.xml as metadata.
+## Add Client ID and Secret to AndroidManifest.xml as metadata
 Open your AndroidManifest.xml file. Paste this but replace `your-api-client-id` and
 `your-api-client-secret` with the actual values you have in [your workspace settings](https://app.shakebugs.com/settings/workspace#general).
 
@@ -69,9 +65,7 @@ Open your AndroidManifest.xml file. Paste this but replace `your-api-client-id` 
 </manifest>
 ```
 
-## Initialize
-Initialize Shake in your App class using `Shake.start()` method
-
+## Initialize Shake
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
