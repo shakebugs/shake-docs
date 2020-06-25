@@ -1,6 +1,6 @@
 ﻿---
 id: setup
-title: Setup
+title: Install Shake
 ---
 ## Install
 Execute the npm install command in your terminal:
@@ -36,7 +36,7 @@ cd ios && pod install && cd ..
 Normally, initialization is done using `react-native link @shakebugs/react-native-shake` or `react-native add-shake` commands.
 If you want to initialize Shake manually, you can do it following way.
 
-Include Shake maven repository to your project-level build.gradle file:
+Include Shake maven repository to your project-level *build.gradle* file:
 
 ```groovy title="build.gradle"
 allprojects {
@@ -60,7 +60,7 @@ allprojects {
 }
 ```
 
-Add the following dependency to your app-level Build.gradle file:
+Add the following dependency to your app-level *build.gradle* file:
 
 ```groovy title="app/build.gradle"
 dependencies {
@@ -70,7 +70,7 @@ dependencies {
 }
 ```
 
-If you do not have multiDexEnabled, update app level build.gradle:
+If you do not have *multiDexEnabled*, update app level *build.gradle*:
 
 ```groovy title="app/build.gradle"
 defaultConfig {
@@ -134,8 +134,8 @@ This first run will automatically add your app to your [Shake Dashboard](https:/
 ## Add Client ID and Secret
 
 ### Android
-Open your AndroidManifest.xml file. Paste this and replace `your-api-client-id`and
-`your-api-client-secret` with the actual values you have in [your workspace settings](https://app.shakebugs.com/settings/workspace#general).
+Open your AndroidManifest.xml file. Paste this and replace *your-api-client-id* and
+*your-api-client-secret* with the actual values you have in [your workspace settings](https://app.shakebugs.com/settings/workspace#general).
 
 ```xml title="AndroidManifest.xml"
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
@@ -164,8 +164,8 @@ Open your AndroidManifest.xml file. Paste this and replace `your-api-client-id`a
 ```
 
 ### iOS
-Open your workspace and in the `Project Navigator`, right click on `Info.plist`, and `Open as › Source code`.
-Paste this but replace `your-api-client-id` and `your-api-client-secret`
+Open your workspace and in the *Project Navigator*, right click on *Info.plist*, and *Open as › Source code*.
+Paste this but replace *your-api-client-id* and *your-api-client-secret*
 with the actual values you have in [your workspace settings](https://app.shakebugs.com/settings/workspace#general).
 
 ```xml title="Info.plist"
@@ -190,7 +190,7 @@ Normally, linking is done automatically or using `react-native link @shakebugs/r
 If you want to link it manually, you can do it following way.
 
 ### Android
-Add the following lines of code to your settings.gradle file:
+Add the following lines of code to your *settings.gradle* file:
 
 ```groovy title="settings.gradle"
 // highlight-start
@@ -199,7 +199,7 @@ project(':@shakebugs_react-native-shake').projectDir = new File(rootProject.proj
 // highlight-end
 ```
 
-Then, include the following dependency to app-level build.gradle file:
+Then, include the following dependency to app-level *build.gradle* file:
 
 ```groovy title="app/build.gradle"
 dependencies {
@@ -211,7 +211,7 @@ dependencies {
 }
 ```
 
-Update the `getPackages()` method:
+Update the *getPackages()* method:
 
 ```java title="MainApplication.java"
  @Override protected List<ReactPackage> getPackages() {
@@ -227,7 +227,7 @@ Update the `getPackages()` method:
 
 ### iOS
 
-After executing npm install, find `Shake.xcodeproj` in `$rootDir/node_modules/react-native/shake/ios/`.
-Add it to the `Libraries` folder of your app project.
+After executing *npm install*, find *Shake.xcodeproj* in *$rootDir/node_modules/react-native/shake/ios/*.
+Add it to the *Libraries* folder of your app project.
 
-Navigate to the `Building phases` tab and add `libShake.a` to the `Link Binary With Libraries` section.
+Navigate to the *Building phases* tab and add *libShake.a* to the *Link Binary With Libraries* section.

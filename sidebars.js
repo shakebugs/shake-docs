@@ -25,7 +25,7 @@ module.exports = {
         iOS: [
             {
                 "type": "category",
-                "label": "Setup",
+                "label": "Install Shake",
                 "items": [
                     'ios/setup-cocoapods',
                     'ios/setup-manually',

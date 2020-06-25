@@ -7,7 +7,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 Shake diligently tracks user's interaction with your app, their network traffic and system events, and automatically attaches all of those to every bug report.
 
 ## Introduction
-You can inspect all events that lead to a bug being reported. A link to Activity history is located in the top right corner:
+You can inspect all events that lead to a bug being reported. A link to *Activity history* is located in the top right corner:
 
 <img
   alt="Activity screen"
@@ -172,7 +172,7 @@ startActivity(Intent("android.settings." +
 :::note
 
 This starts the notification listener service, which will require
-users to grant Notification access the first time they open your app.
+users to grant *Notification access* the first time they open your app.
 
 :::
 
@@ -246,7 +246,12 @@ Shake.log(LogLevel.INFO, "Log message goes here!")
 </TabItem>
 </Tabs>
 
-## Enabling
+## Limitations
+In a Free workspace you can see up to 20 events that lead to every bug.
+If you need to dive really deep to find causes of the weirdest bugs,
+in a Premium workspace you can browse the entire activity history.
+
+## Enabling and disabling
 Activity history is enabled by default, however, you can use the method below to disable it:
 
 <Tabs
@@ -276,8 +281,3 @@ Shake.getReportConfiguration().isEnableActivityHistory = false
 
 </TabItem>
 </Tabs>
-
-## Limitations
-In a Free workspace you can see up to 20 events that lead to every bug.
-If you need to dive really deep to find causes of the weirdest bugs,
-in a Premium workspace you can browse the entire activity history.

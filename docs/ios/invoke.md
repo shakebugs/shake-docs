@@ -2,17 +2,19 @@
 id: invoke
 title: Invoke
 ---
-This page describes in detail all the different methods that can be used to invoke the SDK.
+This page covers how to change the user-initiated action that invokes the Shake SDK.
 
-## Manual invoking
+## Invoke manually
 By default, the SDK is invoked when a user shakes their device.
-You don't need to code anything, but if you want to, you can customize that.
+You don't need to code anything.
+
+You can choose another action — or more than one — that invokes the SDK.
 
 Let's look at an example.
-
-You want your users to invoke SDK either when they shake their device, or when they take a screenshot. 
-To customize invocation events, pass `ShakeInvocationEvent` to `Shake.startWithInvocationEvents()` 
-method when starting the SDK.
+You want your users to invoke SDK either when they shake their device, or when they take a screenshot.
+To customize the invocation events, instead of using the `start` method,
+use the method that accepts the invocation events and pass the desired
+values of the `ShakeInvocationEvent` enum when starting the SDK. In our example, you'd use
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -45,8 +47,8 @@ Shake.start(withInvocationEvents: [.shake, .screenshot])
 </TabItem>
 </Tabs>
 
-Here’s a list of all available ones below, feel free to use any combination of these.
- 
+A list of all possible invocation events is below so feel free to use any combination of them.
+
 <Tabs
   groupId="ios"
   defaultValue="swift"
@@ -58,24 +60,36 @@ Here’s a list of all available ones below, feel free to use any combination of
 
 <TabItem value="objectivec">
 
-```objectivec title="AppDelegate.m"
-// highlight-next-line
-[SHKShake startWithInvocationEvents: ShakeInvocationEventShake | ShakeInvocationEventScreenshot | ShakeInvocationEventButton];
+```objectivec
+// highlight-start
+ShakeInvocationEventShake
+ShakeInvocationEventButton
+ShakeInvocationEventScreenshot
+// highlight-end
 ```
 
 </TabItem>
 
 <TabItem value="swift">
 
-```swift title="AppDelegate.swift"
-// highlight-next-line
-Shake.start(withInvocationEvents: [.shake, .screenshot, .button])
+```swift
+// highlight-start
+.shake
+.screenshot
+.button
+// highlight-end
 ```
 
 </TabItem>
 </Tabs>
 
-## Actions
-1. **Shake** - the default, shaking gesture causes the SDK to pop up.
-1. **Button** - this invocation event will create the floating button on top of your app's UI which users can clearly see at all times. This button can be dragged to a more suitable position.
-1. **Screenshot** - the SDK will be invoked when users make a screenshot while using your app.
+### Shaking
+By default, shaking gesture causes the SDK to pop up.
+
+### Button
+This invocation event will create the floating button on top of your app's UI which users can clearly see at all times.
+This button can be dragged to a more suitable position.
+
+### Taking a screenshot
+The SDK will be invoked when users make a screenshot while using your app.
+

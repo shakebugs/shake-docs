@@ -12,15 +12,14 @@ always pull the latest version of Shake SDK into your app. Instead, you will hav
 :::
 
 ### Download Shake SDK from GitHub
-Visit Shake iOS SDK [GitHub repo](https://github.com/shakebugs/shake-ios) and click the green Clone or download button.
-Shake directory will be downloaded to your computer — drag-and-drop the Shake.framework folder into your project.
+Visit Shake iOS SDK [GitHub repo](https://github.com/shakebugs/shake-ios) and click the green *Clone or download* button.
+Shake directory will be downloaded to your computer — drag-and-drop the *Shake.framework* folder into your project.
 
-### Add Client ID and Secret
+### Add Client ID and Secret to Info.plist
 Open your workspace and in the Project Navigator, right click on
-`Info.plist`, and `Open as › Source code`. Paste this but replace
-`your-api-client-id` and `your-api-client-secret` with the actual values
-you have in
-[your workspace settings](https://app.shakebugs.com/settings/workspace#general).
+*Info.plist*, and *Open as › Source code*. Paste this but replace
+*your-api-client-id* and *your-api-client-secret* with the actual values
+you have in [your workspace settings](https://app.shakebugs.com/settings/workspace#general).
 
 ```xml title="Info.plist"
 <?xml version="1.0" encoding="utf-8" ?>
@@ -39,7 +38,7 @@ you have in
 </plist>
 ```
 
-### Initialize Shake
+### Initialize Shake SDK
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
@@ -92,5 +91,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 </TabItem>
 </Tabs>
 
-Now select `Product › Run` in the menu bar. This first run will automatically
+Now select *Product › Run* in the menu bar. This first run will automatically
 add your app to your Shake Dashboard based on your app bundle ID.

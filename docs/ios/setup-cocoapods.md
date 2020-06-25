@@ -11,8 +11,7 @@ then run `pod init` in the root of your project and you're done — let's move o
 
 :::
 
-### Add Shake to Podfile
-Add Shake pod to the project Podfile.
+### Add Shake SDK to your Podfile
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -50,9 +49,9 @@ pod 'Shake'
 Run the `pod install` command in your terminal.
 After the installation also run `pod update Shake` to be perfectly sure you're using the latest version.
 
-### Add Client ID and Secret
-Open your workspace and in the Project Navigator, right click on `Info.plist`, and `Open as › Source code`.
-Paste this but replace `your-api-client-id` and `your-api-client-secret`
+### Add Client ID and Secret to Info.plist
+Open your workspace and in the Project Navigator, right click on *Info.plist*, and *Open as › Source code*.
+Paste this but replace *your-api-client-id* and *your-api-client-secret*
 with the actual values you have in [your workspace settings](https://app.shakebugs.com/settings/workspace#general).
 
 ```xml title="Info.plist"
@@ -64,7 +63,7 @@ with the actual values you have in [your workspace settings](https://app.shakebu
       <dict>
         <key>APIClientID</key>
         <string>your-api-client-id</string>
-        <key>APIClientSecret</key>         
+        <key>APIClientSecret</key>
         <string>your-api-client-secret</string>
       </dict>
       // highlight-end
@@ -72,7 +71,7 @@ with the actual values you have in [your workspace settings](https://app.shakebu
 </plist>
 ```
 
-### Initialize Shake
+### Initialize Shake SDK
 <Tabs
   groupId="ios"
   defaultValue="swift"
@@ -122,5 +121,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 </TabItem>
 </Tabs>
 
-Now select `Product › Run` in the menu bar. This first run will automatically
-add your app to your Shake Dashboard based on your app bundle ID.
+Now select *Product › Run* in the menu bar. This first run will automatically
+add your app to your [Shake Dashboard](https://app.shakebugs.com/) based on your app bundle ID.

@@ -54,3 +54,33 @@ div[class*='codeBlock'], code{
 em, code {
   margin: 0 6px;
 }
+
+.tag-button.yellow-tag-button {
+  background-color: #fff0cc;
+  border: none;
+  color: #e6aa5b;
+}
+
+.tag-button.pink-tag-button {
+  background-color: #fef3ef;
+  border: none;
+  color: #ff9471;
+}
+
+.tag-button.green-tag-button {
+  background-color: #ecf5f2;
+  border: none;
+  color: #15976b;
+}
+
+.tag-button {
+  border: 1px solid #d6dde4;
+  border-radius: 25px;
+  color: #4f5a65;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1;
+  margin-bottom: 16px;
+  padding: 6px 12px!important;
+}
