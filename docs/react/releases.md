@@ -1,13 +1,14 @@
 ﻿---
 id: react-releases
-title: Releases
+title: Release notes
 ---
 This page lists all updates to the Shake React Native SDK.
 
 What would you like us to build next? We're dying to hear from you — just click the button in the bottom-right corner of this screen.
 
 ### 9.0
-June 17, 2020
+<span class="tag-button">June 25, 2020</span>&nbsp;&nbsp;
+<span class="tag-button green-tag-button">Latest version</span>
 
 **What's new**
 

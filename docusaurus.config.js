@@ -12,14 +12,16 @@ module.exports = {
       additionalLanguages: ['groovy', 'kotlin', 'java', 'swift'],
     },
     navbar: {
+      hideOnScroll: true,
       title: 'Shake',
       logo: {
         alt: 'Shake logo',
         src: 'img/logo.svg',
+        href: 'https://www.shakebugs.com/',
       },
       links: [
         {
-          to: 'android/setup',
+          to: '/',
           activeBasePath: 'docs',
           label: 'Docs',
           position: 'left',

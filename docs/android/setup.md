@@ -1,13 +1,11 @@
 ﻿---
 id: setup
-title: Setup
+title: Install Shake
 ---
 This page describes how to install the Shake SDK into your Android application via Gradle.
 Whether you are using Java or Kotlin, you can follow the steps below.
 
-##  Install
-Add Maven repository to your top-level build.gradle file
-
+## Add Maven repository to your top-level build.gradle file
 ```groovy title="build.gradle"
 allprojects {
   repositories {
@@ -17,16 +15,15 @@ allprojects {
 }
 ```
 
-Add Shake dependency to your app build.gradle file
-
+## Add Shake dependency to your app-level build.gradle file
 ```groovy title="build.gradle"
 dependencies {
   // highlight-next-line
-  implementation 'com.shakebugs.android:shake:12.0.1'
+  implementation 'com.shakebugs.android:shake:12.0.3'
 }
 ```
 
-## ProGuard
+<span class="tag-button yellow-tag-button">Optional</span>&nbsp;
 If you use ProGuard optimizer, you have to add this rule
 
 ```bash title="proguard-rules.pro"
@@ -37,10 +34,9 @@ If you use ProGuard optimizer, you have to add this rule
 // highlight-end
 ```
 
-## Add Client ID and Client secret key
-Add Client ID and Secret to AndroidManifest.xml as metadata. 
-Open your AndroidManifest.xml file. Paste this but `replace sign-in-to-see-your-api-client-id-here` and 
-`sign-in-to-see-your-api-client-secret-here` with the actual values you have in Your settings.
+## Add Client ID and Secret to AndroidManifest.xml as metadata
+Open your AndroidManifest.xml file. Paste this but replace `your-api-client-id` and
+`your-api-client-secret` with the actual values you have in [your workspace settings](https://app.shakebugs.com/settings/workspace#general).
 
 ```xml title="AndroidManifest.xml"
 <?xml version="1.0" encoding="utf-8"?>
@@ -59,19 +55,17 @@ Open your AndroidManifest.xml file. Paste this but `replace sign-in-to-see-your-
       // highlight-start
       <meta-data
         android:name="com.shakebugs.APIClientID"
-        android:value="sign-in-to-see-your-api-client-id-here" />
+        android:value="your-api-client-id" />
       <meta-data
         android:name="com.shakebugs.APIClientSecret"
-        android:value="sign-in-to-see-your-api-client-secret-here" />
+        android:value="your-api-client-secret" />
       // highlight-end
   </application>
   <uses-permission android:name="android.permission.INTERNET" />
 </manifest>
 ```
 
-## Initialize
-Initialize Shake in your App class using `Shake.start()` method
-
+## Initialize Shake
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
@@ -122,5 +116,6 @@ class App : Application() {
 </TabItem>
 </Tabs>
 
-Now build your project and see everything work! To build and run your app, select `Run › Run` in the menu bar. 
-This first run will automatically add your app to your Shake Dashboard based on your app bundle ID.
+Now build your project and see everything work! To build and run your
+app, select *Run › Run* in the menu bar. This first run will automatically
+add your app to your [Shake Dashboard](https://app.shakebugs.com/) based on your app bundle ID.
