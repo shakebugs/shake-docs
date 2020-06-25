@@ -12,6 +12,7 @@ module.exports = {
       additionalLanguages: ['groovy', 'kotlin', 'java', 'swift'],
     },
     navbar: {
+      hideOnScroll: true,
       title: 'Shake',
       logo: {
         alt: 'Shake logo',
