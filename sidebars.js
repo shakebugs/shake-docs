@@ -37,6 +37,7 @@ module.exports = {
                 "items": [
                     'ios/invoke',
                     'ios/disable',
+                    'ios/silent-reports',
                     'ios/inspect',
                     'ios/screenshot',
                     'ios/permissions',

@@ -1,4 +1,4 @@
-﻿---
+---
 id: blackbox
 title: Blackbox
 ---
@@ -74,18 +74,16 @@ import TabItem from '@theme/TabItem';
 
 <TabItem value="objectivec">
 
-```objectivec title="AppDelegate.m"
-// highlight-next-line
-[Shake setBlackBoxEnabled:NO];
+```objectivec
+SHKShake.configuration.isBlackBoxEnabled = NO;
 ```
 
 </TabItem>
 
 <TabItem value="swift">
 
-```swift title="AppDelegate.swift"
-// highlight-next-line
-Shake.setBlackBoxEnabled(false)
+```swift
+Shake.configuration.isBlackBoxEnabled = false
 ```
 
 </TabItem>

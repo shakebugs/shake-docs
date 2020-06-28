@@ -1,8 +1,11 @@
-﻿---
-id: disable
-title: Stopping
 ---
-This page is about preventing a segment of your users from using Shake.
+id: disable
+title: Pause
+---
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+This page is about pausing (disabling) Shake invocation and tracking
 
 ## Introduction
 Let's start with two use cases.
@@ -10,14 +13,16 @@ Let's start with two use cases.
 Maybe some of your users have opted in for beta access, others haven't.
 Or, maybe you're building a new Airbnb and want *hosts* to be able to report bugs back to you, but don't want to show Shake to the *guests*.
 
-## Stopping
-Call the `Shake.stop()` method wherever you find it appropriate in your app.
+You could simply never call the  `Shake.start()` method for guest users, but what if a user switches from host to guest mode?
 
-Shake will stop working immediately, which means:
+## Pausing
+Set `Shake.isPaused` property to `false` wherever you find it appropriate in your app.
+
+Shake will be paused immediately, which means:
 1. Shake can't be invoked any more
 1. Shake stops tracking all data
 
-So let's suppose you want to allow Shake to your *hosts*, but not to *guests*. You would do this:
+So let's suppose a user switches from one mode to another. You would do this:
 
 <Tabs
   groupId="ios"
@@ -30,12 +35,15 @@ So let's suppose you want to allow Shake to your *hosts*, but not to *guests*. Y
 
 <TabItem value="objectivec">
 
-```objectivec title="AppDelegate.m"
-(void) loggedInSuccessfullyWithUser: (User *) user {
-  if (user.kind == UserKindGuest) {
-    // highlight-next-line
-    [SHKShake stop];
-  }
+```objectivec
+- (void)didLogInWithUser:(User *)user success:(BOOL)success {
+    if (user.isHost) {
+        NSLog(@"User logged in as host. Resuming Shake.");
+        SHKShake.isPaused = NO;
+    } else {
+        NSLog(@"User logged in as guest. Pausing Shake.");
+        SHKShake.isPaused = YES;
+    }
 }
 ```
 
@@ -43,12 +51,15 @@ So let's suppose you want to allow Shake to your *hosts*, but not to *guests*. Y
 
 <TabItem value="swift">
 
-```swift title="AppDelegate.swift"
-override fun loggedInSuccessfully(user: User) {
-  if user.kind == .guest  {
-    // highlight-next-line
-    Shake.stop();
-  }
+```swift
+func didLogIn(user: User, success: Bool) {
+    if user.isHost {
+        print("User logged in as host. Resuming Shake.")
+        Shake.isPaused = false
+    } else {
+        print("User logged in as guest. Pausing Shake.")
+        Shake.isPaused = true
+    }
 }
 ```
 
@@ -56,50 +67,9 @@ override fun loggedInSuccessfully(user: User) {
 </Tabs>
 
 
-## Starting
-Call the `Shake.start()` method wherever you find it appropriate in your app.
+## Resuming
+To enable invocation and data tracking again, simply set  `Shake.isPaused` to  `false` wherever you find it appropriate in your app.
 
-Shake will start working immediately, which means:
+Shake will be resumed immediately, which means:
 1. Shake can be invoked
-1. Shake starts tracking all data
-
-So let's suppose you want to allow Shake to your *hosts*, but not to *guests*. You would do this:
-
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
-<Tabs
-  groupId="ios"
-  defaultValue="swift"
-  values={[
-    { label: 'Objective-C', value: 'objectivec'},
-    { label: 'Swift', value: 'swift'},
-  ]
-}>
-
-<TabItem value="objectivec">
-
-```objectivec title="AppDelegate.m"
-(void) loggedInSuccessfullyWithUser: (User *) user {
-  if (user.kind != UserKindGuest) {
-    // highlight-next-line
-    [SHKShake stop];
-  }
-}
-```
-
-</TabItem>
-
-<TabItem value="swift">
-
-```swift title="AppDelegate.swift"
-override fun loggedInSuccessfully(user: User) {
-  if user.kind != .guest  {
-    // highlight-next-line
-    Shake.start();
-  }
-}
-```
-
-</TabItem>
-</Tabs>
+2. Shake starts tracking all data

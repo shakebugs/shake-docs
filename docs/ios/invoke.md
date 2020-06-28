@@ -1,4 +1,4 @@
-﻿---
+---
 id: invoke
 title: Invoke
 ---
@@ -12,9 +12,7 @@ You can choose another action — or more than one — that invokes the SDK.
 
 Let's look at an example.
 You want your users to invoke SDK either when they shake their device, or when they take a screenshot.
-To customize the invocation events, instead of using the `start` method,
-use the method that accepts the invocation events and pass the desired
-values of the `ShakeInvocationEvent` enum when starting the SDK. In our example, you'd use
+To do that, set true or false for certain `Shake.configuration` properties:
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -30,42 +28,11 @@ import TabItem from '@theme/TabItem';
 
 <TabItem value="objectivec">
 
-```objectivec title="AppDelegate.m"
-// highlight-next-line
-[SHKShake startWithInvocationEvents: ShakeInvocationEventShake | ShakeInvocationEventScreenshot];
-```
+```objc
+SHKShake.configuration.isInvokedByShakeDeviceEvent = YES;
+SHKShake.configuration.isInvokedByScreenshot = YES;
 
-</TabItem>
-
-<TabItem value="swift">
-
-```swift title="AppDelegate.swift"
-// highlight-next-line
-Shake.start(withInvocationEvents: [.shake, .screenshot])
-```
-
-</TabItem>
-</Tabs>
-
-A list of all possible invocation events is below so feel free to use any combination of them.
-
-<Tabs
-  groupId="ios"
-  defaultValue="swift"
-  values={[
-    { label: 'Objective-C', value: 'objectivec'},
-    { label: 'Swift', value: 'swift'},
-  ]
-}>
-
-<TabItem value="objectivec">
-
-```objectivec
-// highlight-start
-ShakeInvocationEventShake
-ShakeInvocationEventButton
-ShakeInvocationEventScreenshot
-// highlight-end
+[SHKShake start];
 ```
 
 </TabItem>
@@ -73,23 +40,46 @@ ShakeInvocationEventScreenshot
 <TabItem value="swift">
 
 ```swift
-// highlight-start
-.shake
-.screenshot
-.button
-// highlight-end
+Shake.configuration.isInvokedByShakeDeviceEvent = true
+Shake.configuration.isInvokedByScreenshot = true
+
+Shake.start()
 ```
 
 </TabItem>
 </Tabs>
 
-### Shaking
-By default, shaking gesture causes the SDK to pop up.
+This method also enables you to change the preferred invocation event on-the-go during runtime. Here’s a list of all available ones below, feel free to use any combination of these.
 
-### Button
-This invocation event will create the floating button on top of your app's UI which users can clearly see at all times.
-This button can be dragged to a more suitable position.
+| Parameter | Default | Description |
+|--| -- | -- |
+ | `isInvokedByShakeDeviceEvent` | `true` | Shaking device gesture |
+ | `isFloatingReportButtonShown` | `false` | Creates a floating button on top of your app's UI which users can see clearly at all times. This button can be dragged to a more suitable position. |
+ | `isInvokedByScreenshot` | `false` | Event when user makes a screenshot while using your app. |
+     | `isInvokedByRightEdgePan` | `false` | One-finger swiping gesture from the right edge of the screen. |
 
-### Taking a screenshot
-The SDK will be invoked when users make a screenshot while using your app.
 
+## Invoke through code
+You can invoke SDK through code by calling the `Shake.show()` method anywhere after `Shake.start()`, optionally adding bug description or attaching files. Here’s an example:
+
+<Tabs groupId="ios" values={[{ label: 'Objective-C', value: 'objectivec'},{ label: 'Swift', value: 'swift'},]} defaultValue="swift"><TabItem value="objectivec">
+
+```objc
+[SHKShake show]; // Shows bug report window
+
+SHKReportData *reportData = [[SHKReportData alloc] initWithBugDescription:@"Broken UI" attachedFiles:@[]];
+[SHKShake showWithReportData:reportData]; // Shows bug report window with pre-populated data
+```
+
+</TabItem><TabItem value="swift">
+
+```swift
+Shake.show(reportData: reportData) // Shows bug report window
+
+let reportData = ShakeReportData(bugDescription: "Broken UI", attachedFiles: [])
+Shake.show(reportData: reportData) // Shows bug report window with pre-populated data
+```
+
+</TabItem></Tabs>
+
+All other data, like [Activity history](ios/activity.md) or [Black box](ios/blackbox.md), is automatically included in every user’s bug report — no additional code required.

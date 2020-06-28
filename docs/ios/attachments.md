@@ -1,4 +1,4 @@
-﻿---
+---
 id: attachments
 title: Attachments
 ---
@@ -37,34 +37,30 @@ import TabItem from '@theme/TabItem';
 
 <TabItem value="objectivec">
 
-```objectivec title="AppDelegate.m"
+```objectivec
 NSString *fileName = ...
 NSData *fileData = ...
 
-// highlight-start
-[[SHKShake sharedInstance] setOnPrepareData:^SHKShakeReportData * _Nonnull(SHKShakeReportData * _Nonnull reportData) {
-  SHKShakeFile *attachedFile = [[SHKShakeFile alloc] initWithName:fileName andData:fileData];
+SHKShake.onPrepareReportData = ^SHKShakeReportData *_Nonnull(SHKShakeReportData *_Nonnull reportData) {
+  SHKFile *attachedFile = [[SHKFile alloc] initWithName:fileName andData:fileData];
   reportData.attachedFiles = @[attachedFile];
   return reportData;
-}];
-// highlight-end
+};
 ```
 
 </TabItem>
 
 <TabItem value="swift">
 
-```swift title="AppDelegate.swift"
+```swift
 let fileName: String = ...
 let logData: Data = ...
 
-// highlight-start
-Shake.sharedInstance().onPrepareData = { shakeReportData in
+Shake.onPrepareReportData = { shakeReportData in
   let attachedFile = ShakeFile(name: fileName, andData: fileData)
   shakeReportData.attachedFiles = [attachedFile]
   return shakeReportData
 }
-// highlight-end
 ```
 
 </TabItem>
@@ -84,35 +80,31 @@ Shake.sharedInstance().onPrepareData = { shakeReportData in
 
 <TabItem value="objectivec">
 
-```objectivec title="AppDelegate.m"
+```objectivec
 NSString *fileName = ...
 NSURL *fileUrl = ...
 
-// highlight-start
-[[SHKShake sharedInstance] setOnPrepareData:^SHKShakeReportData * _Nonnull(SHKShakeReportData * _Nonnull reportData) {
-  SHKShakeFile *attachedFile = [[SHKShakeFile alloc] initWithName:fileName andFileURL:fileUrl];
+SHKShake.onPrepareReportData = ^SHKShakeReportData *_Nonnull(SHKShakeReportData *_Nonnull reportData) {
+  SHKFile *attachedFile = [[SHKFile alloc] initWithName:fileName andFileURL:fileUrl];
   reportData.attachedFiles = @[attachedFile];
   return reportData;
-}];
-// highlight-end
+};
 ```
 
 </TabItem>
 
 <TabItem value="swift">
 
-```swift title="AppDelegate.swift"
+```swift
 let fileName: String = ...
 let fileUrl: URL = ...
 
-// highlight-start
-Shake.sharedInstance().onPrepareData = { shakeReportData in
+Shake.onPrepareReportData = { shakeReportData in
   if let attachedFile = ShakeFile(name: fileName, andFileURL: fileUrl) {
     shakeReportData.attachedFiles = [attachedFile]
   }
   return shakeReportData
 }
-// highlight-end
 ```
 
 </TabItem>
@@ -133,33 +125,29 @@ and the file name shown on the web Dashboard will be determined automatically fr
 
 <TabItem value="objectivec">
 
-```objectivec title="AppDelegate.m"
+```objectivec
 NSURL *fileUrl = ...
 
-// highlight-start
-[[SHKShake sharedInstance] setOnPrepareData:^SHKShakeReportData * _Nonnull(SHKShakeReportData * _Nonnull reportData) {
-  SHKShakeFile *attachedFile = [[SHKShakeFile alloc] initWithFileURL:fileUrl];
+SHKShake.onPrepareReportData = ^SHKShakeReportData *_Nonnull(SHKShakeReportData *_Nonnull reportData) {
+  SHKFile *attachedFile = [[SHKFile alloc] initWithFileURL:fileUrl];
   reportData.attachedFiles = @[attachedFile];
   return reportData;
-}];
-// highlight-end
+};
 ```
 
 </TabItem>
 
 <TabItem value="swift">
 
-```swift title="AppDelegate.swift"
+```swift
 let fileUrl: URL = ...
 
-// highlight-start
-Shake.sharedInstance().onPrepareData = { shakeReportData in
+Shake.onPrepareReportData = { shakeReportData in
   if let attachedFile = ShakeFile(fileURL: fileUrl) {
     shakeReportData.attachedFiles = [attachedFile]
   }
   return shakeReportData
 }
-// highlight-end
 ```
 
 </TabItem>
