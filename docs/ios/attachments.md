@@ -42,7 +42,7 @@ NSString *fileName = ...
 NSData *fileData = ...
 
 SHKShake.onPrepareReportData = ^SHKShakeReportData *_Nonnull(SHKShakeReportData *_Nonnull reportData) {
-  SHKFile *attachedFile = [[SHKFile alloc] initWithName:fileName andData:fileData];
+  SHKShakeFile *attachedFile = [[SHKShakeFile alloc] initWithName:fileName andData:fileData];
   reportData.attachedFiles = @[attachedFile];
   return reportData;
 };
@@ -85,7 +85,7 @@ NSString *fileName = ...
 NSURL *fileUrl = ...
 
 SHKShake.onPrepareReportData = ^SHKShakeReportData *_Nonnull(SHKShakeReportData *_Nonnull reportData) {
-  SHKFile *attachedFile = [[SHKFile alloc] initWithName:fileName andFileURL:fileUrl];
+  SHKShakeFile *attachedFile = [[SHKShakeFile alloc] initWithName:fileName andFileURL:fileUrl];
   reportData.attachedFiles = @[attachedFile];
   return reportData;
 };
@@ -129,7 +129,7 @@ and the file name shown on the web Dashboard will be determined automatically fr
 NSURL *fileUrl = ...
 
 SHKShake.onPrepareReportData = ^SHKShakeReportData *_Nonnull(SHKShakeReportData *_Nonnull reportData) {
-  SHKFile *attachedFile = [[SHKFile alloc] initWithFileURL:fileUrl];
+  SHKShakeFile *attachedFile = [[SHKShakeFile alloc] initWithFileURL:fileUrl];
   reportData.attachedFiles = @[attachedFile];
   return reportData;
 };

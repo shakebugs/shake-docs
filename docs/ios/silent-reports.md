@@ -17,9 +17,9 @@ import TabItem from '@theme/TabItem';
 <Tabs groupId="ios" defaultValue="swift" values={[{ label: 'Objective-C', value: 'objectivec'},{ label: 'Swift', value: 'swift'},]}><TabItem value="objectivec">
 
 ```objectivec
-SHKReportData *reportData = [[SHKReportData alloc] initWithBugDescription:@"Broken UI" attachedFiles:@[]];
+SHKShakeReportData *reportData = [[SHKShakeReportData alloc] initWithBugDescription:@"Broken UI" attachedFiles:@[]];
 
-SHKReportConfiguration *reportConfiguration = [[SHKReportConfiguration alloc] init];
+SHKShakeReportConfiguration *reportConfiguration = [[SHKShakeReportConfiguration alloc] init];
 reportConfiguration.includesScreenshotImage = YES;
 reportConfiguration.includesBlackBoxData = YES;
 
@@ -48,7 +48,7 @@ However, you can choose to display a small and non-intrusive message saying
 <Tabs groupId="ios" defaultValue="swift" values={[{ label: 'Objective-C', value: 'objectivec'},{ label: 'Swift', value: 'swift'},]}><TabItem value="objectivec">
 
 ```objectivec
-SHKReportConfiguration *reportConfiguration = [[SHKReportConfiguration alloc] init];
+SHKShakeReportConfiguration *reportConfiguration = [[SHKShakeReportConfiguration alloc] init];
 reportConfiguration.showsToastMessageOnSend = YES;
 ```
 

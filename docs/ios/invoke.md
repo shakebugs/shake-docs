@@ -67,7 +67,7 @@ You can invoke SDK through code by calling the `Shake.show()` method anywhere af
 ```objc
 [SHKShake show]; // Shows bug report window
 
-SHKReportData *reportData = [[SHKReportData alloc] initWithBugDescription:@"Broken UI" attachedFiles:@[]];
+SHKShakeReportData *reportData = [[SHKShakeReportData alloc] initWithBugDescription:@"Broken UI" attachedFiles:@[]];
 [SHKShake showWithReportData:reportData]; // Shows bug report window with pre-populated data
 ```
 
