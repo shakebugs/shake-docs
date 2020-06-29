@@ -15,7 +15,7 @@ In situations where a screenshot is just not enough, a user can also make a vide
 />
 
 
-## Usage
+## How to use
 Screen recording is disabled by default but can be enabled by calling `Shake.getReportConfiguration().setAutoVideoRecording(true)` before `Shake.start()`. 
 
 Duration of the video recording is another preference that can be set. The maximum value is 30 seconds.
