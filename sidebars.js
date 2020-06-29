@@ -25,7 +25,7 @@ module.exports = {
         iOS: [
             {
                 "type": "category",
-                "label": "Setup",
+                "label": "Install Shake",
                 "items": [
                     'ios/setup-cocoapods',
                     'ios/setup-manually',
@@ -63,7 +63,8 @@ module.exports = {
                     'react/activity',
                     'react/essentials',
                     'react/attachments',
-                    'react/quick-facts'
+                    'react/quick-facts',
+                    'react/black-box'
                 ]
             },
             'react/react-releases'

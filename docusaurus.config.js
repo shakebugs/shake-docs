@@ -21,17 +21,18 @@ module.exports = {
       logo: {
         alt: 'Shake logo',
         src: 'img/logo.svg',
+        href: 'https://www.shakebugs.com/',
       },
       links: [
         {
-          to: 'android/setup',
+          to: '/',
           activeBasePath: 'docs',
           label: 'Docs',
           position: 'left',
         },
         {
-          href: 'https://bitbucket.org/decodehq/shake-docs/src/master/',
-          label: 'Bitbucket',
+          href: 'https://app.shakebugs.com/',
+          label: 'Dashboard',
           position: 'right',
         },
       ],

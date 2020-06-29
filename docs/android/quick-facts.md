@@ -11,9 +11,9 @@ From SDK Version 12.0 Quick facts are deprecated, please use [Metadata](/android
 :::
 
 ## Introduction
-Every app is unique so the [Essentials](/android/essentials.md) sent with each bug report are often not enough. 
+Every app is unique so the [Essentials](/android/essentials.md) sent with each bug report are often not enough.
 That's why the Shake SDK allows you to send yourself any custom data from the app using Quick facts.
-It's a text object which you can shape any way you want, and you can put anything you want into it.
+It's a *String* object which you can shape any way you want, and you can put anything you want into it.
 
 This is where you will see Quick facts on your web Dashboard:
 
@@ -23,12 +23,12 @@ This is where you will see Quick facts on your web Dashboard:
 />
 
 
-## Usage
-Call the `Shake.setQuickFacts()` method passing your quick facts as a text 
+## How to use
+To set the Quick facts, call the `Shake.onPrepareData()` method passing your quick facts as a *String*
 containing data you want to receive on your web Dashboard.
- 
-You can set quick facts anywhere within your app, but be careful because any 
-subsequent calls with the same key will override the former text value.
+
+You can call the `Shake.onPrepareData()` method anywhere within your app,
+but be careful only to call it once since any subsequent calls will override the former ones.
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
