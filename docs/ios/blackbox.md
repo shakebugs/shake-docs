@@ -17,7 +17,7 @@ You'll find the charts right below the screenshot.
 />
 
 
-## What do charts show?
+## What do the charts show?
 ### CPU
 This line chart shows the CPU usage of your app.
 When you hover over the chart, your app's exact CPU load is shown as a percentage of the total available CPU.
