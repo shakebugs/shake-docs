@@ -17,7 +17,7 @@ You'll find the charts right below the screenshot.
 />
 
 
-## What do charts show?
+## What do the charts show?
 ### Device memory usage
 This line chart shows the device's total memory usage.
 When you hover over the chart, the usage percentage,
