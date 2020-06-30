@@ -11,6 +11,7 @@ module.exports = {
                     'android/silent-reports',
                     'android/inspect',
                     'android/screenshot',
+                    'android/screen-recording',
                     'android/permissions',
                     'android/activity',
                     'android/essentials',
@@ -25,7 +26,7 @@ module.exports = {
         iOS: [
             {
                 "type": "category",
-                "label": "Setup",
+                "label": "Install Shake",
                 "items": [
                     'ios/setup-cocoapods',
                     'ios/setup-manually',

@@ -4,13 +4,14 @@ title: Invoke
 ---
 This page describes in detail all the different methods that can be used to invoke the SDK.
 
-## Manual invoking
+## Invoke manually
 By default, the SDK is invoked when a user shakes their device.
-You don't need to code anything, but if you want to, you can customize that.
+You don't need to code anything.
+
+But if you want to, you can customize that.
 
 Let's look at an example.
-
-You want your users to invoke SDK either when they shake their device, or when they take a screenshot. 
+You want your users to invoke SDK either when they shake their device, or when they take a screenshot.
 To do that, call `Shake.getReportConfiguration()` before `Shake.start()` and pass one or more desired values.
 
 import Tabs from '@theme/Tabs';
@@ -52,7 +53,7 @@ Shake.start(this)
 
 This method also enables you to change the preferred invocation event on-the-go during runtime.
 Here’s a list of all available ones below, feel free to use any combination of these.
- 
+
 <Tabs
   groupId="android"
   defaultValue="kotlin"
@@ -89,9 +90,49 @@ Shake.getReportConfiguration().isInvokeShakeOnRightEdgePan = true
 </TabItem>
 </Tabs>
 
-## Code invoking
-You can invoke SDK through code by calling the `Shake.show()` method anywhere after `Shake.start()`, 
-optionally attaching files and/or Metadata. Here’s an example:
+### Shaking
+The default, shaking gesture causes the SDK to pop up.
+
+:::note
+
+In case you want to test Shake SDK in Android Emulator, it’s useful to know that emulator’s default shaking gesture is too weak to invoke Shake.
+
+:::
+
+### Button
+This invocation event will create the floating button on top of your app's UI which users can clearly see at all times.This button can be dragged to a more suitable position.
+
+:::note
+
+In the emulator, you might need to click the button twice if one click doesn’t do it.
+Also, system interface elements [may sometimes get in a way](https://help.shakebugs.com/en/articles/3321805-the-report-a-bug-button-is-hidden-behind-an-interface-element) of the button.
+
+:::
+
+### Taking a screenshot
+The SDK will be invoked when users make a screenshot while using your app.
+
+:::note
+
+The only way for any SDK to realize that a screenshot has been captured is to monitor the screenshots directory.
+Because of that, if you opt for this invocation method, the storage permission will be requested from a user when they launch your app.
+
+:::
+
+### Right Edge Pan
+Invoke Shake with a one-finger swiping gesture from the right edge of the screen.
+
+:::note
+
+The right edge pan gesture won’t work if performed over a ListView or ScrollView.
+You can use one of the alternative ways to invoke Shake instead.
+
+:::
+
+
+## Invoke through code
+You can invoke SDK through code by calling the `Shake.show()` method anywhere after `Shake.start()`,
+optionally attaching files and/or [Metadata](android/metadata.md). Here’s an example:
 
 <Tabs
   groupId="android"
@@ -163,39 +204,5 @@ private fun createShakeReportData(): ShakeReportData {
 </TabItem>
 </Tabs>
 
-## Actions
-1. **Shake** - The default, shaking gesture causes the SDK to pop up.
+All other data, like [Activity history](android/activity.md) or [Black box](android/blackbox.md), is automatically included in every user’s bug report — no additional code required.
 
-:::note
-
-In case you want to test Shake SDK in Android Emulator, it’s useful to know that emulator’s default shaking gesture is too weak to invoke Shake.
-
-:::
-
-2. **Button** - This invocation event will create the floating button on top of your app's UI which users can clearly see at all times. 
-This button can be dragged to a more suitable position.
-
-:::note
-
-In the emulator, you might need to click the button twice if one click doesn’t do it.
-Also, system interface elements [may sometimes get in a way](https://help.shakebugs.com/en/articles/3321805-the-report-a-bug-button-is-hidden-behind-an-interface-element) of the button.
-
-:::
-
-3. **Screenshot** - The SDK will be invoked when users make a screenshot while using your app.
-
-:::note
-
-The only way for any SDK to realize that a screenshot has been captured is to monitor the screenshots directory.
-Because of that, if you opt for this invocation method, the storage permission will be requested from a user when they launch your app.
-
-:::
-
-4. **Right Edge Pan** - Invoke Shake with a one-finger swiping gesture from the right edge of the screen.
-
-:::note
-
-The right edge pan gesture won’t work if performed over a ListView or ScrollView.
-You can use one of the alternative ways to invoke Shake instead.
-
-:::

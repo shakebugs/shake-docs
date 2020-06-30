@@ -11,15 +11,21 @@ module.exports = {
       theme: require('prism-react-renderer/themes/dracula'),
       additionalLanguages: ['groovy', 'kotlin', 'java', 'swift'],
     },
+    algolia: {
+      apiKey: '0a7f58d03fe8cc9d31b51d69d009654f',
+      indexName: 'shakebugs',
+    },
     navbar: {
+      hideOnScroll: true,
       title: 'Shake',
       logo: {
         alt: 'Shake logo',
         src: 'img/logo.svg',
+        href: 'https://www.shakebugs.com/',
       },
       links: [
         {
-          to: 'android/setup',
+          to: '/',
           activeBasePath: 'docs',
           label: 'Docs',
           position: 'left',
