@@ -1,4 +1,4 @@
-﻿---
+---
 id: setup
 title: Install Shake
 ---
@@ -19,7 +19,7 @@ allprojects {
 ```groovy title="build.gradle"
 dependencies {
   // highlight-next-line
-  implementation 'com.shakebugs.android:shake:12.0.3'
+  implementation 'com.shakebugs.android:shake:13.0.0'
 }
 ```
 
