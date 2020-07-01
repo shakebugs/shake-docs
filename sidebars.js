@@ -65,10 +65,31 @@ module.exports = {
                     'react/essentials',
                     'react/attachments',
                     'react/quick-facts',
-                    'react/black-box'
+                    'react/black-box',
                 ]
             },
             'react/react-releases'
+        ],
+        "Flutter": [
+            "flutter/setup",
+            {
+                "type": "category",
+                "label": "SDK",
+                "items": [
+                    'flutter/invoke',
+                    'flutter/disable',
+                    'flutter/inspect',
+                    'flutter/screenshot',
+                    'flutter/permissions',
+                    'flutter/activity',
+                    'flutter/essentials',
+                    'flutter/attachments',
+                    'flutter/quick-facts',
+                    'flutter/black-box',
+                    'flutter/silent-reports'
+                ]
+            },
+            'flutter/flutter-releases'
         ],
     },
 };

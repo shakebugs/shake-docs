@@ -55,6 +55,10 @@ module.exports = {
               label: 'React Native',
               to: 'react/setup',
             },
+            {
+              label: 'Flutter',
+              to: 'flutter/setup',
+            },
           ],
         },
         {
