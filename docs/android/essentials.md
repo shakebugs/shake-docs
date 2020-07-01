@@ -1,4 +1,4 @@
-﻿---
+---
 id: essentials
 title: Essentials
 ---
@@ -19,3 +19,17 @@ You will find Essentials listed on the right side of your web Dashboard, and the
 If you want the SDK to attach any other variable to your bug reports, you can absolutely do that as well! Read about sending custom data with [Metadata](android/metadata.md).
 
 Do you also want to attach custom files, like images? Visit [Attachments](/android/attachments.md).
+
+
+## Limitations
+On Android version 8.0 and higher special permissions are required to get the name of the Wi-Fi network the device is connectd to. It can be enabled by specifiying the following permissions in the app `Manifest.xml` file:
+
+```
+<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+<uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+```
+
+It is also required the app has to request the **Location** permission from the user and that the **Location Services** are turned on when reporting a bug.
+
+More information on this Android system limitation can be found on the link [Wi-Fi scanning overview](https://developer.android.com/guide/topics/connectivity/wifi-scan).
