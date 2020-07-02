@@ -21,13 +21,11 @@ pipelines:
   branches:
     uat:
       - step:
-          - APP_CONFIG_ENV=uat
           <<: *deploy-s3
           name: Deploy S3 Test
           deployment: test
     master:
       - step:
-          - APP_CONFIG_ENV=production
           <<: *deploy-s3
           name: Deploy S3 Production
           deployment: production
