@@ -1,4 +1,4 @@
-﻿---
+---
 id: android-releases
 title: Release notes
 ---
@@ -9,9 +9,16 @@ just click the button in the bottom-right corner of this screen.
 
 ## Version
 
-### 12.0
-<span class="tag-button">May 19, 2020</span>&nbsp;&nbsp;
+### 13.0
+<span class="tag-button">June 30, 2020</span>&nbsp;&nbsp;
 <span class="tag-button green-tag-button">Latest version</span>
+
+**What's new**
+
+Screenshots are cool, but wouldn't it be even cooler if you could watch a 30 second video of what a user did before reporting the bug? That's why we introduced [Screen recording](/android/screen-recording.md).
+
+### 12.0
+<span class="tag-button">May 19, 2020</span>
 
 **What's new**
 
