@@ -11,6 +11,10 @@ module.exports = {
       theme: require('prism-react-renderer/themes/dracula'),
       additionalLanguages: ['groovy', 'kotlin', 'java', 'swift'],
     },
+    algolia: {
+      apiKey: '0a7f58d03fe8cc9d31b51d69d009654f',
+      indexName: 'shakebugs',
+    },
     navbar: {
       hideOnScroll: true,
       title: 'Shake',
@@ -118,4 +122,5 @@ module.exports = {
       },
     ],
   ],
+  plugins: [require.resolve('./src/plugins/inject-html-tags')],
 };

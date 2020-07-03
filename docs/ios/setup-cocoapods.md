@@ -47,7 +47,7 @@ pod 'Shake'
 </Tabs>
 
 Run the `pod install` command in your terminal.
-After the installation also run `pod update Shake` to be perfectly sure you're using the latest version.
+After the installation also run `pod update Shake` to be perfectly sure you're using the latest Shake 9.0.10.
 
 ### Add Client ID and Secret to Info.plist
 Open your workspace and in the Project Navigator, right click on *Info.plist*, and *Open as › Source code*.

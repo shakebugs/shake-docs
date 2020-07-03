@@ -15,7 +15,7 @@ Black box includes device and app data, like memory load and connectivity status
 />
 
 
-## What do charts show?
+## What do the charts show?
 
 ### CPU
 This line chart shows the CPU usage of your app.

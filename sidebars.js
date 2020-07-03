@@ -11,6 +11,7 @@ module.exports = {
                     'android/silent-reports',
                     'android/inspect',
                     'android/screenshot',
+                    'android/screen-recording',
                     'android/permissions',
                     'android/activity',
                     'android/essentials',

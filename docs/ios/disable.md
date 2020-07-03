@@ -24,6 +24,9 @@ Shake will be paused immediately, which means:
 
 So let's suppose a user switches from one mode to another. You would do this:
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 <Tabs
   groupId="ios"
   defaultValue="swift"
