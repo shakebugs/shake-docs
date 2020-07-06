@@ -51,13 +51,44 @@ Shake.start()
 
 This method also enables you to change the preferred invocation event on-the-go during runtime. Here’s a list of all available ones below, feel free to use any combination of these.
 
-| Parameter | Default | Description |
-|--| -- | -- |
- | `isInvokedByShakeDeviceEvent` | `true` | Shaking device gesture |
- | `isFloatingReportButtonShown` | `false` | Creates a floating button on top of your app's UI which users can see clearly at all times. This button can be dragged to a more suitable position. |
- | `isInvokedByScreenshot` | `false` | Event when user makes a screenshot while using your app. |
-     | `isInvokedByRightEdgePan` | `false` | One-finger swiping gesture from the right edge of the screen. |
+<Tabs
+groupId="ios"
+defaultValue="swift"
+values={[
+{ label: 'Objective-C', value: 'objectivec'},
+{ label: 'Swift', value: 'swift'},
+]
+}>
 
+<TabItem value="objectivec">
+
+```objc
+SHKShake.configuration.isInvokedByShakeDeviceEvent = YES;
+SHKShake.configuration.isFloatingReportButtonShown = YES;
+SHKShake.configuration.isInvokedByScreenshot = YES;
+```
+
+</TabItem>
+
+<TabItem value="swift">
+
+```swift
+Shake.configuration.isInvokedByShakeDeviceEvent = true
+Shake.configuration.isFloatingReportButtonShown = true
+Shake.configuration.isInvokedByScreenshot = true
+```
+
+</TabItem>
+</Tabs>
+
+### Shaking
+The default, shaking gesture causes the SDK to pop up.
+
+### Button
+This invocation event will create the floating button on top of your app's UI which users can clearly see at all times.This button can be dragged to a more suitable position.
+
+### Taking a screenshot
+The SDK will be invoked when users make a screenshot while using your app.
 
 ## Invoke through code
 You can invoke SDK through code by calling the `Shake.show()` method anywhere after `Shake.start()`, optionally adding bug description or attaching files. Here’s an example:
