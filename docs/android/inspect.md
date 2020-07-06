@@ -1,6 +1,6 @@
 ﻿---
 id: inspect
-title: Inspect Bug
+title: Inspect bug
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 

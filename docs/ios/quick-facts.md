@@ -1,4 +1,4 @@
-﻿---
+---
 id: quick-facts
 title: Quick facts
 ---
@@ -37,28 +37,22 @@ import TabItem from '@theme/TabItem';
 
 <TabItem value="objectivec">
 
-```objectivec title="AppDelegate.m"
-// highlight-start
-[[SHKShake sharedInstance] setOnPrepareData:^SHKShakeReportData *
-  _Nonnull(SHKShakeReportData * _Nonnull reportData) {
+```objectivec
+SHKShake.onPrepareReportData = ^SHKShakeReportData *_Nonnull(SHKShakeReportData *_Nonnull reportData) {
     reportData.quickFacts = [NSString stringWithFormat:@"Current user is %@", userId];
     return reportData;
-}];
-// highlight-end
+};
 ```
 
 </TabItem>
 
 <TabItem value="swift">
 
-```swift title="AppDelegate.swift"
-// highlight-start
-Shake.sharedInstance().onPrepareData = {
-  reportData in
+```swift
+Shake.onPrepareReportData = { reportData in
     reportData.quickFacts = "Current user is \(userId)”
     return reportData
 }
-// highlight-end
 ```
 
 </TabItem>
