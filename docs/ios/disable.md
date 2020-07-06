@@ -1,11 +1,11 @@
-﻿---
+---
 id: disable
 title: Pause
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-This page is about pausing (disabling) Shake invocation and tracking
+This page is about preventing a segment of your users from using Shake.
 
 ## Introduction
 Let's start with two use cases.
@@ -16,7 +16,7 @@ Or, maybe you're building a new Airbnb and want *hosts* to be able to report bug
 You could simply never call the  `Shake.start()` method for guest users, but what if a user switches from host to guest mode?
 
 ## Pausing
-Set `Shake.isPaused` property to `false` wherever you find it appropriate in your app.
+Set `Shake.isPaused` property to `true` wherever you find it appropriate in your app.
 
 Shake will be paused immediately, which means:
 1. Shake can't be invoked any more
@@ -68,8 +68,4 @@ func didLogIn(user: User, success: Bool) {
 
 
 ## Resuming
-To enable invocation and data tracking again, simply set  `Shake.isPaused` to  `false` wherever you find it appropriate in your app.
-
-Shake will be resumed immediately, which means:
-1. Shake can be invoked
-2. Shake starts tracking all data
+When you want to resume Shake again, you can do it easily by setting `Shake.isPaused` back to  `false` .
