@@ -22,7 +22,7 @@ Do you also want to attach custom files, like images? Visit [Attachments](/andro
 
 
 ## Limitations
-On Android 8.0 and higher it is not possible to easily get the **name** of the Wi-Fi the device is connected to. If that info is important to you, add the following permissions to your app's `Manifest.xml` file:
+On Android 8.0 and higher it is not possible to easily get the **name** of the Wi-Fi the device is connected to. If that info is important to you, add the following permissions to your app's `AndroidManifest.xml` file:
 
 ```
 <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
