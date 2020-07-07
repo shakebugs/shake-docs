@@ -70,7 +70,11 @@ The Shake SDK targets the latest Android version(API 29) and as such has the att
 
 ```xml title="AndroidManifest.xml"
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+      // highlight-start
+      xmlns:tools="http://schemas.android.com/tools"
+      // highlight-end
+>
   <application
     android:allowBackup="true"
     android:icon="@mipmap/ic_launcher"
