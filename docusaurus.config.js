@@ -122,4 +122,5 @@ module.exports = {
       },
     ],
   ],
+  plugins: [require.resolve('./src/plugins/inject-html-tags')],
 };
