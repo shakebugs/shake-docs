@@ -65,6 +65,41 @@ Open your AndroidManifest.xml file. Paste this but replace `your-api-client-id` 
 </manifest>
 ```
 
+## Caveat for apps targeting SDK version 28 and lower
+The Shake SDK targets the latest Android version(API 29) and as such has the attribute `android:foregroundServiceType="mediaProjection"` defined in the manifest that the [screen recording](/android/screen-recording.md) feature requires. If your app `targetSdkVersion` is 28 or lower(defined in your projects `build.gradle`) you have to add the service definition to your manifest file manually otherwise the build won't pass. Open your AndroidManifest.xml file and paste this:
+
+```xml title="AndroidManifest.xml"
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+      // highlight-start
+      xmlns:tools="http://schemas.android.com/tools"
+      // highlight-end
+>
+  <application
+    android:allowBackup="true"
+    android:icon="@mipmap/ic_launcher"
+    android:label="@string/app_name"
+    android:theme="@style/AppTheme" >
+      <activity android:name=".MainActivity" android:label="@string/app_name" >
+        <intent-filter>
+          <action android:name="android.intent.action.MAIN" />
+          <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+      </activity>
+      // highlight-start
+      <service android:name="com.shakebugs.shake.internal.service.ScreenRecordingService" 
+            tools:node="replace"/>
+      // highlight-end
+  </application>/>
+</manifest>
+```
+
+If you target Android API 28 and lower and don't add this service definition to your manifest you will get the following error:
+
+```
+AAPT: error: attribute android:foregroundServiceType not found.
+```
+
 ## Initialize Shake
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
