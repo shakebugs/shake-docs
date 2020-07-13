@@ -29,6 +29,7 @@ module.exports = {
                 "label": "Install Shake",
                 "items": [
                     'ios/setup-cocoapods',
+                    'ios/setup-carthage',
                     'ios/setup-manually',
                 ]
             },
