@@ -2,20 +2,12 @@
 id: setup-carthage
 title: Carthage
 ---
-[Carthage](https://github.com/Carthage/Carthage) is a decentralized dependency manager that builds your dependencies and provides you with binary frameworks.
+We support integrating Shake into your Xcode project using Carthage.
 
 
-:::note Before you start
-### Install Carthage
-If you don't already have Carthage, you can install the latest version using  [Homebrew](http://brew.sh/) by opening up Terminal and entering this  command:
-```bash 
-brew install carthage 
-```
-Next, create an empty file named `Cartfile` inside your project root folder:
-```bash 
-cd /Path/To/Your/Project
-touch Cartfile
-```
+
+:::note NOTE
+Not using Carthage yet? Follow their brief [installation guide](https://github.com/Carthage/Carthage#installing-carthage), then create an empty `Cartfile` in the root of your project and you're done — let's move on.
 :::
 
 
@@ -36,7 +28,7 @@ Once `carthage update` is executed, you will find the Shake binary in your proje
 
  🗂 Carthage → 🗂 Build → 🗂 iOS  → ◻️ Shake.framework
 
-Open Xcode and select project file in the left section of the screen. Under **General** Scroll down to the  **Frameworks, Libraries and Embedded Content**  section and drag-and-drop `◻️Shake.framework` there. Make sure "Embed & Sign" is selected.
+Open Xcode and select your project file in the left section of the screen. Under *General* scroll down to the  *Frameworks, Libraries and Embedded Content*  section and drag-and-drop `◻️Shake.framework` there. Make sure *Embed & Sign* is selected.
 
 ### Add Client ID and Secret to Info.plist
 Open your workspace and in the Project Navigator, right click on *Info.plist*, and *Open as › Source code*.
