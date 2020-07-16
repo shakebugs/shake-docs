@@ -28,26 +28,43 @@ To attach files this way, call the `Shake.setShakeReportData()` method as shown 
 Be careful though, any subsequent calls will override former ones already in place:
 
 ```dart title="lib/main.dart"
+// highlight-start
 import 'package:shake/shake.dart';
 import 'package:shake_flutter/models/shake_file.dart';
+// highlight-end
 
-List<ShakeFile> shakeFiles = List();
-shakeFiles.add(ShakeFile.create("data/image1.jpg"));
-shakeFiles.add(ShakeFile.create("data/image2.jpg"));
-// highlight-next-line
-Shake.setShakeReportData(shakeFiles, "Quick facts");
+_sendLogFiles(String username) {
+    // highlight-start
+    List<ShakeFile> shakeFiles = List();
+    shakeFiles.add(ShakeFile.create(userFile.path));
+    shakeFiles.add(ShakeFile.create(deviceFile.path));
+    // highlight-end
+
+    // highlight-next-line
+    Shake.setShakeReportData(shakeFiles, "User: " + username);
+}
 ```
 
 ### Attaching a file with a custom name
 Files can be attached with the desired filename and an absolute file path to your file.
 
-In order to attach files this way, call `Shake.setShakeReportData()` method as shown in the example below. 
+In order to attach files this way, call `Shake.setShakeReportData()` method as shown in the example below.
 But be careful only to call it once, since any subsequent calls will override the former ones.
 
 ```dart title="lib/main.dart"
-import 'package:shake/shake.dart';
+// highlight-start
+import 'package:shake_flutter/shake_flutter.dart';
 import 'package:shake_flutter/models/shake_file.dart';
-List<ShakeFile> shakeFiles = List();
-    shakeFiles.add(ShakeFile.create(file1.path, "customFileName1"));
-    shakeFiles.add(ShakeFile.create(file2.path, "customFileName2"));
+// highlight-end
+
+_sendLogFiles(String username) {
+    // highlight-start
+    List<ShakeFile> shakeFiles = List();
+    shakeFiles.add(ShakeFile.create(userFile.path, "userLogs"));
+    shakeFiles.add(ShakeFile.create(deviceFile.path, "deviceLogs"));
+    // highlight-end
+
+    // highlight-next-line
+    Shake.setShakeReportData(shakeFiles, "User: " + username);
+}
 ```

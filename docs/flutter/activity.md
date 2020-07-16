@@ -18,7 +18,10 @@ A link to Activity history is located in the top right corner:
 
 ## Android
 ### User actions
-User actions are tracked automatically and require no additional setup.
+User actions tracking is currently not available for Android.
+
+### Network requests
+Network requests tracking is currently not available for Android.
 
 ### System events
 System events are tracked automatically and require no additional setup.
@@ -39,14 +42,15 @@ In a Free workspace, you can see up to 20 events that lead to every bug.
   In a Premium workspace you can browse the entire activity history.
 :::
 
-## Disabling
+## Enabling and disabling
 Activity history is enabled by default, however, you can use the method below to disable it:
 
 ```dart title="lib/main.dart"
 // highlight-next-line
-import 'package:shake/shake.dart';
-...
-// highlight-next-line
-Shake.setEnableActivityHistory(enabled);
+import 'package:shake_flutter/shake_flutter.dart';
 
+_disableActivityHistory() {
+    // highlight-next-line
+    Shake.setEnableActivityHistory(false);
+}
 ```

@@ -45,7 +45,7 @@ Black box is enabled by default, however, you can use the method below to disabl
 
 ```dart title="lib/main.dart"
 // highlight-next-line
-import 'package:shake/shake.dart';
+import 'package:shake_flutter/shake_flutter.dart';
 
 _disableBlackbox() {
     // highlight-next-line

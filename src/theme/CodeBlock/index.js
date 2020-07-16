@@ -19,7 +19,7 @@ import styles from './styles.module.css';
 
 const highlightLinesRangeRegex = /{([\d,-]+)}/;
 const getHighlightDirectiveRegex = (
-  languages = ['js', 'jsBlock', 'jsx', 'python', 'html', 'dart'],
+  languages = ['js', 'jsBlock', 'jsx', 'python', 'html'],
 ) => {
   // supported types of comments
   const comments = {
@@ -43,14 +43,6 @@ const getHighlightDirectiveRegex = (
       start: '<!--',
       end: '-->',
     },
-    dart: {
-      start: '\\/\\/',
-      end: '',
-    },
-    dartBlock: {
-      start: '\\/\\*',
-      end: '\\*\\/',
-    }
   };
   // supported directives
   const directives = [
@@ -87,10 +79,7 @@ const highlightDirectiveRegex = (lang) => {
     case 'python':
     case 'py':
       return getHighlightDirectiveRegex(['python']);
-    
-    case 'dart':
-      return getHighlightDirectiveRegex(['dart']);
-      
+
     default:
       // all comment types
       return getHighlightDirectiveRegex();

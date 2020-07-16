@@ -28,7 +28,7 @@ subsequent calls with the same key will override the former text value.
 
 ```dart title="lib/main.dart"
 // highlight-next-line
-import 'package:shake/shake.dart';
+import 'package:shake_flutter/shake_flutter.dart';
 
 async _onLoginPres(username, password) {
   const user = await login(username, password);
