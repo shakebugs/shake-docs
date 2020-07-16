@@ -19,7 +19,7 @@ allprojects {
 ```groovy title="build.gradle"
 dependencies {
   // highlight-next-line
-  implementation 'com.shakebugs.android:shake:13.0.1'
+  implementation 'com.shakebugs.android:shake:13.0.2'
 }
 ```
 
