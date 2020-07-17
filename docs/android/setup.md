@@ -87,7 +87,7 @@ The Shake SDK targets the latest Android version(API 29) and as such has the att
         </intent-filter>
       </activity>
       // highlight-start
-      <service android:name="com.shakebugs.shake.internal.service.ScreenRecordingService" 
+      <service android:name="com.shakebugs.shake.internal.service.ScreenRecordingService"
             tools:node="replace"/>
       // highlight-end
   </application>/>
