@@ -96,19 +96,23 @@ You can invoke SDK through code by calling the `Shake.show()` method anywhere af
 <Tabs groupId="ios" values={[{ label: 'Objective-C', value: 'objectivec'},{ label: 'Swift', value: 'swift'},]} defaultValue="swift"><TabItem value="objectivec">
 
 ```objc
-[SHKShake show]; // Shows bug report window
+// Shows bug report window
+[SHKShake show];
 
 SHKShakeReportData *reportData = [[SHKShakeReportData alloc] initWithBugDescription:@"Broken UI" attachedFiles:@[]];
-[SHKShake showWithReportData:reportData]; // Shows bug report window with pre-populated data
+// Shows bug report window with pre-populated data
+[SHKShake showWithReportData:reportData]; 
 ```
 
 </TabItem><TabItem value="swift">
 
 ```swift
-Shake.show(reportData: reportData) // Shows bug report window
+// Shows bug report window
+Shake.show(reportData: reportData)
 
 let reportData = ShakeReportData(bugDescription: "Broken UI", attachedFiles: [])
-Shake.show(reportData: reportData) // Shows bug report window with pre-populated data
+// Shows bug report window with pre-populated data
+Shake.show(reportData: reportData)
 ```
 
 </TabItem></Tabs>

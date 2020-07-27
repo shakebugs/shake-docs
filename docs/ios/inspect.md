@@ -42,7 +42,7 @@ SHKShake.configuration.isInspectScreenEnabled = NO;
 <TabItem value="swift">
 
 ```swift
-Shake.configuration.isInspectScreenEnabled = false;
+Shake.configuration.isInspectScreenEnabled = false
 ```
 
 </TabItem>
