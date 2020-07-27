@@ -17,13 +17,6 @@ You can inspect all events that lead to the bug being reported out-of-the-box. Y
   src={useBaseUrl('screens/activity_screen.png')}
 />
 
-:::note
-
-Shake intercepts network requests by swizzling URLSession’s `dataTask(with:completionHandler) `method.
-If you don’t set `completionHandler` or use the `URLSession` delegate instead, Shake won’t record network responses.
-
-:::
-
 ## Enabling and disabling
 Activity history is enabled by default, however, you can use the method below to disable it:
 
