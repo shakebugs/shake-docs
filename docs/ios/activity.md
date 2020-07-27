@@ -10,7 +10,7 @@ Shake diligently tracks user's interaction with your app, their network traffic 
 and automatically attaches all of those to every bug report.
 
 ## No coding required
-You can inspect all events that lead to the bug being reported out-of-the-box. You’ll see a link to *Activity history* in the top right corner:
+You can inspect all events that lead to the bug being reported out-of-the-box. You'll see a link to *Activity history* in the top right corner:
 
 <img
   alt="Activity screen"
