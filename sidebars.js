@@ -18,7 +18,8 @@ module.exports = {
                     'android/attachments',
                     'android/blackbox',
                     'android/metadata',
-                    'android/quick-facts'
+                    'android/quick-facts',
+                    'android/privacy',
                 ]
             },
             'android/android-releases'
