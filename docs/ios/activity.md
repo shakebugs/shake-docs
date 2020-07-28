@@ -10,19 +10,12 @@ Shake diligently tracks user's interaction with your app, their network traffic 
 and automatically attaches all of those to every bug report.
 
 ## No coding required
-You can inspect all events that lead to the bug being reported out-of-the-box. You’ll see a link to *Activity history* in the top right corner:
+You can inspect all events that lead to the bug being reported out-of-the-box. You'll see a link to *Activity history* in the top right corner:
 
 <img
   alt="Activity screen"
   src={useBaseUrl('screens/activity_screen.png')}
 />
-
-:::note
-
-Shake intercepts network requests by swizzling URLSession’s `dataTask(with:completionHandler) `method.
-If you don’t set `completionHandler` or use the `URLSession` delegate instead, Shake won’t record network responses.
-
-:::
 
 ## Enabling and disabling
 Activity history is enabled by default, however, you can use the method below to disable it:
@@ -38,7 +31,7 @@ SHKShake.configuration.isActivityHistoryEnabled = NO;
 </TabItem><TabItem value="swift">
 
 ```swift
-Shake.configuration.isActivityHistoryEnabled = false;
+Shake.configuration.isActivityHistoryEnabled = false
 ```
 
 </TabItem></Tabs>
