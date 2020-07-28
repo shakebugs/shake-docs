@@ -10,7 +10,7 @@ Whether you are using Java or Kotlin, you can follow the steps below.
 allprojects {
   repositories {
     // highlight-next-line
-    maven { url 'https://dl.bintray.com/shake/shake' }
+    maven { url 'https://dl.bintray.com/shakebugs/shake' }
   }
 }
 ```
