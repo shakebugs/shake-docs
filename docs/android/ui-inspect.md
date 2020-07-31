@@ -19,7 +19,7 @@ For situations that need more details when reviewing the desing of the app we ha
 UI inspect is enabled by default but can be disabled by calling `Shake.getReportConfiguration().setEnableMeasureMode(false)` before `Shake.start()`. 
 
 This invocation event will create the floating button on top of your app's UI which users can clearly see at all times.This button can be dragged to a more suitable position.
-When the button is pressed the view and it's children will have outlines drawn around them. I the element is pressed it will be selected and the following elements will be shown:
+When the button is pressed the view and it's children will have outlines drawn around them. If one of the views is pressed it will be selected and the following elements will be shown:
 
 1. A border around the view
 2. Alignement guides on each side of the view
@@ -29,5 +29,12 @@ If the same view is pressed again it's parent view will be selected. This can be
 
 While a view is selected you can inspect the position in relation to another view. For that you have long-press on another view and their distance and alignement will be displayed.
 
-For text and image views more details can be obtained by pressing the **info** floating button. A bottom sheet will open with specifications for the selection. For image views the bitmap can be saved by pressing *`Download image`* button.
+For text and image views more details can be obtained by pressing the **info** floating button. A bottom sheet will open with specifications for the selected view. Also for image views the bitmap can be saved by pressing **Download image** button.
 
+
+## Limitations
+Some of the deitals of the text and image views may be different depending on the version of Android. Newer versions of Android support more details, eg.:
+
+1. TextView letter spacing value is available from Android version 5.0(API 21).
+2. TextView weight value is available from Android version 9.0(API 28).
+2. ImageView tint color value is available from Android version 5.0(API 21).
