@@ -9,8 +9,8 @@
     "build": "npm run build:uat",
     "build:uat": "npm run set:uat && docusaurus build",
     "build:prd": "npm run set:prd && docusaurus build",
-    "set:uat": "cross-env-shell shx \"cp env/.env.uat ./.env\"",
-    "set:prd": "cross-env-shell shx \"cp env/.env.prd ./.env\"",
+    "set:uat": "shx cp ./env/.env.uat ./.env",
+    "set:prd": "shx cp ./env/.env.prd ./.env",
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy"
   },
@@ -35,6 +35,6 @@
     ]
   },
   "devDependencies": {
-    "cross-env": "^7.0.2"
+    "shx": "^0.3.2"
   }
 }
