@@ -9,6 +9,7 @@ module.exports = {
                     'android/invoke',
                     'android/disable',
                     'android/silent-reports',
+                    'android/email',
                     'android/inspect',
                     'android/screenshot',
                     'android/screen-recording',
@@ -19,7 +20,6 @@ module.exports = {
                     'android/blackbox',
                     'android/metadata',
                     'android/quick-facts',
-                    'android/email'
                 ]
             },
             'android/android-releases'
