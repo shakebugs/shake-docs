@@ -1,16 +1,13 @@
 ---
-id: followup-email
-title: Follow-up email
+id: email
+title: Email
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This page covers the follow-up email field of the SDK *Wrap-up* screen. 
+The *Email* field is part of the SDK *Wrap-up* screen. It's optional and allows your users to leave their email address with the report they're submitting.
 
-## Introduction
-You can chose to pre-fill the follow-up email field or to hide the field entirely using these methods: 
-
-## Hide the *Follow-up email* field
-If you don’t want the field to show when submitting a bug report, you can hide it using the following method:
+## Hide the *Email* field
+Use the following method if you don't want to show this field in the SDK:
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -43,8 +40,8 @@ Shake.getReportConfiguration().isEnableEmailField = false
 </TabItem>
 </Tabs>
 
-## Pre-fill the *Follow-up email* field
-If you want to pre-fill the field when submitting a bug report, you can do it using the following method:
+## Pre-fill the *Email* field
+Use the following method to save your users some time by pre-filling the field with their email address:
 
 <Tabs
   groupId="android"
@@ -59,7 +56,7 @@ If you want to pre-fill the field when submitting a bug report, you can do it us
 
 ```java title="App.java"
 // highlight-next-line
-Shake.getReportConfiguration().setEmailField("your@email.com");
+Shake.getReportConfiguration().setEmailField("user@email.com");
 ```
 
 </TabItem>
@@ -68,7 +65,7 @@ Shake.getReportConfiguration().setEmailField("your@email.com");
 
 ```kotlin title="App.kt"
 // highlight-next-line
-Shake.getReportConfiguration().email = "your@email.com"
+Shake.getReportConfiguration().email = "user@email.com"
 ```
 
 </TabItem>
