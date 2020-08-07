@@ -16,12 +16,9 @@ allprojects {
 ```
 
 ## Add Shake dependency to your app-level build.gradle file
-```groovy title="build.gradle"
-dependencies {
-  // highlight-next-line
-  implementation 'com.shakebugs.android:shake:13.0.2'
-}
-```
+import AndroidVersionBlock from '@site/src/base/AndroidVersionBlock';
+
+<AndroidVersionBlock></AndroidVersionBlock>
 
 <span class="tag-button yellow-tag-button">Optional</span>&nbsp;
 If you use ProGuard optimizer, you have to add this rule

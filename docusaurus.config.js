@@ -122,5 +122,11 @@ module.exports = {
       },
     ],
   ],
-  plugins: [require.resolve('./src/plugins/inject-html-tags')],
+  plugins: [
+      require.resolve('./src/plugins/inject-html-tags'),
+      'docusaurus2-dotenv',
+      {
+        systemvars: true,
+      },
+  ],
 };
