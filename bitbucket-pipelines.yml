@@ -34,7 +34,7 @@ pipelines:
           name: Build Production
           script:
             - npm install
-            - npm run build:uat
+            - npm run build:prd
           artifacts:
             - build/**
       - step:
