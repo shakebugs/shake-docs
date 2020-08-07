@@ -4,10 +4,10 @@ title: Email
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-The *Email* field is part of the SDK *Wrap-up* screen. It’s optional and allows your users to leave their email address with the report they’re submitting.
+The *Email* field is part of the SDK *Wrap-up* screen. It's optional and allows your users to leave their email address with the report they're submitting.
 
 ## Hide the *Email* field
-Use the following method if you don’t want to show this field in the SDK:
+Use the following method if you don't want to show this field in the SDK:
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
