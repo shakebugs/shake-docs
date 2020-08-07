@@ -7,8 +7,6 @@ definitions:
         caches:
           - node
         script:
-          - npm install
-          - npm run build
           - pipe: atlassian/aws-s3-deploy:0.4.3
             variables:
               S3_BUCKET: "$BUCKET_NAME/docs"
@@ -21,11 +19,25 @@ pipelines:
   branches:
     uat:
       - step:
+          name: Build Test
+          script:
+            - npm install
+            - npm run build:uat
+          artifacts:
+            - build/**
+      - step:
           <<: *deploy-s3
-          name: Deploy S3 Test
+          name: Deploy S3
           deployment: test
     master:
       - step:
+          name: Build Production
+          script:
+            - npm install
+            - npm run build:uat
+          artifacts:
+            - build/**
+      - step:
           <<: *deploy-s3
-          name: Deploy S3 Production
+          name: Deploy S3
           deployment: production
