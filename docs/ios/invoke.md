@@ -88,7 +88,13 @@ The default, shaking gesture causes the SDK to pop up.
 This invocation event will create the floating button on top of your app's UI which users can clearly see at all times.This button can be dragged to a more suitable position.
 
 ### Taking a screenshot
-The SDK will be invoked when users make a screenshot while using your app.
+The SDK will be invoked when testers make a screenshot while using your app.
+
+:::note
+
+App Store rejects apps that get in the way of the default screenshot behavior. For that reason, don't use this invocation method in your production releases.
+
+:::
 
 ## Invoke through code
 You can invoke SDK through code by calling the `Shake.show()` method anywhere after `Shake.start()`, optionally adding bug description or attaching files. Here’s an example:
