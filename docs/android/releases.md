@@ -13,6 +13,8 @@ just click the button in the bottom-right corner of this screen.
 <span class="tag-button">August 25, 2020</span>&nbsp;&nbsp;
 <span class="tag-button green-tag-button">Latest version</span>
 
+**What's new**
+
 If you want to, you can now pre-fill or hide the SDK [follow-up email](/android/followup-email.md) field altogether. Pretty neat.
 
 ### 13.0
