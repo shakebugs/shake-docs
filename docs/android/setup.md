@@ -20,17 +20,6 @@ import AndroidVersionBlock from '@site/src/base/AndroidVersionBlock';
 
 <AndroidVersionBlock></AndroidVersionBlock>
 
-<span class="tag-button yellow-tag-button">Optional</span>&nbsp;
-If you use ProGuard optimizer, you have to add this rule
-
-```bash title="proguard-rules.pro"
-// highlight-start
--keep public class com.shakebugs.shake.internal.data.** {
-    public protected private *;
-}
-// highlight-end
-```
-
 ## Add Client ID and Secret to AndroidManifest.xml as metadata
 Open your AndroidManifest.xml file. Paste this but replace `your-api-client-id` and
 `your-api-client-secret` with the actual values you have in [your workspace settings](https://app.shakebugs.com/settings/workspace#general).
