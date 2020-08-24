@@ -15,7 +15,7 @@ just click the button in the bottom-right corner of this screen.
 
 **What's new**
 
-If you want to, you can now pre-fill or hide the SDK [follow-up email](/android/followup-email.md) field altogether. Pretty neat.
+If you want to, you can now pre-fill or hide the SDK [email field](/android/email.md) field altogether. Pretty neat.
 
 ### 13.0
 <span class="tag-button">June 30, 2020</span>&nbsp;&nbsp;
