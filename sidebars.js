@@ -9,6 +9,7 @@ module.exports = {
                     'android/invoke',
                     'android/disable',
                     'android/silent-reports',
+                    'android/email',
                     'android/inspect',
                     'android/screenshot',
                     'android/screen-recording',
@@ -19,7 +20,6 @@ module.exports = {
                     'android/blackbox',
                     'android/metadata',
                     'android/quick-facts',
-                    'android/followup-email'
                 ]
             },
             'android/android-releases'
@@ -73,5 +73,19 @@ module.exports = {
             },
             'react/react-releases'
         ],
+        /*"Template Gallery": [
+            'template-gallery/template-gallery',
+            {
+                "type": "category",
+                "label": "Gallery",
+                "items": [
+                    'template-gallery/account-details',
+                    'template-gallery/git',
+                    'template-gallery/shopping-retail',
+                    'template-gallery/realtime-communication',
+                    'template-gallery/iot',
+                ]
+            },
+        ],*/
     },
 };
