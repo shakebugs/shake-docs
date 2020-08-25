@@ -73,5 +73,19 @@ module.exports = {
             },
             'react/react-releases'
         ],
+        "Template Gallery": [
+            'template-gallery/template-gallery',
+            {
+                "type": "category",
+                "label": "Gallery",
+                "items": [
+                    'template-gallery/account-details',
+                    'template-gallery/git',
+                    'template-gallery/shopping-retail',
+                    'template-gallery/realtime-communication',
+                    'template-gallery/iot',
+                ]
+            },
+        ],
     },
 };
