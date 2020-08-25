@@ -79,7 +79,6 @@ function Home() {
                     {Button("Android", "android/setup")}
                     {Button("iOS", "ios/setup-cocoapods")}
                     {Button("React Native", "react/setup")}
-                    {Button("Template Gallery", "template-gallery/template-gallery")}
                 </div>
             </div>
         </header>

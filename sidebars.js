@@ -73,7 +73,7 @@ module.exports = {
             },
             'react/react-releases'
         ],
-        "Template Gallery": [
+        /*"Template Gallery": [
             'template-gallery/template-gallery',
             {
                 "type": "category",
@@ -86,6 +86,6 @@ module.exports = {
                     'template-gallery/iot',
                 ]
             },
-        ],
+        ],*/
     },
 };
