@@ -4,7 +4,7 @@ module.exports = function (context, options) {
       injectHtmlTags() {
         return {
           headTags: [
-            process.env.APP_CONFIG_ENV != 'production' ?
+            process.env.APP_CONFIG_ENV === 'uat' ?
                 {
                     tagName: 'meta',
                     attributes: {
