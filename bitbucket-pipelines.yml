@@ -20,6 +20,7 @@ pipelines:
     uat:
       - step:
           name: Build Test
+          deployment: test
           script:
             - npm install
             - npm run build:uat
@@ -32,6 +33,7 @@ pipelines:
     master:
       - step:
           name: Build Production
+          deployment: production
           script:
             - npm install
             - npm run build:prd
