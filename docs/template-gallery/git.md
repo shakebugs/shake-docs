@@ -1,6 +1,6 @@
 ---
 id: git
-title: git
+title: Git
 ---
 
 You could attach some useful git data to your bug report (eg. curent branch, commit...)
