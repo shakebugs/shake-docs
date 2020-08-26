@@ -11,7 +11,7 @@ Your users can inspect a bug — see its [Essentials](/ios/essentials.md) and [Q
 
 <img
   alt="Attachments screen"
-  src={useBaseUrl('screens/attachments_screen.png')}
+  src={useBaseUrl('screens/inspect_screen.png')}
 />
 
 

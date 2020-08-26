@@ -1,6 +1,6 @@
 ﻿---
-id: blackbox
-title: Blackbox
+id: black-box
+title: Black box
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 

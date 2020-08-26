@@ -2,6 +2,15 @@
 id: git
 title: Git
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<div class='text--center'>
+<img
+  alt='Git'
+  src={useBaseUrl('img/docs-git@2x.png')}
+  width='460'
+/>
+</div>
 
 You could attach some useful git data to your bug report (eg. curent branch, commit...)
 
@@ -14,7 +23,7 @@ import TabItem from '@theme/TabItem';
   values={[
     { label: 'Java', value: 'java'},
     { label: 'Kotlin', value: 'kotlin'},
-    { label: 'Objective-C', value: 'objc'},
+    { label: 'Objective-C', value: 'objectivec'},
     { label: 'Swift', value: 'swift'},
     { label: 'Javascript', value: 'javascript'},
     { label: 'Dart', value: 'dart'},
@@ -51,9 +60,9 @@ Shake.setMetadata("branch", branch.name);
 
 </TabItem>
 
-<TabItem value="objc">
+<TabItem value="objectivec">
 
-```objc title="App.m"
+```objectivec title="App.m"
 Branch *branch = [[Branch alloc] init];
 Commit *commit = [[Commit alloc] init];
 

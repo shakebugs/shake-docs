@@ -61,7 +61,7 @@ module.exports = {
             },
             {
               label: 'Template Gallery',
-              to: 'template-gallery/template-gallery',
+              to: 'template-gallery/about',
             },
           ],
         },

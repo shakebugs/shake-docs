@@ -2,6 +2,15 @@
 id: realtime-communication
 title: Realtime communication
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<div class='text--center'>
+<img
+  alt='Realtime communication'
+  src={useBaseUrl('img/docs-realtime-communication@2x.png')}
+  width='460'
+/>
+</div>
 
 If your app has a chat module (group, 1-on-1, video, audio, text), there’s a ton of useful data that you can attach automatically and would come in handy later when you try to debug the problem.
 
@@ -14,7 +23,7 @@ import TabItem from '@theme/TabItem';
   values={[
     { label: 'Java', value: 'java'},
     { label: 'Kotlin', value: 'kotlin'},
-    { label: 'Objective-C', value: 'objc'},
+    { label: 'Objective-C', value: 'objectivec'},
     { label: 'Swift', value: 'swift'},
     { label: 'Javascript', value: 'javascript'},
     { label: 'Dart', value: 'dart'},
@@ -55,9 +64,9 @@ Shake.setMetadata("serverStatus", isServerAvailable);
 
 </TabItem>
 
-<TabItem value="objc">
+<TabItem value="objectivec">
 
-```objc title="App.m"
+```objectivec title="App.m"
 NSString *serverURL = [getServerURL];
 User *user = [User getCurrentUser];
 PhoneNumber *phoneNumber = [user getPhoneNumber];

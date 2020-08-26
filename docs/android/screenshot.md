@@ -1,6 +1,6 @@
 ﻿---
-id: screenshot
-title: Screenshot
+id: screenshot-and-description
+title: Screenshot and description
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 

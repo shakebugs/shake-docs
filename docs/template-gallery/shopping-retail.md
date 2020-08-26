@@ -3,14 +3,17 @@ id: shopping-retail
 title: Shopping and retail
 ---
 
-## Shopping
-
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+<div class='text--center'>
 <img
-  alt="Payments"
+  alt='Payments'
   src={useBaseUrl('img/docs-payments@2x.png')}
+  width='460'
 />
+</div>
+
+## Shopping
 
 If you do online shopping, send yourself a list of all user’s orders (or at least their IDs), both previously placed and this last open one, that will provide you with useful context.
 
@@ -26,7 +29,7 @@ import TabItem from '@theme/TabItem';
   values={[
     { label: 'Java', value: 'java'},
     { label: 'Kotlin', value: 'kotlin'},
-    { label: 'Objective-C', value: 'objc'},
+    { label: 'Objective-C', value: 'objectivec'},
     { label: 'Swift', value: 'swift'},
     { label: 'Javascript', value: 'javascript'},
     { label: 'Dart', value: 'dart'},
@@ -65,9 +68,9 @@ Shake.setMetadata("merchantId", order.merchantId);
 
 </TabItem>
 
-<TabItem value="objc">
+<TabItem value="objectivec">
 
-```objc title="App.m"
+```objectivec title="App.m"
 Order *order = [[Order alloc] init];
 [order addItems: item1, item2, item3];
 
@@ -142,7 +145,7 @@ If your app is used in retail environments, send yourself:
   values={[
     { label: 'Java', value: 'java'},
     { label: 'Kotlin', value: 'kotlin'},
-    { label: 'Objective-C', value: 'objc'},
+    { label: 'Objective-C', value: 'objectivec'},
     { label: 'Swift', value: 'swift'},
     { label: 'Javascript', value: 'javascript'},
     { label: 'Dart', value: 'dart'},
@@ -181,9 +184,9 @@ Shake.setMetadata("merchantId", order.merchantId);
 
 </TabItem>
 
-<TabItem value="objc">
+<TabItem value="objectivec">
 
-```objc title="App.m"
+```objectivec title="App.m"
 Order *order = [[Order alloc] init];
 [order addItems: item1, item2, item3];
 

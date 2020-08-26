@@ -1,14 +1,16 @@
 ---
 id: iot
-title: IoT
+title: Internet of things
 ---
-
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+<div class='text--center'>
 <img
-  alt="IoT"
+  alt='IoT'
   src={useBaseUrl('img/docs-iot@2x.png')}
+  width='460'
 />
+</div>
 
 If your app uses IoT devices, you might find it useful to attach device data (eg. fw version, bt version, battery status...)
 
@@ -22,7 +24,7 @@ import TabItem from '@theme/TabItem';
   values={[
     { label: 'Java', value: 'java'},
     { label: 'Kotlin', value: 'kotlin'},
-    { label: 'Objective-C', value: 'objc'},
+    { label: 'Objective-C', value: 'objectivec'},
     { label: 'Swift', value: 'swift'},
     { label: 'Javascript', value: 'javascript'},
     { label: 'Dart', value: 'dart'},
@@ -59,9 +61,9 @@ for(device in connectedDevices) {
 
 </TabItem>
 
-<TabItem value="objc">
+<TabItem value="objectivec">
 
-```objc title="App.m"
+```objectivec title="App.m"
 NSMutableArray *connectedDevices = [getConnectedDevices];
 for(Device *device in connectedDevices) {
 // highlight-start

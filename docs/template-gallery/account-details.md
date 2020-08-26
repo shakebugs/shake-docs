@@ -2,6 +2,15 @@
 id: account-details
 title: Account details
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<div class='text--center'>
+<img
+  alt='Account details'
+  src={useBaseUrl('img/docs-account@2x.png')}
+  width='460'
+/>
+</div>
 
 ## General
 
@@ -20,7 +29,7 @@ import TabItem from '@theme/TabItem';
   values={[
     { label: 'Java', value: 'java'},
     { label: 'Kotlin', value: 'kotlin'},
-    { label: 'Objective-C', value: 'objc'},
+    { label: 'Objective-C', value: 'objectivec'},
     { label: 'Swift', value: 'swift'},
     { label: 'Javascript', value: 'javascript'},
     { label: 'Dart', value: 'dart'},
@@ -61,9 +70,9 @@ if(userLoggedIn) {
 
 </TabItem>
 
-<TabItem value="objc">
+<TabItem value="objectivec">
 
-```objc title="App.m"
+```objectivec title="App.m"
 User *currentUser = [[User alloc] init];
 currentUser = [self getLoggedInUser];
 BOOL userLoggedIn = [currentUser isUserLoggedIn];
@@ -143,7 +152,7 @@ If your app is in the gaming or education industry, think about sending yourself
   values={[
     { label: 'Java', value: 'java'},
     { label: 'Kotlin', value: 'kotlin'},
-    { label: 'Objective-C', value: 'objc'},
+    { label: 'Objective-C', value: 'objectivec'},
     { label: 'Swift', value: 'swift'},
     { label: 'Javascript', value: 'javascript'},
     { label: 'Dart', value: 'dart'},
@@ -194,9 +203,9 @@ if(user) {
 
 </TabItem>
 
-<TabItem value="objc">
+<TabItem value="objectivec">
 
-```objc title="App.m"
+```objectivec title="App.m"
 NSMutableArray *achievements = [[NSMutableArray alloc] init];
 NSMutableArray *courses = [[NSMutableArray alloc] init];
 Difficulty *difficulty = [Difficulty @"Begginer"];
@@ -287,7 +296,7 @@ In a more serious B2B environment, you probably want to always report yourself d
   values={[
     { label: 'Java', value: 'java'},
     { label: 'Kotlin', value: 'kotlin'},
-    { label: 'Objective-C', value: 'objc'},
+    { label: 'Objective-C', value: 'objectivec'},
     { label: 'Swift', value: 'swift'},
     { label: 'Javascript', value: 'javascript'},
     { label: 'Dart', value: 'dart'},
@@ -324,9 +333,9 @@ if(user) {
 
 </TabItem>
 
-<TabItem value="objc">
+<TabItem value="objectivec">
 
-```objc title="App.m"
+```objectivec title="App.m"
 User *user = [self getCurrentUser];
 if(user) {
 // highlight-start
