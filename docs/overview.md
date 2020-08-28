@@ -34,14 +34,14 @@ import VersionValue from '@site/src/base/VersionValue';
 
 ## Latest versions
 |                |   Android  |     iOS    |  React Native  |
-|----------------|------------|------------|----------------|
-| Latest version | <VersionValue platform="Android" os="Android"></VersionValue> | <VersionValue platform="iOS" os="iOS"></VersionValue> | <VersionValue platform="ReactNative" os="ReactNative"></VersionValue> | 
+|:--------------:|:----------:|:----------:|:--------------:|
+| Latest version | <VersionValue platform="Android" os="Android"></VersionValue> | <VersionValue platform="iOS" os="iOS"></VersionValue> | <VersionValue platform="ReactNative" os="Android"></VersionValue> | 
 
 
 ## Minimum requirements
 |    Android   |     iOS    |  React Native | 
 |:------------:|:----------:|:-------------:|  
-|   API 19     |   iOS 10   |    RN 0.60    |  
+|    API 19    |   iOS 10   |     RN 0.60   | 
 
 
 
