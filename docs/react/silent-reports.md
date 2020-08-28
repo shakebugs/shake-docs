@@ -4,12 +4,6 @@ title: Silent reports
 ---
 This page explains how to submit yourself a bug report from the background, without interrupting your end user whatsoever.
 
-:::caution
-
-Silent reports are not available for Android apps, it will be available in the next version of React Native SDK.
-
-:::
-
 ## Overview
 You can send silent reports to yourself by calling the `Shake.silentReport()` method anywhere after `Shake.start()`:
 

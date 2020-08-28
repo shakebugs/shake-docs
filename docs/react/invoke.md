@@ -10,7 +10,7 @@ You can invoke Shake SDK either by shaking the device, floating button or taking
 To customize invocation behaviour you have the following 3 methods at your disposal.
 
 `Shake.setShowFloatingReportButton(bool isEnabled)`
-`Shake.setInvokeShakeOnShaking(bool isEnabled)`
+`Shake.setInvokeShakeOnShakeDeviceEvent(bool isEnabled)`
 `Shake.setInvokeShakeOnScreenshot(bool isEnabled)`
 
 
@@ -23,7 +23,7 @@ import Shake from '@shakebugs/react-native-shake';
 const setInvocationActions = () => {
     // highlight-start
     Shake.setShowFloatingReportButton(true);
-    Shake.setInvokeShakeOnShaking(true);
+    Shake.setInvokeShakeOnShakeDeviceEvent(true);
     Shake.setInvokeShakeOnScreenshot(true);
     // highlight-end
 }
@@ -38,7 +38,7 @@ import Shake from '@shakebugs/react-native-shake';
 const getInvocationActions = async () => {
     // highlight-start
     await Shake.isShowFloatingReportButton();
-    await Shake.isInvokeShakeOnShaking();
+    await Shake.isInvokeShakeOnShakeDeviceEvent();
     await Shake.isInvokeShakeOnScreenshot();
     // highlight-end
 }
