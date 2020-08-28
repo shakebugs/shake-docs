@@ -41,7 +41,7 @@ import VersionValue from '@site/src/base/VersionValue';
 ## Minimum requirements
 |    Android   |     iOS    |  React Native | 
 |:------------:|:----------:|:-------------:|  
-|    API 19    |   iOS 10   |     RN 0.60   | 
+|    API 19    |   iOS 10   |     RN 0.56   | 
 
 
 
