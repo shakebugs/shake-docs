@@ -268,7 +268,7 @@ if(user) {
 
 <TabItem value="dart">
 
-```dart title="App.dart
+```dart title="App.dart"
 if(user) {
     var achievements = user.getUserAchievements()
     var courses = user.getUserCourses()
@@ -380,7 +380,7 @@ if(user) {
 
 <TabItem value="dart">
 
-```dart title="App.dart
+```dart title="App.dart"
 User user = getCurrentUser();
 if(user) {
 // highlight-start

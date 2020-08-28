@@ -119,7 +119,7 @@ Shake.setMetadata("merchantId", order.merchantId);
 
 <TabItem value="dart">
 
-```dart title="App.dart
+```dart title="App.dart"
 Order order = new Order();
 order.addItems(item1, item2, item3);
 
@@ -235,7 +235,7 @@ Shake.setMetadata("merchantId", order.merchantId);
 
 <TabItem value="dart">
 
-```dart title="App.dart
+```dart title="App.dart"
 Order order = new Order();
 order.addItems(item1, item2, item3);
 
