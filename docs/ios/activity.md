@@ -6,8 +6,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Shake diligently tracks user's interaction with your app, their network traffic and system events,
-and automatically attaches all of those to every bug report.
+Shake diligently tracks user's interaction with your app, their network traffic, notifcations, logs and system events, and automatically attaches all of those to every bug report.
 
 ## No coding required
 You can inspect all events that lead to the bug being reported out-of-the-box. You'll see a link to *Activity history* in the top right corner:
@@ -36,6 +35,38 @@ Shake.configuration.isActivityHistoryEnabled = false
 
 </TabItem></Tabs>
 
+
+## Custom logs
+You can add your own custom logs to Activity history, which will then be shown as part of every bug report.
+Here’s an example of how this would look like in code:
+
+<Tabs
+  groupId="ios"
+  defaultValue="swift"
+  values={[
+    { label: 'Objective-C', value: 'objectivec'},
+    { label: 'Swift', value: 'swift'},
+  ]
+}>
+
+<TabItem value="objectivec">
+
+```objectivec title="AppDelegate.m"
+// highlight-next-line
+[SHKShake logWithLevel: CustomLogLevel.CustomLogLevelInfo, message:@"Log message goes here!"];
+```
+
+</TabItem>
+
+<TabItem value="swift">
+
+```swift title="AppDelegate.swift"
+// highlight-next-line
+Shake.log(CustomLogLevel.CustomLogLevelInfo, "Log message goes here!");
+```
+
+</TabItem>
+</Tabs>
 
 
 ## Limitations

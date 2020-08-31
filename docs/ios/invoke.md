@@ -66,6 +66,7 @@ values={[
 SHKShake.configuration.isInvokedByShakeDeviceEvent = YES;
 SHKShake.configuration.isFloatingReportButtonShown = YES;
 SHKShake.configuration.isInvokedByScreenshot = YES;
+SHKShake.configuration.isInvokedByRightEdgePan = YES;
 ```
 
 </TabItem>
@@ -76,6 +77,7 @@ SHKShake.configuration.isInvokedByScreenshot = YES;
 Shake.configuration.isInvokedByShakeDeviceEvent = true
 Shake.configuration.isFloatingReportButtonShown = true
 Shake.configuration.isInvokedByScreenshot = true
+Shake.configuration.isInvokedByRightEdgePan = true
 ```
 
 </TabItem>
@@ -95,6 +97,9 @@ The SDK will be invoked when testers make a screenshot while using your app.
 App Store rejects apps that get in the way of the default screenshot behavior. For that reason, don't use this invocation method in your production releases.
 
 :::
+
+### Right Edge Pan
+Invoke Shake with a one-finger swiping gesture from the right edge of the screen.
 
 ## Invoke through code
 You can invoke SDK through code by calling the `Shake.show()` method anywhere after `Shake.start()`, optionally adding bug description or attaching files. Here’s an example:
