@@ -37,7 +37,7 @@ import TabItem from '@theme/TabItem';
 
 <TabItem value="objectivec">
 
-```objectivec
+```objectivec title="AppDelegate.m"
 NSString *fileName = ...
 NSData *fileData = ...
 
@@ -52,7 +52,7 @@ SHKShake.onPrepareReportData = ^SHKShakeReportData *_Nonnull(SHKShakeReportData 
 
 <TabItem value="swift">
 
-```swift
+```swift title="AppDelegate.swift"
 let fileName: String = ...
 let logData: Data = ...
 
@@ -80,7 +80,7 @@ Shake.onPrepareReportData = { shakeReportData in
 
 <TabItem value="objectivec">
 
-```objectivec
+```objectivec title="AppDelegate.m"
 NSString *fileName = ...
 NSURL *fileUrl = ...
 
@@ -95,7 +95,7 @@ SHKShake.onPrepareReportData = ^SHKShakeReportData *_Nonnull(SHKShakeReportData 
 
 <TabItem value="swift">
 
-```swift
+```swift title="AppDelegate.swift"
 let fileName: String = ...
 let fileUrl: URL = ...
 
@@ -125,7 +125,7 @@ and the file name shown on the web Dashboard will be determined automatically fr
 
 <TabItem value="objectivec">
 
-```objectivec
+```objectivec title="AppDelegate.m"
 NSURL *fileUrl = ...
 
 SHKShake.onPrepareReportData = ^SHKShakeReportData *_Nonnull(SHKShakeReportData *_Nonnull reportData) {
@@ -139,7 +139,7 @@ SHKShake.onPrepareReportData = ^SHKShakeReportData *_Nonnull(SHKShakeReportData 
 
 <TabItem value="swift">
 
-```swift
+```swift title="AppDelegate.swift"
 let fileUrl: URL = ...
 
 Shake.onPrepareReportData = { shakeReportData in

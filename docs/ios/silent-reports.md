@@ -16,7 +16,7 @@ import TabItem from '@theme/TabItem';
 
 <Tabs groupId="ios" defaultValue="swift" values={[{ label: 'Objective-C', value: 'objectivec'},{ label: 'Swift', value: 'swift'},]}><TabItem value="objectivec">
 
-```objectivec
+```objectivec title="AppDelegate.m"
 SHKShakeReportData *reportData = [[SHKShakeReportData alloc] initWithBugDescription:@"Broken UI" attachedFiles:@[]];
 
 SHKShakeReportConfiguration *reportConfiguration = [[SHKShakeReportConfiguration alloc] init];
@@ -28,7 +28,7 @@ reportConfiguration.includesBlackBoxData = YES;
 
 </TabItem><TabItem value="swift">
 
-```swift
+```swift title="AppDelegate.swift"
 let reportData = ShakeReportData(bugDescription: "Broken UI", attachedFiles: [])
 
 let reportConfiguration = ShakeReportConfiguration()
@@ -47,14 +47,14 @@ However, you can choose to display a small and non-intrusive message saying
 *Done. Bug submitted successfully.* on the bottom of a users screen once the report has been submitted:
 <Tabs groupId="ios" defaultValue="swift" values={[{ label: 'Objective-C', value: 'objectivec'},{ label: 'Swift', value: 'swift'},]}><TabItem value="objectivec">
 
-```objectivec
+```objectivec title="AppDelegate.m"
 SHKShakeReportConfiguration *reportConfiguration = [[SHKShakeReportConfiguration alloc] init];
 reportConfiguration.showsToastMessageOnSend = YES;
 ```
 
 </TabItem><TabItem value="swift">
 
-```swift
+```swift title="AppDelegate.swift"
 let reportConfiguration = ShakeReportConfiguration()
 reportConfiguration.showsToastMessageOnSend = true
 ```

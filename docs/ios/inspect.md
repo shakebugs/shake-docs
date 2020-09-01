@@ -33,7 +33,7 @@ import TabItem from '@theme/TabItem';
 
 <TabItem value="objectivec">
 
-```objectivec
+```objectivec title="AppDelegate.m"
 SHKShake.configuration.isInspectScreenEnabled = NO;
 ```
 
@@ -41,7 +41,7 @@ SHKShake.configuration.isInspectScreenEnabled = NO;
 
 <TabItem value="swift">
 
-```swift
+```swift title="AppDelegate.swift"
 Shake.configuration.isInspectScreenEnabled = false
 ```
 

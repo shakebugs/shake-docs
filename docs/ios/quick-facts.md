@@ -20,7 +20,7 @@ This is where you will see Quick facts on your web Dashboard:
 
 
 ## How to use
-In the `AppDelegate` add `onPrepareData` closure, and fill the `quickFacts` string with
+In the `AppDelegate` add `onPrepareReportData` closure, and fill the `quickFacts` string with
 the data you want to receive on your web Dashboard.
 
 import Tabs from '@theme/Tabs';
@@ -37,7 +37,7 @@ import TabItem from '@theme/TabItem';
 
 <TabItem value="objectivec">
 
-```objectivec
+```objectivec title="AppDelegate.m"
 SHKShake.onPrepareReportData = ^SHKShakeReportData *_Nonnull(SHKShakeReportData *_Nonnull reportData) {
     reportData.quickFacts = [NSString stringWithFormat:@"Current user is %@", userId];
     return reportData;
@@ -48,7 +48,7 @@ SHKShake.onPrepareReportData = ^SHKShakeReportData *_Nonnull(SHKShakeReportData 
 
 <TabItem value="swift">
 
-```swift
+```swift title="AppDelegate.swift"
 Shake.onPrepareReportData = { reportData in
     reportData.quickFacts = "Current user is \(userId)”
     return reportData

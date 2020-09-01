@@ -74,7 +74,7 @@ import TabItem from '@theme/TabItem';
 
 <TabItem value="objectivec">
 
-```objectivec
+```objectivec title="AppDelegate.m"
 SHKShake.configuration.isBlackBoxEnabled = NO;
 ```
 
@@ -82,7 +82,7 @@ SHKShake.configuration.isBlackBoxEnabled = NO;
 
 <TabItem value="swift">
 
-```swift
+```swift title="AppDelegate.swift"
 Shake.configuration.isBlackBoxEnabled = false
 ```
 

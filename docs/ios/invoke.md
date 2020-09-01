@@ -28,7 +28,7 @@ import TabItem from '@theme/TabItem';
 
 <TabItem value="objectivec">
 
-```objc
+```objc title="AppDelegate.m"
 SHKShake.configuration.isInvokedByShakeDeviceEvent = YES;
 SHKShake.configuration.isInvokedByScreenshot = YES;
 
@@ -39,7 +39,7 @@ SHKShake.configuration.isInvokedByScreenshot = YES;
 
 <TabItem value="swift">
 
-```swift
+```swift title="AppDelegate.swift"
 Shake.configuration.isInvokedByShakeDeviceEvent = true
 Shake.configuration.isInvokedByScreenshot = true
 
@@ -62,7 +62,7 @@ values={[
 
 <TabItem value="objectivec">
 
-```objc
+```objc title="AppDelegate.m"
 SHKShake.configuration.isInvokedByShakeDeviceEvent = YES;
 SHKShake.configuration.isFloatingReportButtonShown = YES;
 SHKShake.configuration.isInvokedByScreenshot = YES;
@@ -73,7 +73,7 @@ SHKShake.configuration.isInvokedByRightEdgePan = YES;
 
 <TabItem value="swift">
 
-```swift
+```swift title="AppDelegate.swift"
 Shake.configuration.isInvokedByShakeDeviceEvent = true
 Shake.configuration.isFloatingReportButtonShown = true
 Shake.configuration.isInvokedByScreenshot = true
@@ -106,7 +106,7 @@ You can invoke SDK through code by calling the `Shake.show()` method anywhere af
 
 <Tabs groupId="ios" values={[{ label: 'Objective-C', value: 'objectivec'},{ label: 'Swift', value: 'swift'},]} defaultValue="swift"><TabItem value="objectivec">
 
-```objc
+```objc title="AppDelegate.m"
 // Shows bug report window
 [SHKShake show];
 
@@ -117,7 +117,7 @@ SHKShakeReportData *reportData = [[SHKShakeReportData alloc] initWithBugDescript
 
 </TabItem><TabItem value="swift">
 
-```swift
+```swift title="AppDelegate.swift"
 // Shows bug report window
 Shake.show(reportData: reportData)
 

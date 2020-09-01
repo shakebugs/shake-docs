@@ -23,18 +23,17 @@ Activity history is enabled by default, however, you can use the method below to
 
 <Tabs groupId="ios" defaultValue="swift" values={[{ label: 'Objective-C', value: 'objectivec'},{ label: 'Swift', value: 'swift'},]}><TabItem value="objectivec">
 
-```objectivec
+```objectivec title="AppDelegate.m"
 SHKShake.configuration.isActivityHistoryEnabled = NO;
 ```
 
 </TabItem><TabItem value="swift">
 
-```swift
+```swift title="AppDelegate.swift"
 Shake.configuration.isActivityHistoryEnabled = false
 ```
 
 </TabItem></Tabs>
-
 
 ## Custom logs
 You can add your own custom logs to Activity history, which will then be shown as part of every bug report.
