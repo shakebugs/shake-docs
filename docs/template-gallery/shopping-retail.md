@@ -13,8 +13,6 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 />
 </div>
 
-## Shopping
-
 If you do online shopping, send yourself a list of all user’s orders (or at least their IDs), both previously placed and this last open one, that will provide you with useful context.
 
 In an order send yourself:
@@ -37,15 +35,37 @@ import TabItem from '@theme/TabItem';
 <TabItem value="java">
 
 ```java title="App.java"
-Order order = new Order();
-order.addItems(item1, item2, item3);
+import com.shakebugs.shake.Shake;
 
-// highlight-start
-Shake.setMetadata("orderId", order.id);
-Shake.setMetadata("orderValue", order.value);
-Shake.setMetadata("couponApplied", order.couponApplied);
-Shake.setMetadata("merchantId", order.merchantId);
-// highlight-end
+private void onCheckout(Cart cart, User user) {
+    @Override 
+    void onPurchaseCompleted() {
+        Order order = cart.getOrderForUser(user);
+        // highlight-start
+        Shake.setMetadata("orderId", order.id);
+        Shake.setMetadata("orderValue", order.value);
+        Shake.setMetadata("userBalance", user.balance);
+        Shake.setMetadata("couponApplied", order.couponApplied);
+        Shake.setMetadata("merchantId", order.merchantId);
+        // highlight-end
+        Message.show("Order completed successfully");
+    }
+    @Override 
+    void onPurchaseDeclined(Cart cart, User user) {
+        Order order = cart.getOrderForUser(user);
+        if(order.value > user.balance) {
+            // highlight-start
+            Shake.setMetadata("orderId", order.id);
+            Shake.setMetadata("orderValue", order.value);
+            Shake.setMetadata("userBalance", user.balance);
+            // highlight-end
+            Message.show("Not enough funds to complete transaction");
+        } else {
+            Message.show("Unknown error occured, please contact support");
+        }
+    }
+}
+
 ```
 
 </TabItem>
@@ -53,15 +73,37 @@ Shake.setMetadata("merchantId", order.merchantId);
 <TabItem value="kotlin">
 
 ```kotlin title="App.kt"
-val order = Order()
-order.addItems(item1, item2, item3)
+import com.shakebugs.shake.Shake;
 
-// highlight-start
-Shake.setMetadata("orderId", order.id);
-Shake.setMetadata("orderValue", order.value);
-Shake.setMetadata("couponApplied", order.couponApplied);
-Shake.setMetadata("merchantId", order.merchantId);
-// highlight-end
+private void onCheckout(cart: Cart, user: User) {
+    @override 
+    fun onPurchaseCompleted() {
+        val order = cart.getOrderForUser(user);
+        // highlight-start
+        Shake.setMetadata("orderId", order.id);
+        Shake.setMetadata("orderValue", order.value);
+        Shake.setMetadata("userBalance", user.balance);
+        Shake.setMetadata("couponApplied", order.couponApplied);
+        Shake.setMetadata("merchantId", order.merchantId);
+        // highlight-end
+        Message.show("Order completed successfully");
+    }
+    @override 
+    fun onPurchaseDeclined(cart: Cart, user:User) {
+        val order = cart.getOrderForUser(user);
+        if(order.value > user.balance) {
+            // highlight-start
+            Shake.setMetadata("orderId", order.id);
+            Shake.setMetadata("orderValue", order.value);
+            Shake.setMetadata("userBalance", user.balance);
+            // highlight-end
+            Message.show("Not enough funds to complete transaction");
+        } else {
+            Message.show("Unknown error occured, please contact support");
+        }
+    }
+}
+
 ```
 
 </TabItem>
@@ -93,87 +135,6 @@ Shake.setMetadata("orderId", order.id);
 Shake.setMetadata("orderValue", order.email);
 Shake.setMetadata("couponApplied", order.couponApplied);
 Shake.setMetadata("merchantId", order.merchantId)
-// highlight-end
-```
-
-</TabItem>
-
-</Tabs>
-
-## Retail
-
-If your app is used in retail environments, send yourself:
-
-<Tabs
-  groupId="retail"
-  defaultValue="kotlin"
-  values={[
-    { label: 'Java', value: 'java'},
-    { label: 'Kotlin', value: 'kotlin'},
-    { label: 'Objective-C', value: 'objectivec'},
-    { label: 'Swift', value: 'swift'},
-  ]
-}>
-
-<TabItem value="java">
-
-```java title="App.java"
-Order order = new Order();
-order.addItems(item1, item2, item3);
-
-// highlight-start
-Shake.setMetadata("merchant", order.merchant);
-Shake.setMetadata("salespointId", order.salespointId);
-Shake.setMetadata("deviceId", device.id);
-Shake.setMetadata("merchantId", order.merchantId);
-// highlight-end
-```
-
-</TabItem>
-
-<TabItem value="kotlin">
-
-```kotlin title="App.kt"
-val order = Order()
-order.addItems(item1, item2, item3)
-
-// highlight-start
-Shake.setMetadata("merchant", order.merchant);
-Shake.setMetadata("salespointId", order.salespointId);
-Shake.setMetadata("devideId", device.id);
-Shake.setMetadata("merchantId", order.merchantId);
-// highlight-end
-```
-
-</TabItem>
-
-<TabItem value="objectivec">
-
-```objectivec title="App.m"
-Order *order = [[Order alloc] init];
-[order addItems: item1, item2, item3];
-
-// highlight-start
-[SHKShake setMetadata:@"merchant" data: [order merchant]];
-[SHKShake setMetadata:@"salespointId" data: [order salespointId]];
-[SHKShake setMetadata:@"deviceID" data: [device id]];
-[SHKShake setMetadata:@"merchantId" data: [order merchantId]];
-// highlight-end
-```
-
-</TabItem>
-
-<TabItem value="swift">
-
-```swift title="App.swift"
-let order = Order()
-order.addItems(item1, item2, item3)
-
-// highlight-start
-Shake.setMetadata("merchant", order.merchant);
-Shake.setMetadata("salespointId", order.salespointId);
-Shake.setMetadata("deviceId", device.id);
-Shake.setMetadata("merchantId", order.merchantId);
 // highlight-end
 ```
 
