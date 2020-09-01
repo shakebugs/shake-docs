@@ -43,7 +43,7 @@ private void connectToChatServer(String username, String password) {
             Shake.setMetadata("isChatEnabled", String.valueOf(user.isChatEnabled()));
             Shake.setMetadata("isVideoEnabled", String.valueOf(user.isVideoEnabled()));
             Shake.setMetadata("serverStatusType", "Connected");
-            Shake.setMetadata("serverStatusDate", getCurrentDate());
+            Shake.setMetadata("serverStatusDate", new Date().toString());
             // highlight-end
 
             Message.show("Server connected");
@@ -56,7 +56,7 @@ private void connectToChatServer(String username, String password) {
             Shake.setMetadata("isChatEnabled", "");
             Shake.setMetadata("isVideoEnabled", "");
             Shake.setMetadata("serverStatusType", "Disconnected");
-            Shake.setMetadata("serverStatusDate", getCurrentDate());
+            Shake.setMetadata("serverStatusDate", new Date().toString());
             // highlight-end
 
             Message.show("Server disconnected");
@@ -82,7 +82,7 @@ private fun connectToChatServer(username: String, password: String) {
             Shake.setMetadata("isChatEnabled", user.isChatEnabled.toString())
             Shake.setMetadata("isVideoEnabled", user.isVideoEnabled.toString())
             Shake.setMetadata("serverStatusType", "Connected")
-            Shake.setMetadata("serverStatusDate", getCurrentDate())
+            Shake.setMetadata("serverStatusDate", Date().toString())
             // highlight-end
             
             Message.show("Server connected")
@@ -95,7 +95,7 @@ private fun connectToChatServer(username: String, password: String) {
             Shake.setMetadata("isChatEnabled", "")
             Shake.setMetadata("isVideoEnabled", "")
             Shake.setMetadata("serverStatusType", "Disconnected")
-            Shake.setMetadata("serverStatusDate", getCurrentDate())
+            Shake.setMetadata("serverStatusDate", Date().toString())
             // highlight-end
             
             Message.show("Server disconnected")

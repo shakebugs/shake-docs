@@ -15,9 +15,6 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 If you do online shopping, send yourself a list of all user’s orders (or at least their IDs), both previously placed and this last open one, that will provide you with useful context.
 
-In an order send yourself:
-
-
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
@@ -35,75 +32,50 @@ import TabItem from '@theme/TabItem';
 <TabItem value="java">
 
 ```java title="App.java"
+// highlight-next-line
 import com.shakebugs.shake.Shake;
 
-private void onCheckout(Cart cart, User user) {
-    @Override 
-    void onPurchaseCompleted() {
-        Order order = cart.getOrderForUser(user);
-        // highlight-start
-        Shake.setMetadata("orderId", order.id);
-        Shake.setMetadata("orderValue", order.value);
-        Shake.setMetadata("userBalance", user.balance);
-        Shake.setMetadata("couponApplied", order.couponApplied);
-        Shake.setMetadata("merchantId", order.merchantId);
-        // highlight-end
-        Message.show("Order completed successfully");
-    }
-    @Override 
-    void onPurchaseDeclined(Cart cart, User user) {
-        Order order = cart.getOrderForUser(user);
-        if(order.value > user.balance) {
-            // highlight-start
-            Shake.setMetadata("orderId", order.id);
-            Shake.setMetadata("orderValue", order.value);
-            Shake.setMetadata("userBalance", user.balance);
-            // highlight-end
-            Message.show("Not enough funds to complete transaction");
-        } else {
-            Message.show("Unknown error occured, please contact support");
+private void createOrder(User user, Cart cart, PaymentType paymentType) {
+    Orders.create(user.getInfo(), cart.getItems(), paymentType, new OrderListener() {
+        @Override 
+        void onCreateSucceeded(Order order) {
+            // highlight-next-line
+            Shake.setMetadata(order.getId(), new Date().toString());
+
+            Message.show("Order created.");
         }
-    }
+
+        @Override 
+        void onCreateFailed(String message) {
+            Message.show("Failed to create order.");
+        }
+    });
 }
-
 ```
-
 </TabItem>
 
 <TabItem value="kotlin">
 
 ```kotlin title="App.kt"
-import com.shakebugs.shake.Shake;
+// highlight-next-line
+import com.shakebugs.shake.Shake
 
-private void onCheckout(cart: Cart, user: User) {
-    @override 
-    fun onPurchaseCompleted() {
-        val order = cart.getOrderForUser(user);
-        // highlight-start
-        Shake.setMetadata("orderId", order.id);
-        Shake.setMetadata("orderValue", order.value);
-        Shake.setMetadata("userBalance", user.balance);
-        Shake.setMetadata("couponApplied", order.couponApplied);
-        Shake.setMetadata("merchantId", order.merchantId);
-        // highlight-end
-        Message.show("Order completed successfully");
-    }
-    @override 
-    fun onPurchaseDeclined(cart: Cart, user:User) {
-        val order = cart.getOrderForUser(user);
-        if(order.value > user.balance) {
-            // highlight-start
-            Shake.setMetadata("orderId", order.id);
-            Shake.setMetadata("orderValue", order.value);
-            Shake.setMetadata("userBalance", user.balance);
-            // highlight-end
-            Message.show("Not enough funds to complete transaction");
-        } else {
-            Message.show("Unknown error occured, please contact support");
+private fun createOrder(user: User, cart: Cart, paymentType: PaymentType) {
+    Orders.create(user.info, cart.items, paymentType, object: OrderListener() {
+        @override
+        fun onCreateSucceeded(order: Order) {
+            // highlight-next-line
+            Shake.setMetadata(order.id, Date().toString())
+
+            Message.show("Order created.")
         }
-    }
+        
+        @override
+        fun onCreateFailed(message: String) {
+            Message.show("Failed to create order.")
+        }
+    })
 }
-
 ```
 
 </TabItem>

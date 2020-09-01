@@ -35,22 +35,6 @@ import TabItem from '@theme/TabItem';
 // highlight-next-line
 import com.shakebugs.shake.Shake;
 
-private void connectDevice(String id) {
-    BluetoothManager.scan(new ScannerListener() {
-        @Override
-        void onScanningCompleted(List<Device> devices) {
-            for (Device device : devices) {
-                if (device.getId().equals(id)) {
-                    connectDevice(device);
-                    return;
-                }    
-            }
-
-            Message.show("Device not available");
-        }
-    });   
-}
-
 private void connectDevice(Device device) {
     BluetoothManager.connect(new ConnectionListener() {
         @Override
@@ -79,22 +63,6 @@ private void connectDevice(Device device) {
 ```kotlin title="App.kt"
 // highlight-next-line
 import com.shakebugs.shake.Shake
-
-private fun connectDevice(id: String) {
-    BluetoothManager.scan(object: ScannerListener() {
-        @override
-        fun onScanningCompleted(devices: List<Device>) {
-            for (device in devices) {
-                if (device.id == id) {
-                    connectDevice(device)
-                    return
-                }
-            }
-
-            Message.show("Device not available")
-        }
-    })
-}
 
 private fun connectDevice(device: Device) {
     BluetoothManager.connect(object: ConnectionListener() {
