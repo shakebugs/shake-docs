@@ -99,7 +99,6 @@ module.exports = {
                     label: 'Gallery',
                     items: [
                         'template-gallery/account-details',
-                        'template-gallery/git',
                         'template-gallery/shopping-retail',
                         'template-gallery/realtime-communication',
                         'template-gallery/iot',

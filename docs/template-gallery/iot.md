@@ -26,21 +26,49 @@ import TabItem from '@theme/TabItem';
     { label: 'Kotlin', value: 'kotlin'},
     { label: 'Objective-C', value: 'objectivec'},
     { label: 'Swift', value: 'swift'},
-    { label: 'Javascript', value: 'javascript'},
-    { label: 'Dart', value: 'dart'},
   ]
 }>
 
 <TabItem value="java">
 
 ```java title="App.java"
-List<Device> connectedDevices = getConnectedDevices();
-for(Device device : connectedDevices) { 
-// highlight-start
-    Shake.setMetadata("firmwareVersion", device.getFirmwareVersion());
-    Shake.setMetadata("bluetoothVersion", device.getBluetoothVersion());
-    Shake.setMetadata("batteryStatus", device.getBatteryStatus());
-// highlight-end
+// highlight-next-line
+import com.shakebugs.shake.Shake;
+
+private void connectDevice(String id) {
+    BluetoothManager.scan(new ScannerListener() {
+        @Override
+        void onScanningCompleted(List<Device> devices) {
+            for (Device device : devices) {
+                if (device.getId().equals(id)) {
+                    connectDevice(device);
+                    return;
+                }    
+            }
+
+            Message.show("Device not available");
+        }
+    });   
+}
+
+private void connectDevice(Device device) {
+    BluetoothManager.connect(new ConnectionListener() {
+        @Override
+        void onConnectionSucceeded(Details details) {
+            // highlight-start
+            Shake.setMetadata("batteryLevel", details.getBatteryLevel());
+            Shake.setMetadata("firmwareVersion", details.getFirmwareVersion());
+            Shake.setMetadata("bluetoothVersion", details.getBluetoothVersion());
+            // highlight-end
+
+            Message.show("Connection succeeded");
+        }
+
+        @Override
+        void onConnectionFailed(String message) {
+            Message.show("Connection failed");
+        }
+    });   
 }
 ```
 
@@ -49,13 +77,43 @@ for(Device device : connectedDevices) {
 <TabItem value="kotlin">
 
 ```kotlin title="App.kt"
-val connectedDevices = listOf(getConnectedDevices())
-for(device in connectedDevices) {
-// highlight-start
-    Shake.setMetadata("firmwareVersion", device.getFirmwareVersion())
-    Shake.setMetadata("bluetoothVersion", device.getBluetoothVersion())
-    Shake.setMetadata("batteryStatus", device.getBatteryStatus())
-// highlight-end
+// highlight-next-line
+import com.shakebugs.shake.Shake
+
+private fun connectDevice(id: String) {
+    BluetoothManager.scan(object: ScannerListener() {
+        @override
+        fun onScanningCompleted(devices: List<Device>) {
+            for (device in devices) {
+                if (device.id == id) {
+                    connectDevice(device)
+                    return
+                }
+            }
+
+            Message.show("Device not available")
+        }
+    })
+}
+
+private fun connectDevice(device: Device) {
+    BluetoothManager.connect(object: ConnectionListener() {
+        @override
+        fun onConnectionSucceeded(details: Details) {
+            // highlight-start
+            Shake.setMetadata("batteryLevel", details.batteryLevel)
+            Shake.setMetadata("firmwareVersion", details.firmwareVersion)
+            Shake.setMetadata("bluetoothVersion", details.bluetoothVersion)
+            // highlight-end
+            
+            Message.show("Connection succeeded")
+        }
+
+        @override
+        fun onConnectionFailed(message: String) {
+            Message.show("Connection failed")
+        }
+    })
 }
 ```
 
@@ -81,36 +139,6 @@ for(Device *device in connectedDevices) {
 ```swift title="App.swift"
 let connectedDevices = getConnectedDevices()
 for device in connectedDevices {
-// highlight-start
-    Shake.setMetadata("firmwareVersion", device.getFirmwareVersion());
-    Shake.setMetadata("bluetoothVersion", device.getBluetoothVersion());
-    Shake.setMetadata("batteryStatus", device.getBatteryStatus());
-// highlight-end
-}
-```
-
-</TabItem>
-
-<TabItem value="javascript">
-
-```javascript title="App.js"
-let connectedDevices = getConnectedDevices()
-for(var device in connectedDevices) {
-// highlight-start
-    Shake.setMetadata("firmwareVersion", device.getFirmwareVersion());
-    Shake.setMetadata("bluetoothVersion", device.getBluetoothVersion());
-    Shake.setMetadata("batteryStatus", device.getBatteryStatus());
-// highlight-end
-}
-```
-
-</TabItem>
-
-<TabItem value="dart">
-
-```dart title="App.dart"
-List<Device> connectedDevices = getConnectedDevices();
-for(device in connectedDevices) { 
 // highlight-start
     Shake.setMetadata("firmwareVersion", device.getFirmwareVersion());
     Shake.setMetadata("bluetoothVersion", device.getBluetoothVersion());

@@ -31,8 +31,6 @@ import TabItem from '@theme/TabItem';
     { label: 'Kotlin', value: 'kotlin'},
     { label: 'Objective-C', value: 'objectivec'},
     { label: 'Swift', value: 'swift'},
-    { label: 'Javascript', value: 'javascript'},
-    { label: 'Dart', value: 'dart'},
   ]
 }>
 
@@ -100,39 +98,6 @@ Shake.setMetadata("merchantId", order.merchantId)
 
 </TabItem>
 
-<TabItem value="javascript">
-
-```javascript title="App.js"
-let order = Order();
-order.addItems(item1, item2, item3)
-
-// highlight-start
-Shake.setMetadata("orderId", order.id);
-Shake.setMetadata("orderValue", order.value);
-Shake.setMetadata("couponApplied", order.couponApplied);
-Shake.setMetadata("merchantId", order.merchantId);
-// highlight-end
-
-```
-
-</TabItem>
-
-<TabItem value="dart">
-
-```dart title="App.dart"
-Order order = new Order();
-order.addItems(item1, item2, item3);
-
-// highlight-start
-Shake.setMetadata("orderId", order.id);
-Shake.setMetadata("orderValue", order.value);
-Shake.setMetadata("couponApplied", order.couponApplied);
-Shake.setMetadata("merchantId", order.merchantId);
-// highlight-end
-```
-
-</TabItem>
-
 </Tabs>
 
 ## Retail
@@ -147,8 +112,6 @@ If your app is used in retail environments, send yourself:
     { label: 'Kotlin', value: 'kotlin'},
     { label: 'Objective-C', value: 'objectivec'},
     { label: 'Swift', value: 'swift'},
-    { label: 'Javascript', value: 'javascript'},
-    { label: 'Dart', value: 'dart'},
   ]
 }>
 
@@ -205,39 +168,6 @@ Order *order = [[Order alloc] init];
 ```swift title="App.swift"
 let order = Order()
 order.addItems(item1, item2, item3)
-
-// highlight-start
-Shake.setMetadata("merchant", order.merchant);
-Shake.setMetadata("salespointId", order.salespointId);
-Shake.setMetadata("deviceId", device.id);
-Shake.setMetadata("merchantId", order.merchantId);
-// highlight-end
-```
-
-</TabItem>
-
-<TabItem value="javascript">
-
-```javascript title="App.js"
-let order = Order();
-order.addItems(item1, item2, item3)
-
-// highlight-start
-Shake.setMetadata("merchant", order.merchant);
-Shake.setMetadata("salespointId", order.salespointId);
-Shake.setMetadata("deviceId", device.id);
-Shake.setMetadata("merchantId", order.merchantId);
-// highlight-end
-
-```
-
-</TabItem>
-
-<TabItem value="dart">
-
-```dart title="App.dart"
-Order order = new Order();
-order.addItems(item1, item2, item3);
 
 // highlight-start
 Shake.setMetadata("merchant", order.merchant);

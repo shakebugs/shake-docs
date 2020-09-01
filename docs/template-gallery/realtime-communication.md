@@ -25,24 +25,44 @@ import TabItem from '@theme/TabItem';
     { label: 'Kotlin', value: 'kotlin'},
     { label: 'Objective-C', value: 'objectivec'},
     { label: 'Swift', value: 'swift'},
-    { label: 'Javascript', value: 'javascript'},
-    { label: 'Dart', value: 'dart'},
   ]
 }>
 
 <TabItem value="java">
 
 ```java title="App.java"
-String serverURL = getServerURL();
-User user = getCurrentUser();
-PhoneNumber phoneNumber = user.getPhoneNumber();
-boolean isServerAvailable = getServerStatus();
-// highlight-start
+// highlight-next-line
+import com.shakebugs.shake.Shake;
 
-Shake.setMetadata("serverURL", serverURL);
-Shake.setMetadata("phoneNumber", phoneNumber);
-Shake.setMetadata("serverStatus", isServerAvailable);
-// highlight-end
+private void connectToChatServer(String username, String password) {
+    ChatServer.connect(username, password, new ServerListener() {
+        @Override
+        void onConnected(User user) {
+            // highlight-start
+            Shake.setMetadata("userId", user.getId());
+            Shake.setMetadata("isChatEnabled", String.valueOf(user.isChatEnabled()));
+            Shake.setMetadata("isVideoEnabled", String.valueOf(user.isVideoEnabled()));
+            Shake.setMetadata("serverStatusType", "Connected");
+            Shake.setMetadata("serverStatusDate", getCurrentDate());
+            // highlight-end
+
+            Message.show("Server connected");
+        }
+
+        @Override
+        void onDisconnected(String message) {
+            // highlight-start
+            Shake.setMetadata("userId", "");
+            Shake.setMetadata("isChatEnabled", "");
+            Shake.setMetadata("isVideoEnabled", "");
+            Shake.setMetadata("serverStatusType", "Disconnected");
+            Shake.setMetadata("serverStatusDate", getCurrentDate());
+            // highlight-end
+
+            Message.show("Server disconnected");
+        }
+    });   
+}
 ```
 
 </TabItem>
@@ -50,16 +70,38 @@ Shake.setMetadata("serverStatus", isServerAvailable);
 <TabItem value="kotlin">
 
 ```kotlin title="App.kt"
-val serverURL: String = getServerURL()
-val user: User = getCurrentUser()
-val phoneNumber: PhoneNumber = user.getPhoneNumber()
-val isServerAvailable: Boolean = getServerStatus()
-// highlight-start
+// highlight-next-line
+import com.shakebugs.shake.Shake
 
-Shake.setMetadata("serverURL", serverURL);
-Shake.setMetadata("phoneNumber", phoneNumber);
-Shake.setMetadata("serverStatus", isServerAvailable);
-// highlight-end
+private fun connectToChatServer(username: String, password: String) {
+    ChatServer.connect(username, password, object: ServerListener() {
+        @override
+        fun onConnected(user: User) {
+            // highlight-start
+            Shake.setMetadata("userId", user.id)
+            Shake.setMetadata("isChatEnabled", user.isChatEnabled.toString())
+            Shake.setMetadata("isVideoEnabled", user.isVideoEnabled.toString())
+            Shake.setMetadata("serverStatusType", "Connected")
+            Shake.setMetadata("serverStatusDate", getCurrentDate())
+            // highlight-end
+            
+            Message.show("Server connected")
+        }
+
+        @override
+        fun onDisconnected(message: String) {
+            // highlight-start
+            Shake.setMetadata("userId", "")
+            Shake.setMetadata("isChatEnabled", "")
+            Shake.setMetadata("isVideoEnabled", "")
+            Shake.setMetadata("serverStatusType", "Disconnected")
+            Shake.setMetadata("serverStatusDate", getCurrentDate())
+            // highlight-end
+            
+            Message.show("Server disconnected")
+        }
+    })
+}
 ```
 
 </TabItem>
@@ -90,39 +132,6 @@ let phoneNumber = user.getPhoneNumber()
 let isServerAvailable = getServerStatus()
 // highlight-start
 
-Shake.setMetadata("serverURL", serverURL);
-Shake.setMetadata("phoneNumber", phoneNumber);
-Shake.setMetadata("serverStatus", isServerAvailable);
-// highlight-end
-```
-
-</TabItem>
-
-<TabItem value="javascript">
-
-```javascript title="App.js"
-let serverURL = getServerURL()
-let user = getCurrentUser()
-let phoneNumber = user.phoneNumber()
-let isServerAvailable = getServerStatus()
-// highlight-start
-    
-Shake.setMetadata("serverURL", serverURL);
-Shake.setMetadata("phoneNumber", phoneNumber);
-Shake.setMetadata("serverStatus", isServerAvailable);
-// highlight-end
-```
-
-</TabItem>
-
-<TabItem value="dart">
-
-```dart title="App.dart"
-var serverURL = getServerURL();
-User user = getCurrentUser();
-PhoneNumber phoneNumber = user.getPhoneNumber();
-var isServerAvailable = getServerStatus();
-// highlight-start
 Shake.setMetadata("serverURL", serverURL);
 Shake.setMetadata("phoneNumber", phoneNumber);
 Shake.setMetadata("serverStatus", isServerAvailable);
