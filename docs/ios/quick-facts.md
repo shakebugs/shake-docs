@@ -11,14 +11,6 @@ Every app is unique so the [Essentials](/ios/essentials.md) sent with each bug r
 That's why the Shake SDK allows you to send yourself any custom data from the app using Quick facts.
 It's a *String* object which you can shape any way you want, and you can put anything you want into it.
 
-This is where you will see Quick facts on your web Dashboard:
-
-<img
-  alt="Quick facts screen"
-  src={useBaseUrl('screens/quick_facts_screen.png')}
-/>
-
-
 ## How to use
 In the `AppDelegate` add `onPrepareData` closure, and fill the `quickFacts` string with
 the data you want to receive on your web Dashboard.
@@ -57,3 +49,10 @@ Shake.onPrepareReportData = { reportData in
 
 </TabItem>
 </Tabs>
+
+This is where you will see Quick facts on your web Dashboard:
+
+<img
+  alt="Quick facts screen"
+  src={useBaseUrl('screens/quick_facts_screen.png')}
+/>
