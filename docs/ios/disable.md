@@ -39,9 +39,11 @@ So let's suppose a user switches from one mode to another. You would do this:
 - (void)didLogInWithUser:(User *)user success:(BOOL)success {
     if (user.isHost) {
         NSLog(@"User logged in as host. Resuming Shake.");
+        //highlight-next-line
         SHKShake.isPaused = NO;
     } else {
         NSLog(@"User logged in as guest. Pausing Shake.");
+        //highlight-next-line
         SHKShake.isPaused = YES;
     }
 }
@@ -55,9 +57,11 @@ So let's suppose a user switches from one mode to another. You would do this:
 func didLogIn(user: User, success: Bool) {
     if user.isHost {
         print("User logged in as host. Resuming Shake.")
+        //highlight-next-line
         Shake.isPaused = false
     } else {
         print("User logged in as guest. Pausing Shake.")
+        //highlight-next-line
         Shake.isPaused = true
     }
 }

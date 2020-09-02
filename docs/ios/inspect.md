@@ -34,6 +34,7 @@ import TabItem from '@theme/TabItem';
 <TabItem value="objectivec">
 
 ```objectivec title="AppDelegate.m"
+//highlight-next-line
 SHKShake.configuration.isInspectScreenEnabled = NO;
 ```
 
@@ -42,6 +43,7 @@ SHKShake.configuration.isInspectScreenEnabled = NO;
 <TabItem value="swift">
 
 ```swift title="AppDelegate.swift"
+//highlight-next-line
 Shake.configuration.isInspectScreenEnabled = false
 ```
 

@@ -17,6 +17,7 @@ import TabItem from '@theme/TabItem';
 <Tabs groupId="ios" defaultValue="swift" values={[{ label: 'Objective-C', value: 'objectivec'},{ label: 'Swift', value: 'swift'},]}><TabItem value="objectivec">
 
 ```objectivec title="AppDelegate.m"
+//highlight-start
 SHKShakeReportData *reportData = [[SHKShakeReportData alloc] initWithBugDescription:@"Broken UI" attachedFiles:@[]];
 
 SHKShakeReportConfiguration *reportConfiguration = [[SHKShakeReportConfiguration alloc] init];
@@ -24,11 +25,13 @@ reportConfiguration.includesScreenshotImage = YES;
 reportConfiguration.includesBlackBoxData = YES;
 
 [SHKShake silentReportWithReportData:reportData reportConfiguration:reportConfiguration];
+//highlight-end
 ```
 
 </TabItem><TabItem value="swift">
 
 ```swift title="AppDelegate.swift"
+//highlight-start
 let reportData = ShakeReportData(bugDescription: "Broken UI", attachedFiles: [])
 
 let reportConfiguration = ShakeReportConfiguration()
@@ -36,6 +39,7 @@ reportConfiguration.includesScreenshotImage = true
 reportConfiguration.includesBlackBoxData = true
 
 Shake.silentReport(reportData: reportData, reportConfiguration: reportConfiguration)
+//highlight-end
 ```
 
 </TabItem></Tabs>
@@ -48,15 +52,19 @@ However, you can choose to display a small and non-intrusive message saying
 <Tabs groupId="ios" defaultValue="swift" values={[{ label: 'Objective-C', value: 'objectivec'},{ label: 'Swift', value: 'swift'},]}><TabItem value="objectivec">
 
 ```objectivec title="AppDelegate.m"
+//highlight-start
 SHKShakeReportConfiguration *reportConfiguration = [[SHKShakeReportConfiguration alloc] init];
 reportConfiguration.showsToastMessageOnSend = YES;
+//highlight-end
 ```
 
 </TabItem><TabItem value="swift">
 
 ```swift title="AppDelegate.swift"
+//highlight-start
 let reportConfiguration = ShakeReportConfiguration()
 reportConfiguration.showsToastMessageOnSend = true
+//highlight-end
 ```
 
 </TabItem></Tabs>

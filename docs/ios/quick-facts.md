@@ -38,10 +38,12 @@ import TabItem from '@theme/TabItem';
 <TabItem value="objectivec">
 
 ```objectivec title="AppDelegate.m"
+//highlight-start
 SHKShake.onPrepareReportData = ^SHKShakeReportData *_Nonnull(SHKShakeReportData *_Nonnull reportData) {
     reportData.quickFacts = [NSString stringWithFormat:@"Current user is %@", userId];
     return reportData;
 };
+//highlight-end
 ```
 
 </TabItem>
@@ -49,10 +51,12 @@ SHKShake.onPrepareReportData = ^SHKShakeReportData *_Nonnull(SHKShakeReportData 
 <TabItem value="swift">
 
 ```swift title="AppDelegate.swift"
+//highlight-start
 Shake.onPrepareReportData = { reportData in
     reportData.quickFacts = "Current user is \(userId)”
     return reportData
 }
+//highlight-end
 ```
 
 </TabItem>

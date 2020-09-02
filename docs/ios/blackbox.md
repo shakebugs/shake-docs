@@ -75,6 +75,7 @@ import TabItem from '@theme/TabItem';
 <TabItem value="objectivec">
 
 ```objectivec title="AppDelegate.m"
+//highlight-next-line
 SHKShake.configuration.isBlackBoxEnabled = NO;
 ```
 
@@ -83,6 +84,7 @@ SHKShake.configuration.isBlackBoxEnabled = NO;
 <TabItem value="swift">
 
 ```swift title="AppDelegate.swift"
+//highlight-next-line
 Shake.configuration.isBlackBoxEnabled = false
 ```
 

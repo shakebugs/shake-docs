@@ -24,12 +24,14 @@ Activity history is enabled by default, however, you can use the method below to
 <Tabs groupId="ios" defaultValue="swift" values={[{ label: 'Objective-C', value: 'objectivec'},{ label: 'Swift', value: 'swift'},]}><TabItem value="objectivec">
 
 ```objectivec title="AppDelegate.m"
+//highlight-next-line
 SHKShake.configuration.isActivityHistoryEnabled = NO;
 ```
 
 </TabItem><TabItem value="swift">
 
 ```swift title="AppDelegate.swift"
+//highlight-next-line
 Shake.configuration.isActivityHistoryEnabled = false
 ```
 

@@ -29,9 +29,12 @@ import TabItem from '@theme/TabItem';
 <TabItem value="objectivec">
 
 ```objc title="AppDelegate.m"
+//highlight-start
 SHKShake.configuration.isInvokedByShakeDeviceEvent = YES;
 SHKShake.configuration.isInvokedByScreenshot = YES;
+//highlight-end
 
+//highlight-next-line
 [SHKShake start];
 ```
 
@@ -40,9 +43,12 @@ SHKShake.configuration.isInvokedByScreenshot = YES;
 <TabItem value="swift">
 
 ```swift title="AppDelegate.swift"
+//highlight-start
 Shake.configuration.isInvokedByShakeDeviceEvent = true
 Shake.configuration.isInvokedByScreenshot = true
+//highlight-end
 
+//highlight-next-line
 Shake.start()
 ```
 
@@ -63,10 +69,12 @@ values={[
 <TabItem value="objectivec">
 
 ```objc title="AppDelegate.m"
+//highlight-start
 SHKShake.configuration.isInvokedByShakeDeviceEvent = YES;
 SHKShake.configuration.isFloatingReportButtonShown = YES;
 SHKShake.configuration.isInvokedByScreenshot = YES;
 SHKShake.configuration.isInvokedByRightEdgePan = YES;
+//highlight-end
 ```
 
 </TabItem>
@@ -74,10 +82,12 @@ SHKShake.configuration.isInvokedByRightEdgePan = YES;
 <TabItem value="swift">
 
 ```swift title="AppDelegate.swift"
+//highlight-start
 Shake.configuration.isInvokedByShakeDeviceEvent = true
 Shake.configuration.isFloatingReportButtonShown = true
 Shake.configuration.isInvokedByScreenshot = true
 Shake.configuration.isInvokedByRightEdgePan = true
+//highlight-end
 ```
 
 </TabItem>
@@ -108,10 +118,14 @@ You can invoke SDK through code by calling the `Shake.show()` method anywhere af
 
 ```objc title="AppDelegate.m"
 // Shows bug report window
+//highlight-next-line
 [SHKShake show];
 
+//highlight-next-line
 SHKShakeReportData *reportData = [[SHKShakeReportData alloc] initWithBugDescription:@"Broken UI" attachedFiles:@[]];
+
 // Shows bug report window with pre-populated data
+//highlight-next-line
 [SHKShake showWithReportData:reportData]; 
 ```
 
@@ -119,10 +133,13 @@ SHKShakeReportData *reportData = [[SHKShakeReportData alloc] initWithBugDescript
 
 ```swift title="AppDelegate.swift"
 // Shows bug report window
+//highlight-next-line
 Shake.show(reportData: reportData)
 
+//highlight-next-line
 let reportData = ShakeReportData(bugDescription: "Broken UI", attachedFiles: [])
 // Shows bug report window with pre-populated data
+//highlight-next-line
 Shake.show(reportData: reportData)
 ```
 
