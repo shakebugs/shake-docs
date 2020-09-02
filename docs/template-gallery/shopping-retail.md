@@ -39,7 +39,7 @@ private void setupMerchantPicker() {
     MerchantPicker merchantPicker = (MerchantPicker) findViewById(R.id.merchant_picker);
     merchantPicker.setListener(new PickerListener() {
         @Override
-        void onMerchantSelected(int merchantId) {
+        void onMerchantSelected(merchantId: int) {
             // highlight-next-line
             Shake.setMetadata("selectedMerchant", merchantId);
 

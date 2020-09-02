@@ -35,17 +35,20 @@ import TabItem from '@theme/TabItem';
 // highlight-next-line
 import com.shakebugs.shake.Shake;
 
-private void attachStatusListener(Device device) {
-    device.setStatusListener(new StatusListener() {
-        @Override
-        void onStatusChanged(Status status) {
-            // highlight-start
-            Shake.setMetadata("batteryLevel", status.getBatteryLevel());
-            Shake.setMetadata("firmwareVersion", status.getFirmwareVersion());
-            Shake.setMetadata("bluetoothVersion", status.getBluetoothVersion());
-            // highlight-end
-        }
-    });   
+private void attachStatusListener() {
+    Device device = DevicesManager.getConnectedDevice();
+    if (device != null) {
+        device.setStatusListener(new StatusListener() {
+            @Override
+            void onStatusChanged(Status status) {
+                // highlight-start
+                Shake.setMetadata("batteryLevel", status.getBatteryLevel());
+                Shake.setMetadata("firmwareVersion", status.getFirmwareVersion());
+                Shake.setMetadata("bluetoothVersion", status.getBluetoothVersion());
+                // highlight-end
+            }
+        }); 
+    }
 }
 ```
 
@@ -57,17 +60,20 @@ private void attachStatusListener(Device device) {
 // highlight-next-line
 import com.shakebugs.shake.Shake
 
-private fun attachStatusListener(device: Device) {
-    device.setStatusListener(object: StatusListener() {
-        @override
-        fun onStatusChanged(status: Status) {
-            // highlight-start
-            Shake.setMetadata("batteryLevel", status.batteryLevel)
-            Shake.setMetadata("firmwareVersion", status.firmwareVersion)
-            Shake.setMetadata("bluetoothVersion", status.bluetoothVersion)
-            // highlight-end
-        }
-    })
+private fun attachStatusListener() {
+    val device: Device = DevicesManager.getConnectedDevice();
+    if (device != null) {
+        device.setStatusListener(object: StatusListener() {
+            @override
+            fun onStatusChanged(status: Status) {
+                // highlight-start
+                Shake.setMetadata("batteryLevel", status.batteryLevel)
+                Shake.setMetadata("firmwareVersion", status.firmwareVersion)
+                Shake.setMetadata("bluetoothVersion", status.bluetoothVersion)
+                // highlight-end
+            }
+        })
+    }
 }
 ```
 

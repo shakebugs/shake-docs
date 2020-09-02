@@ -102,6 +102,7 @@ module.exports = {
                         'template-gallery/shopping-retail',
                         'template-gallery/realtime-communication',
                         'template-gallery/iot',
+                        'template-gallery/git',
                     ],
                 },
             ],
