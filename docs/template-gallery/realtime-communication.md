@@ -39,9 +39,6 @@ private void connectToChatServer(String username, String password) {
         @Override
         void onConnected(User user) {
             // highlight-start
-            Shake.setMetadata("userId", user.getId());
-            Shake.setMetadata("isChatEnabled", String.valueOf(user.isChatEnabled()));
-            Shake.setMetadata("isVideoEnabled", String.valueOf(user.isVideoEnabled()));
             Shake.setMetadata("serverStatusType", "Connected");
             Shake.setMetadata("serverStatusDate", new Date().toString());
             // highlight-end
@@ -52,9 +49,6 @@ private void connectToChatServer(String username, String password) {
         @Override
         void onDisconnected(String message) {
             // highlight-start
-            Shake.setMetadata("userId", "");
-            Shake.setMetadata("isChatEnabled", "");
-            Shake.setMetadata("isVideoEnabled", "");
             Shake.setMetadata("serverStatusType", "Disconnected");
             Shake.setMetadata("serverStatusDate", new Date().toString());
             // highlight-end
@@ -78,9 +72,6 @@ private fun connectToChatServer(username: String, password: String) {
         @override
         fun onConnected(user: User) {
             // highlight-start
-            Shake.setMetadata("userId", user.id)
-            Shake.setMetadata("isChatEnabled", user.isChatEnabled.toString())
-            Shake.setMetadata("isVideoEnabled", user.isVideoEnabled.toString())
             Shake.setMetadata("serverStatusType", "Connected")
             Shake.setMetadata("serverStatusDate", Date().toString())
             // highlight-end
@@ -91,9 +82,6 @@ private fun connectToChatServer(username: String, password: String) {
         @override
         fun onDisconnected(message: String) {
             // highlight-start
-            Shake.setMetadata("userId", "")
-            Shake.setMetadata("isChatEnabled", "")
-            Shake.setMetadata("isVideoEnabled", "")
             Shake.setMetadata("serverStatusType", "Disconnected")
             Shake.setMetadata("serverStatusDate", Date().toString())
             // highlight-end

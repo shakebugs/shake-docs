@@ -35,22 +35,15 @@ import TabItem from '@theme/TabItem';
 // highlight-next-line
 import com.shakebugs.shake.Shake;
 
-private void connectDevice(Device device) {
-    BluetoothManager.connect(device, new ConnectionListener() {
+private void attachStatusListener(Device device) {
+    device.setStatusListener(new StatusListener() {
         @Override
-        void onConnectionSucceeded(Details details) {
+        void onStatusChanged(Status status) {
             // highlight-start
-            Shake.setMetadata("batteryLevel", details.getBatteryLevel());
-            Shake.setMetadata("firmwareVersion", details.getFirmwareVersion());
-            Shake.setMetadata("bluetoothVersion", details.getBluetoothVersion());
+            Shake.setMetadata("batteryLevel", status.getBatteryLevel());
+            Shake.setMetadata("firmwareVersion", status.getFirmwareVersion());
+            Shake.setMetadata("bluetoothVersion", status.getBluetoothVersion());
             // highlight-end
-
-            Message.show("Connection succeeded");
-        }
-
-        @Override
-        void onConnectionFailed(String message) {
-            Message.show("Connection failed");
         }
     });   
 }
@@ -64,22 +57,15 @@ private void connectDevice(Device device) {
 // highlight-next-line
 import com.shakebugs.shake.Shake
 
-private fun connectDevice(device: Device) {
-    BluetoothManager.connect(device, object: ConnectionListener() {
+private fun attachStatusListener(device: Device) {
+    device.setStatusListener(object: StatusListener() {
         @override
-        fun onConnectionSucceeded(details: Details) {
+        fun onStatusChanged(status: Status) {
             // highlight-start
-            Shake.setMetadata("batteryLevel", details.batteryLevel)
-            Shake.setMetadata("firmwareVersion", details.firmwareVersion)
-            Shake.setMetadata("bluetoothVersion", details.bluetoothVersion)
+            Shake.setMetadata("batteryLevel", status.batteryLevel)
+            Shake.setMetadata("firmwareVersion", status.firmwareVersion)
+            Shake.setMetadata("bluetoothVersion", status.bluetoothVersion)
             // highlight-end
-            
-            Message.show("Connection succeeded")
-        }
-
-        @override
-        fun onConnectionFailed(message: String) {
-            Message.show("Connection failed")
         }
     })
 }

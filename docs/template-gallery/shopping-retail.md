@@ -13,7 +13,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 />
 </div>
 
-If you do online shopping, send yourself a list of all user’s orders (or at least their IDs), both previously placed and this last open one, that will provide you with useful context.
+If you do online shopping, send yourself a selected merchant id, that will provide you with useful context.
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -35,19 +35,15 @@ import TabItem from '@theme/TabItem';
 // highlight-next-line
 import com.shakebugs.shake.Shake;
 
-private void createOrder(User user, Cart cart, PaymentType paymentType) {
-    Orders.create(user.getInfo(), cart.getItems(), paymentType, new OrderListener() {
-        @Override 
-        void onCreateSucceeded(Order order) {
+private void setupMerchantPicker() {
+    MerchantPicker merchantPicker = (MerchantPicker) findViewById(R.id.merchant_picker);
+    merchantPicker.setListener(new PickerListener() {
+        @Override
+        void onMerchantSelected(int merchantId) {
             // highlight-next-line
-            Shake.setMetadata(order.getId(), new Date().toString());
+            Shake.setMetadata("selectedMerchant", merchantId);
 
-            Message.show("Order created.");
-        }
-
-        @Override 
-        void onCreateFailed(String message) {
-            Message.show("Failed to create order.");
+            setSelectedMerchant(merchantId);
         }
     });
 }
@@ -60,21 +56,16 @@ private void createOrder(User user, Cart cart, PaymentType paymentType) {
 // highlight-next-line
 import com.shakebugs.shake.Shake
 
-private fun createOrder(user: User, cart: Cart, paymentType: PaymentType) {
-    Orders.create(user.info, cart.items, paymentType, object: OrderListener() {
+private fun setupMerchantPicker() {
+    merchantPicker.setListener(object: PickerListener() {
         @override
-        fun onCreateSucceeded(order: Order) {
+        fun onMerchantSelected(int merchantId) {
             // highlight-next-line
-            Shake.setMetadata(order.id, Date().toString())
+            Shake.setMetadata("selectedMerchant", merchantId)
 
-            Message.show("Order created.")
+            setSelectedMerchant(merchantId)
         }
-        
-        @override
-        fun onCreateFailed(message: String) {
-            Message.show("Failed to create order.")
-        }
-    })
+    });
 }
 ```
 
