@@ -36,7 +36,7 @@ import TabItem from '@theme/TabItem';
 import com.shakebugs.shake.Shake;
 
 private void connectDevice(Device device) {
-    BluetoothManager.connect(new ConnectionListener() {
+    BluetoothManager.connect(device, new ConnectionListener() {
         @Override
         void onConnectionSucceeded(Details details) {
             // highlight-start
@@ -65,7 +65,7 @@ private void connectDevice(Device device) {
 import com.shakebugs.shake.Shake
 
 private fun connectDevice(device: Device) {
-    BluetoothManager.connect(object: ConnectionListener() {
+    BluetoothManager.connect(device, object: ConnectionListener() {
         @override
         fun onConnectionSucceeded(details: Details) {
             // highlight-start

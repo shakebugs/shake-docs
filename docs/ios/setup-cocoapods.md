@@ -46,10 +46,10 @@ pod 'Shake'
 </TabItem>
 </Tabs>
 
-import VersionValue from '@site/src/base/VersionValue';
+import IosVersion from '@site/src/base/IosVersion';
 
 Run the `pod install` command in your terminal.
-After the installation also run `pod update Shake` to be perfectly sure you're using the latest Shake <VersionValue platform="iOS" os="iOS"></VersionValue>.
+After the installation also run `pod update Shake` to be perfectly sure you're using the latest Shake <IosVersion/>.
 
 ### Add Client ID and Secret to Info.plist
 Open your workspace and in the Project Navigator, right click on *Info.plist*, and *Open as › Source code*.

@@ -27,21 +27,23 @@ Shake has a very rich feature set, yet on some platforms we managed to achieve m
 | Email pre-fill       |    ✅     |     ❌    |       ❌     | 
 
 :::note React Native
-Network tracking isn't available on iOS(React Native)
+Network tracking isn't available on iOS (React Native)
 :::
 
-import VersionValue from '@site/src/base/VersionValue';
+import AndroidVersion from '@site/src/base/AndroidVersion';
+import IosVersion from '@site/src/base/IosVersion';
+import ReactVersion from '@site/src/base/ReactVersion';
 
 ## Latest versions
-|                |   Android  |     iOS    |  React Native  |
-|:--------------:|:----------:|:----------:|:--------------:|
-| Latest version | <VersionValue platform="Android" os="Android"></VersionValue> | <VersionValue platform="iOS" os="iOS"></VersionValue> | <VersionValue platform="ReactNative" os="Android"></VersionValue> | 
+|                |      Android      |       iOS     |   React Native  |
+|:--------------:|:-----------------:|:-------------:|:---------------:|
+| Latest version | <AndroidVersion/> | <IosVersion/> | <ReactVersion/> | 
 
 
 ## Minimum requirements
-|    Android   |     iOS    |  React Native | 
-|:------------:|:----------:|:-------------:|  
-|    API 17    |   iOS 10   |     RN 0.56   | 
+|         |    Android   |     iOS    |  React Native | 
+|:-------:|:------------:|:----------:|:-------------:|  
+| Version |      4.2     |     10     |       0.56    | 
 
 
 
