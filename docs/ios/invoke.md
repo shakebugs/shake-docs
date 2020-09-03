@@ -32,10 +32,8 @@ import TabItem from '@theme/TabItem';
 //highlight-start
 SHKShake.configuration.isInvokedByShakeDeviceEvent = YES;
 SHKShake.configuration.isInvokedByScreenshot = YES;
-//highlight-end
-
-//highlight-next-line
 [SHKShake start];
+//highlight-end
 ```
 
 </TabItem>
@@ -46,10 +44,8 @@ SHKShake.configuration.isInvokedByScreenshot = YES;
 //highlight-start
 Shake.configuration.isInvokedByShakeDeviceEvent = true
 Shake.configuration.isInvokedByScreenshot = true
-//highlight-end
-
-//highlight-next-line
 Shake.start()
+//highlight-end
 ```
 
 </TabItem>
@@ -117,30 +113,21 @@ You can invoke SDK through code by calling the `Shake.show()` method anywhere af
 <Tabs groupId="ios" values={[{ label: 'Objective-C', value: 'objectivec'},{ label: 'Swift', value: 'swift'},]} defaultValue="swift"><TabItem value="objectivec">
 
 ```objc title="AppDelegate.m"
-// Shows bug report window
-//highlight-next-line
-[SHKShake show];
-
-//highlight-next-line
+//highlight-start
 SHKShakeReportData *reportData = [[SHKShakeReportData alloc] initWithBugDescription:@"Broken UI" attachedFiles:@[]];
 
-// Shows bug report window with pre-populated data
-//highlight-next-line
 [SHKShake showWithReportData:reportData]; 
+//highlight-end
 ```
 
 </TabItem><TabItem value="swift">
 
 ```swift title="AppDelegate.swift"
-// Shows bug report window
-//highlight-next-line
-Shake.show(reportData: reportData)
-
-//highlight-next-line
+//highlight-start
 let reportData = ShakeReportData(bugDescription: "Broken UI", attachedFiles: [])
-// Shows bug report window with pre-populated data
-//highlight-next-line
+
 Shake.show(reportData: reportData)
+//highlight-end
 ```
 
 </TabItem></Tabs>
