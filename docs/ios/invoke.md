@@ -51,7 +51,7 @@ Shake.start()
 </TabItem>
 </Tabs>
 
-This method also enables you to change the preferred invocation event on-the-go during runtime. Here’s a list of all available ones below, feel free to use any combination of these.
+This method also enables you to change the preferred invocation event on-the-go during runtime. Here’s a list of all available ones below, feel free to use any combination of these:
 
 <Tabs
 groupId="ios"
