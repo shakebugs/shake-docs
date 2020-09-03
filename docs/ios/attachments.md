@@ -37,30 +37,34 @@ import TabItem from '@theme/TabItem';
 
 <TabItem value="objectivec">
 
-```objectivec
+```objectivec title="AppDelegate.m"
 NSString *fileName = ...
 NSData *fileData = ...
 
+//highlight-start
 SHKShake.onPrepareReportData = ^SHKShakeReportData *_Nonnull(SHKShakeReportData *_Nonnull reportData) {
   SHKShakeFile *attachedFile = [[SHKShakeFile alloc] initWithName:fileName andData:fileData];
   reportData.attachedFiles = @[attachedFile];
   return reportData;
 };
+//highlight-end
 ```
 
 </TabItem>
 
 <TabItem value="swift">
 
-```swift
+```swift title="AppDelegate.swift"
 let fileName: String = ...
 let logData: Data = ...
 
+//highlight-start
 Shake.onPrepareReportData = { shakeReportData in
   let attachedFile = ShakeFile(name: fileName, andData: fileData)
   shakeReportData.attachedFiles = [attachedFile]
   return shakeReportData
 }
+//highlight-end
 ```
 
 </TabItem>
@@ -80,31 +84,35 @@ Shake.onPrepareReportData = { shakeReportData in
 
 <TabItem value="objectivec">
 
-```objectivec
+```objectivec title="AppDelegate.m"
 NSString *fileName = ...
 NSURL *fileUrl = ...
 
+//highlight-start
 SHKShake.onPrepareReportData = ^SHKShakeReportData *_Nonnull(SHKShakeReportData *_Nonnull reportData) {
   SHKShakeFile *attachedFile = [[SHKShakeFile alloc] initWithName:fileName andFileURL:fileUrl];
   reportData.attachedFiles = @[attachedFile];
   return reportData;
 };
+//highlight-end
 ```
 
 </TabItem>
 
 <TabItem value="swift">
 
-```swift
+```swift title="AppDelegate.swift"
 let fileName: String = ...
 let fileUrl: URL = ...
 
+//highlight-start
 Shake.onPrepareReportData = { shakeReportData in
   if let attachedFile = ShakeFile(name: fileName, andFileURL: fileUrl) {
     shakeReportData.attachedFiles = [attachedFile]
   }
   return shakeReportData
 }
+//highlight-end
 ```
 
 </TabItem>
@@ -125,29 +133,33 @@ and the file name shown on the web Dashboard will be determined automatically fr
 
 <TabItem value="objectivec">
 
-```objectivec
+```objectivec title="AppDelegate.m"
 NSURL *fileUrl = ...
 
+//highlight-start
 SHKShake.onPrepareReportData = ^SHKShakeReportData *_Nonnull(SHKShakeReportData *_Nonnull reportData) {
   SHKShakeFile *attachedFile = [[SHKShakeFile alloc] initWithFileURL:fileUrl];
   reportData.attachedFiles = @[attachedFile];
   return reportData;
 };
+//highlight-end
 ```
 
 </TabItem>
 
 <TabItem value="swift">
 
-```swift
+```swift title="AppDelegate.swift"
 let fileUrl: URL = ...
 
+//highlight-start
 Shake.onPrepareReportData = { shakeReportData in
   if let attachedFile = ShakeFile(fileURL: fileUrl) {
     shakeReportData.attachedFiles = [attachedFile]
   }
   return shakeReportData
 }
+//highlight-end
 ```
 
 </TabItem>
