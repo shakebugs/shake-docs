@@ -1,4 +1,4 @@
-﻿---
+---
 id: invoke
 title: Invoke
 ---
@@ -205,4 +205,7 @@ private fun createShakeReportData(): ShakeReportData {
 </Tabs>
 
 All other data, like [Activity history](android/activity.md) or [Black box](android/blackbox.md), is automatically included in every user’s bug report — no additional code required.
+
+## Invoke usage prompt
+You can notify your users how to invoke Shake by showing a prompt. It can be enabled by setting `Shake.setShowUsagePrompt(true)` before calling `Shake.start()`. The prompt will be shown only the first time the app is started. This feature is disabled by default.
 

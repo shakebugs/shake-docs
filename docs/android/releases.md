@@ -9,9 +9,23 @@ just click the button in the bottom-right corner of this screen.
 
 ## Version
 
+### 14.0
+<span class="tag-button">November 5, 2020</span>&nbsp;&nbsp;
+<span class="tag-button green-tag-button">Latest version</span>
+
+**What's new**
+
+We are introducing you completely fresh design, new navigation and a better user experience.  
+Users can now report [different type of feedbacks](/android/feedback_type.md) - bugs, suggestions and questions.
+
+[Private data](/android/privacy.md) management is finally here, Shake provides you a way to mask or remove data
+you do not want to be visible on the Shake dashboard.
+It can be used for notifications, network requests, screens or screen elements.
+
+From now, you can use in app Shake [onboarding dialog](/android/usage_prompt.md) to inform your users about Shake availability.
+
 ### 13.1
 <span class="tag-button">August 25, 2020</span>&nbsp;&nbsp;
-<span class="tag-button green-tag-button">Latest version</span>
 
 **What's new**
 
