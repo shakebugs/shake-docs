@@ -37,6 +37,37 @@ Shake.configuration.isActivityHistoryEnabled = false
 
 </TabItem></Tabs>
 
+## Handle notifications manually
+If you want to manually handle notifications, you can use this method:
+
+<Tabs
+  groupId="ios"
+  defaultValue="swift"
+  values={[
+    { label: 'Objective-C', value: 'objectivec'},
+    { label: 'Swift', value: 'swift'},
+  ]
+}>
+
+<TabItem value="objectivec">
+
+```objectivec title="AppDelegate.m"
+// highlight-next-line
+[SHKShake handleNotificationWithNotificationTitle: notificationTitle notificationDescription:notificationDescription];
+```
+
+</TabItem>
+
+<TabItem value="swift">
+
+```swift title="AppDelegate.swift"
+// highlight-next-line
+Shake.handleNotification(withNotificationTitle: notificationTitle, notificationDescription: notificationDescription)
+```
+
+</TabItem>
+</Tabs>
+
 ## Custom logs
 You can add your own custom logs to Activity history, which will then be shown as part of every bug report.
 Here’s an example of how this would look like in code:
@@ -68,7 +99,6 @@ Shake.log(LogLevel.info, "Log message goes here!")
 
 </TabItem>
 </Tabs>
-
 
 ## Limitations
 In a Free workspace you can see up to 20 events that lead to every bug.
