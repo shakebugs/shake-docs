@@ -5,11 +5,11 @@ title: Attachments
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 You can instruct the SDK to quietly attach any file to a bug report.
-The files you attach are *not* visible to the user in the SDK.
+The files you attach are not visible to the user in the SDK.
 
 ## Introduction
 Send yourself XMPP logs, a user's profile photo, or whatever helps you debug issues faster.
-You will see these files in the center of [your web Dashboard](https://app.shakebugs.com):
+You will see these files in the center of your web Dashboard along with files the user maybe attached themselves.
 
 <img
   alt="Attachments screen"
