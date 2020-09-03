@@ -54,7 +54,7 @@ Here’s an example of how this would look like in code:
 
 ```objectivec title="AppDelegate.m"
 // highlight-next-line
-[SHKShake logWithLevel: CustomLogLevel.CustomLogLevelInfo, message:@"Log message goes here!"];
+[SHKShake logWithLevel: LogLevel.info, message:@"Log message goes here!"];
 ```
 
 </TabItem>
@@ -63,7 +63,7 @@ Here’s an example of how this would look like in code:
 
 ```swift title="AppDelegate.swift"
 // highlight-next-line
-Shake.log(CustomLogLevel.CustomLogLevelInfo, "Log message goes here!");
+Shake.log(LogLevel.info, "Log message goes here!")
 ```
 
 </TabItem>
