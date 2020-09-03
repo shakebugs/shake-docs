@@ -5,9 +5,17 @@ title: Shopping and retail
 
 ## Shopping
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img
+  alt="Payments"
+  src={useBaseUrl('img/docs-payments@2x.png')}
+/>
+
 If you do online shopping, send yourself a list of all user’s orders (or at least their IDs), both previously placed and this last open one, that will provide you with useful context.
 
 In an order send yourself:
+
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';

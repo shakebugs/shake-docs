@@ -18,7 +18,7 @@ just click the button in the bottom-right corner of this screen.
 If you want to, you can now pre-fill or hide the [Email field](/android/email.md) from the SDK. Pretty neat.
 
 ### 13.0
-<span class="tag-button">June 30, 2020</span>&nbsp;&nbsp;
+<span class="tag-button">June 30, 2020</span>
 
 **What's new**
 

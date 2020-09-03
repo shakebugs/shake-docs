@@ -3,7 +3,15 @@ id: iot
 title: IoT
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img
+  alt="IoT"
+  src={useBaseUrl('img/docs-iot@2x.png')}
+/>
+
 If your app uses IoT devices, you might find it useful to attach device data (eg. fw version, bt version, battery status...)
+
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';

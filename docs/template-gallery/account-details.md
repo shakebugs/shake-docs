@@ -153,17 +153,17 @@ If your app is in the gaming or education industry, think about sending yourself
 <TabItem value="java">
 
 ```java title="App.java"
-Achivements achivements[] = new Achivements[100];
+Achievements achievements[] = new Achievements[100];
 Courses courses[] = new Courses[5];
 Difficulty dificulty = new Dificulty('Begginer');
 
 if(user) {
-    achivements = user.getUserAchivements();
+    achievements = user.getUserAchievements();
     courses = user.getUserCourses();
     difficulty = user.getCurrentDifficulty();
 // highlight-start
 
-    Shake.setMetadata("achivements", achivements);
+    Shake.setMetadata("achievements", achievements);
     Shake.setMetadata("courses", courses);
     Shake.setMetadata("difficulty", difficulty);
 }
@@ -175,17 +175,17 @@ if(user) {
 <TabItem value="kotlin">
 
 ```kotlin title="App.kt"
-val achivements = Array<Acvhivements>(100);
+val achievements = Array<Achievements>(100);
 val courses = Array<Courses>(5);
 val difficulty = Difficulty('Begginer');
 
 if(user) {
-    achivements = user.getUserAchivements();
+    achievements = user.getUserAchievements();
     courses = user.getUserCourses();
     difficulty = getCurrentDifficulty();
 // highlight-start
 
-    Shake.setMetadata("achivements", achivements);
+    Shake.setMetadata("achievements", achievements);
     Shake.setMetadata("courses", courses);
     Shake.setMetadata("difficulty", difficulty);
 // highlight-end
@@ -197,17 +197,17 @@ if(user) {
 <TabItem value="objc">
 
 ```objc title="App.m"
-NSMutableArray *achivements = [[NSMutableArray alloc] init];
+NSMutableArray *achievements = [[NSMutableArray alloc] init];
 NSMutableArray *courses = [[NSMutableArray alloc] init];
 Difficulty *difficulty = [Difficulty @"Begginer"];
 
 if(user) {
-    achivements = [user getUserAchivements];
+    achievements = [user getUserAchievements];
     courses = [user getUserCourses];
     difficulty = [user getCurrentDifficulty];
 // highlight-start
 
-    [SHKShake setMetadata:@"achivements" data: achivements];
+    [SHKShake setMetadata:@"achievements" data: achievements];
     [SHKShake setMetadata:@"courses" data: courses];
     [SHKShake setMetadata:@"difficulty" data: difficulty];
 }
@@ -219,17 +219,17 @@ if(user) {
 <TabItem value="swift">
 
 ```swift title="App.swift"
-var achivements = Achivements[100]
+var achievements = Achievements[100]
 var courses = Courses[5]
 var difficulty = Difficulty("Begginer")
 
 if user {
-    achivements = getUserAchivements()
+    achievements = getUserAchievements()
     courses = getUserCourses()
     difficulty = getCurrentDifficulty()
 // highlight-start
 
-    Shake.setMetadata("achivements", achivements);    
+    Shake.setMetadata("achievements", achievements);    
     Shake.setMetadata("courses", courses);
     Shake.setMetadata("difficulty", difficulty);
 // highlight-end
@@ -242,12 +242,12 @@ if user {
 
 ```javascript title="App.js"
 if(user) {
-    let achivements = getUserAchivements()
+    let achievements = getUserAchievements()
     let courses = getUserCourses()
     let difficulty = getCurrentDifficulty()
 // highlight-start
 
-    Shake.setMetadata("achivements", achivements);
+    Shake.setMetadata("achievements", achievements);
     Shake.setMetadata("courses", courses);
     Shake.setMetadata("difficulty", difficulty);
 // highlight-end
@@ -261,12 +261,12 @@ if(user) {
 
 ```dart title="App.dart
 if(user) {
-    var achivements = user.getUserAchivements()
+    var achievements = user.getUserAchievements()
     var courses = user.getUserCourses()
     var difficulty = user.getCurrentDifficulty()
 // highlight-start
 
-    Shake.setMetadata("achivements", achivements);
+    Shake.setMetadata("achievements", achievements);
     Shake.setMetadata("courses", courses);
     Shake.setMetadata("difficulty", difficulty);;
 // highlight-end
