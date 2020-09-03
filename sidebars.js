@@ -1,8 +1,8 @@
 module.exports = {
     someSidebar: {
-        Overview: [
+        /*Overview: [
             'overview',
-        ], 
+        ], */
         Android: [
             'android/setup',
             {
