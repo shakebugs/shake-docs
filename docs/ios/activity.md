@@ -37,8 +37,12 @@ Shake.configuration.isActivityHistoryEnabled = false
 
 </TabItem></Tabs>
 
-## Handle notifications manually
-If you want to manually handle notifications, you can use this method:
+## Setting up
+
+### Notifications
+Notifications are tracked automatically and require no additional setup.
+
+If you want Shake to manually handle notification tracking, you can use this method instead:
 
 <Tabs
   groupId="ios"
@@ -68,7 +72,7 @@ Shake.handleNotification(withNotificationTitle: notificationTitle, notificationD
 </TabItem>
 </Tabs>
 
-## Custom logs
+### Custom logs
 You can add your own custom logs to Activity history, which will then be shown as part of every bug report.
 Here’s an example of how this would look like in code:
 
