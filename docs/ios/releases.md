@@ -12,11 +12,11 @@ What would you like us to build next? We're dying to hear from you — just clic
 
 **What's new**
 
-There’s no such thing as too many invocation methods. Shake can now be invoked by a one-finger swiping gesture from the right edge of the screen too.
+There’s no such thing as too many [invocation methods](/ios/invoke.md). Shake can now be invoked by a one-finger swiping gesture from the right edge of the screen too.
 
 The Wrap-up screen is now a tiny bit more helpful than before. If your users want to, they can read how to report great bugs, report any SDK hiccups to us or recommend us.
 
-If you want to, our Activity history now allows you to send yourself any custom logs, and read the notifications users receive.
+If you want to, our [Activity history](/ios/activity.md) now allows you to send yourself any custom logs, and read the notifications users receive.
 
 ### 10.0
 <span class="tag-button">July 8, 2020</span>
