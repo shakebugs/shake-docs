@@ -1,5 +1,8 @@
 module.exports = {
     someSidebar: {
+        /*Overview: [
+            'overview',
+        ], */
         Android: [
             'android/setup',
             {
@@ -9,15 +12,17 @@ module.exports = {
                     'android/invoke',
                     'android/disable',
                     'android/silent-reports',
+                    'android/email',
                     'android/inspect',
                     'android/screenshot',
+                    'android/screen-recording',
                     'android/permissions',
                     'android/activity',
                     'android/essentials',
                     'android/attachments',
                     'android/blackbox',
                     'android/metadata',
-                    'android/quick-facts'
+                    'android/quick-facts',
                 ]
             },
             'android/android-releases'
@@ -25,9 +30,10 @@ module.exports = {
         iOS: [
             {
                 "type": "category",
-                "label": "Setup",
+                "label": "Install Shake",
                 "items": [
                     'ios/setup-cocoapods',
+                    'ios/setup-carthage',
                     'ios/setup-manually',
                 ]
             },
@@ -37,6 +43,7 @@ module.exports = {
                 "items": [
                     'ios/invoke',
                     'ios/disable',
+                    'ios/silent-reports',
                     'ios/inspect',
                     'ios/screenshot',
                     'ios/permissions',
@@ -70,5 +77,19 @@ module.exports = {
             },
             'react/react-releases'
         ],
+        /*"Template Gallery": [
+            'template-gallery/template-gallery',
+            {
+                "type": "category",
+                "label": "Gallery",
+                "items": [
+                    'template-gallery/account-details',
+                    'template-gallery/git',
+                    'template-gallery/shopping-retail',
+                    'template-gallery/realtime-communication',
+                    'template-gallery/iot',
+                ]
+            },
+        ],*/
     },
 };

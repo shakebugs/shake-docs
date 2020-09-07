@@ -6,20 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 This page covers how Shake reports to you on the status of a user's permissions listed below.
 
-## Introduction
-Shake precisely lists permissions that a user has explicitly granted access to.
-The ones you don't see listed in a report were either denied or not requested at all.
-
-You can review user granted permissions on the Dashboard.
-
-<img
-  alt="Permissions screen"
-  src={useBaseUrl('screens/permissions_screen.png')}
-/>
-
-
-## Tracking useful permissions on iOS
-The Shake SDK tracks the status of these  iOS permissions, and reports to 
+## Tracking useful permissions
+The Shake SDK tracks the status of these iOS permissions, and reports to
 you whether a user has or hasn't granted your app access to them:
 
 * Calendar access
@@ -30,3 +18,11 @@ you whether a user has or hasn't granted your app access to them:
 * Media library access
 * Microphone access
 
+For visual clarity on the Dashboard, Shake lists precisely those permissions that a user has explicitly granted access to.
+
+The ones you don't see listed in a report were either denied or not requested at all.
+
+<img
+  alt="Permissions screen"
+  src={useBaseUrl('screens/permissions_screen.png')}
+/>

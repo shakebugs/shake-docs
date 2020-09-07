@@ -1,4 +1,4 @@
-﻿---
+---
 id: quick-facts
 title: Quick facts
 ---
@@ -7,20 +7,12 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 This page explains how to send a value of any variable you wish from a user's app to your web Dashboard.
 
 ## Introduction
-Every app is unique so the [Essentials](/ios/essentials.md) sent with each bug report are often not enough. 
+Every app is unique so the [Essentials](/ios/essentials.md) sent with each bug report are often not enough.
 That's why the Shake SDK allows you to send yourself any custom data from the app using Quick facts.
-It's a text object which you can shape any way you want, and you can put anything you want into it.
+It's a *String* object which you can shape any way you want, and you can put anything you want into it.
 
-This is where you will see Quick facts on your web Dashboard:
-
-<img
-  alt="Quick facts screen"
-  src={useBaseUrl('screens/quick_facts_screen.png')}
-/>
-
-
-## Usage
-In the `AppDelegate` add `onPrepareData` closure, and fill the `quickFacts` string with 
+## How to use
+In the `AppDelegate` add `onPrepareReportData` closure, and fill the `quickFacts` string with
 the data you want to receive on your web Dashboard.
 
 import Tabs from '@theme/Tabs';
@@ -38,13 +30,12 @@ import TabItem from '@theme/TabItem';
 <TabItem value="objectivec">
 
 ```objectivec title="AppDelegate.m"
-// highlight-start
-[[SHKShake sharedInstance] setOnPrepareData:^SHKShakeReportData *
-  _Nonnull(SHKShakeReportData * _Nonnull reportData) {
+//highlight-start
+SHKShake.onPrepareReportData = ^SHKShakeReportData *_Nonnull(SHKShakeReportData *_Nonnull reportData) {
     reportData.quickFacts = [NSString stringWithFormat:@"Current user is %@", userId];
     return reportData;
-}];
-// highlight-end
+};
+//highlight-end
 ```
 
 </TabItem>
@@ -52,14 +43,20 @@ import TabItem from '@theme/TabItem';
 <TabItem value="swift">
 
 ```swift title="AppDelegate.swift"
-// highlight-start
-Shake.sharedInstance().onPrepareData = {
-  reportData in
+//highlight-start
+Shake.onPrepareReportData = { reportData in
     reportData.quickFacts = "Current user is \(userId)”
     return reportData
 }
-// highlight-end
+//highlight-end
 ```
 
 </TabItem>
 </Tabs>
+
+This is where you will see Quick facts on your web Dashboard:
+
+<img
+  alt="Quick facts screen"
+  src={useBaseUrl('screens/quick_facts_screen.png')}
+/>

@@ -1,4 +1,4 @@
-﻿---
+---
 id: setup-manually
 title: Manually
 ---
@@ -6,19 +6,20 @@ A guide to add Shake to your app without a dependency manager or a build automat
 
 :::note
 
-By not using a dependency manager like CocoaPods, you won't be able to use the simple `pod update Shake` command to 
-always pull the latest version of Shake SDK into your app. Instead, you will have to repeat the Step 1 described below.
+By not using a dependency manager like CocoaPods, you won't be able to use the simple `pod update Shake` command to
+always pull the latest version of Shake SDK into your app. Instead, you will have to repeat the the first step described below.
 
 :::
 
 ### Download Shake SDK from GitHub
-Visit Shake iOS SDK [GitHub repo](https://github.com/shakebugs/shake-ios) and click the green Clone or download button. 
-Shake directory will be downloaded to your computer — drag-and-drop the Shake.framework folder into your project.
+Visit Shake iOS SDK [GitHub repo](https://github.com/shakebugs/shake-ios), click the green *Clone* button and then *Download ZIP*.
+Shake directory will be downloaded to your computer — drag-and-drop the *Shake.framework* folder into your project.
 
-### Add Client ID and Client secret key
-Open your workspace and in the Project Navigator, right click on `Info.plist`, and `Open as › Source code`.
-Paste this but replace `sign-in-to-see-your-api-client-id-here` and `sign-in-to-see-your-api-client-secret-here` 
-with the actual values you have in [Your settings](https://app.shakebugs.com/settings/workspace#general).
+### Add Client ID and Secret to Info.plist
+Open your workspace and in the Project Navigator, right click on
+*Info.plist*, and *Open as › Source code*. Paste this but replace
+*your-api-client-id* and *your-api-client-secret* with the actual values
+you have in [your workspace settings](https://app.shakebugs.com/settings/workspace#general):
 
 ```xml title="Info.plist"
 <?xml version="1.0" encoding="utf-8" ?>
@@ -28,16 +29,16 @@ with the actual values you have in [Your settings](https://app.shakebugs.com/set
       <key>Shake</key>
       <dict>
         <key>APIClientID</key>
-        <string>sign-in-to-see-your-api-client-id-here</string>
+        <string>your-api-client-id</string>
         <key>APIClientSecret</key>
-        <string>sign-in-to-see-your-api-client-secret-here</string>
+        <string>your-api-client-secret</string>
       </dict>
       // highlight-end
   </dict>
 </plist>
 ```
 
-### Initialize Shake
+### Initialize Shake SDK
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
@@ -90,5 +91,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 </TabItem>
 </Tabs>
 
-Now select `Product › Run` in the menu bar. This first run will automatically 
-add your app to your Shake Dashboard based on your app bundle ID.
+Now select *Product › Run* in the menu bar. This first run will automatically
+add your app to your [Shake Dashboard](https://app.shakebugs.com/) based on your app bundle ID.

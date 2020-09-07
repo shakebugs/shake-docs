@@ -1,17 +1,15 @@
-﻿---
+---
 id: attachments
 title: Attachments
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-You can instruct the SDK to quietly attach any file to a bug report. 
+You can instruct the SDK to quietly attach any file to a bug report.
 The files you attach are not visible to the user in the SDK.
 
 ## Introduction
-By default, a bug report contains only files that the user attaches to it. 
-However, you can instruct Shake SDK to create and attach custom files that you need, for example, 
-XMPP logs, a user's profile photo, or whatever you might want to inspect later on.
-All attached files will appear in the center of your web Dashboard.
+Send yourself XMPP logs, a user's profile photo, or whatever helps you debug issues faster.
+You will see these files in the center of your web Dashboard along with files the user maybe attached themselves.
 
 <img
   alt="Attachments screen"
@@ -19,9 +17,11 @@ All attached files will appear in the center of your web Dashboard.
 />
 
 ## Methods
-### Attaching a file with a custom name and data
-`ShakeFile` can be initialized with a filename and data.
-As custom data is provided, the file name cannot be automatically detected so it's mandatory.
+You can quietly attach files by using any of the methods described below.
+
+### Setting a custom filename and adding data
+*ShakeFile* can be initialized with a filename (String) and data (NSData / Data).
+As custom data is provided, the file name cannot be automatically detected so it's mandatory:
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -41,13 +41,13 @@ import TabItem from '@theme/TabItem';
 NSString *fileName = ...
 NSData *fileData = ...
 
-// highlight-start
-[[SHKShake sharedInstance] setOnPrepareData:^SHKShakeReportData * _Nonnull(SHKShakeReportData * _Nonnull reportData) {
+//highlight-start
+SHKShake.onPrepareReportData = ^SHKShakeReportData *_Nonnull(SHKShakeReportData *_Nonnull reportData) {
   SHKShakeFile *attachedFile = [[SHKShakeFile alloc] initWithName:fileName andData:fileData];
   reportData.attachedFiles = @[attachedFile];
   return reportData;
-}];
-// highlight-end
+};
+//highlight-end
 ```
 
 </TabItem>
@@ -58,68 +58,20 @@ NSData *fileData = ...
 let fileName: String = ...
 let logData: Data = ...
 
-// highlight-start
-Shake.sharedInstance().onPrepareData = { shakeReportData in
+//highlight-start
+Shake.onPrepareReportData = { shakeReportData in
   let attachedFile = ShakeFile(name: fileName, andData: fileData)
   shakeReportData.attachedFiles = [attachedFile]
   return shakeReportData
 }
-// highlight-end
+//highlight-end
 ```
 
 </TabItem>
 </Tabs>
 
-### Attaching a file with a default name
-Files can be attached with a local url to your file. 
-If you attach files this way, the filename shown on the web Dashboard 
-will be determined automatically from the passed file's name.
-
-<Tabs
-  groupId="ios"
-  defaultValue="swift"
-  values={[
-    { label: 'Objective-C', value: 'objectivec'},
-    { label: 'Swift', value: 'swift'},
-  ]
-}>
-
-<TabItem value="objectivec">
-
-```objectivec title="AppDelegate.m"
-NSURL *fileUrl = ...
-
-// highlight-start
-[[SHKShake sharedInstance] setOnPrepareData:^SHKShakeReportData * _Nonnull(SHKShakeReportData * _Nonnull reportData) {
-  SHKShakeFile *attachedFile = [[SHKShakeFile alloc] initWithFileURL:fileUrl];
-  reportData.attachedFiles = @[attachedFile];
-  return reportData;
-}];
-// highlight-end
-```
-
-</TabItem>
-
-<TabItem value="swift">
-
-```swift title="AppDelegate.swift"
-let fileUrl: URL = ...
-
-// highlight-start
-Shake.sharedInstance().onPrepareData = { shakeReportData in
-  if let attachedFile = ShakeFile(fileURL: fileUrl) {
-    shakeReportData.attachedFiles = [attachedFile]
-  }
-  return shakeReportData
-}
-// highlight-end
-```
-
-</TabItem>
-</Tabs>
-
-### Attaching a file with a custom name
-`ShakeFile` can be initialized with a desired filename and an a local url to your file.
+### Setting a custom filename and then attaching a file
+*ShakeFile* can also be initialized with a desired filename (String) and a local url (NSURL) to your file:
 
 <Tabs
   groupId="ios"
@@ -136,13 +88,13 @@ Shake.sharedInstance().onPrepareData = { shakeReportData in
 NSString *fileName = ...
 NSURL *fileUrl = ...
 
-// highlight-start
-[[SHKShake sharedInstance] setOnPrepareData:^SHKShakeReportData * _Nonnull(SHKShakeReportData * _Nonnull reportData) {
+//highlight-start
+SHKShake.onPrepareReportData = ^SHKShakeReportData *_Nonnull(SHKShakeReportData *_Nonnull reportData) {
   SHKShakeFile *attachedFile = [[SHKShakeFile alloc] initWithName:fileName andFileURL:fileUrl];
   reportData.attachedFiles = @[attachedFile];
   return reportData;
-}];
-// highlight-end
+};
+//highlight-end
 ```
 
 </TabItem>
@@ -153,21 +105,68 @@ NSURL *fileUrl = ...
 let fileName: String = ...
 let fileUrl: URL = ...
 
-// highlight-start
-Shake.sharedInstance().onPrepareData = { shakeReportData in
+//highlight-start
+Shake.onPrepareReportData = { shakeReportData in
   if let attachedFile = ShakeFile(name: fileName, andFileURL: fileUrl) {
     shakeReportData.attachedFiles = [attachedFile]
   }
   return shakeReportData
 }
-// highlight-end
+//highlight-end
+```
+
+</TabItem>
+</Tabs>
+
+### Just attaching a file
+Or, you can initialize *ShakeFile* only with a local file url (NSURL),
+and the file name shown on the web Dashboard will be determined automatically from the passed file's URL:
+
+<Tabs
+  groupId="ios"
+  defaultValue="swift"
+  values={[
+    { label: 'Objective-C', value: 'objectivec'},
+    { label: 'Swift', value: 'swift'},
+  ]
+}>
+
+<TabItem value="objectivec">
+
+```objectivec title="AppDelegate.m"
+NSURL *fileUrl = ...
+
+//highlight-start
+SHKShake.onPrepareReportData = ^SHKShakeReportData *_Nonnull(SHKShakeReportData *_Nonnull reportData) {
+  SHKShakeFile *attachedFile = [[SHKShakeFile alloc] initWithFileURL:fileUrl];
+  reportData.attachedFiles = @[attachedFile];
+  return reportData;
+};
+//highlight-end
+```
+
+</TabItem>
+
+<TabItem value="swift">
+
+```swift title="AppDelegate.swift"
+let fileUrl: URL = ...
+
+//highlight-start
+Shake.onPrepareReportData = { shakeReportData in
+  if let attachedFile = ShakeFile(fileURL: fileUrl) {
+    shakeReportData.attachedFiles = [attachedFile]
+  }
+  return shakeReportData
+}
+//highlight-end
 ```
 
 </TabItem>
 </Tabs>
 
 ## Limitations
-The maximum number of attached files per bug is 1 for Free workspaces and 10 for Premium ones. 
+The maximum number of attached files per bug is 1 for Free workspaces and 10 for Premium ones.
 If more files are attached, the SDK will successfully upload only some of them.
 
 The maximum allowed individual size for any of those files is 5 MB.

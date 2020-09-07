@@ -5,9 +5,19 @@ title: Silent reports
 This page explains how to submit yourself a bug report from the background, without interrupting your end user whatsoever.
 
 ## Overview
-You can send silent reports to yourself by calling the `Shake.silentReport()` method anywhere after `Shake.start()`:
+You can send silent reports to yourself by calling the `Shake.silentReport()` method anywhere after `Shake.start()`, as shown below:
 
-This method allows you to include: Attachments, Quick facts, Black box, Activity history and a screenshot in your silent report.
+```javascript title="App.js"
+// highlight-start
+Shake.silentReport(
+    description: String, 
+    files: Array<ShakeFile>,
+    quickFacts: String,
+    config: ShakeReportConfiguration);
+ // highlight-end
+```
+
+This method allows you to include: [Attachments](react/attachments.md), [Quick facts](react/quick-facts.md), [Activity history](react/activity.md) and a screenshot in your silent report.
 If you decide to do so, your code should look something like this example:
 
 ```javascript title="App.js"
@@ -30,7 +40,7 @@ const bugReport = () => {
 }
 ```
 
-## Bug submitted message
+## Show the *Bug submitted* message
 Silent reports are programmatic and no Shake UI is shown.
 However, you can choose to display a small and non-intrusive message saying
 `Done. Bug submitted successfully.` on the bottom of a users screen once the report has been submitted:

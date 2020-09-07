@@ -3,8 +3,14 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "docusaurus start",
-    "build": "docusaurus build",
+    "start": "npm run start:uat",
+    "start:uat": "npm run set:uat && docusaurus start",
+    "start:prd": "npm run set:prd && docusaurus start",
+    "build": "npm run build:uat",
+    "build:uat": "npm run set:uat && docusaurus build",
+    "build:prd": "npm run set:prd && docusaurus build",
+    "set:uat": "shx cp ./env/.env.uat ./.env",
+    "set:prd": "shx cp ./env/.env.prd ./.env",
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy"
   },
@@ -12,6 +18,7 @@
     "@docusaurus/core": "^2.0.0-alpha.55",
     "@docusaurus/preset-classic": "^2.0.0-alpha.55",
     "classnames": "^2.2.6",
+    "docusaurus2-dotenv": "^1.4.0",
     "react": "^16.8.4",
     "react-dom": "^16.8.4"
   },
@@ -26,5 +33,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "shx": "^0.3.2"
   }
 }

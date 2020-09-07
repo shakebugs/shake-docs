@@ -4,32 +4,38 @@ title: Invoke
 ---
 This page describes in detail all the different methods that can be used to invoke the SDK.
 
-## Invoking
-There are three possible ways to start Shake SDK from your application.
-You can invoke Shake SDK either by shaking the device, floating button or taking a screenshot.
-To customize invocation behaviour you have the following 3 methods at your disposal.
+## Invoke manually
+By default, the SDK is invoked when a user shakes their device. You don't need to code anything.
 
-`Shake.setShowFloatingReportButton(bool isEnabled)`
-`Shake.setInvokeShakeOnShakeDeviceEvent(bool isEnabled)`
-`Shake.setInvokeShakeOnScreenshot(bool isEnabled)`
+But if you want to, you can customize that.
 
-
-For example if you'd like to use all of the invocation events mentioned above you can enable them like this
+Let's look at an example. You want your users to invoke SDK either when
+they shake their device, or when they take a screenshot. To do that,
+set invocation events using following methods.
 
 ```javascript title="App.js"
 // highlight-next-line
 import Shake from '@shakebugs/react-native-shake';
 
-const setInvocationActions = () => {
+const setInvocationEvents = () => {
     // highlight-start
-    Shake.setShowFloatingReportButton(true);
     Shake.setInvokeShakeOnShakeDeviceEvent(true);
     Shake.setInvokeShakeOnScreenshot(true);
     // highlight-end
 }
 ```
 
-You can also check which of these action are enabled:
+Here’s a list of all available ones below, feel free to use any combination of these.
+
+```javascript title="App.js"
+// highlight-start
+Shake.setInvokeShakeOnShakeDeviceEvent(true);
+Shake.setInvokeShakeOnScreenshot(true);
+Shake.setShowFloatingReportButton(true);
+// highlight-end
+```
+
+If you want to check which of these events are enabled:
 
 ```javascript title="App.js"
 // highlight-next-line
@@ -44,11 +50,15 @@ const getInvocationActions = async () => {
 }
 ```
 
-## Actions
-1. **Shake** - shaking a device causes the SDK to pop up.
-2. **Button** - floating button will be added on top of your app's UI which users can tap to pop up SDK.
- The button can be dragged to a more suitable position.
-3. **Screenshot** - taking a screenshot causes the SDK to pop up.
+### Shaking
+By default, shaking gesture causes the SDK to pop up.
+
+### Button
+This invocation event will create the floating button on top of your app's UI which users can clearly see at all times.
+This button can be dragged to a more suitable position.
+
+### Taking a screenshot
+The SDK will be invoked when users make a screenshot while using your app.
 
 ## Invoke through code
 You can invoke SDK through code by calling the `Shake.show()` method  
@@ -65,5 +75,3 @@ const reportBug = () => {
     Shake.show();
 }
 ```
-
-

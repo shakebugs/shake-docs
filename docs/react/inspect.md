@@ -1,6 +1,6 @@
 ﻿---
 id: inspect
-title: Inspect
+title: Inspect bug
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
@@ -24,6 +24,6 @@ import Shake from '@shakebugs/react-native-shake';
 
 const hideInspectScreen = () => {
     // highlight-next-line
-    Shake.setEnableInspectScreen(false)
+    Shake.setEnableInspectScreen(false);
 }
 ```

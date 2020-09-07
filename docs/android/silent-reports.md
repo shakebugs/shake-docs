@@ -48,7 +48,7 @@ Shake.silentReport(
 </TabItem>
 </Tabs>
 
-This method allows you to include: Attachments, Metadata, Black box, Activity history and a screenshot in your silent report.
+This method allows you to include: [Attachments](android/attachments.md), [Metadata](android/metadata.md), [Activity history](android/activity.md) and a screenshot in your silent report.
 If you decide to do so, your code should look something like this example:
 
 <Tabs
@@ -128,10 +128,10 @@ private fun createShakeReportData(): ShakeReportData {
 </TabItem>
 </Tabs>
 
-## Bug submitted message
+## Show the *Bug submitted* message
 Silent reports are programmatic and no Shake UI is shown.
 However, you can choose to display a small and non-intrusive message saying
-`Done. Bug submitted successfully.` on the bottom of a users screen once the report has been submitted:
+*Done. Bug submitted successfully.* on the bottom of a users screen once the report has been submitted:
 
 <Tabs
   groupId="android"

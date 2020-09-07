@@ -9,17 +9,23 @@ module.exports = {
   themeConfig: {
     prism: {
       theme: require('prism-react-renderer/themes/dracula'),
-      additionalLanguages: ['groovy', 'kotlin', 'java', 'swift'],
+      additionalLanguages: ['groovy', 'kotlin', 'java', 'swift', 'dart'],
+    },
+    algolia: {
+      apiKey: '0a7f58d03fe8cc9d31b51d69d009654f',
+      indexName: 'shakebugs',
     },
     navbar: {
+      hideOnScroll: true,
       title: 'Shake',
       logo: {
         alt: 'Shake logo',
         src: 'img/logo.svg',
+        href: 'https://www.shakebugs.com/',
       },
       links: [
         {
-          to: 'android/setup',
+          to: '/',
           activeBasePath: 'docs',
           label: 'Docs',
           position: 'left',
@@ -38,6 +44,10 @@ module.exports = {
           title: 'Docs',
           items: [
             {
+              label: 'Overview',
+              to: 'overview',
+            },
+            {
               label: 'Android',
               to: 'android/setup',
             },
@@ -48,6 +58,10 @@ module.exports = {
             {
               label: 'React Native',
               to: 'react/setup',
+            },
+            {
+              label: 'Template Gallery',
+              to: 'template-gallery/template-gallery',
             },
           ],
         },
@@ -115,5 +129,12 @@ module.exports = {
         },
       },
     ],
+  ],
+  plugins: [
+      require.resolve('./src/plugins/inject-html-tags'),
+      'docusaurus2-dotenv',
+      {
+        systemvars: true,
+      },
   ],
 };
