@@ -9,7 +9,7 @@ profile covering the last 60 seconds before a bug was submitted.
 
 ## Introduction
 Black box includes device and app data, like memory load and connectivity status.
-You'll find the charts right below the screenshot.
+You'll find the charts right below the screenshot:
 
 <img
   alt="Blackbox screen"
@@ -58,7 +58,7 @@ When you hover over the chart, the exact state is shown.
 App orientation is captured every 2 seconds.
 
 ## Enabling and disabling
-Black box is enabled by default, however, you can use the method below to disable it.
+Black box is enabled by default, however, you can use the method below to disable it:
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -74,7 +74,8 @@ import TabItem from '@theme/TabItem';
 
 <TabItem value="objectivec">
 
-```objectivec
+```objectivec title="AppDelegate.m"
+//highlight-next-line
 SHKShake.configuration.isBlackBoxEnabled = NO;
 ```
 
@@ -82,7 +83,8 @@ SHKShake.configuration.isBlackBoxEnabled = NO;
 
 <TabItem value="swift">
 
-```swift
+```swift title="AppDelegate.swift"
+//highlight-next-line
 Shake.configuration.isBlackBoxEnabled = false
 ```
 

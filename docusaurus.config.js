@@ -44,6 +44,10 @@ module.exports = {
           title: 'Docs',
           items: [
             {
+              label: 'Overview',
+              to: 'overview',
+            },
+            {
               label: 'Android',
               to: 'android/setup',
             },

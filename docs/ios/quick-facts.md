@@ -11,16 +11,8 @@ Every app is unique so the [Essentials](/ios/essentials.md) sent with each bug r
 That's why the Shake SDK allows you to send yourself any custom data from the app using Quick facts.
 It's a *String* object which you can shape any way you want, and you can put anything you want into it.
 
-This is where you will see Quick facts on your web Dashboard:
-
-<img
-  alt="Quick facts screen"
-  src={useBaseUrl('screens/quick_facts_screen.png')}
-/>
-
-
 ## How to use
-In the `AppDelegate` add `onPrepareData` closure, and fill the `quickFacts` string with
+In the `AppDelegate` add `onPrepareReportData` closure, and fill the `quickFacts` string with
 the data you want to receive on your web Dashboard.
 
 import Tabs from '@theme/Tabs';
@@ -37,23 +29,34 @@ import TabItem from '@theme/TabItem';
 
 <TabItem value="objectivec">
 
-```objectivec
+```objectivec title="AppDelegate.m"
+//highlight-start
 SHKShake.onPrepareReportData = ^SHKShakeReportData *_Nonnull(SHKShakeReportData *_Nonnull reportData) {
     reportData.quickFacts = [NSString stringWithFormat:@"Current user is %@", userId];
     return reportData;
 };
+//highlight-end
 ```
 
 </TabItem>
 
 <TabItem value="swift">
 
-```swift
+```swift title="AppDelegate.swift"
+//highlight-start
 Shake.onPrepareReportData = { reportData in
     reportData.quickFacts = "Current user is \(userId)”
     return reportData
 }
+//highlight-end
 ```
 
 </TabItem>
 </Tabs>
+
+This is where you will see Quick facts on your web Dashboard:
+
+<img
+  alt="Quick facts screen"
+  src={useBaseUrl('screens/quick_facts_screen.png')}
+/>
