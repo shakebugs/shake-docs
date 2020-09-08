@@ -1,5 +1,5 @@
 ---
-id: black-box
+id: blackbox
 title: Black box
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -14,8 +14,7 @@ Black box includes device and app data, like memory load and connectivity status
   src={useBaseUrl('screens/blackbox_screen.png')}
 />
 
-
-## What do the charts show?
+## What do charts show?
 
 ### CPU
 This line chart shows the CPU usage of your app.
@@ -57,6 +56,13 @@ App orientation is captured every 2 seconds.
 
 ## Enabling and disabling
 Black box is enabled by default, however, you can use the method below to disable it.
-```javascript
-Shake.setBlackBoxEnabled(false)
+
+```javascript title="App.js"
+// highlight-next-line
+import Shake from '@shakebugs/react-native-shake';
+
+const disableBlackbox = () => {
+    // highlight-next-line
+    Shake.setEnableBlackBox(false);
+}
 ```

@@ -64,6 +64,7 @@ module.exports = {
                 "items": [
                     'react/invoke',
                     'react/disable',
+                    'react/silent-reports',
                     'react/inspect',
                     'react/screenshot',
                     'react/permissions',
@@ -71,7 +72,7 @@ module.exports = {
                     'react/essentials',
                     'react/attachments',
                     'react/quick-facts',
-                    'react/black-box'
+                    'react/blackbox'
                 ]
             },
             'react/react-releases'
