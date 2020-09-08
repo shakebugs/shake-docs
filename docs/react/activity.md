@@ -4,25 +4,19 @@ title: Activity history
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Shake diligently tracks user's interaction with your app, their network traffic and system events, 
+Shake diligently tracks user's interaction with your app, their network traffic and system events,
 and automatically attaches all of those to every bug report.
 
-## Introduction
-You can inspect all events that lead to a bug being reported. 
-A link to Activity history is located in the top right corner:
+## No coding required
+You can inspect all events that lead to the bug being reported out-of-the-box. You'll see a link to *Activity history* in the top right corner:
 
 <img
   alt="Activity screen"
   src={useBaseUrl('screens/activity_screen.png')}
 />
 
-
-## Android
-### User actions
-User actions are tracked automatically and require no additional setup.
-
-### Network requests
-If you want to see a user's network traffic, add the following import and enable the network tracker: 
+## Network requests
+Network reuqests tracking is enabled by default, but if you want you can change that:
 
 ```javascript title="App.js"
 import React, {Component} from 'react';
@@ -31,9 +25,14 @@ import {Text, View} from 'react-native';
 import {NetworkTracker} from '@shakebugs/react-native-shake';
 
 export default class App extends Component<{}> {
-  componentDidMount() {
+  const enableNetworkTracker = () => {
     // highlight-next-line
-    NetworkTracker.enable();
+    NetworkTracker.setEnabled(true);
+  }
+  
+  const disableNetworkTracker = () => {
+    // highlight-next-line
+    NetworkTracker.setEnabled(false);
   }
   
   render () {
@@ -46,22 +45,20 @@ export default class App extends Component<{}> {
 }
 ```
 
-### System events
-System events are tracked automatically and require no additional setup.
+## Enabling and disabling
+Activity history is enabled by default, however, you can use the method below to disable it:
 
-## iOS
-### User actions
-User actions are tracked automatically and require no additional setup.
+```javascript title="App.js"
+// highlight-next-line
+import Shake from '@shakebugs/react-native-shake';
 
-### Network requests
-Network requests tracking is currently not available for iOS.
+const disableActivityHistory = () => {
+    // highlight-next-line
+    Shake.setEnableActivityHistory(false);
+}
+```
 
-### System events
-System events are tracked automatically and require no additional setup.
-
-:::important
+## Limitations
 In a Free workspace, you can see up to 20 events that lead to every bug.
- If you need to dive really deep to find causes of the weirdest bugs upgrade to Premium.
-  In a Premium workspace you can browse the entire activity history.
-:::
-
+If you need to dive really deep to find causes of the weirdest bugs upgrade to Premium.
+In a Premium workspace you can browse the entire activity history.
