@@ -31,32 +31,7 @@ Install pods from the project root directory:
 cd ios && pod install && cd ..
 ```
 
-## Initialize
-Call `Shake.start()` method whenever you want to enable Shake:
-
-```javascript title="App.js"
-import React, {Component} from 'react';
-import {View} from 'react-native';
-// highlight-next-line
-import Shake from '@shakebugs/react-native-shake';
-
-export default class App extends Component<{}> {
-	componentDidMount() {
-        // highlight-next-line
-		Shake.start();
-	}
-    render() {
-        return (
-            <View style={styles.container} />
-            </View>
-        );
-    }
-}
-```
-
-This first run will automatically add your app to your [Shake Dashboard](https://app.shakebugs.com) based on your app ID.
-
-## Add Client ID and Client secret key
+## Add Client ID and Client secret keys
 
 ### Android
 Open your AndroidManifest.xml file. Paste this and replace *your-api-client-id* and
@@ -109,6 +84,52 @@ with the actual values you have in [your workspace settings](https://app.shakebu
   </dict>
 </plist>
 ```
+
+## Initialize Shake
+
+### Android
+Call `Shake.start()` method on application start to run Shake:
+
+```java title="MainApplication.java"
+// highlight-next-line
+import com.shakebugs.shake.Shake;                         
+
+@Override
+public void onCreate() {
+ super.onCreate();
+ SoLoader.init(this, /* native exopackage */ false);
+ initializeFlipper(this, getReactNativeHost().getReactInstanceManager());
+ // highlight-next-line
+ Shake.start(this);
+}
+```
+
+This first run will automatically add your app to your [Shake Dashboard](https://app.shakebugs.com) based on your app ID.
+
+### iOS
+Call `Shake.start()` method whenever you want to run Shake:
+
+```javascript title="App.js"
+import React, {Component} from 'react';
+import {View} from 'react-native';
+// highlight-next-line
+import Shake from '@shakebugs/react-native-shake';
+
+export default class App extends Component<{}> {
+	componentDidMount() {
+        // highlight-next-line
+		Shake.start();
+	}
+    render() {
+        return (
+            <View style={styles.container} />
+            </View>
+        );
+    }
+}
+```
+
+This first run will automatically add your app to your [Shake Dashboard](https://app.shakebugs.com) based on your bundle ID.
 
 ## Manual linking
 Normally, linking is done automatically or using `react-native link @shakebugs/react-native-shake` command.

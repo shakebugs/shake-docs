@@ -15,11 +15,6 @@ just click the button in the bottom-right corner of this screen.
 
 **What's new**
 
-To continue delivering you more and more options in a scalable manner,
-we have rewritten the whole Android SDK API Version 10.
- It's like getting a flu shot — feel free to hate us for a few minutes while you tweak a call or two,
- but we sincerely promise you'll enjoy all the benefits 100 times over.
-
 By popular demand, Shake can now be [invoked through code](/react/invoke.md) as well.
 
 Submit yourself a [silent bug report](/react/silent-reports.md) from the background,
