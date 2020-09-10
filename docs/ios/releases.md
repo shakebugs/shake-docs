@@ -12,6 +12,8 @@ What would you like us to build next? We're dying to hear from you — just clic
 
 **What's new**
 
+Your users can at last attach their own files to a bug report! They can also remove any of them with a subtle long press. Neat.
+
 There’s no such thing as too many [invocation methods](/ios/invoke.md). Shake can now be invoked by a one-finger swiping gesture from the right edge of the screen too.
 
 The Wrap-up screen is now a tiny bit more helpful than before. If your users want to, they can read how to report great bugs, report any SDK hiccups to us or recommend us.
