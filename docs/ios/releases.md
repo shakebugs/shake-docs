@@ -7,7 +7,7 @@ This page lists all updates to the Shake iOS SDK.
 What would you like us to build next? We're dying to hear from you — just click the button in the bottom-right corner of this screen.
 
 ### 12.0
-<span class="tag-button">September 15, 2020</span>&nbsp;&nbsp;
+<span class="tag-button">September 18, 2020</span>&nbsp;&nbsp;
 <span class="tag-button green-tag-button">Latest version</span>
 
 **What's new**
