@@ -105,9 +105,9 @@ private fun onLoginPressed(username: String, password: String) {
     
     [session login:username password:password onLoginSucceeded:^(User *user) {
         // highlight-start
-        [SHKShake setMetadata:@"id" value: [user getId]];
-        [SHKShake setMetadata:@"email" value: [user getEmail]];
-        [SHKShake setMetadata:@"name" value: [user getName]];
+        [SHKShake setMetadataWithKey:@"id" value: [user getId]];
+        [SHKShake setMetadataWithKey:@"email" value: [user getEmail]];
+        [SHKShake setMetadataWithKey:@"name" value: [user getName]];
         // highlight-end
         
         [self navigateToHome];
@@ -220,9 +220,9 @@ private fun onPlayerSelected(player: Player) {
     NSArray<NSNumber*>* achievements = [player getAchievements];
 
     // highlight-start
-    [SHKShake setMetadata:@"type" value: type];
-    [SHKShake setMetadata:@"courses" value: difficulty];
-    [SHKShake setMetadata:@"achievements" value: [achievements debugDescription]]; // convert to string
+    [SHKShake setMetadataWithKey:@"type" value: type];
+    [SHKShake setMetadataWithKey:@"courses" value: difficulty];
+    [SHKShake setMetadataWithKey:@"achievements" value: [achievements debugDescription]]; // convert to string
     // highlight-end
 
     [self startGame];
@@ -332,9 +332,9 @@ private fun onApplicationStarted() {
     User *user = [self getCurrentUser];
     if (user) {
     // highlight-start
-        [SHKShake setMetadata:@"id" value: [user getId]];
-        [SHKShake setMetadata:@"plan" value: [user getPlan]];
-        [SHKShake setMetadata:@"type" value: [user getType]];
+        [SHKShake setMetadataWithKey:@"id" value: [user getId]];
+        [SHKShake setMetadataWithKey:@"plan" value: [user getPlan]];
+        [SHKShake setMetadataWithKey:@"type" value: [user getType]];
         // highlight-end
 
         [self navigateToHome];
