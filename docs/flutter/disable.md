@@ -23,9 +23,9 @@ So let's suppose you want to allow Shake to your *hosts*, but not to *guests*. Y
 import 'package:shake_flutter/shake_flutter.dart';
 
 _loggedInSuccessfully(user) {
-  if (user.type != "GUEST") {
+  if (user.type == "GUEST") {
     // highlight-next-line
-    Shake.setEnabled(true);
+    Shake.setEnabled(false);
   }
 }
 ```

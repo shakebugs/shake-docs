@@ -7,7 +7,7 @@ Add shake as a dependency to pubspec.yaml.
 ```yaml title="pubspec.yaml"
 dependencies:
 //highlight-next-line
-    shake: ^10.0.0
+    shake_flutter: ^10.0.0
 ```
 Run `flutter pub get` to download the package.
 
@@ -75,7 +75,7 @@ with the actual values you have in [your workspace settings](https://app.shakebu
 To start shake you need to enable desired invocation methods,
 and then call `Shake.start()`.
 
-```dart "lib/main.dart"
+```dart title="lib/main.dart"
 //highlight-next-line
 import 'package:shake_flutter/shake_flutter.dart';
 

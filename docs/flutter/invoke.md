@@ -11,11 +11,11 @@ But if you want to, you can customize that.
 
 Let's look at an example. You want your users to invoke SDK either when
 they shake their device, or when they take a screenshot. To do that,
-you can use Shake's setInvokeOnScreenshot method:
+call `Shake.setInvokeShakeOnScreenshot(bool)` method like this:
 
 ```dart title="lib/main.dart"
 // highlight-start
-Shake.setInvokeOnScreenshot(true);
+Shake.setInvokeShakeOnScreenshot(true);
 // highlight-end
 ```
 
@@ -23,9 +23,9 @@ Here’s a list of all available invocation methods below, feel free to use any 
 
 ```dart title="lib/main.dart"
 // highlight-start
-Shake.setInvokeOnScreenshot(true);
+Shake.setInvokeShakeOnScreenshot(true);
 Shake.setShowFloatingReportButton(true);
-Shake.setInvokeShakeOnShaking(true);
+Shake.setInvokeShakeOnShakeDeviceEvent(true);
 // highlight-end
 ```
 

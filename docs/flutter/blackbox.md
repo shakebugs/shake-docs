@@ -15,6 +15,20 @@ Black box includes device and app data, like memory load and connectivity status
 />
 
 ## What do charts show?
+
+### CPU
+This line chart shows the CPU usage of your app.
+When you hover over the chart, your app's exact CPU load is shown as a percentage of the total available CPU.
+We account for multi-threading — your percentage can go above 100% which would mean multiple threads were very busy.
+
+Your app's CPU usage is captured every 0.5 seconds.
+
+:::note
+
+CPU data is collected only on iOS devices.
+
+:::
+
 ### Device memory usage
 This line chart shows the device's total memory usage. When you hover over the chart, the usage percentage, as well as the exact memory usage over the total amount of memory available, is shown, for example: 9% • 224 out of 2464 MB.
 Device memory usage is captured every 0.5 seconds.
