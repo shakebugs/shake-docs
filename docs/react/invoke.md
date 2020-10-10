@@ -53,6 +53,13 @@ const getInvocationActions = async () => {
 ### Shaking
 By default, shaking gesture causes the SDK to pop up.
 
+:::note
+
+iOS apps in the debug mode will trigger React Native developer tools instead of Shake.
+You should run your app in the release mode if you want to test shake gesture invoking.
+
+:::
+
 ### Button
 This invocation event will create the floating button on top of your app's UI which users can clearly see at all times.
 This button can be dragged to a more suitable position.
