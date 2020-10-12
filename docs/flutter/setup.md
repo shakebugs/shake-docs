@@ -72,8 +72,7 @@ with the actual values you have in [your workspace settings](https://app.shakebu
 ```
 
 ## Initialize
-To start shake you need to enable desired invocation methods,
-and then call `Shake.start()`.
+To start Shake, enable desired invocation methods and then call `Shake.start()` like in the example below.
 
 ```dart title="lib/main.dart"
 //highlight-next-line
