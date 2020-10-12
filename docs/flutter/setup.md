@@ -81,7 +81,7 @@ import 'package:shake_flutter/shake_flutter.dart';
 void main() {
     //highlight-start
     Shake.setShowFloatingReportButton(true);
-    Shake.setInvokeShakeOnShaking(true);
+    Shake.setInvokeShakeOnShakeDeviceEvent(true);
     Shake.setInvokeShakeOnScreenshot(true);
     Shake.start();
     //highlight-end

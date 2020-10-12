@@ -5,9 +5,7 @@ title: Invoke
 This page describes in detail all the different methods that can be used to invoke the SDK.
 
 ## Invoke manually
-By default, the SDK is invoked when a user shakes their device. You don't need to code anything.
-
-But if you want to, you can customize that.
+Shake provides you several methods to invoke SDK.
 
 Let's look at an example. You want your users to invoke SDK either when
 they shake their device, or when they take a screenshot. To do that,
@@ -16,21 +14,13 @@ call `Shake.setInvokeShakeOnScreenshot(bool)` method like this:
 ```dart title="lib/main.dart"
 // highlight-start
 Shake.setInvokeShakeOnScreenshot(true);
-// highlight-end
-```
-
-Here’s a list of all available invocation methods below, feel free to use any combination of these.
-
-```dart title="lib/main.dart"
-// highlight-start
-Shake.setInvokeShakeOnScreenshot(true);
-Shake.setShowFloatingReportButton(true);
 Shake.setInvokeShakeOnShakeDeviceEvent(true);
+Shake.setShowFloatingReportButton(false);
 // highlight-end
 ```
 
 ### Shaking
-By default, shaking gesture causes the SDK to pop up.
+Shaking gesture causes the SDK to pop up.
 
 ### Button
 This invocation event will create the floating button on top of your app's UI which users can clearly see at all times.
