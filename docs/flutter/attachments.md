@@ -40,8 +40,12 @@ _sendLogFiles(String username) {
     shakeFiles.add(ShakeFile.create(deviceFile.path));
     // highlight-end
 
-    // highlight-next-line
-    Shake.setShakeReportData(shakeFiles, "User: " + username);
+    // highlight-start
+    Shake.setShakeReportData(
+      quickFacts: "User: " + username,
+      shakeFiles: shakeFiles,
+    );
+    // highlight-end
 }
 ```
 
@@ -64,7 +68,11 @@ _sendLogFiles(String username) {
     shakeFiles.add(ShakeFile.create(deviceFile.path, "deviceLogs"));
     // highlight-end
 
-    // highlight-next-line
-    Shake.setShakeReportData(shakeFiles, "User: " + username);
+    // highlight-start
+    Shake.setShakeReportData(
+      quickFacts: "User: " + username,
+      shakeFiles: shakeFiles,
+    );
+    // highlight-end
 }
 ```

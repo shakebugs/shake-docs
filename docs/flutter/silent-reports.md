@@ -28,8 +28,14 @@ _reportSilently() {
     configuration.screenshot = true
     // highlight-end
 
-    // highlight-next-line
-    Shake.silentReport("Bug description", shakeFiles, "Quick facts", configuration);
+    // highlight-start
+    Shake.silentReport(
+      configuration,
+      description: "Bug Description",
+      quickFacts: "Quick facts",
+      shakeFiles: shakeFiles,
+    );
+    // highlight-end
 }
 ```
 
