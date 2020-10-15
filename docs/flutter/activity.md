@@ -19,13 +19,13 @@ A link to Activity history is located in the top right corner:
 ## Setting up
 
 ### User actions
-User actions tracking is not supported for Shake Flutter SDK.
+User actions tracking is currently not supported.
 
 ### Network requests
-Shake provides you a wrapper for _dart.io HttpClient_ class which allows you to track network requests.
+Shake provides you a wrapper for _dart:io HttpClient_ class which allows you to track network requests.
 Additionally, if you are using _dio_ or _http_ packages for sending network requsts, you can use one our extensions.
 
-#### dart.io
+#### dart:io
 Use _ShakeHttpClient_ wrapper class to perform network requests.
 All network requests sent with _ShakeHttpClient_ will be visible on the dashboard.
 
@@ -40,6 +40,12 @@ _sendNetworkRequest() async {
     // highlight-end
 }
 ```
+
+:::note
+
+The latest version of Shake dart:io HttpClient wrapper will log network request details without request and response body.
+
+:::
 
 #### dio
 Install _shake_dio_interceptor_ extension for _dio_ package:
@@ -89,12 +95,6 @@ _sendNetworkRequest() async {
 }
 ```
 All network requests sent with _ShakeHttpClient_ instance will be visible on the dashboard.
-
-:::note
-You should always match extension version with _shake_flutter_ version.
-For example, if you are using _shake_flutter_ 10.0.0 version, 
-you should also use _shake_dio_interceptor_ 10.0.0 version
-:::
 
 ### System events
 System events are tracked automatically and require no additional setup.
