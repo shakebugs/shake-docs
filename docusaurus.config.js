@@ -44,6 +44,10 @@ module.exports = {
           title: 'Docs',
           items: [
             {
+              label: 'Overview',
+              to: 'overview',
+            },
+            {
               label: 'Android',
               to: 'android/setup',
             },
@@ -58,6 +62,10 @@ module.exports = {
             {
               label: 'Flutter',
               to: 'flutter/setup',
+            },
+            {
+              label: 'Template Gallery',
+              to: 'template-gallery/template-gallery',
             },
           ],
         },
@@ -125,5 +133,12 @@ module.exports = {
         },
       },
     ],
+  ],
+  plugins: [
+      require.resolve('./src/plugins/inject-html-tags'),
+      'docusaurus2-dotenv',
+      {
+        systemvars: true,
+      },
   ],
 };

@@ -1,25 +1,39 @@
 ---
-id: setup-manually
-title: Manually
+id: setup-carthage
+title: Carthage
 ---
-A guide to add Shake to your app without a dependency manager or a build automation tool.
+We support integrating Shake into your Xcode project using Carthage.
 
-:::note
 
-By not using a dependency manager like CocoaPods, you won't be able to use the simple `pod update Shake` command to
-always pull the latest version of Shake SDK into your app. Instead, you will have to repeat the the first step described below.
 
+:::note NOTE
+Not using Carthage yet? Follow their brief [installation guide](https://github.com/Carthage/Carthage#installing-carthage), then create an empty `Cartfile` in the root of your project and you're done — let's move on.
 :::
 
-### Download Shake SDK from GitHub
-Visit Shake iOS SDK [GitHub repo](https://github.com/shakebugs/shake-ios), click the green *Clone* button and then *Download ZIP*.
-Shake directory will be downloaded to your computer — drag-and-drop the *Shake.framework* folder into your project.
+
+
+### Install Shake via Carthage
+Open your `Cartfile` and add this line:
+```txt title="Cartfile"
+binary "https://github.com/shakebugs/shake-ios/raw/master/Shake.json"
+```
+
+Next, open up Terminal and enter this command:
+```bash 
+carthage update
+```
+
+### Link Shake library
+Once `carthage update` is executed, you will find the Shake binary in your project folder inside:
+
+ 🗂 Carthage → 🗂 Build → 🗂 iOS  → ◻️ Shake.framework
+
+Open Xcode and select your project file in the left section of the screen. Under *General* scroll down to the  *Frameworks, Libraries and Embedded Content*  section and drag-and-drop `◻️Shake.framework` there. Make sure *Embed & Sign* is selected.
 
 ### Add Client ID and Secret to Info.plist
-Open your workspace and in the Project Navigator, right click on
-*Info.plist*, and *Open as › Source code*. Paste this but replace
-*your-api-client-id* and *your-api-client-secret* with the actual values
-you have in [your workspace settings](https://app.shakebugs.com/settings/workspace#general):
+Open your workspace and in the Project Navigator, right click on *Info.plist*, and *Open as › Source code*.
+Paste this but replace *your-api-client-id* and *your-api-client-secret*
+with the actual values you have in [your workspace settings](https://app.shakebugs.com/settings/workspace#general).
 
 ```xml title="Info.plist"
 <?xml version="1.0" encoding="utf-8" ?>
@@ -39,9 +53,6 @@ you have in [your workspace settings](https://app.shakebugs.com/settings/workspa
 ```
 
 ### Initialize Shake SDK
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
 <Tabs
   groupId="ios"
   defaultValue="swift"

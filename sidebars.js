@@ -1,5 +1,8 @@
 module.exports = {
     someSidebar: {
+        /*Overview: [
+            'overview',
+        ], */
         Android: [
             'android/setup',
             {
@@ -9,6 +12,7 @@ module.exports = {
                     'android/invoke',
                     'android/disable',
                     'android/silent-reports',
+                    'android/email',
                     'android/inspect',
                     'android/screenshot',
                     'android/screen-recording',
@@ -18,7 +22,7 @@ module.exports = {
                     'android/attachments',
                     'android/blackbox',
                     'android/metadata',
-                    'android/quick-facts'
+                    'android/quick-facts',
                 ]
             },
             'android/android-releases'
@@ -29,6 +33,7 @@ module.exports = {
                 "label": "Install Shake",
                 "items": [
                     'ios/setup-cocoapods',
+                    'ios/setup-carthage',
                     'ios/setup-manually',
                 ]
             },
@@ -38,6 +43,7 @@ module.exports = {
                 "items": [
                     'ios/invoke',
                     'ios/disable',
+                    'ios/silent-reports',
                     'ios/inspect',
                     'ios/screenshot',
                     'ios/permissions',
@@ -58,6 +64,7 @@ module.exports = {
                 "items": [
                     'react/invoke',
                     'react/disable',
+                    'react/silent-reports',
                     'react/inspect',
                     'react/screenshot',
                     'react/permissions',
@@ -65,7 +72,7 @@ module.exports = {
                     'react/essentials',
                     'react/attachments',
                     'react/quick-facts',
-                    'react/black-box',
+                    'react/blackbox'
                 ]
             },
             'react/react-releases'
@@ -91,5 +98,19 @@ module.exports = {
             },
             'flutter/flutter-releases'
         ],
+        /*"Template Gallery": [
+            'template-gallery/template-gallery',
+            {
+                "type": "category",
+                "label": "Gallery",
+                "items": [
+                    'template-gallery/account-details',
+                    'template-gallery/git',
+                    'template-gallery/shopping-retail',
+                    'template-gallery/realtime-communication',
+                    'template-gallery/iot',
+                ]
+            },
+        ],*/
     },
 };

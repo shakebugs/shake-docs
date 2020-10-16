@@ -48,8 +48,7 @@ Shake.silentReport(
 </TabItem>
 </Tabs>
 
-This method allows you to include: [Attachments](android/attachments.md), [Metadata](android/metadata.md),
-[Metadata](android/metadata.md), [Activity history](android/activity.md) and a screenshot in your silent report.
+This method allows you to include: [Attachments](android/attachments.md), [Metadata](android/metadata.md), [Activity history](android/activity.md) and a screenshot in your silent report.
 If you decide to do so, your code should look something like this example:
 
 <Tabs

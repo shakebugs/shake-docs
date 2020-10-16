@@ -1,31 +1,34 @@
 image: node:10.15.3
 
-definitions:
-  steps:
-    - step: &deploy-s3
-        name: Deploy to S3
-        caches:
-          - node
-        script:
-          - npm install
-          - npm run build
-          - pipe: atlassian/aws-s3-deploy:0.4.3
-            variables:
-              S3_BUCKET: "$BUCKET_NAME/docs"
-              LOCAL_PATH: "build"
-          - pipe: atlassian/aws-cloudfront-invalidate:0.3.2
-            variables:
-              DISTRIBUTION_ID: "$DISTRIBUTION_ID"
-              PATHS: "/docs/*"
 pipelines:
   branches:
     uat:
       - step:
-          <<: *deploy-s3
-          name: Deploy S3 Test
+          name: Deploy Test
           deployment: test
+          script:
+            - npm install
+            - npm run build:uat
+            - pipe: atlassian/aws-s3-deploy:0.4.3
+              variables:
+                S3_BUCKET: "$BUCKET_NAME/docs"
+                LOCAL_PATH: "build"
+            - pipe: atlassian/aws-cloudfront-invalidate:0.3.2
+              variables:
+                DISTRIBUTION_ID: "$DISTRIBUTION_ID"
+                PATHS: "/docs/*"
     master:
       - step:
-          <<: *deploy-s3
-          name: Deploy S3 Production
+          name: Deploy Production
           deployment: production
+          script:
+            - npm install
+            - npm run build:prd
+            - pipe: atlassian/aws-s3-deploy:0.4.3
+              variables:
+                S3_BUCKET: "$BUCKET_NAME/docs"
+                LOCAL_PATH: "build"
+            - pipe: atlassian/aws-cloudfront-invalidate:0.3.2
+              variables:
+                DISTRIBUTION_ID: "$DISTRIBUTION_ID"
+                PATHS: "/docs/*"

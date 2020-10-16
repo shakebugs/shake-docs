@@ -1,6 +1,6 @@
 ﻿---
 id: inspect
-title: Inspect Bug
+title: Inspect bug
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
@@ -14,3 +14,16 @@ Your users can inspect a bug — see its [Essentials](/react/essentials.md) and 
   src={useBaseUrl('screens/inspect_screen.png')}
 />
 
+## Hiding Inspect bug screen
+If you don’t want the screen to show when submitting a bug report,  
+you can hide it using the following method:
+
+```javascript title="App.js"
+// highlight-next-line
+import Shake from '@shakebugs/react-native-shake';
+
+const hideInspectScreen = () => {
+    // highlight-next-line
+    Shake.setEnableInspectScreen(false);
+}
+```
