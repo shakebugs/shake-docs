@@ -60,6 +60,10 @@ module.exports = {
               to: 'react/setup',
             },
             {
+              label: 'Flutter',
+              to: 'flutter/setup',
+            },
+            {
               label: 'Template Gallery',
               to: 'template-gallery/template-gallery',
             },
