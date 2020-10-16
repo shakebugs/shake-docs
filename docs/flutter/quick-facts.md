@@ -33,8 +33,10 @@ import 'package:shake_flutter/shake_flutter.dart';
 async _onLoginPres(username, password) {
   const user = await login(username, password);
   if (user) {
-    // highlight-next-line
-    Shake.setShakeReportData(null, "Login: " + username);
+    // highlight-start
+    Shake.setShakeReportData(quickFacts: "User: " + username);
+    // highlight-end
+   
     navigateToHome();
   } else {
     print("Wrong credentials.");
