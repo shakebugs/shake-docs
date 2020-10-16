@@ -89,3 +89,10 @@ void main() {
     runApp(Home());
 }
 ```
+
+:::note
+
+Shake Flutter supports devices with Android 4.2 (API 17) version and higher.
+On versions 6.0 (API 23) and lower screenshot will display just black screen.
+
+:::

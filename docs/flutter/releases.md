@@ -7,7 +7,7 @@ This page lists all updates to the Shake Flutter SDK.
 What would you like us to build next? We're dying to hear from you — just click the button in the bottom-right corner of this screen.
 
 ### 10.0
-<span class="tag-button">October 14, 2020.</span>&nbsp;&nbsp;
+<span class="tag-button">October 16, 2020.</span>&nbsp;&nbsp;
 <span class="tag-button green-tag-button">Latest version</span>
 
 **What's new**
