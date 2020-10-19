@@ -9,12 +9,25 @@ You can send silent reports to yourself by calling the `Shake.silentReport()` me
 
 ```dart title="lib/main.dart"
 // highlight-start
+Shake.silentReport(
+  ShakeReportConfiguration configuration,
+  {String description,
+  String quickFacts,
+  List<ShakeFile> shakeFiles});
+// highlight-end
+```
+
+This method allows you to include: [Description and screenshot](flutter/screenshot.md), [Attachments](flutter/attachments.md), [Quick facts](flutter/quick-facts.md) and [Activity history](flutter/activity.md) in your silent report.
+If you decide to do so, your code should look something like this example:
+
+```dart title="lib/main.dart"
+// highlight-start
 import 'package:shake_flutter/models/shake_file.dart';
 import 'package:shake_flutter/models/shake_report_configuration.dart';
 import 'package:shake_flutter/shake_flutter.dart';
 // highlight-end
 
-_reportSilently() {
+_sendSilentReport() {
     // highlight-start
     List<ShakeFile> shakeFiles = List();
     shakeFiles.add(ShakeFile.create(deviceLogs.path));
@@ -31,7 +44,7 @@ _reportSilently() {
     // highlight-start
     Shake.silentReport(
       configuration,
-      description: "Bug Description",
+      description: "Description #tag1 #tag2",
       quickFacts: "Quick facts",
       shakeFiles: shakeFiles,
     );
