@@ -17,14 +17,14 @@ Shake.silentReport(
  // highlight-end
 ```
 
-This method allows you to include: [Attachments](react/attachments.md), [Quick facts](react/quick-facts.md), [Activity history](react/activity.md) and a screenshot in your silent report.
+This method allows you to include: [Description and screenshot](react/screenshot.md), [Attachments](react/attachments.md), [Quick facts](react/quick-facts.md) and [Activity history](react/activity.md) in your silent report.
 If you decide to do so, your code should look something like this example:
 
 ```javascript title="App.js"
 // highlight-next-line
 import Shake, {ShakeFile, ShakeReportConfiguration} from '@shakebugs/react-native-shake';
 
-const bugReport = () => {
+const sendSilentReport = () => {
     // highlight-start
     const configuration = new ShakeReportConfiguration();
     configuration.blackBoxData = true;
@@ -32,7 +32,7 @@ const bugReport = () => {
     configuration.screenshot = true;
 
     Shake.silentReport(
-        "Bug description", 
+        "Description #tag1 #tag2", 
         [ShakeFile.create(path)],
         "Quick facts",
         configuration);
@@ -46,20 +46,8 @@ However, you can choose to display a small and non-intrusive message saying
 `Done. Bug submitted successfully.` on the bottom of a users screen once the report has been submitted:
 
 ```javascript title="App.js"
-import Shake, {ShakeFile, ShakeReportConfiguration} from '@shakebugs/react-native-shake';
-
-const bugReport = () => {
-    const configuration = new ShakeReportConfiguration();
-    configuration.blackBoxData = true;
-    configuration.activityHistoryData = true;
-    configuration.screenshot = true;
-        // highlight-next-line
-    configuration.showReportSentMessage = true;
-
-    Shake.silentReport(
-        "Bug description", 
-        [ShakeFile.create(path)],
-        "Quick facts",
-        configuration);
-}
+// highlight-start
+const configuration = new ShakeReportConfiguration();
+configuration.showReportSentMessage = true;
+// highlight-end
 ```
