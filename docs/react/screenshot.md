@@ -9,7 +9,7 @@ This page covers the most obvious content pieces found in every bug report sent 
 
 ## Introduction
 User's screenshot and their brief description of what's happened are 2 most common pieces of
-data developers receive with Shake SDK, and you will find this data at the top of your Dashboard.
+data developers receive with Shake SDK, and you will find this data at the top of your [Dashboard](https://app.shakebugs.com):
 
 <img
   alt="Bug screen"

@@ -71,8 +71,8 @@ module.exports = {
                     'react/activity',
                     'react/essentials',
                     'react/attachments',
+                    'react/blackbox',
                     'react/quick-facts',
-                    'react/blackbox'
                 ]
             },
             'react/react-releases'
@@ -85,15 +85,15 @@ module.exports = {
                 "items": [
                     'flutter/invoke',
                     'flutter/disable',
+                    'flutter/silent-reports',
                     'flutter/inspect',
                     'flutter/screenshot',
                     'flutter/permissions',
                     'flutter/activity',
                     'flutter/essentials',
                     'flutter/attachments',
-                    'flutter/quick-facts',
                     'flutter/black-box',
-                    'flutter/silent-reports'
+                    'flutter/quick-facts',
                 ]
             },
             'flutter/flutter-releases'
