@@ -2,12 +2,12 @@
 id: silent-reports
 title: Silent reports
 ---
-This page explains how to submit a bug report from the background, without interrupting or requiring user interaction whatsoever.
+This page explains how to submit yourself a bug report from the background, without interrupting your end user whatsoever.
 
 ## Overview
-You can send silent reports by calling the `Shake.silentReport()` method anywhere after `Shake.start()`.
+You can send silent reports to yourself by calling the `Shake.silentReport()` method anywhere after `Shake.start()`.
 
-This method allows you to include: [Attachments](ios/attachments.md), [Activity history](ios/activity.md) and a screenshot in your silent report.
+This method allows you to include: [Description and screenshot](ios/screenshot.md), [Attachments](ios/attachments.md), [Quick facts](ios/quick-facts.md) and [Activity history](ios/activity.md) in your silent report.
 If you decide to do so, your code should look something like this example:
 
 
@@ -18,7 +18,7 @@ import TabItem from '@theme/TabItem';
 
 ```objectivec title="AppDelegate.m"
 //highlight-start
-SHKShakeReportData *reportData = [[SHKShakeReportData alloc] initWithBugDescription:@"Broken UI" attachedFiles:@[]];
+SHKShakeReportData *reportData = [[SHKShakeReportData alloc] initWithBugDescription:@"Description #tag1 #tag2" attachedFiles:@[]];
 
 SHKShakeReportConfiguration *reportConfiguration = [[SHKShakeReportConfiguration alloc] init];
 reportConfiguration.includesScreenshotImage = YES;
@@ -32,7 +32,7 @@ reportConfiguration.includesBlackBoxData = YES;
 
 ```swift title="AppDelegate.swift"
 //highlight-start
-let reportData = ShakeReportData(bugDescription: "Broken UI", attachedFiles: [])
+let reportData = ShakeReportData(bugDescription: "Description #tag1 #tag2", attachedFiles: [])
 
 let reportConfiguration = ShakeReportConfiguration()
 reportConfiguration.includesScreenshotImage = true
