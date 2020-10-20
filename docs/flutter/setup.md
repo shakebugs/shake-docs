@@ -4,11 +4,11 @@ title: Install Shake
 ---
 ## Install
 Add shake as a dependency to pubspec.yaml.
-```yaml title="pubspec.yaml"
-dependencies:
-//highlight-next-line
-    shake_flutter: ^10.0.0
-```
+
+import FlutterVersionBlock from '@site/src/base/FlutterVersionBlock';
+
+<FlutterVersionBlock></FlutterVersionBlock>
+
 Run `flutter pub get` to download the package.
 
 Then include Shake package in your code
