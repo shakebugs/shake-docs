@@ -85,6 +85,14 @@ with the actual values you have in [your workspace settings](https://app.shakebu
 </plist>
 ```
 
+## ProGuard
+If you are using code shrinking when building your application,
+add following ProGuard rule to the *proguard-rules.pro* file:
+```bash title="proguard-rules.pro"
+// highlight-next-line
+-keep class com.shakebugs.** { *; }
+```
+
 ## Initialize Shake
 
 ### Android
