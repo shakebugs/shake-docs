@@ -4,11 +4,11 @@ title: Install Shake
 ---
 ## Install
 Add shake as a dependency to pubspec.yaml.
-```yaml title="pubspec.yaml"
-dependencies:
-//highlight-next-line
-    shake_flutter: ^10.0.0
-```
+
+import FlutterVersionBlock from '@site/src/base/FlutterVersionBlock';
+
+<FlutterVersionBlock></FlutterVersionBlock>
+
 Run `flutter pub get` to download the package.
 
 Then include Shake package in your code
@@ -70,6 +70,19 @@ with the actual values you have in [your workspace settings](https://app.shakebu
 </dict>
 </plist>
 ```
+
+## ProGuard
+If you are using code shrinking when building your application,
+add following ProGuard rule to the *proguard-rules.pro* file:
+```bash title="proguard-rules.pro"
+// highlight-next-line
+-keep class com.shakebugs.** { *; }
+```
+:::note
+
+Building release *.apk* or *.app* using `flutter build` will run code shrinking by default.
+
+:::
 
 ## Initialize
 To start Shake, enable desired invocation methods and then call `Shake.start()` like in the example below.
