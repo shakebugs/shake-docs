@@ -28,22 +28,24 @@ import TabItem from '@theme/TabItem';
 
 <TabItem value="objectivec">
 
-```objc
+```objc title="AppDelegate.m"
+//highlight-start
 SHKShake.configuration.isInvokedByShakeDeviceEvent = YES;
 SHKShake.configuration.isInvokedByScreenshot = YES;
-
 [SHKShake start];
+//highlight-end
 ```
 
 </TabItem>
 
 <TabItem value="swift">
 
-```swift
+```swift title="AppDelegate.swift"
+//highlight-start
 Shake.configuration.isInvokedByShakeDeviceEvent = true
 Shake.configuration.isInvokedByScreenshot = true
-
 Shake.start()
+//highlight-end
 ```
 
 </TabItem>
@@ -62,20 +64,26 @@ values={[
 
 <TabItem value="objectivec">
 
-```objc
+```objc title="AppDelegate.m"
+//highlight-start
 SHKShake.configuration.isInvokedByShakeDeviceEvent = YES;
 SHKShake.configuration.isFloatingReportButtonShown = YES;
 SHKShake.configuration.isInvokedByScreenshot = YES;
+SHKShake.configuration.isInvokedByRightEdgePan = YES;
+//highlight-end
 ```
 
 </TabItem>
 
 <TabItem value="swift">
 
-```swift
+```swift title="AppDelegate.swift"
+//highlight-start
 Shake.configuration.isInvokedByShakeDeviceEvent = true
 Shake.configuration.isFloatingReportButtonShown = true
 Shake.configuration.isInvokedByScreenshot = true
+Shake.configuration.isInvokedByRightEdgePan = true
+//highlight-end
 ```
 
 </TabItem>
@@ -96,29 +104,30 @@ App Store rejects apps that get in the way of the default screenshot behavior. F
 
 :::
 
+### Right Edge Pan
+Invoke Shake with a one-finger swiping gesture from the right edge of the screen.
+
 ## Invoke through code
 You can invoke SDK through code by calling the `Shake.show()` method anywhere after `Shake.start()`, optionally adding bug description or attaching files. Here’s an example:
 
 <Tabs groupId="ios" values={[{ label: 'Objective-C', value: 'objectivec'},{ label: 'Swift', value: 'swift'},]} defaultValue="swift"><TabItem value="objectivec">
 
-```objc
-// Shows bug report window
-[SHKShake show];
-
+```objc title="AppDelegate.m"
+//highlight-start
 SHKShakeReportData *reportData = [[SHKShakeReportData alloc] initWithBugDescription:@"Broken UI" attachedFiles:@[]];
-// Shows bug report window with pre-populated data
+
 [SHKShake showWithReportData:reportData]; 
+//highlight-end
 ```
 
 </TabItem><TabItem value="swift">
 
-```swift
-// Shows bug report window
-Shake.show(reportData: reportData)
-
+```swift title="AppDelegate.swift"
+//highlight-start
 let reportData = ShakeReportData(bugDescription: "Broken UI", attachedFiles: [])
-// Shows bug report window with pre-populated data
+
 Shake.show(reportData: reportData)
+//highlight-end
 ```
 
 </TabItem></Tabs>

@@ -1,5 +1,5 @@
 ---
-id: blackbox
+id: black-box
 title: Black box
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -10,7 +10,7 @@ Just like before an airplane crash, Shake records a detailed environment profile
 Black box includes device and app data, like memory load and connectivity status. You'll find the charts right below the screenshot.
 
 <img
-  alt="Inspect screen"
+  alt="Blackbox screen"
   src={useBaseUrl('screens/blackbox_screen.png')}
 />
 
@@ -57,11 +57,11 @@ App orientation is captured every 2 seconds.
 ## Enabling and disabling
 Black box is enabled by default, however, you can use the method below to disable it.
 
-```javascript title="App.js"
+```dart title="lib/main.dart"
 // highlight-next-line
-import Shake from '@shakebugs/react-native-shake';
+import 'package:shake_flutter/shake_flutter.dart';
 
-const disableBlackbox = () => {
+_disableBlackbox() {
     // highlight-next-line
     Shake.setEnableBlackBox(false);
 }

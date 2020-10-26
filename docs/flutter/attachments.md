@@ -27,26 +27,26 @@ will be determined automatically from the passed file's name.
 To attach files this way, call the `Shake.setShakeReportData()` method as shown in the example below.
 Be careful though, any subsequent calls will override former ones already in place:
 
-```javascript title="App.js"
-// highlight-next-line
-import Shake, {ShakeFile} from '@shakebugs/react-native-shake';
-import RNFS from 'react-native-fs';
+```dart title="lib/main.dart"
+// highlight-start
+import 'package:shake/shake.dart';
+import 'package:shake_flutter/models/shake_file.dart';
+// highlight-end
 
-attachLogFile = (data) => {
-  const path = RNFS.DocumentDirectoryPath + '/log.txt';
-  RNFS.writeFile(path, data, 'utf8')
-    .then((success) => {
-      console.log('File written');
-      // highlight-start
-      Shake.setShakeReportData([
-          ShakeFile.create(path)
-        ], "Test quick facts");
-      // highlight-end
-    })
-    .catch((error) => {
-        console.log('Failed to create log file');
-    });
-};
+_sendLogFiles(String username) {
+    // highlight-start
+    List<ShakeFile> shakeFiles = List();
+    shakeFiles.add(ShakeFile.create(userFile.path));
+    shakeFiles.add(ShakeFile.create(deviceFile.path));
+    // highlight-end
+
+    // highlight-start
+    Shake.setShakeReportData(
+      quickFacts: "User: " + username,
+      shakeFiles: shakeFiles,
+    );
+    // highlight-end
+}
 ```
 
 ### Attaching a file with a custom name
@@ -55,24 +55,24 @@ Files can be attached with the desired filename and an absolute file path to you
 In order to attach files this way, call `Shake.setShakeReportData()` method as shown in the example below.
 But be careful only to call it once, since any subsequent calls will override the former ones.
 
-```javascript title="App.js"
-// highlight-next-line
-import Shake, {ShakeFile} from '@shakebugs/react-native-shake';
-import RNFS from 'react-native-fs';
+```dart title="lib/main.dart"
+// highlight-start
+import 'package:shake_flutter/shake_flutter.dart';
+import 'package:shake_flutter/models/shake_file.dart';
+// highlight-end
 
-attachLogFile = (data) => {
-  const path = RNFS.DocumentDirectoryPath + '/log.txt';
-  RNFS.writeFile(path, data, 'utf8')
-    .then((success) => {
-      console.log('File written');
-      // highlight-start
-      Shake.setShakeReportData([
-          ShakeFile.create(path, "customName1")
-        ], "Test quick facts");
-      // highlight-end
-    })
-    .catch((error) => {
-        console.log('Failed to create log file');
-    });
-};
+_sendLogFiles(String username) {
+    // highlight-start
+    List<ShakeFile> shakeFiles = List();
+    shakeFiles.add(ShakeFile.create(userFile.path, "userLogs"));
+    shakeFiles.add(ShakeFile.create(deviceFile.path, "deviceLogs"));
+    // highlight-end
+
+    // highlight-start
+    Shake.setShakeReportData(
+      quickFacts: "User: " + username,
+      shakeFiles: shakeFiles,
+    );
+    // highlight-end
+}
 ```
