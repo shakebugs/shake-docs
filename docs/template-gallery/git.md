@@ -25,8 +25,6 @@ import TabItem from '@theme/TabItem';
     { label: 'Kotlin', value: 'kotlin'},
     { label: 'Objective-C', value: 'objectivec'},
     { label: 'Swift', value: 'swift'},
-    { label: 'Javascript', value: 'javascript'},
-    { label: 'Dart', value: 'dart'},
   ]
 }>
 
@@ -89,36 +87,6 @@ commit = [self getLastCommit: branch];
 ```swift title="App.swift"
 let branch = getHead()
 let commit = getLastCommit(branch)
-
-// highlight-start
-Shake.setMetadata("commitHash", commit.id);
-Shake.setMetadata("commitMessage", commit.message);
-Shake.setMetadata("branch", branch.name);
-// highlight-end
-```
-
-</TabItem>
-
-<TabItem value="javascript">
-
-```javascript title="App.js"
-let branch = Branch()
-let commit = getLastCommit(branch)
-
-// highlight-start
-Shake.setMetadata("commitHash", commit.id);
-Shake.setMetadata("commitMessage", commit.message);
-Shake.setMetadata("branch", branch.name);
-// highlight-end
-```
-
-</TabItem>
-
-<TabItem value="dart">
-
-```dart title="App.dart"
-Branch branch = getHead();
-Commit commit = getLastCommit(branch);
 
 // highlight-start
 Shake.setMetadata("commitHash", commit.id);
