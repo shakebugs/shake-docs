@@ -66,33 +66,42 @@ private fun loadGitDetails() {
 
 <TabItem value="objectivec">
 
-```objectivec title="App.m"
-Branch *branch = [[Branch alloc] init];
-Commit *commit = [[Commit alloc] init];
+```objectivec title="AppDelegate.m"
+@import Shake;
 
-branch = [self getHead];
-commit = [self getLastCommit: branch];
+- (void)loadGitDetails {
 
-// highlight-start
-[SHKShake setMetadata:@"commitHash" data: [commit id]];
-[SHKShake setMetadata:@"commitMessage" data: [commit message]];
-[SHKShake setMetadata:@"branch" data: [branch name]];
-// highlight-end
+    NSString* branchName = [self getBranchName];
+    NSString* commitHash = [self getCommitHash];
+    NSString* commitDate = [self getCommitDate];
+
+    // highlight-start
+    [SHKShake setMetadata:@"commitHash" value: commitHash];
+    [SHKShake setMetadata:@"commitDate" value: commitDate];
+    [SHKShake setMetadata:@"branch" value: branchName];
+    // highlight-end
+}
 ```
 
 </TabItem>
 
 <TabItem value="swift">
 
-```swift title="App.swift"
-let branch = getHead()
-let commit = getLastCommit(branch)
+```swift title="AppDelegate.swift"
+import Shake
 
-// highlight-start
-Shake.setMetadata("commitHash", commit.id);
-Shake.setMetadata("commitMessage", commit.message);
-Shake.setMetadata("branch", branch.name);
-// highlight-end
+func loadGitDetails() {
+   
+    let branchName = getBranchName()
+    let commitHash = getCommitHash()
+    let commitDate = getCommitDate()
+
+    // highlight-start
+    Shake.setMetadata(key: "commitHash", value: commitHash)
+    Shake.setMetadata(key: "commitDate", value: commitDate)
+    Shake.setMetadata(key: "branch", value: branchName)
+    // highlight-end
+}
 ```
 
 </TabItem>

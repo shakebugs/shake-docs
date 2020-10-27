@@ -31,7 +31,7 @@ import TabItem from '@theme/TabItem';
 
 <TabItem value="java">
 
-```java title="App.java"
+```java title="AppDelegate.java"
 // highlight-next-line
 import com.shakebugs.shake.Shake;
 
@@ -81,29 +81,43 @@ private fun attachStatusListener() {
 
 <TabItem value="objectivec">
 
-```objectivec title="App.m"
-NSMutableArray *connectedDevices = [getConnectedDevices];
-for(Device *device in connectedDevices) {
-// highlight-start
-    [SHKShake setMetadata:@"firmwareVersion" data: [device getFirmwareVersion]];
-    [SHKShake setMetadata:@"bluetoothVersion" data: [device getBluetoothVersion]];
-    [SHKShake setMetadata:@"batteryStatus" data: [device getBatteryStatus]];
-// highlight-end
-} 
+```objectivec title="AppDelegate.m"
+@import Shake;
+
+- (void)attachStatusListener {
+    DevicesManager* device = [DevicesManager getConnectedDevice];
+
+    if (device) {
+    // highlight-start
+        [SHKShake setMetadata:@"batteryLevel" value: [status getBatteryLevel]];
+        [SHKShake setMetadata:@"firmwareVersion" value:  [status getFirmwareVersion]];
+        [SHKShake setMetadata:@"bluetoothVersion" value:  [status getBluetoothVersion]];
+    // highlight-end
+    }
+}
 ```
 
 </TabItem>
 
 <TabItem value="swift">
 
-```swift title="App.swift"
-let connectedDevices = getConnectedDevices()
-for device in connectedDevices {
-// highlight-start
-    Shake.setMetadata("firmwareVersion", device.getFirmwareVersion());
-    Shake.setMetadata("bluetoothVersion", device.getBluetoothVersion());
-    Shake.setMetadata("batteryStatus", device.getBatteryStatus());
-// highlight-end
+```swift title="AppDelegate.swift"
+import Shake
+
+func attachStatusListener() {
+   
+    let device = DevicesManager.getConnectedDevice()
+    
+    if let device = device {
+
+        device.listen( onStatusChanged: { (status) in
+            // highlight-start
+            Shake.setMetadata(key: "batteryLevel", value: status.getBatteryLevel())
+            Shake.setMetadata(key: "firmwareVersion", value: status.getFirmwareVersion())
+            Shake.setMetadata(key: "bluetoothVersion", value: status.getBluetoothVersion())
+            // highlight-end            
+        })
+    }
 }
 ```
 

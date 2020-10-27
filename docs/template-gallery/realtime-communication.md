@@ -96,34 +96,60 @@ private fun connectToChatServer(username: String, password: String) {
 
 <TabItem value="objectivec">
 
-```objectivec title="App.m"
-NSString *serverURL = [getServerURL];
-User *user = [User getCurrentUser];
-PhoneNumber *phoneNumber = [user getPhoneNumber];
-BOOL isServerAvailable = [getServerStatus];
-// highlight-start
+```objectivec title="AppDelegate.m"
+@import Shake;
 
-[SHKShake setMetadata:@"serverURL" data: serverURL];
-[SHKShake setMetadata:@"phoneNumber" data: phoneNumber];
-[SHKShake setMetadata:@"serverStatus" data: isServerAvailable];
-// highlight-end
+- (void)connectToChatServer:(NSString*)username password:(NSString*)password {
+    
+    [ChatServer connect:username password:password onConnected:^(User *user) {
+        // highlight-start
+        [SHKShake setMetadata:@"serverStatusType" value: @"Connected"];
+        [SHKShake setMetadata:@"serverStatusDate" value: [NSDate date].debugDescription]; // convert to string
+        // highlight-end
+        
+        [[[Messages alloc] init] show:"Server connected"];
+        
+    } onDisconnected:^(NSString *message) {
+
+        // highlight-start
+        [SHKShake setMetadata:@"serverStatusType" value: @"Disconnected"];
+        [SHKShake setMetadata:@"serverStatusDate" value: [NSDate date].debugDescription]; // convert to string
+        // highlight-end
+
+        [[[Messages alloc] init] show:"Server disconnected"];
+    }];
+}
 ```
 
 </TabItem>
 
 <TabItem value="swift">
 
-```swift title="App.swift"
-let serverURL = getServerURL()
-let user = getCurrentUser()
-let phoneNumber = user.getPhoneNumber()
-let isServerAvailable = getServerStatus()
-// highlight-start
+```swift title="AppDelegate.swift"
+import Shake
 
-Shake.setMetadata("serverURL", serverURL);
-Shake.setMetadata("phoneNumber", phoneNumber);
-Shake.setMetadata("serverStatus", isServerAvailable);
-// highlight-end
+func connectToChatServer(username: String, password: String) {
+
+    ChatServer.connect(username: username, password: password, onConnected: { (user) in
+    
+        // highlight-start
+        Shake.setMetadata(key: "serverStatusType", value: "Connected")
+        Shake.setMetadata(key: "serverStatusDate", value: Date().debugDescription) // convert to string
+        // highlight-end
+        
+        Message.show("Server connected")
+        
+    }, onDisconnected: { (message) in
+        
+        // highlight-start
+        Shake.setMetadata(key: "serverStatusType", value: "Disconnected")
+        Shake.setMetadata(key: "serverStatusDate", value: Date().debugDescription) // convert to string
+        // highlight-end
+
+        Message.show("Server disconnected")
+    })
+
+}
 ```
 
 </TabItem>

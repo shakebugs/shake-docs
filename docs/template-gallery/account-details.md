@@ -96,17 +96,23 @@ private fun onLoginPressed(username: String, password: String) {
 
 <TabItem value="objectivec">
 
-```objectivec title="App.m"
-User *currentUser = [[User alloc] init];
-currentUser = [self getLoggedInUser];
-BOOL userLoggedIn = [currentUser isUserLoggedIn];
+```objectivec title="AppDelegate.m"
+#import <Shake/Shake.h>
 
-if(userLoggedIn) {
-// highlight-start
-    [SHKShake setMetadata:@"userid" data: [currentUser id]];
-    [SHKShake setMetadata:@"email" data: [currentUser email]];
-    [SHKShake setMetadata:@"userName" data: [currentUser name]];
-// highlight-end
+- (void)onLoginPressed:(NSString*)username password:(NSString*)password {
+    Session* session = [[Session alloc] init];
+    
+    [session login:username password:password onLoginSucceeded:^(User *user) {
+        // highlight-start
+        [SHKShake setMetadata:@"id" value: [user getId]];
+        [SHKShake setMetadata:@"email" value: [user getEmail]];
+        [SHKShake setMetadata:@"name" value: [user getName]];
+        // highlight-end
+        
+        [self navigateToHome];
+    } onLoginFailed:^(NSString *message) {
+        [[[Messages alloc] init] show:message];
+    }];
 }
 ```
 
@@ -115,15 +121,23 @@ if(userLoggedIn) {
 <TabItem value="swift">
 
 ```swift title="App.swift"
-let currentUser = getLoggedInUser()
-let userLoggedIn: Bool = currentUser.isUserLoggedIn()
+import Shake
 
-if userLoggedIn {
-// highlight-start
-    Shake.setMetadata("userid", currentUser.id);
-    Shake.setMetadata("email", currentUser.email);
-    Shake.setMetadata("userName", currentUser.name);
-// highlight-end
+func onLoginPressed(username: String, password: String) {
+    let session = Session()
+
+    session.login(username: username, password: password, onLoginSucceeded: { (user) in
+        // highlight-start
+        Shake.setMetadata(key: "id", value: user.getId())
+        Shake.setMetadata(key: "email", value: user.getEmail())
+        Shake.setMetadata(key: "name", value: user.getName())
+        // highlight-end
+        
+        navigateToHome();
+    }, onLoginFailed: { (message) in
+        Messages().show(message: message);
+    })
+
 }
 ```
 
@@ -194,43 +208,41 @@ private fun onPlayerSelected(player: Player) {
 
 <TabItem value="objectivec">
 
-```objectivec title="App.m"
-NSMutableArray *achievements = [[NSMutableArray alloc] init];
-NSMutableArray *courses = [[NSMutableArray alloc] init];
-Difficulty *difficulty = [Difficulty @"Begginer"];
+```objectivec title="AppDelegate.m"
+- (void)onPlayerSelected:(Player*)player {
+    NSString* type = [player getType];
+    NSString* difficulty = [player getDifficulty];
+    NSArray<NSNumber*>* achievements = [player getAchievements];
 
-if(user) {
-    achievements = [user getUserAchievements];
-    courses = [user getUserCourses];
-    difficulty = [user getCurrentDifficulty];
-// highlight-start
+    // highlight-start
+    [SHKShake setMetadata:@"type" value: type];
+    [SHKShake setMetadata:@"courses" value: difficulty];
+    [SHKShake setMetadata:@"achievements" value: [achievements debugDescription]]; // convert to string
+    // highlight-end
 
-    [SHKShake setMetadata:@"achievements" data: achievements];
-    [SHKShake setMetadata:@"courses" data: courses];
-    [SHKShake setMetadata:@"difficulty" data: difficulty];
+    [self startGame];
 }
-// highlight-end
 ```
 
 </TabItem>
 
 <TabItem value="swift">
 
-```swift title="App.swift"
-var achievements = Achievements[100]
-var courses = Courses[5]
-var difficulty = Difficulty("Begginer")
+```swift title="AppDelegate.swift"
+import Shake
 
-if user {
-    achievements = getUserAchievements()
-    courses = getUserCourses()
-    difficulty = getCurrentDifficulty()
+func onPlayerSelected(player: Player) {
+    let type = player.getType()
+    let difficulty = player.getDifficulty()
+    let achievements = player.getAchievements()
+
 // highlight-start
-
-    Shake.setMetadata("achievements", achievements);    
-    Shake.setMetadata("courses", courses);
-    Shake.setMetadata("difficulty", difficulty);
+    Shake.setMetadata(key: "type", value: type)
+    Shake.setMetadata(key: "courses", value: difficulty)
+    Shake.setMetadata(key: "achievements", value: achievements.debugDescription) // convert to string
 // highlight-end
+
+    startGame()
 }
 ```
 
@@ -303,29 +315,58 @@ private fun onApplicationStarted() {
 
 <TabItem value="objectivec">
 
-```objectivec title="App.m"
-User *user = [self getCurrentUser];
-if(user) {
-// highlight-start
-    [SHKShake setMetadata:@"userId" data: [user id]];
-    [SHKShake setMetadata:@"paymentPlan" data: [user paymentPlan]];
-    [SHKShake setMetadata:@"accountType" data: [user accountType]];
-// highlight-end
+```objectivec title="AppDelegate.m"
+@import Shake;
+
+@implementation AppDelegate
+
+-(BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary<UIApplicationLaunchOptionsKey,id> *)launchOptions {
+    
+    User *user = [self getCurrentUser];
+    if (user) {
+    // highlight-start
+        [SHKShake setMetadata:@"id" value: [user getId]];
+        [SHKShake setMetadata:@"plan" value: [user getPlan]];
+        [SHKShake setMetadata:@"type" value: [user getType]];
+        // highlight-end
+
+        [self navigateToHome];
+    } else {
+        [self navigateToLogin];
+    }
+    
+    return YES;
 }
+
+@end
 ```
 
 </TabItem>
 
 <TabItem value="swift">
 
-```swift title="App.swift"
-let user = getCurrentUser()
-if user {
-// highlight-start
-    Shake.setMetadata("userId", user.id);
-    Shake.setMetadata("paymentPlan", user.paymentPlan);
-    Shake.setMetadata("accountType", user.accountType);
-// highlight-end
+```swift title="AppDelegate.swift"
+import Shake
+
+@UIApplicationMain
+class AppDelegate: UIResponder, UIApplicationDelegate {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+        
+        let user = getCurrentUser()
+        
+        if let user = user {
+        // highlight-start
+            Shake.setMetadata(key: "id", value: user.getId())
+            Shake.setMetadata(key: "plan", value: user.getPlan())
+            Shake.setMetadata(key: "type", value: user.getType())
+            // highlight-end
+            
+            navigateToHome()
+        } else {
+            navigateToLogin()
+        }
+    }
+    
 }
 ```
 

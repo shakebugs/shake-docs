@@ -73,32 +73,42 @@ private fun setupMerchantPicker() {
 
 <TabItem value="objectivec">
 
-```objectivec title="App.m"
-Order *order = [[Order alloc] init];
-[order addItems: item1, item2, item3];
+```objectivec title="AppDelegate.m"
+@import Shake;
 
-// highlight-start
-[SHKShake setMetadata:@"orderID" data: [order id]];
-[SHKShake setMetadata:@"orderValue" data: [order value]];
-[SHKShake setMetadata:@"couponApplied" data: [order couponApplied]];
-[SHKShake setMetadata:@"merchantId" data: [order merchantId]];
-// highlight-end
+- (void)setupMerchantPicker {
+    MerchantPicker* merchantPicker = (MerchantPicker*)[self.window.rootViewController.view viewWithTag: MerchantPickerTagId];
+    
+    [merchantPicker listen:^(NSInteger merchantId) {
+        // highlight-start
+        [SHKShake setMetadata:@"selectedMerchant" value: merchantId];
+        // highlight-end
+        
+        [self setSelectedMerchant:merchantId];
+    }];
+}
 ```
 
 </TabItem>
 
 <TabItem value="swift">
 
-```swift title="App.swift"
-let order = Order()
-order.addItems(item1, item2, item3)
+```swift title="AppDelegate.swift"
+import Shake
 
-// highlight-start
-Shake.setMetadata("orderId", order.id);
-Shake.setMetadata("orderValue", order.email);
-Shake.setMetadata("couponApplied", order.couponApplied);
-Shake.setMetadata("merchantId", order.merchantId)
-// highlight-end
+func setupMerchantPicker() {
+   
+    if let merchantPicker = self.window.rootViewController.view.viewWithTag(MerchantPickerTagId) as? MerchantPicker {
+
+        merchantPicker.listen( onMerchantSelected: { (merchantId) in
+            // highlight-start
+            Shake.setMetadata(key: "selectedMerchant", value: merchantId)
+            // highlight-end
+            
+            setSelectedMerchant(merchantId);
+        })
+    }
+}
 ```
 
 </TabItem>
