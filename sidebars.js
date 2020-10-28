@@ -62,7 +62,8 @@ module.exports = {
                         'ios/attachments',
                         'ios/blackbox',
                         'ios/metadata',
-                        'ios/quick-facts'
+                        'ios/quick-facts',
+                        'ios/manage-sensitive-data',
                     ]
                 },
                 'ios/ios-releases',
