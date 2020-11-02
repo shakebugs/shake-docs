@@ -97,6 +97,7 @@ private fun connectToChatServer(username: String, password: String) {
 <TabItem value="objectivec">
 
 ```objectivec title="AppDelegate.m"
+// highlight-next-line
 @import Shake;
 
 - (void)connectToChatServer:(NSString*)username password:(NSString*)password {
@@ -126,6 +127,7 @@ private fun connectToChatServer(username: String, password: String) {
 <TabItem value="swift">
 
 ```swift title="AppDelegate.swift"
+// highlight-next-line
 import Shake
 
 func connectToChatServer(username: String, password: String) {

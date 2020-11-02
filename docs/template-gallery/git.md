@@ -67,6 +67,7 @@ private fun loadGitDetails() {
 <TabItem value="objectivec">
 
 ```objectivec title="AppDelegate.m"
+// highlight-next-line
 @import Shake;
 
 - (void)loadGitDetails {
@@ -88,6 +89,7 @@ private fun loadGitDetails() {
 <TabItem value="swift">
 
 ```swift title="AppDelegate.swift"
+// highlight-next-line
 import Shake
 
 func loadGitDetails() {

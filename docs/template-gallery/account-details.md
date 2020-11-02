@@ -97,7 +97,8 @@ private fun onLoginPressed(username: String, password: String) {
 <TabItem value="objectivec">
 
 ```objectivec title="AppDelegate.m"
-#import <Shake/Shake.h>
+// highlight-next-line
+@import Shake;
 
 - (void)onLoginPressed:(NSString*)username password:(NSString*)password {
     Session* session = [[Session alloc] init];
@@ -121,6 +122,7 @@ private fun onLoginPressed(username: String, password: String) {
 <TabItem value="swift">
 
 ```swift title="App.swift"
+// highlight-next-line
 import Shake
 
 func onLoginPressed(username: String, password: String) {
@@ -209,6 +211,9 @@ private fun onPlayerSelected(player: Player) {
 <TabItem value="objectivec">
 
 ```objectivec title="AppDelegate.m"
+// highlight-next-line
+@import Shake;
+
 - (void)onPlayerSelected:(Player*)player {
     NSString* type = [player getType];
     NSString* difficulty = [player getDifficulty];
@@ -229,6 +234,7 @@ private fun onPlayerSelected(player: Player) {
 <TabItem value="swift">
 
 ```swift title="AppDelegate.swift"
+// highlight-next-line
 import Shake
 
 func onPlayerSelected(player: Player) {
@@ -316,6 +322,7 @@ private fun onApplicationStarted() {
 <TabItem value="objectivec">
 
 ```objectivec title="AppDelegate.m"
+// highlight-next-line
 @import Shake;
 
 @implementation AppDelegate
@@ -346,6 +353,7 @@ private fun onApplicationStarted() {
 <TabItem value="swift">
 
 ```swift title="AppDelegate.swift"
+// highlight-next-line
 import Shake
 
 @UIApplicationMain

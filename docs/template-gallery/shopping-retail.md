@@ -74,6 +74,7 @@ private fun setupMerchantPicker() {
 <TabItem value="objectivec">
 
 ```objectivec title="AppDelegate.m"
+// highlight-next-line
 @import Shake;
 
 - (void)setupMerchantPicker {
@@ -94,6 +95,7 @@ private fun setupMerchantPicker() {
 <TabItem value="swift">
 
 ```swift title="AppDelegate.swift"
+// highlight-next-line
 import Shake
 
 func setupMerchantPicker() {

@@ -82,6 +82,7 @@ private fun attachStatusListener() {
 <TabItem value="objectivec">
 
 ```objectivec title="AppDelegate.m"
+// highlight-next-line
 @import Shake;
 
 - (void)attachStatusListener {
@@ -102,6 +103,7 @@ private fun attachStatusListener() {
 <TabItem value="swift">
 
 ```swift title="AppDelegate.swift"
+// highlight-next-line
 import Shake
 
 func attachStatusListener() {
