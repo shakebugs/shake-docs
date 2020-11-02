@@ -42,9 +42,9 @@ module.exports = {
                     type: 'category',
                     label: 'Install Shake',
                     items: [
-                        'ios/setup-cocoapods',
-                        'ios/setup-carthage',
-                        'ios/setup-manually',
+                            'ios/setup-cocoapods',
+                            'ios/setup-spm',
+                            'ios/setup-manually'
                     ]
                 },
                 {

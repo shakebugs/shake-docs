@@ -13,7 +13,7 @@ always pull the latest version of Shake SDK into your app. Instead, you will hav
 
 ### Download Shake SDK from GitHub
 Visit Shake iOS SDK [GitHub repo](https://github.com/shakebugs/shake-ios), click the green *Clone* button and then *Download ZIP*.
-Shake directory will be downloaded to your computer — drag-and-drop the *Shake.framework* folder into your project. Then select *Embed & Sign* for *Shake.framework*  in Xcode *General tab*; *Frameworks, Libraries, and Embedded content* (Xcode 11, Xcode 12).
+Shake directory will be downloaded to your computer — drag-and-drop the *Shake.framework* folder into your project. Then select *Embed & Sign* for *Shake.xcframework*  in Xcode *General tab*; *Frameworks, Libraries, and Embedded content* (Xcode 11, Xcode 12).
 
 ### Add Client ID and Secret to Info.plist
 Open your workspace and in the Project Navigator, right click on
