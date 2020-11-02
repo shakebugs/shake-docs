@@ -31,6 +31,9 @@ import TabItem from '@theme/TabItem';
 <TabItem value="java">
 
 ```java title="App.java"
+// highlight-next-line
+import com.shakebugs.shake.Shake;
+
 private void loadGitDetails() {
     String branchName = getBranchName();
     String commitHash = getCommitHash();
@@ -49,6 +52,9 @@ private void loadGitDetails() {
 <TabItem value="kotlin">
 
 ```kotlin title="App.kt"
+// highlight-next-line
+import com.shakebugs.shake.Shake
+
 private fun loadGitDetails() {
     String branchName = getBranchName()
     String commitHash = getCommitHash()
