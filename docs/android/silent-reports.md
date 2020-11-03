@@ -77,11 +77,6 @@ public void example() {
 // highlight-start
 private ShakeReportData createShakeReportData() {
   return new ShakeReportData() {
-    /* From SDK Version 12.0 Quick facts are deprecated, so they're set to
-       return null in this code example. */
-    @Override
-    public String quickFacts() {
-    }
     @Override
     public List<ShakeFile> attachedFiles() {
       List<ShakeFile> shakeFiles = new ArrayList<>();
@@ -111,12 +106,6 @@ fun example() {
 // highlight-start
 private fun createShakeReportData(): ShakeReportData {
   return object : ShakeReportData {
-    /* From SDK Version 12.0 Quick facts are deprecated, so they're set to
-       return null in this code example. */
-    override fun quickFacts(): String {
-      return null
-    }
-
     override fun attachedFiles(): List<ShakeFile> {
       return ArrayList()
     }
