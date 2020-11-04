@@ -18,6 +18,8 @@ module.exports = {
                         'android/silent-reports',
                         'android/email',
                         'android/inspect',
+                        'android/feedback_type',
+                        'android/usage_prompt',
                         'android/screenshot',
                         'android/screen-recording',
                         'android/permissions',
@@ -26,7 +28,7 @@ module.exports = {
                         'android/attachments',
                         'android/blackbox',
                         'android/metadata',
-                        'android/quick-facts',
+                        'android/privacy',
                     ]
                 },
                 'android/android-releases',
