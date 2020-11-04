@@ -31,107 +31,7 @@ Install pods from the project root directory:
 cd ios && pod install && cd ..
 ```
 
-## Initialize
-### Android
-Normally, initialization is done using `react-native link @shakebugs/react-native-shake` or `react-native add-shake` commands.
-If you want to initialize Shake manually, you can do it following way.
-
-Include Shake maven repository to your project-level *build.gradle* file:
-
-```groovy title="build.gradle"
-allprojects {
-   repositories {
-       mavenLocal()
-       maven {
-           // All of React Native (JS, Obj-C sources, Android binaries) is installed from npm
-           url("$rootDir/../node_modules/react-native/android")
-       }
-       maven {
-           // Android JSC is installed from npm
-           url("$rootDir/../node_modules/jsc-android/dist")
-       }
-
-       google()
-       jcenter()
-       maven { url 'https://www.jitpack.io' }
-       // highlight-next-line
-       maven { url 'https://dl.bintray.com/shake/shake' }
-   }
-}
-```
-
-Add the following dependency to your app-level *build.gradle* file:
-
-```groovy title="app/build.gradle"
-dependencies {
-  // highlight-next-line
-  implementation 'com.shakebugs.android:shake:9.0.+'
-  ...
-}
-```
-
-If you do not have *multiDexEnabled*, update app level *build.gradle*:
-
-```groovy title="app/build.gradle"
-defaultConfig {
-  applicationId "com.shakebugs.react.example"
-  minSdkVersion rootProject.ext.minSdkVersion
-  targetSdkVersion rootProject.ext.targetSdkVersion
-  versionCode 6
-  versionName "2.3.2"
-  // highlight-next-line
-  multiDexEnabled true
-}
-```
-
-Set an invocation event and initialize the SDK:
-
-```java title="MainApplication.java"
-// highlight-start
-import com.shakebugs.shake.Shake;
-import com.shakebugs.shake.ShakeInvocationEvent;
-// highlight-end                            
-
-@Override
-public void onCreate() {
- super.onCreate();
- SoLoader.init(this, /* native exopackage */ false);
- initializeFlipper(this, getReactNativeHost().getReactInstanceManager());
- // highlight-start
- Shake.setInvocationEvents(ShakeInvocationEvent.BUTTON);
- Shake.start(this);
-// highlight-end
-}
-```
-
-Now build your project and see everything work! This first run will automatically add your app
-to your [Shake Dashboard](https://app.shakebugs.com) based on your app bundle ID.
-
-### iOS
-Call `Shake.start()` method whenever you want to enable Shake:
-
-```javascript title="App.js"
-Import React, {Component} from 'react';
-// highlight-next-line
-import Shake, {ShakeInvocationEvent} from '@shakebugs/react-native-shake';
-Import {View} from 'react-native';
-export default class App extends Component<{}> {
-	componentDidMount() {
-        // highlight-next-line
-		Shake.start()
-	}
-    render() {
-        return (
-            <View style={styles.container}>
-            </View>
-        );
-    }
-}
-```
-
-This first run will automatically add your app to your [Shake Dashboard](https://app.shakebugs.com) based on your app bundle ID.
-
-## Add Client ID and Secret
+## Add Client ID and Client secret keys
 
 ### Android
 Open your AndroidManifest.xml file. Paste this and replace *your-api-client-id* and
@@ -185,6 +85,64 @@ with the actual values you have in [your workspace settings](https://app.shakebu
 </plist>
 ```
 
+## ProGuard
+If you are using code shrinking when building your application,
+add following ProGuard rule to the *proguard-rules.pro* file:
+```bash title="proguard-rules.pro"
+// highlight-next-line
+-keep class com.shakebugs.** { *; }
+```
+
+## Initialize Shake
+
+### Android
+Call `Shake.start()` method on application start to run Shake:
+
+```java title="MainApplication.java"
+// highlight-next-line
+import com.shakebugs.shake.Shake;                         
+
+@Override
+public void onCreate() {
+ super.onCreate();
+ SoLoader.init(this, /* native exopackage */ false);
+ initializeFlipper(this, getReactNativeHost().getReactInstanceManager());
+ // highlight-start
+ Shake.getReportConfiguration().setInvokeShakeOnShakeDeviceEvent(true);
+ Shake.getReportConfiguration().setShowFloatingReportButton(false);
+ Shake.getReportConfiguration().setInvokeShakeOnScreenshot(false);
+ Shake.start(this);
+ // highlight-end
+}
+```
+
+This first run will automatically add your app to your [Shake Dashboard](https://app.shakebugs.com) based on your app ID.
+
+### iOS
+Call `Shake.start()` method whenever you want to run Shake:
+
+```javascript title="App.js"
+import React, {Component} from 'react';
+import {View} from 'react-native';
+// highlight-next-line
+import Shake from '@shakebugs/react-native-shake';
+
+export default class App extends Component<{}> {
+	componentDidMount() {
+        // highlight-next-line
+		Shake.start();
+	}
+    render() {
+        return (
+            <View style={styles.container} />
+            </View>
+        );
+    }
+}
+```
+
+This first run will automatically add your app to your [Shake Dashboard](https://app.shakebugs.com) based on your bundle ID.
+
 ## Manual linking
 Normally, linking is done automatically or using `react-native link @shakebugs/react-native-shake` command.
 If you want to link it manually, you can do it following way.
@@ -211,7 +169,7 @@ dependencies {
 }
 ```
 
-Update the *getPackages()* method:
+Update the `getPackages()` method:
 
 ```java title="MainApplication.java"
  @Override protected List<ReactPackage> getPackages() {
@@ -223,6 +181,54 @@ Update the *getPackages()* method:
     packages.add(new ShakePackage());
     return packages;
  } 
+```
+
+Include Shake maven repository to your project-level *build.gradle* file:
+
+```groovy title="build.gradle"
+allprojects {
+   repositories {
+       mavenLocal()
+       maven {
+           // All of React Native (JS, Obj-C sources, Android binaries) is installed from npm
+           url("$rootDir/../node_modules/react-native/android")
+       }
+       maven {
+           // Android JSC is installed from npm
+           url("$rootDir/../node_modules/jsc-android/dist")
+       }
+
+       google()
+       jcenter()
+       maven { url 'https://www.jitpack.io' }
+       // highlight-next-line
+       maven { url 'https://dl.bintray.com/shake/shake' }
+   }
+}
+```
+
+Add the following dependency to your app-level *build.gradle* file:
+
+```groovy title="app/build.gradle"
+dependencies {
+  // highlight-next-line
+  implementation 'com.shakebugs.android:shake:10.0.+'
+  ...
+}
+```
+
+If you do not have *multiDexEnabled*, update app level *build.gradle*:
+
+```groovy title="app/build.gradle"
+defaultConfig {
+  applicationId "com.shakebugs.react.example"
+  minSdkVersion rootProject.ext.minSdkVersion
+  targetSdkVersion rootProject.ext.targetSdkVersion
+  versionCode 1
+  versionName "1.0.0"
+  // highlight-next-line
+  multiDexEnabled true
+}
 ```
 
 ### iOS

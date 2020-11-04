@@ -1,8 +1,8 @@
 module.exports = {
     someSidebar: {
-        Overview: [
+        /*Overview: [
             'overview',
-        ],
+        ], */
         Android: [
             'android/setup',
             {
@@ -66,17 +66,39 @@ module.exports = {
                 "items": [
                     'react/invoke',
                     'react/disable',
+                    'react/silent-reports',
                     'react/inspect',
                     'react/screenshot',
                     'react/permissions',
                     'react/activity',
                     'react/essentials',
                     'react/attachments',
+                    'react/blackbox',
                     'react/quick-facts',
-                    'react/black-box'
                 ]
             },
             'react/react-releases'
+        ],
+        "Flutter": [
+            "flutter/setup",
+            {
+                "type": "category",
+                "label": "SDK",
+                "items": [
+                    'flutter/invoke',
+                    'flutter/disable',
+                    'flutter/silent-reports',
+                    'flutter/inspect',
+                    'flutter/screenshot',
+                    'flutter/permissions',
+                    'flutter/activity',
+                    'flutter/essentials',
+                    'flutter/attachments',
+                    'flutter/black-box',
+                    'flutter/quick-facts',
+                ]
+            },
+            'flutter/flutter-releases'
         ],
         /*"Template Gallery": [
             'template-gallery/template-gallery',

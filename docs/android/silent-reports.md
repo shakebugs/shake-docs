@@ -48,7 +48,7 @@ Shake.silentReport(
 </TabItem>
 </Tabs>
 
-This method allows you to include: [Attachments](android/attachments.md), [Metadata](android/metadata.md), [Activity history](android/activity.md) and a screenshot in your silent report.
+This method allows you to include: [Description and screenshot](android/screenshot.md), [Attachments](android/attachments.md), [Metadata](android/metadata.md) and [Activity history](android/activity.md) in your silent report.
 If you decide to do so, your code should look something like this example:
 
 <Tabs
@@ -63,13 +63,13 @@ If you decide to do so, your code should look something like this example:
 <TabItem value="java">
 
 ```java title="App.java"
-public void example() {
+public void sendSilentReport() {
   // highlight-start
   ShakeReportConfiguration configuration = new ShakeReportConfiguration();
   configuration.blackBoxData = true;
   configuration.activityHistoryData = true;
   configuration.screenshot = true;
-  Shake.silentReport("description", createShakeReportData(), configuration);
+  Shake.silentReport("Description #tag1 #tag2", createShakeReportData(), configuration);
   Shake.setMetadata("key", "value");
   // highlight-end
 }
@@ -92,13 +92,13 @@ private ShakeReportData createShakeReportData() {
 <TabItem value="kotlin">
 
 ```kotlin title="App.kt"
-fun example() {
+fun sendSilentReport() {
   // highlight-start
   val configuration = ShakeReportConfiguration()
   configuration.blackBoxData = true
   configuration.activityHistoryData = true
   configuration.screenshot = true
-  Shake.silentReport("description", createShakeReportData(), configuration)
+  Shake.silentReport("Description #tag1 #tag2", createShakeReportData(), configuration)
   Shake.setMetadata("key", "value")
   // highlight-end
 }

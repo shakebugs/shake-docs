@@ -41,7 +41,7 @@ Shake.getReportConfiguration().isEnableEmailField = false
 </Tabs>
 
 ## Pre-fill the *Email* field
-Use the following method to save your users some time by pre-filling the field with their email address:
+Use the following method to save your users some time by pre-filling the field with their email address (users can always edit or delete that email if they want to):
 
 <Tabs
   groupId="android"
@@ -70,3 +70,9 @@ Shake.getReportConfiguration().email = "user@email.com"
 
 </TabItem>
 </Tabs>
+
+:::note
+
+Do you want to make sure you *always* receive user's email with a report? You should then *both* pre-fill and hide the Email field.
+
+:::
