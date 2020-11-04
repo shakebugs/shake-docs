@@ -107,8 +107,12 @@ public void onCreate() {
  super.onCreate();
  SoLoader.init(this, /* native exopackage */ false);
  initializeFlipper(this, getReactNativeHost().getReactInstanceManager());
- // highlight-next-line
+ // highlight-start
+ Shake.getReportConfiguration().setInvokeShakeOnShakeDeviceEvent(true);
+ Shake.getReportConfiguration().setShowFloatingReportButton(false);
+ Shake.getReportConfiguration().setInvokeShakeOnScreenshot(false);
  Shake.start(this);
+ // highlight-end
 }
 ```
 

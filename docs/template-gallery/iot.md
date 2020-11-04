@@ -1,14 +1,16 @@
 ---
 id: iot
-title: IoT
+title: Internet of things
 ---
-
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+<div class='text--center'>
 <img
-  alt="IoT"
+  alt='IoT'
   src={useBaseUrl('img/docs-iot@2x.png')}
+  width='460'
 />
+</div>
 
 If your app uses IoT devices, you might find it useful to attach device data (eg. fw version, bt version, battery status...)
 
@@ -22,23 +24,31 @@ import TabItem from '@theme/TabItem';
   values={[
     { label: 'Java', value: 'java'},
     { label: 'Kotlin', value: 'kotlin'},
-    { label: 'Objective-C', value: 'objc'},
+    { label: 'Objective-C', value: 'objectivec'},
     { label: 'Swift', value: 'swift'},
-    { label: 'Javascript', value: 'javascript'},
-    { label: 'Dart', value: 'dart'},
   ]
 }>
 
 <TabItem value="java">
 
-```java title="App.java"
-List<Device> connectedDevices = getConnectedDevices();
-for(Device device : connectedDevices) { 
-// highlight-start
-    Shake.setMetadata("firmwareVersion", device.getFirmwareVersion());
-    Shake.setMetadata("bluetoothVersion", device.getBluetoothVersion());
-    Shake.setMetadata("batteryStatus", device.getBatteryStatus());
-// highlight-end
+```java title="AppDelegate.java"
+// highlight-next-line
+import com.shakebugs.shake.Shake;
+
+private void attachStatusListener() {
+    Device device = DevicesManager.getConnectedDevice();
+    if (device != null) {
+        device.setStatusListener(new StatusListener() {
+            @Override
+            void onStatusChanged(Status status) {
+                // highlight-start
+                Shake.setMetadata("batteryLevel", status.getBatteryLevel());
+                Shake.setMetadata("firmwareVersion", status.getFirmwareVersion());
+                Shake.setMetadata("bluetoothVersion", status.getBluetoothVersion());
+                // highlight-end
+            }
+        }); 
+    }
 }
 ```
 
@@ -47,73 +57,69 @@ for(Device device : connectedDevices) {
 <TabItem value="kotlin">
 
 ```kotlin title="App.kt"
-val connectedDevices = listOf(getConnectedDevices())
-for(device in connectedDevices) {
-// highlight-start
-    Shake.setMetadata("firmwareVersion", device.getFirmwareVersion())
-    Shake.setMetadata("bluetoothVersion", device.getBluetoothVersion())
-    Shake.setMetadata("batteryStatus", device.getBatteryStatus())
-// highlight-end
+// highlight-next-line
+import com.shakebugs.shake.Shake
+
+private fun attachStatusListener() {
+    val device: Device = DevicesManager.getConnectedDevice();
+    if (device != null) {
+        device.setStatusListener(object: StatusListener() {
+            @override
+            fun onStatusChanged(status: Status) {
+                // highlight-start
+                Shake.setMetadata("batteryLevel", status.batteryLevel)
+                Shake.setMetadata("firmwareVersion", status.firmwareVersion)
+                Shake.setMetadata("bluetoothVersion", status.bluetoothVersion)
+                // highlight-end
+            }
+        })
+    }
 }
 ```
 
 </TabItem>
 
-<TabItem value="objc">
+<TabItem value="objectivec">
 
-```objc title="App.m"
-NSMutableArray *connectedDevices = [getConnectedDevices];
-for(Device *device in connectedDevices) {
-// highlight-start
-    [SHKShake setMetadata:@"firmwareVersion" data: [device getFirmwareVersion]];
-    [SHKShake setMetadata:@"bluetoothVersion" data: [device getBluetoothVersion]];
-    [SHKShake setMetadata:@"batteryStatus" data: [device getBatteryStatus]];
-// highlight-end
-} 
+```objectivec title="AppDelegate.m"
+// highlight-next-line
+@import Shake;
+
+- (void)attachStatusListener {
+    DevicesManager* device = [DevicesManager getConnectedDevice];
+
+    if (device) {
+    // highlight-start
+        [SHKShake setMetadata:@"batteryLevel" value: [status getBatteryLevel]];
+        [SHKShake setMetadata:@"firmwareVersion" value:  [status getFirmwareVersion]];
+        [SHKShake setMetadata:@"bluetoothVersion" value:  [status getBluetoothVersion]];
+    // highlight-end
+    }
+}
 ```
 
 </TabItem>
 
 <TabItem value="swift">
 
-```swift title="App.swift"
-let connectedDevices = getConnectedDevices()
-for device in connectedDevices {
-// highlight-start
-    Shake.setMetadata("firmwareVersion", device.getFirmwareVersion());
-    Shake.setMetadata("bluetoothVersion", device.getBluetoothVersion());
-    Shake.setMetadata("batteryStatus", device.getBatteryStatus());
-// highlight-end
-}
-```
+```swift title="AppDelegate.swift"
+// highlight-next-line
+import Shake
 
-</TabItem>
+func attachStatusListener() {
+   
+    let device = DevicesManager.getConnectedDevice()
+    
+    if let device = device {
 
-<TabItem value="javascript">
-
-```javascript title="App.js"
-let connectedDevices = getConnectedDevices()
-for(var device in connectedDevices) {
-// highlight-start
-    Shake.setMetadata("firmwareVersion", device.getFirmwareVersion());
-    Shake.setMetadata("bluetoothVersion", device.getBluetoothVersion());
-    Shake.setMetadata("batteryStatus", device.getBatteryStatus());
-// highlight-end
-}
-```
-
-</TabItem>
-
-<TabItem value="dart">
-
-```dart title="App.dart"
-List<Device> connectedDevices = getConnectedDevices();
-for(device in connectedDevices) { 
-// highlight-start
-    Shake.setMetadata("firmwareVersion", device.getFirmwareVersion());
-    Shake.setMetadata("bluetoothVersion", device.getBluetoothVersion());
-    Shake.setMetadata("batteryStatus", device.getBatteryStatus());
-// highlight-end
+        device.listen( onStatusChanged: { (status) in
+            // highlight-start
+            Shake.setMetadata(key: "batteryLevel", value: status.getBatteryLevel())
+            Shake.setMetadata(key: "firmwareVersion", value: status.getFirmwareVersion())
+            Shake.setMetadata(key: "bluetoothVersion", value: status.getBluetoothVersion())
+            // highlight-end            
+        })
+    }
 }
 ```
 

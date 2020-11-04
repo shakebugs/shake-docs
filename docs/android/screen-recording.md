@@ -14,6 +14,11 @@ In situations where a screenshot is just not enough, a user can also make a vide
   src={useBaseUrl('screens/bug_screen.png')}
 />
 
+## Requirements
+Screen recording feature requires `compileSdkVersion` 29 or greater.
+
+To use screen recording feature, you should verify that `compileSdkVersion` and `targetSdkVersion`
+are correctly set in the app *build.gradle* file.
 
 ## How to use
 Screen recording is disabled by default but can be enabled by calling `Shake.getReportConfiguration().setAutoVideoRecording(true)` before `Shake.start()`. 
