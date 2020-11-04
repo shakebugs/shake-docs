@@ -11,19 +11,21 @@ Shake has a very rich feature set, yet on some platforms we managed to achieve m
 |----------------------|:---------:|:--------:|:------------:|:------------:|
 | Custom invocation    |    ✅     |     ✅    |       ✅     |       ✅     |
 | Bug screenshot       |    ✅     |     ✅    |       ✅     |       ✅     |
+| Feedback types       |    ✅     |     ❌    |       ❌     |       ❌     |
+| Usage prompt         |    ✅     |     ❌    |       ❌     |       ❌     |
 | Inspect bug          |    ✅     |     ✅    |       ✅     |       ✅     |
 | Screen recording     |    ✅     |     ❌    |       ❌     |       ❌     |
 | File attachment      |    ✅     |     ✅    |       ✅     |       ✅     |
 | Metadata             |    ✅     |     ❌    |       ❌     |       ❌     |
-| Quick facts          |    ✅     |     ✅    |       ✅     |       ✅     |
+| Quick facts          |    ❌     |     ✅    |       ✅     |       ✅     |
 | Black box            |    ✅     |     ✅    |       ✅     |       ✅     |
 | Network requests     |    ✅     |     ✅    |       ✅     |       ✅     |
 | Notification tracking|    ✅     |     ✅    |       ❌     |       ❌     |
 | Touch tracking       |    ✅     |     ✅    |       ✅     |       ❌     |
 | System events        |    ✅     |     ✅    |       ✅     |       ✅     |
 | Custom logs          |    ✅     |     ✅    |       ❌     |       ❌     |
-| Private data         |    ❌     |     ❌    |       ❌     |       ❌     |
-| Silent reporting     |    ✅     |     ✅    |       ✅     |       ✅     |
+| Private data         |    ✅     |     ❌    |       ❌     |       ❌     |
+| Silent reports       |    ✅     |     ✅    |       ✅     |       ✅     |
 | Email pre-fill       |    ✅     |     ❌    |       ❌     |       ❌     |
 | White labeling       |    ✅     |     ✅    |       ❌     |       ❌     |
 
