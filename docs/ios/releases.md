@@ -23,7 +23,7 @@ Your users can at last attach their own files to a bug report! They can also rem
 
 There’s no such thing as too many [invocation methods](/ios/invoke.md). Shake can now be invoked by a one-finger swiping gesture from the right edge of the screen too.
 
-The Wrap-up screen is now a tiny bit more helpful than before. If your users want to, they can read how to report great bugs, report any SDK hiccups to us or recommend us.
+The Wrap-up screen is now a tiny bit more helpful than before. If your users want to, they can read how to report great bugs or recommend us.
 
 If you want to, our [Activity history](/ios/activity.md) now allows you to send yourself any custom logs, and read the notifications users receive.
 

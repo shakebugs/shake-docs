@@ -124,7 +124,7 @@ you’ve guessed it — [Black box](/android/blackbox.md).
 
 Shake is now a tiny bit cooler because you can also use it in landscape mode.
 
-With [Quick facts](/android/quick-facts.md), you can now send a value of literally any variable
+With quick facts, you can now send a value of literally any variable
 from a user's app to your web Dashboard.
 
 ### 5.0
