@@ -52,6 +52,13 @@ _sendSilentReport() {
 }
 ```
 
+:::note
+
+On iOS, the quick facts data stored in your silent report will be replaced with the quick facts set with the `Shake.setShakeReportData()` method.
+If you want to send custom quick facts using the silent report method, you should call `Shake.setShakeReportData()` before sending a silent report.
+
+:::
+
 ## Show the *Bug submitted* message
 Silent reports are programmatic and no Shake UI is shown.
 However, you can choose to display a small and non-intrusive message saying

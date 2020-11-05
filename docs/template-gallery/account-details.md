@@ -2,6 +2,15 @@
 id: account-details
 title: Account details
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<div class='text--center'>
+<img
+  alt='Account details'
+  src={useBaseUrl('img/docs-account@2x.png')}
+  width='460'
+/>
+</div>
 
 ## General
 
@@ -20,25 +29,36 @@ import TabItem from '@theme/TabItem';
   values={[
     { label: 'Java', value: 'java'},
     { label: 'Kotlin', value: 'kotlin'},
-    { label: 'Objective-C', value: 'objc'},
+    { label: 'Objective-C', value: 'objectivec'},
     { label: 'Swift', value: 'swift'},
-    { label: 'Javascript', value: 'javascript'},
-    { label: 'Dart', value: 'dart'},
   ]
 }>
 
 <TabItem value="java">
 
 ```java title="App.java"
-User currentUser = getLoggedInUser();
-boolean userLoggedIn = currentUser.isUserLoggedIn();
+// highlight-next-line
+import com.shakebugs.shake.Shake;
 
-if(userLoggedIn) {
-// highlight-start
-    Shake.setMetadata("userId", currentUser.id);
-    Shake.setMetadata("email", currentUser.email);
-    Shake.setMetadata("userName", currentUser.name);
-// highlight-end
+private void onLoginPressed(String username, String password) {
+    Session session = new Session();
+    session.login(username, password, new LoginListener() {
+        @Override
+        void onLoginSucceeded(User user) {
+            // highlight-start
+            Shake.setMetadata("id", user.getId());
+            Shake.setMetadata("email", user.getEmail());
+            Shake.setMetadata("name", user.getName());
+            // highlight-end  
+
+            navigateToHome();        
+        }
+
+        @Override
+        void onLoginFailed(String message) {
+            Messages.show(message);         
+        }
+    });
 }
 ```
 
@@ -47,33 +67,53 @@ if(userLoggedIn) {
 <TabItem value="kotlin">
 
 ```kotlin title="App.kt"
-val currentUser = getLoggedInUser();
-val userLoggedIn: Boolean = currentUser.isUserLoggedIn();
+// highlight-next-line
+import com.shakebugs.shake.Shake
 
-if(userLoggedIn) {
-// highlight-start
-    Shake.setMetadata("userid", currentUser.id);
-    Shake.setMetadata("email", currentUser.email);
-    Shake.setMetadata("userName", currentUser.name);
-// highlight-end
+private fun onLoginPressed(username: String, password: String) {
+    val session = Session()
+    session.login(username, password, object: LoginListener() {
+        @override
+        fun onLoginSucceeded(user: User) {
+            // highlight-start
+            Shake.setMetadata("id", user.id)
+            Shake.setMetadata("email", user.email)
+            Shake.setMetadata("name", user.name)
+            // highlight-end 
+        
+            navigateToHome()
+        }
+
+        @override
+        fun onLoginFailed(message: String) {
+            Messages.show(message)
+        }
+    })
 }
 ```
 
 </TabItem>
 
-<TabItem value="objc">
+<TabItem value="objectivec">
 
-```objc title="App.m"
-User *currentUser = [[User alloc] init];
-currentUser = [self getLoggedInUser];
-BOOL userLoggedIn = [currentUser isUserLoggedIn];
+```objectivec title="AppDelegate.m"
+// highlight-next-line
+@import Shake;
 
-if(userLoggedIn) {
-// highlight-start
-    [SHKShake setMetadata:@"userid" data: [currentUser id]];
-    [SHKShake setMetadata:@"email" data: [currentUser email]];
-    [SHKShake setMetadata:@"userName" data: [currentUser name]];
-// highlight-end
+- (void)onLoginPressed:(NSString*)username password:(NSString*)password {
+    Session* session = [[Session alloc] init];
+    
+    [session login:username password:password onLoginSucceeded:^(User *user) {
+        // highlight-start
+        [SHKShake setMetadata:@"id" value: [user getId]];
+        [SHKShake setMetadata:@"email" value: [user getEmail]];
+        [SHKShake setMetadata:@"name" value: [user getName]];
+        // highlight-end
+        
+        [self navigateToHome];
+    } onLoginFailed:^(NSString *message) {
+        [[[Messages alloc] init] show:message];
+    }];
 }
 ```
 
@@ -82,50 +122,24 @@ if(userLoggedIn) {
 <TabItem value="swift">
 
 ```swift title="App.swift"
-let currentUser = getLoggedInUser()
-let userLoggedIn: Bool = currentUser.isUserLoggedIn()
+// highlight-next-line
+import Shake
 
-if userLoggedIn {
-// highlight-start
-    Shake.setMetadata("userid", currentUser.id);
-    Shake.setMetadata("email", currentUser.email);
-    Shake.setMetadata("userName", currentUser.name);
-// highlight-end
-}
-```
+func onLoginPressed(username: String, password: String) {
+    let session = Session()
 
-</TabItem>
+    session.login(username: username, password: password, onLoginSucceeded: { (user) in
+        // highlight-start
+        Shake.setMetadata(key: "id", value: user.getId())
+        Shake.setMetadata(key: "email", value: user.getEmail())
+        Shake.setMetadata(key: "name", value: user.getName())
+        // highlight-end
+        
+        navigateToHome();
+    }, onLoginFailed: { (message) in
+        Messages().show(message: message);
+    })
 
-<TabItem value="javascript">
-
-```javascript title="App.js"
-let currentUser = getLoggedInUser();
-let userLoggedIn = currentUser.isUserLoggedIn();
-
-if(userLoggedIn) {
-// highlight-start
-    Shake.setMetadata("userid", currentUser.id);
-    Shake.setMetadata("email", currentUser.email);
-    Shake.setMetadata("userName", currentUser.name);
-// highlight-end
-}
-
-```
-
-</TabItem>
-
-<TabItem value="dart">
-
-```dart title="App.dart"
-User currentUser = getLoggedInUser();
-bool userLoggedIn = currentUser.isUserLoggedIn();
-
-if(userLoggedIn) {
-// highlight-start
-    Shake.setMetadata("userid", currentUser.id);
-    Shake.setMetadata("email", currentUser.email);
-    Shake.setMetadata("userName", currentUser.name);
-// highlight-end
 }
 ```
 
@@ -143,31 +157,30 @@ If your app is in the gaming or education industry, think about sending yourself
   values={[
     { label: 'Java', value: 'java'},
     { label: 'Kotlin', value: 'kotlin'},
-    { label: 'Objective-C', value: 'objc'},
+    { label: 'Objective-C', value: 'objectivec'},
     { label: 'Swift', value: 'swift'},
-    { label: 'Javascript', value: 'javascript'},
-    { label: 'Dart', value: 'dart'},
   ]
 }>
 
 <TabItem value="java">
 
 ```java title="App.java"
-Achievements achievements[] = new Achievements[100];
-Courses courses[] = new Courses[5];
-Difficulty dificulty = new Dificulty('Begginer');
+// highlight-next-line
+import com.shakebugs.shake.Shake;
 
-if(user) {
-    achievements = user.getUserAchievements();
-    courses = user.getUserCourses();
-    difficulty = user.getCurrentDifficulty();
-// highlight-start
+private void onPlayerSelected(Player player) {
+    String type = player.getType();
+    String difficulty = player.getDifficulty();
+    List<int> achievements = player.getAchievements();
 
-    Shake.setMetadata("achievements", achievements);
-    Shake.setMetadata("courses", courses);
-    Shake.setMetadata("difficulty", difficulty);
+    // highlight-start
+    Shake.setMetadata("type", type);
+    Shake.setMetadata("courses", difficulty);
+    Shake.setMetadata("achievements", achievements.toString());
+    // highlight-end
+
+    startGame();
 }
-// highlight-end
 ```
 
 </TabItem>
@@ -175,101 +188,67 @@ if(user) {
 <TabItem value="kotlin">
 
 ```kotlin title="App.kt"
-val achievements = Array<Achievements>(100);
-val courses = Array<Courses>(5);
-val difficulty = Difficulty('Begginer');
+// highlight-next-line
+import com.shakebugs.shake.Shake
 
-if(user) {
-    achievements = user.getUserAchievements();
-    courses = user.getUserCourses();
-    difficulty = getCurrentDifficulty();
-// highlight-start
+private fun onPlayerSelected(player: Player) {
+    val type: String = player.type
+    val difficulty: String = player.difficulty
+    val achievements: List<int> = player.achievements
 
-    Shake.setMetadata("achievements", achievements);
-    Shake.setMetadata("courses", courses);
-    Shake.setMetadata("difficulty", difficulty);
-// highlight-end
+    // highlight-start
+    Shake.setMetadata("type", type)
+    Shake.setMetadata("courses", difficulty)
+    Shake.setMetadata("achievements", achievements.toString())
+    // highlight-end
+
+    startGame()
 }
 ```
 
 </TabItem>
 
-<TabItem value="objc">
+<TabItem value="objectivec">
 
-```objc title="App.m"
-NSMutableArray *achievements = [[NSMutableArray alloc] init];
-NSMutableArray *courses = [[NSMutableArray alloc] init];
-Difficulty *difficulty = [Difficulty @"Begginer"];
+```objectivec title="AppDelegate.m"
+// highlight-next-line
+@import Shake;
 
-if(user) {
-    achievements = [user getUserAchievements];
-    courses = [user getUserCourses];
-    difficulty = [user getCurrentDifficulty];
-// highlight-start
+- (void)onPlayerSelected:(Player*)player {
+    NSString* type = [player getType];
+    NSString* difficulty = [player getDifficulty];
+    NSArray<NSNumber*>* achievements = [player getAchievements];
 
-    [SHKShake setMetadata:@"achievements" data: achievements];
-    [SHKShake setMetadata:@"courses" data: courses];
-    [SHKShake setMetadata:@"difficulty" data: difficulty];
+    // highlight-start
+    [SHKShake setMetadata:@"type" value: type];
+    [SHKShake setMetadata:@"courses" value: difficulty];
+    [SHKShake setMetadata:@"achievements" value: [achievements debugDescription]]; // convert to string
+    // highlight-end
+
+    [self startGame];
 }
-// highlight-end
 ```
 
 </TabItem>
 
 <TabItem value="swift">
 
-```swift title="App.swift"
-var achievements = Achievements[100]
-var courses = Courses[5]
-var difficulty = Difficulty("Begginer")
+```swift title="AppDelegate.swift"
+// highlight-next-line
+import Shake
 
-if user {
-    achievements = getUserAchievements()
-    courses = getUserCourses()
-    difficulty = getCurrentDifficulty()
+func onPlayerSelected(player: Player) {
+    let type = player.getType()
+    let difficulty = player.getDifficulty()
+    let achievements = player.getAchievements()
+
 // highlight-start
-
-    Shake.setMetadata("achievements", achievements);    
-    Shake.setMetadata("courses", courses);
-    Shake.setMetadata("difficulty", difficulty);
+    Shake.setMetadata(key: "type", value: type)
+    Shake.setMetadata(key: "courses", value: difficulty)
+    Shake.setMetadata(key: "achievements", value: achievements.debugDescription) // convert to string
 // highlight-end
-}
-```
 
-</TabItem>
-
-<TabItem value="javascript">
-
-```javascript title="App.js"
-if(user) {
-    let achievements = getUserAchievements()
-    let courses = getUserCourses()
-    let difficulty = getCurrentDifficulty()
-// highlight-start
-
-    Shake.setMetadata("achievements", achievements);
-    Shake.setMetadata("courses", courses);
-    Shake.setMetadata("difficulty", difficulty);
-// highlight-end
-}
-
-```
-
-</TabItem>
-
-<TabItem value="dart">
-
-```dart title="App.dart
-if(user) {
-    var achievements = user.getUserAchievements()
-    var courses = user.getUserCourses()
-    var difficulty = user.getCurrentDifficulty()
-// highlight-start
-
-    Shake.setMetadata("achievements", achievements);
-    Shake.setMetadata("courses", courses);
-    Shake.setMetadata("difficulty", difficulty);;
-// highlight-end
+    startGame()
 }
 ```
 
@@ -287,23 +266,30 @@ In a more serious B2B environment, you probably want to always report yourself d
   values={[
     { label: 'Java', value: 'java'},
     { label: 'Kotlin', value: 'kotlin'},
-    { label: 'Objective-C', value: 'objc'},
+    { label: 'Objective-C', value: 'objectivec'},
     { label: 'Swift', value: 'swift'},
-    { label: 'Javascript', value: 'javascript'},
-    { label: 'Dart', value: 'dart'},
   ]
 }>
 
 <TabItem value="java">
 
 ```java title="App.java"
-User user = getCurrentUser();
-if(user) {
-// highlight-start
-    Shake.setMetadata("userId", user.id);
-    Shake.setMetadata("paymentPlan", user.paymentPlan);
-    Shake.setMetadata("userName", user.accountType);
-// highlight-end
+// highlight-next-line
+import com.shakebugs.shake.Shake;
+
+private void onApplicationStarted() {
+    User user = getCurrentUser();
+    if (user != null) {
+        // highlight-start
+        Shake.setMetadata("id", user.getId());
+        Shake.setMetadata("plan", user.getPlan());
+        Shake.setMetadata("type", user.getType());
+        // highlight-end
+
+        navigateToHome();
+    } else {
+        navigateToLogin();
+    }
 }
 ```
 
@@ -312,73 +298,83 @@ if(user) {
 <TabItem value="kotlin">
 
 ```kotlin title="App.kt"
-val user = getCurrentUser();
-if(user) {
-// highlight-start
-    Shake.setMetadata("userId", user.id);
-    Shake.setMetadata("paymentPlan", user.paymentPlan);
-    Shake.setMetadata("accountType", user.accountType);
-// highlight-end
+// highlight-next-line
+import com.shakebugs.shake.Shake
+
+private fun onApplicationStarted() {
+    val user: User = getCurrentUser()
+    if (user != null) {
+        // highlight-start
+        Shake.setMetadata("id", user.id)
+        Shake.setMetadata("plan", user.plan)
+        Shake.setMetadata("type", user.type)
+        // highlight-end
+
+        navigateToHome()
+    } else {
+        navigateToLogin()
+    }
 }
 ```
 
 </TabItem>
 
-<TabItem value="objc">
+<TabItem value="objectivec">
 
-```objc title="App.m"
-User *user = [self getCurrentUser];
-if(user) {
-// highlight-start
-    [SHKShake setMetadata:@"userId" data: [user id]];
-    [SHKShake setMetadata:@"paymentPlan" data: [user paymentPlan]];
-    [SHKShake setMetadata:@"accountType" data: [user accountType]];
-// highlight-end
+```objectivec title="AppDelegate.m"
+// highlight-next-line
+@import Shake;
+
+@implementation AppDelegate
+
+-(BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary<UIApplicationLaunchOptionsKey,id> *)launchOptions {
+    
+    User *user = [self getCurrentUser];
+    if (user) {
+    // highlight-start
+        [SHKShake setMetadata:@"id" value: [user getId]];
+        [SHKShake setMetadata:@"plan" value: [user getPlan]];
+        [SHKShake setMetadata:@"type" value: [user getType]];
+        // highlight-end
+
+        [self navigateToHome];
+    } else {
+        [self navigateToLogin];
+    }
+    
+    return YES;
 }
+
+@end
 ```
 
 </TabItem>
 
 <TabItem value="swift">
 
-```swift title="App.swift"
-let user = getCurrentUser()
-if user {
-// highlight-start
-    Shake.setMetadata("userId", user.id);
-    Shake.setMetadata("paymentPlan", user.paymentPlan);
-    Shake.setMetadata("accountType", user.accountType);
-// highlight-end
-}
-```
+```swift title="AppDelegate.swift"
+// highlight-next-line
+import Shake
 
-</TabItem>
-
-<TabItem value="javascript">
-
-```javascript title="App.js"
-let user = getCurrentUser()
-if(user) {
-// highlight-start
-    Shake.setMetadata("userId", user.id);
-    Shake.setMetadata("paymentPlan", user.paymentPlan);
-    Shake.setMetadata("accountType", user.accountType);
-// highlight-end
-}
-```
-
-</TabItem>
-
-<TabItem value="dart">
-
-```dart title="App.dart
-User user = getCurrentUser();
-if(user) {
-// highlight-start
-    Shake.setMetadata("userId", user.id);
-    Shake.setMetadata("paymentPlan", user.paymentPlan);
-    Shake.setMetadata("accountType", user.accountType);
-// highlight-end
+@UIApplicationMain
+class AppDelegate: UIResponder, UIApplicationDelegate {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+        
+        let user = getCurrentUser()
+        
+        if let user = user {
+        // highlight-start
+            Shake.setMetadata(key: "id", value: user.getId())
+            Shake.setMetadata(key: "plan", value: user.getPlan())
+            Shake.setMetadata(key: "type", value: user.getType())
+            // highlight-end
+            
+            navigateToHome()
+        } else {
+            navigateToLogin()
+        }
+    }
+    
 }
 ```
 

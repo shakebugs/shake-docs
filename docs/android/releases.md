@@ -9,9 +9,23 @@ just click the button in the bottom-right corner of this screen.
 
 ## Version
 
+### 14.0
+<span class="tag-button">November 5, 2020</span>&nbsp;&nbsp;
+<span class="tag-button green-tag-button">Latest version</span>
+
+**What's new**
+
+We're introducing a completely fresh design, new navigation and a better user experience.  
+Users can now report [different types of feedback](/android/feedback_type.md) - bugs, suggestions and questions.
+
+[Private data](/android/privacy.md) management is finally here, Shake provides you a way to mask or remove data
+you do not want to be visible on the Shake dashboard.
+It can be used for notifications, network requests, screens or screen elements.
+
+You can now use the in-app Shake [onboarding dialog](/android/usage_prompt.md) to inform your users about Shake availability.
+
 ### 13.1
 <span class="tag-button">August 25, 2020</span>&nbsp;&nbsp;
-<span class="tag-button green-tag-button">Latest version</span>
 
 **What's new**
 
@@ -110,7 +124,7 @@ you’ve guessed it — [Black box](/android/blackbox.md).
 
 Shake is now a tiny bit cooler because you can also use it in landscape mode.
 
-With [Quick facts](/android/quick-facts.md), you can now send a value of literally any variable
+With quick facts, you can now send a value of literally any variable
 from a user's app to your web Dashboard.
 
 ### 5.0

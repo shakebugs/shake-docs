@@ -32,5 +32,12 @@ loggedInSuccessfully = (user) => {
 }
 ```
 
+:::note
+
+On Android, floating report button will be visible even if you call `Shake.setEnabled(false)`.
+You should explicitly hide floating report button using `Shake.setShowFloatingReportButton(false)`.
+
+:::
+
 ## Enable Shake again
 If, for some reason, you want to enable Shake again, you can do it easily by calling `Shake.setEnabled(true)`.

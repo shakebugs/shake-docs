@@ -2,6 +2,15 @@
 id: git
 title: Git
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<div class='text--center'>
+<img
+  alt='Git'
+  src={useBaseUrl('img/docs-git@2x.png')}
+  width='460'
+/>
+</div>
 
 You could attach some useful git data to your bug report (eg. curent branch, commit...)
 
@@ -14,24 +23,28 @@ import TabItem from '@theme/TabItem';
   values={[
     { label: 'Java', value: 'java'},
     { label: 'Kotlin', value: 'kotlin'},
-    { label: 'Objective-C', value: 'objc'},
+    { label: 'Objective-C', value: 'objectivec'},
     { label: 'Swift', value: 'swift'},
-    { label: 'Javascript', value: 'javascript'},
-    { label: 'Dart', value: 'dart'},
   ]
 }>
 
 <TabItem value="java">
 
 ```java title="App.java"
-Branch branch = getHead();
-Commit commit = getLastCommit(branch);
+// highlight-next-line
+import com.shakebugs.shake.Shake;
 
-// highlight-start
-Shake.setMetadata("commitHash", commit.id;
-Shake.setMetadata("commitMessage", commit.message);
-Shake.setMetadata("branch", branch.name);
-// highlight-end
+private void loadGitDetails() {
+    String branchName = getBranchName();
+    String commitHash = getCommitHash();
+    String commitDate = getCommitDate();
+    
+    // highlight-start
+    Shake.setMetadata("commitHash", commitHash);
+    Shake.setMetadata("commitDate", commitDate);
+    Shake.setMetadata("branch", branchName);
+    // highlight-end
+}
 ```
 
 </TabItem>
@@ -39,77 +52,64 @@ Shake.setMetadata("branch", branch.name);
 <TabItem value="kotlin">
 
 ```kotlin title="App.kt"
-val branch = getHead()
-val commit = getLastCommit(branch)
+// highlight-next-line
+import com.shakebugs.shake.Shake
 
-// highlight-start
-Shake.setMetadata("commitHash", commit.id);
-Shake.setMetadata("commitMessage", commit.message);
-Shake.setMetadata("branch", branch.name);
-// highlight-end
+private fun loadGitDetails() {
+    String branchName = getBranchName()
+    String commitHash = getCommitHash()
+    String commitDate = getCommitDate()
+    
+    // highlight-start
+    Shake.setMetadata("commitHash", commitHash)
+    Shake.setMetadata("commitDate", commitDate)
+    Shake.setMetadata("branch", branchName)
+    // highlight-end    
+}
 ```
 
 </TabItem>
 
-<TabItem value="objc">
+<TabItem value="objectivec">
 
-```objc title="App.m"
-Branch *branch = [[Branch alloc] init];
-Commit *commit = [[Commit alloc] init];
+```objectivec title="AppDelegate.m"
+// highlight-next-line
+@import Shake;
 
-branch = [self getHead];
-commit = [self getLastCommit: branch];
+- (void)loadGitDetails {
 
-// highlight-start
-[SHKShake setMetadata:@"commitHash" data: [commit id]];
-[SHKShake setMetadata:@"commitMessage" data: [commit message]];
-[SHKShake setMetadata:@"branch" data: [branch name]];
-// highlight-end
+    NSString* branchName = [self getBranchName];
+    NSString* commitHash = [self getCommitHash];
+    NSString* commitDate = [self getCommitDate];
+
+    // highlight-start
+    [SHKShake setMetadata:@"commitHash" value: commitHash];
+    [SHKShake setMetadata:@"commitDate" value: commitDate];
+    [SHKShake setMetadata:@"branch" value: branchName];
+    // highlight-end
+}
 ```
 
 </TabItem>
 
 <TabItem value="swift">
 
-```swift title="App.swift"
-let branch = getHead()
-let commit = getLastCommit(branch)
+```swift title="AppDelegate.swift"
+// highlight-next-line
+import Shake
 
-// highlight-start
-Shake.setMetadata("commitHash", commit.id);
-Shake.setMetadata("commitMessage", commit.message);
-Shake.setMetadata("branch", branch.name);
-// highlight-end
-```
+func loadGitDetails() {
+   
+    let branchName = getBranchName()
+    let commitHash = getCommitHash()
+    let commitDate = getCommitDate()
 
-</TabItem>
-
-<TabItem value="javascript">
-
-```javascript title="App.js"
-let branch = Branch()
-let commit = getLastCommit(branch)
-
-// highlight-start
-Shake.setMetadata("commitHash", commit.id);
-Shake.setMetadata("commitMessage", commit.message);
-Shake.setMetadata("branch", branch.name);
-// highlight-end
-```
-
-</TabItem>
-
-<TabItem value="dart">
-
-```dart title="App.dart"
-Branch branch = getHead();
-Commit commit = getLastCommit(branch);
-
-// highlight-start
-Shake.setMetadata("commitHash", commit.id);
-Shake.setMetadata("commitMessage", commit.message);
-Shake.setMetadata("branch", branch.name);
-// highlight-end
+    // highlight-start
+    Shake.setMetadata(key: "commitHash", value: commitHash)
+    Shake.setMetadata(key: "commitDate", value: commitDate)
+    Shake.setMetadata(key: "branch", value: branchName)
+    // highlight-end
+}
 ```
 
 </TabItem>

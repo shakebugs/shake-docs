@@ -2,6 +2,15 @@
 id: realtime-communication
 title: Realtime communication
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<div class='text--center'>
+<img
+  alt='Realtime communication'
+  src={useBaseUrl('img/docs-realtime-communication@2x.png')}
+  width='460'
+/>
+</div>
 
 If your app has a chat module (group, 1-on-1, video, audio, text), there’s a ton of useful data that you can attach automatically and would come in handy later when you try to debug the problem.
 
@@ -14,26 +23,40 @@ import TabItem from '@theme/TabItem';
   values={[
     { label: 'Java', value: 'java'},
     { label: 'Kotlin', value: 'kotlin'},
-    { label: 'Objective-C', value: 'objc'},
+    { label: 'Objective-C', value: 'objectivec'},
     { label: 'Swift', value: 'swift'},
-    { label: 'Javascript', value: 'javascript'},
-    { label: 'Dart', value: 'dart'},
   ]
 }>
 
 <TabItem value="java">
 
 ```java title="App.java"
-String serverURL = getServerURL();
-User user = getCurrentUser();
-PhoneNumber phoneNumber = user.getPhoneNumber();
-boolean isServerAvailable = getServerStatus();
-// highlight-start
+// highlight-next-line
+import com.shakebugs.shake.Shake;
 
-Shake.setMetadata("serverURL", serverURL);
-Shake.setMetadata("phoneNumber", phoneNumber);
-Shake.setMetadata("serverStatus", isServerAvailable);
-// highlight-end
+private void connectToChatServer(String username, String password) {
+    ChatServer.connect(username, password, new ServerListener() {
+        @Override
+        void onConnected(User user) {
+            // highlight-start
+            Shake.setMetadata("serverStatusType", "Connected");
+            Shake.setMetadata("serverStatusDate", new Date().toString());
+            // highlight-end
+
+            Message.show("Server connected");
+        }
+
+        @Override
+        void onDisconnected(String message) {
+            // highlight-start
+            Shake.setMetadata("serverStatusType", "Disconnected");
+            Shake.setMetadata("serverStatusDate", new Date().toString());
+            // highlight-end
+
+            Message.show("Server disconnected");
+        }
+    });   
+}
 ```
 
 </TabItem>
@@ -41,83 +64,94 @@ Shake.setMetadata("serverStatus", isServerAvailable);
 <TabItem value="kotlin">
 
 ```kotlin title="App.kt"
-val serverURL: String = getServerURL()
-val user: User = getCurrentUser()
-val phoneNumber: PhoneNumber = user.getPhoneNumber()
-val isServerAvailable: Boolean = getServerStatus()
-// highlight-start
+// highlight-next-line
+import com.shakebugs.shake.Shake
 
-Shake.setMetadata("serverURL", serverURL);
-Shake.setMetadata("phoneNumber", phoneNumber);
-Shake.setMetadata("serverStatus", isServerAvailable);
-// highlight-end
+private fun connectToChatServer(username: String, password: String) {
+    ChatServer.connect(username, password, object: ServerListener() {
+        @override
+        fun onConnected(user: User) {
+            // highlight-start
+            Shake.setMetadata("serverStatusType", "Connected")
+            Shake.setMetadata("serverStatusDate", Date().toString())
+            // highlight-end
+            
+            Message.show("Server connected")
+        }
+
+        @override
+        fun onDisconnected(message: String) {
+            // highlight-start
+            Shake.setMetadata("serverStatusType", "Disconnected")
+            Shake.setMetadata("serverStatusDate", Date().toString())
+            // highlight-end
+            
+            Message.show("Server disconnected")
+        }
+    })
+}
 ```
 
 </TabItem>
 
-<TabItem value="objc">
+<TabItem value="objectivec">
 
-```objc title="App.m"
-NSString *serverURL = [getServerURL];
-User *user = [User getCurrentUser];
-PhoneNumber *phoneNumber = [user getPhoneNumber];
-BOOL isServerAvailable = [getServerStatus];
-// highlight-start
+```objectivec title="AppDelegate.m"
+// highlight-next-line
+@import Shake;
 
-[SHKShake setMetadata:@"serverURL" data: serverURL];
-[SHKShake setMetadata:@"phoneNumber" data: phoneNumber];
-[SHKShake setMetadata:@"serverStatus" data: isServerAvailable];
-// highlight-end
+- (void)connectToChatServer:(NSString*)username password:(NSString*)password {
+    
+    [ChatServer connect:username password:password onConnected:^(User *user) {
+        // highlight-start
+        [SHKShake setMetadata:@"serverStatusType" value: @"Connected"];
+        [SHKShake setMetadata:@"serverStatusDate" value: [NSDate date].debugDescription]; // convert to string
+        // highlight-end
+        
+        [[[Messages alloc] init] show:"Server connected"];
+        
+    } onDisconnected:^(NSString *message) {
+
+        // highlight-start
+        [SHKShake setMetadata:@"serverStatusType" value: @"Disconnected"];
+        [SHKShake setMetadata:@"serverStatusDate" value: [NSDate date].debugDescription]; // convert to string
+        // highlight-end
+
+        [[[Messages alloc] init] show:"Server disconnected"];
+    }];
+}
 ```
 
 </TabItem>
 
 <TabItem value="swift">
 
-```swift title="App.swift"
-let serverURL = getServerURL()
-let user = getCurrentUser()
-let phoneNumber = user.getPhoneNumber()
-let isServerAvailable = getServerStatus()
-// highlight-start
+```swift title="AppDelegate.swift"
+// highlight-next-line
+import Shake
 
-Shake.setMetadata("serverURL", serverURL);
-Shake.setMetadata("phoneNumber", phoneNumber);
-Shake.setMetadata("serverStatus", isServerAvailable);
-// highlight-end
-```
+func connectToChatServer(username: String, password: String) {
 
-</TabItem>
-
-<TabItem value="javascript">
-
-```javascript title="App.js"
-let serverURL = getServerURL()
-let user = getCurrentUser()
-let phoneNumber = user.phoneNumber()
-let isServerAvailable = getServerStatus()
-// highlight-start
+    ChatServer.connect(username: username, password: password, onConnected: { (user) in
     
-Shake.setMetadata("serverURL", serverURL);
-Shake.setMetadata("phoneNumber", phoneNumber);
-Shake.setMetadata("serverStatus", isServerAvailable);
-// highlight-end
-```
+        // highlight-start
+        Shake.setMetadata(key: "serverStatusType", value: "Connected")
+        Shake.setMetadata(key: "serverStatusDate", value: Date().debugDescription) // convert to string
+        // highlight-end
+        
+        Message.show("Server connected")
+        
+    }, onDisconnected: { (message) in
+        
+        // highlight-start
+        Shake.setMetadata(key: "serverStatusType", value: "Disconnected")
+        Shake.setMetadata(key: "serverStatusDate", value: Date().debugDescription) // convert to string
+        // highlight-end
 
-</TabItem>
+        Message.show("Server disconnected")
+    })
 
-<TabItem value="dart">
-
-```dart title="App.dart"
-var serverURL = getServerURL();
-User user = getCurrentUser();
-PhoneNumber phoneNumber = user.getPhoneNumber();
-var isServerAvailable = getServerStatus();
-// highlight-start
-Shake.setMetadata("serverURL", serverURL);
-Shake.setMetadata("phoneNumber", phoneNumber);
-Shake.setMetadata("serverStatus", isServerAvailable);
-// highlight-end
+}
 ```
 
 </TabItem>

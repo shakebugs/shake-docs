@@ -1,6 +1,6 @@
 ---
-id: template-gallery
-title: Template gallery
+id: about
+title: About
 ---
 By default, Shake reports you user's OS, location, app version or permissions. But with Metadata you can attach
 any other data to your bug report.

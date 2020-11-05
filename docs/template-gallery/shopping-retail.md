@@ -3,19 +3,17 @@ id: shopping-retail
 title: Shopping and retail
 ---
 
-## Shopping
-
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+<div class='text--center'>
 <img
-  alt="Payments"
+  alt='Payments'
   src={useBaseUrl('img/docs-payments@2x.png')}
+  width='460'
 />
+</div>
 
-If you do online shopping, send yourself a list of all user’s orders (or at least their IDs), both previously placed and this last open one, that will provide you with useful context.
-
-In an order send yourself:
-
+If you do online shopping, send yourself a selected merchant id, that will provide you with useful context.
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -26,222 +24,93 @@ import TabItem from '@theme/TabItem';
   values={[
     { label: 'Java', value: 'java'},
     { label: 'Kotlin', value: 'kotlin'},
-    { label: 'Objective-C', value: 'objc'},
+    { label: 'Objective-C', value: 'objectivec'},
     { label: 'Swift', value: 'swift'},
-    { label: 'Javascript', value: 'javascript'},
-    { label: 'Dart', value: 'dart'},
   ]
 }>
 
 <TabItem value="java">
 
 ```java title="App.java"
-Order order = new Order();
-order.addItems(item1, item2, item3);
+// highlight-next-line
+import com.shakebugs.shake.Shake;
 
-// highlight-start
-Shake.setMetadata("orderId", order.id);
-Shake.setMetadata("orderValue", order.value);
-Shake.setMetadata("couponApplied", order.couponApplied);
-Shake.setMetadata("merchantId", order.merchantId);
-// highlight-end
+private void setupMerchantPicker() {
+    MerchantPicker merchantPicker = (MerchantPicker) findViewById(R.id.merchant_picker);
+    merchantPicker.setListener(new PickerListener() {
+        @Override
+        void onMerchantSelected(merchantId: int) {
+            // highlight-next-line
+            Shake.setMetadata("selectedMerchant", merchantId);
+
+            setSelectedMerchant(merchantId);
+        }
+    });
+}
 ```
-
 </TabItem>
 
 <TabItem value="kotlin">
 
 ```kotlin title="App.kt"
-val order = Order()
-order.addItems(item1, item2, item3)
+// highlight-next-line
+import com.shakebugs.shake.Shake
 
-// highlight-start
-Shake.setMetadata("orderId", order.id);
-Shake.setMetadata("orderValue", order.value);
-Shake.setMetadata("couponApplied", order.couponApplied);
-Shake.setMetadata("merchantId", order.merchantId);
-// highlight-end
+private fun setupMerchantPicker() {
+    merchantPicker.setListener(object: PickerListener() {
+        @override
+        fun onMerchantSelected(int merchantId) {
+            // highlight-next-line
+            Shake.setMetadata("selectedMerchant", merchantId)
+
+            setSelectedMerchant(merchantId)
+        }
+    });
+}
 ```
 
 </TabItem>
 
-<TabItem value="objc">
+<TabItem value="objectivec">
 
-```objc title="App.m"
-Order *order = [[Order alloc] init];
-[order addItems: item1, item2, item3];
+```objectivec title="AppDelegate.m"
+// highlight-next-line
+@import Shake;
 
-// highlight-start
-[SHKShake setMetadata:@"orderID" data: [order id]];
-[SHKShake setMetadata:@"orderValue" data: [order value]];
-[SHKShake setMetadata:@"couponApplied" data: [order couponApplied]];
-[SHKShake setMetadata:@"merchantId" data: [order merchantId]];
-// highlight-end
+- (void)setupMerchantPicker {
+    MerchantPicker* merchantPicker = (MerchantPicker*)[self.window.rootViewController.view viewWithTag: MerchantPickerTagId];
+    
+    [merchantPicker listen:^(NSInteger merchantId) {
+        // highlight-start
+        [SHKShake setMetadata:@"selectedMerchant" value: merchantId];
+        // highlight-end
+        
+        [self setSelectedMerchant:merchantId];
+    }];
+}
 ```
 
 </TabItem>
 
 <TabItem value="swift">
 
-```swift title="App.swift"
-let order = Order()
-order.addItems(item1, item2, item3)
+```swift title="AppDelegate.swift"
+// highlight-next-line
+import Shake
 
-// highlight-start
-Shake.setMetadata("orderId", order.id);
-Shake.setMetadata("orderValue", order.email);
-Shake.setMetadata("couponApplied", order.couponApplied);
-Shake.setMetadata("merchantId", order.merchantId)
-// highlight-end
-```
+func setupMerchantPicker() {
+   
+    if let merchantPicker = self.window.rootViewController.view.viewWithTag(MerchantPickerTagId) as? MerchantPicker {
 
-</TabItem>
-
-<TabItem value="javascript">
-
-```javascript title="App.js"
-let order = Order();
-order.addItems(item1, item2, item3)
-
-// highlight-start
-Shake.setMetadata("orderId", order.id);
-Shake.setMetadata("orderValue", order.value);
-Shake.setMetadata("couponApplied", order.couponApplied);
-Shake.setMetadata("merchantId", order.merchantId);
-// highlight-end
-
-```
-
-</TabItem>
-
-<TabItem value="dart">
-
-```dart title="App.dart
-Order order = new Order();
-order.addItems(item1, item2, item3);
-
-// highlight-start
-Shake.setMetadata("orderId", order.id);
-Shake.setMetadata("orderValue", order.value);
-Shake.setMetadata("couponApplied", order.couponApplied);
-Shake.setMetadata("merchantId", order.merchantId);
-// highlight-end
-```
-
-</TabItem>
-
-</Tabs>
-
-## Retail
-
-If your app is used in retail environments, send yourself:
-
-<Tabs
-  groupId="retail"
-  defaultValue="kotlin"
-  values={[
-    { label: 'Java', value: 'java'},
-    { label: 'Kotlin', value: 'kotlin'},
-    { label: 'Objective-C', value: 'objc'},
-    { label: 'Swift', value: 'swift'},
-    { label: 'Javascript', value: 'javascript'},
-    { label: 'Dart', value: 'dart'},
-  ]
-}>
-
-<TabItem value="java">
-
-```java title="App.java"
-Order order = new Order();
-order.addItems(item1, item2, item3);
-
-// highlight-start
-Shake.setMetadata("merchant", order.merchant);
-Shake.setMetadata("salespointId", order.salespointId);
-Shake.setMetadata("deviceId", device.id);
-Shake.setMetadata("merchantId", order.merchantId);
-// highlight-end
-```
-
-</TabItem>
-
-<TabItem value="kotlin">
-
-```kotlin title="App.kt"
-val order = Order()
-order.addItems(item1, item2, item3)
-
-// highlight-start
-Shake.setMetadata("merchant", order.merchant);
-Shake.setMetadata("salespointId", order.salespointId);
-Shake.setMetadata("devideId", device.id);
-Shake.setMetadata("merchantId", order.merchantId);
-// highlight-end
-```
-
-</TabItem>
-
-<TabItem value="objc">
-
-```objc title="App.m"
-Order *order = [[Order alloc] init];
-[order addItems: item1, item2, item3];
-
-// highlight-start
-[SHKShake setMetadata:@"merchant" data: [order merchant]];
-[SHKShake setMetadata:@"salespointId" data: [order salespointId]];
-[SHKShake setMetadata:@"deviceID" data: [device id]];
-[SHKShake setMetadata:@"merchantId" data: [order merchantId]];
-// highlight-end
-```
-
-</TabItem>
-
-<TabItem value="swift">
-
-```swift title="App.swift"
-let order = Order()
-order.addItems(item1, item2, item3)
-
-// highlight-start
-Shake.setMetadata("merchant", order.merchant);
-Shake.setMetadata("salespointId", order.salespointId);
-Shake.setMetadata("deviceId", device.id);
-Shake.setMetadata("merchantId", order.merchantId);
-// highlight-end
-```
-
-</TabItem>
-
-<TabItem value="javascript">
-
-```javascript title="App.js"
-let order = Order();
-order.addItems(item1, item2, item3)
-
-// highlight-start
-Shake.setMetadata("merchant", order.merchant);
-Shake.setMetadata("salespointId", order.salespointId);
-Shake.setMetadata("deviceId", device.id);
-Shake.setMetadata("merchantId", order.merchantId);
-// highlight-end
-
-```
-
-</TabItem>
-
-<TabItem value="dart">
-
-```dart title="App.dart
-Order order = new Order();
-order.addItems(item1, item2, item3);
-
-// highlight-start
-Shake.setMetadata("merchant", order.merchant);
-Shake.setMetadata("salespointId", order.salespointId);
-Shake.setMetadata("deviceId", device.id);
-Shake.setMetadata("merchantId", order.merchantId);
-// highlight-end
+        merchantPicker.listen( onMerchantSelected: { (merchantId) in
+            // highlight-start
+            Shake.setMetadata(key: "selectedMerchant", value: merchantId)
+            // highlight-end
+            
+            setSelectedMerchant(merchantId);
+        })
+    }
+}
 ```
 
 </TabItem>
