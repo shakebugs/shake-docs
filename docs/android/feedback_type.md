@@ -2,19 +2,15 @@
 id: feedback_type
 title: Feedback type
 ---
-This page describes the feedback type feature.
+This SDK option allows your users to categorize their feedback.
 
-## Multiple feedback types
-By default, Shake allows user to choose feedback type for their report.
-The supported feedback types are *bug*, *suggestion* and *question*.
+## Introduction
+When submitting their feedback, your users immediately categorize it as either a bug report, an improvement suggestion, or just a question.
 
-First time Shake is shown, feedback type *bug* is selected by default.
-User can choose another feedback type and Shake will remember it for the next report.
-
-Reported feedbacks will automatically be tagged with corresponding feedback type tag.
+Depending on their choice, you automatically receive the <span class="tag-button pink-tag-button">bug</span>, <span class="tag-button pink-tag-button">suggestion</span> or <span class="tag-button pink-tag-button">question</span> tag next to their ticket in your [Shake Dashboard](https://app.shakebugs.com). This way, you can filter and browse them efficiently!
 
 ## Disabling
-If you want, you can disable feedback type picker:
+If you don’t want your users to have to categorize their feedback, simply hide this option using the following method:
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -49,4 +45,4 @@ Shake.getReportConfiguration().isEnableMultipleFeedbackTypes = false
 </TabItem>
 </Tabs>
 
-In that case, reports won't have assigned feedback type.
+On your Shake Dashbaord, all these tickets won't have any specific type (and tag).
