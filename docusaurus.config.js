@@ -99,7 +99,7 @@ module.exports = {
             },
             {
               label: 'Roadmap',
-              href: 'https://www.shakebugs.com/roadmap',
+              href: 'https://feedback.shakebugs.com',
             },
           ],
         },
@@ -107,13 +107,25 @@ module.exports = {
           title: 'Resources',
           items: [
             {
+              label: 'Blog',
+              href: 'https://www.shakebugs.com/blog',
+            },
+            {
               label: 'Help center',
               href: 'https://help.shakebugs.com/',
             },
             {
-              label: 'Legal',
-              href: 'https://app.shakebugs.com/legal',
+              label: 'Terms of service',
+              href: 'https://www.shakebugs.com/terms',
             },
+            {
+              label: 'Privacy policy',
+              href: 'https://www.shakebugs.com/privacy',
+            },
+            {
+              label: 'Data processing agreement',
+              href: 'https://www.shakebugs.com/dpa',
+            }
           ],
         },
       ],
