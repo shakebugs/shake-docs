@@ -24,7 +24,7 @@ Users can now report [different types of feedback](/android/feedback_type.md) - 
 you do not want to be visible on the Shake dashboard.
 It can be used for notifications, network requests, screens or screen elements.
 
-You can now use the in-app Shake [onboarding dialog](/android/usage_prompt.md) to inform your users about Shake availability.
+You can now use the in-app Shake [onboarding dialog](android/intro-message.md) to inform your users about Shake availability.
 
 Shake is now published to the new Maven repository, check out [setup](/android/setup.md) page for the installation details. 
 

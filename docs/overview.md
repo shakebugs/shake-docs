@@ -12,7 +12,7 @@ Shake has a very rich feature set, yet on some platforms we managed to achieve m
 | Custom invocation    |    ✅     |     ✅    |       ✅     |       ✅     |
 | Bug screenshot       |    ✅     |     ✅    |       ✅     |       ✅     |
 | Feedback types       |    ✅     |     ❌    |       ❌     |       ❌     |
-| Usage prompt         |    ✅     |     ❌    |       ❌     |       ❌     |
+| Intro message        |    ✅     |     ❌    |       ❌     |       ❌     |
 | Inspect bug          |    ✅     |     ✅    |       ✅     |       ✅     |
 | Screen recording     |    ✅     |     ❌    |       ❌     |       ❌     |
 | File attachment      |    ✅     |     ✅    |       ✅     |       ✅     |
