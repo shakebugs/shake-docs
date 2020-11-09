@@ -20,11 +20,11 @@ Shake is now available in the new Maven repository. If you're upgrading from the
 We're introducing a completely fresh design, new navigation and a better user experience.  
 Users can now report [different types of feedback](/android/feedback_type.md) - bugs, suggestions and questions.
 
-[Private data](/android/privacy.md) management is finally here, Shake provides you a way to mask or remove data
+[Sensitive data](android/manage-sensitive-data.md) management is finally here, Shake provides you a way to mask or remove data
 you do not want to be visible on the Shake dashboard.
 It can be used for notifications, network requests, screens or screen elements.
 
-You can now use the in-app Shake [onboarding dialog](/android/usage_prompt.md) to inform your users about Shake availability.
+You can now use the in-app Shake [onboarding dialog](android/intro-message.md) to inform your users about Shake availability.
 
 Shake is now published to the new Maven repository, check out [setup](/android/setup.md) page for the installation details. 
 

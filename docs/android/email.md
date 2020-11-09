@@ -65,7 +65,7 @@ Shake.getReportConfiguration().setEmailField("user@email.com");
 
 ```kotlin title="App.kt"
 // highlight-next-line
-Shake.getReportConfiguration().email = "user@email.com"
+Shake.getReportConfiguration().emailField = "user@email.com"
 ```
 
 </TabItem>
