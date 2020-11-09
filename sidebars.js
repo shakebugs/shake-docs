@@ -19,7 +19,7 @@ module.exports = {
                         'android/email',
                         'android/inspect',
                         'android/feedback_type',
-                        'android/usage_prompt',
+                        'android/intro-message',
                         'android/screenshot',
                         'android/screen-recording',
                         'android/permissions',
@@ -28,7 +28,7 @@ module.exports = {
                         'android/attachments',
                         'android/blackbox',
                         'android/metadata',
-                        'android/privacy',
+                        'android/manage-sensitive-data',
                     ]
                 },
                 'android/android-releases',

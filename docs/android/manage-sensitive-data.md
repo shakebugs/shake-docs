@@ -1,19 +1,19 @@
 ﻿---
-id: privacy
-title: Privacy
+id: manage-sensitive-data
+title: Manage sensitive data
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Shake collects various application data which can help developers with bug fixing.<br/>
-Sometimes bug reports contains data you do not want to be visible on the Dashboard.<br/>
-This page describes the tools Shake provides you to prevent sensitive data from showing up.
+As with any third-party service, it’s important for you to understand and have the ability to manage
+what data is sent to Shake servers. Shake SDK allows you to filter out sensitive data on the mobile device itself,
+so it never reaches the Shake servers.
 
-## Private views
-You can prevent any view on the screen from being visible on the bug screenshot.
+## Views
+You can mark any view as private, and it'll automatically be deleted from the screenshot.
 
-For example, you are building a shopping cart application and you want to 
-prevent user name and credit card number from being captured in the Shake screenshot:
+Let's suppose you're building a shopping cart app and you want to delete the name and the credit card number views
+from the screenshot:
 
 <Tabs 
   groupId="android"
@@ -33,11 +33,11 @@ import android.view.TextView;
 import com.shakebugs.shake.Shake;
 
 private void maskSensitiveData() {
-    TextView textUserName = (TextView) findViewById(R.id.text_user_name);
+    TextView textName = (TextView) findViewById(R.id.text_name);
     TextView textCardNumber = (TextView) findViewById(R.id.text_card_number);
 
     // highlight-next-line
-    Shake.addPrivateView(textUserName);
+    Shake.addPrivateView(textName);
     // highlight-next-line
     Shake.addPrivateView(textCardNumber);
 }
@@ -54,7 +54,7 @@ import kotlinx.android.synthetic.main.activity_payment.*
 
 private fun maskSensitiveData() {
     // highlight-next-line
-    Shake.addPrivateView(textUserName)
+    Shake.addPrivateView(textName)
     // highlight-next-line
     Shake.addPrivateView(textCardNumber)
 }
@@ -63,7 +63,7 @@ private fun maskSensitiveData() {
 </TabItem>
 </Tabs>
 
-To remove view from private views use following method:
+To remove a view from the list of private views, use the following method:
 
 <Tabs 
   groupId="android"
@@ -93,8 +93,7 @@ Shake.removePrivateView(view)
 </TabItem>
 </Tabs>
 
-Additionally, if you want to prevent whole screen from being visible in the screenshot,
-you can add whole activity as a private view:
+If you want to delete the whole screen from the screenshot, simply mark the whole activity as private:
 
 <Tabs
 groupId="android"
@@ -156,7 +155,7 @@ public class PaymentActivity : AppCompatActivity() {
 </TabItem>
 </Tabs>
 
-To remove activity from private views use following method:
+To remove an activity from the list of private views, use the following method:
 
 <Tabs 
   groupId="android"
@@ -186,7 +185,7 @@ Shake.removePrivateView(activity)
 </TabItem>
 </Tabs>
 
-If you want to remove all private views, use following method:
+If you want to clear all the private views, use the following method:
 
 <Tabs 
   groupId="android"
@@ -216,9 +215,7 @@ Shake.clearPrivateViews()
 </TabItem>
 </Tabs>
 
-
-Note that these methods will not hide sensitive data from screen recordings.<br/>
-Hiding sensitive data from screen recordings will be available in future releases.
+Note that these methods won't delete sensitive views from screen recordings, only screenshots.
 
 You can use Android system flag `FLAG_SECURE` on activity if you want to prevent 
 sensitive data from being visible in the screen recording feature.
@@ -288,8 +285,6 @@ public class PaymentActivity : AppCompatActivity() {
 </TabItem>
 </Tabs>
 
-Additionally, you can disable [Screen Recording](/android/screen-recording.md) feature if you want make sure that sensitive data is not recorded.
-
 <Tabs
   groupId="android"
   defaultValue="kotlin"
@@ -321,16 +316,16 @@ Shake.getReportConfiguration().isAutoVideoRecording = false
 </Tabs>
 
 ## Touch events
-Adding View as a private will automatically mask sensitive data from activity history touch events.
-Sensitive data will be visible as a *data_redacted* String on the Dashboard.
 
-Note that it will mask tapped view text but will make id, accessiblity labels and tags still visible.
+Marking a view as private will automatically delete its touch events' text properties too. Consequently, you'll see them as `data_redacted` strings in your [Activity history](https://www.shakebugs.com/docs/android/activity#user-actions).
+
+Bear in mind that the view's ID, accessiblity labels and tags remain visible.
 
 ## Network requests
-Network requests can contain sensitive data which should not be visible on the dashboard or even sent to the dashboard.
-Use `Shake.setNetworkRequestsFilter()` method to mask sensitive data or to exclude some network requests from being recorded.
+Certain network requests may contain sensitive data which you may not want to send to Shake servers.
+Use the `Shake.setNetworkRequestsFilter()` method to obfuscate only the sensitive parts of those requests, or to entirely prevent certain network requests from being logged.
 
-For example, you would like to mask *Authorization* header in all network requests triggered in application:
+For example, if you'd like to obfuscate the *Authorization* header in all network requests sent from your app, do this:
 
 <Tabs
 groupId="android"
@@ -391,7 +386,7 @@ private fun setupNetworkFilter() {
 </TabItem>
 </Tabs>
 
-If you do not want to track specific network requests, return `null` from `NetworkRequestsFilter` like below:
+If you do not want to log specific network requests, return `null` from the `NetworkRequestsFilter` like below:
 
 <Tabs
 groupId="android"
@@ -449,13 +444,13 @@ private fun setupNetworkFilter() {
 </TabItem>
 </Tabs>
 
-To remove network requests filter use `Shake.setNetworkRequestsFilter(null)`
+To clear the network requests filter, use `Shake.setNetworkRequestsFilter(null)`.
 
 ## Notification events
-If your application is displaying sensitive data in notifications, use `Shake.setNotificationEventsFilter()`
-method to mask sensitive data or prevent notification events being recorded and sent to the dashboard.
+If your app notifications contain sensitive data, use the `Shake.setNotificationEventsFilter()`
+method to obfuscate only the sensitive parts of those notifications, or to entirely prevent certain notifications from being logged.
 
-For example, you would like to mask title of the notification event with id 0.
+For example, if you'd like to obfuscate the title of the notification event with *id* 0, do this:
 
 <Tabs
 groupId="android"
@@ -516,7 +511,7 @@ private fun setupNotificationsFilter() {
 </TabItem>
 </Tabs>
 
-If you do not want to track specific notification event, return `null` from `NotificationEventsFilter` like below:
+If you do not want to track a specific notification event, return `null` from the `NotificationEventsFilter` like below:
 
 <Tabs
 groupId="android"
@@ -574,4 +569,4 @@ private fun setupNotificationsFilter() {
 </TabItem>
 </Tabs>
 
-To remove notification events filter use `Shake.setNotificationEventsFilter(null)`
+To clear the notification events filter, use `Shake.setNotificationEventsFilter(null)`.
