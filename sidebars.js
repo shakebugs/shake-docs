@@ -28,7 +28,7 @@ module.exports = {
                         'android/attachments',
                         'android/blackbox',
                         'android/metadata',
-                        'android/privacy',
+                        'android/manage-sensitive-data',
                     ]
                 },
                 'android/android-releases',
