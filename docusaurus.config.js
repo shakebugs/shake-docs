@@ -107,6 +107,10 @@ module.exports = {
           title: 'Resources',
           items: [
             {
+              label: 'Documentation',
+              href: 'https://www.shakebugs.com/docs',
+            },
+            {
               label: 'Blog',
               href: 'https://www.shakebugs.com/blog',
             },
