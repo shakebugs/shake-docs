@@ -15,18 +15,13 @@ just click the button in the bottom-right corner of this screen.
 
 **What's new**
 
-Shake is now available in the new Maven repository. If you're upgrading from the older version, make sure to [update the Maven repository in the build.gradle file](https://www.shakebugs.com/docs/android/setup#add-maven-repository-to-your-top-level-buildgradle-file).
+Shake is available in the new Maven repository. If you're upgrading from the older version, make sure to [update the Maven repository in the build.gradle file](https://www.shakebugs.com/docs/android/setup#add-maven-repository-to-your-top-level-buildgradle-file).
 
-We're introducing a completely fresh design, new navigation and a better user experience.  
-Users can now report [different types of feedback](/android/feedback_type.md) - bugs, suggestions and questions.
+Users can finally report [different types of feedback](/android/feedback_type.md): bugs, suggestions and questions.
 
-[Sensitive data](android/manage-sensitive-data.md) management is finally here, Shake provides you a way to mask or remove data
-you do not want to be visible on the Shake dashboard.
-It can be used for notifications, network requests, screens or screen elements.
+Shake now allows you to [manage sensitive data](android/manage-sensitive-data.md) on the mobile device itself, so it never reaches the Shake servers. It can be used for notifications, network requests, screens and screen elements.
 
 You can now use the in-app Shake [onboarding dialog](android/intro-message.md) to inform your users about Shake availability.
-
-Shake is now published to the new Maven repository, check out [setup](/android/setup.md) page for the installation details. 
 
 ### 13.1
 <span class="tag-button">August 25, 2020</span>&nbsp;&nbsp;
