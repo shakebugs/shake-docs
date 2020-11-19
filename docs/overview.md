@@ -16,7 +16,7 @@ Shake has a very rich feature set, yet on some platforms we managed to achieve m
 | Inspect bug          |    ✅     |     ✅    |       ✅     |       ✅     |
 | Screen recording     |    ✅     |     ❌    |       ❌     |       ❌     |
 | File attachment      |    ✅     |     ✅    |       ✅     |       ✅     |
-| Metadata             |    ✅     |     ❌    |       ❌     |       ❌     |
+| Metadata             |    ✅     |     ✅    |       ❌     |       ❌     |
 | Quick facts          |    ❌     |     ✅    |       ✅     |       ✅     |
 | Black box            |    ✅     |     ✅    |       ✅     |       ✅     |
 | Network requests     |    ✅     |     ✅    |       ✅     |       ✅     |
