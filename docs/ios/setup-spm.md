@@ -1,66 +1,30 @@
 ---
-id: setup-cocoapods
-title: CocoaPods
+id: setup-spm
+title: Swift Package Manager
 ---
-We support integrating Shake into your Xcode project using CocoaPods.
 
-:::note
+We support integrating Shake into your Xcode project using Swift Package Manager.
 
-Not using CocoaPods yet? Follow their brief [installation guide](https://guides.cocoapods.org/using/getting-started.html#installation),
-then run `pod init` in the root of your project and you're done — let's move on.
+### Installing the Shake Package
 
-:::
+Select *File* › *Swift Packages* › *Add Package Dependency*  
 
-:::note
+Enter the Shake repository url when prompted:
 
-Shake SDK is distributed as a binary package, more specifically an *XCFramework*.
-CocoaPods added support for *XCFrameworks* in the *1.9 beta* release, so make sure your *CocoaPods* installation is 
-running with version no lower than *1.9*.
+```swift"
+// highlight-next-line
+https://github.com/shakebugs/shake-ios
+```
 
-:::
+Choose the appropriate cloning details and optionally specify the exact Shake version or branch.
 
-### Add Shake SDK to your Podfile
+Click *Finish* to add the Shake package to your project.
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<Tabs
-  groupId="ios"
-  defaultValue="swift"
-  values={[
-    { label: 'Objective-C', value: 'objectivec'},
-    { label: 'Swift', value: 'swift'},
-  ]
-}>
-
-<TabItem value="objectivec">
-
-```objectivec title="Podfile"
-// highlight-next-line
-pod 'Shake'
-```
-
-</TabItem>
-
-<TabItem value="swift">
-
-```swift title="Podfile"
-// highlight-start
-use_frameworks!
-pod 'Shake'
-// highlight-end
-```
-
-</TabItem>
-</Tabs>
-
-import IosVersion from '@site/src/base/IosVersion';
-
-Then, run the `pod install` command in your terminal.
-After the installation also run `pod update Shake` to be perfectly sure you're using the latest Shake <IosVersion/>.
-
 ### Add Client ID and Secret to Info.plist
-Open your workspace and in the Project Navigator, right click on *Info.plist*, and *Open as › Source code*.
+Open your project or workspace and in the Project Navigator, right click on *Info.plist*, and *Open as › Source code*.
 Paste this but replace *your-api-client-id* and *your-api-client-secret*
 with the actual values you have in [your workspace settings](https://app.shakebugs.com/settings/workspace#general):
 
@@ -88,8 +52,8 @@ with the actual values you have in [your workspace settings](https://app.shakebu
   values={[
     { label: 'Objective-C', value: 'objectivec'},
     { label: 'Swift', value: 'swift'},
-  ]
-}>
+  ]}
+  >
 
 <TabItem value="objectivec">
 
@@ -127,9 +91,33 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   }
 }
 ```
-
 </TabItem>
 </Tabs>
 
 Now select *Product › Run* in the menu bar. This first run will automatically
 add your app to your [Shake Dashboard](https://app.shakebugs.com/) based on your app bundle ID.
+
+:::note
+
+Shake is distributed as a binary framework. There is a [known issue](https://bugs.swift.org/browse/SR-13343) 
+with SPM signing the binary packages which will pop up when running your app on the real device.
+The issue has been fixed in the Xcode Version 12.2 beta 3.
+
+:::
+
+### Temporary workaround
+
+Select your app target, and add a new *Copy Files phase* to the *Build Phases*.
+Make sure to change the destination to *Frameworks* folder.
+
+Add a new *Run Script* phase and paste the following script to force the deep signing of frameworks with your own identity.
+
+
+```script"
+// highlight-start
+find "${CODESIGNING_FOLDER_PATH}" -name '*.framework' -print0 | while read -d $'\0' framework 
+do 
+    codesign --force --deep --sign "${EXPANDED_CODE_SIGN_IDENTITY}" --preserve-metadata=identifier,entitlements --timestamp=none "${framework}" 
+done
+// highlight-end
+```

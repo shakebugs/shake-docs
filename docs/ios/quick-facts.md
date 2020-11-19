@@ -4,6 +4,12 @@ title: Quick facts
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+:::caution
+
+From iOS SDK Version 12.1 Quick facts are deprecated, please use [Metadata](/ios/metadata.md) instead.
+
+:::
+
 This page explains how to send a value of any variable you wish from a user's app to your web Dashboard.
 
 ## Introduction

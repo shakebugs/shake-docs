@@ -108,7 +108,7 @@ App Store rejects apps that get in the way of the default screenshot behavior. F
 Invoke Shake with a one-finger swiping gesture from the right edge of the screen.
 
 ## Invoke through code
-You can invoke SDK through code by calling the `Shake.show()` method anywhere after `Shake.start()`, optionally adding bug description or attaching files. Here’s an example:
+You can invoke SDK through code by calling the `Shake.show()` method anywhere after `Shake.start()`, optionally adding bug description or attaching files and/or [Metadata](ios/metadata.md). Here’s an example:
 
 <Tabs groupId="ios" values={[{ label: 'Objective-C', value: 'objectivec'},{ label: 'Swift', value: 'swift'},]} defaultValue="swift"><TabItem value="objectivec">
 

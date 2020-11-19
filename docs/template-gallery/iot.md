@@ -90,9 +90,9 @@ private fun attachStatusListener() {
 
     if (device) {
     // highlight-start
-        [SHKShake setMetadata:@"batteryLevel" value: [status getBatteryLevel]];
-        [SHKShake setMetadata:@"firmwareVersion" value:  [status getFirmwareVersion]];
-        [SHKShake setMetadata:@"bluetoothVersion" value:  [status getBluetoothVersion]];
+        [SHKShake setMetadataWithKey:@"batteryLevel" value: [status getBatteryLevel]];
+        [SHKShake setMetadataWithKey:@"firmwareVersion" value:  [status getFirmwareVersion]];
+        [SHKShake setMetadataWithKey:@"bluetoothVersion" value:  [status getBluetoothVersion]];
     // highlight-end
     }
 }
