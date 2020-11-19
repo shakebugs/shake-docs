@@ -82,7 +82,7 @@ private fun setupMerchantPicker() {
     
     [merchantPicker listen:^(NSInteger merchantId) {
         // highlight-start
-        [SHKShake setMetadata:@"selectedMerchant" value: merchantId];
+        [SHKShake setMetadataWithKey:@"selectedMerchant" value: merchantId];
         // highlight-end
         
         [self setSelectedMerchant:merchantId];

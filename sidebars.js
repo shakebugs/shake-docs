@@ -61,6 +61,7 @@ module.exports = {
                         'ios/essentials',
                         'ios/attachments',
                         'ios/blackbox',
+                        'ios/metadata',
                         'ios/quick-facts'
                     ]
                 },
