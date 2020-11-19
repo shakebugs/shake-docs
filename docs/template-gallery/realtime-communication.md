@@ -104,8 +104,8 @@ private fun connectToChatServer(username: String, password: String) {
     
     [ChatServer connect:username password:password onConnected:^(User *user) {
         // highlight-start
-        [SHKShake setMetadata:@"serverStatusType" value: @"Connected"];
-        [SHKShake setMetadata:@"serverStatusDate" value: [NSDate date].debugDescription]; // convert to string
+        [SHKShake setMetadataWithKey:@"serverStatusType" value: @"Connected"];
+        [SHKShake setMetadataWithKey:@"serverStatusDate" value: [NSDate date].debugDescription]; // convert to string
         // highlight-end
         
         [[[Messages alloc] init] show:"Server connected"];
@@ -113,8 +113,8 @@ private fun connectToChatServer(username: String, password: String) {
     } onDisconnected:^(NSString *message) {
 
         // highlight-start
-        [SHKShake setMetadata:@"serverStatusType" value: @"Disconnected"];
-        [SHKShake setMetadata:@"serverStatusDate" value: [NSDate date].debugDescription]; // convert to string
+        [SHKShake setMetadataWithKey:@"serverStatusType" value: @"Disconnected"];
+        [SHKShake setMetadataWithKey:@"serverStatusDate" value: [NSDate date].debugDescription]; // convert to string
         // highlight-end
 
         [[[Messages alloc] init] show:"Server disconnected"];

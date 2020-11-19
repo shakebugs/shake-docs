@@ -83,9 +83,9 @@ private fun loadGitDetails() {
     NSString* commitDate = [self getCommitDate];
 
     // highlight-start
-    [SHKShake setMetadata:@"commitHash" value: commitHash];
-    [SHKShake setMetadata:@"commitDate" value: commitDate];
-    [SHKShake setMetadata:@"branch" value: branchName];
+    [SHKShake setMetadataWithKey:@"commitHash" value: commitHash];
+    [SHKShake setMetadataWithKey:@"commitDate" value: commitDate];
+    [SHKShake setMetadataWithKey:@"branch" value: branchName];
     // highlight-end
 }
 ```

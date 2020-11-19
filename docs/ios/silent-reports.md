@@ -7,7 +7,7 @@ This page explains how to submit yourself a bug report from the background, with
 ## Overview
 You can send silent reports to yourself by calling the `Shake.silentReport()` method anywhere after `Shake.start()`.
 
-This method allows you to include: [Description and screenshot](ios/screenshot.md), [Attachments](ios/attachments.md), [Quick facts](ios/quick-facts.md) and [Activity history](ios/activity.md) in your silent report.
+This method allows you to include: [Description and screenshot](ios/screenshot.md), [Attachments](ios/attachments.md), [Metadata](ios/metadata.md) and [Activity history](ios/activity.md) in your silent report.
 If you decide to do so, your code should look something like this example:
 
 
@@ -25,6 +25,7 @@ reportConfiguration.includesScreenshotImage = YES;
 reportConfiguration.includesBlackBoxData = YES;
 
 [SHKShake silentReportWithReportData:reportData reportConfiguration:reportConfiguration];
+[SHKShake setMetadataWithKey: @"key" value: @"value"];
 //highlight-end
 ```
 
@@ -39,6 +40,7 @@ reportConfiguration.includesScreenshotImage = true
 reportConfiguration.includesBlackBoxData = true
 
 Shake.silentReport(reportData: reportData, reportConfiguration: reportConfiguration)
+Shake.setMetadata(key: "key", value: "value")
 //highlight-end
 ```
 
