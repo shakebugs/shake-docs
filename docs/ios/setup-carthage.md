@@ -2,6 +2,16 @@
 id: setup-carthage
 title: Carthage
 ---
+
+:::note
+Carthage is currently not supporting XCFrameworks.
+:::
+
+However, it looks like there is a [work in progress](https://github.com/Carthage/Carthage/issues/2799) on the Carthage repository.
+
+Once the Carthage team rolls out the update, the latest Shake SDK versions will automatically be supported.
+
+<!---
 We support integrating Shake into your Xcode project using Carthage.
 
 
@@ -104,3 +114,4 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 Now select *Product › Run* in the menu bar. This first run will automatically
 add your app to your [Shake Dashboard](https://app.shakebugs.com/) based on your app bundle ID.
+-->
