@@ -11,6 +11,14 @@ then run `pod init` in the root of your project and you're done — let's move o
 
 :::
 
+:::note
+
+Shake SDK is distributed as a binary package, more specifically an *XCFramework*.
+CocoaPods added support for *XCFrameworks* in the *1.9 beta* release, so make sure your *CocoaPods* installation is 
+running with version no lower than *1.9*.
+
+:::
+
 ### Add Shake SDK to your Podfile
 
 import Tabs from '@theme/Tabs';
