@@ -240,21 +240,21 @@ Shake.configuration.isAutoVideoRecordingEnabled = false
 </Tabs>
 
 ## Touch events
-Marking a view as private will automatically delete its touch events' text properties too. Consequently, you'll see them as `data_redacted` strings in your [Activity history.
+Marking a view as private will automatically delete its touch events' text properties too. Consequently, you'll see them as `data_redacted` strings in your [Activity history](https://www.shakebugs.com/docs/ios/activity).
 
-Bear in mind that the view's ID, accessiblity labels and tags remain visible.
+Bear in mind that the view's ID, accessibility labels and tags remain visible.
 
-Known limitation:
+:::note
 
 Shake supports privacy redaction on all kinds of UIView and its subclasses. On the other side, Shake does not support privacy redaction on UIBarItem(s) like: UIBarButtonItem, UIBarButtonItemGroup and UITabBarItem since those are not UIVew subclasses.
+
+:::
 
 ## Network requests
 Certain network requests may contain sensitive data which you may not want to send to Shake servers.
 Use the `Shake.setNetworkRequestsFilter()` method to obfuscate only the sensitive parts of those requests, or to entirely prevent certain network requests from being logged.
 
-Typical subjects of network data redaction are HTTP request headers,  HTTP request body, HTTP response headers and HTTP response body.
-
-For example, if you'd like to obfuscate the *Authorization* header and response body in all network requests sent from your app, do this:
+For example, if you'd like to obfuscate the *Authorization* header in all network requests sent from your app, do this:
 
 <Tabs
 groupId="ios"
@@ -278,8 +278,7 @@ values={[
         NSMutableDictionary<NSString *, NSString *>* headers = networkRequest.requestHeaders;
         
         if (headers[@"Authorization"] != nil) {
-            headers[@"Authorization"] = @"4FR9***";
-            networkRequest.responseBody = nil;
+            headers[@"Authorization"] = @"***";
         }
         
         return networkRequest;
@@ -302,8 +301,7 @@ func setupNetworkFilter() {
     Shake.networkRequestsFilter = { (networkRequest) in
         if let requestHeaders = networkRequest.requestHeaders {
             if requestHeaders["Authorization"] != nil {
-                requestHeaders["Authorization"] = "4FR9***"
-                networkRequest.responseBody = nil
+                requestHeaders["Authorization"] = "***"
             }
         }
         return networkRequest
@@ -380,7 +378,7 @@ To clear the network requests filter use `Shake.networkRequestsFilter = nil`
 If your app notifications contain sensitive data, use the `Shake.setNotificationEventsFilter()`
 method to obfuscate only the sensitive parts of those notifications, or to entirely prevent certain notifications from being logged.
 
-For example, if you'd like to obfuscate the title and desctiption of the notification event that contains e-mail, do this:
+For example, if you'd like to obfuscate the description of the notification event that contains e-mail, do this:
 
 <Tabs
 groupId="ios"
@@ -402,9 +400,8 @@ values={[
 // highlight-start
     SHKShake.notificationEventsFilter = ^SHKNotificationEventEditor *(SHKNotificationEventEditor * notificationEvent) {
         
-        if ([notificationEvent.title hasPrefix:@"e-mail changed"]) {
-            notificationEvent.title = @"****** changed";
-            notificationEvent.description = @"*******@gmail.com";
+        if ([notificationEvent.title hasPrefix:@"E-mail changed"]) {
+            notificationEvent.description = @"***@gmail.com";
         }
         
         return notificationEvent;
@@ -426,9 +423,8 @@ func setupNetworkFilter() {
     // highlight-start
     Shake.notificationEventsFilter = { (notificationEvent) in
         
-        if notificationEvent.title.contains("e-mail changed") {
-            notificationEvent.title = "****** changed"
-            notificationEvent.description = "*******@gmail.com"
+        if notificationEvent.title.contains("E-mail changed") {
+            notificationEvent.description = "***@gmail.com"
         }
         
         return notificationEvent
@@ -458,11 +454,10 @@ values={[
 @import Shake;
 
 - (void)setupNotificationEventsFilter {
-
-// highlight-start
+    // highlight-start
     SHKShake.notificationEventsFilter = ^SHKNotificationEventEditor *(SHKNotificationEventEditor * notificationEvent) {
         
-        if ([notificationEvent.title hasPrefix:@"e-mail changed"]) {
+        if ([notificationEvent.title hasPrefix:@"E-mail changed"]) {
             return nil;
         }
         
@@ -481,11 +476,10 @@ values={[
 import Shake
 
 func setupNetworkFilter() {
-    
     // highlight-start
     Shake.notificationEventsFilter = { (notificationEvent) in
         
-        if notificationEvent.title.contains("e-mail changed") {
+        if notificationEvent.title.contains("E-mail changed") {
             return nil
         }
         
