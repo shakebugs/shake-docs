@@ -23,7 +23,6 @@ More robust internal logging has been added to our SDK so any kind of issues are
 
 ### 12.0
 <span class="tag-button">September 18, 2020</span>&nbsp;&nbsp;
-<span class="tag-button green-tag-button">Latest version</span>
 
 **What's new**
 
