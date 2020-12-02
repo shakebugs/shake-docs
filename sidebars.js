@@ -55,6 +55,7 @@ module.exports = {
                         'ios/disable',
                         'ios/silent-reports',
                         'ios/inspect',
+                        'ios/intro-message',
                         'ios/screenshot',
                         'ios/permissions',
                         'ios/activity',
