@@ -9,9 +9,20 @@ just click the button in the bottom-right corner of this screen.
 
 ## Version
 
+### 14.1
+<span class="tag-button">December 7, 2020</span>&nbsp;&nbsp;
+<span class="tag-button green-tag-button">Latest version</span>
+
+**What's new**
+
+The Shae will now automatically [redact sensitive data](android/manage-sensitive-data.md#sensitive-data-redaction) from your network requests, notifications, and touch events so it never reaches Shake servers.
+
+We have added [console logs](android/activity.md#console-logs) to Shake activity history.
+
+Shake now allows you to take screenshots and record video when you choose to do so.
+
 ### 14.0
 <span class="tag-button">November 5, 2020</span>&nbsp;&nbsp;
-<span class="tag-button green-tag-button">Latest version</span>
 
 **What's new**
 
