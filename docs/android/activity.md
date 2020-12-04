@@ -247,8 +247,8 @@ Shake.log(LogLevel.INFO, "Log message goes here!")
 </Tabs>
 
 ### Console logs
-Console logs are recorded automatically and require no additional setup. If you want to disable this
-feature use the method below:
+Console logs are recorded automatically and require no additional setup.  
+If you want to disable this feature use the method below:
 
 <Tabs
   groupId="android"
@@ -277,6 +277,12 @@ Shake.getReportConfiguration().isConsoleLogsEnabled = false
 
 </TabItem>
 </Tabs>
+
+:::note
+
+Make sure that activity history is enabled if you want to send console logs with your report.
+
+:::note
 
 ## Limitations
 In a Free workspace you can see up to 20 events that lead to every bug.
