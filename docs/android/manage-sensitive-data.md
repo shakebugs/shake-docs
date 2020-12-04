@@ -571,8 +571,8 @@ private fun setupNotificationsFilter() {
 
 To clear the notification events filter, use `Shake.setNotificationEventsFilter(null)`.
 
-## Sensitive data redaction
-By default, Shake uses a series of regular expressions to filter out and redact any sensitive data from notifications, touch events, and network requests.
+## Automatically redacted sensitive data
+By default, Shake uses a series of regular expressions to redact sensitive data from notifications, touch events and network requests.
 In addition, Shake will replace any header value with `data_redacted` string if the header has a key that matches any string from the list of keywords below:  
 * password 
 * secret 

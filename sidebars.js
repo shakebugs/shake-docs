@@ -21,7 +21,7 @@ module.exports = {
                         'android/feedback_type',
                         'android/intro-message',
                         'android/screenshot',
-                        'android/screen-recording',
+                        'android/automatic-screen-recording',
                         'android/permissions',
                         'android/activity',
                         'android/essentials',

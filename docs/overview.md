@@ -24,6 +24,7 @@ Shake has a very rich feature set, yet on some platforms we managed to achieve m
 | Touch tracking       |    ✅     |     ✅    |       ✅     |       ❌     |
 | System events        |    ✅     |     ✅    |       ✅     |       ✅     |
 | Custom logs          |    ✅     |     ✅    |       ❌     |       ❌     |
+| Console logs         |    ✅     |     ❌    |       ❌     |       ❌     |
 | Manage sensitive data|    ✅     |     ❌    |       ❌     |       ❌     |
 | Silent reports       |    ✅     |     ✅    |       ✅     |       ✅     |
 | Email pre-fill       |    ✅     |     ❌    |       ❌     |       ❌     |

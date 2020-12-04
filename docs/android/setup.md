@@ -95,8 +95,8 @@ Open your *AndroidManifest.xml* file and paste the following code snippet:
 
 :::note
 
-[Screen recording](/android/screen-recording.md) feature requires `compileSdkVersion` 29 or greater.
-If you want to use screen recording feature, you should verify that `compileSdkVersion` and `targetSdkVersion`
+[Automatic screen recording](/android/automatic-screen-recording.md) feature requires `compileSdkVersion` 29 or greater.
+If you want to use automatic screen recording feature, you should verify that `compileSdkVersion` and `targetSdkVersion`
 are correctly set in the app *build.gradle* file.
 
 :::
