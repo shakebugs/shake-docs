@@ -493,3 +493,50 @@ func setupNetworkFilter() {
 </Tabs>
 
 To clear the notification events filter use `Shake.notificationEventsFilter = nil`
+
+## Automatically redacted sensitive data
+By default, Shake uses a series of regular expressions to redact sensitive data from notifications, touch events and network requests.
+In addition Shake will replace any header value with `data_redacted` string if the header has a key that matches any string from the list of keywords below:  
+* password 
+* secret 
+* passwd
+* api_key 
+* apikey
+* access_token
+* auth_token
+* credentials
+* mysql_pwd
+* stripetoken
+* Authorization
+* Proxy-Authorization
+* card[number]
+
+To disable this feature use the method below:
+
+<Tabs
+groupId="ios"
+defaultValue="swift"
+values={[
+  { label: 'Objective-C', value: 'objectivec'},
+  { label: 'Swift', value: 'swift'},
+  ]
+}>
+
+<TabItem value="objectivec">
+
+```objectivec title="AppDelegate.m"
+// highlight-next-line
+SHKShake.configuration.isSensitiveDataRedactionEnabled = false;
+```
+
+</TabItem>
+
+<TabItem value="swift">
+
+```swift title="AppDelegate.swift"
+// highlight-next-line
+Shake.configuration.isSensitiveDataRedactionEnabled = false
+```
+
+</TabItem>
+</Tabs>
