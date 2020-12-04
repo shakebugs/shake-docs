@@ -247,7 +247,7 @@ Shake.log(LogLevel.INFO, "Log message goes here!")
 </Tabs>
 
 ### Console logs
-Console logs are recorded automatically and require no additional setup.  
+Console logs are recorded automatically and require no additional setup.
 If you want to disable this feature use the method below:
 
 <Tabs

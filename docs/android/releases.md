@@ -15,11 +15,11 @@ just click the button in the bottom-right corner of this screen.
 
 **What's new**
 
-The Shae will now automatically [redact sensitive data](android/manage-sensitive-data.md#sensitive-data-redaction) from your network requests, notifications, and touch events so it never reaches Shake servers.
+The Shake will now automatically [redact sensitive data](android/manage-sensitive-data.md#sensitive-data-redaction) from your network requests, notifications and touch events so it never reaches Shake servers.
 
-We have added [console logs](android/activity.md#console-logs) to Shake activity history.
+We have added [console logs](android/activity.md#console-logs) to Activity history.
 
-Shake now allows you to take screenshots and record video when you choose to do so.
+We've all been waiting for this! Your users can record an additional video of their screen or grab one or two more extra screenshots and attach them to the feedback they're submitting — without ever leaving your app.
 
 ### 14.0
 <span class="tag-button">November 5, 2020</span>&nbsp;&nbsp;
@@ -46,7 +46,7 @@ If you want to, you can now pre-fill or hide the [Email field](/android/email.md
 
 **What's new**
 
-Screenshots are cool, but wouldn't it be even cooler if you could watch a 30 second video of what a user did before reporting the bug? That's why we introduced [Screen recording](/android/screen-recording.md).
+Screenshots are cool, but wouldn't it be even cooler if you could watch a 30 second video of what a user did before reporting the bug? That's why we introduced [Automatic screen recording](/android/automatic-screen-recording.md).
 
 ### 12.0
 <span class="tag-button">May 19, 2020</span>
