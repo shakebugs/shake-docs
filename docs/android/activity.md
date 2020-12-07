@@ -246,6 +246,44 @@ Shake.log(LogLevel.INFO, "Log message goes here!")
 </TabItem>
 </Tabs>
 
+### Console logs
+Console logs are recorded automatically and require no additional setup.
+If you want to disable this feature use the method below:
+
+<Tabs
+  groupId="android"
+  defaultValue="kotlin"
+  values={[
+    { label: 'Java', value: 'java'},
+    { label: 'Kotlin', value: 'kotlin'},
+  ]
+}>
+
+<TabItem value="java">
+
+```java title="App.java"
+// highlight-next-line
+Shake.getReportConfiguration().setConsoleLogsEnabled(false);
+```
+
+</TabItem>
+
+<TabItem value="kotlin">
+
+```kotlin title="App.kt"
+// highlight-next-line
+Shake.getReportConfiguration().isConsoleLogsEnabled = false
+```
+
+</TabItem>
+</Tabs>
+
+:::note
+
+Make sure that activity history is enabled if you want to send console logs with your report.
+
+:::note
+
 ## Limitations
 In a Free workspace you can see up to 20 events that lead to every bug.
 If you need to dive really deep to find causes of the weirdest bugs,
