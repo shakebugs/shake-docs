@@ -17,12 +17,6 @@ With this feature turned on, a system dialog will ask testers if they want to al
   src={useBaseUrl('screens/bug_screen.png')}
 />
 
-## Requirements
-Automatic screen recording requires `compileSdkVersion` 29 or greater.
-
-To use automatic screen recording, you should verify that `compileSdkVersion` and `targetSdkVersion`
-are correctly set in the app *build.gradle* file.
-
 ## How to use
 Automatic screen recording is disabled by default but can be enabled by calling `Shake.getReportConfiguration().setAutoVideoRecording(true)` before `Shake.start()`. 
 

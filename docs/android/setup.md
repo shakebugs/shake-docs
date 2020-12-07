@@ -55,51 +55,24 @@ Open your AndroidManifest.xml file. Paste this but replace `your-api-client-id` 
 </manifest>
 ```
 
-## Caveat for apps compiling with version 28 and lower
-The Shake SDK is built with the latest Android SDK version which requires `android:foregroundServiceType="mediaProjection"` attribute defined in the *AndroidManifest.xml* file for the screen recording service.
+## Set *compileSdkVersion* version in the *build.gradle* file
+Shake requires `compileSdkVersion` 29 or greater, verify that `compileSdkVersion` is correctly set in the app *build.gradle* file.
 
-If your app `compileSdkVersion` is 28 or lower, you will get the following build error.
-
+```groovy title="build.gradle"
+android {
+    // highlight-next-line
+    compileSdkVersion 30
+    defaultConfig {
+        applicationId "com.example"
+        minSdkVersion 21
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0.0"
+        testInstrumentationRunner "androidx.support.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
+    }
+}
 ```
-AAPT: error: attribute android:foregroundServiceType not found.
-```
-
-To fix this, you will have to remove *foregroundServiceType* attribute in your *AndroidManifest.xml* file.
-Open your *AndroidManifest.xml* file and paste the following code snippet:
-
-```xml title="AndroidManifest.xml"
-<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-      // highlight-start
-      xmlns:tools="http://schemas.android.com/tools"
-      // highlight-end
->
-  <application
-    android:allowBackup="true"
-    android:icon="@mipmap/ic_launcher"
-    android:label="@string/app_name"
-    android:theme="@style/AppTheme" >
-      <activity android:name=".MainActivity" android:label="@string/app_name" >
-        <intent-filter>
-          <action android:name="android.intent.action.MAIN" />
-          <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
-      </activity>
-      // highlight-start
-      <service android:name="com.shakebugs.shake.internal.service.ScreenRecordingService"
-            tools:node="replace"/>
-      // highlight-end
-  </application>/>
-</manifest>
-```
-
-:::note
-
-[Automatic screen recording](/android/automatic-screen-recording.md) feature requires `compileSdkVersion` 29 or greater.
-If you want to use automatic screen recording feature, you should verify that `compileSdkVersion` and `targetSdkVersion`
-are correctly set in the app *build.gradle* file.
-
-:::
 
 ## Initialize Shake
 import Tabs from '@theme/Tabs';
