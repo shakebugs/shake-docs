@@ -15,6 +15,8 @@ just click the button in the bottom-right corner of this screen.
 
 **What's new**
 
+Shake now requires `compileSdkVersion` 29 or higher, make sure to [update the version in the build.gradle file](/android/setup.md#set-compilesdkversion-version-in-the-buildgradle-file).
+
 The Shake will now automatically [redact sensitive data](android/manage-sensitive-data.md#sensitive-data-redaction) from your network requests, notifications and touch events so it never reaches Shake servers.
 
 We have added [console logs](android/activity.md#console-logs) to Activity history.
@@ -26,7 +28,7 @@ We've all been waiting for this! Your users can record an additional video of th
 
 **What's new**
 
-Shake is available in the new Maven repository. If you're upgrading from the older version, make sure to [update the Maven repository in the build.gradle file](https://www.shakebugs.com/docs/android/setup#add-maven-repository-to-your-top-level-buildgradle-file).
+Shake is available in the new Maven repository. If you're upgrading from the older version, make sure to [update the Maven repository in the build.gradle file](/android/setup.md#add-maven-repository-to-your-top-level-buildgradle-file).
 
 Users can finally report [different types of feedback](/android/feedback_type.md): bugs, suggestions and questions.
 
