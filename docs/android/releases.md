@@ -17,9 +17,9 @@ just click the button in the bottom-right corner of this screen.
 
 Shake now requires `compileSdkVersion` 29 or higher, make sure to [update the version in the build.gradle file](/android/setup.md#set-compilesdkversion-version-in-the-buildgradle-file).
 
-The Shake will now automatically [redact sensitive data](android/manage-sensitive-data.md#sensitive-data-redaction) from your network requests, notifications and touch events so it never reaches Shake servers.
+Shake will now automatically [redact sensitive data](android/manage-sensitive-data.md#sensitive-data-redaction) from your network requests, notifications and touch events so it never reaches Shake servers.
 
-We have added [console logs](android/activity.md#console-logs) to Activity history.
+We've added [console logs](android/activity.md#console-logs) to Activity history.
 
 We've all been waiting for this! Your users can record an additional video of their screen or grab one or two more extra screenshots and attach them to the feedback they're submitting — without ever leaving your app.
 
