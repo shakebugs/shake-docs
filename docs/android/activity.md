@@ -280,14 +280,14 @@ Shake.getReportConfiguration().isConsoleLogsEnabled = false
 
 :::note
 
-Make sure that activity history is enabled if you want to send console logs with your report.
+Make sure that Activity history is enabled if you want to send console logs with your report.
 
 :::note
 
 ## Limitations
 In a Free workspace you can see up to 20 events that lead to every bug.
 If you need to dive really deep to find causes of the weirdest bugs,
-in a Premium workspace you can browse the entire activity history.
+in a Premium workspace you can browse the entire Activity history.
 
 ## Enabling and disabling
 Activity history is enabled by default, however, you can use the method below to disable it:
