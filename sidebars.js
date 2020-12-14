@@ -54,6 +54,7 @@ module.exports = {
                         'ios/invoke',
                         'ios/disable',
                         'ios/silent-reports',
+                        'ios/email',
                         'ios/inspect',
                         'ios/intro-message',
                         'ios/screenshot',
