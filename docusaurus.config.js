@@ -73,11 +73,11 @@ module.exports = {
           title: 'Product',
           items: [
             {
-              label: 'Demo',
+              label: 'Live demo',
               href: 'https://demo.shakebugs.com',
             },
             {
-              label: 'Plans',
+              label: 'Pricing',
               href: 'https://www.shakebugs.com/pricing',
             },
             {
@@ -85,21 +85,29 @@ module.exports = {
               href: 'https://www.shakebugs.com/integrations',
             },
             {
+              label: 'Switch from Instabug',
+              href: 'https://www.shakebugs.com/instabug-alternative',
+            },
+            {
               label: 'Security',
               href: 'https://www.shakebugs.com/security',
-            },
-          ],
-        },
-        {
-          title: 'Features',
-          items: [
-            {
-              label: 'Why Shake',
-              href: 'https://www.shakebugs.com/why-shake',
             },
             {
               label: 'Roadmap',
               href: 'https://feedback.shakebugs.com',
+            }
+          ],
+        },
+        {
+          title: 'Shake for',
+          items: [
+            {
+              label: 'App developers',
+              href: 'https://www.shakebugs.com/app-developers',
+            },
+            {
+              label: 'QA teams',
+              href: 'https://www.shakebugs.com/qa-teams',
             },
           ],
         },

@@ -9,13 +9,26 @@ just click the button in the bottom-right corner of this screen.
 
 ## Version
 
-### 14.0
-<span class="tag-button">November 5, 2020</span>&nbsp;&nbsp;
+### 14.1
+<span class="tag-button">December 7, 2020</span>&nbsp;&nbsp;
 <span class="tag-button green-tag-button">Latest version</span>
 
 **What's new**
 
-Shake is available in the new Maven repository. If you're upgrading from the older version, make sure to [update the Maven repository in the build.gradle file](https://www.shakebugs.com/docs/android/setup#add-maven-repository-to-your-top-level-buildgradle-file).
+Shake now requires `compileSdkVersion` 29 or higher, make sure to [update the version in the build.gradle file](/android/setup.md#set-compilesdkversion-version-in-the-buildgradle-file).
+
+Shake will now automatically [redact sensitive data](android/manage-sensitive-data.md#sensitive-data-redaction) from your network requests, notifications and touch events so it never reaches Shake servers.
+
+We've added [console logs](android/activity.md#console-logs) to Activity history.
+
+We've all been waiting for this! Your users can record an additional video of their screen or grab one or two more extra screenshots and attach them to the feedback they're submitting — without ever leaving your app.
+
+### 14.0
+<span class="tag-button">November 5, 2020</span>&nbsp;&nbsp;
+
+**What's new**
+
+Shake is available in the new Maven repository. If you're upgrading from the older version, make sure to [update the Maven repository in the build.gradle file](/android/setup.md#add-maven-repository-to-your-top-level-buildgradle-file).
 
 Users can finally report [different types of feedback](/android/feedback_type.md): bugs, suggestions and questions.
 
@@ -35,7 +48,7 @@ If you want to, you can now pre-fill or hide the [Email field](/android/email.md
 
 **What's new**
 
-Screenshots are cool, but wouldn't it be even cooler if you could watch a 30 second video of what a user did before reporting the bug? That's why we introduced [Screen recording](/android/screen-recording.md).
+Screenshots are cool, but wouldn't it be even cooler if you could watch a 30 second video of what a user did before reporting the bug? That's why we introduced [Automatic screen recording](/android/automatic-screen-recording.md).
 
 ### 12.0
 <span class="tag-button">May 19, 2020</span>
