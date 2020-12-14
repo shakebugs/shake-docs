@@ -11,23 +11,23 @@ Shake has a very rich feature set, yet on some platforms we managed to achieve m
 |----------------------|:---------:|:--------:|:------------:|:------------:|
 | Custom invocation    |    ✅     |     ✅    |       ✅     |       ✅     |
 | Bug screenshot       |    ✅     |     ✅    |       ✅     |       ✅     |
-| Feedback types       |    ✅     |     ❌    |       ❌     |       ❌     |
-| Intro message        |    ✅     |     ❌    |       ❌     |       ❌     |
+| Feedback types       |    ✅     |     ✅    |       ❌     |       ❌     |
+| Intro message        |    ✅     |     ✅    |       ❌     |       ❌     |
 | Inspect bug          |    ✅     |     ✅    |       ✅     |       ✅     |
-| Screen recording     |    ✅     |     ❌    |       ❌     |       ❌     |
+| Screen recording     |    ✅     |     ✅    |       ❌     |       ❌     |
 | File attachment      |    ✅     |     ✅    |       ✅     |       ✅     |
 | Metadata             |    ✅     |     ✅    |       ❌     |       ❌     |
-| Quick facts          |    ❌     |     ✅    |       ✅     |       ✅     |
+| Quick facts          |    ❌     |     ❌    |       ✅     |       ✅     |
 | Black box            |    ✅     |     ✅    |       ✅     |       ✅     |
 | Network requests     |    ✅     |     ✅    |       ✅     |       ✅     |
 | Notification tracking|    ✅     |     ✅    |       ❌     |       ❌     |
 | Touch tracking       |    ✅     |     ✅    |       ✅     |       ❌     |
 | System events        |    ✅     |     ✅    |       ✅     |       ✅     |
 | Custom logs          |    ✅     |     ✅    |       ❌     |       ❌     |
-| Console logs         |    ✅     |     ❌    |       ❌     |       ❌     |
-| Manage sensitive data|    ✅     |     ❌    |       ❌     |       ❌     |
+| Console logs         |    ✅     |     ✅    |       ❌     |       ❌     |
+| Manage sensitive data|    ✅     |     ✅    |       ❌     |       ❌     |
 | Silent reports       |    ✅     |     ✅    |       ✅     |       ✅     |
-| Email pre-fill       |    ✅     |     ❌    |       ❌     |       ❌     |
+| Email pre-fill       |    ✅     |     ✅    |       ❌     |       ❌     |
 | White labeling       |    ✅     |     ✅    |       ❌     |       ❌     |
 
 import AndroidVersion from '@site/src/base/AndroidVersion';
@@ -44,7 +44,7 @@ import FlutterVersion from '@site/src/base/FlutterVersion';
 ## Minimum requirements
 |         |    Android   |     iOS    |  React Native |  Flutter |
 |:-------:|:------------:|:----------:|:-------------:|:--------:|
-| Version |      5.0     |     10     |      0.56     |   1.10   |
+| Version |      5.0     |     11     |      0.56     |   1.10   |
 
 
 

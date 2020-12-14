@@ -285,6 +285,8 @@ public class PaymentActivity : AppCompatActivity() {
 </TabItem>
 </Tabs>
 
+You can disable [Screen Recording](/android/screen-recording.md) feature if you want make sure that sensitive data is not recorded.
+
 <Tabs
   groupId="android"
   defaultValue="kotlin"
@@ -319,13 +321,13 @@ Shake.getReportConfiguration().isAutoVideoRecording = false
 
 Marking a view as private will automatically delete its touch events' text properties too. Consequently, you'll see them as `data_redacted` strings in your [Activity history](https://www.shakebugs.com/docs/android/activity#user-actions).
 
-Bear in mind that the view's ID, accessiblity labels and tags remain visible.
+Bear in mind that the view's ID, accessibility labels and tags remain visible.
 
 ## Network requests
 Certain network requests may contain sensitive data which you may not want to send to Shake servers.
 Use the `Shake.setNetworkRequestsFilter()` method to obfuscate only the sensitive parts of those requests, or to entirely prevent certain network requests from being logged.
 
-For example, if you'd like to obfuscate the *Authorization* header in all network requests sent from your app, do this:
+For example, if you'd like to obfuscate the *Authorization* header in all network requests sent from your app, do this:
 
 <Tabs
 groupId="android"
@@ -450,7 +452,7 @@ To clear the network requests filter, use `Shake.setNetworkRequestsFilter(null)`
 If your app notifications contain sensitive data, use the `Shake.setNotificationEventsFilter()`
 method to obfuscate only the sensitive parts of those notifications, or to entirely prevent certain notifications from being logged.
 
-For example, if you'd like to obfuscate the title of the notification event with *id* 0, do this:
+For example, if you'd like to obfuscate the description of the notification event that contains e-mail, do this:
 
 <Tabs
 groupId="android"
@@ -475,8 +477,8 @@ private void setupNotificationsFilter() {
     Shake.setNotificationEventsFilter(new NotificationEventsFilter() {
         @Override
         public NotificationEventEditor filter(NotificationEventEditor notificationEvent) {
-            if (notificationEvent.getId() == 0) {
-                notificationEvent.setTitle("***");
+            if (notificationEvent.getTitle().equals("E-mail changed")) {
+                notificationEvent.setDescription("***@gmail.com");
             }
             return notificationEvent;
         }
@@ -499,8 +501,8 @@ import com.shakebugs.shake.privacy.NotificationEventsFilter
 private fun setupNotificationsFilter() {
     // highlight-start
     Shake.setNotificationEventsFilter { notificationEvent ->
-        if (notificationEvent.id == 0) {
-            notificationEvent.title = "***"
+        if (notificationEvent.title == "E-mail changed") {
+            notificationEvent.description = "***@gmail.com"
         }
         notificationEvent
     }
@@ -536,7 +538,7 @@ private void setupNotificationsFilter() {
     Shake.setNotificationEventsFilter(new NotificationEventsFilter() {
         @Override
         public NotificationEventEditor filter(NotificationEventEditor notificationEvent) {
-            if (notificationEvent.getId() == 0) {
+            if (notificationEvent.getTitle().equals("E-mail changed")) {
                 return null;
             }
             return notificationEvent;
@@ -558,7 +560,7 @@ import com.shakebugs.shake.Shake
 private fun setupNotificationsFilter() {
     // highlight-start
     Shake.setNotificationEventsFilter { notificationEvent ->
-        if (notificationEvent.id == 0) {
+        if (notificationEvent.title == "E-mail changed") {
             null
         } else notificationEvent
     }
