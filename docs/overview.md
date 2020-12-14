@@ -24,6 +24,7 @@ Shake has a very rich feature set, yet on some platforms we managed to achieve m
 | Touch tracking       |    ✅     |     ✅    |       ✅     |       ❌     |
 | System events        |    ✅     |     ✅    |       ✅     |       ✅     |
 | Custom logs          |    ✅     |     ✅    |       ❌     |       ❌     |
+| Console logs         |    ✅     |     ❌    |       ❌     |       ❌     |
 | Manage sensitive data|    ✅     |     ❌    |       ❌     |       ❌     |
 | Silent reports       |    ✅     |     ✅    |       ✅     |       ✅     |
 | Email pre-fill       |    ✅     |     ❌    |       ❌     |       ❌     |
@@ -43,7 +44,7 @@ import FlutterVersion from '@site/src/base/FlutterVersion';
 ## Minimum requirements
 |         |    Android   |     iOS    |  React Native |  Flutter |
 |:-------:|:------------:|:----------:|:-------------:|:--------:|
-| Version |      4.2     |     10     |      0.56     |   1.10   |
+| Version |      5.0     |     10     |      0.56     |   1.10   |
 
 
 

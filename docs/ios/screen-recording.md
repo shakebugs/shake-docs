@@ -14,14 +14,9 @@ In situations where a screenshot is just not enough, a user can also make a vide
   src={useBaseUrl('screens/bug_screen.png')}
 />
 
-## Requirements
-Screen recording feature requires `compileSdkVersion` 29 or greater.
-
-To use screen recording feature, you should verify that `compileSdkVersion` and `targetSdkVersion`
-are correctly set in the app *build.gradle* file.
 
 ## How to use
-Screen recording is disabled by default but can be enabled by calling `Shake.getReportConfiguration().setAutoVideoRecording(true)` before `Shake.start()`. 
+Screen recording is disabled by default but can be enabled by calling `Shake.configuration.isAutoVideoRecordingEnabled = true`. 
 
 Duration of the video recording is another preference that can be set. The maximum value is 30 seconds.
 
@@ -32,39 +27,27 @@ You want the user to be able to record a video with a duration of up to 15 secon
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<Tabs
-  groupId="android"
-  defaultValue="kotlin"
-  values={[
-    { label: 'Java', value: 'java'},
-    { label: 'Kotlin', value: 'kotlin'},
-  ]
-}>
+<Tabs groupId="ios" defaultValue="swift" values={[{ label: 'Objective-C', value: 'objectivec'},{ label: 'Swift', value: 'swift'},]}><TabItem value="objectivec">
 
-<TabItem value="java">
-
-```java title="App.java"
-// highlight-start
-Shake.getReportConfiguration().setAutoVideoRecording(true);
-Shake.getReportConfiguration().setAutoVideoRecordingClipDuration(15);
-Shake.start(this);
-// highlight-end
+```objectivec title="AppDelegate.m"
+//highlight-start
+SHKShake.configuration.isAutoVideoRecordingEnabled = true;
+SHKShake.configuration.autoVideoRecordingClipDuration = 15;
+[SHKShake start];
+//highlight-end
 ```
 
-</TabItem>
+</TabItem><TabItem value="swift">
 
-<TabItem value="kotlin">
-
-```kotlin title="App.kt"
-// highlight-start
-Shake.getReportConfiguration().isAutoVideoRecording = true
-Shake.getReportConfiguration().autoVideoRecordingClipDuration = 15
-Shake.start(this)
-// highlight-end
+```swift title="AppDelegate.swift"
+//highlight-start
+Shake.configuration.isAutoVideoRecordingEnabled = true
+Shake.configuration.autoVideoRecordingClipDuration = 15
+Shake.start()
+//highlight-end
 ```
 
-</TabItem>
-</Tabs>
+</TabItem></Tabs>
 
 When Shake starts with screen recording enabled, a dialog will appear asking the user if they want to start recording a video. If the user declines they will be asked again after reporting a bug and returning to the previous screen.
 
@@ -72,3 +55,7 @@ When Shake starts with screen recording enabled, a dialog will appear asking the
 ## Security
 
 Screen recording is automatically paused when the app goes to background. This way no sensitive user data is recorded.
+
+## iOS version
+
+Screen recording runs on iOS 13+ devices only. Testing on iOS simulator may not work and can produce warnings in console log without screen recording.
