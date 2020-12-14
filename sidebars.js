@@ -56,6 +56,7 @@ module.exports = {
                         'ios/silent-reports',
                         'ios/email',
                         'ios/inspect',
+                        'ios/feedback_type',
                         'ios/intro-message',
                         'ios/screenshot',
                         'ios/screen-recording',
@@ -65,7 +66,6 @@ module.exports = {
                         'ios/attachments',
                         'ios/blackbox',
                         'ios/metadata',
-                        'ios/quick-facts',
                         'ios/manage-sensitive-data',
                     ]
                 },

@@ -16,29 +16,29 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 <Tabs
-  groupId="android"
-  defaultValue="kotlin"
+  groupId="ios"
+  defaultValue="swift"
   values={[
-    { label: 'Java', value: 'java'},
-    { label: 'Kotlin', value: 'kotlin'},
+    { label: 'Swift', value: 'swift'},
+    { label: 'Objective-C', value: 'objc'},
   ]
 }>
 
-<TabItem value="java">
+<TabItem value="swift">
 
-```java title="App.java"
+```swift title="AppDelegate.swift"
 // highlight-start
-Shake.getReportConfiguration().setEnableMultipleFeedbackTypes(false);
+Shake.configuration.isFeedbackTypeEnabled = false
 // highlight-end
 ```
 
 </TabItem>
 
-<TabItem value="kotlin">
+<TabItem value="objc">
 
-```kotlin title="App.kt"
+```objc title="AppDelegate.m"
 // highlight-start
-Shake.getReportConfiguration().isEnableMultipleFeedbackTypes = false
+SHKShake.configuration.isFeedbackTypeEnabled = false;
 // highlight-end
 ```
 
