@@ -24,7 +24,9 @@ import TabItem from '@theme/TabItem';
 <TabItem value="objectivec">
 
 ```objectivec title="AppDelegate.m"
+//highlight-start
 SHKShake.configuration.isEmailFieldEnabled = true;
+//highlight-end
 ```
 
 </TabItem>
@@ -32,7 +34,9 @@ SHKShake.configuration.isEmailFieldEnabled = true;
 <TabItem value="swift">
 
 ```swift title="AppDelegate.swift"
+//highlight-start
 Shake.configuration.isEmailFieldEnabled = true
+//highlight-end
 ```
 
 </TabItem>
@@ -53,7 +57,9 @@ Use the following method to save your users some time by pre-filling the field w
 <TabItem value="objectivec">
 
 ```objectivec title="AppDelegate.m"
+//highlight-start
 SHKShake.configuration.emailField = @"user@email.com";
+//highlight-end
 ```
 
 </TabItem>
@@ -61,7 +67,9 @@ SHKShake.configuration.emailField = @"user@email.com";
 <TabItem value="swift">
 
 ```swift title="AppDelegate.swift"
+//highlight-start
 Shake.configuration.emailField = "user@email.com"
+//highlight-end
 ```
 
 </TabItem>
