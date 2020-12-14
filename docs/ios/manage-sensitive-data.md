@@ -138,7 +138,7 @@ class PaymentViewController: STPPaymentOptionsViewController {
         super.viewWillAppear(animated)
         
         // highlight-next-line
-        Shake.addPrivateViewController(this)
+        Shake.addPrivateViewController(self)
     }
 }
 ```
@@ -170,7 +170,7 @@ defaultValue="swift"
 
 ```swift title="ViewController.swift"
 // highlight-next-line
-Shake.removePrivateViewController((self)
+Shake.removePrivateViewController(self)
 ```
 
 </TabItem>
@@ -517,9 +517,9 @@ To disable this feature use the method below:
 groupId="ios"
 defaultValue="swift"
 values={[
-  { label: 'Objective-C', value: 'objectivec'},
-  { label: 'Swift', value: 'swift'},
-  ]
+{ label: 'Objective-C', value: 'objectivec'},
+{ label: 'Swift', value: 'swift'},
+]
 }>
 
 <TabItem value="objectivec">
@@ -540,3 +540,4 @@ Shake.configuration.isSensitiveDataRedactionEnabled = false
 
 </TabItem>
 </Tabs>
+

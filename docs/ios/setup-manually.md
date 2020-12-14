@@ -91,5 +91,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 </TabItem>
 </Tabs>
 
+:::note
+
+To avoid a swizzling conflict, call `Shake.start()` before initializing all other frameworks (e.g. Firebase Performance Monitoring SDK). Otherwise, some network requests may not be captured and sent with reports.
+
+:::
+
 Now select *Product › Run* in the menu bar. This first run will automatically
 add your app to your [Shake Dashboard](https://app.shakebugs.com/) based on your app bundle ID.

@@ -15,11 +15,7 @@ What would you like us to build next? We're dying to hear from you — just clic
 You wanted us to get rid of Quick Facts (one long concatenated string)
 and introduce [Metadata](/ios/metadata.md) (useful key-value pairs) instead. So we did it.
 
-We've added SwiftPackageManager support, and removed Carthage support.
-
-Track the reports that are not yet uploaded by clicking *MoreOptions* in the report menu.
-
-More robust internal logging has been added to our SDK so any kind of issues are easier to spot, easier to fix.
+We've added Swift Package Manager support, and removed Carthage support.
 
 ### 12.0
 <span class="tag-button">September 18, 2020</span>&nbsp;&nbsp;
