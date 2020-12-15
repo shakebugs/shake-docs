@@ -18,7 +18,7 @@ Screenshots are cool, but wouldn't it be even cooler if you could watch a 30 sec
 
 Your users can record an additional video of their screen or grab one or two more extra screenshots and attach them to the feedback they're submitting — without ever leaving your app.
 
-Shake will now automatically [redact sensitive data](ios/manage-sensitive-data.md#sensitive-data-redaction) from your network requests, notifications and touch events so it never reaches Shake servers.
+Shake will now automatically [redact sensitive data](ios/manage-sensitive-data.md#automatically-redacted-sensitive-data) from your network requests, notifications and touch events so it never reaches Shake servers.
 
 Shake now allows you to [manage sensitive data](ios/manage-sensitive-data.md) on the mobile device itself, so it never reaches the Shake servers. It can be used for notifications, network requests, screens and screen elements.
 
