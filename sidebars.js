@@ -59,7 +59,7 @@ module.exports = {
                         'ios/feedback_type',
                         'ios/intro-message',
                         'ios/screenshot',
-                        'ios/screen-recording',
+                        'ios/automatic-screen-recording',
                         'ios/permissions',
                         'ios/activity',
                         'ios/essentials',
