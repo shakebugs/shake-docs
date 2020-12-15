@@ -1,6 +1,6 @@
 ---
-id: screen-recording
-title: Screen recording
+id: automatic-screen-recording
+title: Automatic screen recording
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 

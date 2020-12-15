@@ -121,6 +121,18 @@ Make sure that activity history is enabled if you want to send console logs with
 
 :::
 
+### User actions
+
+SDK automatically observes taps made on your app's UI elements.
+
+### Network requests
+
+Shake will capture the user's network traffic and log the events on the web dashboard.
+
+### System events
+
+Application lifecycle events and system events are automatically tracked.
+
 ## Limitations
 In a Free workspace you can see up to 20 events that lead to every bug.
 If you need to dive really deep to find causes of the weirdest bugs,
