@@ -44,7 +44,7 @@ import FlutterVersion from '@site/src/base/FlutterVersion';
 ## Minimum requirements
 |         |    Android   |     iOS    |  React Native |  Flutter |
 |:-------:|:------------:|:----------:|:-------------:|:--------:|
-| Version |      5.0     |     11     |      0.56     |   1.10   |
+| Version |      5.0     |     11     |      0.56     |   1.12   |
 
 
 

@@ -104,9 +104,15 @@ void main() {
     runApp(Home());
 }
 ```
+:::note
+
+Shake supports post Flutter 1.12 projects. If your project is created with the older version
+of Flutter, you should migrate your project to the new Android APIs via [official guide](https://flutter.dev/go/android-project-migration).
+
+:::
 
 :::note
 
-Shake Flutter supports devices with Android 7.0 version and higher.
+Shake supports devices with Android 7.0 version and higher.
 
 :::
