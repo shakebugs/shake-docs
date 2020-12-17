@@ -4,8 +4,7 @@ title: Release notes
 ---
 This page lists all updates to the Shake Android SDK.
 
-What would you like us to build next? We're dying to hear from you —
-just click the button in the bottom-right corner of this screen.
+What would you like us to build next? We're dying to hear from you — upvote upcoming features and suggest new ideas on [feedback.shakebugs.com](https://feedback.shakebugs.com/)
 
 ## Version
 
