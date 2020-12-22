@@ -55,7 +55,7 @@ Open your AndroidManifest.xml file. Paste this but replace `your-api-client-id` 
 </manifest>
 ```
 
-## Set *compileSdkVersion* version in the *build.gradle* file
+## Set compileSdkVersion version in the build.gradle file
 Shake requires `compileSdkVersion` 29 or greater, verify that `compileSdkVersion` is correctly set in the app *build.gradle* file.
 
 ```groovy title="build.gradle"
@@ -127,14 +127,14 @@ class App : Application() {
 </TabItem>
 </Tabs>
 
-If you’re creating a custom Application class for the first time, make sure to specify the subclass name in your AndroidManifest.xml:
+If you’re creating a custom *Application* class for the first time, make sure to specify it in your *AndroidManifest.xml*:
 
 ```xml title="AndroidManifest.xml"
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
   <application
       // highlight-start
-      android:name=".MyApp">
+      android:name=".App">
       // highlight-end
   </application>
 </manifest>
