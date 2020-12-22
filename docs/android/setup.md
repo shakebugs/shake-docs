@@ -75,6 +75,8 @@ android {
 ```
 
 ## Initialize Shake
+Initialize Shake in the `onCreate` callback of your Application subclass:
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
@@ -124,6 +126,19 @@ class App : Application() {
 
 </TabItem>
 </Tabs>
+
+If you’re creating a custom Application class for the first time, make sure to specify the subclass name in your AndroidManifest.xml:
+
+```xml title="AndroidManifest.xml"
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+  <application
+      // highlight-start
+      android:name=".MyApp">
+      // highlight-end
+  </application>
+</manifest>
+```
 
 Now build your project and see everything work! To build and run your
 app, select *Run › Run* in the menu bar. This first run will automatically
