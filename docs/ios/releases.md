@@ -14,7 +14,7 @@ What would you like us to build next? We're dying to hear from you — upvote up
 
 Users can finally report [different types of feedback](/ios/feedback_type.md): bugs, suggestions and questions.
 
-Screenshots are cool, but wouldn't it be even cooler if you could watch a 30 second video of what a user did before reporting the bug? That's why we introduced [Automatic screen recording](/ios/automatic-screen-recording.md).
+Screenshots are cool, but wouldn't it be even cooler if you could watch a short video of what a user did before reporting the bug? That's why we introduced [Automatic screen recording](/ios/automatic-screen-recording.md).
 
 Your users can record an additional video of their screen or grab one or two more extra screenshots and attach them to the feedback they're submitting — without ever leaving your app.
 
