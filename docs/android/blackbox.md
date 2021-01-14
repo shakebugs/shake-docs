@@ -50,6 +50,13 @@ When you hover over the chart, the exact state is shown.
 
 App orientation is captured every 2 seconds.
 
+### CPU
+This line chart shows the CPU usage of your app.
+When you hover over the chart, your app's exact CPU load is shown as a percentage of the total available CPU.
+We account for multi-threading — your percentage can go above 100% which would mean multiple threads were very busy.
+
+Your app's CPU usage is captured every 0.5 seconds.
+
 ## Enabling and disabling
 Black box is enabled by default, however, you can use the method below to disable it.
 

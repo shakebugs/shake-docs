@@ -16,12 +16,69 @@ You will see these files in the center of your web Dashboard along with files th
   src={useBaseUrl('screens/attachments_screen.png')}
 />
 
+
 ## Methods
 You can quietly attach files by using any of the methods described below.
 
-### Setting a custom filename and adding data
+### Setting a custom filename and then attaching a file
+*ShakeFile* can also be initialized with a desired filename (String) and a local url (NSURL) to your file:
+
+To define which files will be uploaded when a user reports a bug, you must call the `Shake.onPrepareData()` method overriding the `attachedFiles` method inside, as shown in the example below.
+
+You can call the `Shake.onPrepareData()` method anywhere within your app, but be careful only to call it once since any subsequent calls will override the former ones.
+
+<Tabs
+  groupId="ios"
+  defaultValue="swift"
+  values={[
+    { label: 'Objective-C', value: 'objectivec'},
+    { label: 'Swift', value: 'swift'},
+  ]
+}>
+
+<TabItem value="objectivec">
+
+```objectivec title="AppDelegate.m"
+NSString *fileName = ...
+NSURL *fileUrl = ...
+
+//highlight-start
+SHKShake.onPrepareReportData = ^SHKShakeReportData *_Nonnull(SHKShakeReportData *_Nonnull reportData) {
+  SHKShakeFile *attachedFile = [[SHKShakeFile alloc] initWithName:fileName andFileURL:fileUrl];
+  reportData.attachedFiles = @[attachedFile];
+  return reportData;
+};
+//highlight-end
+```
+
+</TabItem>
+
+<TabItem value="swift">
+
+```swift title="AppDelegate.swift"
+let fileName: String = ...
+let fileUrl: URL = ...
+
+//highlight-start
+Shake.onPrepareReportData = { shakeReportData in
+  if let attachedFile = ShakeFile(name: fileName, andFileURL: fileUrl) {
+    shakeReportData.attachedFiles = [attachedFile]
+  }
+  return shakeReportData
+}
+//highlight-end
+```
+
+</TabItem>
+</Tabs>
+
+### Attaching a file without the custom filename
 *ShakeFile* can be initialized with a filename (String) and data (NSData / Data).
 As custom data is provided, the file name cannot be automatically detected so it's mandatory:
+
+To define which files will be uploaded when a user reports a bug, you must call the `onPrepareData` method overriding the `attachedFiles` method inside, as shown in the example below.
+
+You can call the `Shake.onPrepareData()` method anywhere in your app, but be careful only to call it once, since subsequent calls will override the former ones.
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -70,53 +127,6 @@ Shake.onPrepareReportData = { shakeReportData in
 </TabItem>
 </Tabs>
 
-### Setting a custom filename and then attaching a file
-*ShakeFile* can also be initialized with a desired filename (String) and a local url (NSURL) to your file:
-
-<Tabs
-  groupId="ios"
-  defaultValue="swift"
-  values={[
-    { label: 'Objective-C', value: 'objectivec'},
-    { label: 'Swift', value: 'swift'},
-  ]
-}>
-
-<TabItem value="objectivec">
-
-```objectivec title="AppDelegate.m"
-NSString *fileName = ...
-NSURL *fileUrl = ...
-
-//highlight-start
-SHKShake.onPrepareReportData = ^SHKShakeReportData *_Nonnull(SHKShakeReportData *_Nonnull reportData) {
-  SHKShakeFile *attachedFile = [[SHKShakeFile alloc] initWithName:fileName andFileURL:fileUrl];
-  reportData.attachedFiles = @[attachedFile];
-  return reportData;
-};
-//highlight-end
-```
-
-</TabItem>
-
-<TabItem value="swift">
-
-```swift title="AppDelegate.swift"
-let fileName: String = ...
-let fileUrl: URL = ...
-
-//highlight-start
-Shake.onPrepareReportData = { shakeReportData in
-  if let attachedFile = ShakeFile(name: fileName, andFileURL: fileUrl) {
-    shakeReportData.attachedFiles = [attachedFile]
-  }
-  return shakeReportData
-}
-//highlight-end
-```
-
-</TabItem>
-</Tabs>
 
 ### Just attaching a file
 Or, you can initialize *ShakeFile* only with a local file url (NSURL),
