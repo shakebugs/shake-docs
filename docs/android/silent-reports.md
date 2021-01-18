@@ -5,51 +5,13 @@ title: Silent reports
 This page explains how to submit yourself a bug report from the background, without interrupting your end user whatsoever.
 
 ## Overview
-You can send silent reports to yourself by calling the `Shake.silentReport()` method anywhere after `Shake.start()`, as shown below:
-
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
-<Tabs
-  groupId="android"
-  defaultValue="kotlin"
-  values={[
-    { label: 'Java', value: 'java'},
-    { label: 'Kotlin', value: 'kotlin'},
-  ]
-}>
-
-<TabItem value="java">
-
-```java title="App.java"
-// highlight-start
-Shake.silentReport(
-    String description,
-    ShakeReportData reportData,
-    ShakeReportConfiguration configuration
-);
-// highlight-end
-```
-
-</TabItem>
-
-<TabItem value="kotlin">
-
-```kotlin title="App.kt"
-// highlight-start
-Shake.silentReport(
-    description: String,
-    reportData: ShakeReportData,
-    configuration: ShakeReportConfiguration
-)
-// highlight-end
-```
-
-</TabItem>
-</Tabs>
+You can send silent reports to yourself by calling the `Shake.silentReport()` method anywhere after `Shake.start()`.
 
 This method allows you to include: [Description and screenshot](android/screenshot.md), [Attachments](android/attachments.md), [Metadata](android/metadata.md) and [Activity history](android/activity.md) in your silent report.
 If you decide to do so, your code should look something like this example:
+
+import Tabs from '@theme/Tabs'; 
+import TabItem from '@theme/TabItem';
 
 <Tabs
   groupId="android"
@@ -87,9 +49,7 @@ private ShakeReportData createShakeReportData() {
 // highlight-end
 ```
 
-</TabItem>
-
-<TabItem value="kotlin">
+</TabItem><TabItem value="kotlin">
 
 ```kotlin title="App.kt"
 fun sendSilentReport() {
@@ -114,8 +74,7 @@ private fun createShakeReportData(): ShakeReportData {
 // highlight-end
 ```
 
-</TabItem>
-</Tabs>
+</TabItem></Tabs>
 
 ## Show the *Bug submitted* message
 Silent reports are programmatic and no Shake UI is shown.

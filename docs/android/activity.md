@@ -4,7 +4,7 @@ title: Activity history
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Shake diligently tracks user's interaction with your app, their network traffic and system events, and automatically attaches all of those to every bug report.
+Shake diligently tracks user's interaction with your app, their network traffic, notifications, logs and system events, and automatically attaches all of those to every bug report.
 
 ## Introduction
 You can inspect all events that lead to a bug being reported. A link to *Activity history* is located in the top right corner:
@@ -15,6 +15,7 @@ You can inspect all events that lead to a bug being reported. A link to *Activit
 />
 
 ## Setting up
+
 ### User actions
 To set up the SDK to observe taps made on your app's UI elements, add this to any Activity you want to track:
 
@@ -56,7 +57,7 @@ override fun dispatchTouchEvent(event: MotionEvent): Boolean {
 </TabItem>
 </Tabs>
 
-### Network
+### Network requests
 If you want to see user's network traffic to fix bugs more efficiently, add this line of code to your `OkHttpClient`:
 
 <Tabs

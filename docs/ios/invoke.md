@@ -2,13 +2,13 @@
 id: invoke
 title: Invoke
 ---
-This page covers how to change the user-initiated action that invokes the Shake SDK.
+This page describes in detail all the different methods that can be used to invoke the SDK.
 
 ## Invoke manually
 By default, the SDK is invoked when a user shakes their device.
 You don't need to code anything.
 
-You can choose another action — or more than one — that invokes the SDK.
+But if you want to, you can customize that.
 
 Let's look at an example.
 You want your users to invoke SDK either when they shake their device, or when they take a screenshot.
