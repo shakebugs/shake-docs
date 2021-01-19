@@ -15,14 +15,13 @@ Or, maybe you're building a new Airbnb and want *hosts* to be able to report bug
 
 You could simply never call the  `Shake.start()` method for guest users, but what if a user switches from host to guest mode?
 
-## Pausing
-Set `Shake.isPaused` property to `true` wherever you find it appropriate in your app.
+## How to use
+Set `Shake.isPaused` property to `true` wherever you find it appropriate in your app. Shake will be paused immediately, which means:
 
-Shake will be paused immediately, which means:
 1. Shake can't be invoked any more
 1. Shake stops tracking all data
 
-So let's suppose a user switches from one mode to another. You would do this:
+So let's suppose you want to allow *hosts* to use Shake, but not the *guests*. You would do this:
 
 <Tabs
   groupId="ios"
@@ -71,5 +70,5 @@ func didLogIn(user: User, success: Bool) {
 </Tabs>
 
 
-## Resuming
-When you want to resume Shake again, you can do it easily by setting `Shake.isPaused` back to  `false` .
+## Resume Shake again
+If, for some reason, you want to resume Shake again, you can do it easily by calling  `Shake.isPaused = false` .

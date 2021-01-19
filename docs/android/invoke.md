@@ -12,7 +12,7 @@ But if you want to, you can customize that.
 
 Let's look at an example.
 You want your users to invoke SDK either when they shake their device, or when they take a screenshot.
-To do that, call `Shake.getReportConfiguration()` before `Shake.start()` and pass one or more desired values.
+To do that, set true or false for certain `Shake.getReportConfiguration()` properties:
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';

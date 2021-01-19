@@ -8,7 +8,7 @@ import TabItem from '@theme/TabItem';
 
 Shake diligently tracks user's interaction with your app, their network traffic, notifications, logs and system events, and automatically attaches all of those to every bug report.
 
-## No coding required
+## Introduction
 You can inspect all events that lead to the bug being reported out-of-the-box. You'll see a link to *Activity history* in the top right corner:
 
 <img
@@ -17,6 +17,15 @@ You can inspect all events that lead to the bug being reported out-of-the-box. Y
 />
 
 ## Setting up
+
+### User actions
+SDK automatically observes taps made on your app's UI elements.
+
+### Network requests
+Shake will capture the user's network traffic and log the events on the web dashboard.
+
+### System events
+System events are tracked automatically and require no additional setup.
 
 ### Notifications
 Notifications are tracked automatically and require no additional setup.
@@ -120,18 +129,6 @@ Shake.configuration.isConsoleLogsEnabled = false
 Make sure that activity history is enabled if you want to send console logs with your report.
 
 :::
-
-### User actions
-
-SDK automatically observes taps made on your app's UI elements.
-
-### Network requests
-
-Shake will capture the user's network traffic and log the events on the web dashboard.
-
-### System events
-
-Application lifecycle events and system events are automatically tracked.
 
 ## Limitations
 In a Free workspace you can see up to 20 events that lead to every bug.
