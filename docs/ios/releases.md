@@ -6,9 +6,20 @@ This page lists all updates to the Shake iOS SDK.
 
 What would you like us to build next? We're dying to hear from you — upvote upcoming features and suggest new ideas on [feedback.shakebugs.com](https://feedback.shakebugs.com/)
 
+### 14.1.1
+<span class="tag-button">January 21, 2021</span>&nbsp;&nbsp;
+<span class="tag-button green-tag-button">Latest version</span>
+
+**What's new**
+
+We updated the start method. The configuration keys are now loaded via the method, and not with the values from the `.plist` file. Don’t worry, the existing implementation will still work for some time.
+
+**Bug fixes**
+
+There were a few minor bugs that caused problems, like bugs do. We fixed those, and improved the SDK stability too.
+
 ### 14.1
 <span class="tag-button">December 14, 2020</span>&nbsp;&nbsp;
-<span class="tag-button green-tag-button">Latest version</span>
 
 **What's new**
 

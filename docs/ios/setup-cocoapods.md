@@ -59,29 +59,10 @@ import IosVersion from '@site/src/base/IosVersion';
 Then, run the `pod install` command in your terminal.
 After the installation also run `pod update Shake` to be perfectly sure you're using the latest Shake <IosVersion/>.
 
-### Add Client ID and Secret to Info.plist
-Open your workspace and in the Project Navigator, right click on *Info.plist*, and *Open as › Source code*.
-Paste this but replace *your-api-client-id* and *your-api-client-secret*
-with the actual values you have in [your workspace settings](https://app.shakebugs.com/settings/workspace#general):
-
-```xml title="Info.plist"
-<?xml version="1.0" encoding="utf-8" ?>
-<plist version="1.0">
-  <dict>
-      // highlight-start
-      <key>Shake</key>
-      <dict>
-        <key>APIClientID</key>
-        <string>your-api-client-id</string>
-        <key>APIClientSecret</key>
-        <string>your-api-client-secret</string>
-      </dict>
-      // highlight-end
-  </dict>
-</plist>
-```
-
 ### Initialize Shake SDK
+Initialize Shake in the `didFinishLaunchingWithOptions` callback of your *AppDelegate*.
+Replace `your-api-client-id` and `your-api-client-secret` with the actual values you have in [your workspace settings](https://app.shakebugs.com/settings/workspace#general).
+
 <Tabs
   groupId="ios"
   defaultValue="swift"
@@ -101,7 +82,7 @@ with the actual values you have in [your workspace settings](https://app.shakebu
 @implementation AppDelegate
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
   // highlight-next-line
-  [SHKShake start];
+  [SHKShake startWithClientId:@"your-api-client-id" clientSecret:@"your-api-client-secret"];
   return YES;
 }
 @end
@@ -122,7 +103,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     _ application: UIApplication,
     didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
       // highlight-next-line
-      Shake.start()
+      Shake.start(clientId: "your-api-client-id", clientSecret: "your-api-client-secret")
       return true
   }
 }
