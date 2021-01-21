@@ -63,7 +63,7 @@ private fun maskSensitiveData() {
 </TabItem>
 </Tabs>
 
-To remove a view from the list of private views, use the following method:
+To remove view from private views use following method:
 
 <Tabs 
   groupId="android"
