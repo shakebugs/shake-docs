@@ -8,9 +8,18 @@ What would you like us to build next? We're dying to hear from you — upvote up
 
 ## Version
 
+### 14.1.1
+<span class="tag-button">January 21, 2021</span>&nbsp;&nbsp;
+<span class="tag-button green-tag-button">Latest version</span>
+
+**What's new**
+
+We’ve updated the start method. The configuration keys are now loaded via the method, and not with the values from the .xml file. Don’t worry, existing implementation will still work for some time.
+
+We’ve been working on SDK stability and resolved some bugs and minor issues.
+
 ### 14.1
 <span class="tag-button">December 7, 2020</span>&nbsp;&nbsp;
-<span class="tag-button green-tag-button">Latest version</span>
 
 **What's new**
 
