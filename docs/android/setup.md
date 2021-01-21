@@ -24,37 +24,6 @@ import AndroidVersionBlock from '@site/src/base/AndroidVersionBlock';
 
 <AndroidVersionBlock></AndroidVersionBlock>
 
-## Add Client ID and Secret to AndroidManifest.xml as metadata
-Open your AndroidManifest.xml file. Paste this but replace `your-api-client-id` and
-`your-api-client-secret` with the actual values you have in [your workspace settings](https://app.shakebugs.com/settings/workspace#general).
-
-```xml title="AndroidManifest.xml"
-<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android">
-  <application
-    android:allowBackup="true"
-    android:icon="@mipmap/ic_launcher"
-    android:label="@string/app_name"
-    android:theme="@style/AppTheme" >
-      <activity android:name=".MainActivity" android:label="@string/app_name" >
-        <intent-filter>
-          <action android:name="android.intent.action.MAIN" />
-          <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
-      </activity>
-      // highlight-start
-      <meta-data
-        android:name="com.shakebugs.APIClientID"
-        android:value="your-api-client-id" />
-      <meta-data
-        android:name="com.shakebugs.APIClientSecret"
-        android:value="your-api-client-secret" />
-      // highlight-end
-  </application>
-  <uses-permission android:name="android.permission.INTERNET" />
-</manifest>
-```
-
 ## Set compileSdkVersion version in the build.gradle file
 Shake requires `compileSdkVersion` 29 or greater, verify that `compileSdkVersion` is correctly set in the app *build.gradle* file.
 
@@ -75,7 +44,8 @@ android {
 ```
 
 ## Initialize Shake
-Initialize Shake in the `onCreate` callback of your Application subclass:
+Initialize Shake in the `onCreate` callback of your *Application*.
+Replace `your-api-client-id` and `your-api-client-secret` with the actual values you have in [your workspace settings](https://app.shakebugs.com/settings/workspace#general).
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -101,7 +71,7 @@ public class App extends Application {
   public void onCreate() {
     super.onCreate();
     // highlight-next-line
-    Shake.start(this);
+    Shake.start(this, "your-api-client-id", "your-api-client-secret");
   }
 }
 ```
@@ -119,7 +89,7 @@ class App : Application() {
   override fun onCreate() {
     super.onCreate()
     // highlight-next-line
-    Shake.start(this)
+    Shake.start(this, "your-api-client-id", "your-api-client-secret")
   }
 }
 ```
