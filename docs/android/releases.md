@@ -58,7 +58,7 @@ If you want to, you can now pre-fill or hide the [Email field](/android/email.md
 
 **What's new**
 
-Screenshots are cool, but wouldn't it be even cooler if you could watch a 30 second video of what a user did before reporting the bug? That's why we introduced [Automatic screen recording](/android/automatic-screen-recording.md).
+Screenshots are cool, but wouldn't it be even cooler if you could watch a short video of what a user did before reporting the bug? That's why we introduced [Automatic screen recording](/android/automatic-screen-recording.md).
 
 ### 12.0
 <span class="tag-button">May 19, 2020</span>
