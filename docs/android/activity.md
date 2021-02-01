@@ -132,6 +132,50 @@ Shake.handleNetworkRequest(
 </TabItem>
 </Tabs>
 
+You can add your own custom network requests at any time:
+
+<Tabs
+  groupId="android"
+  defaultValue="kotlin"
+  values={[
+    { label: 'Java', value: 'java'},
+    { label: 'Kotlin', value: 'kotlin'},
+  ]
+}>
+
+<TabItem value="java">
+
+```java title="App.java"
+// highlight-start
+NetworkRequestBuilder networkRequestBuilder = new NetworkRequestBuilder()
+                 .setUrl("https://api.github.com")
+                 .setMethod("POST")
+                 .setRequestHeaders(requestHeaders)
+                 .setRequestBody(requestBody)
+                 .seTimestamp(new Date());
+Shake.insertNetworkRequest(networkRequestBuilder);
+// highlight-end
+```
+
+</TabItem>
+
+<TabItem value="kotlin">
+
+```kotlin title="App.kt"
+// highlight-start
+val networkRequestBuilder = NetworkRequestBuilder()
+                .setUrl("https://api.github.com")
+                .setMethod("POST")
+                .setRequestHeaders(requestHeaders)
+                .setRequestBody(requestBody)
+                .seTimestamp(Date())
+Shake.insertNetworkRequest(networkRequestBuilder)
+// highlight-end
+```
+
+</TabItem>
+</Tabs>
+
 ### System events
 System events are tracked automatically and require no additional setup.
 
