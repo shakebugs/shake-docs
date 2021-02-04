@@ -12,9 +12,11 @@ What would you like us to build next? We're dying to hear from you — upvote up
 
 **What's new**
 
-We’ve updated the start method. The configuration keys are now loaded via the method, and not with the values from the .plist file. Don’t worry, existing implementation will still work for some time.
+We updated the start method. The configuration keys are now loaded via the method, and not with the values from the `.plist` file. Don’t worry, the existing implementation will still work for some time.
 
-We’ve been working on SDK stability and resolved some bugs and minor issues.
+**Bug fixes**
+
+There were a few minor bugs that caused problems, like bugs do. We fixed those, and improved the SDK stability too.
 
 ### 14.1
 <span class="tag-button">December 14, 2020</span>&nbsp;&nbsp;
@@ -23,7 +25,7 @@ We’ve been working on SDK stability and resolved some bugs and minor issues.
 
 Users can finally report [different types of feedback](/ios/feedback_type.md): bugs, suggestions and questions.
 
-Screenshots are cool, but wouldn't it be even cooler if you could watch a 30 second video of what a user did before reporting the bug? That's why we introduced [Automatic screen recording](/ios/automatic-screen-recording.md).
+Screenshots are cool, but wouldn't it be even cooler if you could watch a short video of what a user did before reporting the bug? That's why we introduced [Automatic screen recording](/ios/automatic-screen-recording.md).
 
 Your users can record an additional video of their screen or grab one or two more extra screenshots and attach them to the feedback they're submitting — without ever leaving your app.
 
