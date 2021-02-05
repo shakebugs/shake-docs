@@ -8,6 +8,14 @@ What would you like us to build next? We're dying to hear from you — upvote up
 
 ## Version
 
+### 14.1.2
+<span class="tag-button">February 4, 2021</span>&nbsp;&nbsp;
+<span class="tag-button green-tag-button">Latest version</span>
+
+**Bug fixes**
+
+We've tinkered with some details and gave the interiors a thorough clean. The SDK is now smoother than it was.
+
 ### 14.1.1
 <span class="tag-button">January 21, 2021</span>&nbsp;&nbsp;
 <span class="tag-button green-tag-button">Latest version</span>
@@ -58,7 +66,7 @@ If you want to, you can now pre-fill or hide the [Email field](/android/email.md
 
 **What's new**
 
-Screenshots are cool, but wouldn't it be even cooler if you could watch a 30 second video of what a user did before reporting the bug? That's why we introduced [Automatic screen recording](/android/automatic-screen-recording.md).
+Screenshots are cool, but wouldn't it be even cooler if you could watch a short video of what a user did before reporting the bug? That's why we introduced [Automatic screen recording](/android/automatic-screen-recording.md).
 
 ### 12.0
 <span class="tag-button">May 19, 2020</span>

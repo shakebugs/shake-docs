@@ -19,8 +19,7 @@ With this feature turned on, a system dialog will ask testers if they want to al
 
 ## How to use
 Automatic screen recording is disabled by default but can be enabled by calling `Shake.getReportConfiguration().setAutoVideoRecording(true)` before `Shake.start()`. 
-
-Duration of the automatically attached video is another preference that can be optionally set. The maximum value is 30 seconds:
+Duration of the automatically attached video is 15 seconds.
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -39,7 +38,6 @@ import TabItem from '@theme/TabItem';
 ```java title="App.java"
 // highlight-start
 Shake.getReportConfiguration().setAutoVideoRecording(true);
-Shake.getReportConfiguration().setAutoVideoRecordingClipDuration(15);
 Shake.start(this);
 // highlight-end
 ```
@@ -51,7 +49,6 @@ Shake.start(this);
 ```kotlin title="App.kt"
 // highlight-start
 Shake.getReportConfiguration().isAutoVideoRecording = true
-Shake.getReportConfiguration().autoVideoRecordingClipDuration = 15
 Shake.start(this)
 // highlight-end
 ```

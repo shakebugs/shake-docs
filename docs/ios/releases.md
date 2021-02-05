@@ -6,6 +6,14 @@ This page lists all updates to the Shake iOS SDK.
 
 What would you like us to build next? We're dying to hear from you — upvote upcoming features and suggest new ideas on [feedback.shakebugs.com](https://feedback.shakebugs.com/)
 
+### 14.1.2
+<span class="tag-button">February 4, 2021</span>&nbsp;&nbsp;
+<span class="tag-button green-tag-button">Latest version</span>
+
+**Bug fixes**
+
+We've tinkered with some details and gave the interiors a thorough clean. The SDK is now smoother than it was.
+
 ### 14.1.1
 <span class="tag-button">January 21, 2021</span>&nbsp;&nbsp;
 <span class="tag-button green-tag-button">Latest version</span>
@@ -25,7 +33,7 @@ There were a few minor bugs that caused problems, like bugs do. We fixed those, 
 
 Users can finally report [different types of feedback](/ios/feedback_type.md): bugs, suggestions and questions.
 
-Screenshots are cool, but wouldn't it be even cooler if you could watch a 30 second video of what a user did before reporting the bug? That's why we introduced [Automatic screen recording](/ios/automatic-screen-recording.md).
+Screenshots are cool, but wouldn't it be even cooler if you could watch a short video of what a user did before reporting the bug? That's why we introduced [Automatic screen recording](/ios/automatic-screen-recording.md).
 
 Your users can record an additional video of their screen or grab one or two more extra screenshots and attach them to the feedback they're submitting — without ever leaving your app.
 
