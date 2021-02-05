@@ -8,6 +8,14 @@ What would you like us to build next? We're dying to hear from you — upvote up
 
 ## Version
 
+### 14.1.2
+<span class="tag-button">February 4, 2021</span>&nbsp;&nbsp;
+<span class="tag-button green-tag-button">Latest version</span>
+
+**Bug fixes**
+
+We've tinkered with some details and gave the interiors a thorough clean. The SDK is now smoother than it was.
+
 ### 14.1.1
 <span class="tag-button">January 21, 2021</span>&nbsp;&nbsp;
 <span class="tag-button green-tag-button">Latest version</span>
