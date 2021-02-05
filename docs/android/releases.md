@@ -18,7 +18,6 @@ We've tinkered with some details and gave the interiors a thorough clean. The SD
 
 ### 14.1.1
 <span class="tag-button">January 21, 2021</span>&nbsp;&nbsp;
-<span class="tag-button green-tag-button">Latest version</span>
 
 **What's new**
 
