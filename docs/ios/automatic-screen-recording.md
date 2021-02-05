@@ -17,7 +17,7 @@ Shake can constantly record your testers' screens and automatically attach those
 />
 
 ## How to use
-Automatic screen recording is disabled by default but can be enabled by calling `Shake.configuration.isAutoVideoRecordingEnabled = true`. 
+Automatic screen recording is disabled by default but can be enabled by calling `Shake.configuration.isAutoVideoRecordingEnabled = true` before `Shake.start()`. 
 Duration of the automatically attached video is 15 seconds.
 
 import Tabs from '@theme/Tabs';
