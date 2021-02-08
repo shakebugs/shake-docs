@@ -152,7 +152,7 @@ NetworkRequestBuilder networkRequestBuilder = new NetworkRequestBuilder()
                  .setMethod("POST")
                  .setRequestHeaders(requestHeaders)
                  .setRequestBody(requestBody)
-                 .seTimestamp(new Date());
+                 .setTimestamp(new Date());
 Shake.insertNetworkRequest(networkRequestBuilder);
 // highlight-end
 ```
@@ -168,7 +168,7 @@ val networkRequestBuilder = NetworkRequestBuilder()
                 .setMethod("POST")
                 .setRequestHeaders(requestHeaders)
                 .setRequestBody(requestBody)
-                .seTimestamp(Date())
+                .setTimestamp(Date())
 Shake.insertNetworkRequest(networkRequestBuilder)
 // highlight-end
 ```
