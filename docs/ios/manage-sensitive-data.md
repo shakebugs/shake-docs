@@ -510,6 +510,7 @@ In addition Shake will replace any header value with `data_redacted` string if t
 * Authorization
 * Proxy-Authorization
 * card[number]
+* token
 
 To disable this feature use the method below:
 
