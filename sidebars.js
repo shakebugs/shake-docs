@@ -61,6 +61,7 @@ module.exports = {
                         'ios/intro-message',
                         'ios/screenshot',
                         'ios/automatic-screen-recording',
+                        'ios/crash-reporting',
                         'ios/permissions',
                         'ios/activity',
                         'ios/essentials',
