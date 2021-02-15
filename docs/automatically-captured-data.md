@@ -30,7 +30,7 @@ Before we list data Shake SDK does capture, we first want to give you many examp
 | User or device ID                            |        | Not collected. |
 | Advertising or other usage data              |        | Not collected. |
 | Other diagnostic data                        |        | Not collected. | 
-| Feedback type                                | <span class="tag-button yellow-tag-button">Optional</span> <span class="tag-button green-tag-button">Non-PII</span> | If you want your users to [categorize their feedback](https://www.shakebugs.com/docs/android/feedback_type), they will enter this info themselves. Shake does not capture it automatically. |
+| Feedback type                                | <span class="tag-button yellow-tag-button">Optional</span> <span class="tag-button green-tag-button">Non-PII</span> | If you want your users to [categorize their feedback](/android/feedback_type.md), they will enter this info themselves. Shake does not capture it automatically. |
 
 ## Automatically captured data
 
