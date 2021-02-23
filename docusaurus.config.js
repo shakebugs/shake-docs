@@ -9,7 +9,7 @@ module.exports = {
   themeConfig: {
     prism: {
       theme: require('prism-react-renderer/themes/dracula'),
-      additionalLanguages: ['groovy', 'kotlin', 'java', 'swift', 'dart'],
+      additionalLanguages: ['groovy', 'kotlin', 'java', 'swift', 'dart', 'batch'],
     },
     algolia: {
       apiKey: '0a7f58d03fe8cc9d31b51d69d009654f',

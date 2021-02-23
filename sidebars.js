@@ -22,6 +22,7 @@ module.exports = {
                         'android/intro-message',
                         'android/screenshot',
                         'android/automatic-screen-recording',
+                        'android/crash-reporting',
                         'android/permissions',
                         'android/activity',
                         'android/essentials',
