@@ -93,7 +93,7 @@ Shake.configuration.isInvokedByRightEdgePan = true
 The default, shaking gesture causes the SDK to pop up.
 
 ### Button
-This invocation event will create the floating button on top of your app's UI which users can clearly see at all times.This button can be dragged to a more suitable position.
+This invocation event will create the floating button on top of your app's UI which users can clearly see at all times. This button can be dragged to a more suitable position.
 
 ### Taking a screenshot
 The SDK will be invoked when testers make a screenshot while using your app.

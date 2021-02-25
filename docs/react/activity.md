@@ -4,61 +4,119 @@ title: Activity history
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Shake diligently tracks user's interaction with your app, their network traffic and system events,
-and automatically attaches all of those to every bug report.
+Shake diligently tracks user's interaction with your app, their network traffic, notifications, logs and system events, and automatically attaches all of those to every bug report.
 
-## No coding required
-You can inspect all events that lead to the bug being reported out-of-the-box. You'll see a link to *Activity history* in the top right corner:
+## Introduction
+You can inspect all events that lead to a bug being reported. A link to *Activity history* is located in the top right corner:
 
 <img
   alt="Activity screen"
   src={useBaseUrl('screens/activity_screen.png')}
 />
 
-## Network requests
-Network reuqests tracking is enabled by default, but if you want you can change that:
+## Setting up
+
+### User actions
+SDK automatically observes taps made on your app's UI elements.
+
+On Android, [code snippet](/react/manual-linking.md#android) required to enable touch tracking is added by running [add command](/react/setup.md#install).
+
+### Network requests
+Network tracker is disabled by default, to enable network requests tracking use the following method:
 
 ```javascript title="App.js"
-import React, {Component} from 'react';
-import {Text, View} from 'react-native';
 // highlight-next-line
-import {NetworkTracker} from '@shakebugs/react-native-shake';
+Shake.setNetworkRequestsEnabled(true);
+```
 
-export default class App extends Component<{}> {
-  const enableNetworkTracker = () => {
+You can add your own custom network requests at any time:
+
+```javascript title="App.js"
+// highlight-next-line
+import Shake, { NetworkRequestBuilder } from '@shakebugs/react-native-shake';
+
+// highlight-start
+const networkRequestBuilder = new NetworkRequestBuilder()
+    .setMethod('POST')
+    .setStatusCode('200')
+    .setUrl('https://api.example.com')
+    .setRequestBody('Request body')
+    .setResponseBody('Response body')
+    .setRequestHeaders({header1: 'requestHeader'})
+    .setResponseHeaders({header2: 'responseHeader'})
+    .setDuration(100)
+    .setDate(new Date());
+Shake.insertNetworkRequest(networkRequestBuilder);
+// highlight-end
+```
+
+### System events
+System events are tracked automatically and require no additional setup.
+
+### Notifications
+On iOS, notifications are tracked automatically and require no additional setup.   
+
+Android requires notifications permission in the settings to track notifications.  
+Use the following code snippet to show notification settings screen to the user:
+
+```javascript title="App.js"
+// highlight-next-line
+Shake.showNotificationsSettings();
+```
+
+You can add your own custom notification events at any time:
+
+```javascript title="App.js"
+// highlight-next-line
+import Shake, { NotificationEventBuilder } from '@shakebugs/react-native-shake';
+
+// highlight-start
+const notificationEventBuilder = new NotificationEventBuilder()
+    .setId(0)
+    .setDescription('Description')
+    .setTitle('Title');
+Shake.insertNotificationEvent(notificationEventBuilder);
+// highlight-end
+```
+
+### Custom logs
+You can add your own custom logs to Activity history, which will then be shown as part of every bug report.
+Here’s an example of how this would look like in code:
+
+```javascript title="App.js"
+// highlight-next-line
+import Shake, { LogLevel } from "@shakebugs/react-native-shake";
+
+const sendCustomLog = () => {
     // highlight-next-line
-    NetworkTracker.setEnabled(true);
-  }
-  
-  const disableNetworkTracker = () => {
-    // highlight-next-line
-    NetworkTracker.setEnabled(false);
-  }
-  
-  render () {
-    return (
-      <View>
-        <Text>Welcome!</Text>
-      </View>
-    );
-  }
+    Shake.log(LogLevel.INFO, "This is a Shake custom log.");
 }
 ```
+
+### Console logs
+Console logs are recorded automatically and require no additional setup. If you want to disable this
+feature use the method below:
+
+```javascript title="App.js"
+// highlight-next-line
+Shake.setConsoleLogsEnabled(false);
+```
+
+:::note
+
+Make sure that activity history is enabled if you want to send console logs with your report.
+
+:::
+
+## Limitations
+In a Free workspace you can see up to 20 events that lead to every bug.
+If you need to dive really deep to find causes of the weirdest bugs,
+in a Premium workspace you can browse the entire activity history.
 
 ## Enabling and disabling
 Activity history is enabled by default, however, you can use the method below to disable it:
 
 ```javascript title="App.js"
 // highlight-next-line
-import Shake from '@shakebugs/react-native-shake';
-
-const disableActivityHistory = () => {
-    // highlight-next-line
-    Shake.setEnableActivityHistory(false);
-}
+Shake.setEnableActivityHistory(false);
 ```
-
-## Limitations
-In a Free workspace, you can see up to 20 events that lead to every bug.
-If you need to dive really deep to find causes of the weirdest bugs upgrade to Premium.
-In a Premium workspace you can browse the entire activity history.

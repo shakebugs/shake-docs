@@ -100,7 +100,7 @@ In case you want to test Shake SDK in Android Emulator, it’s useful to know th
 :::
 
 ### Button
-This invocation event will create the floating button on top of your app's UI which users can clearly see at all times.This button can be dragged to a more suitable position.
+This invocation event will create the floating button on top of your app's UI which users can clearly see at all times. This button can be dragged to a more suitable position.
 
 :::note
 

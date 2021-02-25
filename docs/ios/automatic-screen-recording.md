@@ -26,19 +26,15 @@ import TabItem from '@theme/TabItem';
 <Tabs groupId="ios" defaultValue="swift" values={[{ label: 'Objective-C', value: 'objectivec'},{ label: 'Swift', value: 'swift'},]}><TabItem value="objectivec">
 
 ```objectivec title="AppDelegate.m"
-//highlight-start
+// highlight-next-line
 SHKShake.configuration.isAutoVideoRecordingEnabled = true;
-[SHKShake start];
-//highlight-end
 ```
 
 </TabItem><TabItem value="swift">
 
 ```swift title="AppDelegate.swift"
-//highlight-start
+// highlight-next-line
 Shake.configuration.isAutoVideoRecordingEnabled = true
-Shake.start()
-//highlight-end
 ```
 
 </TabItem></Tabs>

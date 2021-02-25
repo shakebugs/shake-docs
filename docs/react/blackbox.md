@@ -59,10 +59,5 @@ Black box is enabled by default, however, you can use the method below to disabl
 
 ```javascript title="App.js"
 // highlight-next-line
-import Shake from '@shakebugs/react-native-shake';
-
-const disableBlackbox = () => {
-    // highlight-next-line
-    Shake.setEnableBlackBox(false);
-}
+Shake.setEnableBlackBox(false);
 ```

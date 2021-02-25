@@ -16,7 +16,6 @@ You will see these files in the center of your web Dashboard along with files th
   src={useBaseUrl('screens/attachments_screen.png')}
 />
 
-
 ## Methods
 You can quietly attach files by using any of the methods described below.
 
