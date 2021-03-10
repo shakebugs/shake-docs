@@ -38,7 +38,7 @@ import TabItem from '@theme/TabItem';
 ```java title="App.java"
 // highlight-start
 Shake.getReportConfiguration().setAutoVideoRecording(true);
-Shake.start(this);
+Shake.start(this, "client-id", "client-secret");
 // highlight-end
 ```
 
@@ -49,7 +49,7 @@ Shake.start(this);
 ```kotlin title="App.kt"
 // highlight-start
 Shake.getReportConfiguration().isAutoVideoRecording = true
-Shake.start(this)
+Shake.start(this, "client-id", "client-secret")
 // highlight-end
 ```
 
