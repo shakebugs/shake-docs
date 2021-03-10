@@ -28,7 +28,7 @@ import TabItem from '@theme/TabItem';
 ```objectivec title="AppDelegate.m"
 //highlight-start
 SHKShake.configuration.isAutoVideoRecordingEnabled = true;
-[SHKShake start];
+[SHKShake startWithClientId:@"client-id" clientSecret:@"client-secret"];
 //highlight-end
 ```
 
@@ -37,7 +37,7 @@ SHKShake.configuration.isAutoVideoRecordingEnabled = true;
 ```swift title="AppDelegate.swift"
 //highlight-start
 Shake.configuration.isAutoVideoRecordingEnabled = true
-Shake.start()
+Shake.start(clientId: "client-id", clientSecret: "client-secret")
 //highlight-end
 ```
 

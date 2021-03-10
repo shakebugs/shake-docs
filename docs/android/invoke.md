@@ -32,7 +32,7 @@ import TabItem from '@theme/TabItem';
 // highlight-start
 Shake.getReportConfiguration().setInvokeShakeOnShakeDeviceEvent(true);
 Shake.getReportConfiguration().setInvokeShakeOnScreenshot(true);
-Shake.start(this);
+Shake.start(this, "client-id", "client-secret");
 // highlight-end
 ```
 
@@ -44,7 +44,7 @@ Shake.start(this);
 // highlight-start
 Shake.getReportConfiguration().isInvokeShakeOnShakeDeviceEvent = true
 Shake.getReportConfiguration().isInvokeShakeOnScreenshot = true
-Shake.start(this)
+Shake.start(this, "client-id", "client-secret")
 // highlight-end
 ```
 
