@@ -11,6 +11,7 @@ so it never reaches the Shake servers.
 
 ## Views
 You can mark any view as private, and it'll automatically be deleted from the screenshot.
+Private views are stored as a weak reference, they get cleared from the memory when not used anymore.
 
 Let's suppose you're building a shopping cart app and you want to delete the name and the credit card number views
 from the screenshot:
@@ -589,7 +590,6 @@ In addition, Shake will replace any header value with `data_redacted` string if 
 * Authorization
 * Proxy-Authorization
 * card[number]
-* token
 
 To disable this feature use the method below:
 
