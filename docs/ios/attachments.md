@@ -42,10 +42,11 @@ NSString *fileName = ...
 NSData *fileData = ...
 
 //highlight-start
-SHKShake.onPrepareReportData = ^SHKShakeReportData *_Nonnull(SHKShakeReportData *_Nonnull reportData) {
+SHKShake.onPrepareReportData = ^NSArray<SHKShakeFile *> * _Nonnull {
+  NSMutableArray <SHKShakeFile *> *attachedFiles = NSMutableArray.new;
   SHKShakeFile *attachedFile = [[SHKShakeFile alloc] initWithName:fileName andData:fileData];
-  reportData.attachedFiles = @[attachedFile];
-  return reportData;
+  [attachedFiles addObject:attachedFile];
+  return attachedFiles;
 };
 //highlight-end
 ```
@@ -59,10 +60,12 @@ let fileName: String = ...
 let logData: Data = ...
 
 //highlight-start
-Shake.onPrepareReportData = { shakeReportData in
-  let attachedFile = ShakeFile(name: fileName, andData: fileData)
-  shakeReportData.attachedFiles = [attachedFile]
-  return shakeReportData
+Shake.onPrepareReportData = { 
+  var attachedFiles = [ShakeFile]()
+  let attachedFile = ShakeFile(name: fileName, data: fileData)
+  attachedFiles.append(attachedFile)
+
+  return attachedFiles
 }
 //highlight-end
 ```
@@ -89,10 +92,11 @@ NSString *fileName = ...
 NSURL *fileUrl = ...
 
 //highlight-start
-SHKShake.onPrepareReportData = ^SHKShakeReportData *_Nonnull(SHKShakeReportData *_Nonnull reportData) {
+SHKShake.onPrepareReportData = ^NSArray<SHKShakeFile *> * _Nonnull {
+  NSMutableArray <SHKShakeFile *> *attachedFiles = NSMutableArray.new;
   SHKShakeFile *attachedFile = [[SHKShakeFile alloc] initWithName:fileName andFileURL:fileUrl];
-  reportData.attachedFiles = @[attachedFile];
-  return reportData;
+  [attachedFiles addObject:attachedFile];
+  return attachedFiles;
 };
 //highlight-end
 ```
@@ -106,11 +110,12 @@ let fileName: String = ...
 let fileUrl: URL = ...
 
 //highlight-start
-Shake.onPrepareReportData = { shakeReportData in
-  if let attachedFile = ShakeFile(name: fileName, andFileURL: fileUrl) {
-    shakeReportData.attachedFiles = [attachedFile]
+Shake.onPrepareReportData = { 
+  var attachedFiles = [ShakeFile]()
+  if let attachedFile = ShakeFile(name: fileName, fileUrl: fileUrl) {
+    attachedFiles.append(attachedFile)
   }
-  return shakeReportData
+  return attachedFiles
 }
 //highlight-end
 ```
@@ -137,10 +142,11 @@ and the file name shown on the web Dashboard will be determined automatically fr
 NSURL *fileUrl = ...
 
 //highlight-start
-SHKShake.onPrepareReportData = ^SHKShakeReportData *_Nonnull(SHKShakeReportData *_Nonnull reportData) {
+SHKShake.onPrepareReportData = ^NSArray<SHKShakeFile *> * _Nonnull {
+  NSMutableArray <SHKShakeFile *> *attachedFiles = NSMutableArray.new;
   SHKShakeFile *attachedFile = [[SHKShakeFile alloc] initWithFileURL:fileUrl];
-  reportData.attachedFiles = @[attachedFile];
-  return reportData;
+  [attachedFiles addObject:attachedFile];
+  return attachedFiles;
 };
 //highlight-end
 ```
@@ -153,11 +159,12 @@ SHKShake.onPrepareReportData = ^SHKShakeReportData *_Nonnull(SHKShakeReportData 
 let fileUrl: URL = ...
 
 //highlight-start
-Shake.onPrepareReportData = { shakeReportData in
+Shake.onPrepareReportData = { 
+  var attachedFiles = [ShakeFile]()
   if let attachedFile = ShakeFile(fileURL: fileUrl) {
-    shakeReportData.attachedFiles = [attachedFile]
+    attachedFiles.append(attachedFile)
   }
-  return shakeReportData
+  return attachedFiles
 }
 //highlight-end
 ```
