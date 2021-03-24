@@ -8,9 +8,18 @@ What would you like us to build next? We're dying to hear from you — upvote up
 
 ## Version
 
+### 14.1.3
+<span class="tag-button">March 24, 2021</span>&nbsp;&nbsp;
+<span class="tag-button green-tag-button">Latest version</span>
+
+**What's new**
+
+We've moved the SDK distribution to Maven Central.
+
+The minSdkVersion has been upgraded to 21.
+
 ### 14.1.2
 <span class="tag-button">February 4, 2021</span>&nbsp;&nbsp;
-<span class="tag-button green-tag-button">Latest version</span>
 
 **Bug fixes**
 
