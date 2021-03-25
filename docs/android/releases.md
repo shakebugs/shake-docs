@@ -14,9 +14,10 @@ What would you like us to build next? We're dying to hear from you — upvote up
 
 **What's new**
 
-We've moved the SDK distribution to Maven Central.
+JCenter will be sunset soon so we moved Shake to Maven Central. 
+If you’re upgrading from the older version, make sure to [update the dependency in the build.gradle file](/android/setup.md#add-shake-dependency-to-your-app-level-buildgradle-file). 
 
-The minSdkVersion has been upgraded to 21.
+The `minSdkVersion` has been changed to 21. If your project is using a version lower than 21, you should upgrade the `minSdkVersion` in your module’s *build.gradle* file.
 
 ### 14.1.2
 <span class="tag-button">February 4, 2021</span>&nbsp;&nbsp;
