@@ -5,20 +5,6 @@ title: Install Shake
 This page describes how to install the Shake SDK into your Android application via Gradle.
 Whether you are using Java or Kotlin, you can follow the steps below.
 
-## Add Maven repository to your top-level build.gradle file
-:::note
-Shake versions 14 and higher are available in the new Maven repository. If you're upgrading from a version 13 or lower, make sure to update the Maven repository in the build.gradle file.
-:::
-
-```groovy title="build.gradle"
-allprojects {
-  repositories {
-    // highlight-next-line
-    maven { url 'https://dl.bintray.com/shakebugs/shake' }
-  }
-}
-```
-
 ## Add Shake dependency to your app-level build.gradle file
 import AndroidVersionBlock from '@site/src/base/AndroidVersionBlock';
 
