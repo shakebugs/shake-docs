@@ -63,6 +63,7 @@ module.exports = {
                         'ios/automatic-screen-recording',
                         'ios/crash-reporting',
                         'ios/permissions',
+                        'ios/network-request-reporting',
                         'ios/activity',
                         'ios/essentials',
                         'ios/attachments',

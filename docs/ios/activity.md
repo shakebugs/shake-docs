@@ -56,44 +56,10 @@ struct UserDetailsView: View {
 ```
 
 ### Network requests
+
 Shake will capture the user's network traffic and log the events on the web dashboard.
 
-You can add your own custom network requests at any time:
-
-<Tabs
-  groupId="ios"
-  defaultValue="swift"
-  values={[
-    { label: 'Objective-C', value: 'objectivec'},
-    { label: 'Swift', value: 'swift'},
-  ]
-}>
-
-<TabItem value="objectivec">
-
-```objectivec title="AppDelegate.m"
-//highlight-start
-SHKNetworkRequestBuilder *networkRequestBuilder = [[SHKNetworkRequestBuilder alloc] initWithUrl:url method:method statusCode:statusCode responseBody:NULL requestBody:NULL requestHeaders:NULL responseHeaders:NULL timestamp:NSDate.date duration:duration];
-
-[SHKShake insertNetworkRequest:networkRequestBuilder];
-//highlight-end
-```
-
-</TabItem>
-
-<TabItem value="swift">
-
-```swift title="AppDelegate.swift"
-//highlight-start
-let networkRequestBuilder = NetworkRequestBuilder.init(url: url, method: method, statusCode: statusCode, responseBody: nil, requestBody: nil, requestHeaders: nil, responseHeaders: nil, timestamp: Date.init(), duration: duration)
-
-Shake.insertNetworkRequest(networkRequestBuilder)
-//highlight-end
-```
-
-</TabItem>
-</Tabs>
-
+Go through this [setup article](ios/network-request-reporting.md) to get started.
 
 ### System events
 
