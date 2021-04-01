@@ -169,7 +169,7 @@ module.exports = {
         },
         {
             type: 'doc',
-            id: 'automatically-captured-data',
+            id: 'captured-data-privacy',
         },
     ],
 };
