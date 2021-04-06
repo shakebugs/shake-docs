@@ -115,7 +115,7 @@ Here’s an example of how this would look like in code:
 
 ```objectivec title="AppDelegate.m"
 // highlight-next-line
-[SHKShake logWithLevel: LogLevel.info, message:@"Log message goes here!"];
+[SHKShake logWithLevel: LogLevelInfo, message:@"Log message goes here!"];
 ```
 
 </TabItem>
@@ -125,6 +125,42 @@ Here’s an example of how this would look like in code:
 ```swift title="AppDelegate.swift"
 // highlight-next-line
 Shake.log(LogLevel.info, "Log message goes here!")
+```
+
+</TabItem>
+</Tabs>
+
+Here are all possible log levels you can use:
+
+<Tabs
+  groupId="ios"
+  defaultValue="swift"
+  values={[
+    { label: 'Objective-C', value: 'objectivec'},
+    { label: 'Swift', value: 'swift'},
+  ]
+}>
+
+<TabItem value="objectivec">
+
+```objectivec title="AppDelegate.m"
+LogLevelVerbose
+LogLevelDebug
+LogLevelInfo
+LogLevelWarn
+LogLevelError
+```
+
+</TabItem>
+
+<TabItem value="swift">
+
+```swift title="AppDelegate.swift"
+LogLevel.verbose
+LogLevel.debug
+LogLevel.info
+LogLevel.warn
+LogLevel.error
 ```
 
 </TabItem>
