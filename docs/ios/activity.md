@@ -115,7 +115,7 @@ Here’s an example of how this would look like in code:
 
 ```objectivec title="AppDelegate.m"
 // highlight-next-line
-[SHKShake logWithLevel: LogLevelInfo, message:@"Log message goes here!"];
+[SHKShake logWithLevel: LogLevelInfo message:@"Log message goes here!"];
 ```
 
 </TabItem>
