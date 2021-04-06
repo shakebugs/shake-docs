@@ -94,12 +94,12 @@ const sendCustomLog = () => {
 ```
 
 ### Console logs
-Console logs are recorded automatically and require no additional setup. If you want to disable this
-feature use the method below:
+Sometimes console logs can be helpful when resolving bugs.
+Use the following code snippet if you want to attach console logs to the reports:
 
 ```javascript title="App.js"
 // highlight-next-line
-Shake.setConsoleLogsEnabled(false);
+Shake.setConsoleLogsEnabled(true);
 ```
 
 :::note
