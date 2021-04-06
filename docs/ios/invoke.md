@@ -32,7 +32,7 @@ import TabItem from '@theme/TabItem';
 //highlight-start
 SHKShake.configuration.isInvokedByShakeDeviceEvent = YES;
 SHKShake.configuration.isInvokedByScreenshot = YES;
-[SHKShake start];
+[SHKShake startWithClientId:@"client-id" clientSecret:@"client-secret"];
 //highlight-end
 ```
 
@@ -44,7 +44,7 @@ SHKShake.configuration.isInvokedByScreenshot = YES;
 //highlight-start
 Shake.configuration.isInvokedByShakeDeviceEvent = true
 Shake.configuration.isInvokedByScreenshot = true
-Shake.start()
+Shake.start(clientId: "client-id", clientSecret: "client-secret")
 //highlight-end
 ```
 
