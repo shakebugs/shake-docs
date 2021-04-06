@@ -11,24 +11,24 @@ Shake has a very rich feature set, yet on some platforms we managed to achieve m
 |----------------------|:---------:|:--------:|:------------:|:------------:|
 | Custom invocation    |    ✅     |     ✅    |       ✅     |       ✅     |
 | Bug screenshot       |    ✅     |     ✅    |       ✅     |       ✅     |
-| Feedback types       |    ✅     |     ✅    |       ❌     |       ❌     |
-| Intro message        |    ✅     |     ✅    |       ❌     |       ❌     |
+| Feedback types       |    ✅     |     ✅    |       ✅     |       ❌     |
+| Intro message        |    ✅     |     ✅    |       ✅     |       ❌     |
 | Inspect bug          |    ✅     |     ✅    |       ✅     |       ✅     |
-| Screen recording     |    ✅     |     ✅    |       ❌     |       ❌     |
+| Screen recording     |    ✅     |     ✅    |       ✅     |       ❌     |
 | File attachment      |    ✅     |     ✅    |       ✅     |       ✅     |
-| Metadata             |    ✅     |     ✅    |       ❌     |       ❌     |
-| Quick facts          |    ❌     |     ❌    |       ✅     |       ✅     |
+| Metadata             |    ✅     |     ✅    |       ✅     |       ❌     |
+| Quick facts          |    ❌     |     ❌    |       ❌     |       ❌     |
 | Black box            |    ✅     |     ✅    |       ✅     |       ✅     |
 | Network requests     |    ✅     |     ✅    |       ✅     |       ✅     |
-| Notification tracking|    ✅     |     ✅    |       ❌     |       ❌     |
+| Notification tracking|    ✅     |     ✅    |       ✅     |       ❌     |
 | Touch tracking       |    ✅     |     ✅    |       ✅     |       ❌     |
 | System events        |    ✅     |     ✅    |       ✅     |       ✅     |
-| Custom logs          |    ✅     |     ✅    |       ❌     |       ❌     |
-| Console logs         |    ✅     |     ✅    |       ❌     |       ❌     |
-| Manage sensitive data|    ✅     |     ✅    |       ❌     |       ❌     |
+| Custom logs          |    ✅     |     ✅    |       ✅     |       ❌     |
+| Console logs         |    ✅     |     ✅    |       ✅     |       ❌     |
+| Manage sensitive data|    ✅     |     ✅    |       ✅     |       ❌     |
 | Silent reports       |    ✅     |     ✅    |       ✅     |       ✅     |
-| Email pre-fill       |    ✅     |     ✅    |       ❌     |       ❌     |
-| White labeling       |    ✅     |     ✅    |       ❌     |       ❌     |
+| Email pre-fill       |    ✅     |     ✅    |       ✅     |       ❌     |
+| White labeling       |    ✅     |     ✅    |       ✅     |       ❌     |
 
 import AndroidVersion from '@site/src/base/AndroidVersion';
 import IosVersion from '@site/src/base/IosVersion';
