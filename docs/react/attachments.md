@@ -4,21 +4,21 @@ title: Attachments
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This page explains how to instruct the SDK to attach a file to your bug report and send it to your web Dashboard.
+You can instruct the SDK to quietly attach any file to a bug report.
+The files you attach are not visible to the user in the SDK.
 
 ## Introduction
-By default, a bug report contains only files that the user attaches to it.
-However, you can instruct Shake SDK to create and attach custom files that you need, for example,
-XMPP logs, a user's profile photo, or whatever you might want to inspect later on.
- All attached files will appear in the center of your web Dashboard.
+Send yourself XMPP logs, a user's profile photo, or whatever helps you debug issues faster.
+You will see these files in the center of your web Dashboard along with files the user maybe attached themselves.
 
 <img
   alt="Attachments screen"
   src={useBaseUrl('screens/attachments_screen.png')}
 />
 
-
 ## Methods
+You can quietly attach files by using any of the methods described below.
+
 ### Attaching a file with a default name
 Files can be attached with an absolute file path to your file.
 If you attach files this way, the filename shown on the web Dashboard
@@ -40,7 +40,7 @@ attachLogFile = (data) => {
       // highlight-start
       Shake.setShakeReportData([
           ShakeFile.create(path)
-        ], "Test quick facts");
+      ]);
       // highlight-end
     })
     .catch((error) => {
@@ -68,7 +68,7 @@ attachLogFile = (data) => {
       // highlight-start
       Shake.setShakeReportData([
           ShakeFile.create(path, "customName1")
-        ], "Test quick facts");
+      ]);
       // highlight-end
     })
     .catch((error) => {
@@ -76,3 +76,11 @@ attachLogFile = (data) => {
     });
 };
 ```
+
+## Limitations
+The maximum number of attached files per bug is 1 for Free workspaces and 10 for Premium ones.
+If more files are attached, the SDK will successfully upload only some of them.
+
+The maximum allowed individual size for any of those files is 5 MB.
+If you attach a file that's larger than that it won't be uploaded with the report.
+

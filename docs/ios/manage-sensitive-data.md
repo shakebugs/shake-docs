@@ -210,7 +210,7 @@ Shake.clearPrivateViews()
 
 Note that these methods won't delete sensitive views from screen recordings, only screenshots.
 
-You can disable [Screen Recording](/ios/screen-recording.md) feature if you want make sure that sensitive data is not recorded.
+You can disable [Screen Recording](/ios/automatic-screen-recording.md) feature if you want make sure that sensitive data is not recorded.
 
 <Tabs
 groupId="ios"
@@ -511,6 +511,7 @@ In addition Shake will replace any header value with `data_redacted` string if t
 * Authorization
 * Proxy-Authorization
 * card[number]
+* token
 
 To disable this feature use the method below:
 

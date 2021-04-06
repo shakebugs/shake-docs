@@ -1,6 +1,6 @@
 ﻿---
 id: setup
-title: Install Shake
+title: Integrate Shake
 ---
 ## Install
 Execute the npm install command in your terminal:
@@ -31,209 +31,52 @@ Install pods from the project root directory:
 cd ios && pod install && cd ..
 ```
 
-## Add Client ID and Client secret keys
+## Set compileSdkVersion version in the build.gradle file
+Shake requires `compileSdkVersion` 29 or greater, verify that `compileSdkVersion` is correctly set in the */android/build.gradle* file.
 
-### Android
-Open your AndroidManifest.xml file. Paste this and replace *your-api-client-id* and
-*your-api-client-secret* with the actual values you have in [your workspace settings](https://app.shakebugs.com/settings/workspace#general).
+```groovy title="build.gradle"
+buildscript {
+    ext {
+        buildToolsVersion = "29.0.3"
+        minSdkVersion = 21
+        // highlight-next-line
+        compileSdkVersion = 29
+        targetSdkVersion = 29
+    }
+    repositories {
+        google()
+        jcenter()
+    }
+    dependencies {
+        classpath("com.android.tools.build:gradle:3.5.2")
+    }
+}
 
-```xml title="AndroidManifest.xml"
-<manifest xmlns:android="http://schemas.android.com/apk/res/android">
-  <application
-    android:allowBackup="true"
-    android:icon="@mipmap/ic_launcher"
-    android:label="@string/app_name"
-    android:theme="@style/AppTheme" >
-      <activity android:name=".MainActivity" android:label="@string/app_name" >
-        <intent-filter>
-          <action android:name="android.intent.action.MAIN" />
-          <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
-      </activity>
-      // highlight-start
-      <meta-data                                                             
-        android:name="com.shakebugs.APIClientID"
-        android:value="your-api-client-id" />
-      <meta-data
-        android:name="com.shakebugs.APIClientSecret"
-        android:value="your-api-client-secret" />
-        // highlight-end
-  </application>
-  <uses-permission android:name="android.permission.INTERNET" />
-</manifest>
-```
-
-### iOS
-Open your workspace and in the *Project Navigator*, right click on *Info.plist*, and *Open as › Source code*.
-Paste this but replace *your-api-client-id* and *your-api-client-secret*
-with the actual values you have in [your workspace settings](https://app.shakebugs.com/settings/workspace#general).
-
-```xml title="Info.plist"
-<?xml version="1.0" encoding="utf-8" ?>
-<plist version="1.0">
-  <dict>
-      // highlight-start
-      <key>Shake</key>
-      <dict>
-        <key>APIClientID</key>
-        <string>your-api-client-id</string>
-        <key>APIClientSecret</key>
-        <string>your-api-client-secret</string>
-      </dict>
-      // highlight-end
-  </dict>
-</plist>
-```
-
-## ProGuard
-If you are using code shrinking when building your application,
-add following ProGuard rule to the *proguard-rules.pro* file:
-```bash title="proguard-rules.pro"
-// highlight-next-line
--keep class com.shakebugs.** { *; }
+...
 ```
 
 ## Initialize Shake
 
-### Android
-Call `Shake.start()` method on application start to run Shake:
+Call `Shake.start()` method in your *index.js* file. 
+Replace `your-api-client-id` and `your-api-client-secret` with the actual values you have in [your workspace settings](https://app.shakebugs.com/settings/workspace#general).
 
-```java title="MainApplication.java"
-// highlight-next-line
-import com.shakebugs.shake.Shake;                         
-
-@Override
-public void onCreate() {
- super.onCreate();
- SoLoader.init(this, /* native exopackage */ false);
- initializeFlipper(this, getReactNativeHost().getReactInstanceManager());
- // highlight-start
- Shake.getReportConfiguration().setInvokeShakeOnShakeDeviceEvent(true);
- Shake.getReportConfiguration().setShowFloatingReportButton(false);
- Shake.getReportConfiguration().setInvokeShakeOnScreenshot(false);
- Shake.start(this);
- // highlight-end
-}
-```
-
-This first run will automatically add your app to your [Shake Dashboard](https://app.shakebugs.com) based on your app ID.
-
-### iOS
-Call `Shake.start()` method whenever you want to run Shake:
-
-```javascript title="App.js"
-import React, {Component} from 'react';
-import {View} from 'react-native';
+```javascript title="index.js"
+import {AppRegistry} from 'react-native';
+import App from './src/App';
+import {name as appName} from './app.json';
 // highlight-next-line
 import Shake from '@shakebugs/react-native-shake';
 
-export default class App extends Component<{}> {
-	componentDidMount() {
-        // highlight-next-line
-		Shake.start();
-	}
-    render() {
-        return (
-            <View style={styles.container} />
-            </View>
-        );
-    }
-}
+AppRegistry.registerComponent(appName, () => App);
+
+// highlight-next-line
+Shake.start('your-api-client-id', 'your-api-client-secret');
 ```
 
-This first run will automatically add your app to your [Shake Dashboard](https://app.shakebugs.com) based on your bundle ID.
+Now build your project and see everything work!  
 
-## Manual linking
-Normally, linking is done automatically or using `react-native link @shakebugs/react-native-shake` command.
-If you want to link it manually, you can do it following way.
-
-### Android
-Add the following lines of code to your *settings.gradle* file:
-
-```groovy title="settings.gradle"
-// highlight-start
-include ':@shakebugs_react-native-shake'
-project(':@shakebugs_react-native-shake').projectDir = new File(rootProject.projectDir, '../node_modules/@shakebugs/react-native-shake/android')
-// highlight-end
-```
-
-Then, include the following dependency to app-level *build.gradle* file:
-
-```groovy title="app/build.gradle"
-dependencies {
-    // highlight-next-line
-    implementation project(':@shakebugs_react-native-shake')
-    implementation fileTree(dir: "libs", include: ["*.jar"])
-    implementation "com.android.support:appcompat-v7:${rootProject.ext.supportLibVersion}"
-    implementation "com.facebook.react:react-native:+"  // From node_modules
-}
-```
-
-Update the `getPackages()` method:
-
-```java title="MainApplication.java"
- @Override protected List<ReactPackage> getPackages() {
-    @SuppressWarnings("UnnecessaryLocalVariable")
-    List<ReactPackage> packages = new PackageList(this).getPackages();
-    // Packages that cannot be autolinked yet can be added manually here, for example:
-    // packages.add(new MyReactNativePackage());
-    // highlight-next-line
-    packages.add(new ShakePackage());
-    return packages;
- } 
-```
-
-Include Shake maven repository to your project-level *build.gradle* file:
-
-```groovy title="build.gradle"
-allprojects {
-   repositories {
-       mavenLocal()
-       maven {
-           // All of React Native (JS, Obj-C sources, Android binaries) is installed from npm
-           url("$rootDir/../node_modules/react-native/android")
-       }
-       maven {
-           // Android JSC is installed from npm
-           url("$rootDir/../node_modules/jsc-android/dist")
-       }
-
-       google()
-       jcenter()
-       maven { url 'https://www.jitpack.io' }
-       // highlight-next-line
-       maven { url 'https://dl.bintray.com/shake/shake' }
-   }
-}
-```
-
-Add the following dependency to your app-level *build.gradle* file:
-
-```groovy title="app/build.gradle"
-dependencies {
-  // highlight-next-line
-  implementation 'com.shakebugs.android:shake:10.0.+'
-  ...
-}
-```
-
-If you do not have *multiDexEnabled*, update app level *build.gradle*:
-
-```groovy title="app/build.gradle"
-defaultConfig {
-  applicationId "com.shakebugs.react.example"
-  minSdkVersion rootProject.ext.minSdkVersion
-  targetSdkVersion rootProject.ext.targetSdkVersion
-  versionCode 1
-  versionName "1.0.0"
-  // highlight-next-line
-  multiDexEnabled true
-}
-```
-
-### iOS
-
-After executing *npm install*, find *Shake.xcodeproj* in *$rootDir/node_modules/react-native/shake/ios/*.
-Add it to the *Libraries* folder of your app project.
-
-Navigate to the *Building phases* tab and add *libShake.a* to the *Link Binary With Libraries* section.
+To build and run your app, first run `react-native start` command in the terminal. 
+Use `react-native run-android` command to run your app on the Android device. 
+Or use `react-native run-ios` command to run your app on the iOS device. 
+ 
+This first run will automatically add your app to your [Shake Dashboard](https://app.shakebugs.com/) based on your app application ID.

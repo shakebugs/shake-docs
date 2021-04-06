@@ -76,7 +76,15 @@ module.exports = {
             type: 'category',
             label: 'React Native',
             items: [
-                'react/setup',
+                {
+                    type: 'category',
+                    label: 'Install Shake',
+                    items: [
+                        'react/setup',
+                        'react/manual-linking',
+                        'react/upgrading-version'
+                    ]
+                },
                 {
                     type: 'category',
                     label: 'SDK',
@@ -84,14 +92,19 @@ module.exports = {
                         'react/invoke',
                         'react/disable',
                         'react/silent-reports',
+                        'react/email',
                         'react/inspect',
+                        'react/feedback-type',
+                        'react/intro-message',
                         'react/screenshot',
+                        'react/automatic-screen-recording',
                         'react/permissions',
                         'react/activity',
                         'react/essentials',
                         'react/attachments',
                         'react/blackbox',
-                        'react/quick-facts',
+                        'react/metadata',
+                        'react/manage-sensitive-data',
                     ],
                 },
                 'react/react-releases',
