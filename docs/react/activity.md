@@ -93,6 +93,16 @@ const sendCustomLog = () => {
 }
 ```
 
+Here are all possible log levels you can use:
+
+```javascript title="App.js"
+LogLevel.VERBOSE
+LogLevel.DEBUG
+LogLevel.INFO
+LogLevel.WARN
+LogLevel.ERROR
+```
+
 ### Console logs
 Sometimes console logs can be helpful when resolving bugs.
 Use the following code snippet if you want to attach console logs to the reports:
