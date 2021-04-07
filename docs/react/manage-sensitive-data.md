@@ -84,12 +84,12 @@ import Shake from '@shakebugs/react-native-shake';
 const setupNetworkFilter = () => {
     // highlight-start
     Shake.setNetworkRequestsFilter((networkRequest) => {
-        let headers = networkRequest.requestHeaders;
-        if (headers["Authorization"]) {
-            headers["Authorization"] = "***";
+        let headers = networkRequest.getRequestHeaders();
+        if (headers.Authorization) {
+            headers.Authorization = '***';
         }
         return networkRequest;
-    ));
+    });
     // highlight-end
 }
 ```
@@ -103,11 +103,11 @@ import Shake from '@shakebugs/react-native-shake';
 const setupNetworkFilter = () => {
     // highlight-start
     Shake.setNetworkRequestsFilter((networkRequest) => {
-        if (networkRequest.url.startsWith("https://api.myapp.com/cards")) {
+        if (networkRequest.getUrl().startsWith('https://api.myapp.com/cards')) {
             return null;
         }
         return networkRequest;
-    ));
+    });
     // highlight-end
 }
 ```
@@ -127,11 +127,11 @@ import Shake from '@shakebugs/react-native-shake';
 const setupNotificationsFilter = () => {
     // highlight-start
     Shake.setNotificationEventsFilter((notificationEvent) => {
-        if (notificationEvent.title === "E-mail changed") {
-            notificationEvent.description = "***@gmail.com";
+        if (notificationEvent.getTitle() === 'E-mail changed') {
+            notificationEvent.setDescription('***@gmail.com');
         }
         return notificationEvent;
-    ));
+    });
     // highlight-end
 }
 ```
@@ -145,11 +145,11 @@ import Shake from '@shakebugs/react-native-shake';
 const setupNotificationsFilter = () => {
     // highlight-start
     Shake.setNotificationEventsFilter((notificationEvent) => {
-        if (notificationEvent.title === "E-mail changed") {
+        if (notificationEvent.getTitle() === 'E-mail changed') {
             return null;
         }
         return notificationEvent;
-    ));
+    });
     // highlight-end
 }
 ```

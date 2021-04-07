@@ -1,23 +1,23 @@
 ﻿---
 id: setup
-title: Integrate Shake
+title: npm
 ---
 ## Install
-Execute the npm install command in your terminal:
+Execute the `npm install` command in your terminal:
 
 ```bash title="Terminal"
 // highlight-next-line
 npm install @shakebugs/react-native-shake
 ```
 
-If you are using a React Native version 0.60 or greater, you should also run add command:
+If you use React Native version 0.60 or greater, you should also run the `add` command:
 
 ```bash title="Terminal"
 // highlight-next-line
 react-native add-shake
 ```
 
-If you are using a React Native version older than 0.60, you should instead run link command:
+If you use React Native version lower than 0.60, you should run the `link` command instead:
 
 ```bash title="Terminal"
 // highlight-next-line
@@ -32,7 +32,7 @@ cd ios && pod install && cd ..
 ```
 
 ## Set compileSdkVersion version in the build.gradle file
-Shake requires `compileSdkVersion` 29 or greater, verify that `compileSdkVersion` is correctly set in the */android/build.gradle* file.
+Since Shake requires `compileSdkVersion` 29 or greater, verify that `compileSdkVersion` is correctly set in the */android/build.gradle* file.
 
 ```groovy title="build.gradle"
 buildscript {
