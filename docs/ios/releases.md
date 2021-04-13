@@ -7,7 +7,7 @@ This page lists all updates to the Shake iOS SDK.
 What would you like us to build next? We're dying to hear from you — upvote upcoming features and suggest new ideas on [feedback.shakebugs.com](https://feedback.shakebugs.com/)
 
 ### 14.1.4
-<span class="tag-button">April 8, 2021</span>&nbsp;&nbsp;
+<span class="tag-button">April 13, 2021</span>&nbsp;&nbsp;
 <span class="tag-button green-tag-button">Latest version</span>
 
 **Bug fixes**
