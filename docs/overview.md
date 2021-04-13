@@ -38,7 +38,7 @@ import FlutterVersion from '@site/src/base/FlutterVersion';
 ## Latest versions
 |         |      Android      |       iOS     |   React Native  |       Flutter     |
 |:-------:|:-----------------:|:-------------:|:---------------:|:-----------------:|
-| Version | <AndroidVersion/> | <IosVersion/> | <ReactVersion/> | <FlutterVersion/> |
+| Version | <AndroidVersion/> | <IosVersion/> | <ReactVersion/> | <FlutterVersion/> (and Android 7.0) |
 
 
 ## Minimum requirements
