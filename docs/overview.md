@@ -17,7 +17,7 @@ Shake has a very rich feature set, yet on some platforms we managed to achieve m
 | Screen recording     |    ✅     |     ✅    |       ✅     |       ❌     |
 | File attachment      |    ✅     |     ✅    |       ✅     |       ✅     |
 | Metadata             |    ✅     |     ✅    |       ✅     |       ❌     |
-| Quick facts          |    ❌     |     ❌    |       ❌     |       ❌     |
+| Quick facts          |    ❌     |     ❌    |       ❌     |       ✅     |
 | Black box            |    ✅     |     ✅    |       ✅     |       ✅     |
 | Network requests     |    ✅     |     ✅    |       ✅     |       ✅     |
 | Notification tracking|    ✅     |     ✅    |       ✅     |       ❌     |
