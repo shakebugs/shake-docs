@@ -291,6 +291,42 @@ Shake.log(LogLevel.INFO, "Log message goes here!")
 </TabItem>
 </Tabs>
 
+Here are all possible log levels you can use:
+
+<Tabs
+  groupId="android"
+  defaultValue="kotlin"
+  values={[
+    { label: 'Java', value: 'java'},
+    { label: 'Kotlin', value: 'kotlin'},
+  ]
+}>
+
+<TabItem value="java">
+
+```java title="App.java"
+LogLevel.VERBOSE
+LogLevel.DEBUG
+LogLevel.INFO
+LogLevel.WARN
+LogLevel.ERROR
+```
+
+</TabItem>
+
+<TabItem value="kotlin">
+
+```kotlin title="App.kt"
+LogLevel.VERBOSE
+LogLevel.DEBUG
+LogLevel.INFO
+LogLevel.WARN
+LogLevel.ERROR
+```
+
+</TabItem>
+</Tabs>
+
 ### Console logs
 Console logs are recorded automatically and require no additional setup.
 If you want to disable this feature use the method below:

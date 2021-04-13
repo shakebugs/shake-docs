@@ -11,20 +11,18 @@ But if you want to, you can customize that.
 
 Let's look at an example. You want your users to invoke SDK either when
 they shake their device, or when they take a screenshot. To do that,
-set invocation events using following methods.
+call following methods with the `true` parameter.
+
 
 ```javascript title="App.js"
-// highlight-next-line
-import Shake from '@shakebugs/react-native-shake';
-
-const setInvocationEvents = () => {
-    // highlight-start
-    Shake.setInvokeShakeOnShakeDeviceEvent(true);
-    Shake.setInvokeShakeOnScreenshot(true);
-    // highlight-end
-}
+// highlight-start
+Shake.setInvokeShakeOnShakeDeviceEvent(true);
+Shake.setInvokeShakeOnScreenshot(true);
+Shake.start("client-id", "client-secret");
+// highlight-end
 ```
 
+This method also enables you to change the preferred invocation event on-the-go during runtime.
 Here’s a list of all available ones below, feel free to use any combination of these.
 
 ```javascript title="App.js"
@@ -35,23 +33,8 @@ Shake.setShowFloatingReportButton(true);
 // highlight-end
 ```
 
-If you want to check which of these events are enabled:
-
-```javascript title="App.js"
-// highlight-next-line
-import Shake from '@shakebugs/react-native-shake';
-
-const getInvocationActions = async () => {
-    // highlight-start
-    await Shake.isShowFloatingReportButton();
-    await Shake.isInvokeShakeOnShakeDeviceEvent();
-    await Shake.isInvokeShakeOnScreenshot();
-    // highlight-end
-}
-```
-
 ### Shaking
-By default, shaking gesture causes the SDK to pop up.
+The default, shaking gesture causes the SDK to pop up.
 
 :::note
 
@@ -61,24 +44,45 @@ You should run your app in the release mode if you want to test shake gesture in
 :::
 
 ### Button
-This invocation event will create the floating button on top of your app's UI which users can clearly see at all times.
-This button can be dragged to a more suitable position.
+This invocation event will create the floating button on top of your app's UI which users can clearly see at all times. This button can be dragged to a more suitable position.
+
+:::note
+
+In the Android emulator, you might need to click the button twice if one click doesn’t do it.
+Also, system interface elements [may sometimes get in a way](https://help.shakebugs.com/en/articles/3321805-the-report-a-bug-button-is-hidden-behind-an-interface-element) of the button.
+
+:::
 
 ### Taking a screenshot
 The SDK will be invoked when users make a screenshot while using your app.
 
-## Invoke through code
-You can invoke SDK through code by calling the `Shake.show()` method  
-anywhere after `Shake.start()`.
+:::note
 
-Here’s an example:
+In Android, the only way for any SDK to realize that a screenshot has been captured is to monitor the screenshots directory.
+Because of that, if you opt for this invocation method, the storage permission will be requested from a user when they launch your app.
+
+:::
+
+:::note
+
+App Store rejects apps that get in the way of the default screenshot behavior. For that reason, don't use this invocation method in your production releases.
+
+:::
+
+## Invoke through code
+You can invoke SDK through code by calling the `Shake.show()` method anywhere after `Shake.start()`,
+optionally attaching files and/or [Metadata](react/metadata.md). Here’s an example:
 
 ```javascript title="App.js"
 // highlight-next-line
 import Shake from '@shakebugs/react-native-shake';
 
-const reportBug = () => {
-    // highlight-next-line
+const sendFeedback = () => {
+    // highlight-start
+    Shake.setMetadata("userId", userId);
     Shake.show();
+    // highlight-end
 }
 ```
+
+All other data, like [Activity history](react/activity.md) or [Black box](react/blackbox.md), is automatically included in every user’s bug report — no additional code required.

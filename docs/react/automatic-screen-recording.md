@@ -18,39 +18,19 @@ With this feature turned on, a system dialog will ask testers if they want to al
 />
 
 ## How to use
-Automatic screen recording is disabled by default but can be enabled by calling `Shake.getReportConfiguration().setAutoVideoRecording(true)` before `Shake.start()`. 
+Automatic screen recording is disabled by default but can be enabled by calling `Shake.setAutoVideoRecording(true)` before `Shake.start()`. 
 Duration of the automatically attached video is 15 seconds.
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
-<Tabs
-  groupId="android"
-  defaultValue="kotlin"
-  values={[
-    { label: 'Java', value: 'java'},
-    { label: 'Kotlin', value: 'kotlin'},
-  ]
-}>
-
-<TabItem value="java">
-
-```java title="App.java"
+```javascript title="App.js"
 // highlight-next-line
-Shake.getReportConfiguration().setAutoVideoRecording(true);
+Shake.setAutoVideoRecording(false);
 ```
 
-</TabItem>
+:::note
 
-<TabItem value="kotlin">
+Screen recording runs on iOS 13+ devices only. Testing on iOS simulator may not work and can produce warnings in console log without screen recording.
 
-```kotlin title="App.kt"
-// highlight-next-line
-Shake.getReportConfiguration().isAutoVideoRecording = true
-```
-
-</TabItem>
-</Tabs>
+:::
 
 ## Security
 
