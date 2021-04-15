@@ -19,7 +19,41 @@ You can inspect all events that lead to the bug being reported out-of-the-box. Y
 ## Setting up
 
 ### User actions
+
 SDK automatically observes taps made on your app's UI elements.
+
+:::note
+This feature is disabled for iOS applications built with __SwiftUI__.
+:::
+
+### Screen changes
+
+SDK automatically tracks application screen changes, more precisely, ViewController lifecycle.
+
+For iOS applications built with __UIKit__, there is no need for additional configuration.
+
+Applications built with __SwiftUI__ should use the Shake provided View extension on their
+top level views which represent screens in their application.
+
+_shakeIntercept_ View extension allows Shake to hook into the View lifecycle and notify Shake of the 
+screen changes. The extension does not alter the View in any way and allows it to passthrough unchanged.
+
+```swift title="MySwiftUIContentView.swift"
+// highlight-start
+struct UserDetailsView: View {
+
+    var user: UserModel
+
+    var body: some View {
+        VStack {
+            user.avatar
+            Text("Name: \(user.name)")
+            /// Additional layout
+        }.shakeIntercept(viewName: "UserDetails")
+    }
+}
+// highlight-end
+```
 
 ### Network requests
 Shake will capture the user's network traffic and log the events on the web dashboard.
@@ -61,9 +95,10 @@ Shake.insertNetworkRequest(networkRequestBuilder)
 </Tabs>
 
 
-
 ### System events
+
 System events are tracked automatically and require no additional setup.
+These are application lifecycle events.
 
 ### Notifications
 Notifications are tracked automatically and require no additional setup.
