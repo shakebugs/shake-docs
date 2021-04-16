@@ -6,11 +6,14 @@ This page lists all updates to the Shake Android SDK.
 
 What would you like us to build next? We're dying to hear from you — upvote upcoming features and suggest new ideas on [feedback.shakebugs.com](https://feedback.shakebugs.com/)
 
-## Version
-
 ### 14.1.4
 <span class="tag-button">April 13, 2021</span>&nbsp;&nbsp;
 <span class="tag-button green-tag-button">Latest version</span>
+
+**What's new**
+
+This version now contains Traditional and Simplified Chinese translations, which additionally extends [the lists of languages Shake's been translated to](https://help.shakebugs.com/en/articles/3392092-which-languages-has-shake-sdk-been-translated-to). 
+Your users whose default device language is set to one of these will automatically see Shake in their language.
 
 **Bug fixes**
 
