@@ -1,9 +1,9 @@
 ---
 id: setup
-title: Install Shake
+title: Pub
 ---
 ## Install
-Add shake as a dependency to pubspec.yaml.
+Add Shake as a dependency to *pubspec.yaml*.
 
 import FlutterVersionBlock from '@site/src/base/FlutterVersionBlock';
 
@@ -12,82 +12,39 @@ import FlutterVersionBlock from '@site/src/base/FlutterVersionBlock';
 Run `flutter pub get` to download the package.
 
 Then include Shake package in your code
-```dart title="lib/main.dart"
+```dart title="main.dart"
 //highlight-next-line
 import 'package:shake_flutter/shake_flutter.dart';
 ```
 
-## Add Client ID and Secret
+## Set compileSdkVersion version in the build.gradle file
+Since Shake requires `compileSdkVersion` 29 or greater, verify that `compileSdkVersion` is correctly set in the */android/build.gradle* file.
 
-### Android
-Open your AndroidManifest.xml file. Paste this and replace *your-api-client-id* and
-*your-api-client-secret* with the actual values you have in [your workspace settings](https://app.shakebugs.com/settings/workspace#general).
-
-```xml title="AndroidManifest.xml"
-<manifest xmlns:android="http://schemas.android.com/apk/res/android">
-    <application
-            android:allowBackup="true"
-            android:icon="@mipmap/ic_launcher"
-            android:label="@string/app_name"
-            android:theme="@style/AppTheme" >
-        <activity android:name=".MainActivity" android:label="@string/app_name" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        // highlight-start
-        <meta-data
-                android:name="com.shakebugs.APIClientID"
-                android:value="your-api-client-id" />
-        <meta-data
-                android:name="com.shakebugs.APIClientSecret"
-                android:value="your-api-client-secret" />
-        // highlight-end
-    </application>
-    <uses-permission android:name="android.permission.INTERNET" />
-</manifest>
+```groovy title="build.gradle"
+buildscript {
+    ext {
+        buildToolsVersion = "29.0.3"
+        minSdkVersion = 21
+        // highlight-next-line
+        compileSdkVersion = 29
+        targetSdkVersion = 29
+    }
+    repositories {
+        google()
+        jcenter()
+    }
+    dependencies {
+        classpath("com.android.tools.build:gradle:3.5.2")
+    }
+}
 ```
 
-### iOS
-Open your workspace and in the *Project Navigator*, right click on *Info.plist*, and *Open as › Source code*.
-Paste this but replace *your-api-client-id* and *your-api-client-secret*
-with the actual values you have in [your workspace settings](https://app.shakebugs.com/settings/workspace#general).
+## Initialize Shake
 
-```xml title="Info.plist"
-<?xml version="1.0" encoding="utf-8" ?>
-<plist version="1.0">
-<dict>
-    // highlight-start
-    <key>Shake</key>
-    <dict>
-        <key>APIClientID</key>
-        <string>your-api-client-id</string>
-        <key>APIClientSecret</key>
-        <string>your-api-client-secret</string>
-    </dict>
-    // highlight-end
-</dict>
-</plist>
-```
+Call `Shake.start()` method in your *main.dart* file. 
+Replace `your-api-client-id` and `your-api-client-secret` with the actual values you have in [your workspace settings](https://app.shakebugs.com/settings/workspace#general).
 
-## ProGuard
-If you are using code shrinking when building your application,
-add following ProGuard rule to the *proguard-rules.pro* file:
-```bash title="proguard-rules.pro"
-// highlight-next-line
--keep class com.shakebugs.** { *; }
-```
-:::note
-
-Building release *.apk* or *.app* using `flutter build` will run code shrinking by default.
-
-:::
-
-## Initialize
-To start Shake, enable desired invocation methods and then call `Shake.start()` like in the example below.
-
-```dart title="lib/main.dart"
+```dart title="main.dart"
 //highlight-next-line
 import 'package:shake_flutter/shake_flutter.dart';
 
@@ -98,12 +55,17 @@ void main() {
     Shake.setShowFloatingReportButton(true);
     Shake.setInvokeShakeOnShakeDeviceEvent(true);
     Shake.setInvokeShakeOnScreenshot(true);
-    Shake.start();
+    Shake.start('your-api-client-id', 'your-api-client-secret');
     //highlight-end
 
     runApp(Home());
 }
 ```
+
+Now build your project and see everything work! To build and run your
+app, select *Run › Run* in the menu bar. This first run will automatically
+add your app to your [Shake Dashboard](https://app.shakebugs.com/) based on your app bundle ID.
+
 :::note
 
 Shake supports post Flutter 1.12 projects. If your project is created with the older version
