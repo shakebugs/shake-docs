@@ -134,7 +134,7 @@ You can add your own custom notification events at any time:
 ```dart title="main.dart"
 // highlight-start
 NotificationEvent notificationEvent = NotificationEvent()
-  ..id = 0
+  ..id = '0'
   ..title = 'Title'
   ..description = 'Description';
 Shake.insertNotificationEvent(notificationEvent);
