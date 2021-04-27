@@ -72,7 +72,7 @@ import Shake, { NotificationEventBuilder } from '@shakebugs/react-native-shake';
 
 // highlight-start
 const notificationEventBuilder = new NotificationEventBuilder()
-    .setId(0)
+    .setId('0')
     .setTitle('Title')
     .setDescription('Description');
 Shake.insertNotificationEvent(notificationEventBuilder);
