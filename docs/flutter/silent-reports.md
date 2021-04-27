@@ -24,13 +24,13 @@ void sendSilentReport() {
     shakeFiles.add(ShakeFile.create(userLogs.path));
 
     ShakeReportConfiguration configuration = ShakeReportConfiguration();
-    configuration.blackBoxData = true
-    configuration.activityHistoryData = true
-    configuration.screenshot = true
+    configuration.blackBoxData = true;
+    configuration.activityHistoryData = true;
+    configuration.screenshot = true;
 
     Shake.silentReport(
       configuration: configuration,
-      description: "Description #tag1 #tag2",
+      description: 'Description #tag1 #tag2',
       shakeFiles: shakeFiles,
     );
     // highlight-end
