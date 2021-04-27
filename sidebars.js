@@ -114,7 +114,14 @@ module.exports = {
             type: 'category',
             label: 'Flutter',
             items: [
-                'flutter/setup',
+                {
+                    type: 'category',
+                    label: 'Install Shake',
+                    items: [
+                        'flutter/setup',
+                        'flutter/upgrading-version'
+                    ]
+                },
                 {
                     type: 'category',
                     label: 'SDK',
@@ -122,14 +129,19 @@ module.exports = {
                         'flutter/invoke',
                         'flutter/disable',
                         'flutter/silent-reports',
+                        'flutter/email',
                         'flutter/inspect',
+                        'flutter/feedback-type',
+                        'flutter/intro-message',
                         'flutter/screenshot',
+                        'flutter/automatic-screen-recording',
                         'flutter/permissions',
                         'flutter/activity',
                         'flutter/essentials',
                         'flutter/attachments',
                         'flutter/blackbox',
-                        'flutter/quick-facts',
+                        'flutter/metadata',
+                        'flutter/manage-sensitive-data',
                     ],
                 },
                 'flutter/flutter-releases',
