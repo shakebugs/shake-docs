@@ -9,5 +9,5 @@ If enabled, a one-off intro message will be shown to a user as soon as they open
 
 ```javascript title="App.js"
 // highlight-next-line
-Shake.setShowIntroMessage(false);
+Shake.setShowIntroMessage(true);
 ```
