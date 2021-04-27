@@ -114,13 +114,6 @@ Shake.setConsoleLogsEnabled(true);
 
 :::note
 
-Calling `Shake.start()` method will disable attaching console logs when called.
-You should call `Shake.setConsoleLogsEnabled()` after `Shake.start()` method.
-
-:::
-
-:::note
-
 Make sure that activity history is enabled if you want to send console logs with your report.
 
 :::

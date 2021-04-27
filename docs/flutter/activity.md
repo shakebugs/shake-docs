@@ -182,12 +182,6 @@ Use the following code snippet if you want to attach console logs to the reports
 // highlight-next-line
 Shake.setConsoleLogsEnabled(true);
 ```
-:::note
-
-Calling `Shake.start()` method will disable attaching console logs when called.
-You should call `Shake.setConsoleLogsEnabled()` after `Shake.start()` method.
-
-:::
 
 :::note
 
