@@ -4,21 +4,21 @@ title: Attachments
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This page explains how to instruct the SDK to attach a file to your bug report and send it to your web Dashboard.
+You can instruct the SDK to quietly attach any file to a bug report.
+The files you attach are not visible to the user in the SDK.
 
 ## Introduction
-By default, a bug report contains only files that the user attaches to it.
-However, you can instruct Shake SDK to create and attach custom files that you need, for example,
-XMPP logs, a user's profile photo, or whatever you might want to inspect later on.
- All attached files will appear in the center of your web Dashboard.
+Send yourself XMPP logs, a user's profile photo, or whatever helps you debug issues faster.
+You will see these files in the center of your web Dashboard along with files the user maybe attached themselves.
 
 <img
   alt="Attachments screen"
   src={useBaseUrl('screens/attachments_screen.png')}
 />
 
-
 ## Methods
+You can quietly attach files by using any of the methods described below.
+
 ### Attaching a file with a default name
 Files can be attached with an absolute file path to your file.
 If you attach files this way, the filename shown on the web Dashboard
@@ -27,25 +27,21 @@ will be determined automatically from the passed file's name.
 To attach files this way, call the `Shake.setShakeReportData()` method as shown in the example below.
 Be careful though, any subsequent calls will override former ones already in place:
 
-```dart title="lib/main.dart"
+```dart title="main.dart"
 // highlight-start
-import 'package:shake/shake.dart';
+import 'package:shake_flutter/shake_flutter.dart';
 import 'package:shake_flutter/models/shake_file.dart';
 // highlight-end
 
-_sendLogFiles(String username) {
+void attachLogFiles(String username) {
     // highlight-start
-    List<ShakeFile> shakeFiles = List();
+    List<ShakeFile> shakeFiles = [];
     shakeFiles.add(ShakeFile.create(userFile.path));
     shakeFiles.add(ShakeFile.create(deviceFile.path));
+
+    Shake.setShakeReportData(shakeFiles);
     // highlight-end
 
-    // highlight-start
-    Shake.setShakeReportData(
-      quickFacts: "User: " + username,
-      shakeFiles: shakeFiles,
-    );
-    // highlight-end
 }
 ```
 
@@ -55,24 +51,19 @@ Files can be attached with the desired filename and an absolute file path to you
 In order to attach files this way, call `Shake.setShakeReportData()` method as shown in the example below.
 But be careful only to call it once, since any subsequent calls will override the former ones.
 
-```dart title="lib/main.dart"
+```dart title="main.dart"
 // highlight-start
 import 'package:shake_flutter/shake_flutter.dart';
 import 'package:shake_flutter/models/shake_file.dart';
 // highlight-end
 
-_sendLogFiles(String username) {
+void attachLogFiles(String username) {
     // highlight-start
-    List<ShakeFile> shakeFiles = List();
-    shakeFiles.add(ShakeFile.create(userFile.path, "userLogs"));
-    shakeFiles.add(ShakeFile.create(deviceFile.path, "deviceLogs"));
-    // highlight-end
+    List<ShakeFile> shakeFiles = [];
+    shakeFiles.add(ShakeFile.create(userFile.path, 'userLogs'));
+    shakeFiles.add(ShakeFile.create(deviceFile.path, 'deviceLogs'));
 
-    // highlight-start
-    Shake.setShakeReportData(
-      quickFacts: "User: " + username,
-      shakeFiles: shakeFiles,
-    );
+    Shake.setShakeReportData(shakeFiles);
     // highlight-end
 }
 ```

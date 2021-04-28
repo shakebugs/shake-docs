@@ -73,8 +73,8 @@ import Shake, { NotificationEventBuilder } from '@shakebugs/react-native-shake';
 // highlight-start
 const notificationEventBuilder = new NotificationEventBuilder()
     .setId('0')
-    .setDescription('Description')
-    .setTitle('Title');
+    .setTitle('Title')
+    .setDescription('Description');
 Shake.insertNotificationEvent(notificationEventBuilder);
 // highlight-end
 ```
@@ -85,17 +85,17 @@ Here’s an example of how this would look like in code:
 
 ```javascript title="App.js"
 // highlight-next-line
-import Shake, { LogLevel } from "@shakebugs/react-native-shake";
+import Shake, { LogLevel } from '@shakebugs/react-native-shake';
 
 const sendCustomLog = () => {
     // highlight-next-line
-    Shake.log(LogLevel.INFO, "This is a Shake custom log.");
+    Shake.log(LogLevel.INFO, 'This is a Shake custom log.');
 }
 ```
 
 Here are all possible log levels you can use:
 
-```javascript title="App.js"
+```javascript
 LogLevel.VERBOSE
 LogLevel.DEBUG
 LogLevel.INFO
@@ -104,12 +104,12 @@ LogLevel.ERROR
 ```
 
 ### Console logs
-Sometimes console logs can be helpful when resolving bugs.
-Use the following code snippet if you want to attach console logs to the reports:
+Console logs are recorded automatically and require no additional setup.
+If you want to disable this feature use the method below:
 
 ```javascript title="App.js"
 // highlight-next-line
-Shake.setConsoleLogsEnabled(true);
+Shake.setConsoleLogsEnabled(false);
 ```
 
 :::note

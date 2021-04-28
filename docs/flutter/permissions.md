@@ -7,10 +7,9 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 This page covers how Shake reports to you on the status of a user's permissions listed below.
 
 ## Introduction
-Shake precisely lists permissions that a user has explicitly granted access to.
-The ones you don't see listed in a report were either denied or not requested at all.
+For visual clarity on the Dashboard, Shake lists precisely those permissions that a user has explicitly granted access to.
 
-You can review user granted permissions on the Dashboard.
+The ones you don't see listed in a report were either denied or not requested at all.
 
 <img
   alt="Permissions screen"

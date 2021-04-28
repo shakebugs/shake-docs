@@ -8,9 +8,16 @@ What would you like us to build next? We're dying to hear from you — upvote up
 
 ## Version
 
+### 14.1.3
+<span class="tag-button">April 28, 2021</span>&nbsp;&nbsp;
+<span class="tag-button green-tag-button">Latest version</span>
+
+**Bug fixes**
+
+There were a few minor bugs that caused problems, like bugs do. We fixed those, and improved the SDK stability too.
+
 ### 14.1.2
 <span class="tag-button">April 22, 2021</span>&nbsp;&nbsp;
-<span class="tag-button green-tag-button">Latest version</span>
 
 **Bug fixes**
 
@@ -27,8 +34,6 @@ and introduce [Metadata](/react/metadata.md) (useful key-value pairs) instead. S
 Not all of you love the default Shake color. Now, whenever users open it up, Shake can appear in your brand color and with your logo.
 
 Your users can at last attach their own files to a bug report! They can also remove any of them with a subtle long press. Neat.
-
-There’s no such thing as too many [invocation methods](/react/invoke.md). Shake can now be invoked by a one-finger swiping gesture from the right edge of the screen too.
 
 The Wrap-up screen is now a tiny bit more helpful than before. If your users want to, they can read how to report great bugs or recommend us.
 

@@ -67,7 +67,7 @@ attachLogFile = (data) => {
       console.log('File written');
       // highlight-start
       Shake.setShakeReportData([
-          ShakeFile.create(path, "customName1")
+          ShakeFile.create(path, 'customName1')
       ]);
       // highlight-end
     })

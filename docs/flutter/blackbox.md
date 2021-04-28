@@ -57,12 +57,7 @@ App orientation is captured every 2 seconds.
 ## Enabling and disabling
 Black box is enabled by default, however, you can use the method below to disable it.
 
-```dart title="lib/main.dart"
+```dart title="main.dart"
 // highlight-next-line
-import 'package:shake_flutter/shake_flutter.dart';
-
-_disableBlackbox() {
-    // highlight-next-line
-    Shake.setEnableBlackBox(false);
-}
+Shake.setEnableBlackBox(false);
 ```

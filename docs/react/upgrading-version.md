@@ -12,11 +12,11 @@ Client id and client secret keys are passed as parameters of `Shake.start()` met
 Use:
 ```javascript title="index.js"
 // highlight-next-line
-import Shake from "@shakebugs/react-native-shake";
+import Shake from '@shakebugs/react-native-shake';
 
 const initializeShake = () => {
     // highlight-next-line
-    Shake.start("client-id", "client-secret");
+    Shake.start('client-id', 'client-secret');
 }
 ```
 
@@ -78,7 +78,7 @@ public class MainApplication extends Application implements ReactApplication {
 
 ```javascript title="index.js"
 // highlight-next-line
-import Shake from "@shakebugs/react-native-shake";
+import Shake from '@shakebugs/react-native-shake';
 
 const initializeShake = () => {
     // highlight-next-line
@@ -93,19 +93,19 @@ If you want to enable network requests tracker, pass `true` as a parameter, othe
 Use:
 ```javascript title="App.js"
 // highlight-next-line
-import Shake from "@shakebugs/react-native-shake";
+import Shake from '@shakebugs/react-native-shake';
 
 const initializeShake = () => {
     // highlight-next-line
     Shake.setNetworkRequestsEnabled(true);
-    Shake.start("client-id", "client-secret");
+    Shake.start('client-id', 'client-secret');
 }
 ```
 
 Instead:
 ```javascript title="App.js"
 // highlight-next-line
-import Shake, { NetworkTracker } from "@shakebugs/react-native-shake";
+import Shake, { NetworkTracker } from '@shakebugs/react-native-shake';
 
 const initializeShake = () => {
     // highlight-next-line
@@ -124,8 +124,8 @@ import Shake from '@shakebugs/react-native-shake';
 
 const attachData = (user) => {
     // highlight-start
-    Shake.setMetadata("userId", user.id);
-    Shake.setMetadata("userName", user.name);
+    Shake.setMetadata('userId', user.id);
+    Shake.setMetadata('userName', user.name);
     // highlight-end
 }
 ```
@@ -138,7 +138,7 @@ import Shake from '@shakebugs/react-native-shake';
 
 const attachData = (user) => {
     // highlight-next-line
-    Shake.setShakeReportData([], "userId: " + user.id + " userName: " + user.name);
+    Shake.setShakeReportData([], 'userId: ' + user.id + ' userName: ' + user.name);
 }
 ```
 
