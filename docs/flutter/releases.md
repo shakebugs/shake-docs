@@ -7,7 +7,7 @@ This page lists all updates to the Shake Flutter SDK.
 What would you like us to build next? We're dying to hear from you — upvote upcoming features and suggest new ideas on [feedback.shakebugs.com](https://feedback.shakebugs.com/)
 
 ### 14.1.0
-<span class="tag-button">April 27, 2021</span>&nbsp;&nbsp;
+<span class="tag-button">April 28, 2021</span>&nbsp;&nbsp;
 <span class="tag-button green-tag-button">Latest version</span>
 
 **What's new**
