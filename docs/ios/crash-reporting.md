@@ -39,7 +39,6 @@ to calling the `start` method.
 ```objectivec title="AppDelegate.m"
 //highlight-start
 SHKShake.configuration.isCrashReportingEnabled = YES;
-[SHKShake start];
 //highlight-end
 ```
 
@@ -50,7 +49,6 @@ SHKShake.configuration.isCrashReportingEnabled = YES;
 ```swift title="AppDelegate.swift"
 //highlight-start
 Shake.configuration.isCrashReportingEnabled = true
-Shake.start()
 //highlight-end
 ```
 
@@ -68,12 +66,9 @@ actions that led to the crash.
 
 
 ## Editing the report
-
 During the next app launch after the crash occurs, a popup offering the user a chance to describe the crash will appear.
 
-This behaviour is controlled with the `isAskForCrashDescriptionEnabled` flag passed in to the Shake configuration object.
-
-
+This can be enabled by setting the `isAskForCrashDescription` flag to `true` prior to calling the `start` method.
 
 <Tabs
   groupId="ios"
@@ -88,9 +83,7 @@ This behaviour is controlled with the `isAskForCrashDescriptionEnabled` flag pas
 
 ```objectivec title="AppDelegate.m"
 //highlight-start
-SHKShake.configuration.isCrashReportingEnabled = YES;
 SHKShake.configuration.isAskForCrashDescriptionEnabled = YES;
-[SHKShake start];
 //highlight-end
 ```
 
@@ -100,9 +93,7 @@ SHKShake.configuration.isAskForCrashDescriptionEnabled = YES;
 
 ```swift title="AppDelegate.swift"
 //highlight-start
-Shake.configuration.isCrashReportingEnabled = true
 Shake.configuration.isAskForCrashDescriptionEnabled = true
-Shake.start()
 //highlight-end
 ```
 
@@ -399,7 +390,6 @@ Avoid using unique values for error clusterID, as this could cause a large numbe
 <TabItem value="objectivec">
 
 ```objectivec title="ViewController.m"
-//highlight-start
 - (void)viewDidLoad {
     [super viewDidLoad];
 
@@ -407,6 +397,7 @@ Avoid using unique values for error clusterID, as this could cause a large numbe
     [self functionThatCanThrowError:&error];
 
     if (error) {
+        // highlight-next-line
     	[SHKShake handleError:error clusterID: @"MyViewController"];
     }
 }
@@ -418,7 +409,6 @@ Avoid using unique values for error clusterID, as this could cause a large numbe
                                             userInfo:userInfo];
 	}
 }
-//highlight-end
 ```
 
 </TabItem>
@@ -426,22 +416,21 @@ Avoid using unique values for error clusterID, as this could cause a large numbe
 <TabItem value="swift">
 
 ```swift title="ViewController.swift"
-//highlight-start
-    override func viewDidLoad() {
-        super.viewDidLoad()
+override func viewDidLoad() {
+    super.viewDidLoad()
 
-        do {
-            try functionThatCanThrowError()
-        } catch let error {
-            Shake.handleError(error, clusterID: "MyViewController")
-        }
-
+    do {
+        try functionThatCanThrowError()
+    } catch let error {
+        // highlight-next-line
+        Shake.handleError(error, clusterID: "MyViewController")
     }
 
-    private func functionThatCanThrowError() throws {
-        throw MyError.testError
-    }
-//highlight-end
+}
+
+private func functionThatCanThrowError() throws {
+    throw MyError.testError
+}
 ```
 
 </TabItem>

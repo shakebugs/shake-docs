@@ -107,11 +107,13 @@ Detailed crash reports like this, along with logs and other useful information, 
 
 ## Deobfuscating reports
 
-If you are using Proguard to obfuscate your code, no problem! You can upload your Mapping.txt file so we can deobfuscate your stack traces on our Dashboard.
-
-You can do this two ways:
+If you are using Proguard to obfuscate your code, no problem! You can upload your *mapping.txt* file so we can deobfuscate your stack traces on our Dashboard.
 
 ### Uploading manually via the Dashboard
+
+By default, *mapping.txt* file is created in the build directory of the app module: *project/app/build/outputs/mapping/release/mapping.txt*.  
+
+You can simply drag and drop *mapping.txt* file on our Shake dashboard to upload it.
 
 ### Using the script
 
@@ -263,7 +265,7 @@ task uploadMappingFile {
 ## Test it out
 
 Let's crash you app. 
-Enable crash reporting and paste the line below in the `onStart` method in one of your activities.
+Enable crash reporting and paste the line below in the `onCreate` method in one of your activities.
 
 Launch you app after the crash, edit the report if you want and close the dialog. Few minutes after, your report
 should be visible on the Shake dashboard.
@@ -279,7 +281,7 @@ should be visible on the Shake dashboard.
 
 <TabItem value="java">
 
-```java title="MyActivity.java"
+```java title="MainActivity.java"
 // highlight-next-line
 import com.shakebugs.shake.Shake
 
@@ -287,20 +289,20 @@ public class MainActivity extends Activity {
   @Override
   public void onCreate() {
     super.onCreate();
-// highlight-next-line
+    // highlight-next-line
     throw new ArithmeticException("Fatal test exception");
 ```
 
 </TabItem><TabItem value="kotlin">
 
-```kotlin title="MyActivity.kt"
+```kotlin title="MainActivity.kt"
 // highlight-next-line
 import com.shakebugs.shake.Shake
 
 public class MainActivity : Activity {
   override fun onCreate() {
     super.onCreate()
-// highlight-next-line
+    // highlight-next-line
     throw ArithmeticException("Fatal test exception")
 ```
 
@@ -332,7 +334,7 @@ Avoid using unique values for error clusterID, as this could cause a large numbe
 
 <TabItem value="java">
 
-```java title="MyActivity.java"
+```java title="MainActivity.java"
 try {
     throw new ClassNotFoundException("Handled test exception");
 } catch (Exception e) {
@@ -343,7 +345,7 @@ try {
 
 </TabItem><TabItem value="kotlin">
 
-```kotlin title="MyActivity.kt"
+```kotlin title="MainActivity.kt"
 try {
     throw ClassNotFoundException("Handled exception")
 } catch (e: Exception) {
