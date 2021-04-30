@@ -287,7 +287,7 @@ Also you can pass the dSYM file paths manually:
 
 Let's crash you app. 
 Enable crash reporting and paste the snippet below in the `viewDidLoad` method in one of your view controllers.
-We'll be accessing the array with the out of bounds index.
+We'll crash the app on a button tap by accessing the array with the out of bounds index.
 
 Launch you app after the crash, edit the report if you want and close the dialog. Few minutes after, your report
 should be visible on the Shake dashboard.
@@ -338,25 +338,24 @@ to the application process and will disable the crash recording.
 
 ```swift title="ViewController.swift"
 //highlight-start
-    override func viewDidLoad() {
-        super.viewDidLoad()
+override func viewDidLoad() {
+    super.viewDidLoad()
 
-        let crashButton = UIButton(type: .roundedRect)
+    let crashButton = UIButton(type: .roundedRect)
 
-        crashButton.setTitle("Crash me", for: .normal)
-        crashButton.frame = .init(x: 0, y: 0, width: 100, height: 50)
-        crashButton.center = self.view.center
+    crashButton.setTitle("Crash me", for: .normal)
+    crashButton.frame = .init(x: 0, y: 0, width: 100, height: 50)
+    crashButton.center = self.view.center
 
-        self.view.addSubview(crashButton)
+    self.view.addSubview(crashButton)
 
-        crashButton.addTarget(self, action: #selector(crashButtonHandler), for: .touchUpInside)
+    crashButton.addTarget(self, action: #selector(crashButtonHandler), for: .touchUpInside)
+}
 
-    }
-
-    @objc func crashButtonHandler() {
-        let arr = [1, 2, 3]
-        let myVar = arr[5]
-    }
+@objc func crashButtonHandler() {
+    let arr = [1, 2, 3]
+    let myVar = arr[5]
+}
 //highlight-end
 ```
 
@@ -374,7 +373,7 @@ contextual information as crash reports, and act as an extension to the crash re
 
 :::note
 
-Avoid using unique values for error clusterID, as this could cause a large number of reported errors to Shake that appear unrelated, but actually are, and clog your dashboard.
+Avoid using unique values for error `clusterID`, as this could cause a large number of reported errors to Shake that appear unrelated, but actually are, and clog your dashboard.
 
 :::
 

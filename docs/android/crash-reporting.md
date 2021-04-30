@@ -266,6 +266,7 @@ task uploadMappingFile {
 
 Let's crash you app. 
 Enable crash reporting and paste the line below in the `onCreate` method in one of your activities.
+We'll crash the app on a button tap by accessing the array with the out of bounds index.
 
 Launch you app after the crash, edit the report if you want and close the dialog. Few minutes after, your report
 should be visible on the Shake dashboard.
@@ -282,28 +283,43 @@ should be visible on the Shake dashboard.
 <TabItem value="java">
 
 ```java title="MainActivity.java"
-// highlight-next-line
-import com.shakebugs.shake.Shake
-
 public class MainActivity extends Activity {
-  @Override
-  public void onCreate() {
-    super.onCreate();
-    // highlight-next-line
-    throw new ArithmeticException("Fatal test exception");
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        // highlight-start
+        Button buttonCrash = findViewById(R.id.button_crash);
+        buttonCrash.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int[] array = new int[]{1, 2, 3};
+                int result = array[5];
+            }
+        });
+        // highlight-end
+    }
+}
 ```
 
 </TabItem><TabItem value="kotlin">
 
 ```kotlin title="MainActivity.kt"
-// highlight-next-line
-import com.shakebugs.shake.Shake
-
 public class MainActivity : Activity {
-  override fun onCreate() {
-    super.onCreate()
-    // highlight-next-line
-    throw ArithmeticException("Fatal test exception")
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        // highlight-start
+        val buttonCrash: Button = findViewById(R.id.button_crash)
+        buttonCrash.setOnClickListener { 
+            val array = arrayOf(1, 2, 3)
+            val result = array[5]
+        }
+        // highlight-end
+    }
+}
 ```
 
 </TabItem></Tabs>
@@ -319,7 +335,7 @@ contextual information as crash reports, and act as an extension to the crash re
 
 :::note
 
-Avoid using unique values for error clusterID, as this could cause a large number of reported errors to Shake that appear unrelated, but actually are, and clog your dashboard.
+Avoid using unique values for error `clusterID`, as this could cause a large number of reported errors to Shake that appear unrelated, but actually are, and clog your dashboard.
 
 :::
 
@@ -338,7 +354,7 @@ Avoid using unique values for error clusterID, as this could cause a large numbe
 try {
     throw new ClassNotFoundException("Handled test exception");
 } catch (Exception e) {
-// highlight-next-line
+    // highlight-next-line
     Shake.handleError(e, "cluster-id");
 }
 ```
@@ -347,9 +363,9 @@ try {
 
 ```kotlin title="MainActivity.kt"
 try {
-    throw ClassNotFoundException("Handled exception")
+    throw ClassNotFoundException("Handled test exception")
 } catch (e: Exception) {
-// highlight-next-line
+    // highlight-next-line
     Shake.handleError(e, "cluster-id")
 }
 ```
