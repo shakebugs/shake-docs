@@ -22,6 +22,7 @@ module.exports = {
                         'android/intro-message',
                         'android/screenshot',
                         'android/automatic-screen-recording',
+                        'android/crash-reporting',
                         'android/permissions',
                         'android/activity',
                         'android/essentials',
@@ -60,7 +61,9 @@ module.exports = {
                         'ios/intro-message',
                         'ios/screenshot',
                         'ios/automatic-screen-recording',
+                        'ios/crash-reporting',
                         'ios/permissions',
+                        'ios/network-request-reporting',
                         'ios/activity',
                         'ios/essentials',
                         'ios/attachments',
@@ -167,7 +170,7 @@ module.exports = {
         },
         {
             type: 'doc',
-            id: 'automatically-captured-data',
+            id: 'captured-data-privacy',
         },
     ],
 };

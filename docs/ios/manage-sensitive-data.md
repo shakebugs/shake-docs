@@ -11,7 +11,11 @@ so it never reaches the Shake servers.
 
 ## Views
 You can mark any view as private, and it'll automatically be deleted from the screenshot.
-Private views are stored as a weak reference, they get cleared from the memory when not used anymore.
+Private views are stored as a weak reference, so they don't alter the view lifecycle in any way.
+
+:::note
+This feature is disabled for iOS applications built with __SwiftUI__.
+:::
 
 Let's suppose you're building a shopping cart app and you want to delete the name and the credit card number views
 from the screenshot:

@@ -52,6 +52,7 @@ Shake.insertNetworkRequest(networkRequestBuilder);
 
 ### System events
 System events are tracked automatically and require no additional setup.
+These are application lifecycle events.
 
 ### Notifications
 On iOS, notifications are tracked automatically and require no additional setup.   

@@ -16,6 +16,14 @@ data developers receive with Shake SDK, and you will find this data at the top o
   src={useBaseUrl('screens/bug_screen.png')}
 />
 
+:::note
+
+Jetpack Compose is a declarative UI toolkit, a paradigm shift from the current View system.
+Shake supports capturing Jetpack Compose screens excepting components like LazyColumn, LazyRow Scaffold and Shapes.
+On Android O devices, Shake supports capturing excepted components excluding in dialogs.
+
+:::
+
 ## User drawing on the screenshot
 When users shake their phone and the SDK pops up, they are encouraged to additionally mark a
 spot on the screenshot that seems odd to them.
