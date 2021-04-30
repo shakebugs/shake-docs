@@ -25,7 +25,7 @@ class FlutterVersionBlock extends React.Component {
                     metastring={'{2} title="pubspec.yaml"'}
                     className={'yaml'}
                     children={'dependencies:\n' +
-                    `    shake_flutter: ${this.state.version}`}/>
+                    `    shake_flutter: ^${this.state.version}`}/>
                 <br/>
             </div>
         );
