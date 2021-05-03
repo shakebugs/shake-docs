@@ -184,18 +184,17 @@ Path/to/upload-symbols.sh \
 //highlight-end
 ```
 
-
 :::note
 This method is not suitable for apps using __Bitcode__ binary format.
 :::
 
-Also, you can add the previous script to the `Archive -> Post-actions`. So the latest dSYMS will be uploaded after every archive action.
+Also, you can add the previous script to the *Archive › Post-actions*. So the latest dSYMS will be uploaded after every archive action.
 Make sure to select your app to provide build settings to script.
 
 If your reports are not being symbolicated, make sure the script is working properly
 by doublechecking the Xcode Build log for Shake upload script errors. 
 
-When viewing the Build log, search for "SHAKE_SCRIPT" keyword to identify potential problems and check if the upload was succesfull.
+When viewing the Build log, search for "SHAKE_SCRIPT" keyword to identify potential problems and check if the upload was successful.
 
 ### Upload dSYMS using Fastlane plugin
 
