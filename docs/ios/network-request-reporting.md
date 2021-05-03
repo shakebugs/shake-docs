@@ -1,17 +1,17 @@
 ---
 id: network-request-reporting
-title: Network Request Reporting
+title: Network request reporting
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 You can configure Shake to capture all network traffic from a specific _URLSession_.
-Network requests are vital part of any todays application. Having a clear presentation of network request logs gives you a valuable insight of your application lifecycle.
+Network requests are a vital part of all modern applications. Having a clear presentation of network request logs gives you a valuable insight of your application lifecycle.
 
 ## Setup
 
-Shake Network Request reporting feature is enabled with the `Shake.isActivityHistoryEnabled` flag , however this doesn't automatically start intercepting any of your app URL requests.
+Shake Network Request reporting feature is enabled with the `Shake.isActivityHistoryEnabled` flag, however this doesn't automatically start intercepting any of your app URL requests.
 
-Shake network intercepting works by _stubbing_ your _URLSessionConfiguration_ object attached to your apps _URLSession_. 
+Shake network intercepting works by _stubbing_ your _URLSessionConfiguration_ object attached to your app's _URLSession_. 
 
 :::note
 
@@ -56,7 +56,7 @@ Given the above setup, Shake will start intercepting all of the network requests
 
 :::note
 
-Shake can intercept only network requests which use the `http` and `https` protocol. URL requests that don't use the mentioned protocols are not intercepted by Shake and are 
+Shake can intercept only network requests which use the `http` and `https` protocol. URL requests that don't use said protocols are not intercepted by Shake and are 
 not affected in any way.
 
 :::
@@ -70,15 +70,15 @@ the configuration to the library initializer method.
 
 ## Sensitive data
 
-Network requests can contain sensitive data that you may not want to be visible on the Shake dashboard. Although Shake will automatically scan the intercepted requests and redact some of the 
-data it can recognize, you can set your custom network request filter to precisely edit out all of the sensitive fields from the intercepted network request.
+Network requests can contain sensitive data that you may not want to send to Shake servers. Although Shake will automatically scan the intercepted requests and redact some of the 
+data it can recognize, you can set your custom network request filter to precisely filter out all sensitive fields from the intercepted network request.
 
 Checkout the [Manage Sensitive Data](ios/manage-sensitive-data.md/#network-requests) article.
 
 ## Advanced usage
 
-Advanced users will use client server authentication mechanism or even register their own _URLProtocol_ classes. This section covers
-these use cases and provide a way to integrate Shake in this kind of implementations.
+Advanced users will use client-server authentication mechanism or even register their own _URLProtocol_ classes. This section covers
+these use cases and provides a way to integrate Shake in these kinds of implementations.
 
 ### Handling authentication challenges
 
@@ -188,17 +188,17 @@ class NetworkService {
 ```
 </TabItem></Tabs>
 
-The above snippet, if setup correctly, causes all of the authentication challenges from your _URLSession_ to sink through the protocol method in 
+The above snippet, if set up correctly, causes all of the authentication challenges from your _URLSession_ to sink through the protocol method in 
 your _AuthenticationDelegate_ class declared in the above snippet.
 
 
 ### Custom URLProtocol
 
-If your app is registering a custom _URLProtocol_ class and is already intercepting your apps requests for various reasons, do not use the 
+If your app is registering a custom _URLProtocol_ class and is already intercepting your app's requests for various reasons, do not use the 
 `Shake.registerSessionConfiguration` or `Shake.registerAuthDelegate` methods as they will interfere with the _URLProtocol_ subclass 
 you defined.
 
-Instead, make use of the `Shake.insertNetworkRequest` method to insert the network requests manually while maintaining your custom 
+Instead, use the `Shake.insertNetworkRequest` method to insert the network requests manually while maintaining your custom 
 implementation intact.
 
 
@@ -209,7 +209,7 @@ Network events can be manually inserted to Shake and require no prior setup.
 We recommend using this option if your application is using its own _URLProtocol_ or there are only 
 certain network events that should be logged.
 
-Example of usage can be found in the below snippet.
+An example can be found in the snippet below:
 
 <Tabs
   groupId="ios"
