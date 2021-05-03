@@ -189,6 +189,8 @@ Path/to/upload-symbols.sh \
 This method is not suitable for apps using __Bitcode__ binary format.
 :::
 
+Also, you can add the previous script to the `Archive -> Post-actions`. So the latest dSYMS will be uploaded after every archive action.
+Make sure to select your app to provide build settings to script.
 
 If your reports are not being symbolicated, make sure the script is working properly
 by doublechecking the Xcode Build log for Shake upload script errors. 
