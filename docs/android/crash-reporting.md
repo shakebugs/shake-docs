@@ -13,8 +13,8 @@ Crash reporting is currently in beta.
 
 ## Introduction
 
-Shake will record the crashes and uncaught exceptions that occur in your app and intelligently group them on the dashboard, offering enough
-contextual information to help you with solving the issue. This is powerful in itself, but when combined with rest 
+Shake records crashes and uncaught exceptions that occur in your app and intelligently groups them on the dashboard, offering enough
+contextual information to help you with solving the issue. It is powerful on its own, but when combined with rest 
 of the Shake features, it becomes a crash reporting power tool.
 
 ## Enable crash reporting
@@ -56,13 +56,11 @@ Shake.isCrashReportingEnabled = true
 Crash reports are automatically sent during the next app launch after the crash occurs. These reports follow the same rules as regular feedback reports to some extent.
 The crash reports will be saved even if the app is offline and sent later when app regains connection. 
 
-However, the user can't opt out of sending the crash report as it can with the standard feedback, but he can optionally provide more information and describe the 
-actions that lead to the crash.
-
+Your end users can't opt out of sending their crash report as they can with the standard feedback, however they can optionally provide more information and describe what happened prior to the crash.
 
 ## Editing the report
 
-During the next app launch after the crash occurs, a popup offering the user a chance to describe the crash will appear.
+On the next app launch after the crash occurs, a sheet offering the user a chance to describe the crash will appear.
 
 This can be enabled by setting the `isAskForCrashDescription` flag to `true` prior to calling the `start` method.
 
@@ -99,11 +97,9 @@ crash, and potentially edit the information that is being passed to Shake dashbo
 
 As mentioned before, the crash report is similar to the regular feedback report. 
 
-This means that all of the existing Shake features elegantly interoperate with it, meaning that your crash report will provide the screenshot of the last thing that user saw, and even better, the
-last 15 sec of the screen recording before the crash.
+All of the existing Shake features elegantly interoperate with it, meaning that your crash report will provide the screenshot of the last thing that user saw, and even better, the last 15 seconds of the screen recording before the crash!
 
-Detailed crash reports like this, along with logs and other useful information, provide devs with plenty of usable data to help them with resolving the issue.
-
+A detailed crash report like this one, along with logs and all other useful information, provides you with plenty of usable data to help you resolve the root issue efficiently.
 
 ## Deobfuscating reports
 
@@ -268,8 +264,8 @@ Let's crash you app.
 Enable crash reporting and paste the line below in the `onCreate` method in one of your activities.
 We'll crash the app on a button tap by accessing the array with the out of bounds index.
 
-Launch you app after the crash, edit the report if you want and close the dialog. Few minutes after, your report
-should be visible on the Shake dashboard.
+Launch you app after the crash, add a sentence or two if you want to and submit the report. 
+Your report will be visible on the Shake dashboard in a few minutes.
 
 <Tabs
   groupId="android"
@@ -335,7 +331,7 @@ contextual information as crash reports, and act as an extension to the crash re
 
 :::note
 
-Avoid using unique values for error `clusterID`, as this could cause a large number of reported errors to Shake that appear unrelated, but actually are, and clog your dashboard.
+Avoid using unique values for error *clusterID*  as this will cause a large number of reported errors appear unrelated — although they actually are — which will clog your Shake dashboard.
 
 :::
 

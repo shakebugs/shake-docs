@@ -16,8 +16,8 @@ Crash reporting is currently in beta.
 
 ## Introduction
 
-Shake will record the crashes and uncaught exceptions that occur in your app and intelligently group them on the dashboard, offering enough 
-contextual information to help you with solving the issue. This is powerful in itself, but when combined with rest 
+Shake records crashes and uncaught exceptions that occur in your app and intelligently groups them on the dashboard, offering enough 
+contextual information to help you with solving the issue. It is powerful on its own, but when combined with rest 
 of the Shake features, it becomes a crash reporting power tool.
 
 ## Enable crash reporting
@@ -61,12 +61,11 @@ Shake.configuration.isCrashReportingEnabled = true
 Crash reports are automatically sent during the next app launch after the crash occurs. These reports follow the same rules as regular feedback reports to some extent.
 The crash reports will be saved even if the app is offline and sent later when app regains connection. 
 
-However, the user can't opt out of sending the crash report as it can with the standard feedback, but he can optionally provide more information and describe the 
-actions that led to the crash.
-
+Your end users can't opt out of sending their crash report as they can with the standard feedback, however they can optionally provide more information and describe what happened prior to the crash.
 
 ## Editing the report
-During the next app launch after the crash occurs, a popup offering the user a chance to describe the crash will appear.
+
+On the next app launch after the crash occurs, a sheet offering the user a chance to describe the crash will appear.
 
 This can be enabled by setting the `isAskForCrashDescription` flag to `true` prior to calling the `start` method.
 
@@ -104,22 +103,19 @@ Shake.configuration.isAskForCrashDescriptionEnabled = true
 When enabled, this feature allows the user to provide a more detailed description of the actions that could have led up to the 
 crash, and potentially edit the information that is being passed to Shake dashboard.
 
-
 ## Report context
 
 As mentioned before, the crash report is similar to the regular feedback report. 
 
-This means that all of the existing Shake features elegantly interoperate with it, meaning that your crash report will provide the screenshot of the last thing that user saw, and even better, the
-last 15 sec of the screen recording before the crash.
+All of the existing Shake features elegantly interoperate with it, meaning that your crash report will provide the screenshot of the last thing that user saw, and even better, the last 15 seconds of the screen recording before the crash!
 
-Detailed crash reports like this, along with logs and other useful information, provide devs with plenty of usable data to help them with resolving the issue.
-
+A detailed crash report like this one, along with logs and all other useful information, provides you with plenty of usable data to help you resolve the root issue efficiently.
 
 ## Symbolicating crash reports
 
 The crash reports are a lot more useful when you see your symbolicated application frames.
 
-In order to symbolicate the reports, Shake needs the dSYM files from your application project.
+In order to symbolicate the reports, Shake needs the dSYMS which can be found on your system.
 
 
 :::note
@@ -132,11 +128,11 @@ you system.
 
 ### Enable dSYMS for debug builds
 
-If you plan on using the crash reporter tool in the development environments, every debug build action needs to generate dSYM files.
+If you plan using Shake Crash in a development environment, every debug build action needs to generate dSYM files.
 
-When in your project / workspace, select your _App.xcodeproj_ blue project icon usually at the top of the _File Inspector_ tab on your left 
-hand pane. Select your main app target and open the Build Settings for that target. Navigate to the Build Options section and choose 
-__dwarf with dSYM file__ option for your Debug/Development configuration.
+When in your project / workspace, click your *App.xcodeproj* blue project icon — it's usually located at the top of the *File Inspector* tab in your left-hand pane. 
+Select your main app target and open the Build Settings for that target. Navigate to the Build Options section and choose 
+*dwarf with dSYM file* option for your Debug/Development configuration.
 
 
 ### Finding dSYMS
@@ -161,10 +157,10 @@ For the apps built with Bitcode setting, use the Fastlane plugin to grab the cor
 Your application dSYM files can be manually zipped and uploaded to the Shake dashboard.
 
 Symbolication files are located in the project build folder which is easily accessed by navigating to 
-Xcode _Preferences_>_Locations_>_Derived Data_ and clicking the _Finder_ folder link.
+Xcode *Preferences › Locations › Derived Data* and clicking the *Finder* folder link.
 
-For archived applications with enabled Bitcode, which have already been uploaded to the AppStore, use the 
-Xcode _Organizer_ tool (_Xcode_>_Window_>_Organizer_) to manually download the AppStore generated debug symbols by clicking the _"Download Debug Symbols"_ button on the right hand pane.
+For archived applications with Bitcode enabled, which have already been uploaded to the AppStore, use the 
+Xcode *Organizer* tool (*Xcode › Window › Organizer*) to manually download the AppStore generated debug symbols by clicking the *"Download Debug Symbols"* button on the right hand pane.
 
 Make sure to ZIP the symbolication files before dropping them on the Shake dashboard.
 
@@ -178,8 +174,8 @@ with the correct values for your environment.
 
 ```script
 //highlight-start
-Path/to/upload-symbols.sh \ 
---client_id your_client_id \
+Path/to/upload-symbols.sh\ 
+--client_id your_client_id\
 --client_secret your_client_secret
 //highlight-end
 ```
@@ -196,22 +192,22 @@ by doublechecking the Xcode Build log for Shake upload script errors.
 
 When viewing the Build log, search for "SHAKE_SCRIPT" keyword to identify potential problems and check if the upload was successful.
 
-### Upload dSYMS using Fastlane plugin
+### Upload dSYMS using fastlane plugin
 
 Fastlane is an open source platform aimed at simplifying mobile development tasks. It handles authentication with 
 App Store Connect and downloading dSYM files.
 
 Use this method if your app has __Bitcode__ format enabled.
 
-#### Installing Fastlane
+#### Installing fastlane
 
 It is recommended that you use `Bundler` and `Gemfile` to define your dependency on fastlane. 
 This will clearly define the fastlane version to be used and its dependencies, and will also speed up fastlane execution.
 
 First of all, you should run `bundle init`  command which will generate Gemfile.
-When Gemfile was generated, add `fastlane` gem. 
+After the Gemfile is generated, add `fastlane` gem. 
 
-Now, your newly created Gemfile should look like:
+Now, your newly created Gemfile should look like this:
 
 <TabItem value="gemifle">
 
@@ -223,11 +219,11 @@ gem "fastlane"
 ```
 </TabItem>
 
-Next run `bundle install` command which will install Fastlane and all associated dependencies.
+Next, run the `bundle install` command which will install fastlane and all associated dependencies.
 
 Navigate your terminal to your project's directory and run `fastlane init` command.
 
-For more info about installing Fastlane, visit [Fastlane](http://docs.fastlane.tools) docs.
+For more info about installing fastlane, visit the [fastlane](http://docs.fastlane.tools) docs.
 
 #### Installing Shake plugin 
 
@@ -242,8 +238,8 @@ bundle exec fastlane add_plugin upload_symbols_to_shake
 
 #### Using the plugin
 
-If you have [Bitcode](https://help.apple.com/xcode/mac/current/#/devbbdc5ce4f) enabled in your application's project settings, dSYM files are generated by the App Store when
-your app is recompiled after upload and will need to be downloaded by Fastlane.
+If you have [Bitcode](https://help.apple.com/xcode/mac/current/#/devbbdc5ce4f) enabled in your application's project settings, 
+dSYM files are generated by the App Store when your app is recompiled after the upload, and will need to be downloaded by fastlane.
 
 In this situation you can use Shake plugin with [download_dsyms](http://docs.fastlane.tools/actions/download_dsyms/#download_dsyms) to upload dSYM files:
 
@@ -259,7 +255,7 @@ end
 ```
 </TabItem>
 
-On the oher hand, if you have [Bitcode](https://help.apple.com/xcode/mac/current/#/devbbdc5ce4f) disabled add the `upload_symbols_to_shake` action with [gym](http://docs.fastlane.tools/actions/gym/#gym) to upload dSYMs generated from the build:
+On the other hand, if you have [Bitcode](https://help.apple.com/xcode/mac/current/#/devbbdc5ce4f) disabled, add the `upload_symbols_to_shake` action with [gym](http://docs.fastlane.tools/actions/gym/#gym) to upload dSYMs generated from the build:
 
 <TabItem value="ruby">
 
@@ -273,7 +269,7 @@ end
 ```
 </TabItem>
 
-Also you can pass the dSYM file paths manually:
+You can also pass the dSYM file paths manually:
 
 <TabItem value="ruby">
 
@@ -290,13 +286,13 @@ Let's crash you app.
 Enable crash reporting and paste the snippet below in the `viewDidLoad` method in one of your view controllers.
 We'll crash the app on a button tap by accessing the array with the out of bounds index.
 
-Launch you app after the crash, edit the report if you want and close the dialog. Few minutes after, your report
-should be visible on the Shake dashboard.
+Launch you app after the crash, add a sentence or two if you want to and submit the report. 
+Your report will be visible on the Shake dashboard in a few minutes.
 
 :::note
 
 Before testing this, make sure to disconnect your device from the Xcode debugger. Xcode debugger attaches itself 
-to the application process and will disable the crash recording.
+to the application process and will disable crash recording.
 
 :::
 
@@ -374,7 +370,7 @@ contextual information as crash reports, and act as an extension to the crash re
 
 :::note
 
-Avoid using unique values for error `clusterID`, as this could cause a large number of reported errors to Shake that appear unrelated, but actually are, and clog your dashboard.
+Avoid using unique values for error *clusterID*  as this will cause a large number of reported errors appear unrelated — although they actually are — which will clog your Shake dashboard.
 
 :::
 
