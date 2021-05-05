@@ -92,6 +92,30 @@ Shake.configuration.isInvokedByRightEdgePan = true
 ### Shaking
 The default, shaking gesture causes the SDK to pop up.
 
+Shaking gesture sensitivity can be fine tuned as shown in the snippet below:
+
+<Tabs groupId="ios" values={[{ label: 'Objective-C', value: 'objectivec'},{ label: 'Swift', value: 'swift'},]} defaultValue="swift"><TabItem value="objectivec">
+
+```objc title="AppDelegate.m"
+//highlight-start
+ SHKShake.configuration.shakingThreshold = 400; // Default value is 600.
+//highlight-end
+```
+</TabItem><TabItem value="swift">
+
+```swift title="AppDelegate.swift"
+//highlight-start
+ Shake.configuration.shakingThreshold = 400 // Default value is 600.
+//highlight-end
+```
+
+</TabItem></Tabs>
+
+In the above example, threshold is reduced a bit, meaning that Shake is a bit easier to invoke with the shaking gesture.
+
+A valid treshold value range is `1 - 1000`, with bigger values representing decreased sensitivity meaning that a stronger 
+motion gesture is required to invoke Shake.
+
 ### Button
 This invocation event will create the floating button on top of your app's UI which users can clearly see at all times. This button can be dragged to a more suitable position.
 
