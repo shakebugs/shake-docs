@@ -304,11 +304,11 @@ func setupNetworkFilter() {
     
     // highlight-start
     Shake.networkRequestsFilter = { (networkRequest) in
-        if let requestHeaders = networkRequest.requestHeaders {
-            if requestHeaders["Authorization"] != nil {
-                requestHeaders["Authorization"] = "***"
-            }
+           
+        if networkRequest.requestHeaders["Authorization"] != nil {
+            networkRequest.requestHeaders["Authorization"] = "***"
         }
+        
         return networkRequest
     }
     // highlight-end
@@ -341,7 +341,7 @@ values={[
     SHKShake.networkRequestsFilter = ^SHKNetworkRequestEditor *(SHKNetworkRequestEditor * networkRequest) {
         NSMutableDictionary<NSString *, NSString *>* headers = networkRequest.requestHeaders;
         
-        if ([networkRequest.utl hasPrefix:@"https://api.myapp.com/cards"]) {
+        if ([networkRequest.url hasPrefix:@"https://api.myapp.com/cards"]) {
             return nil;
         }
         
@@ -364,7 +364,7 @@ func setupNetworkFilter() {
     // highlight-start
     Shake.networkRequestsFilter = { (networkRequest) in
         
-        if networkRequest.utl.contains("https://api.myapp.com/cards") {
+        if networkRequest.url.contains("https://api.myapp.com/cards") {
             return nil
         }
         
@@ -423,7 +423,7 @@ values={[
 // highlight-next-line
 import Shake
 
-func setupNetworkFilter() {
+func setupNotificationEventsFilter() {
     
     // highlight-start
     Shake.notificationEventsFilter = { (notificationEvent) in
@@ -480,7 +480,7 @@ values={[
 // highlight-next-line
 import Shake
 
-func setupNetworkFilter() {
+func setupNotificationEventFilter() {
     // highlight-start
     Shake.notificationEventsFilter = { (notificationEvent) in
         
