@@ -174,8 +174,8 @@ with the correct values for your environment.
 
 ```script
 //highlight-start
-Path/to/upload-symbols.sh\ 
---client_id your_client_id\
+Path/to/upload-symbols.sh \
+--client_id your_client_id \
 --client_secret your_client_secret
 //highlight-end
 ```
