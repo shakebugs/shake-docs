@@ -98,7 +98,7 @@ Shaking gesture sensitivity can be fine tuned as shown in the snippet below:
 
 ```objc title="AppDelegate.m"
 //highlight-start
- SHKShake.configuration.shakingThreshold = 400 // Default value is 600.
+ SHKShake.configuration.shakingThreshold = 400; // Default value is 600.
 //highlight-end
 ```
 </TabItem><TabItem value="swift">
