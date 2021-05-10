@@ -161,7 +161,7 @@ let fileUrl: URL = ...
 //highlight-start
 Shake.onPrepareReportData = { 
   var attachedFiles = [ShakeFile]()
-  if let attachedFile = ShakeFile(fileURL: fileUrl) {
+  if let attachedFile = ShakeFile(fileUrl: fileUrl) {
     attachedFiles.append(attachedFile)
   }
   return attachedFiles
