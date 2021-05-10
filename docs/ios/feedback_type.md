@@ -2,6 +2,9 @@
 id: feedback_type
 title: Feedback type
 ---
+
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 This SDK option allows your users to categorize their feedback.
 
 ## Introduction
@@ -19,10 +22,20 @@ import TabItem from '@theme/TabItem';
   groupId="ios"
   defaultValue="swift"
   values={[
+  { label: 'Objective-C', value: 'objc'},
     { label: 'Swift', value: 'swift'},
-    { label: 'Objective-C', value: 'objc'},
   ]
 }>
+
+<TabItem value="objc">
+
+```objc title="AppDelegate.m"
+// highlight-start
+SHKShake.configuration.isFeedbackTypeEnabled = false;
+// highlight-end
+```
+
+</TabItem>
 
 <TabItem value="swift">
 
@@ -34,15 +47,6 @@ Shake.configuration.isFeedbackTypeEnabled = false
 
 </TabItem>
 
-<TabItem value="objc">
-
-```objc title="AppDelegate.m"
-// highlight-start
-SHKShake.configuration.isFeedbackTypeEnabled = false;
-// highlight-end
-```
-
-</TabItem>
 </Tabs>
 
 On your Shake Dashboard, all these tickets won't have any specific type (and tag).

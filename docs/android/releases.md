@@ -8,9 +8,20 @@ What would you like us to build next? We're dying to hear from you — upvote up
 
 ## Version
 
+### 14.2.0
+<span class="tag-button">May 10, 2021</span>&nbsp;&nbsp;
+<span class="tag-button green-tag-button">Latest version</span>
+
+**What's new**
+
+Shake Crash beta is released. This personalized crash reporting approach allows you to prevent bad reviews,
+build user relationships and fix app crashes faster than before with the power of data automation. 
+Read all about it [on its subpage](https://www.shakebugs.com/crash), or dive right into [its Docs](/android/crash-reporting.md) to enable it in your app.
+
+We've increased the size limit for feedback attachments, now you can attach up to 10 MB per file.
+
 ### 14.1.5
 <span class="tag-button">April 28, 2021</span>&nbsp;&nbsp;
-<span class="tag-button green-tag-button">Latest version</span>
 
 **Bug fixes**
 

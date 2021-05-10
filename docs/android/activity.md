@@ -178,6 +178,7 @@ Shake.insertNetworkRequest(networkRequestBuilder)
 
 ### System events
 System events are tracked automatically and require no additional setup.
+These are application lifecycle events.
 
 ### Notifications
 In order for Shake to track user notifications throughout your app, add this line of code where appropriate:

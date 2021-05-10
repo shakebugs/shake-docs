@@ -11,7 +11,11 @@ so it never reaches the Shake servers.
 
 ## Views
 You can mark any view as private, and it'll automatically be deleted from the screenshot.
-Private views are stored as a weak reference, they get cleared from the memory when not used anymore.
+Private views are stored as a weak reference, so they don't alter the view lifecycle in any way.
+
+:::note
+This feature is disabled for iOS applications built with __SwiftUI__.
+:::
 
 Let's suppose you're building a shopping cart app and you want to delete the name and the credit card number views
 from the screenshot:
@@ -300,11 +304,11 @@ func setupNetworkFilter() {
     
     // highlight-start
     Shake.networkRequestsFilter = { (networkRequest) in
-        if let requestHeaders = networkRequest.requestHeaders {
-            if requestHeaders["Authorization"] != nil {
-                requestHeaders["Authorization"] = "***"
-            }
+           
+        if networkRequest.requestHeaders["Authorization"] != nil {
+            networkRequest.requestHeaders["Authorization"] = "***"
         }
+        
         return networkRequest
     }
     // highlight-end
@@ -337,7 +341,7 @@ values={[
     SHKShake.networkRequestsFilter = ^SHKNetworkRequestEditor *(SHKNetworkRequestEditor * networkRequest) {
         NSMutableDictionary<NSString *, NSString *>* headers = networkRequest.requestHeaders;
         
-        if ([networkRequest.utl hasPrefix:@"https://api.myapp.com/cards"]) {
+        if ([networkRequest.url hasPrefix:@"https://api.myapp.com/cards"]) {
             return nil;
         }
         
@@ -360,7 +364,7 @@ func setupNetworkFilter() {
     // highlight-start
     Shake.networkRequestsFilter = { (networkRequest) in
         
-        if networkRequest.utl.contains("https://api.myapp.com/cards") {
+        if networkRequest.url.contains("https://api.myapp.com/cards") {
             return nil
         }
         
@@ -419,7 +423,7 @@ values={[
 // highlight-next-line
 import Shake
 
-func setupNetworkFilter() {
+func setupNotificationEventsFilter() {
     
     // highlight-start
     Shake.notificationEventsFilter = { (notificationEvent) in
@@ -476,7 +480,7 @@ values={[
 // highlight-next-line
 import Shake
 
-func setupNetworkFilter() {
+func setupNotificationEventFilter() {
     // highlight-start
     Shake.notificationEventsFilter = { (notificationEvent) in
         

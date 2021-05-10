@@ -73,7 +73,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 :::note
 
-To avoid a swizzling conflict, call `Shake.start()` before initializing all other frameworks (e.g. Firebase Performance Monitoring SDK). Otherwise, some network requests may not be captured and sent with reports.
+Some of the Shake features use swizzling, so to avoid any kind of swizzling conflicts, we recommend calling `Shake.start()` before initializing all other frameworks.
 
 :::
 

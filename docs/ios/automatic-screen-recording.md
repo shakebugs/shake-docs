@@ -47,4 +47,6 @@ Screen recording runs on iOS 13+ devices only. Testing on iOS simulator may not 
 
 ## Security
 
-Screen recording is automatically paused when your app goes to the background. This way no third party data is recorded.
+Screen recording is managed by the system and recording is automatically stopped when app goes to background.
+
+No third party data is recorded.

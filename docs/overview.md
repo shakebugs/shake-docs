@@ -29,6 +29,7 @@ Shake has a very rich feature set, yet on some platforms we managed to achieve m
 | Silent reports       |    ✅     |     ✅    |       ✅     |       ✅     |
 | Email pre-fill       |    ✅     |     ✅    |       ✅     |       ✅     |
 | White labeling       |    ✅     |     ✅    |       ✅     |       ✅     |
+| Crash reporting      |    ✅     |     ✅    |       ❌     |       ❌     |
 
 import AndroidVersion from '@site/src/base/AndroidVersion';
 import IosVersion from '@site/src/base/IosVersion';

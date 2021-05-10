@@ -67,3 +67,10 @@ void attachLogFiles(String username) {
     // highlight-end
 }
 ```
+
+## Limitations
+The maximum number of attached files per bug is 1 for Free workspaces and 10 for Premium ones.
+If more files are attached, the SDK will successfully upload only some of them.
+
+The maximum allowed individual size for any of those files is 10 MB.
+If you attach a file that's larger than that it won't be uploaded with the report.
