@@ -31,6 +31,8 @@ import TabItem from '@theme/TabItem';
     { label: 'Kotlin', value: 'kotlin'},
     { label: 'Objective-C', value: 'objectivec'},
     { label: 'Swift', value: 'swift'},
+    { label: 'Dart', value: 'dart'},
+    { label: 'Javascript', value: 'javascript'},
   ]
 }>
 
@@ -145,6 +147,66 @@ func onLoginPressed(username: String, password: String) {
 
 </TabItem>
 
+<TabItem value="dart">
+
+```dart title="main.dart"
+// highlight-next-line
+import 'package:shake_flutter/shake_flutter.dart';
+
+void onLoginPressed(String username, String password) {
+    Session session = Session();
+    
+    session.login(
+        username: username,
+        password: password,
+        onLoginSucceeded: (User user) {
+            // highlight-start
+            Shake.setMetadata('id', user.id);
+            Shake.setMetadata('email', user.email);
+            Shake.setMetadata('name', user.name);
+            // highlight-end
+            
+            navigateToHome();
+        },
+        onLoginFailed: (String message) {
+            Messages.show(message);
+        },
+    );
+}
+```
+
+</TabItem>
+
+<TabItem value="javascript">
+
+```javascript title="main.js"
+// highlight-next-line
+import Shake from '@shakebugs/react-native-shake';
+
+const onLoginPressed = (username, password) => {
+    const session = new Session();
+
+    session.login(
+        username,
+        password,
+        (user) => {
+            // highlight-start
+            Shake.setMetadata('id', user.id);
+            Shake.setMetadata('email', user.email);
+            Shake.setMetadata('name', user.name);
+            // highlight-end
+
+            navigateToHome();
+        },
+        (message) => {
+            Messages.show(message);
+        },
+    );
+};
+```
+
+</TabItem>
+
 </Tabs>
 
 ## Gaming and education
@@ -159,6 +221,8 @@ If your app is in the gaming or education industry, think about sending yourself
     { label: 'Kotlin', value: 'kotlin'},
     { label: 'Objective-C', value: 'objectivec'},
     { label: 'Swift', value: 'swift'},
+    { label: 'Dart', value: 'dart'},
+    { label: 'Javascript', value: 'javascript'},
   ]
 }>
 
@@ -242,14 +306,60 @@ func onPlayerSelected(player: Player) {
     let difficulty = player.getDifficulty()
     let achievements = player.getAchievements()
 
-// highlight-start
+    // highlight-start
     Shake.setMetadata(key: "type", value: type)
     Shake.setMetadata(key: "courses", value: difficulty)
     Shake.setMetadata(key: "achievements", value: achievements.debugDescription) // convert to string
-// highlight-end
+    // highlight-end
 
     startGame()
 }
+```
+
+</TabItem>
+
+<TabItem value="dart">
+
+```dart title="main.dart"
+// highlight-next-line
+import 'package:shake_flutter/shake_flutter.dart';
+
+void onPlayerSelected(Player player) {
+    String type = player.type;
+    String difficulty = player.difficulty;
+    List<int> achievements = player.achievements;
+
+    // highlight-start
+    Shake.setMetadata('type', type);
+    Shake.setMetadata('courses', difficulty);
+    Shake.setMetadata('achievements', achievements.toString());
+    // highlight-end
+
+    startGame();
+}
+```
+
+</TabItem>
+
+<TabItem value="javascript">
+
+```javascript title="main.js"
+// highlight-next-line
+import Shake from '@shakebugs/react-native-shake';
+
+const onPlayerSelected = (player) => {
+    const type = player.type;
+    const difficulty = player.difficulty;
+    const achievements = player.achievements;
+
+    // highlight-start
+    Shake.setMetadata('type', type);
+    Shake.setMetadata('courses', difficulty);
+    Shake.setMetadata('achievements', achievements.toString());
+    // highlight-end
+
+    startGame();
+};
 ```
 
 </TabItem>
@@ -268,6 +378,8 @@ In a more serious B2B environment, you probably want to always report yourself d
     { label: 'Kotlin', value: 'kotlin'},
     { label: 'Objective-C', value: 'objectivec'},
     { label: 'Swift', value: 'swift'},
+    { label: 'Dart', value: 'dart'},
+    { label: 'Javascript', value: 'javascript'},
   ]
 }>
 
@@ -376,6 +488,54 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
 }
+```
+
+</TabItem>
+
+<TabItem value="dart">
+
+```dart title="main.dart"
+// highlight-next-line
+import 'package:shake_flutter/shake_flutter.dart';
+
+void onApplicationStarted() {
+    User user = getCurrentUser();
+    if (user != null) {
+        // highlight-start
+        Shake.setMetadata('id', user.id);
+        Shake.setMetadata('plan', user.plan);
+        Shake.setMetadata('type', user.type);
+        // highlight-end
+
+        navigateToHome();
+    } else {
+        navigateToLogin();
+    }
+}
+```
+
+</TabItem>
+
+<TabItem value="javascript">
+
+```javascript title="main.js"
+// highlight-next-line
+import Shake from '@shakebugs/react-native-shake';
+
+const onApplicationStarted = () => {
+    const user = getCurrentUser();
+    if (user) {
+        // highlight-start
+        Shake.setMetadata('id', user.id);
+        Shake.setMetadata('plan', user.plan);
+        Shake.setMetadata('type', user.type);
+        // highlight-end
+
+        navigateToHome();
+    } else {
+        navigateToLogin();
+    }
+};
 ```
 
 </TabItem>

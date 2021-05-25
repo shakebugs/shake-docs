@@ -25,6 +25,8 @@ import TabItem from '@theme/TabItem';
     { label: 'Kotlin', value: 'kotlin'},
     { label: 'Objective-C', value: 'objectivec'},
     { label: 'Swift', value: 'swift'},
+    { label: 'Dart', value: 'dart'},
+    { label: 'Javascript', value: 'javascript'},
   ]
 }>
 
@@ -77,7 +79,6 @@ private fun loadGitDetails() {
 @import Shake;
 
 - (void)loadGitDetails {
-
     NSString* branchName = [self getBranchName];
     NSString* commitHash = [self getCommitHash];
     NSString* commitDate = [self getCommitDate];
@@ -99,7 +100,6 @@ private fun loadGitDetails() {
 import Shake
 
 func loadGitDetails() {
-   
     let branchName = getBranchName()
     let commitHash = getCommitHash()
     let commitDate = getCommitDate()
@@ -110,6 +110,48 @@ func loadGitDetails() {
     Shake.setMetadata(key: "branch", value: branchName)
     // highlight-end
 }
+```
+
+</TabItem>
+
+<TabItem value="dart">
+
+```dart title="main.dart"
+// highlight-next-line
+import 'package:shake_flutter/shake_flutter.dart';
+
+void loadGitDetails() {
+    String branchName = getBranchName();
+    String commitHash = getCommitHash();
+    String commitDate = getCommitDate();
+
+    // highlight-start
+    Shake.setMetadata('commitHash', commitHash);
+    Shake.setMetadata('commitDate', commitDate);
+    Shake.setMetadata('branch', branchName);
+    // highlight-end
+}
+```
+
+</TabItem>
+
+<TabItem value="javascript">
+
+```javascript title="main.js"
+// highlight-next-line
+import Shake from '@shakebugs/react-native-shake';
+
+const loadGitDetails = () => {
+    const branchName = getBranchName();
+    const commitHash = getCommitHash();
+    const commitDate = getCommitDate();
+
+    // highlight-start
+    Shake.setMetadata('commitHash', commitHash);
+    Shake.setMetadata('commitDate', commitDate);
+    Shake.setMetadata('branch', branchName);
+    // highlight-end
+};
 ```
 
 </TabItem>
