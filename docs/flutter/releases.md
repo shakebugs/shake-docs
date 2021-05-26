@@ -8,9 +8,16 @@ What would you like us to build next? We're dying to hear from you — upvote up
 
 ## Version
 
+### 14.1.2
+<span class="tag-button">May 26, 2021</span>&nbsp;&nbsp;
+<span class="tag-button green-tag-button">Latest version</span>
+
+**What's new**
+
+We migrated Shake SDK to null safety. Null safety helps you avoid a class of bugs that are often hard to spot, and as an added bonus enables a range of performance and stability improvements.
+
 ### 14.1.1
 <span class="tag-button">April 28, 2021</span>&nbsp;&nbsp;
-<span class="tag-button green-tag-button">Latest version</span>
 
 **Bug fixes**
 

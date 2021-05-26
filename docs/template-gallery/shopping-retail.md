@@ -26,6 +26,8 @@ import TabItem from '@theme/TabItem';
     { label: 'Kotlin', value: 'kotlin'},
     { label: 'Objective-C', value: 'objectivec'},
     { label: 'Swift', value: 'swift'},
+    { label: 'Dart', value: 'dart'},
+    { label: 'Javascript', value: 'javascript'},
   ]
 }>
 
@@ -79,11 +81,9 @@ private fun setupMerchantPicker() {
 
 - (void)setupMerchantPicker {
     MerchantPicker* merchantPicker = (MerchantPicker*)[self.window.rootViewController.view viewWithTag: MerchantPickerTagId];
-    
     [merchantPicker listen:^(NSInteger merchantId) {
-        // highlight-start
+        // highlight-next-line
         [SHKShake setMetadataWithKey:@"selectedMerchant" value: merchantId];
-        // highlight-end
         
         [self setSelectedMerchant:merchantId];
     }];
@@ -99,18 +99,57 @@ private fun setupMerchantPicker() {
 import Shake
 
 func setupMerchantPicker() {
-   
     if let merchantPicker = self.window.rootViewController.view.viewWithTag(MerchantPickerTagId) as? MerchantPicker {
-
         merchantPicker.listen( onMerchantSelected: { (merchantId) in
-            // highlight-start
+            // highlight-next-line
             Shake.setMetadata(key: "selectedMerchant", value: merchantId)
-            // highlight-end
             
             setSelectedMerchant(merchantId);
         })
     }
 }
+```
+
+</TabItem>
+
+<TabItem value="dart">
+
+```dart title="main.dart"
+// highlight-next-line
+import 'package:shake_flutter/shake_flutter.dart';
+
+Widget setupMerchantPicker() {
+    return MerchantPicker(
+        onMerchantSelected: (String merchantId) {
+            // highlight-next-line
+            Shake.setMetadata('selectedMerchant', merchantId);
+            
+            setSelectedMerchant(merchantId);
+        },
+    );
+}
+```
+
+</TabItem>
+
+<TabItem value="javascript">
+
+```javascript title="main.js"
+// highlight-next-line
+import Shake from '@shakebugs/react-native-shake';
+
+const setupMerchantPicker = () => {
+    return (
+        <MerchantPicker
+            onMechantSelected={(merchantId) => {
+                // highlight-next-line
+                Shake.setMetadata('selectedMerchant', merchantId);
+
+                setSelectedMerchant(merchantId);
+            }}
+        />
+    );
+};
 ```
 
 </TabItem>

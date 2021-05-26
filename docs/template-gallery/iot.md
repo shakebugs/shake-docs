@@ -26,6 +26,8 @@ import TabItem from '@theme/TabItem';
     { label: 'Kotlin', value: 'kotlin'},
     { label: 'Objective-C', value: 'objectivec'},
     { label: 'Swift', value: 'swift'},
+    { label: 'Dart', value: 'dart'},
+    { label: 'Javascript', value: 'javascript'},
   ]
 }>
 
@@ -37,6 +39,7 @@ import com.shakebugs.shake.Shake;
 
 private void attachStatusListener() {
     Device device = DevicesManager.getConnectedDevice();
+
     if (device != null) {
         device.setStatusListener(new StatusListener() {
             @Override
@@ -61,7 +64,8 @@ private void attachStatusListener() {
 import com.shakebugs.shake.Shake
 
 private fun attachStatusListener() {
-    val device: Device = DevicesManager.getConnectedDevice();
+    val device: Device = DevicesManager.getConnectedDevice()
+
     if (device != null) {
         device.setStatusListener(object: StatusListener() {
             @override
@@ -89,11 +93,11 @@ private fun attachStatusListener() {
     DevicesManager* device = [DevicesManager getConnectedDevice];
 
     if (device) {
-    // highlight-start
+        // highlight-start
         [SHKShake setMetadataWithKey:@"batteryLevel" value: [status getBatteryLevel]];
         [SHKShake setMetadataWithKey:@"firmwareVersion" value:  [status getFirmwareVersion]];
         [SHKShake setMetadataWithKey:@"bluetoothVersion" value:  [status getBluetoothVersion]];
-    // highlight-end
+        // highlight-end
     }
 }
 ```
@@ -107,12 +111,10 @@ private fun attachStatusListener() {
 import Shake
 
 func attachStatusListener() {
-   
     let device = DevicesManager.getConnectedDevice()
-    
-    if let device = device {
 
-        device.listen( onStatusChanged: { (status) in
+    if let device = device {
+        device.listen(onStatusChanged: { (status) in
             // highlight-start
             Shake.setMetadata(key: "batteryLevel", value: status.getBatteryLevel())
             Shake.setMetadata(key: "firmwareVersion", value: status.getFirmwareVersion())
@@ -121,6 +123,52 @@ func attachStatusListener() {
         })
     }
 }
+```
+
+</TabItem>
+
+<TabItem value="dart">
+
+```dart title="main.dart"
+// highlight-next-line
+import 'package:shake_flutter/shake_flutter.dart';
+
+void attachStatusListener() {
+    Device device = DevicesManager.getConnectedDevice();
+
+    if (device != null) {
+        device.setStatusListener((Status status) {
+            // highlight-start
+            Shake.setMetadata('batteryLevel', status.batteryLevel);
+            Shake.setMetadata('firmwareVersion', status.firmwareVersion);
+            Shake.setMetadata('bluetoothVersion', status.bluetoothVersion);
+            // highlight-end
+        });
+    }
+}
+```
+
+</TabItem>
+
+<TabItem value="javascript">
+
+```javascript title="main.js"
+// highlight-next-line
+import Shake from '@shakebugs/react-native-shake';
+
+const attachStatusListener = () => {
+    const device = DevicesManager.getConnectedDevice();
+
+    if (device != null) {
+        device.setStatusListener((status) => {
+            // highlight-start
+            Shake.setMetadata('batteryLevel', status.batteryLevel);
+            Shake.setMetadata('firmwareVersion', status.firmwareVersion);
+            Shake.setMetadata('bluetoothVersion', status.bluetoothVersion);
+            // highlight-end
+        });
+    }
+};
 ```
 
 </TabItem>

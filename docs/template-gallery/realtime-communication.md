@@ -25,6 +25,8 @@ import TabItem from '@theme/TabItem';
     { label: 'Kotlin', value: 'kotlin'},
     { label: 'Objective-C', value: 'objectivec'},
     { label: 'Swift', value: 'swift'},
+    { label: 'Dart', value: 'dart'},
+    { label: 'Javascript', value: 'javascript'},
   ]
 }>
 
@@ -101,20 +103,18 @@ private fun connectToChatServer(username: String, password: String) {
 @import Shake;
 
 - (void)connectToChatServer:(NSString*)username password:(NSString*)password {
-    
     [ChatServer connect:username password:password onConnected:^(User *user) {
         // highlight-start
         [SHKShake setMetadataWithKey:@"serverStatusType" value: @"Connected"];
-        [SHKShake setMetadataWithKey:@"serverStatusDate" value: [NSDate date].debugDescription]; // convert to string
+        [SHKShake setMetadataWithKey:@"serverStatusDate" value: [NSDate date].debugDescription];
         // highlight-end
         
         [[[Messages alloc] init] show:"Server connected"];
         
     } onDisconnected:^(NSString *message) {
-
         // highlight-start
         [SHKShake setMetadataWithKey:@"serverStatusType" value: @"Disconnected"];
-        [SHKShake setMetadataWithKey:@"serverStatusDate" value: [NSDate date].debugDescription]; // convert to string
+        [SHKShake setMetadataWithKey:@"serverStatusDate" value: [NSDate date].debugDescription];
         // highlight-end
 
         [[[Messages alloc] init] show:"Server disconnected"];
@@ -131,27 +131,87 @@ private fun connectToChatServer(username: String, password: String) {
 import Shake
 
 func connectToChatServer(username: String, password: String) {
-
     ChatServer.connect(username: username, password: password, onConnected: { (user) in
-    
         // highlight-start
         Shake.setMetadata(key: "serverStatusType", value: "Connected")
-        Shake.setMetadata(key: "serverStatusDate", value: Date().debugDescription) // convert to string
+        Shake.setMetadata(key: "serverStatusDate", value: Date().debugDescription) 
         // highlight-end
         
         Message.show("Server connected")
         
     }, onDisconnected: { (message) in
-        
         // highlight-start
         Shake.setMetadata(key: "serverStatusType", value: "Disconnected")
-        Shake.setMetadata(key: "serverStatusDate", value: Date().debugDescription) // convert to string
+        Shake.setMetadata(key: "serverStatusDate", value: Date().debugDescription) 
         // highlight-end
 
         Message.show("Server disconnected")
     })
-
 }
+```
+
+</TabItem>
+
+<TabItem value="dart">
+
+```dart title="main.dart"
+// highlight-next-line
+import 'package:shake_flutter/shake_flutter.dart';
+
+void connectToChatServer(String username, String password) {
+    ChatServer.connect(
+        username: username,
+        password: password,
+        onConnected: (User user) {
+            // highlight-start
+            Shake.setMetadata('serverStatusType', 'Connected');
+            Shake.setMetadata('serverStatusDate', DateTime.now().toString());
+            // highlight-end
+            
+            Message.show('Server connected');
+        },
+        onDisconnected: (String message) {
+            // highlight-start
+            Shake.setMetadata('serverStatusType', 'Disconnected');
+            Shake.setMetadata('serverStatusDate', DateTime.now().toString());
+            // highlight-end
+            
+            Message.show('Server disconnected');
+        },
+    );
+}
+```
+
+</TabItem>
+
+<TabItem value="javascript">
+
+```javascript title="main.js"
+// highlight-next-line
+import Shake from '@shakebugs/react-native-shake';
+
+const connectToChatServer = (username, password) => {
+    ChatServer.connect(
+        username,
+        password,
+        (user) => {
+            // highlight-start
+            Shake.setMetadata('serverStatusType', 'Connected');
+            Shake.setMetadata('serverStatusDate', new Date().toString());
+            // highlight-end
+    
+            Message.show('Server connected');
+        },
+        (message) => {
+            // highlight-start
+            Shake.setMetadata('serverStatusType', 'Disconnected');
+            Shake.setMetadata('serverStatusDate', new Date().toString());
+            // highlight-end
+    
+            Message.show('Server disconnected');
+        },
+    );
+};
 ```
 
 </TabItem>
