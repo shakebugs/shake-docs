@@ -99,6 +99,41 @@ In case you want to test Shake SDK in Android Emulator, it’s useful to know th
 
 :::
 
+Shaking gesture sensitivity can be fine tuned as shown in the snippet below:
+
+<Tabs
+  groupId="android"
+  defaultValue="kotlin"
+  values={[
+    { label: 'Java', value: 'java'},
+    { label: 'Kotlin', value: 'kotlin'},
+  ]
+}>
+
+<TabItem value="java">
+
+```java title="App.java"
+// highlight-next-line
+Shake.getReportConfiguration().setShakingThreshold(400); // Default value is 600.
+```
+
+</TabItem>
+
+<TabItem value="kotlin">
+
+```kotlin title="App.kt"
+// highlight-next-line
+Shake.getReportConfiguration().shakingThreshold = 400; // Default value is 600.
+```
+
+</TabItem>
+</Tabs>
+
+In the above example, threshold is reduced a bit, meaning that Shake is a bit easier to invoke with the shaking gesture.
+
+A valid treshold value range is `1 - 1000`, with bigger values representing decreased sensitivity meaning that a stronger 
+motion gesture is required to invoke Shake.
+
 ### Button
 This invocation event will create the floating button on top of your app's UI which users can clearly see at all times. This button can be dragged to a more suitable position.
 
@@ -128,7 +163,6 @@ The right edge pan gesture won’t work if performed over a ListView or ScrollVi
 You can use one of the alternative ways to invoke Shake instead.
 
 :::
-
 
 ## Invoke through code
 You can invoke SDK through code by calling the `Shake.show()` method anywhere after `Shake.start()`,
