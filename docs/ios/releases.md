@@ -8,9 +8,31 @@ What would you like us to build next? We're dying to hear from you — upvote up
 
 ## Version
 
+### 14.3.0
+<span class="tag-button">June 2, 2021</span>&nbsp;&nbsp;
+<span class="tag-button green-tag-button">Latest version</span>
+
+**What's new**
+
+If you are using the shaking gesture as your invocation event, you can now set [how sensitive the device should be to the shaking](/ios/invoke.md#shaking).
+ 
+Shake now supports [customization of feedback types](/ios/feedback-type.md#custom-types), you can configure Shake to display any number of custom categories related to your product.
+
+We've added an option to [exclude the screenshot from the reports](/ios/screenshot.md#excluding-the-screenshot-from-a-report), this option allows you to capture the screenshot only when required.
+
+This version now contains a Portuguese translation, which additionally extends [the lists of languages Shake's been translated to](https://help.shakebugs.com/en/articles/3392092-which-languages-has-shake-sdk-been-translated-to). 
+Your users whose default device language is set to one of these will automatically see Shake in their language.
+
+**Bug fixes**
+
+Fixed issue where Shake was invoking slowly.
+
+Fixed bug where sometimes Shake would stop notification tap native delegate methods from being called.
+
+Made `Shake.handleError` public.
+
 ### 14.2.1
 <span class="tag-button">May 12, 2021</span>&nbsp;&nbsp;
-<span class="tag-button green-tag-button">Latest version</span>
 
 **Bug fixes**
 
