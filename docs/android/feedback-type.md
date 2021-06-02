@@ -49,12 +49,12 @@ Shake.getReportConfiguration().setFeedbackTypes(feedbackTypes);
 
 ```kotlin title="App.kt"
 // highlight-start
-val feedbackTypes = ArrayList()
+val feedbackTypes = ArrayList<FeedbackType>()
 feedbackTypes.add(FeedbackType(R.drawable.ic_hardware, "Hardware issue", "hardware"))
 feedbackTypes.add(FeedbackType(R.drawable.ic_audio, "Call audio problem", "call_audio"))
 feedbackTypes.add(FeedbackType(R.drawable.ic_files, "File sync issue", "file_sync"))
 
-Shake.getReportConfiguration().setFeedbackTypes(feedbackTypes)
+Shake.getReportConfiguration().feedbackTypes = feedbackTypes
 // highlight-end
 ```
 
@@ -102,10 +102,10 @@ public void enableVideoCallFeature(String contactID) {
 fun enableVideoCallFeature(contactID:String) {
     val videoCallCategory = FeedbackType(R.drawable.ic_hardware, "Hardware issue", "hardware")
     
-    val existing = Shake.getReportConfiguration().getFeedbackTypes()
+    val existing = Shake.getReportConfiguration().feedbackTypes
     existing.add(videoCallCategory)
     
-    Shake.getReportConfiguration().setFeedbackTypes(existing)
+    Shake.getReportConfiguration().feedbackTypes = existing
 }
 // highlight-end
 ```
