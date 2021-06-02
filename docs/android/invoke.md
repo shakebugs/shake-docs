@@ -123,7 +123,7 @@ Shake.getReportConfiguration().setShakingThreshold(400); // Default value is 600
 
 ```kotlin title="App.kt"
 // highlight-next-line
-Shake.getReportConfiguration().shakingThreshold = 400; // Default value is 600.
+Shake.getReportConfiguration().shakingThreshold = 400 // Default value is 600.
 ```
 
 </TabItem>
