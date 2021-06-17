@@ -8,9 +8,21 @@ What would you like us to build next? We're dying to hear from you — upvote up
 
 ## Version
 
+### 14.4.0
+<span class="tag-button">July 20, 2021</span>&nbsp;&nbsp;
+<span class="tag-button green-tag-button">Latest version</span>
+
+**What's new**
+
+From now, you can [register users of your application](/android/users.md) with Shake. You can assign metadata to each user what
+ enables a powerful connection between the specific user of your app, and the rest of the Shake features. 
+
+**Bug fixes**
+
+You can now safely call Shake methods before Shake is started, we've handled those crashes.
+
 ### 14.3.0
 <span class="tag-button">June 2, 2021</span>&nbsp;&nbsp;
-<span class="tag-button green-tag-button">Latest version</span>
 
 **What's new**
 

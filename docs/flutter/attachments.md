@@ -4,7 +4,8 @@ title: Attachments
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-You can instruct the SDK to quietly attach any file to a bug report.
+Files can be attached visually by users or programmatically by code.
+You can instruct the SDK to quietly attach any file to a report.
 The files you attach are not visible to the user in the SDK.
 
 ## Introduction

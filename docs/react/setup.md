@@ -31,6 +31,10 @@ Install pods from the project root directory:
 cd ios && pod install && cd ..
 ```
 
+import ReactVersion from '@site/src/base/ReactVersion';
+
+After the installation also run `pod update Shake` to be perfectly sure you're using the latest Shake <ReactVersion/>.
+
 ## Set compileSdkVersion version in the build.gradle file
 Since Shake requires `compileSdkVersion` 29 or greater, verify that `compileSdkVersion` is correctly set in the */android/build.gradle* file.
 
