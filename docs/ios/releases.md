@@ -9,7 +9,7 @@ What would you like us to build next? We're dying to hear from you — upvote up
 ## Version
 
 ### 14.4.0
-<span class="tag-button">July 21, 2021</span>&nbsp;&nbsp;
+<span class="tag-button">July 22, 2021</span>&nbsp;&nbsp;
 <span class="tag-button green-tag-button">Latest version</span>
 
 **What's new**
