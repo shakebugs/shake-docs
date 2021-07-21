@@ -87,9 +87,9 @@ func logInUser(email: String, password: String) {
 ```
 </TabItem></Tabs>
 
-:::info
+:::note
 
-All user related Shake operations on a registered user are fully supported when your application is __offline__ and syncs with the Shake servers later.
+All user related Shake operations on a registered user are fully supported when your application is __offline__ too, and will sync with the Shake servers later.
 
 :::
 
@@ -154,22 +154,29 @@ func logOut {
 
 ## Updating user metadata
 
-Once you _registered_ your application user, you can attach a single level dictionary with key value pairs that describe 
-additional information about your user, or his application usage.
+Once you have _registered_ your application user, you can attach a single level dictionary with key-value pairs that describe 
+additional information about your user, or their application usage.
 
-Updating metadata is performed by calling the `Shake.updateUserMetadata` anywhere in your code after registering the user.
+Updating the user metadata is performed by calling the `Shake.updateUserMetadata` anywhere in your code after registering the user.
 
 :::note
 
-Metadata dictionary has some limitations, it can support a maximum of 100 keys, it doesn't allow nested dictionaries, and the total 
-dictionary size when serialized to _Data_ can't exceed _50 Kb_. 
+The user metadata dictionary has its limitations: It supports a maximum of 100 keys, it doesn't allow nested dictionaries, and the total 
+dictionary size when serialized to _Data_ can't exceed _50 KB_. 
 If this validation fails, the update method is dropped with the appropriate console message.
+
+:::
+
+:::tip
+
+For presentation purposes, Shake dashboard is using *first_name* and *last_name* keys from the user metadata.
+We recommend using those keys when sending metadata, this will allow you to easier manage your users on the dashboard.
 
 :::
 
 Updates to the user metadata are _incremental_, or perhaps a better way to describe it would be _merged_.
 
-This means that metadata key value pairs are being updated and not overwritten, giving you a possiblity to update
+This means that the user metadata key-value pairs are being updated and not overwritten, giving you a possiblity to update
 the user metadata in chunks from various points of your application, even when offline.
 
 A common approach would be updating the generic user metadata from one place in your code, upon every user change, and update the specific metadata
@@ -184,16 +191,16 @@ in their respective contexts.
 - (void)didLoginWithUserResponse:(UserResponse *)userResponse {
 
     /// Some post log in operations
-                // highlight-next-line
+    // highlight-next-line
     Shake.updateUserMetadata([self userInfoDictionary]);
 }
 
 - (nonnull NSDictionary *)userInfoDictionary { 
     return @{
-        @"name": self.currentUser.name,
+        @"first_name": self.currentUser.firstName,
+        @"last_name": self.currentUser.lastName,
         @"email": self.currentUser.email,
         @"status": self.currentUser.status,
-        @"activeGroups": self.currentUser.activeGroups.description,
     }
 }
 
@@ -213,10 +220,10 @@ class UserManager {
 
     func userInfoDictionary() -> Dictionary { 
         return [
-            "name": self.currentUser.name,
+            "first_name": self.currentUser.firstName,
+            "last_name": self.currentUser.lastName,
             "email": self.currentUser.email,
             "status": self.currentUser.status,
-            "activeGroups": self.currentUser.activeGroups.description,
         ]
     }
 }
@@ -291,8 +298,7 @@ class CartViewModel {
 Shake exposes a public method that allows you to update the user identifier you used to register your user in the first place.
 In the most standard application flows, this is a method that is not called very often.
 
-One example would be that you registered your user with the email, which is something that user can change later and still continue 
-using your service as the same entity.
+An example would be if you have registered your user with the email, which is something that the user can change later on and still continue using your service as the same entity.
 
 Calling `Shake.updateUserId` on an already registered user would update the user identifier in the Shake database and this would / should become the new identifier 
 you continue to pass on `Shake.registerUser` on subsequent logins of the same user.
@@ -302,7 +308,7 @@ This action of updating the user identifier opens up several possibilities of ho
 results. Make sure to read the following sections to better understand the possible usages and scenarios.
 :::
 
-Bellow snippet showcases a common context in which the user identifier is updated. The snippet assumes that the user was previously
+The code snippet below showcases a common context in which the user identifier is updated. The snippet assumes that the user was previously
 registered with the email.
 
 
@@ -355,33 +361,32 @@ func didChangeEmail(newEmail: String) {
 
 ## Advanced usage
 
-Some apps will benefit from perhaps registering the device itself as a user, or make a transition from the anonymous
+Some apps might perhaps want to register the device itself as a user, or make a transition from the anonymous
 user to the _Signed Up_ user. This section covers these cases.
 
 
 ### Anonymous user
 
-Think of the applications like _Reddit_. Users can browse the application as guests for months, and then finally decide to _Sign Up_ and create an 
-account. The user is now registered, but all the previous reports are tied to the same user, just at the time he was anonymous.
+Think of the app like _Reddit_. Users can browse the app as guests for months, and then finally decide to _Sign Up_ and create an 
+account. The user is now registered, but all the previous reports from the time they were anonymous are now tied to them.
 
-The `Shake.updateUserId` method can be used to perform this transition. When user is browsing your app in the anonymous mode, you can 
-register the user with Shake using some random generated UUID persisted in the app sandbox. This identifier would uniquely identify the 
-device your still anonymous user is using.
+The `Shake.updateUserId` method can be used to perform this transition. When the user is browsing your app in the anonymous mode, you can register them with Shake using a randomly 
+generated UUID persisted in the app sandbox. This identifier would uniquely identify the device your still-anonymous user uses.
 
-Once the user decides to _Sign Up_, instead of registering with the `Shake.registerUser` method, use the `Shake.updateUserId` method to perform a __transition__, associating
-the once anonymous metadata and information with the real user.
+Once the user decides to _Sign Up_, instead of registering with the `Shake.registerUser` method, use the `Shake.updateUserId` method to perform a __transition__, 
+associating the once-anonymous user metadata and information with the real user.
 
-Be careful however, we recommend performing this transition in only one direction, and that is __Anonymous › Identified__, the other way around could potentially lead to
-undesired results, linking the identified data back to the now anonymous user (device).
+Be careful though, we recommend performing this transition only in one direction, and that is Anonymous → Identified. The other way around could potentially lead to
+undesired results, linking the identified data back to the now-anonymous user (device).
 
 
 ### Device as a user
 
-Similar to the anonymous flow, this approach also registers the device with some identifier while user is in the _guest_ mode. 
+Similar to the anonymous flow, this approach also registers the device with an identifier while the user is in the _guest_ mode. 
 
-So back to the _Reddit_ example. While user is in the guest mode, you would call `Shake.registerUser` with the `deviceIdentifier`.
+Back onto the _Reddit_ example. While the user is in the guest mode, you would call `Shake.registerUser` with the `deviceIdentifier`.
 
-Once the user decides to _Sign Up_, you wouldn't perform a transition, but would just call `Shake.registerUser` with the new user identifier and treat the newly signed up user as a separate
+Once the user decides to _Sign Up_, you wouldn't perform a transition, but would just call `Shake.registerUser` with the new user identifier and treat the newly signed-up user as a separate
 entity.
 
 If the user decides to delete the account or _Log Out_ , instead of just calling `Shake.unregisterUser` you would do a switch back to the device, by calling 
