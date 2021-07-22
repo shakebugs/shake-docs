@@ -30,6 +30,7 @@ Shake has a very rich feature set, yet on some platforms we managed to achieve m
 | Email pre-fill       |    ✅     |     ✅    |       ✅     |       ✅     |
 | White labeling       |    ✅     |     ✅    |       ✅     |       ✅     |
 | Crash reporting      |    ✅     |     ✅    |       ❌     |       ❌     |
+| Users                |    ✅     |     ✅    |       ❌     |       ❌     |
 
 import AndroidVersion from '@site/src/base/AndroidVersion';
 import IosVersion from '@site/src/base/IosVersion';
