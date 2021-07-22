@@ -167,8 +167,8 @@ If this validation fails, the update method is dropped with the appropriate cons
 
 :::tip
 
-For presentation purposes, Shake dashboard is using *first_name* and *last_name* keys from the user metadata.
-We recommend using those keys when sending metadata, this will allow you to easier manage your users on the dashboard.
+Shake Dashboard uses *first_name*, *last_name* and *end_user_id* keys from the user metadata for presentation purposes. 
+We recommend using these keys when sending appropriate user metadata to have a nice overview of your users on the Dashboard.
 
 :::
 
