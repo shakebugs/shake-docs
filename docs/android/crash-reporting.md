@@ -45,7 +45,7 @@ Shake.setCrashReportingEnabled(true);
 
 ```kotlin title="App.kt"
 // highlight-next-line
-Shake.isCrashReportingEnabled = true
+Shake.setCrashReportingEnabled(true)
 ```
 
 </TabItem></Tabs>
@@ -84,7 +84,7 @@ Shake.setAskForCrashDescription(true);
 
 ```kotlin title="MainActivity.kt"
 // highlight-next-line
-Shake.isAskForCrashDescription = true
+Shake.setAskForCrashDescription(true)
 ```
 
 </TabItem></Tabs>
