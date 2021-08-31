@@ -5,12 +5,6 @@ title: Crash reporting
 
 Get detailed crash reports and insights about the circumstances that led up to them.
 
-:::note
-
-Crash reporting is currently in beta.
-
-:::
-
 ## Introduction
 
 Shake records crashes and uncaught exceptions that occur in your app and intelligently groups them on the dashboard, offering enough
