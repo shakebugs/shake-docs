@@ -4,11 +4,21 @@ module.exports = {
             type: 'doc',
             id: 'overview',
         },
+
         {
             type: 'category',
             label: 'Android',
             items: [
                 'android/setup',
+                {
+                    type: 'category',
+                    label: 'Screens',
+                    items: [
+                        'android/home-screen',
+                        'android/new-ticket-screen',
+                        'android/inspect-screen',
+                    ]
+                },
                 {
                     type: 'category',
                     label: 'SDK',
@@ -47,6 +57,15 @@ module.exports = {
                             'ios/setup-cocoapods',
                             'ios/setup-spm',
                             'ios/setup-manually'
+                    ]
+                },
+                {
+                    type: 'category',
+                    label: 'Screens',
+                    items: [
+                        'ios/home-screen',
+                        'ios/new-ticket-screen',
+                        'ios/inspect-screen',
                     ]
                 },
                 {
