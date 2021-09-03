@@ -103,6 +103,9 @@ If you are using Proguard to obfuscate your code, no problem! You can upload you
 
 By default, *mapping.txt* file is created in the build directory of the app module: *project/app/build/outputs/mapping/release/mapping.txt*.  
 
+To access your application mapping files on the *Shake Dashboard* click your *avatar* and navigate to *My Account › Apps* and click
+on your application name. Once the menu is expanded click the **Mapping files**.
+
 You can simply drag and drop *mapping.txt* file on our Shake dashboard to upload it.
 
 ### Using the script
