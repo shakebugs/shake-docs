@@ -150,6 +150,9 @@ For the apps built with Bitcode setting, use the Fastlane plugin to grab the cor
 
 Your application dSYM files can be manually zipped and uploaded to the Shake dashboard.
 
+To access your application mapping files on the *Shake Dashboard* click your *avatar* and navigate to *My Account › Apps* and click
+on your application name. Once the menu is expanded click the **Mapping files**.
+
 Symbolication files are located in the project build folder which is easily accessed by navigating to 
 Xcode *Preferences › Locations › Derived Data* and clicking the *Finder* folder link.
 
