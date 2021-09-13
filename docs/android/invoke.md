@@ -12,7 +12,7 @@ But if you want to, you can customize that.
 
 Let's look at an example.
 You want your users to invoke SDK either when they shake their device, or when they take a screenshot.
-To do that, set true or false for certain `Shake.getReportConfiguration()` properties:
+To do that, set true or false for certain configuration properties:
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -165,8 +165,10 @@ You can use one of the alternative ways to invoke Shake instead.
 :::
 
 ## Invoke through code
-You can invoke SDK through code by calling the `Shake.show()` method anywhere after `Shake.start()`,
-optionally attaching files and/or [Metadata](android/metadata.md). Here’s an example:
+You can invoke SDK through code by calling the `Shake.show` method anywhere after `Shake.start`.
+
+The `show` method can also be called with the argument `ShakeScreen` which determines the first presented screen in the Shake UI. Default value 
+is `ShakeScreen.NEW`.
 
 <Tabs
   groupId="android"
@@ -179,51 +181,42 @@ optionally attaching files and/or [Metadata](android/metadata.md). Here’s an e
 
 <TabItem value="java">
 
-```java title="App.java"
-public void example() {
-  // highlight-start
-  Shake.setMetadata("key", "value");
-  Shake.show(createShakeReportData());
-  // highlight-end
+```java title="MainActivity.java"
+private void onReportProblemPressed() {
+    // Displays Shake with the New Ticket screen at the top of the stack.
+    // highlight-next-line
+    Shake.show();
 }
 
-// highlight-start
-private ShakeReportData createShakeReportData() {
-  return new ShakeReportData() {
-    @Override
-    public List<ShakeFile> attachedFiles() {
-      List<ShakeFile> shakeFiles = new ArrayList<>();
-      return shakeFiles;
-    }
-  };
+private void onFeedbackCenterPressed() {
+    // Displays Shake starting at the Home screen.
+    // highlight-next-line
+    Shake.show(ShakeScreen.HOME);
 }
-// highlight-end
 ```
 
 </TabItem>
 
 <TabItem value="kotlin">
 
-```kotlin title="App.kt"
-fun example()  {
-  // highlight-start
-  Shake.setMetadata("key", "value")
-  Shake.show(createShakeReportData())
-  // highlight-end
+```kotlin title="MainActivity.kt"
+private fun onReportProblemPressed() {
+    // Displays Shake with the New Ticket screen at the top of the stack.
+    // highlight-next-line
+    Shake.show()
 }
-        
-// highlight-start
-private fun createShakeReportData(): ShakeReportData {
-  return object : ShakeReportData {
-    override fun attachedFiles(): List<ShakeFile> {
-      return ArrayList()
-    }
-  }
+
+private fun onFeedbackCenterPressed() {
+    // Displays Shake starting at the Home screen.
+    // highlight-next-line
+    Shake.show(ShakeScreen.HOME)
 }
-// highlight-end
 ```
 
 </TabItem>
 </Tabs>
+
+When Shake is invoked with the `ShakeScreen.NEW`, app screenshot and automatic video recording are automatically attached and visible
+in the attached files section of the UI.
 
 All other data, like [Activity history](android/activity.md) or [Black box](android/blackbox.md), is automatically included in every user’s bug report — no additional code required.
