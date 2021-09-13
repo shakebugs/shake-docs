@@ -165,8 +165,12 @@ Make sure to ZIP the symbolication files before dropping them on the Shake dashb
 
 Shake ships with the `upload-symbols.sh`script which uploads dSYMS to Shake servers.
 
-Add this script as a RunScript phase of your Xcode project build process so the 
-latest dSYMS are uploaded after every build action. Make sure to replace the placeholder values
+
+When your project is opened with Xcode, select the *Scheme* and then *EditScheme* in the dropdown menu.
+
+Expand the *Build Action* options and select *Post Actions*. Select the **+** icon and add a new *Run Script Phase* to build post actions.
+
+This ensures that latest dSYMS are uploaded after every build process. Make sure to replace the placeholder values
 with the correct values for your environment.
 
 ```script
@@ -181,13 +185,14 @@ Path/to/upload-symbols.sh \
 This method is not suitable for apps using __Bitcode__ binary format.
 :::
 
-Also, you can add the previous script to the *Archive › Post-actions*. So the latest dSYMS will be uploaded after every archive action.
-Make sure to select your app to provide build settings to script.
-
 If your reports are not being symbolicated, make sure the script is working properly
 by doublechecking the Xcode Build log for Shake upload script errors. 
 
+:::tip
+
 When viewing the Build log, search for "SHAKE_SCRIPT" keyword to identify potential problems and check if the upload was successful.
+
+:::
 
 ### Upload dSYMS using fastlane plugin
 
