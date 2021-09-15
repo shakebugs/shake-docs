@@ -8,9 +8,19 @@ What would you like us to build next? We're dying to hear from you — upvote up
 
 ## Version
 
+### 15.0.0
+<span class="tag-button">September 21, 2021</span>&nbsp;&nbsp;
+<span class="tag-button green-tag-button">Latest version</span>
+
+**What's new**
+
+We've completely [redesigned Shake](/android/home-screen.md) to continue delivering you more and more options in a scalable manner.
+Shake now supports both dark and light theme, what brings the same user experience through the whole app.
+
+We've introduced [Home screen](/android/home-screen.md) where [your users](/android/users.md) can see tickets they reported.
+
 ### 14.4.0
 <span class="tag-button">July 22, 2021</span>&nbsp;&nbsp;
-<span class="tag-button green-tag-button">Latest version</span>
 
 **What's new**
 
