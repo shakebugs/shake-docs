@@ -6,11 +6,9 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-The *Inspect ticket* screen allows users to see the details of report attached to the current ticket.
+The *Inspect screen* allows your user to see the current ticket details — its [Essentials](ios/essentials.md) and [Metadata](ios/metadata.md) — before submitting it.
 
 ## Introduction
-
-Your users can inspect the current ticket — see its [Essentials](ios/essentials.md) and [Metadata](ios/metadata.md) — before submitting it.
 
 The *Inspect screen* can be reached via *Inspect* button on the [New ticket screen](ios/new-ticket-screen.md).
 
@@ -20,6 +18,6 @@ The *Inspect screen* can be reached via *Inspect* button on the [New ticket scre
 />
 
 
-## Display
+## Show
 
 *Inspect* button is an optional feature that [can be disabled](ios/inspect.md) by passing the appropriate value to the Shake configuration.

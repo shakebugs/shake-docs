@@ -15,7 +15,7 @@ What would you like us to build next? We're dying to hear from you — upvote up
 **What's new**
 
 We've completely [redesigned Shake](/ios/home-screen.md) to continue delivering you more and more options in a scalable manner.
-Shake now supports both dark and light theme, what brings the same user experience through the whole app.
+It also started supporting dark and light theme so it can beautifully fit into your app in either case.
 
 We've introduced [Home screen](/ios/home-screen.md) where [your users](/ios/users.md) can see tickets they reported.
 
