@@ -339,9 +339,8 @@ values={[
 
 // highlight-start
     SHKShake.networkRequestsFilter = ^SHKNetworkRequestEditor *(SHKNetworkRequestEditor * networkRequest) {
-        NSMutableDictionary<NSString *, NSString *>* headers = networkRequest.requestHeaders;
-        
-        if ([networkRequest.url hasPrefix:@"https://api.myapp.com/cards"]) {
+                
+        if ([networkRequest.url.absoluteString hasPrefix:@"https://api.myapp.com/cards"]) {
             return nil;
         }
         
@@ -364,7 +363,7 @@ func setupNetworkFilter() {
     // highlight-start
     Shake.networkRequestsFilter = { (networkRequest) in
         
-        if networkRequest.url.contains("https://api.myapp.com/cards") {
+        if networkRequest.url.absoluteString.hasPrefix("https://api.myapp.com/cards") {
             return nil
         }
         

@@ -41,11 +41,11 @@ in this documentation so make sure the method is called at the place where it be
         /// Succesfull log in flow
 
             // highlight-next-line
-            Shake.registerUser(userId: userEmail);
+            [SHKShake registerUserWithUserId:userEmail];
             
             /**
             Or even better,
-            Shake.registerUserWithUserId(userResponse.internalUserIdentifier)
+            [SHKShake registerUserWithUserId:userResponse.internalUserIdentifier];
             */
 
             [weakSelf didLoginWithUserResponse:userResponse];
@@ -120,7 +120,7 @@ Unregistering is done by calling the `Shake.unregisterUser` method.
             [weakSelf performLogOutCleanup];
             
             // highlight-next-line
-            [Shake unregisterUser];
+            [SHKShake unregisterUser];
 
             return;
         }
@@ -192,7 +192,7 @@ in their respective contexts.
 
     /// Some post log in operations
     // highlight-next-line
-    Shake.updateUserMetadata([self userInfoDictionary]);
+    [SHKShake updateUserMetadata:[self userInfoDictionary]];
 }
 
 - (nonnull NSDictionary *)userInfoDictionary { 
@@ -218,7 +218,7 @@ class UserManager {
         Shake.updateUserMetadata(self.userInfoDictionary());
     }
 
-    func userInfoDictionary() -> Dictionary { 
+    func userInfoDictionary() -> Dictionary<String, Any> {
         return [
             "first_name": self.currentUser.firstName,
             "last_name": self.currentUser.lastName,
@@ -242,9 +242,9 @@ class UserManager {
     NSArray<CartItem *> *cartItems = [self currentCartItems];
 
     //highlight-start
-    Shake.updateUserMetadata(@{
+    [SHKShake updateUserMetadata:@{
         @"cartItems": cartItems.description
-    });
+    }];
     //highlight-end
 }
 
@@ -253,9 +253,9 @@ class UserManager {
     /// Cart was cleared
 
     //highlight-start
-    Shake.updateUserMetadata(@{
+    [SHKShake updateUserMetadata:@{
         @"cartItems": @"empty"
-    });
+    }];
     //highlight-end
 }
 @end
@@ -327,8 +327,8 @@ registered with the email.
 
             weakSelf.currentUser = user;
 
-        // highlight-next-line
-            Shake.updateUserId(newEmail);
+            // highlight-next-line
+           [SHKShake updateUserId:newEmail];
 
         }
      
