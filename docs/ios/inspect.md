@@ -23,28 +23,28 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 <Tabs
-  groupId="android"
-  defaultValue="kotlin"
+  groupId="ios"
+  defaultValue="swift"
   values={[
-    { label: 'Java', value: 'java'},
-    { label: 'Kotlin', value: 'kotlin'},
+    { label: 'Objective-C', value: 'objectivec'},
+    { label: 'Swift', value: 'swift'},
   ]
 }>
 
-<TabItem value="java">
+<TabItem value="swift">
 
-```java title="App.java"
+```java title="AppDelegate.swift"
 // highlight-next-line
-Shake.getReportConfiguration().setEnableInspectScreen(false);
+Shake.configuration.isInspectScreenEnabled = false;
 ```
 
 </TabItem>
 
-<TabItem value="kotlin">
+<TabItem value="objectivec">
 
-```kotlin title="App.kt"
+```kotlin title="AppDelegate.m"
 // highlight-next-line
-Shake.getReportConfiguration().isEnableInspectScreen = false
+SHKShake.configuration.isInspectScreenEnabled = false;
 ```
 
 </TabItem>
