@@ -370,6 +370,10 @@ Make sure that Activity history is enabled if you want to send console logs with
 In a Free workspace you can see up to 20 events that lead to every bug.
 If you need to dive really deep to find causes of the weirdest bugs,
 in a Premium workspace you can browse the entire Activity history.
+Network request limit for both request body and response body is
+100 KB respectively.
+If request body or response body constains binary data, then on 
+dashboard it will be displayed as "Binary data".
 
 ## Enabling and disabling
 Activity history is enabled by default, however, you can use the method below to disable it:
