@@ -11,6 +11,12 @@ Silent report can be configured with the *Description* just like the regular rep
 
 *ShakeReportConfiguration* determines what kind of data is included in the report.
 
+:::note
+
+Silent reports will also attach files returned by the [onPrepareData](android/attachments.md) callback.
+
+:::
+
 import Tabs from '@theme/Tabs'; 
 import TabItem from '@theme/TabItem';
 
