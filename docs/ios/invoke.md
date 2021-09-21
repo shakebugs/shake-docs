@@ -12,7 +12,7 @@ But if you want to, you can customize that.
 
 Let's look at an example.
 You want your users to invoke SDK either when they shake their device, or when they take a screenshot.
-To do that, set true or false for certain `Shake.configuration` properties:
+To do that, set true or false for certain configuration properties:
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -132,28 +132,57 @@ App Store rejects apps that get in the way of the default screenshot behavior. F
 Invoke Shake with a one-finger swiping gesture from the right edge of the screen.
 
 ## Invoke through code
-You can invoke SDK through code by calling the `Shake.show()` method anywhere after `Shake.start()`, optionally adding bug description or attaching files and/or [Metadata](ios/metadata.md). Here’s an example:
+
+You can invoke SDK through code by calling the `Shake.show` method anywhere after `Shake.start`. 
+
+The `show` method can also be called with the argument `SHKShowOption` which determines the first presented screen in the Shake UI. Default value 
+is `SHKShowOptionNew`.
 
 <Tabs groupId="ios" values={[{ label: 'Objective-C', value: 'objectivec'},{ label: 'Swift', value: 'swift'},]} defaultValue="swift"><TabItem value="objectivec">
 
-```objc title="AppDelegate.m"
-//highlight-start
-SHKShakeReportData *reportData = [[SHKShakeReportData alloc] initWithBugDescription:@"Broken UI" attachedFiles:@[]];
+```objc title="SettingsVM.m"
 
-[SHKShake showWithReportData:reportData]; 
-//highlight-end
+@interface SettingsVM ()
+
+@end
+
+@implementation SettingsVM
+
+- (void)onDidPressReportProblem {
+    /// Displays Shake with the New Ticket screen at the top of the stack.
+    //highlight-next-line
+    [SHKShake show];
+}
+
+- (void)onDidPressShowFeedbackCenter {
+    /// Displays Shake starting at the Home screen.
+    //highlight-next-line
+    [SHKShake show:SHKShowOptionHome];
+}
+
+@end
 ```
 
 </TabItem><TabItem value="swift">
 
-```swift title="AppDelegate.swift"
-//highlight-start
-let reportData = ShakeReportData(bugDescription: "Broken UI", attachedFiles: [])
+```swift title="SettingsVM.swift"
+func onDidPressReportProblem() {
+    /// Displays Shake with the New Ticket screen at the top of the stack.
+    //highlight-next-line
+    Shake.show()  
+}
 
-Shake.show(reportData: reportData)
-//highlight-end
+func onDidPressShowFeedbackCenter() {
+    /// Displays Shake starting at the Home screen.
+    //highlight-next-line
+    Shake.show(.home)
+}
 ```
 
 </TabItem></Tabs>
+
+
+When Shake is invoked with the `SHKShowOptionNew`, app screenshot and automatic video recording are automatically attached and visible
+in the attached files section of the UI.
 
 All other data, like [Activity history](ios/activity.md) or [Black box](ios/blackbox.md), is automatically included in every user’s bug report — no additional code required.

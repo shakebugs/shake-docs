@@ -85,7 +85,7 @@ your application. This enables you to , in a sense, "follow" your application co
 
     SHKFeedbackEntry *videoCallCategory = [SHKFeedbackEntry entryWithTitle:@"Video Call" andTag:@"video_call" icon:nil];
 
-    NSMutableArray<SHKFeedbackEntry *> *existing = [SHKShake getFeedbackTypes];
+    NSMutableArray<SHKFeedbackEntry *> *existing = [SHKShake getFeedbackTypes].mutableCopy;
 
     [existing addObject:videoCallCategory];
 
@@ -105,7 +105,7 @@ your application. This enables you to , in a sense, "follow" your application co
 
       let videoCallCategory = SHKFeedbackEntry(title: "Video Call", andTag: "video_call", icon: nil)
 
-      let existing = Shake.getFeedbackTypes()
+      var existing = Shake.getFeedbackTypes()
 
       existing.append(videoCallCategory)
 

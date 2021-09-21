@@ -61,13 +61,11 @@ Shake.onPrepareData(new ShakeReportData() {
 
 ```kotlin title="App.kt"
 // highlight-start
-Shake.onPrepareData(object: ShakeReportData {
-  override fun attachedFiles(): List<ShakeFile> {
+Shake.onPrepareData {
     val shakeFileOne = ShakeFile(File("PathToYourFile"))
     val shakeFileTwo = ShakeFile("AbsolutePathToYourFile")
-    return listOf(shakeFileOne, shakeFileTwo)
-  }
-})
+    listOf(shakeFileOne, shakeFileTwo)
+}
 // highlight-end
 ```
 
@@ -113,13 +111,11 @@ Shake.onPrepareData(new ShakeReportData() {
 
 ```kotlin title="App.kt"
 // highlight-start
-Shake.onPrepareData(object: ShakeReportData {
-  override fun attachedFiles(): List<ShakeFile> {
+Shake.onPrepareData {
     val shakeFileOne = ShakeFile("fileOne", File("PathToYourFile"))
     val shakeFileTwo = ShakeFile("fileTwo", "AbsolutePathToYourFile")
-    return listOf(shakeFileOne, shakeFileTwo)
-  }
-})
+    listOf(shakeFileOne, shakeFileTwo)
+}
 // highlight-end
 ```
 

@@ -13,7 +13,7 @@ Shake has a very rich feature set, yet on some platforms we managed to achieve m
 | Bug screenshot       |    ✅     |     ✅    |       ✅     |       ✅     |
 | Feedback types       |    ✅     |     ✅    |       ✅     |       ✅     |
 | Intro message        |    ✅     |     ✅    |       ✅     |       ✅     |
-| Inspect bug          |    ✅     |     ✅    |       ✅     |       ✅     |
+| Inspect ticket       |    ✅     |     ✅    |       ✅     |       ✅     |
 | Screen recording     |    ✅     |     ✅    |       ✅     |       ✅     |
 | File attachment      |    ✅     |     ✅    |       ✅     |       ✅     |
 | Metadata             |    ✅     |     ✅    |       ✅     |       ✅     |

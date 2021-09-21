@@ -1,26 +1,26 @@
 ---
 id: inspect
-title: Inspect bug
+title: Inspect ticket
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-The *Inspect bug* screen allows users to see the details of a bug from their device without reporting it.
+The *Inspect screen* allows your user to see the current ticket details — its [Essentials](ios/essentials.md) and [Metadata](ios/metadata.md) — before submitting it.
 
 ## Introduction
-Your users can inspect a bug — see its [Essentials](/ios/essentials.md) and [Metadata](ios/metadata.md) — before submitting it. The *Inspect bug* screen is part of the SDK *Wrap-up* screen:
+
+The *Inspect screen* can be reached via *Inspect* button on the [New ticket screen](ios/new-ticket-screen.md).
 
 <img
-  alt="Attachments screen"
-  src={useBaseUrl('screens/inspect_screen.png')}
+  alt="Inspect screen"
+  src={useBaseUrl('screens/new_screen.png')}
 />
 
+## Hide the *Inspect* button
 
-## Hide the *Inspect bug* screen
-If you don’t want the screen to show when submitting a bug report, you can hide it using the following method:
+If you don’t want to show *Inspect* button  to a user, hide it using the following method:
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-
 
 <Tabs
   groupId="ios"
@@ -31,20 +31,20 @@ import TabItem from '@theme/TabItem';
   ]
 }>
 
-<TabItem value="objectivec">
+<TabItem value="swift">
 
-```objectivec title="AppDelegate.m"
-//highlight-next-line
-SHKShake.configuration.isInspectScreenEnabled = NO;
+```java title="AppDelegate.swift"
+// highlight-next-line
+Shake.configuration.isInspectScreenEnabled = false;
 ```
 
 </TabItem>
 
-<TabItem value="swift">
+<TabItem value="objectivec">
 
-```swift title="AppDelegate.swift"
-//highlight-next-line
-Shake.configuration.isInspectScreenEnabled = false
+```kotlin title="AppDelegate.m"
+// highlight-next-line
+SHKShake.configuration.isInspectScreenEnabled = false;
 ```
 
 </TabItem>
