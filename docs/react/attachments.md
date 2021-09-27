@@ -20,13 +20,24 @@ You will see these files in the center of your web Dashboard along with files th
 ## Methods
 You can quietly attach files by using any of the methods described below.
 
-### Attaching a file with a default name
-Files can be attached with an absolute file path to your file.
-If you attach files this way, the filename shown on the web Dashboard
-will be determined automatically from the passed file's name.
+### Setting a custom filename and then attaching a file
+*ShakeFile* can be initialized with a desired filename (String) and an absolute file path (String) to your file, or instead of a file path you can initialize it with the actual file object (java.io.File).
 
-To attach files this way, call the `Shake.setShakeReportData()` method as shown in the example below.
-Be careful though, any subsequent calls will override former ones already in place:
+To define which files will be uploaded when a user reports a bug, you must call the `Shake.onPrepareData()` method overriding the `attachedFiles` method inside, as shown in the example below.
+
+You can call the `Shake.onPrepareData()` method anywhere within your app, but be careful only to call it once since any subsequent calls will override the former ones.
+
+/*
+  Ovdje dodati metode
+*/
+
+### Attaching a file without the custom filename
+*ShakeFile* can be initialized without a filename (String), with just an absolute file path (String) to your file, or instead of a file path you can initialize it with the actual file object (java.io.File).
+If you initialize it this way, filename shown on the web Dashboard will be determined automatically from the passed file's name.
+
+To define which files will be uploaded when a user reports a bug, you must call the `onPrepareData` method overriding the `attachedFiles` method inside, as shown in the example below.
+
+You can call the `Shake.onPrepareData()` method anywhere in your app, but be careful only to call it once, since subsequent calls will override the former ones.
 
 ```javascript title="App.js"
 // highlight-next-line

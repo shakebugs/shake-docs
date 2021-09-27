@@ -1,22 +1,21 @@
 ﻿---
 id: inspect
-title: Inspect bug
+title: Inspect ticket
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-The Inspect bug screen allows users to see the details of a bug from their device without reporting it.
+The *Inspect screen* allows your user to see the current ticket details — its [Essentials](android/essentials.md) and [Metadata](android/metadata.md) — before submitting it.
 
 ## Introduction
-Your users can inspect a bug — see its [Essentials](/react/essentials.md) and [Metadata](/react/metadata.md) — before submitting it.
-The *Inspect bug* screen is part of the SDK *Wrap-up* screen:
+The *Inspect screen* can be reached via *Inspect* button on the [New ticket screen](android/new-ticket-screen.md).
 
 <img
   alt="Inspect screen"
-  src={useBaseUrl('screens/inspect_screen.png')}
+  src={useBaseUrl('screens/new_screen.png')}
 />
 
 ## Hiding Inspect bug screen
-If you don’t want the screen to show when submitting a bug report, you can hide it using the following method:
+If you don’t want to show *Inspect* button  to a user, hide it using the following method:
 
 ```javascript title="App.js"
 // highlight-next-line
