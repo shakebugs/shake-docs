@@ -10,8 +10,8 @@ By default, the SDK is invoked when a user shakes their device. You don't need t
 But if you want to, you can customize that.
 
 Let's look at an example. You want your users to invoke SDK either when
-they shake their device, or when they take a screenshot. To do that,
-call following methods with the `true` parameter.
+they shake their device, or when they take a screenshot. 
+To do that, set true or false for certain configuration properties:
 
 
 ```javascript title="App.js"
@@ -71,7 +71,10 @@ App Store rejects apps that get in the way of the default screenshot behavior. F
 
 ## Invoke through code
 You can invoke SDK through code by calling the `Shake.show()` method anywhere after `Shake.start()`,
-optionally attaching files and/or [Metadata](react/metadata.md). Here’s an example:
+optionally attaching files and/or [Metadata](react/metadata.md). 
+
+The `show` method can also be called with the argument `ShakeScreen` which determines the first presented screen in the Shake UI. Default value 
+is `ShakeScreen.NEW`.
 
 ```javascript title="App.js"
 // highlight-next-line
@@ -84,5 +87,7 @@ const sendFeedback = () => {
     // highlight-end
 }
 ```
+When Shake is invoked with the `ShakeScreen.NEW`, app screenshot and automatic video recording are automatically attached and visible
+in the attached files section of the UI.
 
 All other data, like [Activity history](react/activity.md) or [Black box](react/blackbox.md), is automatically included in every user’s bug report — no additional code required.
