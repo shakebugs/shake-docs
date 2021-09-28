@@ -111,6 +111,15 @@ module.exports = {
                 },
                 {
                     type: 'category',
+                    label: 'Screens',
+                    items: [
+                        'react/home-screen',
+                        'react/new-ticket-screen',
+                        'react/inspect-screen'
+                    ]
+                },
+                {
+                    type: 'category',
                     label: 'SDK',
                     items: [
                         'react/invoke',
@@ -145,6 +154,15 @@ module.exports = {
                     items: [
                         'flutter/setup',
                         'flutter/upgrading-version'
+                    ]
+                },
+                {
+                    type: 'category',
+                    label: 'Screens',
+                    items: [
+                        'flutter/home-screen',
+                        'flutter/new-ticket-screen',
+                        'flutter/inspect-screen'
                     ]
                 },
                 {
