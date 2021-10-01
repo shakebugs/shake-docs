@@ -4,7 +4,6 @@ module.exports = {
             type: 'doc',
             id: 'overview',
         },
-
         {
             type: 'category',
             label: 'Android',

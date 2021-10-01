@@ -11,6 +11,12 @@ Silent report can be configured with the *Description* just like the regular rep
 
 *ShakeReportConfiguration* determines what kind of data is included in the report.
 
+:::note
+
+Silent reports will also attach files defined with the [Shake.setShakeReportData](react/attachments.md) method.
+
+:::
+
 ```javascript title="App.js"
 // highlight-next-line
 import Shake, {ShakeFile, ShakeReportConfiguration} from '@shakebugs/react-native-shake';

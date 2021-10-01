@@ -66,6 +66,12 @@ You can disable [Screen Recording](/react/automatic-screen-recording.md) feature
 Shake.setAutoVideoRecording(false);
 ```
 
+## Touch events
+
+Marking a view as private will automatically delete its touch events' text properties too. Consequently, you'll see them as `data_redacted` strings in your [Activity history](https://www.shakebugs.com/docs/android/activity#user-actions).
+
+Bear in mind that the view's ID, accessibility labels and tags remain visible.
+
 ## Network requests
 Certain network requests may contain sensitive data which you may not want to send to Shake servers.
 Use the `Shake.setNetworkRequestsFilter()` method to obfuscate only the sensitive parts of those requests, or to entirely prevent certain network requests from being logged.
