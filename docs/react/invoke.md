@@ -18,7 +18,7 @@ To do that, set true or false for certain configuration properties:
 // highlight-start
 Shake.setInvokeShakeOnShakeDeviceEvent(true);
 Shake.setInvokeShakeOnScreenshot(true);
-Shake.start("client-id", "client-secret");
+Shake.start('client-id', 'client-secret');
 // highlight-end
 ```
 
@@ -42,6 +42,24 @@ iOS apps in the debug mode will trigger React Native developer tools instead of 
 You should run your app in the release mode if you want to test shake gesture invoking.
 
 :::
+
+:::note
+
+In case you want to test Shake SDK in Android emulator, it’s useful to know that emulator’s default shaking gesture is too weak to invoke Shake.
+
+:::
+
+Shaking gesture sensitivity can be fine tuned as shown in the snippet below:
+
+```javascript title="App.js"
+// highlight-next-line
+Shake.setShakingThreshold(400); // Default value is 600.
+```
+
+In the above example, threshold is reduced a bit, meaning that Shake is a bit easier to invoke with the shaking gesture.
+
+A valid treshold value range is `1 - 1000`, with bigger values representing decreased sensitivity meaning that a stronger 
+motion gesture is required to invoke Shake.
 
 ### Button
 This invocation event will create the floating button on top of your app's UI which users can clearly see at all times. This button can be dragged to a more suitable position.
@@ -70,23 +88,28 @@ App Store rejects apps that get in the way of the default screenshot behavior. F
 :::
 
 ## Invoke through code
-You can invoke SDK through code by calling the `Shake.show()` method anywhere after `Shake.start()`,
-optionally attaching files and/or [Metadata](react/metadata.md). 
+You can invoke SDK through code by calling the `Shake.show` method anywhere after `Shake.start`.
 
 The `show` method can also be called with the argument `ShakeScreen` which determines the first presented screen in the Shake UI. Default value 
 is `ShakeScreen.NEW`.
 
 ```javascript title="App.js"
 // highlight-next-line
-import Shake from '@shakebugs/react-native-shake';
+import Shake, {ShakeScreen} from '@shakebugs/react-native-shake';
 
-const sendFeedback = () => {
-    // highlight-start
-    Shake.setMetadata("userId", userId);
+const onReportProblemPressed = () => {
+    // Displays Shake with the New Ticket screen at the top of the stack.
+    // highlight-next-line
     Shake.show();
-    // highlight-end
+}
+
+const onFeedbackCenterPressed = () => {
+    // Displays Shake starting at the Home screen.
+    // highlight-next-line
+    Shake.show(ShakeScreen.HOME);
 }
 ```
+
 When Shake is invoked with the `ShakeScreen.NEW`, app screenshot and automatic video recording are automatically attached and visible
 in the attached files section of the UI.
 

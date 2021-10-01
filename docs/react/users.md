@@ -25,9 +25,20 @@ receives a callback with the request result.
 Body of your successful registration request callback is the usual place where `Shake.registerUser` method would be called, but every context cannot be described
 in this documentation so make sure the method is called at the place where it best fits your application flow.
 
-/*
-    Ovdje dodati metode
-/*
+```javascript title="App.js"
+const logInUser = (email, password) => {
+    networkService.performLogin(email, password,
+        user => {
+            // highlight-next-line
+            Shake.registerUser(user.id);
+            
+            handleLogin(user);   
+        }, 
+        message => {
+            // Handle failed login   
+        });
+}
+```
 
 :::note
 
@@ -35,16 +46,27 @@ All user related Shake operations on a registered user are fully supported when 
 
 :::
 
+## Unregister user
 
 Unregistering a user should be done when your user decides to _log out_ and perhaps use your application as a _guest_, or when you no longer 
 want the subsequent reports to be associated with the current user.
 
 Unregistering is done by calling the `Shake.unregisterUser` method.
 
-/*
-    Ovdje dodati metode
-*/
-
+```javascript title="App.js"
+const logOut = () => {
+    networkService.performLogOut(email,
+        () => {
+            // highlight-next-line
+            Shake.unregisterUser();
+            
+            handleLogOut();   
+        }, 
+        message => {
+            // Handle failed log out   
+        });
+}
+```
 
 ## Updating user metadata
 
@@ -75,11 +97,42 @@ the user metadata in chunks from various points of your application, even when o
 A common approach would be updating the generic user metadata from one place in your code, upon every user change, and update the specific metadata
 in their respective contexts.
 
+```javascript title="App.js"
+const onLoggedIn = user => {
+    // highlight-start
+    const metadata = {
+        first_name: user.firstName,
+        last_name: user.lastName
+        email: user.email
+        status: user.status
+    };
+    
+    Shake.updateUserMetadata(metadata);
+    // highlight-end
+}
+```
 
-/*
-    Ovdje dodati metode
-*/
+```javascript title="Cart.js"
+const onCartItemAdded = () => {
+    updateTotalPrice();
 
+    // highlight-start
+    const metadata = { cartItems: cartItems.toString() };
+
+    Shake.updateUserMetadata(metadata);
+    // highlight-end
+}
+
+const onCartItemsCleared = () => {
+    updateTotalPrice();
+
+    // highlight-start
+    const metadata = { cartItems: 'empty' };
+
+    Shake.updateUserMetadata(metadata);
+    // highlight-end
+}
+```
 
 ## Updating user identifier
 
@@ -99,11 +152,20 @@ results. Make sure to read the following sections to better understand the possi
 The code snippet below showcases a common context in which the user identifier is updated. The snippet assumes that the user was previously
 registered with the email.
 
-
-/*
-    Ovdje dodati metode
-*/
-
+```javascript title="App.js"
+const changeEmail = email => {
+    networkService.updateUserEmail(email,
+        user => {
+            // highlight-next-line
+            Shake.updateUserId(user.email);
+            
+            handleEmailChange(user);   
+        }, 
+        message => {
+            // Handle failed update   
+        });
+}
+```
 
 ## Advanced usage
 

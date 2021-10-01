@@ -17,11 +17,10 @@ You can inspect all events that lead to a bug being reported. A link to *Activit
 ## Setting up
 
 ### User actions
-To set up the SDK to observe taps made on your app's UI elements, add this to any Activity you want to track:
 
-/*
-    Ovdje dodati metode
-*/
+SDK automatically observes taps made on your app's UI elements.
+
+On Android, [code snippet](/react/manual-linking.md#android) required to enable touch tracking is added by running [add command](/react/setup.md#install).
 
 ### Network requests
 Network tracker is disabled by default, to enable network requests tracking use the following method:
@@ -121,10 +120,19 @@ Make sure that activity history is enabled if you want to send console logs with
 
 :::
 
-## Limitations
-In a Free workspace you can see up to 20 events that lead to every bug. If you need to dive really deep to find causes of the weirdest bugs, in a Premium workspace you can browse the entire Activity history.
+:::note
 
-Network request limit for both request body and response body is 100 kB respectively. If request body or response body contains binary data, it will be presented as a Binary data string.
+If you start app using the `react-native run-ios` command, console logs will be visible in the bundler and won't be captured by Shake.
+Instead, if you want to capture console logs during development you should start app from the XCode.
+
+:::
+
+## Limitations
+In a Free workspace you can see up to 20 events that lead to every bug.
+If you need to dive really deep to find causes of the weirdest bugs,
+in a Premium workspace you can browse the entire Activity history.
+
+Network request limit for both request body and response body is 100 kB respectively. If request body or response body contains binary data, it will be presented as a *Binary data* string.
 
 ## Enabling and disabling
 Activity history is enabled by default, however, you can use the method below to disable it:

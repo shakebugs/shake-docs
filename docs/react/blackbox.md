@@ -4,17 +4,26 @@ title: Black box
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Just like before an airplane crash, Shake records a detailed environment profile covering the last 60 seconds before a bug was submitted.
+Just like before an airplane crash, Shake records a detailed environment
+profile covering the last 60 seconds before a bug was submitted.
 
 ## Introduction
-Black box includes device and app data, like memory load and connectivity status. You'll find the charts right below the screenshot.
+Black box includes device and app data, like memory load and connectivity status.
+You'll find the charts right below the screenshot.
 
 <img
-  alt="Inspect screen"
+  alt="Blackbox screen"
   src={useBaseUrl('screens/blackbox_screen.png')}
 />
 
 ## What do the charts show?
+### CPU
+This line chart shows the CPU usage of your app.
+When you hover over the chart, your app's exact CPU load is shown as a percentage of the total available CPU.
+We account for multi-threading — your percentage can go above 100% which would mean multiple threads were very busy.
+
+Your app's CPU usage is captured every 0.5 seconds.
+
 ### Device memory usage
 This line chart shows the device's total memory usage.
 When you hover over the chart, the usage percentage,

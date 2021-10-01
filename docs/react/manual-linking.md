@@ -83,7 +83,6 @@ public class MainActivity extends ReactActivity {
     }
     // highlight-end
 }
-
 ```
 
 

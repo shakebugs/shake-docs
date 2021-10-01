@@ -30,11 +30,10 @@ Once Shake is invoked, users can always manually attach a screenshot that better
 
 You can exclude an automatic screenshot from reports using the following snippet:
 
-/*
-
-  Ovdje dodati metodu
-
-*/
+```javascript title="App.js"
+// highlight-next-line
+Shake.setScreenshotIncluded(false);
+```
 
 ## Adding tags to a bug
 If at the very end of a bug description reporter *#adds #some #hashtags*,

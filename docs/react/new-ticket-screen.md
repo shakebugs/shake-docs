@@ -10,7 +10,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The screen comprises of various components used to fill in the ticket details.
 
-Some of the components, like [Inspect](android/inspect.md) and [Feedback type](android/feedback-type.md) can be turned off via the Shake configuration, and some
+Some of the components, like [Inspect](react/inspect.md) and [Feedback type](react/feedback-type.md) can be turned off via the Shake configuration, and some
 are disabled depending on the report context.
 
 <img
@@ -24,4 +24,4 @@ This screen is shown upon manual user invocation of Shake.
 
 To show this screen programmatically, call `Shake.show` with no arguments, as it is the default option.
 
-Read more about manual invocations on the [Invocations](android/invoke.md/#invoke-through-code) page.
+Read more about manual invocations on the [Invocations](react/invoke.md/#invoke-through-code) page.

@@ -106,7 +106,6 @@ module.exports = {
                     items: [
                         'react/setup',
                         'react/manual-linking',
-                        'react/upgrading-version'
                     ]
                 },
                 {
