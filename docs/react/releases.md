@@ -8,9 +8,20 @@ What would you like us to build next? We're dying to hear from you — upvote up
 
 ## Version
 
+### 15.0.0
+<span class="tag-button">October 6, 2021</span>&nbsp;&nbsp;
+<span class="tag-button green-tag-button">Latest version</span>
+
+**What's new**
+
+We've completely [redesigned Shake](/react/home-screen.md) to continue delivering you more and more options in a scalable manner.
+It also started supporting dark and light theme so it can beautifully fit into your app in either case.
+
+We've introduced [Home screen](/react/home-screen.md) where [your users](/react/users.md) can see tickets they reported.
+
+
 ### 14.1.3
 <span class="tag-button">April 28, 2021</span>&nbsp;&nbsp;
-<span class="tag-button green-tag-button">Latest version</span>
 
 **Bug fixes**
 

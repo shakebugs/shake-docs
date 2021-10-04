@@ -95,7 +95,7 @@ The default, shaking gesture causes the SDK to pop up.
 
 :::note
 
-In case you want to test Shake SDK in Android Emulator, it’s useful to know that emulator’s default shaking gesture is too weak to invoke Shake.
+In case you want to test Shake SDK in Android emulator, it’s useful to know that emulator’s default shaking gesture is too weak to invoke Shake.
 
 :::
 

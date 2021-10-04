@@ -5,10 +5,17 @@ title: Silent reports
 This page explains how to submit yourself a bug report from the background, without interrupting your end user whatsoever.
 
 ## Overview
-You can send silent reports to yourself by calling the `Shake.silentReport()` method anywhere after `Shake.start()`.
+You can send silent reports to yourself by calling the `Shake.silentReport` method anywhere after `Shake.start`.
 
-This method allows you to include: [Description and screenshot](react/screenshot.md), [Attachments](react/attachments.md), [Metadata](react/metadata.md) and [Activity history](react/activity.md) in your silent report.
-If you decide to do so, your code should look something like this example:
+Silent report can be configured with the *Description* just like the regular report and with additional *Attached files*.
+
+*ShakeReportConfiguration* determines what kind of data is included in the report.
+
+:::note
+
+Silent reports will also attach files defined with the [Shake.setShakeReportData](react/attachments.md) method.
+
+:::
 
 ```javascript title="App.js"
 // highlight-next-line
@@ -22,17 +29,23 @@ const sendSilentReport = () => {
     configuration.screenshot = true;
 
     Shake.silentReport(
-        "Description #tag1 #tag2", 
+        'Description #tag1 #tag2', 
         [ShakeFile.create(path)],
         configuration);
      // highlight-end
 }
 ```
 
-## Show the *Bug submitted* message
-Silent reports are programmatic and no Shake UI is shown.
-However, you can choose to display a small and non-intrusive message saying
-`Done. Bug submitted successfully.` on the bottom of a users screen once the report has been submitted:
+## Show the *Ticket submitted* message
+
+Silent reports are sent without showing the Shake.
+
+They can be used in the situations where displaying the Shake is not an option but user input and attached files can still be obtained.
+
+If your app user is aware of the silent report being sent, Shake can display a small and non-intrusive message notifying the user that the report was sent.
+
+To display a small toast after sending the report, follow to below example to change the `ShakeReportConfiguration` and use that configuration object when 
+sending your silent report with the `Shake.silentReport` method.
 
 ```javascript title="App.js"
 // highlight-start

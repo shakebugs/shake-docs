@@ -20,10 +20,10 @@ You can find Metadata below [Blackbox](/react/blackbox.md) on the web Dashboard,
 
 
 ## How to use
-To set the Metadata, call the `Shake.setMetadata()` method passing your desired data you want to
+To set the Metadata, call the `Shake.setMetadata` method passing your desired data you want to
 receive on your web Dashboard as a *String* pair.
 
-You can call the `Shake.setMetadata()` method anywhere within your app, but be careful because any subsequent calls with the same *String* key will override the former *String* value.
+You can call the `Shake.setMetadata` method anywhere within your app, but be careful because any subsequent calls with the same *String* key will override the former *String* value.
 Let’s say you wanted to send yourself a user’s ID after he successfully logs into your app using Metadata.
 It would look something like this in code:
 
@@ -33,6 +33,6 @@ import Shake from '@shakebugs/react-native-shake';
 
 const onLoginSuccessful = (user) => {
     // highlight-next-line
-    Shake.setMetadata("userid", user.id);
+    Shake.setMetadata('userid', user.id);
 }
 ```
