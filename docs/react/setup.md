@@ -36,23 +36,24 @@ import ReactVersion from '@site/src/base/ReactVersion';
 After the installation also run `pod update Shake` to be perfectly sure you're using the latest Shake <ReactVersion/>.
 
 ## Set compileSdkVersion version in the build.gradle file
-Since Shake requires `compileSdkVersion` 29 or greater, verify that `compileSdkVersion` is correctly set in the */android/build.gradle* file.
+Since Shake requires `compileSdkVersion` 29 or greater, verify that `compileSdkVersion` is correctly set in the *build.gradle* file.
 
-```groovy title="build.gradle"
+```groovy title="android/build.gradle"
 buildscript {
     ext {
-        buildToolsVersion = "29.0.3"
+        buildToolsVersion = "30.0.2"
         minSdkVersion = 21
         // highlight-next-line
-        compileSdkVersion = 29
-        targetSdkVersion = 29
+        compileSdkVersion = 30
+        targetSdkVersion = 30
+        ndkVersion = "20.1.5948944"
     }
     repositories {
         google()
-        jcenter()
+        mavenCentral()
     }
     dependencies {
-        classpath("com.android.tools.build:gradle:3.5.2")
+        classpath("com.android.tools.build:gradle:4.2.1")
     }
 }
 ```

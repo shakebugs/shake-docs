@@ -6,6 +6,12 @@ As with any third-party service, it’s important for you to understand and have
 what data is sent to Shake servers. Shake SDK allows you to filter out sensitive data on the mobile device itself,
 so it never reaches the Shake servers.
 
+## Touch events
+
+Marking a view as private will automatically delete its touch events' text properties too. Consequently, you'll see them as `data_redacted` strings in your [Activity history](https://www.shakebugs.com/docs/android/activity#user-actions).
+
+Bear in mind that the view's ID, accessibility labels and tags remain visible.
+
 ## Network requests
 Certain network requests may contain sensitive data which you may not want to send to Shake servers.
 Use the `Shake.setNetworkRequestsFilter()` method to obfuscate only the sensitive parts of those requests, or to entirely prevent certain network requests from being logged.

@@ -35,7 +35,7 @@ import TabItem from '@theme/TabItem';
 ```java title="App.java"
 // highlight-start
 List<FeedbackType> feedbackTypes = new ArrayList<>();
-feedbackTypes.add(new FeedbackType(R.drawable.ic_hardware, "Hardware issue", "hardware"));
+feedbackTypes.add(new FeedbackType(R.drawable.ic_hardware, "Hardware issue", "hardware")); // Icon is optional
 feedbackTypes.add(new FeedbackType(R.drawable.ic_audio, "Call audio problem", "call_audio"));
 feedbackTypes.add(new FeedbackType(R.drawable.ic_files, "File sync issue", "file_sync"));
 
@@ -50,7 +50,7 @@ Shake.getReportConfiguration().setFeedbackTypes(feedbackTypes);
 ```kotlin title="App.kt"
 // highlight-start
 val feedbackTypes = ArrayList<FeedbackType>()
-feedbackTypes.add(FeedbackType(R.drawable.ic_hardware, "Hardware issue", "hardware"))
+feedbackTypes.add(FeedbackType(R.drawable.ic_hardware, "Hardware issue", "hardware")) // Icon is optional
 feedbackTypes.add(FeedbackType(R.drawable.ic_audio, "Call audio problem", "call_audio"))
 feedbackTypes.add(FeedbackType(R.drawable.ic_files, "File sync issue", "file_sync"))
 

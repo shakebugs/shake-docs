@@ -27,7 +27,7 @@ You would do this:
 import Shake from '@shakebugs/react-native-shake';
 
 const loggedInSuccessfully = (user) => {
-  if (user.type === "GUEST") {
+  if (user.type === 'GUEST') {
     // highlight-next-line
     Shake.setEnabled(false);
   }

@@ -34,7 +34,7 @@ import TabItem from '@theme/TabItem';
 
 ```objc title="AppDelegate.m"
 // highlight-start
-SHKFeedbackEntry *hardwareCategory = [SHKFeedbackEntry entryWithTitle:@"Hardware issue" andTag:@"hardware" icon:nil];
+SHKFeedbackEntry *hardwareCategory = [SHKFeedbackEntry entryWithTitle:@"Hardware issue" andTag:@"hardware" icon:nil]; /// Icon is optional
 SHKFeedbackEntry *callCategory = [SHKFeedbackEntry entryWithTitle:@"Call audio problem" andTag:@"call_audio" icon:nil];
 SHKFeedbackEntry *syncCategory = [SHKFeedbackEntry entryWithTitle:@"File sync issue" andTag:@"file_sync" icon:nil];
 
@@ -48,7 +48,7 @@ SHKFeedbackEntry *syncCategory = [SHKFeedbackEntry entryWithTitle:@"File sync is
 
 ```swift title="AppDelegate.swift"
 // highlight-start
-let hardwareCategory = SHKFeedbackEntry(title: "Hardware issue", andTag: "hardware", icon: hardwareIssueIcon)
+let hardwareCategory = SHKFeedbackEntry(title: "Hardware issue", andTag: "hardware", icon: hardwareIssueIcon) /// Icon is optional
 let callCategory = SHKFeedbackEntry(title: "Call audio problem", andTag: "call_audio", icon: nil)
 let syncCategory = SHKFeedbackEntry(title: "File sync issue", andTag: "file_sync", icon: nil)
 

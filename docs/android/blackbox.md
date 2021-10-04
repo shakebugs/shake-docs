@@ -16,7 +16,6 @@ You'll find the charts right below the screenshot.
   src={useBaseUrl('screens/blackbox_screen.png')}
 />
 
-
 ## What do the charts show?
 ### Device memory usage
 This line chart shows the device's total memory usage.

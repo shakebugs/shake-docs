@@ -86,9 +86,9 @@ private fun createShakeReportData(): ShakeReportData {
 
 ## Show the *Ticket submitted* message
 
-Silent reports are sent without showing the ShakeUI.
+Silent reports are sent without showing the Shake.
 
-They can be used in the situations where displaying the ShakeUI is not an option but user input and attached files can still be obtained.
+They can be used in the situations where displaying the Shake is not an option but user input and attached files can still be obtained.
 
 If your app user is aware of the silent report being sent, Shake can display a small and non-intrusive message notifying the user that the report was sent.
 

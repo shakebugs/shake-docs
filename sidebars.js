@@ -4,7 +4,6 @@ module.exports = {
             type: 'doc',
             id: 'overview',
         },
-
         {
             type: 'category',
             label: 'Android',
@@ -106,7 +105,15 @@ module.exports = {
                     items: [
                         'react/setup',
                         'react/manual-linking',
-                        'react/upgrading-version'
+                    ]
+                },
+                {
+                    type: 'category',
+                    label: 'Screens',
+                    items: [
+                        'react/home-screen',
+                        'react/new-ticket-screen',
+                        'react/inspect-screen'
                     ]
                 },
                 {
@@ -122,6 +129,7 @@ module.exports = {
                         'react/intro-message',
                         'react/screenshot',
                         'react/automatic-screen-recording',
+                        'react/users',
                         'react/permissions',
                         'react/activity',
                         'react/essentials',
@@ -148,6 +156,15 @@ module.exports = {
                 },
                 {
                     type: 'category',
+                    label: 'Screens',
+                    items: [
+                        'flutter/home-screen',
+                        'flutter/new-ticket-screen',
+                        'flutter/inspect-screen'
+                    ]
+                },
+                {
+                    type: 'category',
                     label: 'SDK',
                     items: [
                         'flutter/invoke',
@@ -159,6 +176,7 @@ module.exports = {
                         'flutter/intro-message',
                         'flutter/screenshot',
                         'flutter/automatic-screen-recording',
+                        'flutter/users',
                         'flutter/permissions',
                         'flutter/activity',
                         'flutter/essentials',
