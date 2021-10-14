@@ -8,6 +8,7 @@ so it never reaches the Shake servers.
 
 ## Views
 You can mark any view as private, and it'll automatically be deleted from the screenshot.
+Private views are stored as a weak reference, they get cleared from the memory when not used anymore.
 
 Let's suppose you're building a shopping cart app and you want to delete the name and the credit card number views
 from the screenshot:
@@ -67,7 +68,7 @@ Shake.setAutoVideoRecording(false);
 
 ## Touch events
 
-Marking a view as private will automatically delete its touch events' text properties too. Consequently, you'll see them as `data_redacted` strings in your [Activity history](/react/activity#user-actions).
+Marking a view as private will automatically delete its touch events' text properties too. Consequently, you'll see them as `data_redacted` strings in your [Activity history](https://www.shakebugs.com/docs/android/activity#user-actions).
 
 Bear in mind that the view's ID, accessibility labels and tags remain visible.
 

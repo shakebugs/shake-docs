@@ -216,8 +216,6 @@ If request body or response body contains binary data, it will be presented as a
 ## Enabling and disabling
 Activity history is enabled by default, however, you can use the method below to disable it:
 
-
-
 <Tabs groupId="ios" defaultValue="swift" values={[{ label: 'Objective-C', value: 'objectivec'},{ label: 'Swift', value: 'swift'},]}><TabItem value="objectivec">
 
 ```objectivec title="AppDelegate.m"

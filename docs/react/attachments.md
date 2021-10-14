@@ -9,6 +9,7 @@ You can instruct the SDK to quietly attach any file to a report.
 The files you attach are not visible to the user in the SDK.
 
 ## Introduction
+
 Send yourself XMPP logs, a user's profile photo, or whatever helps you debug issues faster.
 You will see these files in the center of your web Dashboard along with files the user maybe attached themselves.
 
@@ -18,67 +19,56 @@ You will see these files in the center of your web Dashboard along with files th
 />
 
 ## Methods
+
 You can quietly attach files by using any of the methods described below.
 
-### Attaching a file with a default name
-Files can be attached with an absolute file path to your file.
-If you attach files this way, the filename shown on the web Dashboard
-will be determined automatically from the passed file's name.
+### Setting a custom filename and then attaching a file
 
-To attach files this way, call the `Shake.setShakeReportData()` method as shown in the example below.
-Be careful though, any subsequent calls will override former ones already in place:
+*ShakeFile* can be initialized with a desired filename (String) and an absolute file path (String) to your file.
+
+To define which files will be uploaded when a user reports a bug, you must call the `Shake.setShakeReportData` method and pass list of *ShakeFile* objects, as shown in the example below.
+
+You can call the `Shake.setShakeReportData` method anywhere within your app, but be careful only to call it once since any subsequent calls will override the former ones.
 
 ```javascript title="App.js"
 // highlight-next-line
 import Shake, {ShakeFile} from '@shakebugs/react-native-shake';
-import RNFS from 'react-native-fs';
 
-attachLogFile = (data) => {
-  const path = RNFS.DocumentDirectoryPath + '/log.txt';
-  RNFS.writeFile(path, data, 'utf8')
-    .then((success) => {
-      console.log('File written');
-      // highlight-start
-      Shake.setShakeReportData([
-          ShakeFile.create(path)
-      ]);
-      // highlight-end
-    })
-    .catch((error) => {
-        console.log('Failed to create log file');
-    });
-};
+const attachLogFiles = () => {
+    // highlight-start
+    const shakeFile1 = ShakeFile.create(userFile.path, 'userLogs');
+    const shakeFile2 = ShakeFile.create(deviceFile.path, 'deviceLogs');
+    
+    Shake.setShakeReportData([shakeFile1, shakeFile2]);
+    // highlight-end
+}
 ```
 
-### Attaching a file with a custom name
-Files can be attached with the desired filename and an absolute file path to your file.
+### Attaching a file without the custom filename
 
-In order to attach files this way, call `Shake.setShakeReportData()` method as shown in the example below.
-But be careful only to call it once, since any subsequent calls will override the former ones.
+*ShakeFile* can be initialized without a filename, with just an absolute file path (String) to your file.
+If you initialize it this way, filename shown on the web Dashboard will be determined automatically from the passed file's name.
+
+To define which files will be uploaded when a user reports a bug, you must call the `Shake.setShakeReportData` method and pass list of *ShakeFile* objects, as shown in the example below.
+
+You can call the `Shake.setShakeReportData` method anywhere within your app, but be careful only to call it once since any subsequent calls will override the former ones.
 
 ```javascript title="App.js"
 // highlight-next-line
 import Shake, {ShakeFile} from '@shakebugs/react-native-shake';
-import RNFS from 'react-native-fs';
 
-attachLogFile = (data) => {
-  const path = RNFS.DocumentDirectoryPath + '/log.txt';
-  RNFS.writeFile(path, data, 'utf8')
-    .then((success) => {
-      console.log('File written');
-      // highlight-start
-      Shake.setShakeReportData([
-          ShakeFile.create(path, 'customName1')
-      ]);
-      // highlight-end
-    })
-    .catch((error) => {
-        console.log('Failed to create log file');
-    });
-};
+const attachLogFiles = () => {
+    // highlight-start
+    const shakeFile1 = ShakeFile.create(userFile.path);
+    const shakeFile2 = ShakeFile.create(deviceFile.path);
+    
+    Shake.setShakeReportData([shakeFile1, shakeFile2]);
+    // highlight-end
+}
 ```
 
 ## Limitations
+
 The maximum number of attached files per bug is 1 for Free workspaces and 10 for Premium ones.
 If more files are attached, the SDK will successfully upload only some of them.
 

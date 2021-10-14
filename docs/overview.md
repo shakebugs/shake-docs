@@ -30,7 +30,7 @@ Shake has a very rich feature set, yet on some platforms we managed to achieve m
 | Email pre-fill       |    ✅     |     ✅    |       ✅     |       ✅     |
 | White labeling       |    ✅     |     ✅    |       ✅     |       ✅     |
 | Crash reporting      |    ✅     |     ✅    |       ❌     |       ❌     |
-| Users                |    ✅     |     ✅    |       ❌     |       ❌     |
+| Users                |    ✅     |     ✅    |       ✅     |       ❌     |
 
 import AndroidVersion from '@site/src/base/AndroidVersion';
 import IosVersion from '@site/src/base/IosVersion';
@@ -46,7 +46,7 @@ import FlutterVersion from '@site/src/base/FlutterVersion';
 ## Minimum requirements
 |         |    Android   |     iOS    |  React Native |  Flutter |
 |:-------:|:------------:|:----------:|:-------------:|:--------:|
-| Version |      5.0     |     11     |      0.56     |   1.12 (and Android 7.0) |
+| Version |      5.0     |     12     |      0.56     |   1.12 (and Android 7.0) |
 
 
 

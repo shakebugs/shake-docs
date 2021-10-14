@@ -20,6 +20,21 @@ data developers receive with Shake SDK, and you will find this data at the top o
 When users shake their phone and the SDK pops up, they are encouraged to additionally mark a 
 spot on the screenshot that seems odd to them.
 
+## Excluding the screenshot from a report
+Shake provides you with an option to exclude the automatic screenshot from reports.  
+
+For example, you are manually invoking Shake through the code in the settings screen of your app, but this 
+screen is not associated with the feedback in any way, nor will it show the screenshot of the issue.
+
+Once Shake is invoked, users can always manually attach a screenshot that better describes the feedback context.
+
+You can exclude an automatic screenshot from reports using the following snippet:
+
+```javascript title="App.js"
+// highlight-next-line
+Shake.setScreenshotIncluded(false);
+```
+
 ## Adding tags to a bug
 If at the very end of a bug description reporter *#adds #some #hashtags*,
 those will automatically become <span class="tag-button pink-tag-button">tags</span> in your [Shake Dashboard](https://app.shakebugs.com/).
