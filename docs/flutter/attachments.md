@@ -9,7 +9,6 @@ You can instruct the SDK to quietly attach any file to a report.
 The files you attach are not visible to the user in the SDK.
 
 ## Introduction
-
 Send yourself XMPP logs, a user's profile photo, or whatever helps you debug issues faster.
 You will see these files in the center of your web Dashboard along with files the user maybe attached themselves.
 
@@ -19,43 +18,15 @@ You will see these files in the center of your web Dashboard along with files th
 />
 
 ## Methods
-
 You can quietly attach files by using any of the methods described below.
 
-### Setting a custom filename and then attaching a file
-
-*ShakeFile* can be initialized with a desired filename (String) and an absolute file path (String) to your file.
-
-To define which files will be uploaded when a user reports a bug, you must call the `Shake.setShakeReportData` method and pass list of *ShakeFile* objects, as shown in the example below.
-
-You can call the `Shake.setShakeReportData` method anywhere within your app, but be careful only to call it once since any subsequent calls will override the former ones.
-
-
-```dart title="main.dart"
-// highlight-start
-import 'package:shake_flutter/shake_flutter.dart';
-import 'package:shake_flutter/models/shake_file.dart';
-// highlight-end
-
-void attachLogFiles() {
-    // highlight-start
-    List<ShakeFile> shakeFiles = [];
-    shakeFiles.add(ShakeFile.create(userFile.path, 'userLogs'));
-    shakeFiles.add(ShakeFile.create(deviceFile.path, 'deviceLogs'));
-
-    Shake.setShakeReportData(shakeFiles);
-    // highlight-end
-}
-```
-
 ### Attaching a file with a default name
+Files can be attached with an absolute file path to your file.
+If you attach files this way, the filename shown on the web Dashboard
+will be determined automatically from the passed file's name.
 
-*ShakeFile* can be initialized without a filename, with just an absolute file path (String) to your file.
-If you initialize it this way, filename shown on the web Dashboard will be determined automatically from the passed file's name.
-
-To define which files will be uploaded when a user reports a bug, you must call the `Shake.setShakeReportData` method and pass list of *ShakeFile* objects, as shown in the example below.
-
-You can call the `Shake.setShakeReportData` method anywhere within your app, but be careful only to call it once since any subsequent calls will override the former ones.
+To attach files this way, call the `Shake.setShakeReportData()` method as shown in the example below.
+Be careful though, any subsequent calls will override former ones already in place:
 
 ```dart title="main.dart"
 // highlight-start
@@ -71,11 +42,34 @@ void attachLogFiles(String username) {
 
     Shake.setShakeReportData(shakeFiles);
     // highlight-end
+
+}
+```
+
+### Attaching a file with a custom name
+Files can be attached with the desired filename and an absolute file path to your file.
+
+In order to attach files this way, call `Shake.setShakeReportData()` method as shown in the example below.
+But be careful only to call it once, since any subsequent calls will override the former ones.
+
+```dart title="main.dart"
+// highlight-start
+import 'package:shake_flutter/shake_flutter.dart';
+import 'package:shake_flutter/models/shake_file.dart';
+// highlight-end
+
+void attachLogFiles(String username) {
+    // highlight-start
+    List<ShakeFile> shakeFiles = [];
+    shakeFiles.add(ShakeFile.create(userFile.path, 'userLogs'));
+    shakeFiles.add(ShakeFile.create(deviceFile.path, 'deviceLogs'));
+
+    Shake.setShakeReportData(shakeFiles);
+    // highlight-end
 }
 ```
 
 ## Limitations
-
 The maximum number of attached files per bug is 1 for Free workspaces and 10 for Premium ones.
 If more files are attached, the SDK will successfully upload only some of them.
 
