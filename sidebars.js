@@ -156,15 +156,6 @@ module.exports = {
                 },
                 {
                     type: 'category',
-                    label: 'Screens',
-                    items: [
-                        'flutter/home-screen',
-                        'flutter/new-ticket-screen',
-                        'flutter/inspect-screen'
-                    ]
-                },
-                {
-                    type: 'category',
                     label: 'SDK',
                     items: [
                         'flutter/invoke',
@@ -176,7 +167,6 @@ module.exports = {
                         'flutter/intro-message',
                         'flutter/screenshot',
                         'flutter/automatic-screen-recording',
-                        'flutter/users',
                         'flutter/permissions',
                         'flutter/activity',
                         'flutter/essentials',
