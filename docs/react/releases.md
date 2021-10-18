@@ -19,7 +19,6 @@ It also started supporting dark and light theme so it can beautifully fit into y
 
 We've introduced [Home screen](/react/home-screen.md) where [your users](/react/users.md) can see tickets they reported.
 
-
 ### 14.1.3
 <span class="tag-button">April 28, 2021</span>&nbsp;&nbsp;
 

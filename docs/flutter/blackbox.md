@@ -14,7 +14,7 @@ Black box includes device and app data, like memory load and connectivity status
   src={useBaseUrl('screens/blackbox_screen.png')}
 />
 
-## What do charts show?
+## What do the charts show?
 
 ### CPU
 This line chart shows the CPU usage of your app.

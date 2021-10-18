@@ -1,23 +1,23 @@
-﻿---
-id: inspect
-title: Inspect ticket
+---
+id: inspect-screen
+title: Inspect screen
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 The *Inspect screen* allows your user to see the current ticket details — its [Essentials](flutter/essentials.md) and [Metadata](flutter/metadata.md) — before submitting it.
 
 ## Introduction
+
 The *Inspect screen* can be reached via *Inspect* button on the [New ticket screen](flutter/new-ticket-screen.md).
 
 <img
   alt="Inspect screen"
-  src={useBaseUrl('screens/new_screen.png')}
+  src={useBaseUrl('screens/inspect_screen.png')}
 />
 
-## Hide the *Inspect* button
-If you don’t want to show *Inspect* button  to a user, hide it using the following method:
 
-```dart title="main.dart"
-// highlight-next-line
-Shake.setEnableInspectScreen(false);
-```
+## Show
+
+*Inspect* button is an optional feature that [can be disabled](flutter/inspect.md) by passing the appropriate value to the Shake configuration.
