@@ -68,7 +68,7 @@ Shake.setAutoVideoRecording(false);
 
 ## Touch events
 
-Marking a view as private will automatically delete its touch events' text properties too. Consequently, you'll see them as `data_redacted` strings in your [Activity history](https://www.shakebugs.com/docs/android/activity#user-actions).
+Marking a view as private will automatically delete its touch events' text properties too. Consequently, you'll see them as `data_redacted` strings in your [Activity history](/react/activity.md#user-actions).
 
 Bear in mind that the view's ID, accessibility labels and tags remain visible.
 

@@ -8,9 +8,19 @@ What would you like us to build next? We're dying to hear from you — upvote up
 
 ## Version
 
+### 15.0.0
+<span class="tag-button">October 21, 2021</span>&nbsp;&nbsp;
+<span class="tag-button green-tag-button">Latest version</span>
+
+**What's new**
+
+We've completely [redesigned Shake](/flutter/home-screen.md) to continue delivering you more and more options in a scalable manner.
+It also started supporting dark and light theme so it can beautifully fit into your app in either case.
+
+We've introduced [Home screen](/flutter/home-screen.md) where [your users](/flutter/users.md) can see tickets they reported.
+
 ### 14.1.2
 <span class="tag-button">May 26, 2021</span>&nbsp;&nbsp;
-<span class="tag-button green-tag-button">Latest version</span>
 
 **What's new**
 

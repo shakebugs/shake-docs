@@ -63,7 +63,6 @@ You'll have to manually set icon if you are using this method.
 
 :::
 
-
 ## Disabling
 If you don’t want your users to have to categorize their feedback, simply hide this option using the following method:
 
