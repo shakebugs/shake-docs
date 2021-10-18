@@ -1,215 +1,77 @@
 module.exports = {
     someSidebar: [
         {
-            type: 'doc',
-            id: 'overview',
+            type: 'category',
+            label: 'Getting started',
+            items: [
+                'getting-started/overview',
+                'getting-started/installation'
+            ]
         },
         {
             type: 'category',
-            label: 'Android',
+            label: 'Screens',
             items: [
-                'android/setup',
-                {
-                    type: 'category',
-                    label: 'Screens',
-                    items: [
-                        'android/home-screen',
-                        'android/new-ticket-screen',
-                        'android/inspect-screen',
-                    ]
-                },
-                {
-                    type: 'category',
-                    label: 'SDK',
-                    items: [
-                        'android/invoke',
-                        'android/disable',
-                        'android/silent-reports',
-                        'android/email',
-                        'android/inspect',
-                        'android/feedback-type',
-                        'android/intro-message',
-                        'android/screenshot',
-                        'android/automatic-screen-recording',
-                        'android/crash-reporting',
-                        'android/users',
-                        'android/permissions',
-                        'android/activity',
-                        'android/essentials',
-                        'android/attachments',
-                        'android/blackbox',
-                        'android/metadata',
-                        'android/manage-sensitive-data',
-                    ]
-                },
-                'android/android-releases',
-            ],
+                'screens/home-screen',
+                'screens/inspect-screen',
+                'screens/new-ticket-screen'
+            ]
         },
         {
             type: 'category',
-            label: 'iOS',
+            label: 'Products',
             items: [
                 {
                     type: 'category',
-                    label: 'Install Shake',
+                    label: 'Customer feedback',
                     items: [
-                            'ios/setup-cocoapods',
-                            'ios/setup-spm',
-                            'ios/setup-manually'
+                        'customer-feedback/introduction',
+                        'customer-feedback/enabling-disabling',
+                        'customer-feedback/feedback-type',
+                        'customer-feedback/silent-reports',
+                        'customer-feedback/invoke'
                     ]
                 },
                 {
                     type: 'category',
-                    label: 'Screens',
+                    label: 'Crash reports',
                     items: [
-                        'ios/home-screen',
-                        'ios/new-ticket-screen',
-                        'ios/inspect-screen',
+                        'crash-reports/introduction',
+                        'crash-reports/enabling-disabling',
+                        'crash-reports/handling-error',
+                        'crash-reports/deobfuscation',
+                        'crash-reports/test-it-out'
                     ]
                 },
                 {
                     type: 'category',
-                    label: 'SDK',
+                    label: 'Users',
                     items: [
-                        'ios/invoke',
-                        'ios/disable',
-                        'ios/silent-reports',
-                        'ios/email',
-                        'ios/inspect',
-                        'ios/feedback-type',
-                        'ios/intro-message',
-                        'ios/screenshot',
-                        'ios/automatic-screen-recording',
-                        'ios/crash-reporting',
-                        'ios/users',
-                        'ios/permissions',
-                        'ios/network-request-reporting',
-                        'ios/activity',
-                        'ios/essentials',
-                        'ios/attachments',
-                        'ios/blackbox',
-                        'ios/metadata',
-                        'ios/manage-sensitive-data',
+                        'users/introduction',
+                        'users/enabling-disabling'
                     ]
                 },
-                'ios/ios-releases',
-            ],
+            ]
         },
         {
             type: 'category',
-            label: 'React Native',
+            label: 'Configuration & Data',
             items: [
-                {
-                    type: 'category',
-                    label: 'Install Shake',
-                    items: [
-                        'react/setup',
-                        'react/manual-linking',
-                    ]
-                },
-                {
-                    type: 'category',
-                    label: 'Screens',
-                    items: [
-                        'react/home-screen',
-                        'react/new-ticket-screen',
-                        'react/inspect-screen'
-                    ]
-                },
-                {
-                    type: 'category',
-                    label: 'SDK',
-                    items: [
-                        'react/invoke',
-                        'react/disable',
-                        'react/silent-reports',
-                        'react/email',
-                        'react/inspect',
-                        'react/feedback-type',
-                        'react/intro-message',
-                        'react/screenshot',
-                        'react/automatic-screen-recording',
-                        'react/users',
-                        'react/permissions',
-                        'react/activity',
-                        'react/essentials',
-                        'react/attachments',
-                        'react/blackbox',
-                        'react/metadata',
-                        'react/manage-sensitive-data',
-                    ],
-                },
-                'react/react-releases',
-            ],
-        },
-        {
-            type: 'category',
-            label: 'Flutter',
-            items: [
-                {
-                    type: 'category',
-                    label: 'Install Shake',
-                    items: [
-                        'flutter/setup',
-                        'flutter/upgrading-version'
-                    ]
-                },
-                {
-                    type: 'category',
-                    label: 'Screens',
-                    items: [
-                        'flutter/home-screen',
-                        'flutter/new-ticket-screen',
-                        'flutter/inspect-screen'
-                    ]
-                },
-                {
-                    type: 'category',
-                    label: 'SDK',
-                    items: [
-                        'flutter/invoke',
-                        'flutter/disable',
-                        'flutter/silent-reports',
-                        'flutter/email',
-                        'flutter/inspect',
-                        'flutter/feedback-type',
-                        'flutter/intro-message',
-                        'flutter/screenshot',
-                        'flutter/automatic-screen-recording',
-                        'flutter/users',
-                        'flutter/permissions',
-                        'flutter/activity',
-                        'flutter/essentials',
-                        'flutter/attachments',
-                        'flutter/blackbox',
-                        'flutter/metadata',
-                        'flutter/manage-sensitive-data',
-                    ],
-                },
-                'flutter/flutter-releases',
-            ],
-        },
-        {
-            type: 'category',
-            label: 'Template Gallery',
-            items: [
-                'template-gallery/about',
-                {
-                    type: 'category',
-                    label: 'Gallery',
-                    items: [
-                        'template-gallery/account-details',
-                        'template-gallery/shopping-retail',
-                        'template-gallery/realtime-communication',
-                        'template-gallery/iot',
-                        'template-gallery/git',
-                    ],
-                },
-            ],
-        },
-        {
-            type: 'doc',
-            id: 'captured-data-privacy',
+                'configuration-&-data/introduction',
+                'configuration-&-data/essentials',
+                'configuration-&-data/email',
+                'configuration-&-data/inspect',
+                'configuration-&-data/description-and-screenshot',
+                'configuration-&-data/automatic-screen-recording',
+                'configuration-&-data/permissions',
+                'configuration-&-data/activity-history-data',
+                'configuration-&-data/attachments',
+                'configuration-&-data/black-box',
+                'configuration-&-data/metadata',
+                'configuration-&-data/intro-message',
+                'configuration-&-data/manage-sensitive-data',
+                'configuration-&-data/data-privacy-disclosure'
+            ]
         },
     ],
 };
