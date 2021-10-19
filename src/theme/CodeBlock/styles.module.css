@@ -5,28 +5,30 @@
  * LICENSE file in the root directory of this source tree.
  */
 
+.codeBlockContainer {
+  margin-bottom: var(--ifm-leading);
+  border-radius: var(--ifm-global-radius);
+  box-shadow: var(--ifm-global-shadow-lw);
+  overflow: hidden;
+}
+
 .codeBlockContent {
   position: relative;
+  /*rtl:ignore*/
+  direction: ltr;
 }
 
 .codeBlockTitle {
-  border-top-left-radius: var(--ifm-global-radius);
-  border-top-right-radius: var(--ifm-global-radius);
-  border-bottom: 1px solid var(--ifm-color-emphasis-200);
-  font-family: var(--ifm-font-family-monospace);
-  font-weight: bold;
+  border-bottom: 1px solid var(--ifm-color-emphasis-300);
+  font-size: var(--ifm-code-font-size);
+  font-weight: 500;
   padding: 0.75rem var(--ifm-pre-padding);
-  width: 100%;
 }
 
 .codeBlock {
-  overflow: auto;
-  border-radius: var(--ifm-global-radius);
-}
-
-.codeBlockWithTitle {
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
+  margin: 0;
+  padding: 0;
+  border-radius: 0;
 }
 
 .copyButtonContent {
@@ -47,7 +49,7 @@
   top: calc(50% - 15px);
   visibility: hidden;
   transition: opacity 200ms ease-in-out, visibility 200ms ease-in-out,
-    bottom 200ms ease-in-out;
+  bottom 200ms ease-in-out;
 }
 
 div:hover > .copyButton {
@@ -65,4 +67,8 @@ div:hover > .copyButton {
   padding: var(--ifm-pre-padding);
 }
 
-
+@media print {
+  .codeBlockLines {
+    white-space: pre-wrap;
+  }
+}
