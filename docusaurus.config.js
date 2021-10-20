@@ -38,6 +38,17 @@ module.exports = {
           position: 'left',
         },
         {
+          to: 'android1/',
+          label: 'Platform Picker',
+          position: 'right',
+          items: [
+            {to: 'android/setup', label: 'Android'},
+            {to: 'ios/setup-cocoapods', label: 'iOS'},
+            {to: 'flutter/setup', label: 'Flutter'},
+            {to: 'react/setup', label: 'React Native'}
+          ],
+        },
+        {
           href: 'https://app.shakebugs.com/',
           label: 'Dashboard',
           position: 'right',
