@@ -1,5 +1,5 @@
 ---
-id: ios-releases
+id: releases
 title: Release notes
 ---
 This page lists all updates to the Shake iOS SDK.
@@ -35,17 +35,17 @@ There were a few minor bugs that caused problems, like bugs do. We fixed those, 
 
 **What's new**
 
-We've completely [redesigned Shake](/ios/home-screen.md) to continue delivering you more and more options in a scalable manner.
+We've completely [redesigned Shake](/ios/screens/home-screen.md) to continue delivering you more and more options in a scalable manner.
 It also started supporting dark and light theme so it can beautifully fit into your app in either case.
 
-We've introduced [Home screen](/ios/home-screen.md) where [your users](/ios/users.md) can see tickets they reported.
+We've introduced [Home screen](/ios/screens/home-screen.md) where [your users](/ios/users/introduction.md) can see tickets they reported.
 
 ### 14.4.0
 <span class="tag-button">July 22, 2021</span>&nbsp;&nbsp;
 
 **What's new**
 
-From now, you can [register users of your application](/ios/users.md) with Shake. You can assign metadata to each user what
+From now, you can [register users of your application](/ios/users/introduction.md) with Shake. You can assign metadata to each user what
  enables a powerful connection between the specific user of your app, and the rest of the Shake features. 
  
 **Bug fixes**
@@ -57,11 +57,11 @@ There were a few minor bugs that caused problems, like bugs do. We fixed those, 
 
 **What's new**
 
-If you are using the shaking gesture as your invocation event, you can now set [how sensitive the device should be to the shaking](/ios/invoke.md#shaking).
+If you are using the shaking gesture as your invocation event, you can now set [how sensitive the device should be to the shaking](/ios/customer-feedback/invoke.md#shaking).
  
-Shake now supports [customization of feedback types](/ios/feedback-type.md#custom-types), you can configure Shake to display any number of custom categories related to your product.
+Shake now supports [customization of feedback types](/ios/customer-feedback/feedback-type.md#custom-types), you can configure Shake to display any number of custom categories related to your product.
 
-We've added an option to [exclude the screenshot from the reports](/ios/screenshot.md#excluding-the-screenshot-from-a-report), this option allows you to capture the screenshot only when required.
+We've added an option to [exclude the screenshot from the reports](/ios/configuration-and-data/screenshot.md#excluding-the-screenshot-from-a-report), this option allows you to capture the screenshot only when required.
 
 This version now contains a Portuguese translation, which additionally extends [the lists of languages Shake's been translated to](https://help.shakebugs.com/en/articles/3392092-which-languages-has-shake-sdk-been-translated-to). 
 Your users whose default device language is set to one of these will automatically see Shake in their language.
@@ -88,7 +88,7 @@ There were a few minor bugs that caused problems, like bugs do. We fixed those, 
 
 Shake Crash beta is released. This personalized crash reporting approach allows you to prevent bad reviews,
 build user relationships and fix app crashes faster than before with the power of data automation. 
-Read all about it [on its subpage](https://www.shakebugs.com/crash), or dive right into [its Docs](/ios/crash-reporting.md) to enable it in your app.
+Read all about it [on its subpage](https://www.shakebugs.com/crash), or dive right into [its Docs](/ios/crash-reports/introduction.md) to enable it in your app.
 
 We've increased the size limit for feedback attachments, now you can attach up to 10 MB per file.
 
@@ -137,19 +137,19 @@ We updated the start method. The configuration keys are now loaded via the metho
 
 **What's new**
 
-Users can finally report [different types of feedback](/ios/feedback-type.md): bugs, suggestions and questions.
+Users can finally report [different types of feedback](/ios/customer-feedback/feedback-type.md): bugs, suggestions and questions.
 
-Screenshots are cool, but wouldn't it be even cooler if you could watch a short video of what a user did before reporting the bug? That's why we introduced [Automatic screen recording](/ios/automatic-screen-recording.md).
+Screenshots are cool, but wouldn't it be even cooler if you could watch a short video of what a user did before reporting the bug? That's why we introduced [Automatic screen recording](/ios/configuration-and-data/automatic-screen-recording.md).
 
 Your users can record an additional video of their screen or grab one or two more extra screenshots and attach them to the feedback they're submitting — without ever leaving your app.
 
-Shake will now automatically [redact sensitive data](ios/manage-sensitive-data.md#automatically-redacted-sensitive-data) from your network requests, notifications and touch events so it never reaches Shake servers.
+Shake will now automatically [redact sensitive data](ios/configuration-and-data/manage-sensitive-data.md#automatically-redacted-sensitive-data) from your network requests, notifications and touch events so it never reaches Shake servers.
 
-Shake now allows you to [manage sensitive data](ios/manage-sensitive-data.md) on the mobile device itself, so it never reaches the Shake servers. It can be used for notifications, network requests, screens and screen elements.
+Shake now allows you to [manage sensitive data](ios/configuration-and-data/manage-sensitive-data.md) on the mobile device itself, so it never reaches the Shake servers. It can be used for notifications, network requests, screens and screen elements.
 
-We've added [console logs](ios/activity.md#console-logs) to Activity history.
+We've added [console logs](ios/configuration-and-data/activity.md#console-logs) to Activity history.
 
-You can now use the in-app Shake [onboarding dialog](ios/intro-message.md) to inform your users about Shake availability.
+You can now use the in-app Shake [onboarding dialog](ios/configuration-and-data/intro-message.md) to inform your users about Shake availability.
 
 Removed support for iOS 10.
 
@@ -159,7 +159,7 @@ Removed support for iOS 10.
 **What's new**
 
 You wanted us to get rid of Quick Facts (one long concatenated string)
-and introduce [Metadata](/ios/metadata.md) (useful key-value pairs) instead. So we did it.
+and introduce [Metadata](/ios/configuration-and-data/metadata.md) (useful key-value pairs) instead. So we did it.
 
 We've added Swift Package Manager support, and removed Carthage support.
 
@@ -177,11 +177,11 @@ Not all of you love the default Shake color. Now, whenever users open it up, Sha
 
 Your users can at last attach their own files to a bug report! They can also remove any of them with a subtle long press. Neat.
 
-There’s no such thing as too many [invocation methods](/ios/invoke.md). Shake can now be invoked by a one-finger swiping gesture from the right edge of the screen too.
+There’s no such thing as too many [invocation methods](/ios/customer-feedback/invoke.md). Shake can now be invoked by a one-finger swiping gesture from the right edge of the screen too.
 
 The Wrap-up screen is now a tiny bit more helpful than before. If your users want to, they can read how to report great bugs or recommend us.
 
-If you want to, our [Activity history](/ios/activity.md) now allows you to send yourself any custom logs, and read the notifications users receive.
+If you want to, our [Activity history](/ios/configuration-and-data/activity.md) now allows you to send yourself any custom logs, and read the notifications users receive.
 
 ### 10.0
 <span class="tag-button">July 8, 2020</span>
@@ -194,121 +194,12 @@ we have rewritten the whole iOS SDK API Version 10.
 It's like getting a flu shot — feel free to hate us for a few minutes while you tweak a call or two,
 but we sincerely promise you'll enjoy all the benefits 100 times over.
 
-By popular demand, Shake can now be [invoked through code](/ios/invoke.md) as well.
+By popular demand, Shake can now be [invoked through code](/ios/customer-feedback/invoke.md) as well.
 
-Submit yourself a [silent bug report](/ios/silent-reports.md) from the background,
+Submit yourself a [silent bug report](/ios/customer-feedback/silent-reports.md) from the background,
 without interrupting your end user whatsoever!
 
 Privacy options are important. That’s why you now have a method to
-disable or enable [Activity history](/ios/activity.md) whenever you want to.
+disable or enable [Activity history](/ios/configuration-and-data/activity.md) whenever you want to.
 
-If you want to, you can [hide the Inspect bug button](/ios/inspect.md) from your users. Brilliant.
-
-### 9.0
-
-<span class="tag-button">February 14, 2020</span>&nbsp;&nbsp;
-
-**What's new**
-
-Shake is now fully equipped to track user’s full [Activity history](/ios/activity.md) —
-browse user's interactions with your app, their network requests and system events prior to a bug being reported.
-
-**Resolved issues**
-
-Shake didn’t show up correctly in projects created in Xcode 11. That’s history now.
-
-### 8.0
-<span class="tag-button">December 16, 2019</span>
-
-
-**What's new**
-
-With a Disable Shake feature you can now easily allow only a portion of your app users to use Shake
-(for example, the ones that have opted in for beta access), while not allowing it to others.
-
-Think globally, act locally. The latest version of Shake SDK has been cautiously translated to
-Spanish, German and French. Users whose default device language is set to one of these,
-will automatically see Shake in their language.
-
-### 7.0
-<span class="tag-button">July 16, 2019</span>
-
-**What's new**
-
-Shake now officially, and nicely, works on your tablet apps
-
-Putting our best foot forward.
-Just like before an airplane crash, Shake now records a user's detailed environment profile covering the last 60 seconds
-before a bug was submitted. This feature is called — you’ve guessed it — [Black box](/ios/blackbox.md).
-
-**Resolved issues**
-
-There was a problem where code signing of your app failed if it contained Shake SDK. This will not happen any more.
-
-### 6.0
-<span class="tag-button">June 24, 2019</span>
-
-**What's new**
-
-Shake is now a tiny bit cooler because you can also use it in landscape mode.
-
-With quick facts, you can now send a value of literally any variable from a user's app to your web Dashboard.
-
-### 5.0
-<span class="tag-button">May 29, 2019</span>
-
-**What's new**
-
-You can now inspect your bug right inside your mobile app, no need to submit it at all. Shake the device and tap the Inspect bug button.
-
-Everyone loves colors! That's why users can now choose from 6 of them.
-
-### 4.1
-<span class="tag-button">April 22, 2019</span>
-
-**What's new**
-
-Jolly good! Your users can now leave their email address with every bug report so you can just follow that up.
-
-### 4.0
-<span class="tag-button">April 8, 2019</span>
-
-**What's new**
-
-Some things are not meant for sharing. Users can now blur out parts of the screen they want to keep private.
-
-Actually, users are now allowed to delete the screenshot attachment altogether if they feel that way.
-
-Are your users visual types? Instead of shaking their device or taking a screenshot,
-you can put a floating Report a bug button to be constantly visible inside your app. No way to miss that.
-
-**Resolved issues**
-
-You weren't able to invoke Shake SDK inside the Simulator on your computer. Well, now you are.
-
-### 3.0
-<span class="tag-button">February 25, 2019</span>
-
-**What's new**
-
-Users can change their brush color to mark the bugs more creatively and clearly.
-
-From now on, your users can report bugs with Shake while on a plane or in a subway. Hooray for full offline support!
-
-**Resolved issues**
-
-Looooong bug descriptions would cause the SDK screen to start jumping up and down on a user's phone.
-Now, everything is running smoothly.
-
-### 2.0
-<span class="tag-button">January 28, 2019</span>
-
-**What's new**
-
-If your users want to report bugs by taking a screenshot — instead of shaking their phone — you are all in luck
-because Shake SDK can now be invoked that way too. Head over to [Invoke](/ios/invoke.md) to choose your desired SDK invoke gesture.
-
-**Resolved issues**
-
-A user's screenshot would sometimes arrive to you narrower than it actually is.
-We can proudly say it no longer happens.
+If you want to, you can [hide the Inspect bug button](/ios/configuration-and-data/inspect.md) from your users. Brilliant.

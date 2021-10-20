@@ -1,5 +1,5 @@
 ﻿---
-id: flutter-releases
+id: releases
 title: Release notes
 ---
 This page lists all updates to the Shake Flutter SDK.
@@ -14,10 +14,10 @@ What would you like us to build next? We're dying to hear from you — upvote up
 
 **What's new**
 
-We've completely [redesigned Shake](/flutter/home-screen.md) to continue delivering you more and more options in a scalable manner.
+We've completely [redesigned Shake](/flutter/screens/home-screen.md) to continue delivering you more and more options in a scalable manner.
 It also started supporting dark and light theme so it can beautifully fit into your app in either case.
 
-We've introduced [Home screen](/flutter/home-screen.md) where [your users](/flutter/users.md) can see tickets they reported.
+We've introduced [Home screen](/flutter/screens/home-screen.md) where [your users](/flutter/users/introduction.md) can see tickets they reported.
 
 This version now contains a Russian, Italian, Polish, Latvian, Estonian and Thai translation, which additionally extends [the lists of languages Shake's been translated to](https://help.shakebugs.com/en/articles/3392092-which-languages-has-shake-sdk-been-translated-to). 
 Your users whose default device language is set to one of these will automatically see Shake in their language.
@@ -42,7 +42,7 @@ There were a few minor bugs that caused problems, like bugs do. We fixed those, 
 **What's new**
 
 You wanted us to get rid of Quick Facts (one long concatenated string)
-and introduce [Metadata](/flutter/metadata.md) (useful key-value pairs) instead. So we did it.
+and introduce [Metadata](/flutter/configuration-and-data/metadata.md) (useful key-value pairs) instead. So we did it.
 
 Not all of you love the default Shake color. Now, whenever users open it up, Shake can appear in your brand color and with your logo.
 
@@ -50,21 +50,21 @@ Your users can at last attach their own files to a bug report! They can also rem
 
 The Wrap-up screen is now a tiny bit more helpful than before. If your users want to, they can read how to report great bugs or recommend us.
 
-If you want to, our [Activity history](/flutter/activity.md) now allows you to send yourself any custom logs, and read the notifications users receive.
+If you want to, our [Activity history](/flutter/configuration-and-data/activity.md) now allows you to send yourself any custom logs, and read the notifications users receive.
 
-Users can finally report [different types of feedback](/flutter/feedback-type.md): bugs, suggestions and questions.
+Users can finally report [different types of feedback](/flutter/customer-feedback/feedback-type.md): bugs, suggestions and questions.
 
-Screenshots are cool, but wouldn't it be even cooler if you could watch a short video of what a user did before reporting the bug? That's why we introduced [Automatic screen recording](/flutter/automatic-screen-recording.md).
+Screenshots are cool, but wouldn't it be even cooler if you could watch a short video of what a user did before reporting the bug? That's why we introduced [Automatic screen recording](/flutter/configuration-and-data/automatic-screen-recording.md).
 
 Your users can record an additional video of their screen or grab one or two more extra screenshots and attach them to the feedback they're submitting — without ever leaving your app.
 
-Shake will now automatically [redact sensitive data](flutter/manage-sensitive-data.md#automatically-redacted-sensitive-data) from your network requests and notifications so it never reaches Shake servers.
+Shake will now automatically [redact sensitive data](flutter/configuration-and-data/manage-sensitive-data.md#automatically-redacted-sensitive-data) from your network requests and notifications so it never reaches Shake servers.
 
-Shake now allows you to [manage sensitive data](flutter/manage-sensitive-data.md) on the mobile device itself, so it never reaches the Shake servers. It can be used for notifications and network requests.
+Shake now allows you to [manage sensitive data](flutter/configuration-and-data/manage-sensitive-data.md) on the mobile device itself, so it never reaches the Shake servers. It can be used for notifications and network requests.
 
-We've added [console logs](flutter/activity.md#console-logs) to Activity history.
+We've added [console logs](flutter/configuration-and-data/activity.md#console-logs) to Activity history.
 
-You can now use the in-app Shake [onboarding dialog](flutter/intro-message.md) to inform your users about Shake availability.
+You can now use the in-app Shake [onboarding dialog](flutter/configuration-and-data/intro-message.md) to inform your users about Shake availability.
 
 We updated the start method. The configuration keys are now loaded via the method, and not with the values from the `.plist` and `.xml` files.
 
@@ -73,5 +73,5 @@ We updated the start method. The configuration keys are now loaded via the metho
 
 **What's new**
 
-You can now use Shake Flutter SDK in the Flutter applications. Check [Setup](/flutter/setup.md) guide and follow step by step
+You can now use Shake Flutter SDK in the Flutter applications. Check [Setup](/flutter/installation.md) guide and follow step by step
 guide to integrate Shake SDK into your Flutter application.
