@@ -116,7 +116,7 @@ We updated the start method. The configuration keys are now loaded via the metho
 
 **What's new**
 
-Users can finally report [different types of feedback](/ios/feedback_type.md): bugs, suggestions and questions.
+Users can finally report [different types of feedback](/ios/feedback-type.md): bugs, suggestions and questions.
 
 Screenshots are cool, but wouldn't it be even cooler if you could watch a short video of what a user did before reporting the bug? That's why we introduced [Automatic screen recording](/ios/automatic-screen-recording.md).
 
@@ -231,7 +231,7 @@ There was a problem where code signing of your app failed if it contained Shake 
 
 Shake is now a tiny bit cooler because you can also use it in landscape mode.
 
-With [Quick facts](/android/quick-facts.md), you can now send a value of literally any variable from a user's app to your web Dashboard.
+With quick facts, you can now send a value of literally any variable from a user's app to your web Dashboard.
 
 ### 5.0
 <span class="tag-button">May 29, 2019</span>

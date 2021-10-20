@@ -15,28 +15,35 @@
   --ifm-color-primary-lighter: #cab7fd;
   --ifm-color-primary-lightest: #f3eeff;
   --ifm-code-font-size: 95%;
+  --highlighted-code-line: #e9ecee;
 }
 
+html[data-theme='dark'] {
+  --highlighted-code-line: #1C1D26;
+}
+
+/* Code block highlighted line */
 .docusaurus-highlight-code-line {
-  background-color: rgb(72, 77, 91);
+  background-color: var(--highlighted-code-line);
   display: block;
   margin: 0 calc(-1 * var(--ifm-pre-padding));
   padding: 0 var(--ifm-pre-padding);
 }
 
+/** Fonts **/
 @font-face {
   font-family: 'Inconsolata';
-  src: url('/docs/fonts/Inconsolata.ttf');
+  src: url('/static/fonts/Inconsolata.ttf');
 }
 
 @font-face {
   font-family: 'HKGrotesk-Regular';
-  src: url('/docs/fonts/HKGrotesk-Regular.otf');
+  src: url('/static/fonts/HKGrotesk-Regular.otf');
 }
 
 @font-face {
   font-family: 'HKGrotesk-SemiBold';
-  src: url('/docs/fonts/HKGrotesk-SemiBold.otf');
+  src: url('/static/fonts/HKGrotesk-SemiBold.otf');
 }
 
 body {
@@ -55,6 +62,7 @@ em, code {
   margin: 0 6px;
 }
 
+/* Badges */
 .tag-button.yellow-tag-button {
   background-color: #fff0cc;
   border: none;

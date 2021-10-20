@@ -119,7 +119,7 @@ We've all been waiting for this! Your users can record an additional video of th
 
 Shake is available in the new Maven repository. If you're upgrading from the older version, make sure to [update the Maven repository in the build.gradle file](/android/setup.md#add-maven-repository-to-your-top-level-buildgradle-file).
 
-Users can finally report [different types of feedback](/android/feedback_type.md): bugs, suggestions and questions.
+Users can finally report [different types of feedback](/android/feedback-type.md): bugs, suggestions and questions.
 
 Shake now allows you to [manage sensitive data](android/manage-sensitive-data.md) on the mobile device itself, so it never reaches the Shake servers. It can be used for notifications, network requests, screens and screen elements.
 
