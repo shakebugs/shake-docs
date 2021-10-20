@@ -1,0 +1,1 @@
+# react -> Configuration & Data -> Manage sensitive data

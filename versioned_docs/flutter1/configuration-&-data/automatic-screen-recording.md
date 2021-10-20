@@ -1,0 +1,1 @@
+# Flutter1 -> Configuration & Data -> Automatic screen recording

@@ -1,0 +1,1 @@
+# react -> Configuration & Data -> Automatic screen recording

@@ -31,6 +31,17 @@ module.exports = {
           position: 'left',
         },
         {
+          to: 'android1/',
+          label: 'Platform Picker',
+          position: 'right',
+          items: [
+            {to: 'getting-started/overview', label: 'Android'},
+            {to: 'getting-started/installation', label: 'iOS'},
+            {to: 'screens/home-screen', label: 'Flutter'},
+            {to: 'screens/inspect-screen', label: 'React Native'}
+          ],
+        },
+        {
           href: 'https://app.shakebugs.com/',
           label: 'Dashboard',
           position: 'right',
