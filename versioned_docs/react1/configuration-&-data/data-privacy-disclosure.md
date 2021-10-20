@@ -1,1 +1,0 @@
-# react -> Configuration & Data -> Data privacy disclosure

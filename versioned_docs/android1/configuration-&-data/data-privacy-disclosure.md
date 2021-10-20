@@ -1,1 +1,0 @@
-# Android1 -> Configuration & Data -> Data privacy disclosure

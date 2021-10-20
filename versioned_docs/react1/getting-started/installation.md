@@ -1,1 +1,0 @@
-# react -> Getting started -> Installation

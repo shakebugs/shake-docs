@@ -1,1 +1,0 @@
-# react -> Configuration & Data -> Description and screenshot

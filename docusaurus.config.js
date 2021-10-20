@@ -35,10 +35,10 @@ module.exports = {
           label: 'Platform Picker',
           position: 'right',
           items: [
-            {to: 'getting-started/overview', label: 'Android'},
-            {to: 'getting-started/installation', label: 'iOS'},
-            {to: 'screens/home-screen', label: 'Flutter'},
-            {to: 'screens/inspect-screen', label: 'React Native'}
+            {to: 'android/activity', label: 'Android'},
+            {to: 'ios/activity', label: 'iOS'},
+            {to: 'flutter/activity', label: 'Flutter'},
+            {to: 'react/activity', label: 'React Native'}
           ],
         },
         {

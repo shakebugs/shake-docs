@@ -1,77 +1,130 @@
 module.exports = {
-    someSidebar: [
+    androidSidebar: [
         {
             type: 'category',
             label: 'Getting started',
             items: [
-                'getting-started/overview',
-                'getting-started/installation'
+                'android/activity',
+                'android/attachments',
+                'android/automatic-screen-recording',
+                'android/blackbox',
+                'android/crash-reporting',
+                'android/disable',
+                'android/email',
+                'android/essentials',
+                'android/feedback-type',
+                'android/home-screen',
+                'android/inspect-screen',
+                'android/inspect',
+                'android/intro-message',
+                'android/invoke',
+                'android/manage-sensitive-data',
+                'android/metadata',
+                'android/new-ticket-screen',
+                'android/permissions',
+                'android/android-releases',
+                'android/screenshot',
+                'android/setup',
+                'android/silent-reports',
+                'android/users',
             ]
         },
+        
+    ],
+    iosSidebar: [
         {
             type: 'category',
-            label: 'Screens',
+            label: 'Getting started',
             items: [
-                'screens/home-screen',
-                'screens/inspect-screen',
-                'screens/new-ticket-screen'
+                'ios/activity',
+                'ios/attachments',
+                'ios/automatic-screen-recording',
+                'ios/blackbox',
+                'ios/crash-reporting',
+                'ios/disable',
+                'ios/email',
+                'ios/essentials',
+                'ios/feedback-type',
+                'ios/home-screen',
+                'ios/inspect-screen',
+                'ios/inspect',
+                'ios/intro-message',
+                'ios/invoke',
+                'ios/manage-sensitive-data',
+                'ios/metadata',
+                'ios/new-ticket-screen',
+                'ios/permissions',
+                'ios/ios-releases',
+                'ios/screenshot',
+                'ios/setup-carthage',
+                'ios/setup-cocoapods',
+                'ios/setup-manually',
+                'ios/setup-spm',
+                'ios/silent-reports',
+                'ios/users',
             ]
         },
+    ],
+    flutterSidebar: [
         {
             type: 'category',
-            label: 'Products',
+            label: 'Getting started',
             items: [
-                {
-                    type: 'category',
-                    label: 'Customer feedback',
-                    items: [
-                        'customer-feedback/introduction',
-                        'customer-feedback/enabling-disabling',
-                        'customer-feedback/feedback-type',
-                        'customer-feedback/silent-reports',
-                        'customer-feedback/invoke'
-                    ]
-                },
-                {
-                    type: 'category',
-                    label: 'Crash reports',
-                    items: [
-                        'crash-reports/introduction',
-                        'crash-reports/enabling-disabling',
-                        'crash-reports/handling-error',
-                        'crash-reports/deobfuscation',
-                        'crash-reports/test-it-out'
-                    ]
-                },
-                {
-                    type: 'category',
-                    label: 'Users',
-                    items: [
-                        'users/introduction',
-                        'users/enabling-disabling'
-                    ]
-                },
+                'flutter/activity',
+                'flutter/attachments',
+                'flutter/automatic-screen-recording',
+                'flutter/blackbox',
+                'flutter/disable',
+                'flutter/email',
+                'flutter/essentials',
+                'flutter/feedback-type',
+                'flutter/home-screen',
+                'flutter/inspect-screen',
+                'flutter/inspect',
+                'flutter/intro-message',
+                'flutter/invoke',
+                'flutter/manage-sensitive-data',
+                'flutter/metadata',
+                'flutter/new-ticket-screen',
+                'flutter/permissions',
+                'flutter/flutter-releases',
+                'flutter/screenshot',
+                'flutter/setup',
+                'flutter/silent-reports',
+                'flutter/users',
             ]
         },
+        
+    ],
+    reactSidebar: [
         {
             type: 'category',
-            label: 'Configuration & Data',
+            label: 'Getting started',
             items: [
-                'configuration-&-data/introduction',
-                'configuration-&-data/essentials',
-                'configuration-&-data/email',
-                'configuration-&-data/inspect',
-                'configuration-&-data/description-and-screenshot',
-                'configuration-&-data/automatic-screen-recording',
-                'configuration-&-data/permissions',
-                'configuration-&-data/activity-history-data',
-                'configuration-&-data/attachments',
-                'configuration-&-data/black-box',
-                'configuration-&-data/metadata',
-                'configuration-&-data/intro-message',
-                'configuration-&-data/manage-sensitive-data',
-                'configuration-&-data/data-privacy-disclosure'
+                'react/activity',
+                'react/attachments',
+                'react/automatic-screen-recording',
+                'react/blackbox',
+                'react/disable',
+                'react/email',
+                'react/essentials',
+                'react/feedback-type',
+                'react/home-screen',
+                'react/inspect-screen',
+                'react/inspect',
+                'react/intro-message',
+                'react/invoke',
+                'react/manage-sensitive-data',
+                'react/metadata',
+                'react/new-ticket-screen',
+                'react/permissions',
+                'react/react-releases',
+                'react/screenshot',
+                'react/setup',
+                'react/silent-reports',
+                'react/users',
             ]
         },
+        
     ],
 };

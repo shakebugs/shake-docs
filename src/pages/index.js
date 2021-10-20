@@ -76,10 +76,10 @@ function Home() {
                 <h1 className="hero__title">{siteConfig.title}</h1>
                 <p className="hero__subtitle">{siteConfig.tagline}</p>
                 <div className={styles.buttons}>
-                    {Button("Android", "getting-started/overview")}
-                    {Button("iOS", "getting-started/overview")}
-                    {Button("React Native", "getting-started/overview")}
-                    {Button("Flutter", "getting-started/overview")}
+                    {Button("Android", "android/setup")}
+                    {Button("iOS", "ios/setup-cocoapods")}
+                    {Button("React Native", "react/setup")}
+                    {Button("Flutter", "flutter/setup")}
                 </div>
             </div>
         </header>
