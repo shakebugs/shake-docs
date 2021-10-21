@@ -38,14 +38,13 @@ module.exports = {
           position: 'left',
         },
         {
-          to: 'android1/',
-          label: 'Platform Picker',
+          label: 'Platform',
           position: 'right',
           items: [
-            {to: 'android/setup', label: 'Android'},
-            {to: 'ios/setup-cocoapods', label: 'iOS'},
-            {to: 'flutter/setup', label: 'Flutter'},
-            {to: 'react/setup', label: 'React Native'}
+            {to: 'android/overview', label: 'Android'},
+            {to: 'ios/setup-spm', label: 'iOS'},
+            {to: 'flutter/overview', label: 'Flutter'},
+            {to: 'react/installation', label: 'React Native'}
           ],
         },
         {
