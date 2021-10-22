@@ -1,6 +1,6 @@
 ---
 id: installation
-title: Installation
+title: Install Shake
 ---
 
 ## Install

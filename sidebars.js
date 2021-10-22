@@ -79,14 +79,15 @@ module.exports = {
             type: 'category',
             label: 'Getting started',
             items: [
+                'ios/overview',
                 {
-                type: 'category',
-                label: 'Install Shake',
-                items: [
-                    'ios/setup-spm',
-                    'ios/setup-cocoapods',
-                    'ios/setup-manually',
-                ]
+                    type: 'category',
+                    label: 'Install Shake',
+                    items: [
+                        'ios/setup-spm',
+                        'ios/setup-cocoapods',
+                        'ios/setup-manually',
+                    ]
                 }
             ]
         },

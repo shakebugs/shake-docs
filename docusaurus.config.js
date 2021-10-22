@@ -39,12 +39,12 @@ module.exports = {
         },
         {
           label: 'Platform',
-          position: 'right',
+          position: 'left',
           items: [
-            {to: 'android/overview', label: 'Android'},
-            {to: 'ios/setup-spm', label: 'iOS'},
-            {to: 'flutter/overview', label: 'Flutter'},
-            {to: 'react/installation', label: 'React Native'}
+            {to: 'android/overview', label: 'Android', activeBasePath: '/android'},
+            {to: 'ios/overview', label: 'iOS', activeBasePath: '/ios'},
+            {to: 'flutter/overview', label: 'Flutter', activeBasePath: '/flutter'},
+            {to: 'react/overview', label: 'React Native', activeBasePath: '/react'}
           ],
         },
         {
@@ -54,112 +54,7 @@ module.exports = {
         },
       ],
     },
-    footer: {
-      style: 'light',
-      links: [
-        {
-          title: 'Docs',
-          items: [
-            {
-              label: 'Overview',
-              to: 'overview',
-            },
-            {
-              label: 'Android',
-              to: 'android/setup',
-            },
-            {
-              label: 'iOS',
-              to: 'ios/setup-cocoapods',
-            },
-            {
-              label: 'React Native',
-              to: 'react/setup',
-            },
-            {
-              label: 'Flutter',
-              to: 'flutter/setup',
-            },
-            {
-              label: 'Template Gallery',
-              to: 'template-gallery/about',
-            },
-          ],
-        },
-        {
-          title: 'Product',
-          items: [
-            {
-              label: 'Live demo',
-              href: 'https://demo.shakebugs.com',
-            },
-            {
-              label: 'Pricing',
-              href: 'https://www.shakebugs.com/pricing',
-            },
-            {
-              label: 'Integrations',
-              href: 'https://www.shakebugs.com/integrations',
-            },
-            {
-              label: 'Switch from Instabug',
-              href: 'https://www.shakebugs.com/instabug-alternative',
-            },
-            {
-              label: 'Security',
-              href: 'https://www.shakebugs.com/security',
-            },
-            {
-              label: 'Roadmap',
-              href: 'https://feedback.shakebugs.com',
-            }
-          ],
-        },
-        {
-          title: 'Shake for',
-          items: [
-            {
-              label: 'App developers',
-              href: 'https://www.shakebugs.com/app-developers',
-            },
-            {
-              label: 'QA teams',
-              href: 'https://www.shakebugs.com/qa-teams',
-            },
-          ],
-        },
-        {
-          title: 'Resources',
-          items: [
-            {
-              label: 'Documentation',
-              href: 'https://www.shakebugs.com/docs',
-            },
-            {
-              label: 'Blog',
-              href: 'https://www.shakebugs.com/blog',
-            },
-            {
-              label: 'Help center',
-              href: 'https://help.shakebugs.com/',
-            },
-            {
-              label: 'Terms of service',
-              href: 'https://www.shakebugs.com/terms',
-            },
-            {
-              label: 'Privacy policy',
-              href: 'https://www.shakebugs.com/privacy',
-            },
-            {
-              label: 'Data processing agreement',
-              href: 'https://www.shakebugs.com/dpa',
-            }
-          ],
-        },
-      ],
-      copyright: `Copyright © ${new Date().getFullYear()} Shake, Inc. Built with Docusaurus.`,
-    },
+
   },
   presets: [
     [

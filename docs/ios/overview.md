@@ -6,7 +6,7 @@ title: Overview
 ## Features
 
 Shake has a very rich feature set, yet on some platforms we managed to achieve more than on others and we are 
-constantly adding new features. Below is a table describing the current state of affairs on Android platform.
+constantly adding new features. Below is a table describing the current state of affairs on iOS platform.
 
 |                      | Available |
 |----------------------|:---------:|
@@ -33,15 +33,15 @@ constantly adding new features. Below is a table describing the current state of
 | Crash reporting      |    ✅     |
 | Users                |    ✅     |
 
-import AndroidVersion from '@site/src/base/AndroidVersion';
+import IosVersion from '@site/src/base/IosVersion';
 
 ## Latest version
 |         |      Version      |
 |:-------:|:-----------------:|
-| Shake   | <AndroidVersion/> |
+| Shake   | <IosVersion/> |
 
 
 ## Minimum requirements
 |         |    Version   |
 |:-------:|:------------:|
-| Android |      5.0     |
+|   iOS   |      12.0    |

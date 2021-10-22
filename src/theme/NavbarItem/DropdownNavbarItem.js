@@ -42,7 +42,7 @@ function containsActiveItems(items, localPathname) {
 
 function getActiveLabel(items, defaultLabel) {
     const localPathname = useLocalPathname();
-    const activeItem = items.find((item) => localPathname.includes(item.to));
+    const activeItem = items.find((item) => localPathname.includes(item.activeBasePath));
     return activeItem?.label ?? defaultLabel;
 }
 

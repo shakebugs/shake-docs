@@ -1,6 +1,6 @@
 ---
 id: installation
-title: npm
+title: Install Shake
 ---
 ## Install
 Execute the `npm install` command in your terminal:
