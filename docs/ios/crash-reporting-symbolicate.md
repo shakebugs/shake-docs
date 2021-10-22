@@ -1,100 +1,7 @@
 ---
-id: crash-reporting-enabling-disabling
-title: Enabling/disabling
+id: crash-reporting-symbolicate
+title: Symbolicate
 ---
-
-## Enable crash reporting
-
-Crash reporting is disabled by default but can be enabled by setting the `isCrashReportingEnabled` flag to `true` prior 
-to calling the `start` method.
-
-<Tabs
-  groupId="ios"
-  defaultValue="swift"
-  values={[
-    { label: 'Objective-C', value: 'objectivec'},
-    { label: 'Swift', value: 'swift'},
-  ]
-}>
-
-<TabItem value="objectivec">
-
-```objectivec title="AppDelegate.m"
-//highlight-start
-SHKShake.configuration.isCrashReportingEnabled = YES;
-//highlight-end
-```
-
-</TabItem>
-
-<TabItem value="swift">
-
-```swift title="AppDelegate.swift"
-//highlight-start
-Shake.configuration.isCrashReportingEnabled = true
-//highlight-end
-```
-
-</TabItem>
-</Tabs>
-
-
-## Sending the report
-
-Crash reports are automatically sent during the next app launch after the crash occurs. These reports follow the same rules as regular feedback reports to some extent.
-The crash reports will be saved even if the app is offline and sent later when app regains connection. 
-
-Your end users can't opt out of sending their crash report as they can with the standard feedback, however they can optionally provide more information and describe what happened prior to the crash.
-
-## Editing the report
-
-On the next app launch after the crash occurs, a sheet offering the user a chance to describe the crash will appear.
-
-This can be enabled by setting the `isAskForCrashDescription` flag to `true` prior to calling the `start` method.
-
-<Tabs
-  groupId="ios"
-  defaultValue="swift"
-  values={[
-    { label: 'Objective-C', value: 'objectivec'},
-    { label: 'Swift', value: 'swift'},
-  ]
-}>
-
-<TabItem value="objectivec">
-
-```objectivec title="AppDelegate.m"
-//highlight-start
-SHKShake.configuration.isAskForCrashDescriptionEnabled = YES;
-//highlight-end
-```
-
-</TabItem>
-
-<TabItem value="swift">
-
-```swift title="AppDelegate.swift"
-//highlight-start
-Shake.configuration.isAskForCrashDescriptionEnabled = true
-//highlight-end
-```
-
-</TabItem>
-</Tabs>
-
-
-When enabled, this feature allows the user to provide a more detailed description of the actions that could have led up to the 
-crash, and potentially edit the information that is being passed to Shake dashboard.
-
-## Report context
-
-As mentioned before, the crash report is similar to the regular feedback report. 
-
-All of the existing Shake features elegantly interoperate with it, meaning that your crash report will provide the screenshot of the last thing that user saw, and even better, the last 15 seconds of the screen recording before the crash!
-
-A detailed crash report like this one, along with logs and all other useful information, provides you with plenty of usable data to help you resolve the root issue efficiently.
-
-## Symbolicating crash reports
 
 The crash reports are a lot more useful when you see your symbolicated application frames.
 
@@ -118,7 +25,7 @@ Select your main app target and open the Build Settings for that target. Navigat
 *dwarf with dSYM file* option for your Debug/Development configuration.
 
 
-### Finding dSYMS
+## Finding dSYMS
 
 Run the below command in your terminal
 
@@ -135,7 +42,7 @@ DSYMS can be uploaded to Shake with one of the methods listed below.
 
 For the apps built with Bitcode setting, use the Fastlane plugin to grab the correct dSYMS and upload them to Shake.
 
-### Upload dSYMS manually via Shake dashboard
+## Upload dSYMS manually via Shake dashboard
 
 Your application dSYM files can be manually zipped and uploaded to the Shake dashboard.
 
@@ -150,7 +57,7 @@ Xcode *Organizer* tool (*Xcode › Window › Organizer*) to manually download t
 
 Make sure to ZIP the symbolication files before dropping them on the Shake dashboard.
 
-### Upload dSYMS using RunPhase script
+## Upload dSYMS using RunPhase script
 
 Shake ships with the `upload-symbols.sh`script which uploads dSYMS to Shake servers.
 
@@ -183,14 +90,14 @@ When viewing the Build log, search for "SHAKE_SCRIPT" keyword to identify potent
 
 :::
 
-### Upload dSYMS using fastlane plugin
+## Upload dSYMS using fastlane plugin
 
 Fastlane is an open source platform aimed at simplifying mobile development tasks. It handles authentication with 
 App Store Connect and downloading dSYM files.
 
 Use this method if your app has __Bitcode__ format enabled.
 
-#### Installing fastlane
+### Installing fastlane
 
 It is recommended that you use `Bundler` and `Gemfile` to define your dependency on fastlane. 
 This will clearly define the fastlane version to be used and its dependencies, and will also speed up fastlane execution.
@@ -216,7 +123,7 @@ Navigate your terminal to your project's directory and run `fastlane init` comma
 
 For more info about installing fastlane, visit the [fastlane](http://docs.fastlane.tools) docs.
 
-#### Installing Shake plugin 
+### Installing Shake plugin 
 
 <TabItem value="ruby">
 
@@ -227,7 +134,7 @@ bundle exec fastlane add_plugin upload_symbols_to_shake
 </TabItem>
 
 
-#### Using the plugin
+### Using the plugin
 
 If you have [Bitcode](https://help.apple.com/xcode/mac/current/#/devbbdc5ce4f) enabled in your application's project settings, 
 dSYM files are generated by the App Store when your app is recompiled after the upload, and will need to be downloaded by fastlane.

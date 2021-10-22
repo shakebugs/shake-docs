@@ -1,9 +1,7 @@
 ---
 id: crash-reporting-handling-error
-title: Handle error
+title: Handling error
 ---
-
-## Handling errors
 
 Sometimes, the application is making great use of error handling and wants to document these errors, or has some definitive points where caught errors
 could use a bit more context.

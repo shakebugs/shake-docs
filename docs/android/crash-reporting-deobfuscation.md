@@ -3,11 +3,9 @@ id: crash-reporting-deobfuscation
 title: Deobfuscation
 ---
 
-## Deobfuscating reports
-
 If you are using Proguard to obfuscate your code, no problem! You can upload your *mapping.txt* file so we can deobfuscate your stack traces on our Dashboard.
 
-### Uploading manually via the Dashboard
+## Uploading manually via the Dashboard
 
 By default, *mapping.txt* file is created in the build directory of the app module: *project/app/build/outputs/mapping/release/mapping.txt*.  
 
@@ -16,7 +14,7 @@ on your application name. Once the menu is expanded click the **Mapping files**.
 
 You can simply drag and drop *mapping.txt* file on our Shake dashboard to upload it.
 
-### Using the script
+## Using the script
 
 If you would like to do this automatically, you can do it via script.
 

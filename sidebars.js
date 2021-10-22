@@ -26,7 +26,6 @@ module.exports = {
                     label: 'Customer feedback',
                     items: [
                         'android/feedback-introduction',
-                        'android/feedback-enabling-disabling',
                         'android/feedback-type',
                         'android/silent-reports',
                         'android/invoke'
@@ -37,7 +36,8 @@ module.exports = {
                     label: 'Crash reports',
                     items: [
                         'android/crash-reporting-introduction',
-                        'android/crash-reporting-enabling-disabling',
+                        'android/crash-reporting-enabling',
+                        'android/crash-reporting-describe-crash',
                         'android/crash-reporting-handling-error',
                         'android/crash-reporting-deobfuscation',
                         'android/crash-reporting-test-it-out'
@@ -73,6 +73,7 @@ module.exports = {
                 'android/data-privacy-disclosure'
             ]
         },
+        'android/releases'
     ],
     iosSidebar: [
         {
@@ -82,7 +83,7 @@ module.exports = {
                 'ios/overview',
                 {
                     type: 'category',
-                    label: 'Install Shake',
+                    label: 'Installation',
                     items: [
                         'ios/setup-spm',
                         'ios/setup-cocoapods',
@@ -108,8 +109,7 @@ module.exports = {
                     type: 'category',
                     label: 'Customer feedback',
                     items: [
-                        'ios/customer-feedback-introduction',
-                        'ios/customer-feedback-enabling-disabling',
+                        'ios/feedback-introduction',
                         'ios/feedback-type',
                         'ios/silent-reports',
                         'ios/invoke'
@@ -120,9 +120,10 @@ module.exports = {
                     label: 'Crash reports',
                     items: [
                         'ios/crash-reporting-introduction',
-                        'ios/crash-reporting-enabling-disabling',
+                        'ios/crash-reporting-enabling',
+                        'ios/crash-reporting-describe-crash',
                         'ios/crash-reporting-handling-error',
-                        'ios/crash-reporting-deobfuscation',
+                        'ios/crash-reporting-symbolicate',
                         'ios/crash-reporting-test-it-out'
                     ]
                 },
@@ -156,6 +157,7 @@ module.exports = {
                 'ios/data-privacy-disclosure'
             ]
         },
+        'ios/releases'
     ],
     flutterSidebar: [
         {
@@ -183,8 +185,7 @@ module.exports = {
                     type: 'category',
                     label: 'Customer feedback',
                     items: [
-                        'flutter/customer-feedback-introduction',
-                        'flutter/customer-feedback-enabling-disabling',
+                        'flutter/feedback-introduction',
                         'flutter/feedback-type',
                         'flutter/silent-reports',
                         'flutter/invoke'
@@ -212,6 +213,7 @@ module.exports = {
                 'flutter/data-privacy-disclosure'
             ]
         },
+        'flutter/releases'
     ],
     reactSidebar: [
         {
@@ -239,8 +241,7 @@ module.exports = {
                     type: 'category',
                     label: 'Customer feedback',
                     items: [
-                        'react/customer-feedback-introduction',
-                        'react/customer-feedback-enabling-disabling',
+                        'react/feedback-introduction',
                         'react/feedback-type',
                         'react/silent-reports',
                         'react/invoke'
@@ -276,5 +277,6 @@ module.exports = {
                 'react/data-privacy-disclosure'
             ]
         },
+        'react/releases'
     ],
 };

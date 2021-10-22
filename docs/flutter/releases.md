@@ -1,5 +1,5 @@
 ﻿---
-id: flutter-releases
+id: releases
 title: Release notes
 ---
 This page lists all updates to the Shake Flutter SDK.

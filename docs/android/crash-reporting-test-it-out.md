@@ -3,8 +3,6 @@ id: crash-reporting-test-it-out
 title: Test it out
 ---
 
-## Test it out
-
 Let's crash you app. 
 Enable crash reporting and paste the line below in the `onCreate` method in one of your activities.
 We'll crash the app on a button tap by accessing the array with the out of bounds index.

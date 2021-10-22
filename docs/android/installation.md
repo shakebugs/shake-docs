@@ -1,6 +1,6 @@
 ---
 id: installation
-title: Install Shake
+title: Installation
 ---
 This page describes how to install the Shake SDK into your Android application via Gradle.
 Whether you are using Java or Kotlin, you can follow the steps below.

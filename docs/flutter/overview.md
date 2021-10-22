@@ -31,7 +31,7 @@ constantly adding new features. Below is a table describing the current state of
 | Email pre-fill       |    ✅     |
 | White labeling       |    ✅     |
 | Crash reporting      |    ❌     |
-| Users                |    ❌     |
+| Users                |    ✅     |
 
 import FlutterVersion from '@site/src/base/FlutterVersion';
 
