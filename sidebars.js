@@ -12,9 +12,9 @@ module.exports = {
             type: 'category',
             label: 'Screens',
             items: [
-                'android/home-screen',
-                'android/inspect-screen',
-                'android/new-ticket-screen'
+                'android/screens/home-screen',
+                'android/screens/inspect-screen',
+                'android/screens/new-ticket-screen'
             ]
         },
         {
@@ -25,34 +25,34 @@ module.exports = {
                     type: 'category',
                     label: 'Customer feedback',
                     items: [
-                        'android/feedback-introduction',
-                        'android/feedback-type',
-                        'android/silent-reports',
-                        'android/invoke'
+                        'android/customer-feedback/introduction',
+                        'android/customer-feedback/feedback-type',
+                        'android/customer-feedback/silent-reports',
+                        'android/customer-feedback/invoke'
                     ]
                 },
                 {
                     type: 'category',
                     label: 'Crash reports',
                     items: [
-                        'android/crash-reporting-introduction',
-                        'android/crash-reporting-enabling',
-                        'android/crash-reporting-describe-crash',
-                        'android/crash-reporting-handling-error',
-                        'android/crash-reporting-deobfuscation',
-                        'android/crash-reporting-test-it-out'
+                        'android/crash-reports/introduction',
+                        'android/crash-reports/enabling',
+                        'android/crash-reports/describe-crash',
+                        'android/crash-reports/handling-error',
+                        'android/crash-reports/deobfuscation',
+                        'android/crash-reports/test-it-out'
                     ]
                 },
                 {
                     type: 'category',
                     label: 'Users',
                     items: [
-                        'android/users-introduction',
-                        'android/users-user-registration',
-                        'android/users-unregister-user',
-                        'android/users-update-user-metadata',
-                        'android/users-update-user-identifier',
-                        'android/users-advanced-usage'
+                        'android/users/introduction',
+                        'android/users/user-registration',
+                        'android/users/unregister-user',
+                        'android/users/update-user-metadata',
+                        'android/users/update-user-identifier',
+                        'android/users/advanced-usage'
                     ]
                 },
             ]
@@ -61,20 +61,21 @@ module.exports = {
             type: 'category',
             label: 'Configuration & Data',
             items: [
-                'android/introduction',
-                'android/essentials',
-                'android/email',
-                'android/inspect',
-                'android/screenshot',
-                'android/automatic-screen-recording',
-                'android/permissions',
-                'android/activity',
-                'android/attachments',
-                'android/blackbox',
-                'android/metadata',
-                'android/intro-message',
-                'android/manage-sensitive-data',
-                'android/data-privacy-disclosure'
+                'android/configuration-and-data/introduction',
+                'android/configuration-and-data/essentials',
+                'android/configuration-and-data/email',
+                'android/configuration-and-data/disable',
+                'android/configuration-and-data/inspect',
+                'android/configuration-and-data/screenshot',
+                'android/configuration-and-data/automatic-screen-recording',
+                'android/configuration-and-data/permissions',
+                'android/configuration-and-data/activity',
+                'android/configuration-and-data/attachments',
+                'android/configuration-and-data/blackbox',
+                'android/configuration-and-data/metadata',
+                'android/configuration-and-data/intro-message',
+                'android/configuration-and-data/manage-sensitive-data',
+                'android/configuration-and-data/data-privacy-disclosure'
             ]
         },
         'android/releases'
@@ -89,9 +90,9 @@ module.exports = {
                     type: 'category',
                     label: 'Installation',
                     items: [
-                        'ios/setup-spm',
-                        'ios/setup-cocoapods',
-                        'ios/setup-manually',
+                        'ios/installation/setup-spm',
+                        'ios/installation/setup-cocoapods',
+                        'ios/installation/setup-manually',
                     ]
                 }
             ]
@@ -100,9 +101,9 @@ module.exports = {
             type: 'category',
             label: 'Screens',
             items: [
-                'ios/home-screen',
-                'ios/inspect-screen',
-                'ios/new-ticket-screen'
+                'ios/screens/home-screen',
+                'ios/screens/inspect-screen',
+                'ios/screens/new-ticket-screen'
             ]
         },
         {
@@ -113,34 +114,34 @@ module.exports = {
                     type: 'category',
                     label: 'Customer feedback',
                     items: [
-                        'ios/feedback-introduction',
-                        'ios/feedback-type',
-                        'ios/silent-reports',
-                        'ios/invoke'
+                        'ios/customer-feedback/introduction',
+                        'ios/customer-feedback/feedback-type',
+                        'ios/customer-feedback/silent-reports',
+                        'ios/customer-feedback/invoke'
                     ]
                 },
                 {
                     type: 'category',
                     label: 'Crash reports',
                     items: [
-                        'ios/crash-reporting-introduction',
-                        'ios/crash-reporting-enabling',
-                        'ios/crash-reporting-describe-crash',
-                        'ios/crash-reporting-handling-error',
-                        'ios/crash-reporting-symbolicate',
-                        'ios/crash-reporting-test-it-out'
+                        'ios/crash-reports/introduction',
+                        'ios/crash-reports/enabling',
+                        'ios/crash-reports/describe-crash',
+                        'ios/crash-reports/handling-error',
+                        'ios/crash-reports/symbolicate',
+                        'ios/crash-reports/test-it-out'
                     ]
                 },
                 {
                     type: 'category',
                     label: 'Users',
                     items: [
-                        'ios/users-introduction',
-                        'ios/users-user-registration',
-                        'ios/users-unregister-user',
-                        'ios/users-update-user-metadata',
-                        'ios/users-update-user-identifier',
-                        'ios/users-advanced-usage',
+                        'ios/users/introduction',
+                        'ios/users/user-registration',
+                        'ios/users/unregister-user',
+                        'ios/users/update-user-metadata',
+                        'ios/users/update-user-identifier',
+                        'ios/users/advanced-usage',
                     ]
                 },
             ]
@@ -149,20 +150,22 @@ module.exports = {
             type: 'category',
             label: 'Configuration & Data',
             items: [
-                'ios/introduction',
-                'ios/essentials',
-                'ios/email',
-                'ios/inspect',
-                'ios/screenshot',
-                'ios/automatic-screen-recording',
-                'ios/permissions',
-                'ios/activity',
-                'ios/attachments',
-                'ios/blackbox',
-                'ios/metadata',
-                'ios/intro-message',
-                'ios/manage-sensitive-data',
-                'ios/data-privacy-disclosure'
+                'ios/configuration-and-data/introduction',
+                'ios/configuration-and-data/essentials',
+                'ios/configuration-and-data/email',
+                'ios/configuration-and-data/disable',
+                'ios/configuration-and-data/inspect',
+                'ios/configuration-and-data/screenshot',
+                'ios/configuration-and-data/automatic-screen-recording',
+                'ios/configuration-and-data/permissions',
+                'ios/configuration-and-data/activity',
+                'ios/configuration-and-data/attachments',
+                'ios/configuration-and-data/network-request-reporting',
+                'ios/configuration-and-data/blackbox',
+                'ios/configuration-and-data/metadata',
+                'ios/configuration-and-data/intro-message',
+                'ios/configuration-and-data/manage-sensitive-data',
+                'ios/configuration-and-data/data-privacy-disclosure'
             ]
         },
         'ios/releases'
@@ -180,9 +183,9 @@ module.exports = {
             type: 'category',
             label: 'Screens',
             items: [
-                'flutter/home-screen',
-                'flutter/inspect-screen',
-                'flutter/new-ticket-screen'
+                'flutter/screens/home-screen',
+                'flutter/screens/inspect-screen',
+                'flutter/screens/new-ticket-screen'
             ]
         },
         {
@@ -193,22 +196,22 @@ module.exports = {
                     type: 'category',
                     label: 'Customer feedback',
                     items: [
-                        'flutter/feedback-introduction',
-                        'flutter/feedback-type',
-                        'flutter/silent-reports',
-                        'flutter/invoke'
+                        'flutter/customer-feedback/introduction',
+                        'flutter/customer-feedback/feedback-type',
+                        'flutter/customer-feedback/silent-reports',
+                        'flutter/customer-feedback/invoke'
                     ]
                 },
                 {
                     type: 'category',
                     label: 'Users',
                     items: [
-                        'flutter/users-introduction',
-                        'flutter/users-user-registration',
-                        'flutter/users-unregister-user',
-                        'flutter/users-update-user-metadata',
-                        'flutter/users-update-user-identifier',
-                        'flutter/users-advanced-usage',
+                        'flutter/users/introduction',
+                        'flutter/users/user-registration',
+                        'flutter/users/unregister-user',
+                        'flutter/users/update-user-metadata',
+                        'flutter/users/update-user-identifier',
+                        'flutter/users/advanced-usage',
                     ]
                 },
             ]
@@ -217,20 +220,21 @@ module.exports = {
             type: 'category',
             label: 'Configuration & Data',
             items: [
-                'flutter/introduction',
-                'flutter/essentials',
-                'flutter/email',
-                'flutter/inspect',
-                'flutter/screenshot',
-                'flutter/automatic-screen-recording',
-                'flutter/permissions',
-                'flutter/activity',
-                'flutter/attachments',
-                'flutter/blackbox',
-                'flutter/metadata',
-                'flutter/intro-message',
-                'flutter/manage-sensitive-data',
-                'flutter/data-privacy-disclosure'
+                'flutter/configuration-and-data/introduction',
+                'flutter/configuration-and-data/essentials',
+                'flutter/configuration-and-data/email',
+                'flutter/configuration-and-data/disable',
+                'flutter/configuration-and-data/inspect',
+                'flutter/configuration-and-data/screenshot',
+                'flutter/configuration-and-data/automatic-screen-recording',
+                'flutter/configuration-and-data/permissions',
+                'flutter/configuration-and-data/activity',
+                'flutter/configuration-and-data/attachments',
+                'flutter/configuration-and-data/blackbox',
+                'flutter/configuration-and-data/metadata',
+                'flutter/configuration-and-data/intro-message',
+                'flutter/configuration-and-data/manage-sensitive-data',
+                'flutter/configuration-and-data/data-privacy-disclosure'
             ]
         },
         'flutter/releases'
@@ -241,16 +245,23 @@ module.exports = {
             label: 'Getting started',
             items: [
                 'react/overview',
-                'react/installation'
+                {
+                    type: 'category',
+                    label: 'Install Shake',
+                    items: [
+                        'react/install/installation',
+                        'react/install/manual-linking'
+                    ]
+                },
             ]
         },
         {
             type: 'category',
             label: 'Screens',
             items: [
-                'react/home-screen',
-                'react/inspect-screen',
-                'react/new-ticket-screen'
+                'react/screens/home-screen',
+                'react/screens/inspect-screen',
+                'react/screens/new-ticket-screen'
             ]
         },
         {
@@ -261,22 +272,22 @@ module.exports = {
                     type: 'category',
                     label: 'Customer feedback',
                     items: [
-                        'react/feedback-introduction',
-                        'react/feedback-type',
-                        'react/silent-reports',
-                        'react/invoke'
+                        'react/customer-feedback/introduction',
+                        'react/customer-feedback/feedback-type',
+                        'react/customer-feedback/silent-reports',
+                        'react/customer-feedback/invoke'
                     ]
                 },
                 {
                     type: 'category',
                     label: 'Users',
                     items: [
-                        'react/users-introduction',
-                        'react/users-user-registration',
-                        'react/users-unregister-user',
-                        'react/users-update-user-metadata',
-                        'react/users-update-user-identifier',
-                        'react/users-advanced-usage',
+                        'react/users/introduction',
+                        'react/users/user-registration',
+                        'react/users/unregister-user',
+                        'react/users/update-user-metadata',
+                        'react/users/update-user-identifier',
+                        'react/users/advanced-usage',
                     ]
                 },
             ]
@@ -285,20 +296,21 @@ module.exports = {
             type: 'category',
             label: 'Configuration & Data',
             items: [
-                'react/introduction',
-                'react/essentials',
-                'react/email',
-                'react/inspect',
-                'react/screenshot',
-                'react/automatic-screen-recording',
-                'react/permissions',
-                'react/activity',
-                'react/attachments',
-                'react/blackbox',
-                'react/metadata',
-                'react/intro-message',
-                'react/manage-sensitive-data',
-                'react/data-privacy-disclosure'
+                'react/configuration-and-data/introduction',
+                'react/configuration-and-data/essentials',
+                'react/configuration-and-data/email',
+                'react/configuration-and-data/disable',
+                'react/configuration-and-data/inspect',
+                'react/configuration-and-data/screenshot',
+                'react/configuration-and-data/automatic-screen-recording',
+                'react/configuration-and-data/permissions',
+                'react/configuration-and-data/activity',
+                'react/configuration-and-data/attachments',
+                'react/configuration-and-data/blackbox',
+                'react/configuration-and-data/metadata',
+                'react/configuration-and-data/intro-message',
+                'react/configuration-and-data/manage-sensitive-data',
+                'react/configuration-and-data/data-privacy-disclosure'
             ]
         },
         'react/releases'

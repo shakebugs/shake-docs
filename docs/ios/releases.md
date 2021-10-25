@@ -1,6 +1,6 @@
 ---
 id: releases
-title: Releases
+title: Release notes
 ---
 This page lists all updates to the Shake iOS SDK.
 
