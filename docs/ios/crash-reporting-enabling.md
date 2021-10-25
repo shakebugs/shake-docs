@@ -3,6 +3,9 @@ id: crash-reporting-enabling
 title: Enabling
 ---
 
+import Tabs from '@theme/Tabs'; 
+import TabItem from '@theme/TabItem';
+
 Crash reporting is disabled by default but can be enabled by setting the `isCrashReportingEnabled` flag to `true` prior 
 to calling the `start` method.
 

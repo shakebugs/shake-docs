@@ -3,6 +3,9 @@ id: crash-reporting-test-it-out
 title: Test it out
 ---
 
+import Tabs from '@theme/Tabs'; 
+import TabItem from '@theme/TabItem';
+
 Let's crash you app. 
 Enable crash reporting and paste the snippet below in the `viewDidLoad` method in one of your view controllers.
 We'll crash the app on a button tap by accessing the array with the out of bounds index.

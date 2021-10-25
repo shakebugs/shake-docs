@@ -3,6 +3,9 @@ id: crash-reporting-handling-error
 title: Handling error
 ---
 
+import Tabs from '@theme/Tabs'; 
+import TabItem from '@theme/TabItem';
+
 Sometimes, the application is making great use of error handling and wants to document these errors, or has some definitive points where caught errors
 could use a bit more context.
 

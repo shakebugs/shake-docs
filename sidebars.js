@@ -48,7 +48,11 @@ module.exports = {
                     label: 'Users',
                     items: [
                         'android/users-introduction',
-                        'android/users-enabling-disabling'
+                        'android/users-user-registration',
+                        'android/users-unregister-user',
+                        'android/users-update-user-metadata',
+                        'android/users-update-user-identifier',
+                        'android/users-advanced-usage'
                     ]
                 },
             ]
@@ -132,7 +136,11 @@ module.exports = {
                     label: 'Users',
                     items: [
                         'ios/users-introduction',
-                        'ios/users-enabling-disabling',
+                        'ios/users-user-registration',
+                        'ios/users-unregister-user',
+                        'ios/users-update-user-metadata',
+                        'ios/users-update-user-identifier',
+                        'ios/users-advanced-usage',
                     ]
                 },
             ]
@@ -189,6 +197,18 @@ module.exports = {
                         'flutter/feedback-type',
                         'flutter/silent-reports',
                         'flutter/invoke'
+                    ]
+                },
+                {
+                    type: 'category',
+                    label: 'Users',
+                    items: [
+                        'flutter/users-introduction',
+                        'flutter/users-user-registration',
+                        'flutter/users-unregister-user',
+                        'flutter/users-update-user-metadata',
+                        'flutter/users-update-user-identifier',
+                        'flutter/users-advanced-usage',
                     ]
                 },
             ]
@@ -252,7 +272,11 @@ module.exports = {
                     label: 'Users',
                     items: [
                         'react/users-introduction',
-                        'react/users-enabling-disabling'
+                        'react/users-user-registration',
+                        'react/users-unregister-user',
+                        'react/users-update-user-metadata',
+                        'react/users-update-user-identifier',
+                        'react/users-advanced-usage',
                     ]
                 },
             ]

@@ -1,6 +1,6 @@
 ﻿---
 id: releases
-title: Release notes
+title: Releases
 ---
 This page lists all updates to the Shake React Native SDK.
 
@@ -86,5 +86,5 @@ If you want to, you can [hide the Inspect bug button](/react/inspect.md) from yo
 
 **What's new**
 
-You can now use Shake React Native SDK in the React Native applications. Check [Setup](/react/setup.md) guide and follow step by step
+You can now use Shake React Native SDK in the React Native applications. Check [Setup](/react/installation.md) guide and follow step by step
 guide to integrate Shake SDK into your React Native application.

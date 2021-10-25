@@ -3,6 +3,9 @@ id: crash-reporting-deobfuscation
 title: Deobfuscation
 ---
 
+import Tabs from '@theme/Tabs'; 
+import TabItem from '@theme/TabItem';
+
 If you are using Proguard to obfuscate your code, no problem! You can upload your *mapping.txt* file so we can deobfuscate your stack traces on our Dashboard.
 
 ## Uploading manually via the Dashboard

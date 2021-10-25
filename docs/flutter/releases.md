@@ -1,6 +1,6 @@
 ﻿---
 id: releases
-title: Release notes
+title: Releases
 ---
 This page lists all updates to the Shake Flutter SDK.
 
@@ -17,7 +17,7 @@ What would you like us to build next? We're dying to hear from you — upvote up
 We've completely [redesigned Shake](/flutter/home-screen.md) to continue delivering you more and more options in a scalable manner.
 It also started supporting dark and light theme so it can beautifully fit into your app in either case.
 
-We've introduced [Home screen](/flutter/home-screen.md) where [your users](/flutter/users.md) can see tickets they reported.
+We've introduced [Home screen](/flutter/home-screen.md) where [your users](/flutter/users-introduction.md) can see tickets they reported.
 
 ### 14.1.2
 <span class="tag-button">May 26, 2021</span>&nbsp;&nbsp;
@@ -70,5 +70,5 @@ We updated the start method. The configuration keys are now loaded via the metho
 
 **What's new**
 
-You can now use Shake Flutter SDK in the Flutter applications. Check [Setup](/flutter/setup.md) guide and follow step by step
+You can now use Shake Flutter SDK in the Flutter applications. Check [Setup](/flutter/installation.md) guide and follow step by step
 guide to integrate Shake SDK into your Flutter application.

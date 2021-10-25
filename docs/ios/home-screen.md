@@ -10,7 +10,7 @@ import TabItem from '@theme/TabItem';
 
 ## Introduction
 
-Home screen acts as a feedback center designed to elegantly interoperate with the Shake [Users](ios/users.md) feature.
+Home screen acts as a feedback center designed to elegantly interoperate with the Shake [Users](ios/users-introduction.md) feature.
 If you registered your *User* with Shake, all of their tickets will be listed here.
 
 Tickets visible in the table represent the uploaded tickets that are synced with the *Shake dashboard*.

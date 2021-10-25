@@ -20,7 +20,7 @@ You can inspect all events that lead to a bug being reported. A link to *Activit
 
 SDK automatically observes taps made on your app's UI elements.
 
-On Android, [code snippet](/react/manual-linking.md#android) required to enable touch tracking is added by running [add command](/react/setup.md#install).
+On Android, [code snippet](/react/manual-linking.md#android) required to enable touch tracking is added by running [add command](/react/installation.md#install).
 
 ### Network requests
 Network tracker is disabled by default, to enable network requests tracking use the following method:

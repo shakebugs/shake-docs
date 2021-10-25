@@ -1,6 +1,6 @@
 ---
 id: releases
-title: Release notes
+title: Releases
 ---
 This page lists all updates to the Shake Android SDK.
 
@@ -81,7 +81,7 @@ There were a few minor bugs that caused problems, like bugs do. We fixed those, 
 **What's new**
 
 JCenter will be sunset soon so we moved Shake to Maven Central. 
-If you’re upgrading from the older version, make sure to [update the dependency in the build.gradle file](/android/setup.md#add-shake-dependency-to-your-app-level-buildgradle-file). 
+If you’re upgrading from the older version, make sure to [update the dependency in the build.gradle file](/android/installation.md#add-shake-dependency-to-your-app-level-buildgradle-file). 
 
 The `minSdkVersion` has been changed to 21. If your project is using a version lower than 21, you should upgrade the `minSdkVersion` in your module’s *build.gradle* file.
 
@@ -104,7 +104,7 @@ We updated the start method. The configuration keys are now loaded via the metho
 
 **What's new**
 
-Shake now requires `compileSdkVersion` 29 or higher, make sure to [update the version in the build.gradle file](/android/setup.md#set-compilesdkversion-version-in-the-buildgradle-file).
+Shake now requires `compileSdkVersion` 29 or higher, make sure to [update the version in the build.gradle file](/android/installation.md#set-compilesdkversion-version-in-the-buildgradle-file).
 
 Shake will now automatically [redact sensitive data](android/manage-sensitive-data.md#sensitive-data-redaction) from your network requests, notifications and touch events so it never reaches Shake servers.
 
@@ -117,7 +117,7 @@ We've all been waiting for this! Your users can record an additional video of th
 
 **What's new**
 
-Shake is available in the new Maven repository. If you're upgrading from the older version, make sure to [update the Maven repository in the build.gradle file](/android/setup.md#add-maven-repository-to-your-top-level-buildgradle-file).
+Shake is available in the new Maven repository. If you're upgrading from the older version, make sure to [update the Maven repository in the build.gradle file](/android/installation.md#add-maven-repository-to-your-top-level-buildgradle-file).
 
 Users can finally report [different types of feedback](/android/feedback-type.md): bugs, suggestions and questions.
 

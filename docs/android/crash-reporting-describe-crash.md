@@ -3,6 +3,9 @@ id: crash-reporting-describe-crash
 title: Describe crash
 ---
 
+import Tabs from '@theme/Tabs'; 
+import TabItem from '@theme/TabItem';
+
 On the next app launch after the crash occurs, a sheet offering the user a chance to describe the crash will appear.
 
 This can be enabled by setting the `isAskForCrashDescription` flag to `true` prior to calling the `start` method.

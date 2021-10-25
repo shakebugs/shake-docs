@@ -1,6 +1,6 @@
 ---
 id: releases
-title: Release notes
+title: Releases
 ---
 This page lists all updates to the Shake iOS SDK.
 
@@ -17,14 +17,14 @@ What would you like us to build next? We're dying to hear from you — upvote up
 We've completely [redesigned Shake](/ios/home-screen.md) to continue delivering you more and more options in a scalable manner.
 It also started supporting dark and light theme so it can beautifully fit into your app in either case.
 
-We've introduced [Home screen](/ios/home-screen.md) where [your users](/ios/users.md) can see tickets they reported.
+We've introduced [Home screen](/ios/home-screen.md) where [your users](/ios/users-introduction.md) can see tickets they reported.
 
 ### 14.4.0
 <span class="tag-button">July 22, 2021</span>&nbsp;&nbsp;
 
 **What's new**
 
-From now, you can [register users of your application](/ios/users.md) with Shake. You can assign metadata to each user what
+From now, you can [register users of your application](/ios/users-introduction.md) with Shake. You can assign metadata to each user what
  enables a powerful connection between the specific user of your app, and the rest of the Shake features. 
  
 **Bug fixes**
