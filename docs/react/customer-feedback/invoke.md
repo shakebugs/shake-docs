@@ -113,4 +113,4 @@ const onFeedbackCenterPressed = () => {
 When Shake is invoked with the `ShakeScreen.NEW`, app screenshot and automatic video recording are automatically attached and visible
 in the attached files section of the UI.
 
-All other data, like [Activity history](react/activity.md) or [Black box](react/blackbox.md), is automatically included in every user’s bug report — no additional code required.
+All other data, like [Activity history](react/configuration-and-data/activity.md) or [Black box](react/configuration-and-data/blackbox.md), is automatically included in every user’s bug report — no additional code required.

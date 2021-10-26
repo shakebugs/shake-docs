@@ -108,4 +108,4 @@ const onFeedbackCenterPressed() {
 When Shake is invoked with the `ShakeScreen.newTicket`, app screenshot and automatic video recording are automatically attached and visible
 in the attached files section of the UI.
 
-All other data, like [Activity history](flutter/activity.md) or [Black box](flutter/blackbox.md), is automatically included in every user’s bug report — no additional code required.
+All other data, like [Activity history](flutter/configuration-and-data/activity.md) or [Black box](flutter/configuration-and-data/blackbox.md), is automatically included in every user’s bug report — no additional code required.

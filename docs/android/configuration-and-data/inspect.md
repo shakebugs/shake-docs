@@ -4,11 +4,11 @@ title: Inspect ticket
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-The *Inspect screen* allows your user to see the current ticket details — its [Essentials](android/essentials.md) and [Metadata](android/metadata.md) — before submitting it.
+The *Inspect screen* allows your user to see the current ticket details — its [Essentials](android/configuration-and-data/essentials.md) and [Metadata](android/configuration-and-data/metadata.md) — before submitting it.
 
 ## Introduction
 
-The *Inspect screen* can be reached via *Inspect* button on the [New ticket screen](android/new-ticket-screen.md).
+The *Inspect screen* can be reached via *Inspect* button on the [New ticket screen](android/screens/new-ticket-screen.md).
 
 <img
   alt="Inspect screen"

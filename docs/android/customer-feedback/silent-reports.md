@@ -13,7 +13,7 @@ Silent report can be configured with the *Description* just like the regular rep
 
 :::note
 
-Silent reports will also attach files returned by the [onPrepareData](android/attachments.md) callback.
+Silent reports will also attach files returned by the [onPrepareData](android/configuration-and-data/attachments.md) callback.
 
 :::
 

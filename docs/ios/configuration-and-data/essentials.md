@@ -18,6 +18,6 @@ You will find Essentials listed on the right side of your web Dashboard, and the
 
 ## Customizing the data you receive
 
-If you want the SDK to attach any other variable to your bug reports, you can absolutely do that as well! Read about sending custom data with [Metadata](/ios/metadata.md).
+If you want the SDK to attach any other variable to your bug reports, you can absolutely do that as well! Read about sending custom data with [Metadata](/ios/configuration-and-data/metadata.md).
 
-Do you also want to attach custom files, like images? Visit [Attachments](/ios/attachments.md).
+Do you also want to attach custom files, like images? Visit [Attachments](/ios/configuration-and-data/attachments.md).

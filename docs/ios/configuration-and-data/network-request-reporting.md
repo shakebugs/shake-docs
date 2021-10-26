@@ -73,7 +73,7 @@ the configuration to the library initializer method.
 Network requests can contain sensitive data that you may not want to send to Shake servers. Although Shake will automatically scan the intercepted requests and redact some of the 
 data it can recognize, you can set your custom network request filter to precisely filter out all sensitive fields from the intercepted network request.
 
-Checkout the [Manage Sensitive Data](ios/manage-sensitive-data.md/#network-requests) article.
+Checkout the [Manage Sensitive Data](ios/configuration-and-data/manage-sensitive-data.md/#network-requests) article.
 
 ## Advanced usage
 

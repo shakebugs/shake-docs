@@ -13,7 +13,7 @@ Silent report can be configured with the *Description* just like the regular rep
 
 :::note
 
-Silent reports will also attach files returned by the [onPrepareReportData](ios/attachments.md) closure and [Automatic Screen Recording](ios/automatic-screen-recording.md) file if the feature is turned on.
+Silent reports will also attach files returned by the [onPrepareReportData](ios/configuration-and-data/attachments.md) closure and [Automatic Screen Recording](ios/configuration-and-data/automatic-screen-recording.md) file if the feature is turned on.
 
 :::
 

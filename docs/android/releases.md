@@ -14,17 +14,17 @@ What would you like us to build next? We're dying to hear from you — upvote up
 
 **What's new**
 
-We've completely [redesigned Shake](/android/home-screen.md) to continue delivering you more and more options in a scalable manner.
+We've completely [redesigned Shake](/android/screens/home-screen.md) to continue delivering you more and more options in a scalable manner.
 It also started supporting dark and light theme so it can beautifully fit into your app in either case.
 
-We've introduced [Home screen](/android/home-screen.md) where [your users](/android/users.md) can see tickets they reported.
+We've introduced [Home screen](/android/screens/home-screen.md) where [your users](/android/users/introduction.md) can see tickets they reported.
 
 ### 14.4.0
 <span class="tag-button">July 22, 2021</span>&nbsp;&nbsp;
 
 **What's new**
 
-From now, you can [register users of your application](/android/users.md) with Shake. You can assign metadata to each user what
+From now, you can [register users of your application](/android/users/introduction.md) with Shake. You can assign metadata to each user what
  enables a powerful connection between the specific user of your app, and the rest of the Shake features. 
 
 **Bug fixes**
@@ -36,11 +36,11 @@ You can now safely call Shake methods before Shake is started, we've handled tho
 
 **What's new**
 
-If you are using the shaking gesture as your invocation event, you can now set [how sensitive the device should be to the shaking](/android/invoke.md#shaking).
+If you are using the shaking gesture as your invocation event, you can now set [how sensitive the device should be to the shaking](/android/customer-feedback/invoke.md#shaking).
  
-Shake now supports [customization of feedback types](/android/feedback-type.md#custom-types), you can configure Shake to display any number of custom categories related to your product.
+Shake now supports [customization of feedback types](/android/customer-feedback/feedback-type.md#custom-types), you can configure Shake to display any number of custom categories related to your product.
 
-We've added an option to [exclude the screenshot from the reports](/android/screenshot.md#excluding-the-screenshot-from-a-report), this option allows you to capture the screenshot only when required.
+We've added an option to [exclude the screenshot from the reports](/android/configuration-and-data/screenshot.md#excluding-the-screenshot-from-a-report), this option allows you to capture the screenshot only when required.
 
 This version now contains a Portuguese translation, which additionally extends [the lists of languages Shake's been translated to](https://help.shakebugs.com/en/articles/3392092-which-languages-has-shake-sdk-been-translated-to). 
 Your users whose default device language is set to one of these will automatically see Shake in their language.
@@ -52,7 +52,7 @@ Your users whose default device language is set to one of these will automatical
 
 Shake Crash beta is released. This personalized crash reporting approach allows you to prevent bad reviews,
 build user relationships and fix app crashes faster than before with the power of data automation. 
-Read all about it [on its subpage](https://www.shakebugs.com/crash), or dive right into [its Docs](/android/crash-reporting.md) to enable it in your app.
+Read all about it [on its subpage](https://www.shakebugs.com/crash), or dive right into [its Docs](/android/crash-reports/introduction.md) to enable it in your app.
 
 We've increased the size limit for feedback attachments, now you can attach up to 10 MB per file.
 
@@ -106,9 +106,9 @@ We updated the start method. The configuration keys are now loaded via the metho
 
 Shake now requires `compileSdkVersion` 29 or higher, make sure to [update the version in the build.gradle file](/android/installation.md#set-compilesdkversion-version-in-the-buildgradle-file).
 
-Shake will now automatically [redact sensitive data](android/manage-sensitive-data.md#sensitive-data-redaction) from your network requests, notifications and touch events so it never reaches Shake servers.
+Shake will now automatically [redact sensitive data](android/configuration-and-data/manage-sensitive-data.md#sensitive-data-redaction) from your network requests, notifications and touch events so it never reaches Shake servers.
 
-We've added [console logs](android/activity.md#console-logs) to Activity history.
+We've added [console logs](android/configuration-and-data/activity.md#console-logs) to Activity history.
 
 We've all been waiting for this! Your users can record an additional video of their screen or grab one or two more extra screenshots and attach them to the feedback they're submitting — without ever leaving your app.
 
@@ -119,25 +119,25 @@ We've all been waiting for this! Your users can record an additional video of th
 
 Shake is available in the new Maven repository. If you're upgrading from the older version, make sure to [update the Maven repository in the build.gradle file](/android/installation.md#add-maven-repository-to-your-top-level-buildgradle-file).
 
-Users can finally report [different types of feedback](/android/feedback-type.md): bugs, suggestions and questions.
+Users can finally report [different types of feedback](/android/customer-feedback/feedback-type.md): bugs, suggestions and questions.
 
-Shake now allows you to [manage sensitive data](android/manage-sensitive-data.md) on the mobile device itself, so it never reaches the Shake servers. It can be used for notifications, network requests, screens and screen elements.
+Shake now allows you to [manage sensitive data](android/configuration-and-data/manage-sensitive-data.md) on the mobile device itself, so it never reaches the Shake servers. It can be used for notifications, network requests, screens and screen elements.
 
-You can now use the in-app Shake [onboarding dialog](android/intro-message.md) to inform your users about Shake availability.
+You can now use the in-app Shake [onboarding dialog](android/configuration-and-data/intro-message.md) to inform your users about Shake availability.
 
 ### 13.1
 <span class="tag-button">August 25, 2020</span>&nbsp;&nbsp;
 
 **What's new**
 
-If you want to, you can now pre-fill or hide the [Email field](/android/email.md) from the SDK. Pretty neat.
+If you want to, you can now pre-fill or hide the [Email field](/android/configuration-and-data/email.md) from the SDK. Pretty neat.
 
 ### 13.0
 <span class="tag-button">June 30, 2020</span>
 
 **What's new**
 
-Screenshots are cool, but wouldn't it be even cooler if you could watch a short video of what a user did before reporting the bug? That's why we introduced [Automatic screen recording](/android/automatic-screen-recording.md).
+Screenshots are cool, but wouldn't it be even cooler if you could watch a short video of what a user did before reporting the bug? That's why we introduced [Automatic screen recording](/android/configuration-and-data/automatic-screen-recording.md).
 
 ### 12.0
 <span class="tag-button">May 19, 2020</span>
@@ -148,7 +148,7 @@ Not all of you love the default Shake color. Now, whenever users open it up,
 Shake can appear in your brand color and with your logo.
 
 You wanted us to get rid of Quick Facts (one long concatenated string)
-and introduce [Metadata](/android/metadata.md) (useful key-value pairs) instead. So we did it.
+and introduce [Metadata](/android/configuration-and-data/metadata.md) (useful key-value pairs) instead. So we did it.
 
 ### 11.0
 <span class="tag-button">April 1, 2020</span>
@@ -158,13 +158,13 @@ and introduce [Metadata](/android/metadata.md) (useful key-value pairs) instead.
 Your users can at last attach their own files to a bug report!
 They can also remove any of them with a subtle long press. Neat.
 
-There’s no such thing as too many [invocation methods](/android/invoke.md).
+There’s no such thing as too many [invocation methods](/android/customer-feedback/invoke.md).
 Shake can now be invoked by a one-finger swiping gesture from the right edge of the screen too.
 
 The Wrap-up screen is now a tiny bit more helpful than before.
 If your users want to, they can read how to report great bugs, report any SDK hiccups to us or recommend us.
 
-If you want to, our [Activity history](/android/activity.md) now allows you to send yourself any custom logs,
+If you want to, our [Activity history](/android/configuration-and-data/activity.md) now allows you to send yourself any custom logs,
 and read the notifications users receive.
 
 ### 10.0
@@ -177,12 +177,12 @@ we have rewritten the whole Android SDK API Version 10.
  It's like getting a flu shot — feel free to hate us for a few minutes while you tweak a call or two,
  but we sincerely promise you'll enjoy all the benefits 100 times over.
 
-By popular demand, Shake can now be [invoked through code](/android/invoke.md) as well.
+By popular demand, Shake can now be [invoked through code](/android/customer-feedback/invoke.md) as well.
 
-Submit yourself a [silent bug report](/android/silent-reports.md) from the background,
+Submit yourself a [silent bug report](/android/customer-feedback/silent-reports.md) from the background,
 without interrupting your end user whatsoever!
 
 Privacy options are important. That’s why you now have a method to
-disable or enable [Activity history](/android/activity.md) whenever you want to.
+disable or enable [Activity history](/android/configuration-and-data/activity.md) whenever you want to.
 
-If you want to, you can [hide the Inspect bug button](/android/inspect.md) from your users. Brilliant.
+If you want to, you can [hide the Inspect bug button](/android/configuration-and-data/inspect.md) from your users. Brilliant.

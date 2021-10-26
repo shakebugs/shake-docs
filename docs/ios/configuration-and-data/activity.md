@@ -59,7 +59,7 @@ struct UserDetailsView: View {
 
 Shake will capture the user's network traffic and log the events on the web dashboard.
 
-Go through this [setup article](ios/network-request-reporting.md) to get started.
+Go through this [setup article](ios/configuration-and-data/network-request-reporting.md) to get started.
 
 ### System events
 

@@ -12,7 +12,7 @@ of the Shake features, it becomes a crash reporting power tool.
 Crash reports are automatically sent during the next app launch after the crash occurs. These reports follow the same rules as regular feedback reports to some extent.
 The crash reports will be saved even if the app is offline and sent later when app regains connection. 
 
-Your end users can't opt out of sending their crash report as they can with the standard feedback, however they can optionally [provide more information](/ios/crash-reporting-describe-crash) and describe what happened prior to the crash.
+Your end users can't opt out of sending their crash report as they can with the standard feedback, however they can optionally [provide more information](/ios/crash-reports/describe-crash) and describe what happened prior to the crash.
 
 
 ## Report context

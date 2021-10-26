@@ -219,4 +219,4 @@ private fun onFeedbackCenterPressed() {
 When Shake is invoked with the `ShakeScreen.NEW`, app screenshot and automatic video recording are automatically attached and visible
 in the attached files section of the UI.
 
-All other data, like [Activity history](android/activity.md) or [Black box](android/blackbox.md), is automatically included in every user’s bug report — no additional code required.
+All other data, like [Activity history](android/configuration-and-data/activity.md) or [Black box](android/configuration-and-data/blackbox.md), is automatically included in every user’s bug report — no additional code required.

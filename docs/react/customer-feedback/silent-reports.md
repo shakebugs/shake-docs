@@ -13,7 +13,7 @@ Silent report can be configured with the *Description* just like the regular rep
 
 :::note
 
-Silent reports will also attach files defined with the [Shake.setShakeReportData](react/attachments.md) method.
+Silent reports will also attach files defined with the [Shake.setShakeReportData](react/configuration-and-data/attachments.md) method.
 
 :::
 
