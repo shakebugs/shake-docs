@@ -8,9 +8,30 @@ What would you like us to build next? We're dying to hear from you — upvote up
 
 ## Version
 
+### 15.0.2
+<span class="tag-button">October 27, 2021</span>&nbsp;&nbsp;
+<span class="tag-button green-tag-button">Latest version</span>
+
+**What's new**
+
+Not all of you love the default Shake color. Now, whenever users open it up, Shake can appear in your brand color.
+
+This version now contains a Russian, Italian, Polish, Latvian, Estonian and Thai translation, which additionally extends [the lists of languages Shake's been translated to](https://help.shakebugs.com/en/articles/3392092-which-languages-has-shake-sdk-been-translated-to). 
+Your users whose default device language is set to one of these will automatically see Shake in their language.
+
+**Bug fixes**
+
+There were a few minor bugs that caused problems, like bugs do. We fixed those, and improved the SDK stability too.
+
+### 15.0.1
+<span class="tag-button">October 14, 2021</span>&nbsp;&nbsp;
+
+**Bug fixes**
+
+There were a few minor bugs that caused problems, like bugs do. We fixed those, and improved the SDK stability too.
+
 ### 15.0.0
 <span class="tag-button">September 21, 2021</span>&nbsp;&nbsp;
-<span class="tag-button green-tag-button">Latest version</span>
 
 **What's new**
 
@@ -119,7 +140,7 @@ We've all been waiting for this! Your users can record an additional video of th
 
 Shake is available in the new Maven repository. If you're upgrading from the older version, make sure to [update the Maven repository in the build.gradle file](/android/setup.md#add-maven-repository-to-your-top-level-buildgradle-file).
 
-Users can finally report [different types of feedback](/android/feedback_type.md): bugs, suggestions and questions.
+Users can finally report [different types of feedback](/android/feedback-type.md): bugs, suggestions and questions.
 
 Shake now allows you to [manage sensitive data](android/manage-sensitive-data.md) on the mobile device itself, so it never reaches the Shake servers. It can be used for notifications, network requests, screens and screen elements.
 

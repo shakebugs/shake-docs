@@ -4,11 +4,18 @@ module.exports = {
   url: 'https://www.shakebugs.com/',
   baseUrl: '/docs/',
   favicon: 'img/favicon.ico',
+  trailingSlash: true,
   organizationName: 'shakebugs', // Usually your GitHub org/user name.
   projectName: 'shake-docs', // Usually your repo name.
   themeConfig: {
+    colorMode: {
+      defaultMode: 'light',
+      respectPrefersColorScheme: true,
+    },
+    hideableSidebar: true,
     prism: {
-      theme: require('prism-react-renderer/themes/dracula'),
+      theme: require('prism-react-renderer/themes/github'),
+      darkTheme: require('prism-react-renderer/themes/dracula'),
       additionalLanguages: ['groovy', 'kotlin', 'java', 'swift', 'dart', 'batch'],
     },
     algolia: {
@@ -23,7 +30,7 @@ module.exports = {
         src: 'img/logo.svg',
         href: 'https://www.shakebugs.com/',
       },
-      links: [
+      items: [
         {
           to: '/',
           activeBasePath: 'docs',
@@ -38,7 +45,7 @@ module.exports = {
       ],
     },
     footer: {
-      style: 'dark',
+      style: 'light',
       links: [
         {
           title: 'Docs',
@@ -160,16 +167,10 @@ module.exports = {
   ],
   plugins: [
       require.resolve('./src/plugins/inject-html-tags'),
-      'docusaurus2-dotenv',
-      {
-        systemvars: true,
-      },
       [
-        '@docusaurus/plugin-sitemap',
+        'docusaurus2-dotenv',
         {
-          changefreq: 'weekly',
-          priority: 0.5,
-          trailingSlash: true,
+          systemvars: true,
         },
       ],
   ],

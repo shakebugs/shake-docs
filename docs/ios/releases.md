@@ -8,9 +8,30 @@ What would you like us to build next? We're dying to hear from you — upvote up
 
 ## Version
 
+### 15.0.2
+<span class="tag-button">October 27, 2021</span>&nbsp;&nbsp;
+<span class="tag-button green-tag-button">Latest version</span>
+
+**What's new**
+
+Not all of you love the default Shake color. Now, whenever users open it up, Shake can appear in your brand color.
+
+This version now contains a Russian, Italian, Polish, Latvian, Estonian and Thai translation, which additionally extends [the lists of languages Shake's been translated to](https://help.shakebugs.com/en/articles/3392092-which-languages-has-shake-sdk-been-translated-to). 
+Your users whose default device language is set to one of these will automatically see Shake in their language.
+
+**Bug fixes**
+
+There were a few minor bugs that caused problems, like bugs do. We fixed those, and improved the SDK stability too.
+
+### 15.0.1
+<span class="tag-button">October 14, 2021</span>&nbsp;&nbsp;
+
+**Bug fixes**
+
+There were a few minor bugs that caused problems, like bugs do. We fixed those, and improved the SDK stability too.
+
 ### 15.0.0
 <span class="tag-button">September 21, 2021</span>&nbsp;&nbsp;
-<span class="tag-button green-tag-button">Latest version</span>
 
 **What's new**
 
@@ -116,7 +137,7 @@ We updated the start method. The configuration keys are now loaded via the metho
 
 **What's new**
 
-Users can finally report [different types of feedback](/ios/feedback_type.md): bugs, suggestions and questions.
+Users can finally report [different types of feedback](/ios/feedback-type.md): bugs, suggestions and questions.
 
 Screenshots are cool, but wouldn't it be even cooler if you could watch a short video of what a user did before reporting the bug? That's why we introduced [Automatic screen recording](/ios/automatic-screen-recording.md).
 
@@ -231,7 +252,7 @@ There was a problem where code signing of your app failed if it contained Shake 
 
 Shake is now a tiny bit cooler because you can also use it in landscape mode.
 
-With [Quick facts](/android/quick-facts.md), you can now send a value of literally any variable from a user's app to your web Dashboard.
+With quick facts, you can now send a value of literally any variable from a user's app to your web Dashboard.
 
 ### 5.0
 <span class="tag-button">May 29, 2019</span>

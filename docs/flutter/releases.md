@@ -8,9 +8,22 @@ What would you like us to build next? We're dying to hear from you — upvote up
 
 ## Version
 
+### 15.0.0
+<span class="tag-button">October 27, 2021</span>&nbsp;&nbsp;
+<span class="tag-button green-tag-button">Latest version</span>
+
+**What's new**
+
+We've completely [redesigned Shake](/flutter/home-screen.md) to continue delivering you more and more options in a scalable manner.
+It also started supporting dark and light theme so it can beautifully fit into your app in either case.
+
+We've introduced [Home screen](/flutter/home-screen.md) where [your users](/flutter/users.md) can see tickets they reported.
+
+This version now contains a Russian, Italian, Polish, Latvian, Estonian and Thai translation, which additionally extends [the lists of languages Shake's been translated to](https://help.shakebugs.com/en/articles/3392092-which-languages-has-shake-sdk-been-translated-to). 
+Your users whose default device language is set to one of these will automatically see Shake in their language.
+
 ### 14.1.2
 <span class="tag-button">May 26, 2021</span>&nbsp;&nbsp;
-<span class="tag-button green-tag-button">Latest version</span>
 
 **What's new**
 

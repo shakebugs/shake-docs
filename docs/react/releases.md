@@ -19,6 +19,8 @@ It also started supporting dark and light theme so it can beautifully fit into y
 
 We've introduced [Home screen](/react/home-screen.md) where [your users](/react/users.md) can see tickets they reported.
 
+This version now contains a Russian, Italian, Polish, Latvian, Estonian and Thai translation, which additionally extends [the lists of languages Shake's been translated to](https://help.shakebugs.com/en/articles/3392092-which-languages-has-shake-sdk-been-translated-to). 
+Your users whose default device language is set to one of these will automatically see Shake in their language.
 
 ### 14.1.3
 <span class="tag-button">April 28, 2021</span>&nbsp;&nbsp;

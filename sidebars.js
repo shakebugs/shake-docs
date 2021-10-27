@@ -146,12 +146,14 @@ module.exports = {
             type: 'category',
             label: 'Flutter',
             items: [
+                'flutter/setup',
                 {
                     type: 'category',
-                    label: 'Install Shake',
+                    label: 'Screens',
                     items: [
-                        'flutter/setup',
-                        'flutter/upgrading-version'
+                        'flutter/home-screen',
+                        'flutter/new-ticket-screen',
+                        'flutter/inspect-screen'
                     ]
                 },
                 {
@@ -167,6 +169,7 @@ module.exports = {
                         'flutter/intro-message',
                         'flutter/screenshot',
                         'flutter/automatic-screen-recording',
+                        'flutter/users',
                         'flutter/permissions',
                         'flutter/activity',
                         'flutter/essentials',
