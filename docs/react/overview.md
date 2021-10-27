@@ -33,12 +33,33 @@ constantly adding new features. Below is a table describing the current state of
 | Crash reporting      |    ❌     |
 | Users                |    ✅     |
 
-import ReactVersion from '@site/src/base/ReactVersion';
+## Languages
+
+|                      | Available |
+|:--------------------:|:---------:|
+|  English             |     ✅    |
+|  German              |     ✅    |
+|  French              |     ✅    |
+|  Spanish             |     ✅    |
+|  Italian             |     ✅    |
+|  Portuguese          |     ✅    |
+|  Japanese            |     ✅    |
+|  Simplified Chinese  |     ✅    |
+|  Traditional Chinese |     ✅    |
+|  Russian             |     ✅    |
+|  Thai                |     ✅    |
+|  Polish              |     ✅    |
+|  Latvian             |     ✅    |
+|  Estonian            |     ✅    |
+|  Hungarian           |     ✅    |
 
 ## Latest version
+
+import ReactVersion from '@site/src/base/ReactVersion';
+
 |         |      Version      |
 |:-------:|:-----------------:|
-| Shake   | <ReactVersion/> |
+| Shake   | <ReactVersion/>   |
 
 
 ## Minimum requirements

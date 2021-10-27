@@ -33,13 +33,33 @@ constantly adding new features. Below is a table describing the current state of
 | Crash reporting      |    ✅     |
 | Users                |    ✅     |
 
-import AndroidVersion from '@site/src/base/AndroidVersion';
+## Languages
+
+|                      | Available |
+|:--------------------:|:---------:|
+|  English             |     ✅    |
+|  German              |     ✅    |
+|  French              |     ✅    |
+|  Spanish             |     ✅    |
+|  Italian             |     ✅    |
+|  Portuguese          |     ✅    |
+|  Japanese            |     ✅    |
+|  Simplified Chinese  |     ✅    |
+|  Traditional Chinese |     ✅    |
+|  Russian             |     ✅    |
+|  Thai                |     ✅    |
+|  Polish              |     ✅    |
+|  Latvian             |     ✅    |
+|  Estonian            |     ✅    |
+|  Hungarian           |     ✅    |
 
 ## Latest version
+
+import AndroidVersion from '@site/src/base/AndroidVersion';
+
 |         |      Version      |
 |:-------:|:-----------------:|
 | Shake   | <AndroidVersion/> |
-
 
 ## Minimum requirements
 |         |    Version   |

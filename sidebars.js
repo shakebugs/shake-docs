@@ -247,7 +247,7 @@ module.exports = {
                 'react/overview',
                 {
                     type: 'category',
-                    label: 'Install Shake',
+                    label: 'Installation',
                     items: [
                         'react/install/installation',
                         'react/install/manual-linking'
