@@ -3,15 +3,10 @@ id: advanced-usage
 title: Advanced usage
 ---
 
-import useBaseUrl from '@docusaurus/useBaseUrl';
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
 ## Advanced usage
 
 Some apps might perhaps want to register the device itself as a user, or make a transition from the anonymous
 user to the _Signed Up_ user. This section covers these cases.
-
 
 ### Anonymous user
 
@@ -27,13 +22,11 @@ associating the once-anonymous user metadata and information with the real user.
 Be careful though, we recommend performing this transition only in one direction, and that is Anonymous â†’ Identified. The other way around could potentially lead to
 undesired results, linking the identified data back to the now-anonymous user (device).
 
-
 ### Device as a user
 
 Similar to the anonymous flow, this approach also registers the device with an identifier while the user is in the _guest_ mode. 
 
 Back onto the _Reddit_ example. While the user is in the guest mode, you would call `Shake.registerUser` with the `deviceIdentifier`.
-
 Once the user decides to _Sign Up_, you wouldn't perform a transition, but would just call `Shake.registerUser` with the new user identifier and treat the newly signed-up user as a separate
 entity.
 
