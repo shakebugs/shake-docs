@@ -114,16 +114,33 @@ If you want to disable this feature use the method below:
 Shake.setConsoleLogsEnabled(false);
 ```
 
+Add the following code snippet to your *AppDelegate.m* to make sure that console logs are recorded by Shake on iOS.
+
+```objectivec title="AppDelegate.m"
+// highlight-next-line
+#import <React/RCTLog.h>
+
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+{
+  // highlight-start
+  RCTSetLogThreshold(RCTLogLevelInfo);
+  RCTAddLogFunction(ShakeLogFunction);
+  // highlight-end
+  ...
+}
+
+// highlight-start
+RCTLogFunction ShakeLogFunction = ^(RCTLogLevel level, __unused RCTLogSource source, NSString *fileName, NSNumber *lineNumber, NSString *message) 
+{
+  NSString *log = RCTFormatLog([NSDate date], level, fileName, lineNumber, message);
+  NSLog(@"%@", log);
+};
+// highlight-end
+```
+
 :::note
 
 Make sure that activity history is enabled if you want to send console logs with your report.
-
-:::
-
-:::note
-
-If you start app using the `react-native run-ios` command, console logs will be visible in the bundler and won't be captured by Shake.
-Instead, if you want to capture console logs during development you should start app from the XCode.
 
 :::
 
