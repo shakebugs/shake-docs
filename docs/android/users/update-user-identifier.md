@@ -6,8 +6,6 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-## Updating user identifier
-
 Shake exposes a public method that allows you to update the user identifier you used to register your user in the first place.
 In the most standard application flows, this is a method that is not called very often.
 

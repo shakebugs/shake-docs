@@ -2,11 +2,6 @@
 id: update-user-metadata
 title: Update user metadata
 ---
-import useBaseUrl from '@docusaurus/useBaseUrl';
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
-## Updating user metadata
 
 Once you have _registered_ your application user, you can attach a map with key-value pairs that describe 
 additional information about your user, or their application usage.

@@ -3,8 +3,6 @@ id: advanced-usage
 title: Advanced usage
 ---
 
-## Advanced usage
-
 Some apps might perhaps want to register the device itself as a user, or make a transition from the anonymous
 user to the _Signed Up_ user. This section covers these cases.
 

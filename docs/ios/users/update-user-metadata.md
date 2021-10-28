@@ -7,8 +7,6 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-## Updating user metadata
-
 Once you have _registered_ your application user, you can attach a single level dictionary with key-value pairs that describe 
 additional information about your user, or their application usage.
 

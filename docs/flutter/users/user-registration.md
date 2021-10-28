@@ -2,11 +2,7 @@
 id: user-registration
 title: User registration
 ---
-import useBaseUrl from '@docusaurus/useBaseUrl';
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
 
-## User registration
 User of your application can be registered with Shake by calling the `Shake.registerUser` method. The passed _user identifier_ argument
 should, ideally, reflect or be a derivation of the identifier that uniquely represents the user in your database or system.
 

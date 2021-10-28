@@ -6,8 +6,6 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-## Unregister user
-
 Unregistering a user should be done when your user decides to _log out_ and perhaps use your application as a _guest_, or when you no longer 
 want the subsequent reports to be associated with the current user.
 
