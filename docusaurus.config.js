@@ -23,7 +23,6 @@ module.exports = {
       indexName: 'shakebugs',
     },
     navbar: {
-      hideOnScroll: true,
       title: 'Shake',
       logo: {
         alt: 'Shake logo',
