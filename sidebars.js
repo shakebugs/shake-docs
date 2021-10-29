@@ -90,9 +90,9 @@ module.exports = {
                     type: 'category',
                     label: 'Installation',
                     items: [
-                        'ios/installation/setup-spm',
-                        'ios/installation/setup-cocoapods',
-                        'ios/installation/setup-manually',
+                        'ios/install/setup-spm',
+                        'ios/install/setup-cocoapods',
+                        'ios/install/setup-manually',
                     ]
                 }
             ]

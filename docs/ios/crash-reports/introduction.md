@@ -23,3 +23,4 @@ All of the existing Shake features elegantly interoperate with it, meaning that 
 
 A detailed crash report like this one, along with logs and all other useful information, provides you with plenty of usable data to help you resolve the root issue efficiently.
 
+Check our [installation guide](ios/install/setup-spm.md) to start using Shake in your app.

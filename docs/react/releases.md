@@ -82,12 +82,3 @@ Privacy options are important. That’s why you now have a method to
 disable or enable [Activity history](/react/configuration-and-data/activity.md) whenever you want to.
 
 If you want to, you can [hide the Inspect bug button](/react/configuration-and-data/inspect.md) from your users. Brilliant.
-
-
-### 9.0
-<span class="tag-button">June 25, 2020</span>
-
-**What's new**
-
-You can now use Shake React Native SDK in the React Native applications. Check [Setup](/react/install/installation.md) guide and follow step by step
-guide to integrate Shake SDK into your React Native application.
