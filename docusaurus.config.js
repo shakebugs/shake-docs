@@ -40,10 +40,10 @@ module.exports = {
           label: 'Platform',
           position: 'left',
           items: [
-            {to: 'android/overview', label: 'Android', activeBasePath: '/android'},
-            {to: 'ios/overview', label: 'iOS', activeBasePath: '/ios'},
-            {to: 'flutter/overview', label: 'Flutter', activeBasePath: '/flutter'},
-            {to: 'react/overview', label: 'React Native', activeBasePath: '/react'}
+            {to: 'android/installation', label: 'Android', activeBasePath: '/android'},
+            {to: 'ios/install/setup-spm', label: 'iOS', activeBasePath: '/ios'},
+            {to: 'flutter/installation', label: 'Flutter', activeBasePath: '/flutter'},
+            {to: 'react/install/installation', label: 'React Native', activeBasePath: '/react'}
           ],
         },
         {
