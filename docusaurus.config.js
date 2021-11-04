@@ -1,7 +1,7 @@
 module.exports = {
   title: 'We focus on one thing only. Bug reporting.',
   tagline: 'And that dedication is why teams put us in their apps time and time again.',
-  url: 'https://www.shakebugs.com/',
+  url: 'https://www.shakebugs.com',
   baseUrl: '/docs/',
   favicon: 'img/favicon.ico',
   trailingSlash: true,
