@@ -346,7 +346,7 @@ fun ShakePrivateView(text: String) {
 If you want to put only a single element of your screen in private view you will need to make a little work around.
 Because our `Shake.addPrivateView()` method accepts view as parameter and Composables aren't views we need to add `AndroidView()`
 composable which accepts views and then inside `AndroidView()` we need to add `ComposeView()` inside which we add Composable after
-which `ComposeView()` return type view.
+which `ComposeView()` return view type.
 
 ```kotlin title="App.kt"
 // highlight-start
@@ -354,26 +354,31 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            ShakePrivateView(text = "Jetpack Compose")
+            ShakePrivateView { ComposeFunction() }
         }
     }
 }
 
 @Composable
-fun ShakePrivateView(text: String) {
+fun ShakePrivateView(content: @Composable () -> Unit) {
     AndroidView(
         factory = { context ->
             ComposeView(context).apply {
                 Shake.addPrivateView(this)
-                setContent {
-                    Text(text = text)
-                }
+                setContent { content() }
             }
         }
     )
 }
+
+@Composable
+fun ComposeFunction() {
+    Text(text = "Jetpack Compose")
+}
 // highlight-end
 ```
+
+You need to initialize `ShakePrivateView(content: @Composable () -> Unit)` composable only once and anytime you need it again in different file you can just call it, you don't have to create it all over again.
 
 ## Touch events
 
