@@ -318,6 +318,63 @@ Shake.getReportConfiguration().isAutoVideoRecording = false
 </TabItem>
 </Tabs>
 
+## Private view with Jetpack Compose
+
+You can also use Private view with Jetpack Compose. 
+If you want to set the whole screen as private you will simply add `Shake.addPrivateView(this)` in your `onCreate()` function,
+where `this` refers to the whole activity.
+
+```kotlin title="App.kt"
+// highlight-start
+class MainActivity : ComponentActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        Shake.addPrivateView(this)
+        setContent {
+            ShakePrivateView("Jetpack Compose")
+        }
+    }
+}
+
+@Composable
+fun ShakePrivateView(text: String) {
+    Text(text = text)
+}
+// highlight-end
+```
+
+If you want to put only a single element of your screen in private view you will need to make a little work around.
+Because our `Shake.addPrivateView()` method accepts view as parameter and Composables aren't views we need to add `AndroidView()`
+composable which accepts views and then inside `AndroidView()` we need to add `ComposeView()` inside which we add Composable after
+which `ComposeView()` return type view.
+
+```kotlin title="App.kt"
+// highlight-start
+class MainActivity : ComponentActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContent {
+            ShakePrivateView(text = "Jetpack Compose")
+        }
+    }
+}
+
+@Composable
+fun ShakePrivateView(text: String) {
+    AndroidView(
+        factory = { context ->
+            ComposeView(context).apply {
+                Shake.addPrivateView(this)
+                setContent {
+                    Text(text = text)
+                }
+            }
+        }
+    )
+}
+// highlight-end
+```
+
 ## Touch events
 
 Marking a view as private will automatically delete its touch events' text properties too. Consequently, you'll see them as `data_redacted` strings in your [Activity history](https://www.shakebugs.com/docs/android/activity#user-actions).
