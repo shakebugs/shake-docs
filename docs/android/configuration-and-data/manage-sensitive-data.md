@@ -318,6 +318,56 @@ Shake.getReportConfiguration().isAutoVideoRecording = false
 </TabItem>
 </Tabs>
 
+## Jetpack Compose
+
+In Jetpack Compose, the main building block of the user interface is *Composeable* instead of *View*.
+
+If you want to make a specific *Composeable* private, copy the following code snippet in to your project:
+
+```kotlin title="ShakePrivateView.kt"
+// highlight-start
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.platform.ComposeView
+import androidx.compose.ui.viewinterop.AndroidView
+import com.shakebugs.shake.Shake
+
+@Composable
+fun ShakePrivateView(content: @Composable () -> Unit) {
+    AndroidView(
+        factory = { context ->
+            ComposeView(context).apply {
+                Shake.addPrivateView(this)
+                setContent { content() }
+            }
+        }
+    )
+}
+// highlight-end
+```
+
+Use `ShakePrivateView` *Composeable* like shown below:
+
+```kotlin title="MainActivity.kt"
+class MainActivity : ComponentActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContent {
+            ComposeTestTheme {
+                Surface(color = MaterialTheme.colors.background) {
+                    // highlight-start
+                    ShakePrivateView {
+                        Greeting("Android") 
+                    }
+                    // highlight-end
+                }
+            }
+        }
+    }
+}
+```
+
+In the example above, the *Greeting* component will be removed from the screenshots.
+
 ## Touch events
 
 Marking a view as private will automatically delete its touch events' text properties too. Consequently, you'll see them as `data_redacted` strings in your [Activity history](https://www.shakebugs.com/docs/android/activity#user-actions).
