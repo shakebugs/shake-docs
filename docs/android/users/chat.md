@@ -5,7 +5,7 @@ title: Chat
 
 The user [can reply](android/screens/chat-screen.md) to your message sent over the Dashboard and provide you with more details 
 about the reported bug, crash, or feedback - directly from the app without leaving it.
-This allows you to fix bugs more easily and makes your customers happy, a win-win situation. 
+This allows you to easier fix bugs and makes your customers happy, a win-win situation. 
 
 ## Enabling
 

@@ -18,7 +18,7 @@ Pressing the ticket item on the *Home screen* opens the *Chat screen*.
 
 The user can reply to your message sent over the Dashboard and provide you with more details 
 about the reported bug, crash, or feedback - directly from the app without leaving it.
-This allows you to fix bugs more easily and makes your customers happy, a win-win situation. 
+This allows you to easier fix bugs and makes your customers happy, a win-win situation. 
 
 Chat supports dark and light theme and is integrated with the white labeling to show it in your brand color.
 
