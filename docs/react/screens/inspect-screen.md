@@ -13,6 +13,7 @@ The *Inspect screen* allows your user to see the current ticket details — its 
 The *Inspect screen* can be reached via *Inspect* button on the [New ticket screen](react/screens/new-ticket-screen.md).
 
 <img
+  className="screen-image"
   alt="Inspect screen"
   src={useBaseUrl('screens/inspect_screen.png')}
 />
