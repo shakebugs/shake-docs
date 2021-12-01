@@ -90,6 +90,44 @@ Shake.getReportConfiguration().isInvokeShakeOnRightEdgePan = true
 </TabItem>
 </Tabs>
 
+You can also configure Shake screen you want to show when Shake is invoked manually.  
+
+It can be either [New ticket screen](android/screens/new-ticket-screen.md) or [Home screen](android/screens/home-screen.md), depending on your preferences:
+
+<Tabs
+  groupId="android"
+  defaultValue="kotlin"
+  values={[
+    { label: 'Java', value: 'java'},
+    { label: 'Kotlin', value: 'kotlin'},
+  ]
+}>
+
+<TabItem value="java">
+
+```java title="App.java"
+// highlight-next-line
+Shake.getReportConfiguration().setDefaultScreen(ShakeScreen.NEW);
+// highlight-next-line
+Shake.getReportConfiguration().setDefaultScreen(ShakeScreen.HOME);
+```
+
+</TabItem>
+
+<TabItem value="kotlin">
+
+```kotlin title="App.kt"
+// highlight-next-line
+Shake.getReportConfiguration().defaultScreen = ShakeScreen.NEW
+// highlight-next-line
+Shake.getReportConfiguration().defaultScreen = ShakeScreen.HOME
+```
+
+</TabItem>
+</Tabs>
+
+The default value is `ShakeScreen.NEW`.
+
 ### Shaking
 The default, shaking gesture causes the SDK to pop up.
 
