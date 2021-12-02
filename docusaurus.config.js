@@ -12,7 +12,7 @@ module.exports = {
       defaultMode: 'light',
       respectPrefersColorScheme: true,
     },
-    hideableSidebar: true,
+    hideableSidebar: false,
     prism: {
       theme: require('prism-react-renderer/themes/github'),
       darkTheme: require('prism-react-renderer/themes/dracula'),
