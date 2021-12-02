@@ -12,7 +12,7 @@ module.exports = {
       defaultMode: 'light',
       respectPrefersColorScheme: true,
     },
-    hideableSidebar: true,
+    hideableSidebar: false,
     prism: {
       theme: require('prism-react-renderer/themes/github'),
       darkTheme: require('prism-react-renderer/themes/dracula'),
@@ -45,6 +45,10 @@ module.exports = {
             {to: 'flutter/overview', label: 'Flutter', activeBasePath: '/flutter'},
             {to: 'react/overview', label: 'React Native', activeBasePath: '/react'}
           ],
+        },
+        {
+          type: 'docsVersionDropdown',
+          position: 'right',
         },
         {
           href: 'https://app.shakebugs.com/',

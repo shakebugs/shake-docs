@@ -1,0 +1,794 @@
+{
+  "version-15.1.0/androidSidebar": [
+    {
+      "type": "category",
+      "label": "Getting started",
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-15.1.0/android/overview"
+        },
+        {
+          "type": "doc",
+          "id": "version-15.1.0/android/installation"
+        }
+      ],
+      "collapsible": true,
+      "collapsed": true
+    },
+    {
+      "type": "category",
+      "label": "Screens",
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-15.1.0/android/screens/home-screen"
+        },
+        {
+          "type": "doc",
+          "id": "version-15.1.0/android/screens/inspect-screen"
+        },
+        {
+          "type": "doc",
+          "id": "version-15.1.0/android/screens/new-ticket-screen"
+        }
+      ],
+      "collapsible": true,
+      "collapsed": true
+    },
+    {
+      "type": "category",
+      "label": "Products",
+      "items": [
+        {
+          "type": "category",
+          "label": "Customer feedback",
+          "items": [
+            {
+              "type": "doc",
+              "id": "version-15.1.0/android/customer-feedback/introduction"
+            },
+            {
+              "type": "doc",
+              "id": "version-15.1.0/android/customer-feedback/feedback-type"
+            },
+            {
+              "type": "doc",
+              "id": "version-15.1.0/android/customer-feedback/silent-reports"
+            },
+            {
+              "type": "doc",
+              "id": "version-15.1.0/android/customer-feedback/invoke"
+            }
+          ],
+          "collapsible": true,
+          "collapsed": true
+        },
+        {
+          "type": "category",
+          "label": "Crash reports",
+          "items": [
+            {
+              "type": "doc",
+              "id": "version-15.1.0/android/crash-reports/introduction"
+            },
+            {
+              "type": "doc",
+              "id": "version-15.1.0/android/crash-reports/enabling"
+            },
+            {
+              "type": "doc",
+              "id": "version-15.1.0/android/crash-reports/describe-crash"
+            },
+            {
+              "type": "doc",
+              "id": "version-15.1.0/android/crash-reports/handling-error"
+            },
+            {
+              "type": "doc",
+              "id": "version-15.1.0/android/crash-reports/deobfuscation"
+            },
+            {
+              "type": "doc",
+              "id": "version-15.1.0/android/crash-reports/test-it-out"
+            }
+          ],
+          "collapsible": true,
+          "collapsed": true
+        },
+        {
+          "type": "category",
+          "label": "Users",
+          "items": [
+            {
+              "type": "doc",
+              "id": "version-15.1.0/android/users/introduction"
+            },
+            {
+              "type": "doc",
+              "id": "version-15.1.0/android/users/user-registration"
+            },
+            {
+              "type": "doc",
+              "id": "version-15.1.0/android/users/unregister-user"
+            },
+            {
+              "type": "doc",
+              "id": "version-15.1.0/android/users/update-user-metadata"
+            },
+            {
+              "type": "doc",
+              "id": "version-15.1.0/android/users/update-user-identifier"
+            },
+            {
+              "type": "doc",
+              "id": "version-15.1.0/android/users/advanced-usage"
+            }
+          ],
+          "collapsible": true,
+          "collapsed": true
+        }
+      ],
+      "collapsible": true,
+      "collapsed": true
+    },
+    {
+      "type": "category",
+      "label": "Configuration & Data",
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-15.1.0/android/configuration-and-data/introduction"
+        },
+        {
+          "type": "doc",
+          "id": "version-15.1.0/android/configuration-and-data/essentials"
+        },
+        {
+          "type": "doc",
+          "id": "version-15.1.0/android/configuration-and-data/email"
+        },
+        {
+          "type": "doc",
+          "id": "version-15.1.0/android/configuration-and-data/disable"
+        },
+        {
+          "type": "doc",
+          "id": "version-15.1.0/android/configuration-and-data/inspect"
+        },
+        {
+          "type": "doc",
+          "id": "version-15.1.0/android/configuration-and-data/screenshot"
+        },
+        {
+          "type": "doc",
+          "id": "version-15.1.0/android/configuration-and-data/automatic-screen-recording"
+        },
+        {
+          "type": "doc",
+          "id": "version-15.1.0/android/configuration-and-data/permissions"
+        },
+        {
+          "type": "doc",
+          "id": "version-15.1.0/android/configuration-and-data/activity"
+        },
+        {
+          "type": "doc",
+          "id": "version-15.1.0/android/configuration-and-data/attachments"
+        },
+        {
+          "type": "doc",
+          "id": "version-15.1.0/android/configuration-and-data/blackbox"
+        },
+        {
+          "type": "doc",
+          "id": "version-15.1.0/android/configuration-and-data/metadata"
+        },
+        {
+          "type": "doc",
+          "id": "version-15.1.0/android/configuration-and-data/intro-message"
+        },
+        {
+          "type": "doc",
+          "id": "version-15.1.0/android/configuration-and-data/manage-sensitive-data"
+        },
+        {
+          "type": "doc",
+          "id": "version-15.1.0/android/configuration-and-data/data-privacy-disclosure"
+        }
+      ],
+      "collapsible": true,
+      "collapsed": true
+    },
+    {
+      "type": "doc",
+      "id": "version-15.1.0/android/releases"
+    }
+  ],
+  "version-15.1.0/iosSidebar": [
+    {
+      "type": "category",
+      "label": "Getting started",
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-15.1.0/ios/overview"
+        },
+        {
+          "type": "category",
+          "label": "Installation",
+          "items": [
+            {
+              "type": "doc",
+              "id": "version-15.1.0/ios/install/setup-spm"
+            },
+            {
+              "type": "doc",
+              "id": "version-15.1.0/ios/install/setup-cocoapods"
+            },
+            {
+              "type": "doc",
+              "id": "version-15.1.0/ios/install/setup-manually"
+            }
+          ],
+          "collapsible": true,
+          "collapsed": true
+        }
+      ],
+      "collapsible": true,
+      "collapsed": true
+    },
+    {
+      "type": "category",
+      "label": "Screens",
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-15.1.0/ios/screens/home-screen"
+        },
+        {
+          "type": "doc",
+          "id": "version-15.1.0/ios/screens/inspect-screen"
+        },
+        {
+          "type": "doc",
+          "id": "version-15.1.0/ios/screens/new-ticket-screen"
+        }
+      ],
+      "collapsible": true,
+      "collapsed": true
+    },
+    {
+      "type": "category",
+      "label": "Products",
+      "items": [
+        {
+          "type": "category",
+          "label": "Customer feedback",
+          "items": [
+            {
+              "type": "doc",
+              "id": "version-15.1.0/ios/customer-feedback/introduction"
+            },
+            {
+              "type": "doc",
+              "id": "version-15.1.0/ios/customer-feedback/feedback-type"
+            },
+            {
+              "type": "doc",
+              "id": "version-15.1.0/ios/customer-feedback/silent-reports"
+            },
+            {
+              "type": "doc",
+              "id": "version-15.1.0/ios/customer-feedback/invoke"
+            }
+          ],
+          "collapsible": true,
+          "collapsed": true
+        },
+        {
+          "type": "category",
+          "label": "Crash reports",
+          "items": [
+            {
+              "type": "doc",
+              "id": "version-15.1.0/ios/crash-reports/introduction"
+            },
+            {
+              "type": "doc",
+              "id": "version-15.1.0/ios/crash-reports/enabling"
+            },
+            {
+              "type": "doc",
+              "id": "version-15.1.0/ios/crash-reports/describe-crash"
+            },
+            {
+              "type": "doc",
+              "id": "version-15.1.0/ios/crash-reports/handling-error"
+            },
+            {
+              "type": "doc",
+              "id": "version-15.1.0/ios/crash-reports/symbolicate"
+            },
+            {
+              "type": "doc",
+              "id": "version-15.1.0/ios/crash-reports/test-it-out"
+            }
+          ],
+          "collapsible": true,
+          "collapsed": true
+        },
+        {
+          "type": "category",
+          "label": "Users",
+          "items": [
+            {
+              "type": "doc",
+              "id": "version-15.1.0/ios/users/introduction"
+            },
+            {
+              "type": "doc",
+              "id": "version-15.1.0/ios/users/user-registration"
+            },
+            {
+              "type": "doc",
+              "id": "version-15.1.0/ios/users/unregister-user"
+            },
+            {
+              "type": "doc",
+              "id": "version-15.1.0/ios/users/update-user-metadata"
+            },
+            {
+              "type": "doc",
+              "id": "version-15.1.0/ios/users/update-user-identifier"
+            },
+            {
+              "type": "doc",
+              "id": "version-15.1.0/ios/users/advanced-usage"
+            }
+          ],
+          "collapsible": true,
+          "collapsed": true
+        }
+      ],
+      "collapsible": true,
+      "collapsed": true
+    },
+    {
+      "type": "category",
+      "label": "Configuration & Data",
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-15.1.0/ios/configuration-and-data/introduction"
+        },
+        {
+          "type": "doc",
+          "id": "version-15.1.0/ios/configuration-and-data/essentials"
+        },
+        {
+          "type": "doc",
+          "id": "version-15.1.0/ios/configuration-and-data/email"
+        },
+        {
+          "type": "doc",
+          "id": "version-15.1.0/ios/configuration-and-data/disable"
+        },
+        {
+          "type": "doc",
+          "id": "version-15.1.0/ios/configuration-and-data/inspect"
+        },
+        {
+          "type": "doc",
+          "id": "version-15.1.0/ios/configuration-and-data/screenshot"
+        },
+        {
+          "type": "doc",
+          "id": "version-15.1.0/ios/configuration-and-data/automatic-screen-recording"
+        },
+        {
+          "type": "doc",
+          "id": "version-15.1.0/ios/configuration-and-data/permissions"
+        },
+        {
+          "type": "doc",
+          "id": "version-15.1.0/ios/configuration-and-data/activity"
+        },
+        {
+          "type": "doc",
+          "id": "version-15.1.0/ios/configuration-and-data/attachments"
+        },
+        {
+          "type": "doc",
+          "id": "version-15.1.0/ios/configuration-and-data/network-request-reporting"
+        },
+        {
+          "type": "doc",
+          "id": "version-15.1.0/ios/configuration-and-data/blackbox"
+        },
+        {
+          "type": "doc",
+          "id": "version-15.1.0/ios/configuration-and-data/metadata"
+        },
+        {
+          "type": "doc",
+          "id": "version-15.1.0/ios/configuration-and-data/intro-message"
+        },
+        {
+          "type": "doc",
+          "id": "version-15.1.0/ios/configuration-and-data/manage-sensitive-data"
+        },
+        {
+          "type": "doc",
+          "id": "version-15.1.0/ios/configuration-and-data/data-privacy-disclosure"
+        }
+      ],
+      "collapsible": true,
+      "collapsed": true
+    },
+    {
+      "type": "doc",
+      "id": "version-15.1.0/ios/releases"
+    }
+  ],
+  "version-15.1.0/flutterSidebar": [
+    {
+      "type": "category",
+      "label": "Getting started",
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-15.1.0/flutter/overview"
+        },
+        {
+          "type": "doc",
+          "id": "version-15.1.0/flutter/installation"
+        }
+      ],
+      "collapsible": true,
+      "collapsed": true
+    },
+    {
+      "type": "category",
+      "label": "Screens",
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-15.1.0/flutter/screens/home-screen"
+        },
+        {
+          "type": "doc",
+          "id": "version-15.1.0/flutter/screens/inspect-screen"
+        },
+        {
+          "type": "doc",
+          "id": "version-15.1.0/flutter/screens/new-ticket-screen"
+        }
+      ],
+      "collapsible": true,
+      "collapsed": true
+    },
+    {
+      "type": "category",
+      "label": "Products",
+      "items": [
+        {
+          "type": "category",
+          "label": "Customer feedback",
+          "items": [
+            {
+              "type": "doc",
+              "id": "version-15.1.0/flutter/customer-feedback/introduction"
+            },
+            {
+              "type": "doc",
+              "id": "version-15.1.0/flutter/customer-feedback/feedback-type"
+            },
+            {
+              "type": "doc",
+              "id": "version-15.1.0/flutter/customer-feedback/silent-reports"
+            },
+            {
+              "type": "doc",
+              "id": "version-15.1.0/flutter/customer-feedback/invoke"
+            }
+          ],
+          "collapsible": true,
+          "collapsed": true
+        },
+        {
+          "type": "category",
+          "label": "Users",
+          "items": [
+            {
+              "type": "doc",
+              "id": "version-15.1.0/flutter/users/introduction"
+            },
+            {
+              "type": "doc",
+              "id": "version-15.1.0/flutter/users/user-registration"
+            },
+            {
+              "type": "doc",
+              "id": "version-15.1.0/flutter/users/unregister-user"
+            },
+            {
+              "type": "doc",
+              "id": "version-15.1.0/flutter/users/update-user-metadata"
+            },
+            {
+              "type": "doc",
+              "id": "version-15.1.0/flutter/users/update-user-identifier"
+            },
+            {
+              "type": "doc",
+              "id": "version-15.1.0/flutter/users/advanced-usage"
+            }
+          ],
+          "collapsible": true,
+          "collapsed": true
+        }
+      ],
+      "collapsible": true,
+      "collapsed": true
+    },
+    {
+      "type": "category",
+      "label": "Configuration & Data",
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-15.1.0/flutter/configuration-and-data/introduction"
+        },
+        {
+          "type": "doc",
+          "id": "version-15.1.0/flutter/configuration-and-data/essentials"
+        },
+        {
+          "type": "doc",
+          "id": "version-15.1.0/flutter/configuration-and-data/email"
+        },
+        {
+          "type": "doc",
+          "id": "version-15.1.0/flutter/configuration-and-data/disable"
+        },
+        {
+          "type": "doc",
+          "id": "version-15.1.0/flutter/configuration-and-data/inspect"
+        },
+        {
+          "type": "doc",
+          "id": "version-15.1.0/flutter/configuration-and-data/screenshot"
+        },
+        {
+          "type": "doc",
+          "id": "version-15.1.0/flutter/configuration-and-data/automatic-screen-recording"
+        },
+        {
+          "type": "doc",
+          "id": "version-15.1.0/flutter/configuration-and-data/permissions"
+        },
+        {
+          "type": "doc",
+          "id": "version-15.1.0/flutter/configuration-and-data/activity"
+        },
+        {
+          "type": "doc",
+          "id": "version-15.1.0/flutter/configuration-and-data/attachments"
+        },
+        {
+          "type": "doc",
+          "id": "version-15.1.0/flutter/configuration-and-data/blackbox"
+        },
+        {
+          "type": "doc",
+          "id": "version-15.1.0/flutter/configuration-and-data/metadata"
+        },
+        {
+          "type": "doc",
+          "id": "version-15.1.0/flutter/configuration-and-data/intro-message"
+        },
+        {
+          "type": "doc",
+          "id": "version-15.1.0/flutter/configuration-and-data/manage-sensitive-data"
+        },
+        {
+          "type": "doc",
+          "id": "version-15.1.0/flutter/configuration-and-data/data-privacy-disclosure"
+        }
+      ],
+      "collapsible": true,
+      "collapsed": true
+    },
+    {
+      "type": "doc",
+      "id": "version-15.1.0/flutter/releases"
+    }
+  ],
+  "version-15.1.0/reactSidebar": [
+    {
+      "type": "category",
+      "label": "Getting started",
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-15.1.0/react/overview"
+        },
+        {
+          "type": "category",
+          "label": "Installation",
+          "items": [
+            {
+              "type": "doc",
+              "id": "version-15.1.0/react/install/installation"
+            },
+            {
+              "type": "doc",
+              "id": "version-15.1.0/react/install/manual-linking"
+            }
+          ],
+          "collapsible": true,
+          "collapsed": true
+        }
+      ],
+      "collapsible": true,
+      "collapsed": true
+    },
+    {
+      "type": "category",
+      "label": "Screens",
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-15.1.0/react/screens/home-screen"
+        },
+        {
+          "type": "doc",
+          "id": "version-15.1.0/react/screens/inspect-screen"
+        },
+        {
+          "type": "doc",
+          "id": "version-15.1.0/react/screens/new-ticket-screen"
+        }
+      ],
+      "collapsible": true,
+      "collapsed": true
+    },
+    {
+      "type": "category",
+      "label": "Products",
+      "items": [
+        {
+          "type": "category",
+          "label": "Customer feedback",
+          "items": [
+            {
+              "type": "doc",
+              "id": "version-15.1.0/react/customer-feedback/introduction"
+            },
+            {
+              "type": "doc",
+              "id": "version-15.1.0/react/customer-feedback/feedback-type"
+            },
+            {
+              "type": "doc",
+              "id": "version-15.1.0/react/customer-feedback/silent-reports"
+            },
+            {
+              "type": "doc",
+              "id": "version-15.1.0/react/customer-feedback/invoke"
+            }
+          ],
+          "collapsible": true,
+          "collapsed": true
+        },
+        {
+          "type": "category",
+          "label": "Users",
+          "items": [
+            {
+              "type": "doc",
+              "id": "version-15.1.0/react/users/introduction"
+            },
+            {
+              "type": "doc",
+              "id": "version-15.1.0/react/users/user-registration"
+            },
+            {
+              "type": "doc",
+              "id": "version-15.1.0/react/users/unregister-user"
+            },
+            {
+              "type": "doc",
+              "id": "version-15.1.0/react/users/update-user-metadata"
+            },
+            {
+              "type": "doc",
+              "id": "version-15.1.0/react/users/update-user-identifier"
+            },
+            {
+              "type": "doc",
+              "id": "version-15.1.0/react/users/advanced-usage"
+            }
+          ],
+          "collapsible": true,
+          "collapsed": true
+        }
+      ],
+      "collapsible": true,
+      "collapsed": true
+    },
+    {
+      "type": "category",
+      "label": "Configuration & Data",
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-15.1.0/react/configuration-and-data/introduction"
+        },
+        {
+          "type": "doc",
+          "id": "version-15.1.0/react/configuration-and-data/essentials"
+        },
+        {
+          "type": "doc",
+          "id": "version-15.1.0/react/configuration-and-data/email"
+        },
+        {
+          "type": "doc",
+          "id": "version-15.1.0/react/configuration-and-data/disable"
+        },
+        {
+          "type": "doc",
+          "id": "version-15.1.0/react/configuration-and-data/inspect"
+        },
+        {
+          "type": "doc",
+          "id": "version-15.1.0/react/configuration-and-data/screenshot"
+        },
+        {
+          "type": "doc",
+          "id": "version-15.1.0/react/configuration-and-data/automatic-screen-recording"
+        },
+        {
+          "type": "doc",
+          "id": "version-15.1.0/react/configuration-and-data/permissions"
+        },
+        {
+          "type": "doc",
+          "id": "version-15.1.0/react/configuration-and-data/activity"
+        },
+        {
+          "type": "doc",
+          "id": "version-15.1.0/react/configuration-and-data/attachments"
+        },
+        {
+          "type": "doc",
+          "id": "version-15.1.0/react/configuration-and-data/blackbox"
+        },
+        {
+          "type": "doc",
+          "id": "version-15.1.0/react/configuration-and-data/metadata"
+        },
+        {
+          "type": "doc",
+          "id": "version-15.1.0/react/configuration-and-data/intro-message"
+        },
+        {
+          "type": "doc",
+          "id": "version-15.1.0/react/configuration-and-data/manage-sensitive-data"
+        },
+        {
+          "type": "doc",
+          "id": "version-15.1.0/react/configuration-and-data/data-privacy-disclosure"
+        }
+      ],
+      "collapsible": true,
+      "collapsed": true
+    },
+    {
+      "type": "doc",
+      "id": "version-15.1.0/react/releases"
+    }
+  ]
+}

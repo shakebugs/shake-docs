@@ -16,11 +16,50 @@
   --ifm-color-primary-lightest: #f3eeff;
   --ifm-code-font-size: 95%;
   --highlighted-code-line: #e9ecee;
+
+  --ifm-global-radius: 10px;
+
 }
 
 html[data-theme='dark'] {
   --highlighted-code-line: #1C1D26;
+
+  --secondary-button-outline: #48484A;
+  --on-secondary: #F2F2F7; /* e.g. text on secondary button */
+
+  --primary-action-color: #6552FF; /* Primary brand color - Purple 100 */
+
+  --ifm-navbar-background-color: #1C1C1E; /* Dark mode default background - "OffBlack" */
+
+  --default-background-color: #1C1C1E; /* Dark mode default background - "OffBlack" */
+
+  --subtle-limiter: #2C2C2E; /* e.g. limiter line on a default background - "Grey 100" */
+
+  --default-paragraph-text: #AEAEB2; /* normal text */
+
+  --default-highlight-color: #F2F2F7; /* e.g. h1, h2, em, a, active tab, text inside primary action button */
+
+  --default-surface: #2C2C2E; /* e.g. code block, floating sidebar */
+  --default-surface-highlight: #3A3A3C; /* e.g. active item, highlighted code, hovered item, limiter on surface */
+
+  --token-plain: #F2F2F7;
+  --token-keyword: #B77DFF;
+  --token-string: #FF9F0A;
+  --token-comment: #64B1FD;
+  --token-function: #61F0B6;
+
+  --alert-color: rgb(235, 87, 87);
+  --alert-background-color: rgba(235, 87, 87, .3);
+
+  --inactive-element-color: #636366; /* e.g. inactive tab */
 }
+
+html[data-theme='light'] {
+/*  --subtle-limiter: #ff0000; IGNORING LIGHT MODE FOR NOW */
+}
+
+
+
 
 /* Code block highlighted line */
 .docusaurus-highlight-code-line {
@@ -37,29 +76,25 @@ html[data-theme='dark'] {
 }
 
 @font-face {
-  font-family: 'HKGrotesk-Regular';
-  src: url('/static/fonts/HKGrotesk-Regular.otf');
+  font-family: 'Roobert-Medium';
+  src: url('/static/fonts/shake_roobert_medium.otf');
 }
 
 @font-face {
-  font-family: 'HKGrotesk-SemiBold';
-  src: url('/static/fonts/HKGrotesk-SemiBold.otf');
+  font-family: 'Roobert-Bold';
+  src: url('/static/fonts/shake_roobert_bold.otf');
 }
 
 body {
-  font-family: "HKGrotesk-Regular";
+  font-family: "Roobert-Medium";
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "HKGrotesk-SemiBold";
+  font-family: "Roobert-Bold";
 }
 
 div[class*='codeBlock'], code{
   font-family: "Inconsolata";
-}
-
-em, code {
-  margin: 0 6px;
 }
 
 /* Badges */
@@ -91,4 +126,201 @@ em, code {
   line-height: 1;
   margin-bottom: 16px;
   padding: 6px 12px!important;
+}
+
+
+
+/*
+* Global
+*/
+.main-wrapper {
+  background-color: var(--default-background-color);
+}
+
+article a {
+  border-bottom: 1px solid;
+}
+
+p {
+  color: var(--default-paragraph-text);
+}
+
+a {
+  color: var(--default-highlight-color);
+  text-decoration: none;
+}
+a:hover {
+  color: var(--default-highlight-color);
+  text-decoration: none;
+}
+
+em, code, strong {
+  margin: 0 6px;
+  font-style: normal;
+  font-weight: normal;
+  color: var(--default-highlight-color);
+}
+
+
+
+/*
+* Top navbar
+*/
+.navbar {
+  margin-left: 16px;
+  margin-right: 16px;
+  box-shadow: none;
+  border-bottom: 1px solid;
+  border-color: var(--subtle-limiter);
+}
+
+
+
+
+/*
+* Main sidebar menu on the left side
+*/
+.menu__link {
+  color: var(--default-highlight-color) !important;
+  border-radius: var(--ifm-global-radius) !important;
+}
+.menu__link--active:not(.menu__link--sublist) {
+  background: var(--primary-action-color) !important;
+}
+
+@media (min-width: 997px) {
+  aside {
+    border-right: none !important;
+    padding-left: 16px;
+  }
+}
+
+@media (min-width: 997px) {
+  .sidebar_node_modules-\@docusaurus-theme-classic-lib-next-theme-DocSidebar-styles-module {
+    padding: 28px 8px !important;
+    max-height: calc(100vh - var(--ifm-navbar-height)) !important;
+    height: calc(100% - var(--ifm-navbar-height) - 32px) !important;
+    margin-top: var(--ifm-navbar-height) !important;
+    top: calc(var(--ifm-navbar-height) + 16px) !important;
+    background-color: var(--default-surface);
+    border-radius: 20px;
+    width: calc(var(--doc-sidebar-width) - 32px) !important;
+  }
+}
+
+
+
+
+
+
+/*
+* Navigation on the right side
+*/
+.table-of-contents__link{
+  padding: 5px 11px;
+  display: block;
+  border: 2px solid transparent;
+  border-radius: var(--ifm-global-radius);
+}
+
+.table-of-contents__link--active, .table-of-contents__link--active code, .table-of-contents__link:hover, .table-of-contents__link:hover code {
+  border: 2px solid;
+  border-color: var(--secondary-button-outline);
+  color: var(--on-secondary);
+}
+
+.table-of-contents__left-border{
+  border-left: none;
+}
+
+.table-of-contents {
+  padding-right: var(--ifm-toc-padding-horizontal);
+}
+
+.table-of-contents li {
+  margin-right: 0;
+}
+
+
+
+/*
+* Code block
+*/
+div[class*='codeBlock'] {
+  background-color: var(--default-surface) !important;
+  box-shadow: none !important;
+}
+
+div[class*='codeBlockTitle'] {
+  border-bottom-color: var(--default-surface-highlight) !important;
+  font-family: "Roobert-Medium";
+}
+
+.docusaurus-highlight-code-line {
+  background-color: var(--default-surface-highlight) !important;
+}
+
+.token.plain {
+  color: var(--token-plain) !important;
+}
+.token.keyword {
+  color: var(--token-keyword) !important;
+  font-style: normal !important;
+}
+.token.string {
+  color: var(--token-string) !important;
+}
+.token.comment {
+  color: var(--token-comment) !important;
+}
+.token.function {
+  color: var(--token-function) !important;
+}
+
+
+
+/*
+* Admonitions: Notes etc.
+*/
+.admonition {
+  background-color: var(--alert-background-color);
+  border: none;
+  box-shadow: none;
+}
+.admonition-heading {
+  display: none;
+}
+.admonition p {
+  color: var(--alert-color);
+}
+
+
+/*
+* Tabs
+*/
+.tabs-container {
+  margin-top: 50px;
+}
+.tabs__item {
+  padding: 3px 0;
+  margin: 0 8px;
+  border-bottom: 2px dotted transparent;
+  color: var(--inactive-element-color);
+  background: none !important;
+}
+.tabs__item:hover {
+  color: var(--default-highlight-color);
+}
+.tabs__item--active {
+  border-bottom-color: inherit;
+  color: var(--default-highlight-color);
+}
+
+
+
+/*
+* Pagination at the bottom of the page
+*/
+.pagination-nav__link {
+  border: 2px solid var(--secondary-button-outline);
 }
