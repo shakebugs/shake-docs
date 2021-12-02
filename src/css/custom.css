@@ -178,7 +178,7 @@ em, code, strong {
   }
 
   @media (min-width: 997px) {
-    .sidebar_node_modules-\@docusaurus-theme-classic-lib-next-theme-DocSidebar-styles-module {
+    aside > div[class*='sidebar'] {
         padding: 28px 8px !important;
         max-height: calc(100vh - var(--ifm-navbar-height)) !important;
         height: calc(100% - var(--ifm-navbar-height) - 32px) !important;
