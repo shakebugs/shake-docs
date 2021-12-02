@@ -12,10 +12,12 @@ module.exports = {
             type: 'category',
             label: 'Screens',
             items: [
+                'android/screens/introduction',
                 'android/screens/home-screen',
+                'android/screens/new-ticket-screen',
+                'android/screens/drawing-screen',
+                'android/screens/inspect-screen'
                 'android/screens/chat-screen',
-                'android/screens/inspect-screen',
-                'android/screens/new-ticket-screen'
             ]
         },
         {
@@ -27,6 +29,7 @@ module.exports = {
                     label: 'Customer feedback',
                     items: [
                         'android/customer-feedback/introduction',
+                        'android/customer-feedback/intro-message',
                         'android/customer-feedback/feedback-type',
                         'android/customer-feedback/silent-reports',
                         'android/customer-feedback/invoke'
@@ -70,12 +73,10 @@ module.exports = {
                 'android/configuration-and-data/inspect',
                 'android/configuration-and-data/screenshot',
                 'android/configuration-and-data/automatic-screen-recording',
-                'android/configuration-and-data/permissions',
                 'android/configuration-and-data/activity',
                 'android/configuration-and-data/attachments',
                 'android/configuration-and-data/blackbox',
                 'android/configuration-and-data/metadata',
-                'android/configuration-and-data/intro-message',
                 'android/configuration-and-data/manage-sensitive-data',
                 'android/configuration-and-data/data-privacy-disclosure'
             ]
@@ -118,6 +119,7 @@ module.exports = {
                     label: 'Customer feedback',
                     items: [
                         'ios/customer-feedback/introduction',
+                        'ios/customer-feedback/intro-message',
                         'ios/customer-feedback/feedback-type',
                         'ios/customer-feedback/silent-reports',
                         'ios/customer-feedback/invoke'
@@ -167,7 +169,6 @@ module.exports = {
                 'ios/configuration-and-data/network-request-reporting',
                 'ios/configuration-and-data/blackbox',
                 'ios/configuration-and-data/metadata',
-                'ios/configuration-and-data/intro-message',
                 'ios/configuration-and-data/manage-sensitive-data',
                 'ios/configuration-and-data/data-privacy-disclosure'
             ]
@@ -202,6 +203,7 @@ module.exports = {
                     label: 'Customer feedback',
                     items: [
                         'flutter/customer-feedback/introduction',
+                        'flutter/customer-feedback/intro-message',
                         'flutter/customer-feedback/feedback-type',
                         'flutter/customer-feedback/silent-reports',
                         'flutter/customer-feedback/invoke'
@@ -238,7 +240,6 @@ module.exports = {
                 'flutter/configuration-and-data/attachments',
                 'flutter/configuration-and-data/blackbox',
                 'flutter/configuration-and-data/metadata',
-                'flutter/configuration-and-data/intro-message',
                 'flutter/configuration-and-data/manage-sensitive-data',
                 'flutter/configuration-and-data/data-privacy-disclosure'
             ]
@@ -280,6 +281,7 @@ module.exports = {
                     label: 'Customer feedback',
                     items: [
                         'react/customer-feedback/introduction',
+                        'react/customer-feedback/intro-message',
                         'react/customer-feedback/feedback-type',
                         'react/customer-feedback/silent-reports',
                         'react/customer-feedback/invoke'
@@ -316,7 +318,6 @@ module.exports = {
                 'react/configuration-and-data/attachments',
                 'react/configuration-and-data/blackbox',
                 'react/configuration-and-data/metadata',
-                'react/configuration-and-data/intro-message',
                 'react/configuration-and-data/manage-sensitive-data',
                 'react/configuration-and-data/data-privacy-disclosure'
             ]

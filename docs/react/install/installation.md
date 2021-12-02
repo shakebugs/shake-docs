@@ -36,7 +36,7 @@ import ReactVersion from '@site/src/base/ReactVersion';
 After the installation also run `pod update Shake` to be perfectly sure you're using the latest Shake <ReactVersion/>.
 
 ## Set compileSdkVersion version in the build.gradle file
-Since Shake requires `compileSdkVersion` 29 or greater, verify that `compileSdkVersion` is correctly set in the *build.gradle* file.
+Since Shake requires `compileSdkVersion` 29 or greater, verify that `compileSdkVersion` is correctly set in the *build.gradle* file:
 
 ```groovy title="android/build.gradle"
 buildscript {
@@ -61,7 +61,7 @@ buildscript {
 ## Initialize Shake
 
 Call `Shake.start()` method in your *index.js* file. 
-Replace `your-api-client-id` and `your-api-client-secret` with the actual values you have in [your workspace settings](https://app.shakebugs.com/settings/workspace#general).
+Replace `your-api-client-id` and `your-api-client-secret` with the actual values you have in [your workspace settings](https://app.shakebugs.com/settings/workspace#general):
 
 ```javascript title="index.js"
 import {AppRegistry} from 'react-native';

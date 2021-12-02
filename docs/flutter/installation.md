@@ -26,7 +26,7 @@ import 'package:shake_flutter/shake_flutter.dart';
 ```
 
 ## Set compileSdkVersion version in the build.gradle file
-Since Shake requires `compileSdkVersion` 29 or greater, verify that `compileSdkVersion` is correctly set in the */android/app/build.gradle* file.
+Since Shake requires `compileSdkVersion` 29 or greater, verify that `compileSdkVersion` is correctly set in the */android/app/build.gradle* file:
 
 ```groovy title="build.gradle"
 android {
@@ -46,7 +46,7 @@ android {
 ## Initialize Shake
 
 Call `Shake.start()` method in your *main.dart* file. 
-Replace `your-api-client-id` and `your-api-client-secret` with the actual values you have in [your workspace settings](https://app.shakebugs.com/settings/workspace#general).
+Replace `your-api-client-id` and `your-api-client-secret` with the actual values you have in [your workspace settings](https://app.shakebugs.com/settings/workspace#general):
 
 ```dart title="main.dart"
 //highlight-next-line

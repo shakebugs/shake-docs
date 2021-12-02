@@ -59,7 +59,7 @@ Shake.clearPrivateViews();
 ```
 
 Note that these methods won't delete sensitive views from screen recordings, only screenshots.  
-You can disable [Screen Recording](/react/configuration-and-data/automatic-screen-recording.md) feature if you want make sure that sensitive data is not recorded.
+You can disable [Automatic screen recording](/react/configuration-and-data/automatic-screen-recording.md) feature if you want make sure that sensitive data is not recorded:
 
 ```javascript title="App.js"
 // highlight-next-line

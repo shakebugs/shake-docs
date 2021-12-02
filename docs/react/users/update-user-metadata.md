@@ -28,7 +28,7 @@ This means that the user metadata key-value pairs are being updated and not over
 the user metadata in chunks from various points of your application, even when offline.
 
 A common approach would be updating the generic user metadata from one place in your code, upon every user change, and update the specific metadata
-in their respective contexts.
+in their respective contexts:
 
 ```javascript title="App.js"
 const onLoggedIn = user => {

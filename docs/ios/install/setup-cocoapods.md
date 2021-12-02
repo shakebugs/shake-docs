@@ -61,7 +61,7 @@ After the installation also run `pod update Shake` to be perfectly sure you're u
 
 ### Initialize Shake SDK
 Initialize Shake in the `didFinishLaunchingWithOptions` callback of your *AppDelegate*.
-Replace `your-api-client-id` and `your-api-client-secret` with the actual values you have in [your workspace settings](https://app.shakebugs.com/settings/workspace#general).
+Replace `your-api-client-id` and `your-api-client-secret` with the actual values you have in [your workspace settings](https://app.shakebugs.com/settings/workspace#general):
 
 <Tabs
   groupId="ios"

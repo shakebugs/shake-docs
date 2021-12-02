@@ -4,20 +4,16 @@ title: Activity history
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Shake diligently tracks user's interaction with your app, their network traffic, notifications, logs and system events, and automatically attaches all of those to every bug report.
+>Shake tracks user's interaction with your app, their network traffic, notifications, logs and system events,
+and automatically attaches all of those to the ticket.
 
-## Introduction
-You can inspect all events that lead to a bug being reported. A link to *Activity history* is located in the top right corner:
+## Shake dashboard
+A link to ticket's *Activity history* is located in the top right corner of the Shake Dashboard:
 
-<img
-  alt="Activity screen"
-  src={useBaseUrl('screens/activity_screen.png')}
-/>
-
-## Setting up
+## Setup
 
 ### User actions
-To set up the SDK to observe taps made on your app's UI elements, add this to any Activity you want to track:
+To set up Shake to observe taps made on your app's UI elements, add this to any Activity you want to track:
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -58,7 +54,7 @@ override fun dispatchTouchEvent(event: MotionEvent): Boolean {
 </Tabs>
 
 ### Network requests
-If you want to see user's network traffic to fix bugs more efficiently, add this line of code to your `OkHttpClient`:
+If you want to receive user's network traffic logs, add this line to your `OkHttpClient`:
 
 <Tabs
   groupId="android"
@@ -132,7 +128,7 @@ Shake.handleNetworkRequest(
 </TabItem>
 </Tabs>
 
-You can add your own custom network requests at any time:
+You can log your own custom network requests too:
 
 <Tabs
   groupId="android"
@@ -177,11 +173,10 @@ Shake.insertNetworkRequest(networkRequestBuilder)
 </Tabs>
 
 ### System events
-System events are tracked automatically and require no additional setup.
-These are application lifecycle events.
+System events - alse known as app lifecycle events - are tracked automatically and require no additional setup.
 
 ### Notifications
-In order for Shake to track user notifications throughout your app, add this line of code where appropriate:
+In order for Shake to track notifications throughout your app, add this line where appropriate:
 
 <Tabs
   groupId="android"
@@ -218,11 +213,11 @@ startActivity(Intent("android.settings." +
 :::note
 
 This starts the notification listener service, which will require
-users to grant *Notification access* the first time they open your app.
+users to grant notification access the first time they open up your app.
 
 :::
 
-If you want Shake to manually handle notification tracking, you can use this method instead:
+If you want Shake to manually handle notification tracking, use this method instead:
 
 <Tabs
   groupId="android"
@@ -261,8 +256,7 @@ Shake.handleNotification(
 </Tabs>
 
 ### Custom logs
-You can add your own custom logs to Activity history, which will then be shown as part of every bug report.
-Here’s an example of how this would look like in code:
+You can add your own logs to Activity history too:
 
 <Tabs
   groupId="android"
@@ -292,7 +286,7 @@ Shake.log(LogLevel.INFO, "Log message goes here!")
 </TabItem>
 </Tabs>
 
-Here are all possible log levels you can use:
+You have these log levels at your disposal:
 
 <Tabs
   groupId="android"
@@ -360,21 +354,15 @@ Shake.getReportConfiguration().isConsoleLogsEnabled = false
 </TabItem>
 </Tabs>
 
-:::note
-
-Make sure that Activity history is enabled if you want to send console logs with your report.
-
-:::note
-
 ## Limitations
-In a Free workspace you can see up to 20 events that lead to every bug.
+In a Free workspace you can see up to 20 events that lead to the ticket being reported.
 If you need to dive really deep to find causes of the weirdest bugs,
-in a Premium workspace you can browse the entire Activity history.
+In a Premium workspace you can browse the full Activity history.
 
-Network request limit for both request body and response body is 100 kB respectively.
+Network request limit for both request body and response body is 100 kB each.
 If request body or response body contains binary data, it will be presented as a *Binary data* string.
 
-## Enabling and disabling
+## Enable and disable
 Activity history is enabled by default, however, you can use the method below to disable it:
 
 <Tabs

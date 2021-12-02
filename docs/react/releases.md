@@ -81,7 +81,7 @@ Shake now allows you to [manage sensitive data](react/configuration-and-data/man
 
 We've added [console logs](react/configuration-and-data/activity.md#console-logs) to Activity history.
 
-You can now use the in-app Shake [onboarding dialog](react/configuration-and-data/intro-message.md) to inform your users about Shake availability.
+You can now use the in-app Shake [onboarding dialog](react/customer-feedback/intro-message.md) to inform your users about Shake availability.
 
 We updated the start method. The configuration keys are now loaded via the method, and not with the values from the `.plist` and `.xml` files.
 

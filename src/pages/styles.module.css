@@ -5,37 +5,30 @@
  * and scoped locally.
  */
 
-.heroBanner {
-  padding: 4rem 0;
+.docsHome {
+   max-width: 826px;
+   margin: 0 auto 80px;
+ }
+
+ .docsHome h1, .docsHome h2, .docsHome blockquote {
   text-align: center;
-  position: relative;
-  overflow: hidden;
 }
 
-@media screen and (max-width: 966px) {
-  .heroBanner {
-    padding: 2rem;
+.docsHome h1 {
+  
+  margin-top: 70px;
+  margin-bottom: 15px;
+}
+.docsHome blockquote {
+  margin: 0 auto;
+}
+@media (max-width: 800px) {
+  .docsHome blockquote {
+    max-width: 420px;
   }
 }
-
-.buttons {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.features {
-  display: flex;
-  align-items: center;
-  padding: 2rem 0;
-  width: 100%;
-}
-
-.featureImage {
-  height: 200px;
-  width: 200px;
-}
-
-.getStarted {
-  margin-right: 8px;
+@media (max-width: 500px) {
+  .docsHome blockquote {
+    max-width: 300px;
+  }
 }

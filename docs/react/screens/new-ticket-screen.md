@@ -22,7 +22,5 @@ are disabled depending on the report context.
 ## Show
 
 This screen is shown upon manual user invocation of Shake.
-
 To show this screen programmatically, call `Shake.show` with no arguments, as it is the default option.
-
 Read more about manual invocations on the [Invocations](react/customer-feedback/invoke.md/#invoke-through-code) page.

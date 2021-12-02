@@ -4,28 +4,197 @@ title: Essentials
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This page lists the essential data you receive with every bug report, out of the box.
+>This is the essential data Shake automatically attaches to every ticket, whether it's user feedback or a crash report.
+All of this is done out of the box, you don't need to code anything.
 
-## Introduction
+## Automatically attached
 
-You will find Essentials listed on the right side of your web Dashboard, and these include data like user's OS, location, memory status, etc.
+<div class="four-columns-default mt-50 mb-5">
+    <div>
+        <img
+            class="small-visual-icon"
+            src={useBaseUrl('img/time-clock.svg')}
+        />
+        <p class="p2">Time when the ticket was reported</p>
+    </div>
+    <div>
+        <img
+            class="small-visual-icon"
+            src={useBaseUrl('img/hashtag-square.svg')}
+        />
+        <p class="p2">Device OS</p>
+    </div>
+    <div>
+        <img
+            class="small-visual-icon"
+            src={useBaseUrl('img/iphone.svg')}
+        />
+        <p class="p2">Device model</p>
+    </div>
+    <div>
+        <img
+            class="small-visual-icon"
+            src={useBaseUrl('img/pin-location-square.svg')}
+        />
+        <p class="p2">Location</p>
+    </div>
+    <div>
+        <img
+            class="small-visual-icon"
+            src={useBaseUrl('img/tools-settings.svg')}
+        />
+        <p class="p2">Your app version</p>
+    </div>
+    <div>
+        <img
+            class="small-visual-icon"
+            src={useBaseUrl('img/wifi-spot-square.svg')}
+        />
+        <p class="p2">Connectivity details</p>
+    </div>
+    <div>
+        <img
+            class="small-visual-icon"
+            src={useBaseUrl('img/user-profile-profile.svg')}
+        />
+        <p class="p2">Screen the ticket was reported from</p>
+    </div>
+    <div>
+        <img
+            class="small-visual-icon"
+            src={useBaseUrl('img/user-profile-time-clock.svg')}
+        />
+        <p class="p2">Time zone</p>
+    </div>
+    <div>
+        <img
+            class="small-visual-icon"
+            src={useBaseUrl('img/battery-charge.svg')}
+        />
+        <p class="p2">Battery status</p>
+    </div>
+    <div>
+        <img
+            class="small-visual-icon"
+            src={useBaseUrl('img/business-chart.svg')}
+        />
+        <p class="p2">Memory status</p>
+    </div>
+    <div>
+        <img
+            class="small-visual-icon"
+            src={useBaseUrl('img/full-screen-zoom-square.svg')}
+        />
+        <p class="p2">Screen resolution</p>
+    </div>
+    <div>
+        <img
+            class="small-visual-icon"
+            src={useBaseUrl('img/rotate-horizontal.svg')}
+        />
+        <p class="p2">Screen orientation</p>
+    </div>
+    <div>
+        <img
+            class="small-visual-icon"
+            src={useBaseUrl('img/language-translate.svg')}
+        />
+        <p class="p2">Locale</p>
+    </div>
+    <div>
+        <img
+            class="small-visual-icon"
+            src={useBaseUrl('img/usb-flash-drive.svg')}
+        />
+        <p class="p2">Low power mode</p>
+    </div>
+    <div>
+        <img
+            class="small-visual-icon"
+            src={useBaseUrl('img/hard-drive-storage-circle.svg')}
+        />
+        <p class="p2">Storage status</p>
+    </div>
+    <div>
+        <img
+            class="small-visual-icon"
+            src={useBaseUrl('img/face-id.svg')}
+        />
+        <p class="p2">Authentication to unlock device</p>
+    </div>
+    <div>
+        <img
+            class="small-visual-icon"
+            src={useBaseUrl('img/stars-light-square.svg')}
+        />
+        <p class="p2">Screen density</p>
+    </div>
+    <div>
+        <img
+            class="small-visual-icon"
+            src={useBaseUrl('img/clock-time.svg')}
+        />
+        <p class="p2">Timeline of app lifecycle events</p>
+    </div>
+    <div>
+        <img
+            class="small-visual-icon"
+            src={useBaseUrl('img/alarm-clock-time-fast.svg')}
+        />
+        <p class="p2">Timeline of console logs</p>
+    </div>
+    <div>
+        <img
+            class="small-visual-icon"
+            src={useBaseUrl('img/programming-code.svg')}
+        />
+        <p class="p2">IDE version</p>
+    </div>
+    <div>
+        <img
+            class="small-visual-icon"
+            src={useBaseUrl('img/code-test-error.svg')}
+        />
+        <p class="p2">Crash report stack trace</p>
+    </div>
+    <div>
+        <img
+            class="small-visual-icon"
+            src={useBaseUrl('img/settings-switches-square.svg')}
+        />
+        <p class="p2">Granted dangerous permissions <sup>1</sup></p>
+    </div>
+</div>
 
-<img
-  alt="Essentials screen"
-  src={useBaseUrl('screens/essentials_screen.png')}
-/>
+<p><sup>1</sup> Shake tracks the status of these dangerous Android permissions:</p>
+
+* CALENDAR
+* CALL_LOG
+* CAMERA
+* CONTACTS
+* LOCATION
+* MICROPHONE
+* PHONE
+* SENSORS
+* SMS
+* STORAGE
+
+On Shake dashboard, Shake lists those permissions that the user has granted access to.
+The ones you don't see listed were either denied or not requested at all.
 
 
-## Customizing the data you receive
+## Attaching more data
 
-If you want the SDK to attach any other variable to your bug reports, you can absolutely do that as well! Read about sending custom data with [Metadata](android/configuration-and-data/metadata.md).
+If you want Shake to attach custom data to your tickets, you can do that as well.
+Read about attaching your own variables to tickets with [Ticket metadata](android/configuration-and-data/metadata.md).
 
-Do you also want to attach custom files, like images? Visit [Attachments](/android/configuration-and-data/attachments.md).
+Do you also want to attach programmaticaly files, to tickets, images for example? Visit [Attachments](/android/configuration-and-data/attachments.md).
 
 
 ## Limitations
 
-On Android 8.0 and higher it is not possible to easily get the **name** of the Wi-Fi the device is connected to. If that info is important to you, add the following permissions to your app's `AndroidManifest.xml` file:
+On Android 8.0 and higher it's not possible to get the **name** of the Wi-Fi the device is connected to. 
+If that info is important to you, add the following permissions to your app's `AndroidManifest.xml` file:
 
 ```xml title="AndroidManifest.xml"
 // highlight-start
@@ -35,6 +204,7 @@ On Android 8.0 and higher it is not possible to easily get the **name** of the W
 // highlight-end
 ```
 
-You also have to request **location** permission from the user, and their **location services** have to be turned on while reporting a bug.
+You also have to request **location** permission from the user and 
+their **location services** have to be turned on while reporting a ticket.
 
 More info on this Android system limitation can be found in the [Wi-Fi scanning overview](https://developer.android.com/guide/topics/connectivity/wifi-scan) guide.

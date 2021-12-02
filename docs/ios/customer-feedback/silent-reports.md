@@ -8,7 +8,6 @@ This page explains how to submit yourself a bug report from the background, with
 You can send silent reports to yourself by calling the `Shake.silentReport` method anywhere after `Shake.start`.
 
 Silent report can be configured with the *Description* just like the regular report and with additional *Attached files*.
-
 *SHKShakeReportConfiguration* determines what kind of data is included in the report.
 
 :::note
@@ -78,7 +77,7 @@ They can be used in the situations where showing the Shake is not an option but 
 If your app user is aware of the silent report being sent, Shake can display a small and non-intrusive message notifying the user that the report was sent.
 
 To display a small toast after sending the report, follow to below example to change the `SHKShakeReportConfiguration` and use that configuration object when 
-sending your silent report with the `Shake.silentReport` method.
+sending your silent report with the `Shake.silentReport` method:
 
 <Tabs groupId="ios" defaultValue="swift" values={[{ label: 'Objective-C', value: 'objectivec'},{ label: 'Swift', value: 'swift'},]}><TabItem value="objectivec">
 

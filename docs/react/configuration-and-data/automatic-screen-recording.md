@@ -18,13 +18,13 @@ With this feature turned on, a system dialog will ask testers if they want to al
 />
 
 ## How to use
-Automatic screen recording is disabled by default but can be enabled by calling `Shake.setAutoVideoRecording(true)` before `Shake.start()`. 
-Duration of the automatically attached video is 15 seconds.
+Automatic screen recording is disabled by default but can be enabled by calling `Shake.setAutoVideoRecording(true)` before `Shake.start()`:
 
 ```javascript title="App.js"
 // highlight-next-line
 Shake.setAutoVideoRecording(false);
 ```
+Duration of the automatically attached video is 15 seconds.
 
 :::note
 

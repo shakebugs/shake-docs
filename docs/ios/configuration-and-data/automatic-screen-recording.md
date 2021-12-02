@@ -17,8 +17,7 @@ Shake can constantly record your testers' screens and automatically attach those
 />
 
 ## How to use
-Automatic screen recording is disabled by default but can be enabled by calling `Shake.configuration.isAutoVideoRecordingEnabled = true` before `Shake.start()`. 
-Duration of the automatically attached video is 15 seconds.
+Automatic screen recording is disabled by default but can be enabled by calling `Shake.configuration.isAutoVideoRecordingEnabled = true` before `Shake.start()`:
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -39,6 +38,8 @@ Shake.configuration.isAutoVideoRecordingEnabled = true
 
 </TabItem></Tabs>
 
+Duration of the automatically attached video is 15 seconds.
+
 :::note
 
 Screen recording runs on iOS 13+ devices only. Testing on iOS simulator may not work and can produce warnings in console log without screen recording.
@@ -48,5 +49,4 @@ Screen recording runs on iOS 13+ devices only. Testing on iOS simulator may not 
 ## Security
 
 Screen recording is managed by the system and recording is automatically stopped when app goes to background.
-
 No third party data is recorded.

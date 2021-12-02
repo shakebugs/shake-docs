@@ -27,7 +27,7 @@ Select your main app target and open the Build Settings for that target. Navigat
 
 ## Finding dSYMS
 
-Run the below command in your terminal
+Run the below command in your terminal:
 
 ```finding_dsyms"
 // highlight-next-line
@@ -67,7 +67,7 @@ When your project is opened with Xcode, select the *Scheme* and then *EditScheme
 Expand the *Build Action* options and select *Post Actions*. Select the **+** icon and add a new *Run Script Phase* to build post actions.
 
 This ensures that latest dSYMS are uploaded after every build process. Make sure to replace the placeholder values
-with the correct values for your environment.
+with the correct values for your environment:
 
 ```script
 //highlight-start

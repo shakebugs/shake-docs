@@ -23,7 +23,7 @@ Shake.start('client-id', 'client-secret');
 ```
 
 This method also enables you to change the preferred invocation event on-the-go during runtime.
-Here’s a list of all available ones below, feel free to use any combination of these.
+Here’s a list of all available ones below, feel free to use any combination of these:
 
 ```javascript title="App.js"
 // highlight-start

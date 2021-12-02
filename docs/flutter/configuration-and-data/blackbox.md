@@ -55,7 +55,7 @@ This chart shows the orientation state of your app, such as whether the app is i
 App orientation is captured every 2 seconds.
 
 ## Enabling and disabling
-Black box is enabled by default, however, you can use the method below to disable it.
+Black box is enabled by default, however, you can use the method below to disable it:
 
 ```dart title="main.dart"
 // highlight-next-line

@@ -27,7 +27,6 @@ class AndroidVersionBlock extends React.Component {
                     children={'dependencies {\n' +
                     `  implementation 'com.shakebugs:shake:${this.state.version}'\n` +
                     '}'}/>
-                <br/>
             </div>
         );
     }

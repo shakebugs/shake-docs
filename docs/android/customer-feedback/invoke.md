@@ -2,17 +2,15 @@
 id: invoke
 title: Invoke
 ---
-This page describes in detail all the different methods that can be used to invoke the SDK.
+>Decide how you want Shake to be invoked.
 
 ## Invoke manually
-By default, the SDK is invoked when a user shakes their device.
+By default, Shake is invoked when a user shakes their device.
 You don't need to code anything.
 
 But if you want to, you can customize that.
 
-Let's look at an example.
-You want your users to invoke SDK either when they shake their device, or when they take a screenshot.
-To do that, set true or false for certain configuration properties:
+Let's look at an example where you want Shake to be invoked either when your users shake their device, or when they take a screenshot:
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -51,8 +49,8 @@ Shake.start(this, "client-id", "client-secret")
 </TabItem>
 </Tabs>
 
-This method also enables you to change the preferred invocation event on-the-go during runtime.
-Here’s a list of all available ones below, feel free to use any combination of these.
+You can also change the preferred invocation event on-the-go during runtime.
+Here’s a list of all available options, feel free to use any combination of these:
 
 <Tabs
   groupId="android"
@@ -129,15 +127,15 @@ Shake.getReportConfiguration().defaultScreen = ShakeScreen.HOME
 The default value is `ShakeScreen.NEW`.
 
 ### Shaking
-The default, shaking gesture causes the SDK to pop up.
+By default, the shaking gesture opens up Shake.
 
 :::note
 
-In case you want to test Shake SDK in Android emulator, it’s useful to know that emulator’s default shaking gesture is too weak to invoke Shake.
+Android emulator’s default shaking gesture is too weak to invoke Shake.
 
 :::
 
-Shaking gesture sensitivity can be fine tuned as shown in the snippet below:
+You can fine-tune shaking gesture sensitivity. Let's lower it as an example, so Shake is easier to invoke:
 
 <Tabs
   groupId="android"
@@ -173,7 +171,8 @@ A valid treshold value range is `1 - 1000`, with bigger values representing decr
 motion gesture is required to invoke Shake.
 
 ### Button
-This invocation event will create the floating button on top of your app's UI which users can clearly see at all times. This button can be dragged to a more suitable position.
+This invocation event creates a floating button on top of your app's UI which users can clearly see at all times.
+The button can be dragged around the screen.
 
 :::note
 
@@ -183,7 +182,7 @@ Also, system interface elements [may sometimes get in a way](https://help.shakeb
 :::
 
 ### Taking a screenshot
-The SDK will be invoked when users make a screenshot while using your app.
+Shake will be invoked when your user takes a screenshot while using your app.
 
 :::note
 
@@ -192,21 +191,21 @@ Because of that, if you opt for this invocation method, the storage permission w
 
 :::
 
-### Right Edge Pan
-Invoke Shake with a one-finger swiping gesture from the right edge of the screen.
+### Right edge pan
+Shake will be invoked with a one-finger swiping gesture from the right edge of the screen.
 
 :::note
 
 The right edge pan gesture won’t work if performed over a ListView or ScrollView.
-You can use one of the alternative ways to invoke Shake instead.
+Use one of the alternative ways to invoke Shake instead.
 
 :::
 
 ## Invoke through code
-You can invoke SDK through code by calling the `Shake.show` method anywhere after `Shake.start`.
+Invoke Shake through code by calling the `Shake.show` method anywhere after `Shake.start`.
 
-The `show` method can also be called with the argument `ShakeScreen` which determines the first presented screen in the Shake UI. Default value 
-is `ShakeScreen.NEW`.
+The `show` method can be called with the argument `ShakeScreen` which determines the first presented screen in the Shake UI.
+The default value is `ShakeScreen.NEW`.
 
 <Tabs
   groupId="android"
@@ -254,7 +253,10 @@ private fun onFeedbackCenterPressed() {
 </TabItem>
 </Tabs>
 
-When Shake is invoked with the `ShakeScreen.NEW`, app screenshot and automatic video recording are automatically attached and visible
-in the attached files section of the UI.
+If an [auto screenshot](android/configuration-and-data/screenshot.md) and
+[auto screen recording](android/configuration-and-data/automatic-screen-recording.md) are enabled,
+when you call `ShakeScreen.NEW` they will be automatically attached to a ticket.
 
-All other data, like [Activity history](android/configuration-and-data/activity.md) or [Black box](android/configuration-and-data/blackbox.md), is automatically included in every user’s bug report — no additional code required.
+If enabled, [Activity history](android/configuration-and-data/activity.md),
+[Black box](android/configuration-and-data/blackbox.md) and all other data are also automatically attached,
+no additional code is required.

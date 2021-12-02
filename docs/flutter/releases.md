@@ -2,7 +2,7 @@
 id: releases
 title: Release notes
 ---
-This page lists all updates to the Shake Flutter SDK.
+<p class="text-very-important">This page lists all updates to the Shake Flutter SDK.</p>
 
 What would you like us to build next? We're dying to hear from you — upvote upcoming features and suggest new ideas on [feedback.shakebugs.com](https://feedback.shakebugs.com/)
 
@@ -81,7 +81,7 @@ Shake now allows you to [manage sensitive data](flutter/configuration-and-data/m
 
 We've added [console logs](flutter/configuration-and-data/activity.md#console-logs) to Activity history.
 
-You can now use the in-app Shake [onboarding dialog](flutter/configuration-and-data/intro-message.md) to inform your users about Shake availability.
+You can now use the in-app Shake [onboarding dialog](flutter/customer-feedback/intro-message.md) to inform your users about Shake availability.
 
 We updated the start method. The configuration keys are now loaded via the method, and not with the values from the `.plist` and `.xml` files.
 

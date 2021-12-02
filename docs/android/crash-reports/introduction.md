@@ -1,26 +1,31 @@
 ---
 id: introduction
-title: Introduction
+title: Overview
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Shake records crashes and uncaught exceptions that occur in your app and intelligently groups them on the dashboard, offering enough
-contextual information to help you with solving the issue. It is powerful on its own, but when combined with rest 
-of the Shake features, it becomes a crash reporting power tool.
+>This module tracks crashes and uncaught exceptions in your app. They are then intelligently grouped on your Shake Dashboard,
+offering heaps of contextual data to help you fix them fast.
 
-## Sending the report
+## Introduction
 
-Crash reports are automatically sent during the next app launch after the crash occurs. These reports follow the same rules as regular feedback reports to some extent.
-The crash reports will be saved even if the app is offline and sent later when app regains connection. 
+When this module is enabled and your user opens up your app after the crash, you have two options:
+* Send yourself the crash report instantly and silently.
+* Offer them to [add a description to that crash report](/android/crash-reports/describe-crash.md).
 
-Your end users can't opt out of sending their crash report as they can with the standard feedback, however they can optionally [provide more information](/android/crash-reports/describe-crash) and describe what happened prior to the crash.
+<table class="media-container">
+<img
+  alt="Crash report options"
+  width="520"
+  src={useBaseUrl('screens/crash-report-options@2x.png')}
+/>
+</table>
 
+## Shared configuration
 
-## Report context
+Just like the [User feedback](android/customer-feedback/introduction.md) module, Crash reports module pulls your
+[Configuration and data](/android/configuration-and-data/introduction.md).
 
-As mentioned before, the crash report is similar to the regular feedback report. 
-
-All of the existing Shake features elegantly interoperate with it, meaning that your crash report will provide the screenshot of the last thing that user saw, and even better, the last 15 seconds of the screen recording before the crash!
-
-A detailed crash report like this one, along with logs and all other useful information, provides you with plenty of usable data to help you resolve the root issue efficiently.
-
-Check our [installation guide](android/installation.md) to start using Shake in your app.
+This means that crash reports also come to you with [auto screenshot](/android/configuration-and-data/screenshot.md)
+and [auto screen recording](/android/configuration-and-data/automatic-screen-recording.md)
+of what happened before the crash, [Activity history](/android/configuration-and-data/activity.md) and other useful data.

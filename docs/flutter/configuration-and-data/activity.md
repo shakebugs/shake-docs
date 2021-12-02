@@ -25,7 +25,7 @@ Additionally, if you are using *dio* or *http* packages for sending network requ
 
 #### dart:io
 Use *ShakeHttpClient* wrapper class to perform network requests.
-All network requests sent with the *ShakeHttpClient* instance will be visible on the dashboard.
+All network requests sent with the *ShakeHttpClient* instance will be visible on the dashboard:
 
 ```dart title="main.dart"
 // highlight-next-line
