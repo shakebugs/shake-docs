@@ -49,7 +49,7 @@ They can be used in the situations where displaying the Shake is not an option b
 If your app user is aware of the silent report being sent, Shake can display a small and non-intrusive message notifying the user that the report was sent.
 
 To display a small toast after sending the report, follow to below example to change the `ShakeReportConfiguration` and use that configuration object when 
-sending your silent report with the `Shake.silentReport` method.
+sending your silent report with the `Shake.silentReport` method:
 
 ```dart title="main.dart"
 // highlight-start

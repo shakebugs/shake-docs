@@ -15,7 +15,7 @@ This action of updating the user identifier opens up several possibilities of ho
 results. Make sure to read the following sections to better understand the possible usages and scenarios.
 :::
 The code snippet below showcases a common context in which the user identifier is updated. The snippet assumes that the user was previously
-registered with the email.
+registered with the email:
 ```dart title="main.dart"
 void changeEmail(String email) {
     networkService.updateUserEmail(email,

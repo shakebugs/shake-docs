@@ -24,7 +24,9 @@
 html[data-theme='dark'] {
   --highlighted-code-line: #1C1D26;
 
-  --secondary-button-outline: #48484A;
+  --secondary-button-outline: #48484A; /* and also ul bullet point */
+  --secondary-button-outline-hover: rgb(99,99,102);
+
   --on-secondary: #F2F2F7; /* e.g. text on secondary button */
   --primary-action-color: #6552FF; /* Primary brand color - Purple 100 */
   --ifm-navbar-background-color: #1C1C1E; /* Dark mode default background - "OffBlack" */
@@ -32,14 +34,22 @@ html[data-theme='dark'] {
   --subtle-limiter: #2C2C2E; /* e.g. limiter line on a default background - "Grey 100" */
   --default-paragraph-text: #AEAEB2; /* normal text */
   --default-highlight-color: #F2F2F7; /* e.g. h1, h2, em, a, active tab, text inside primary action button */
+  --slightly-highlighted-color: #C7C7CC; /* e.g. very important text below h1 (intro to article) */
+
   --default-surface: #2C2C2E; /* e.g. code block, floating sidebar */
-  --default-surface-highlight: #3A3A3C; /* e.g. active item, highlighted code, hovered item, limiter on surface */
+  --default-surface-highlight: #3A3A3C; /* e.g. active item, highlighted code, hovered item, limiter on surface, ordered list bullet background */
+  --subtle-text-on-surface: #8E8E93; /* e.g. ordered list bullet text color */
 
   --token-plain: #F2F2F7;
-  --token-keyword: #B77DFF;
-  --token-string: #FF9F0A;
+  --token-keyword: #64B1FD;
+  --token-string: #D75ED7;
   --token-comment: #64B1FD;
-  --token-function: #61F0B6;
+  --token-function: #46D39A;
+  --token-operator: #8E8E93;
+  --token-punctuation: #8E8E93;
+  --token-boolean: #8E8E93;
+  --token-variable: #E7A5FF;
+
 
   --alert-color: rgb(235, 87, 87);
   --alert-background-color: rgba(235, 87, 87, .3);
@@ -120,19 +130,46 @@ div[class*='codeBlock'], code{
 /*
 * Global
 */
+
+.container {
+  padding-top: 2rem !important;
+}
+blockquote {
+  font-size: 20px;
+  line-height: 28px;
+  color: var(--slightly-highlighted-color);
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+h1 {
+  font-size: 32px;
+  line-height: 36px;
+}
+h2 {
+  font-size: 24px;
+  line-height: 32px;
+  position: relative;
+}
+h3 {
+  font-size: 20px;
+  line-height: 24px;
+}
+
 .main-wrapper {
   background-color: var(--default-background-color);
 }
 
-article a {
+article a:not(.hash-link) {
   border-bottom: 1px solid;
 }
 
 p {
   color: var(--default-paragraph-text);
+  margin-bottom: 12px !important;
 }
 
-a {
+a:not(.hash-link) {
   color: var(--default-highlight-color);
   text-decoration: none;
 }
@@ -148,8 +185,55 @@ em, code, strong {
   font-weight: normal;
   color: var(--default-highlight-color);
 }
+code {
+  padding: 2px 6px 3px;
+}
 
-/** Top navbar
+
+article ul, article ol:not(.tablist) {
+	padding-left: 0;
+}
+article li {
+	list-style: none;
+	position: relative;
+	padding-left: 32px;
+	color: var(--default-paragraph-text);
+}
+article ul:not(.tabs) li:before {
+    content: "";
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    left: 8px;
+    top: 10px;
+    border-radius: 50%;	
+    background: var(--secondary-button-outline);
+}
+article ol {
+	counter-reset: listitem;
+}
+article ol>li:after {
+    counter-increment: listitem;
+    content: counter(listitem);
+    background: var(--default-surface-highlight);
+    color: var(--subtle-text-on-surface);
+    font-size: 12px;
+    line-height: 10px;
+    text-align: center;
+    padding: 5px 0;
+	  height: 12px;
+    width: 22px;
+    border-radius: 20px;
+    position: absolute;
+    left: 0;
+    top: 3px;
+}
+
+
+
+
+/*
+* Top navbar
 */
 .navbar {
   margin-left: 16px;
@@ -180,7 +264,7 @@ em, code, strong {
   @media (min-width: 997px) {
     aside > div[class*='sidebar'] {
         padding: 28px 8px !important;
-        max-height: calc(100vh - var(--ifm-navbar-height)) !important;
+        max-height: calc(100vh - 92px) !important;
         height: calc(100% - var(--ifm-navbar-height) - 32px) !important;
         margin-top: var(--ifm-navbar-height) !important;
         top: calc(var(--ifm-navbar-height) + 16px) !important;
@@ -231,6 +315,11 @@ div[class*='codeBlockTitle'] {
     font-family: "Roobert-Medium";
 }
 
+div[class*='codeBlockLines'] {
+  font-size: 15px;
+  line-height: 18px;
+}
+
 .docusaurus-highlight-code-line {
     background-color: var(--default-surface-highlight) !important;
 }
@@ -238,22 +327,31 @@ div[class*='codeBlockTitle'] {
 .token.plain {
     color: var(--token-plain) !important;
 }
-
 .token.keyword {
     color: var(--token-keyword) !important;
     font-style: normal !important;
 }
-
 .token.string {
     color: var(--token-string) !important;
 }
-
 .token.comment {
     color: var(--token-comment) !important;
 }
-
 .token.function {
     color: var(--token-function) !important;
+}
+.token.operator {
+  color: var(--token-operator) !important;
+}
+.token.punctuation {
+  color: var(--token-punctuation) !important;
+}
+.token.boolean {
+  color: var(--token-boolean) !important;
+}
+.token.variable {
+  color: var(--token-variable) !important;
+  font-style: normal !important;
 }
 
 /*
@@ -277,15 +375,16 @@ div[class*='codeBlockTitle'] {
 * Tabs
 */
 .tabs-container {
-  margin-top: 50px;
+  margin-top: 16px;
 }
 
 .tabs__item {
-    padding: 3px 0;
-    margin: 0 8px;
-    border-bottom: 2px dotted transparent;
+    padding: 0;
+    margin: 0 14px 0 2px;
+    border-bottom: 1px dotted transparent;
     color: var(--inactive-element-color);
     background: none !important;
+    font-weight: normal;
 }
 
 .tabs__item:hover {
@@ -297,9 +396,36 @@ div[class*='codeBlockTitle'] {
     color: var(--default-highlight-color);
 }
 
+
+/*
+* Header links
+*/
+.hash-link {
+  content: url('/static/img/attachment-link-1.svg');
+  width: 27px;
+  position: absolute;
+  top: 8px;
+}
+
+
+
 /*
 * Pagination at the bottom of the page
 */
 .pagination-nav__link {
   border: 2px solid var(--secondary-button-outline);
+}
+.pagination-nav__link:hover {
+  border-color: var(--secondary-button-outline-hover);
+}
+.pagination-nav__sublabel {
+  display: none;
+}
+
+
+/*
+* Floating back to top button
+*/
+.theme-back-to-top-button{
+  display: none;
 }

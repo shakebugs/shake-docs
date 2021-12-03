@@ -12,11 +12,9 @@ Depending on their choice, you automatically receive the <span class="tag-button
 
 ## Custom types
 
-You can configure Shake to display any number of custom categories related to your product.
+You can configure Shake to display any number of custom categories related to your product. Shake exposes an internal *FeedbackType* type which is used to encapsulate the properties of your custom category.
 
-Shake exposes an internal *FeedbackType* type which is used to encapsulate the properties of your custom category.
-
-The snippet below showcases an example usage of the feature. 
+The snippet below showcases an example usage of the feature: 
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';

@@ -26,5 +26,4 @@ The top portion of the screen consists of introductory message and the *Submit n
 ## Show
 
 To show the *Home screen* to a user, call the `Shake.show` method with the `ShakeScreen` argument.
-
 More on the manual invocations can be read in the [Invocations](flutter/customer-feedback/invoke.md/#invoke-through-code) page.

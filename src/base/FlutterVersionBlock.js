@@ -26,7 +26,6 @@ class FlutterVersionBlock extends React.Component {
                     className={'yaml'}
                     children={'dependencies:\n' +
                     `    shake_flutter: ^${this.state.version}`}/>
-                <br/>
             </div>
         );
     }

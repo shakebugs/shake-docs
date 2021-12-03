@@ -8,10 +8,7 @@ import TabItem from '@theme/TabItem';
 
 Let's crash you app. 
 Enable crash reporting and paste the line below in the `onCreate` method in one of your activities.
-We'll crash the app on a button tap by accessing the array with the out of bounds index.
-
-Launch you app after the crash, add a sentence or two if you want to and submit the report. 
-Your report will be visible on the Shake dashboard in a few minutes.
+We'll crash the app on a button tap by accessing the array with the out of bounds index:
 
 <Tabs
   groupId="android"
@@ -65,3 +62,6 @@ public class MainActivity : Activity {
 ```
 
 </TabItem></Tabs>
+
+Launch you app after the crash, add a sentence or two if you want to and submit the report. 
+Your report will be visible on the Shake dashboard in a few minutes.

@@ -19,7 +19,7 @@ You can simply drag and drop *mapping.txt* file on our Shake dashboard to upload
 
 ## Using the script
 
-If you would like to do this automatically, you can do it via script.
+If you would like to do this automatically, you can do it via script:
 
 <Tabs
   groupId="OS"
@@ -127,7 +127,7 @@ echo "Success! Mapping file uploaded successfully."
 
 </TabItem></Tabs>
 
-After this, add the following gradle task to your app's *build.gradle* file.
+After this, add the following gradle task to your app's *build.gradle* file:
 
 ```groovy title="build.gradle"
 // highlight-start

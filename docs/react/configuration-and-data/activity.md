@@ -114,7 +114,7 @@ If you want to disable this feature use the method below:
 Shake.setConsoleLogsEnabled(false);
 ```
 
-Add the following code snippet to your *AppDelegate.m* to make sure that console logs are recorded by Shake on iOS.
+Add the following code snippet to your *AppDelegate.m* to make sure that console logs are recorded by Shake on iOS:
 
 ```objectivec title="AppDelegate.m"
 // highlight-next-line

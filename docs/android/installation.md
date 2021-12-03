@@ -2,7 +2,7 @@
 id: installation
 title: Installation
 ---
-This page describes how to install the Shake SDK into your Android application via Gradle.
+> This page describes how to install the Shake SDK into your Android application via Gradle.
 Whether you are using Java or Kotlin, you can follow the steps below.
 
 ## Add Shake dependency to your app-level build.gradle file
@@ -11,7 +11,7 @@ import AndroidVersionBlock from '@site/src/base/AndroidVersionBlock';
 <AndroidVersionBlock></AndroidVersionBlock>
 
 ## Set compileSdkVersion version in the build.gradle file
-Since Shake requires `compileSdkVersion` 29 or greater, verify that `compileSdkVersion` is correctly set in the app *build.gradle* file.
+Since Shake requires `compileSdkVersion` 29 or greater, verify that `compileSdkVersion` is correctly set in the app *build.gradle* file: 
 
 ```groovy title="build.gradle"
 android {
@@ -31,7 +31,7 @@ android {
 
 ## Initialize Shake
 Initialize Shake in the `onCreate` callback of your *Application*.
-Replace `your-api-client-id` and `your-api-client-secret` with the actual values you have in [your workspace settings](https://app.shakebugs.com/settings/workspace#general).
+Replace `your-api-client-id` and `your-api-client-secret` with the actual values you have in [your workspace settings](https://app.shakebugs.com/settings/workspace#general):
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';

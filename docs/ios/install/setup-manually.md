@@ -17,7 +17,7 @@ Shake directory will be downloaded to your computer — drag-and-drop the *Shake
 
 ### Initialize Shake SDK
 Initialize Shake in the `didFinishLaunchingWithOptions` callback of your *AppDelegate*.
-Replace `your-api-client-id` and `your-api-client-secret` with the actual values you have in [your workspace settings](https://app.shakebugs.com/settings/workspace#general).
+Replace `your-api-client-id` and `your-api-client-secret` with the actual values you have in [your workspace settings](https://app.shakebugs.com/settings/workspace#general):
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';

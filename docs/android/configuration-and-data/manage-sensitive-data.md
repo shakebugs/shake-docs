@@ -286,7 +286,7 @@ public class PaymentActivity : AppCompatActivity() {
 </TabItem>
 </Tabs>
 
-You can disable [Screen Recording](/android/configuration-and-data/automatic-screen-recording.md) feature if you want make sure that sensitive data is not recorded.
+You can disable [Automatic screen recording](/android/configuration-and-data/automatic-screen-recording.md) feature if you want make sure that sensitive data is not recorded:
 
 <Tabs
   groupId="android"

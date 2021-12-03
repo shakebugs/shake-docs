@@ -2,7 +2,7 @@
 id: releases
 title: Release notes
 ---
-This page lists all updates to the Shake Flutter SDK.
+<p class="text-very-important">This page lists all updates to the Shake Flutter SDK.</p>
 
 What would you like us to build next? We're dying to hear from you — upvote upcoming features and suggest new ideas on [feedback.shakebugs.com](https://feedback.shakebugs.com/)
 

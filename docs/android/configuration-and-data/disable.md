@@ -16,8 +16,8 @@ You could simply never call the  `Shake.start()` method for guest users, but wha
 ## How to use
 Call the `Shake.setEnabled(false)` method wherever you find it appropriate in your app. Shake will be disabled immediately, which means:
 
-1. Shake can't be invoked any more
-1. Shake stops tracking all data
+* Shake can't be invoked any more
+* Shake stops tracking all data
 
 So let's suppose you want to allow *hosts* to use Shake, but not the *guests*. You would do this:
 

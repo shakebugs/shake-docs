@@ -18,8 +18,7 @@ With this feature turned on, a system dialog will ask testers if they want to al
 />
 
 ## How to use
-Automatic screen recording is disabled by default but can be enabled by calling `Shake.getReportConfiguration().setAutoVideoRecording(true)` before `Shake.start()`. 
-Duration of the automatically attached video is 15 seconds.
+Automatic screen recording is disabled by default but can be enabled by calling `Shake.getReportConfiguration().setAutoVideoRecording(true)` before `Shake.start()`:
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -51,6 +50,8 @@ Shake.getReportConfiguration().isAutoVideoRecording = true
 
 </TabItem>
 </Tabs>
+
+Duration of the automatically attached video is 15 seconds.
 
 ## Security
 

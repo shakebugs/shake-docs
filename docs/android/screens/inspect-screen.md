@@ -6,7 +6,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-The *Inspect screen* allows your user to see the current ticket details — its [Essentials](android/configuration-and-data/essentials.md) and [Metadata](android/configuration-and-data/metadata.md) — before submitting it.
+> The *Inspect screen* allows your user to see the current ticket details — its [Essentials](android/configuration-and-data/essentials.md) and [Metadata](android/configuration-and-data/metadata.md) — before submitting it.
 
 ## Introduction
 

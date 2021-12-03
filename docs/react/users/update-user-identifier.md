@@ -17,7 +17,7 @@ results. Make sure to read the following sections to better understand the possi
 :::
 
 The code snippet below showcases a common context in which the user identifier is updated. The snippet assumes that the user was previously
-registered with the email.
+registered with the email:
 
 ```javascript title="App.js"
 const changeEmail = email => {

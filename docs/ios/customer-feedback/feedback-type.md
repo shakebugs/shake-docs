@@ -16,7 +16,7 @@ You can configure Shake to display any number of custom categories related to yo
 
 Shake exposes an internal *SHKFeedbackEntry* type which is used to encapsulate the properties of your custom category.
 
-The snippet below showcases an example usage of the feature. 
+The snippet below showcases an example usage of the feature:
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';

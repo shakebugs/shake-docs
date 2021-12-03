@@ -7,9 +7,7 @@ This page explains how to submit yourself a bug report from the background, with
 ## Overview
 You can send silent reports to yourself by calling the `Shake.silentReport` method anywhere after `Shake.start`.
 
-Silent report can be configured with the *Description* just like the regular report and with additional *Attached files*.
-
-*ShakeReportConfiguration* determines what kind of data is included in the report.
+Silent report can be configured with the *Description* just like the regular report and with additional *Attached files*. *ShakeReportConfiguration* determines what kind of data is included in the report.
 
 :::note
 
@@ -86,14 +84,12 @@ private fun createShakeReportData(): ShakeReportData {
 
 ## Show the *Ticket submitted* message
 
-Silent reports are sent without showing the Shake.
-
-They can be used in the situations where displaying the Shake is not an option but user input and attached files can still be obtained.
+Silent reports are sent without showing Shake. They can be used in the situations where displaying the Shake is not an option but user input and attached files can still be obtained.
 
 If your app user is aware of the silent report being sent, Shake can display a small and non-intrusive message notifying the user that the report was sent.
 
 To display a small toast after sending the report, follow to below example to change the `ShakeReportConfiguration` and use that configuration object when 
-sending your silent report with the `Shake.silentReport` method.
+sending your silent report with the `Shake.silentReport` method:
 
 <Tabs
   groupId="android"

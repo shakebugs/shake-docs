@@ -25,7 +25,7 @@ import TabItem from '@theme/TabItem';
 
 ### Initialize Shake SDK
 Initialize Shake in the `didFinishLaunchingWithOptions` callback of your *AppDelegate*.
-Replace `your-api-client-id` and `your-api-client-secret` with the actual values you have in [your workspace settings](https://app.shakebugs.com/settings/workspace#general).
+Replace `your-api-client-id` and `your-api-client-secret` with the actual values you have in [your workspace settings](https://app.shakebugs.com/settings/workspace#general):
 
 <Tabs
   groupId="ios"
@@ -97,7 +97,7 @@ The issue has been fixed in the Xcode Version 12.2 beta 3.
 Select your app target, and add a new *Copy Files phase* to the *Build Phases*.
 Make sure to change the destination to *Frameworks* folder.
 
-Add a new *Run Script* phase and paste the following script to force the deep signing of frameworks with your own identity.
+Add a new *Run Script* phase and paste the following script to force the deep signing of frameworks with your own identity:
 
 
 ```script"

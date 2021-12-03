@@ -13,6 +13,8 @@ module.exports = {
       respectPrefersColorScheme: true,
     },
     hideableSidebar: false,
+    scrollToTop: false,
+    scrollToTopOptions: false,
     prism: {
       theme: require('prism-react-renderer/themes/github'),
       darkTheme: require('prism-react-renderer/themes/dracula'),

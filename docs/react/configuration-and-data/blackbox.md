@@ -64,7 +64,7 @@ When you hover over the chart, the exact state is shown.
 App orientation is captured every 2 seconds.
 
 ## Enabling and disabling
-Black box is enabled by default, however, you can use the method below to disable it.
+Black box is enabled by default, however, you can use the method below to disable it:
 
 ```javascript title="App.js"
 // highlight-next-line
