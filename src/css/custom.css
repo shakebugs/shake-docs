@@ -43,12 +43,13 @@ html[data-theme='dark'] {
   --token-plain: #F2F2F7;
   --token-keyword: #64B1FD;
   --token-string: #D75ED7;
-  --token-comment: #64B1FD;
+  --token-comment: #8E8E93;
   --token-function: #46D39A;
   --token-operator: #8E8E93;
   --token-punctuation: #8E8E93;
-  --token-boolean: #8E8E93;
+  --token-boolean: #C2E550;
   --token-variable: #E7A5FF;
+  --token-class-name: #B77DFF;
 
 
   --alert-color: rgb(235, 87, 87);
@@ -90,6 +91,7 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: "Roobert-Bold";
+  position: relative;
 }
 
 div[class*='codeBlock'], code{
@@ -131,6 +133,10 @@ div[class*='codeBlock'], code{
 * Global
 */
 
+#__docusaurus {
+  background-color: var(--default-background-color);
+}
+
 .container {
   padding-top: 2rem !important;
 }
@@ -149,7 +155,6 @@ h1 {
 h2 {
   font-size: 24px;
   line-height: 32px;
-  position: relative;
 }
 h3 {
   font-size: 20px;
@@ -302,6 +307,17 @@ article ol>li:after {
       margin-right: 0;
 }
 
+
+
+/*
+* Middle main column (article)
+*/
+div[class*='docItemCol'] {
+  max-width: 65% !important;
+}
+
+
+
 /*
 * Code block
 */
@@ -353,6 +369,9 @@ div[class*='codeBlockLines'] {
   color: var(--token-variable) !important;
   font-style: normal !important;
 }
+.token.class-name {
+  color: var(--token-class-name) !important;
+}
 
 /*
 * Admonitions: Notes etc.
@@ -369,6 +388,14 @@ div[class*='codeBlockLines'] {
 
 .admonition p {
     color: var(--alert-color);
+}
+
+.admonition em {
+  color: inherit;
+}
+
+.admonition-content>:last-child {
+  margin-bottom: 0 !important;
 }
 
 /*
@@ -404,7 +431,12 @@ div[class*='codeBlockLines'] {
   content: url('/static/img/attachment-link-1.svg');
   width: 27px;
   position: absolute;
+}
+h2 .hash-link {
   top: 8px;
+}
+h3 .hash-link {
+  top: 4px;
 }
 
 

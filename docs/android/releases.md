@@ -144,7 +144,7 @@ Users can finally report [different types of feedback](/android/customer-feedbac
 
 Shake now allows you to [manage sensitive data](android/configuration-and-data/manage-sensitive-data.md) on the mobile device itself, so it never reaches the Shake servers. It can be used for notifications, network requests, screens and screen elements.
 
-You can now use the in-app Shake [onboarding dialog](android/configuration-and-data/intro-message.md) to inform your users about Shake availability.
+You can now use the in-app Shake [onboarding dialog](android/customer-feedback/intro-message.md) to inform your users about Shake availability.
 
 ### 13.1
 <span class="tag-button">August 25, 2020</span>&nbsp;&nbsp;

@@ -149,7 +149,7 @@ Shake now allows you to [manage sensitive data](ios/configuration-and-data/manag
 
 We've added [console logs](ios/configuration-and-data/activity.md#console-logs) to Activity history.
 
-You can now use the in-app Shake [onboarding dialog](ios/configuration-and-data/intro-message.md) to inform your users about Shake availability.
+You can now use the in-app Shake [onboarding dialog](ios/customer-feedback/intro-message.md) to inform your users about Shake availability.
 
 Removed support for iOS 10.
 

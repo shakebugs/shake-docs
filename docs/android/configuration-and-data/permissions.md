@@ -30,16 +30,3 @@ The Shake SDK tracks the status of these dangerous Android permissions, and repo
 * SENSORS
 * SMS
 * STORAGE
-
-The Shake SDK tracks the status of these dangerous Android permissions, and reports to you whether a user has or hasn't granted your app access to them:
-
-1. CALENDAR
-1. CALL_LOG
-1. CAMERA
-1. CONTACTS
-1. LOCATION
-1. MICROPHONE
-1. PHONE
-1. SENSORS
-1. SMS
-1. STORAGE
