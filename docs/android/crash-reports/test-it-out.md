@@ -6,9 +6,10 @@ title: Test it out
 import Tabs from '@theme/Tabs'; 
 import TabItem from '@theme/TabItem';
 
-Let's crash you app. 
-Enable crash reporting and paste the line below in the `onCreate` method in one of your activities.
-We'll crash the app on a button tap by accessing the array with the out of bounds index:
+>Let's crash your app to see how crash reporting works.
+
+Enable crash reporting and paste this code to the `onCreate` method in one of your activities.
+It will crash your app when you tap a button by accessing the array with the out-of-bounds index:
 
 <Tabs
   groupId="android"
@@ -63,5 +64,12 @@ public class MainActivity : Activity {
 
 </TabItem></Tabs>
 
-Launch you app after the crash, add a sentence or two if you want to and submit the report. 
-Your report will be visible on the Shake dashboard in a few minutes.
+Reopen you app, describe the crash and tap *Submit*.
+
+To see your crash report:
+1. Visit your [Shake dashboard](https://app.shakebugs.com/)
+1. Switch to the **Crash reports** tab in the left sidebar.
+
+If the crash report is not visible instantly, wait a minute until the system processes it.
+
+

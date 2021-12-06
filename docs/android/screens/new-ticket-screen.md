@@ -4,12 +4,12 @@ title: New ticket screen
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-> *New ticket* screen is used to submit a ticket to Shake.
+>Your users submit tickets from this screen.
 
 ## Introduction
 
-The screen comprises of various components used to fill in the ticket details. Some of the components, like [Inspect](android/configuration-and-data/inspect.md) and [Feedback type](android/customer-feedback/feedback-type.md) can be turned off via the Shake configuration, and some
-are disabled depending on the report context.
+It contaiins various components, many of which can be tweaked according to your needs.
+Visit [Configuration & Data](android/configuration-and-data/introduction.md) for more details.
 
 <img
   alt="New ticket screen"
@@ -18,4 +18,6 @@ are disabled depending on the report context.
 
 ## Show
 
-This screen is shown upon manual user invocation of Shake. To show this screen programmatically, call `Shake.show` with no arguments, as it is the default option. Read more about manual invocations on the [Invocations](android/customer-feedback/invoke.md/#invoke-through-code) page.
+This screen is shown when your users invoke Shake manually.
+To show this screen programmatically, call `Shake.show` with no arguments (it's the default option).
+Visit [Invocations](android/customer-feedback/invoke.md) to read about various ways to invoke Shake.

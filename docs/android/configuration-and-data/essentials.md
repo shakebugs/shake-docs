@@ -4,28 +4,38 @@ title: Essentials
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This page lists the essential data you receive with every bug report, out of the box.
+>This is the essential data Shake automatically attaches to every ticket, whether it's user feedback or a crash report.
+All of this is done out of the box, you don't need to code anything.
 
-## Introduction
+## Automatically attached
 
-You will find Essentials listed on the right side of your web Dashboard, and these include data like user's OS, location, memory status, etc.
+Automatically attached data includes:
+* time when the ticket was reported
+* devide OS
+* device model
+* your app version
+* connectivity details
+* a screen the ticekt was reported from
+* location
+* time zone
+* battery status
+* memory status
+* screen resolution
+* etc.
 
-<img
-  alt="Essentials screen"
-  src={useBaseUrl('screens/essentials_screen.png')}
-/>
 
+## Attaching more data
 
-## Customizing the data you receive
+If you want Shake to attach custom data to your tickets, you can do that as well.
+Read about attaching your own variables to tickets with [Ticket metadata](android/configuration-and-data/metadata.md).
 
-If you want the SDK to attach any other variable to your bug reports, you can absolutely do that as well! Read about sending custom data with [Metadata](android/configuration-and-data/metadata.md).
-
-Do you also want to attach custom files, like images? Visit [Attachments](/android/configuration-and-data/attachments.md).
+Do you also want to attach programmaticaly files, to tickets, images for example? Visit [Attachments](/android/configuration-and-data/attachments.md).
 
 
 ## Limitations
 
-On Android 8.0 and higher it is not possible to easily get the **name** of the Wi-Fi the device is connected to. If that info is important to you, add the following permissions to your app's `AndroidManifest.xml` file:
+On Android 8.0 and higher it's not possible to get the **name** of the Wi-Fi the device is connected to. 
+If that info is important to you, add the following permissions to your app's `AndroidManifest.xml` file:
 
 ```xml title="AndroidManifest.xml"
 // highlight-start
@@ -35,6 +45,7 @@ On Android 8.0 and higher it is not possible to easily get the **name** of the W
 // highlight-end
 ```
 
-You also have to request **location** permission from the user, and their **location services** have to be turned on while reporting a bug.
+You also have to request **location** permission from the user and 
+their **location services** have to be turned on while reporting a ticket.
 
 More info on this Android system limitation can be found in the [Wi-Fi scanning overview](https://developer.android.com/guide/topics/connectivity/wifi-scan) guide.

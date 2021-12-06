@@ -6,31 +6,28 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Once you have _registered_ your application user, you can attach a map with key-value pairs that describe 
-additional information about your user, or their application usage.
+>Once you have _registered_ your app user, you can attach a map with key-value pairs that describe 
+additional information about the user and their behavior.
 
-Updating the user metadata is performed by calling the `Shake.updateUserMetadata` anywhere in your code after registering the user.
+Updating the user metadata is performed by calling the `Shake.updateUserMetadata` method anywhere in your code
+after registering the user.
 
-:::note
+## Special keys
 
-The user metadata map has some limitations, the total map size must not exceed _50 KB_. 
-If this validation fails, the update method is dropped with the appropriate console message.
+Shake Dashboard treats these keys with special care:
+* *first_name*
+* *last_name*
+* *end_user_id*
 
-:::
+Values from these keys are presented nicely on the Shake dashboard.
 
-:::tip
+## Updates
 
-Shake Dashboard uses *first_name*, *last_name* and *end_user_id* keys from the user metadata for presentation purposes. 
-We recommend using these keys when sending appropriate user metadata to have a nice overview of your users on the Dashboard.
+Updates to the user metadata are _incremental_, or in other words _merged_.
+This means that user metadata key-value pairs are updated and not overwritten, giving you a possiblity to update
+user metadata in chunks from various points of your app, even when offline.
 
-:::
-
-Updates to the user metadata are _incremental_, or perhaps a better way to describe it would be _merged_.
-
-This means that the user metadata key-value pairs are being updated and not overwritten, giving you a possiblity to update
-the user metadata in chunks from various points of your application, even when offline.
-
-A common approach would be updating the generic user metadata from one place in your code, upon every user change, and update the specific metadata
+A common approach would be updating generic user metadata from one place in your code, upon every user change, and updating the specific metadata 
 in their respective contexts:
 
 <Tabs
@@ -144,3 +141,8 @@ private fun onCartItemsCleared() {
 
 </TabItem>
 </Tabs>
+
+## Limitations
+
+The total map size of the user metadata must not exceed _50 KB_. 
+If this validation fails, the update method is dropped with the appropriate console message.

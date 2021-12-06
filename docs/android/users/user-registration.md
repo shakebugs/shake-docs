@@ -1,24 +1,25 @@
 ---
 id: user-registration
-title: User registration
+title: Register user
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-User of your application can be registered with Shake by calling the `Shake.registerUser` method. The passed _user identifier_ argument
-should, ideally, reflect or be a derivation of the identifier that uniquely represents the user in your database or system.
+>Your app user can be registered with Shake by calling the `Shake.registerUser` method.
 
-The example below showcases the user registration in a way that most apps can "relate to", and that is the usual "login flow". 
+The passed _user identifier_ argument should ideally reflect the identifier that uniquely represents the user
+in your database.
 
-However, the Shake public method is intentionally called _register_ and not _logIn_ because there are different situations and contexts in which the 
-user identification works just as good.
+The example below shows registering users in a most common login flow. However, Shake's public method is intentionally
+called _register_ and not _logIn_ because contexts of user identification vary across apps.
 
-Most applications will communicate with their backend through some form of the network layer which performs the URL request and asynchronously
-receives a callback with the request result.
+Most apps communicate with their backend through the network layer
+which performs the URL request and asynchronously receives a callback with the request result.
 
-Body of your successful registration request callback is the usual place where `Shake.registerUser` method would be called, but every context cannot be described
-in this documentation so make sure the method is called at the place where it best fits your application flow.
+Successful registration request callback's body is a usual place where you would call the `Shake.registerUser` method,
+but not every context can be described in this documentation.
+Make sure to call the method at the place where it best fits your app's flow.
 
 <Tabs
   groupId="android"
@@ -78,6 +79,6 @@ private fun logInUser(email: String, password: String) {
 
 :::note
 
-All user related Shake operations on a registered user are fully supported when your application is __offline__ too, and will sync with the Shake servers later.
+All user-related Shake operations on a registered user are fully supported when your app is offline too, and will sync with the Shake servers later.
 
 :::

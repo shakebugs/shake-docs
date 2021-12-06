@@ -6,9 +6,13 @@ title: Describe crash
 import Tabs from '@theme/Tabs'; 
 import TabItem from '@theme/TabItem';
 
-On the next app launch after the crash occurs, a sheet offering the user a chance to describe the crash will appear.
+>On the first app launch after the crash occurs, Shake can offer the user a chance to describe the crash.
 
-This can be enabled by setting the `isAskForCrashDescription` flag to `true` prior to calling the `start` method:
+This option is disabled by default.
+
+To enable it:
+1. Set the `isAskForCrashDescription` flag to `true`.
+1. Then, call the `Shake.start` method.
 
 <Tabs
   groupId="android"
@@ -35,5 +39,4 @@ Shake.setAskForCrashDescription(true)
 
 </TabItem></Tabs>
 
-When enabled, this feature allows the user to provide a more detailed description of the actions that could have led up to the
-crash, and potentially edit the information that is being passed to Shake dashboard.
+If the user wants to, they can then describe what they were doing before the crash, potentially helping you a lot with their comment.

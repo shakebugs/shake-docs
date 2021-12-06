@@ -4,18 +4,10 @@ title: Permissions
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This page covers how Shake reports to you on the status of a user's permissions listed below.
+>Shake automatically attaches permissionn statuses to tickets.
 
-## Introduction
-For visual clarity on the Dashboard, Shake lists precisely those permissions that a user has explicitly granted access to.
-
-The ones you don't see listed in a report were either denied or not requested at all.
-
-<img
-  alt="Permissions screen"
-  src={useBaseUrl('screens/permissions_screen.png')}
-/>
-
+## List of tracked permissions
+Shake tracks the status of these dangerous Android permissions:
 
 ## Tracking dangerous permissions
 The Shake SDK tracks the status of these dangerous Android permissions, and reports to you whether a user has or hasn't granted your app access to them:
@@ -30,3 +22,7 @@ The Shake SDK tracks the status of these dangerous Android permissions, and repo
 * SENSORS
 * SMS
 * STORAGE
+
+## On Shake dashboard
+For visual clarity on Shake dashboard, Shake lists those permissions that the user has explicitly granted access to.
+The ones you don't see listed were either denied or not requested at all.

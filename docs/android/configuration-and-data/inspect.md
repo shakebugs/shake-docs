@@ -4,11 +4,14 @@ title: Inspect ticket
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-The *Inspect screen* allows your user to see the current ticket details — its [Essentials](android/configuration-and-data/essentials.md) and [Metadata](android/configuration-and-data/metadata.md) — before submitting it.
+>Your users can see 
+current ticket details — its [Essentials](android/configuration-and-data/essentials.md) and [Metadata](android/configuration-and-data/metadata.md) 
+before submitting it.
 
 ## Introduction
 
-The *Inspect screen* can be reached via *Inspect* button on the [New ticket screen](android/screens/new-ticket-screen.md).
+The Inspect screen is accessed by tapping the *Inspect* button 
+on the [New ticket screen](android/screens/new-ticket-screen.md).
 
 <img
   alt="Inspect screen"
@@ -17,7 +20,7 @@ The *Inspect screen* can be reached via *Inspect* button on the [New ticket scre
 
 ## Hide the *Inspect* button
 
-If you don’t want to show *Inspect* button  to a user, hide it using the following method:
+If you don’t want to show *Inspect* button to your users, hide it using the following method:
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';

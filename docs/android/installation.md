@@ -2,8 +2,7 @@
 id: installation
 title: Installation
 ---
-> This page describes how to install the Shake SDK into your Android application via Gradle.
-Whether you are using Java or Kotlin, you can follow the steps below.
+> Learn how to add Shake to your Android app using Gradle.
 
 ## Add Shake dependency to your app-level build.gradle file
 import AndroidVersionBlock from '@site/src/base/AndroidVersionBlock';
@@ -83,7 +82,7 @@ class App : Application() {
 </TabItem>
 </Tabs>
 
-If you’re creating a custom *Application* class for the first time, make sure to specify it in your *AndroidManifest.xml*:
+If you’re creating a custom *Application* class for the first time, specify it in your *AndroidManifest.xml*:
 
 ```xml title="AndroidManifest.xml"
 <?xml version="1.0" encoding="utf-8"?>
@@ -98,11 +97,12 @@ If you’re creating a custom *Application* class for the first time, make sure 
 
 :::note
 
-We recommend initializing Shake in the *Application* class, but sometimes you'll want to initialize Shake after the app is started, depending on the data retrieved from the backend.
-You can use `Shake.start()` method in the Activity, just make sure to call it in the *onCreate* callback of the *Activity*.
+We recommend initializing Shake in the *Application* class.
+If you want to initialize Shake after your app has started though,
+feel free to use `Shake.start()` method in the Activity but make sure you call it in the *onCreate* callback of the *Activity*.
 
 :::
 
-Now build your project and see everything work! To build and run your
-app, select *Run › Run* in the menu bar. This first run will automatically
+Now build your project and see everything work. To build and run your
+app, select *Run → Run* in the menu bar. This first run will automatically
 add your app to your [Shake Dashboard](https://app.shakebugs.com/) based on your app bundle ID.

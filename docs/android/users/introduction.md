@@ -3,13 +3,16 @@ id: introduction
 title: Introduction
 ---
 
-Users is a simple product for having all your app users listed in one place, automatically.
+>Learn about Users, a simple Shake module that allows you to have all your users listed in one place and one click away.
 
-Register them and track their custom attributes. Soon you'll also be able to:
+It allows you to automatically:
+* Have all your app users listed in one place.
+* Track their custom attributes.
 
-* see which tester hasn't signed in for a week
-* see a production user with most crashes
-* see your MAU and DAU charts
-* live chat with all of them
+Soon you'll also be able to:
+* See which tester hasn't signed in for a week.
+* See a production user with most crashes.
+* See your MAU and DAU charts.
+* Live chat with all of them.
 
-Check our [installation guide](android/installation.md) to start using Shake in your app.
+Visit Shake's [installation guide](android/installation.md) to start using Shake in your app.

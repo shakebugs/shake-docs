@@ -6,17 +6,12 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-> *Home screen* is the central part of the Shake user interface.
+>Home screen is a central part of the Shake user interface.
 
 ## Introduction
 
-Home screen acts as a feedback center designed to elegantly interoperate with the Shake [Users](android/users/introduction.md) feature.
-If you registered your *User* with Shake, all of their tickets will be listed here.
-
-Tickets visible in the table represent the uploaded tickets that are synced with the *Shake dashboard*.
-*Pending uploads* will be displayed as the greyed out version of the regular, uploaded ticket.
-
-The top portion of the screen consists of introductory message and the *Submit new ticket* action.
+It's designed to interoperate with Shake's [Users](android/users/introduction.md) module.
+If you register your users with Shake, their tickets (user feedback and crash reports) will be listed here.
 
 <img
   alt="Home screen"
@@ -25,4 +20,5 @@ The top portion of the screen consists of introductory message and the *Submit n
 
 ## Show
 
-To show the *Home screen* to a user, call the `Shake.show` method with the `ShakeScreen` argument. More on the manual invocations can be read in the [Invocations](android/customer-feedback/invoke.md/#invoke-through-code) page.
+To show Home screen to your user, call the `Shake.show` method with the `ShakeScreen` argument.
+Visit [Invocations](android/customer-feedback/invoke.md/#invoke-through-code) to read more about manual invocations.

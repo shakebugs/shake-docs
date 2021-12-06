@@ -1,22 +1,17 @@
 ﻿---
 id: metadata
-title: Metadata
+title: Ticket metadata
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This page explains how to send a value of any variable you wish from a user's app to your web Dashboard.
+>Attach a value of any variable from user's app to the tickets they report.
 
 ## Introduction
-Every app is unique so the [Essentials](/android/configuration-and-data/essentials.md) sent with each bug report are often not enough.
-That's why the Shake SDK allows you to send yourself any custom data from the app using Metadata.
+Every app is unique so the [Essentials](/android/configuration-and-data/essentials.md) sent with each ticket are often not enough.
+That's why Shake also allows you to attach any custom data from the app to the ticket.
 It's a *String* pair which you can shape any way you want, and you can put anything you want into it.
 
-You can find Metadata below [Blackbox](/android/configuration-and-data/blackbox.md) on the web Dashboard, as shown below:
-
-<img
-  alt="Metadata screen"
-  src={useBaseUrl('screens/metadata_screen.png')}
-/>
+You can find Ticket metadata in the right column of Shake dashboard.
 
 
 ## How to use
@@ -61,3 +56,20 @@ fun onLoginSuccessful(user: User) {
 
 </TabItem>
 </Tabs>
+
+## Different from User metadata
+ 
+Use Ticket metadata to attach useful custom data to tickes. Examples are statuses of various app variables at the moment of ticket being sent:
+* Current chat room ID
+* List of items curreently in a shopping cart
+* Task synced true/false
+* Number of search results
+* List sorted by what
+* Video muted true/false
+
+Use [User metadata](android/users/update-user-metadata.md) to attach custom data to users. Examples are:
+* First and last name
+* User ID
+* Address
+* Subscription status
+* Date of birth

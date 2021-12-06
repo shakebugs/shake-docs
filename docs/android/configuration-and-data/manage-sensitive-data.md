@@ -5,7 +5,7 @@ title: Manage sensitive data
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-As with any third-party service, it’s important for you to understand and have the ability to manage
+>As with any third-party service, it’s important for you to understand and have the ability to manage
 what data is sent to Shake servers. Shake SDK allows you to filter out sensitive data on the mobile device itself,
 so it never reaches the Shake servers.
 
@@ -94,7 +94,7 @@ Shake.removePrivateView(view)
 </TabItem>
 </Tabs>
 
-If you want to delete the whole screen from the screenshot, simply mark the whole activity as private:
+If you want to delete and entire screen from the screenshot, simply mark the whole activity as private:
 
 <Tabs
 groupId="android"
@@ -186,7 +186,7 @@ Shake.removePrivateView(activity)
 </TabItem>
 </Tabs>
 
-If you want to clear all the private views, use the following method:
+To clear all the private views, use the following method:
 
 <Tabs 
   groupId="android"
@@ -216,11 +216,12 @@ Shake.clearPrivateViews()
 </TabItem>
 </Tabs>
 
-Note that these methods won't delete sensitive views from screen recordings, only screenshots.
+These methods won't delete sensitive views from auto screen recording, only from the screenshot.
 
-You can use Android system flag `FLAG_SECURE` on activity if you want to prevent 
-sensitive data from being visible in the screen recording feature.
-`FLAG_SECURE` will make activity black in screen recordings.
+## Auto screen recording
+Use Android system flag `FLAG_SECURE` on an activity if you want to prevent 
+sensitive data from being visible on the auto screen recording.
+It will make the activity black on the video:
 
 <Tabs
 groupId="android"
@@ -286,43 +287,14 @@ public class PaymentActivity : AppCompatActivity() {
 </TabItem>
 </Tabs>
 
-You can disable [Automatic screen recording](/android/configuration-and-data/automatic-screen-recording.md) feature if you want make sure that sensitive data is not recorded:
-
-<Tabs
-  groupId="android"
-  defaultValue="kotlin"
-  values={[
-    { label: 'Java', value: 'java'},
-    { label: 'Kotlin', value: 'kotlin'},
-  ]
-}>
-
-<TabItem value="java">
-
-```java title="App.java"
-// highlight-start
-Shake.getReportConfiguration().setAutoVideoRecording(false);
-// highlight-end
-```
-
-</TabItem>
-
-<TabItem value="kotlin">
-
-```kotlin title="App.kt"
-// highlight-start
-Shake.getReportConfiguration().isAutoVideoRecording = false
-// highlight-end
-```
-
-</TabItem>
-</Tabs>
+Visit [Auto screen recording](/android/configuration-and-data/automatic-screen-recording.md)
+to read how to turn it off altogether.
 
 ## Jetpack Compose
 
-In Jetpack Compose, the main building block of the user interface is *Composeable* instead of *View*.
+In Jetpack Compose, the main building block of the UI is *Composeable* instead of *View*.
 
-If you want to make a specific *Composeable* private, copy the following code snippet in to your project:
+If you want to make a specific *Composeable* private, copy the following snippet into your project:
 
 ```kotlin title="ShakePrivateView.kt"
 // highlight-start
@@ -370,15 +342,16 @@ In the example above, the *Greeting* component will be removed from the screensh
 
 ## Touch events
 
-Marking a view as private will automatically delete its touch events' text properties too. Consequently, you'll see them as `data_redacted` strings in your [Activity history](https://www.shakebugs.com/docs/android/activity#user-actions).
-
-Bear in mind that the view's ID, accessibility labels and tags remain visible.
+Marking a view as private will automatically delete its touch events' text properties too.
+Consequently, you'll see them as `data_redacted` strings in ticket's
+[Activity history](https://www.shakebugs.com/docs/android/activity#user-actions).
+The view's ID, accessibility labels and tags remain visible.
 
 ## Network requests
-Certain network requests may contain sensitive data which you may not want to send to Shake servers.
-Use the `Shake.setNetworkRequestsFilter()` method to obfuscate only the sensitive parts of those requests, or to entirely prevent certain network requests from being logged.
-
-For example, if you'd like to obfuscate the *Authorization* header in all network requests sent from your app, do this:
+Network requests may contain sensitive data which you may not want to send to Shake servers.
+Use the `Shake.setNetworkRequestsFilter()` method to obfuscate sensitive parts of those requests,
+or to entirely prevent certain network requests from being logged.
+As an example, if you'd like to obfuscate the *Authorization* header in all network requests sent from your app, do this:
 
 <Tabs
 groupId="android"
@@ -439,7 +412,7 @@ private fun setupNetworkFilter() {
 </TabItem>
 </Tabs>
 
-If you do not want to log specific network requests, return `null` from the `NetworkRequestsFilter` like below:
+If you don't want to log specific network requests, return `null` from the `NetworkRequestsFilter` like below:
 
 <Tabs
 groupId="android"
@@ -501,9 +474,9 @@ To clear the network requests filter, use `Shake.setNetworkRequestsFilter(null)`
 
 ## Notification events
 If your app notifications contain sensitive data, use the `Shake.setNotificationEventsFilter()`
-method to obfuscate only the sensitive parts of those notifications, or to entirely prevent certain notifications from being logged.
+method to fully or partially obfuscate those notifications.
 
-For example, if you'd like to obfuscate the description of the notification event that contains e-mail, do this:
+For example, if you'd like to obfuscate the description of the notification event that contains an email, do this:
 
 <Tabs
 groupId="android"
@@ -625,10 +598,12 @@ private fun setupNotificationsFilter() {
 To clear the notification events filter, use `Shake.setNotificationEventsFilter(null)`.
 
 ## Automatically redacted sensitive data
-By default, Shake uses a series of regular expressions to redact sensitive data from notifications, touch events and network requests.
-In addition, Shake will replace any header value with `data_redacted` string if the header has a key that matches any string from the list of keywords below:  
+By default, Shake uses a series of regular expressions to redact sensitive data from notifications,
+touch events and network requests.
+In addition, Shake will replace any header value with `data_redacted` string if the header has a key 
+that matches any of these strings:  
 * password 
-* secret 
+* secret
 * passwd
 * api_key 
 * apikey
@@ -642,7 +617,7 @@ In addition, Shake will replace any header value with `data_redacted` string if 
 * card[number]
 * token
 
-To disable this feature use the method below:
+To disable this privacy feature, use the method below:
 
 <Tabs
 groupId="android"

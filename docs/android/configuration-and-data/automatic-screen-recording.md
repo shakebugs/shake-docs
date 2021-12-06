@@ -1,24 +1,20 @@
 ---
 id: automatic-screen-recording
-title: Automatic screen recording
+title: Auto screen recording
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-You can rely on testers to record a video of their screen and attach it to their tickets.
+>You can rely on your testers to record a video of their screen and attach it to their feedback and crash reports.
 Or, you can use this feature to always record their screen and automatically attach that video to the ticket.
+
+:::note
 Do not use this feature in production!
+:::note
 
-## Introduction
-Shake can constantly record your testers' screens and automatically attach those videos to bug reports. Reports with these videos way easier to debug! 
-With this feature turned on, a system dialog will ask testers if they want to allow Shake to start capturing everything that's displayed on their screen.
-
-<img
-  alt="Attachments screen"
-  src={useBaseUrl('screens/bug_screen.png')}
-/>
-
-## How to use
-Automatic screen recording is disabled by default but can be enabled by calling `Shake.getReportConfiguration().setAutoVideoRecording(true)` before `Shake.start()`:
+## Enable auto screen recording
+Auto screen recording is disabled by default. To enable it:
+1. Call `Shake.getReportConfiguration().setAutoVideoRecording(true)` first.
+1. Then, start Shake with `Shake.start()`.
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -51,8 +47,11 @@ Shake.getReportConfiguration().isAutoVideoRecording = true
 </TabItem>
 </Tabs>
 
-Duration of the automatically attached video is 15 seconds.
+Duration of the autp attached screen recording is 15 seconds.
 
-## Security
+## Privacy
 
-Screen recording is automatically paused when your app goes to the background. This way no third party data is recorded.
+With this feature turned on, a system dialog will ask your testers if they want to allow your app
+to start capturing everything that's displayed on their screen.
+
+Screen recording is automatically paused when your app goes to background so no third-party data is ever recorded.
