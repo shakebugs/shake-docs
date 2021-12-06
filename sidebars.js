@@ -264,6 +264,7 @@ module.exports = {
             label: 'Screens',
             items: [
                 'react/screens/home-screen',
+                'react/screens/chat-screen',
                 'react/screens/inspect-screen',
                 'react/screens/new-ticket-screen'
             ]
@@ -292,6 +293,7 @@ module.exports = {
                         'react/users/update-user-metadata',
                         'react/users/update-user-identifier',
                         'react/users/advanced-usage',
+                        'react/users/chat',
                     ]
                 },
             ]
