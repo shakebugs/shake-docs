@@ -7,8 +7,7 @@ title: Feedback type
 ## Introduction
 
 They categorize it as either a bug report, an improvement suggestion, or a question.
-Depending on what they choose, their feedback arrives with the <span class="tag-button pink-tag-button">bug</span>,
-<span class="tag-button pink-tag-button">suggestion</span> or <span class="tag-button pink-tag-button">question</span> tag
+Depending on what they choose, their feedback arrives with the <span class="tag-button pink-tag-button">bug</span>, <span class="tag-button pink-tag-button">suggestion</span> or <span class="tag-button pink-tag-button">question</span> tag
 to your [Shake Dashboard](https://app.shakebugs.com).
 
 ## Custom types

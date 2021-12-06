@@ -1,10 +1,12 @@
 ---
-id: inspect-screen
-title: Inspect screen
+id: drawing-screen
+title: Drawing screen
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+
+Petar added this page.
 
 > Your users can inspect ticket's [Essentials](android/configuration-and-data/essentials.md) and [Metadata](android/configuration-and-data/metadata.md) — before submitting it.
 
@@ -12,13 +14,10 @@ import TabItem from '@theme/TabItem';
 
 They access this screen by tapping the *Inspect* button on the [New ticket screen](android/screens/new-ticket-screen.md).
 
-<table class="media-container">
 <img
   alt="Inspect screen"
-  width="370"
-  src={useBaseUrl('screens/android-inspect-screen@2x.png')}
+  src={useBaseUrl('screens/inspect_screen.png')}
 />
-</table>
 
 
 ## Show the Inspect button

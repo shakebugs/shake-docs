@@ -15,7 +15,7 @@ Whatever you tweak, your configuration settings apply to all Shake modules:
 
 Your users send you their feedback and crash reports from the New ticket screen. Here's what you can customize on it:
 * [Email field](android/configuration-and-data/email.md)
-* [Inspect button] (android/configuration-and-data/inspect.md)
+* [Inspect button](android/configuration-and-data/inspect.md)
 
 ## Collected data
 

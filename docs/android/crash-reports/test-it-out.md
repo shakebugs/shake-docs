@@ -2,7 +2,7 @@
 id: test-it-out
 title: Test it out
 ---
-
+import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs'; 
 import TabItem from '@theme/TabItem';
 
@@ -73,3 +73,9 @@ To see your crash report:
 If the crash report is not visible instantly, wait a minute until the system processes it.
 
 
+<table class="media-container">
+<img
+  alt="User feedback intro message"
+  src={useBaseUrl('screens/dominik-dashboard-example@2x.png')}
+/>
+</table>

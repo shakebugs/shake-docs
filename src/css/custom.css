@@ -18,6 +18,7 @@
   --highlighted-code-line: #e9ecee;
 
   --ifm-global-radius: 10px;
+  --ifm-menu-link-sublist-icon: url('/static/img/arrow.1.svg');
 
 }
 
@@ -33,6 +34,7 @@ html[data-theme='dark'] {
   --default-background-color: #1C1C1E; /* Dark mode default background - "OffBlack" */
   --subtle-limiter: #2C2C2E; /* e.g. limiter line on a default background - "Grey 100" */
   --default-paragraph-text: #AEAEB2; /* normal text */
+  --almost-highlight: #E5E5EA; /* e.g. top navigation items - "Grey 20" */
   --default-highlight-color: #F2F2F7; /* e.g. h1, h2, em, a, active tab, text inside primary action button */
   --slightly-highlighted-color: #C7C7CC; /* e.g. very important text below h1 (intro to article) */
 
@@ -54,7 +56,7 @@ html[data-theme='dark'] {
 
   --alert-color: rgb(235, 87, 87);
   --alert-background-color: rgba(235, 87, 87, .3);
-  --inactive-element-color: #636366; /* e.g. inactive tab */
+  --inactive-element-color: #636366; /* e.g. inactive tab, placeholder in textarea - "Grey 70" */
 }
 
 html[data-theme='light'] {
@@ -128,6 +130,18 @@ div[class*='codeBlock'], code{
   margin-bottom: 16px;
   padding: 6px 12px!important;
 }
+
+
+
+/*
+* Helper classes
+*/
+.pb-80 {
+  padding-bottom: 80px;
+}
+
+
+
 
 /*
 * Global
@@ -248,6 +262,42 @@ article ol>li:after {
   border-color: var(--subtle-limiter);
 }
 
+.navbar__item {
+  border-radius: var(--ifm-global-radius);
+  color: var(--almost-highlight);
+}
+.navbar__item:hover {
+  background-color: var(--default-surface);
+}
+
+.navbar__link--active, .navbar__link:hover {
+  color: inherit;
+}
+
+.dropdown__menu {
+  padding: 10px 0;
+  background-color: var(--default-surface);
+}
+
+.dropdown__link {
+  border-radius: 0;
+  padding: 8px 20px;
+  margin-top: 0;
+}
+
+.dropdown__link--active, .dropdown__link:hover {
+  background-color: var(--default-surface-highlight);
+  color: var(--default-highlight-color) !important;
+}
+
+.DocSearch-Button {
+  background: var(--default-surface) !important;
+  color: var(--inactive-element-color) !important;
+}
+
+
+
+
 /*
 * Main sidebar menu on the left side
 */
@@ -255,6 +305,7 @@ article ol>li:after {
   color: var(--default-highlight-color) !important;
   border-radius: var(--ifm-global-radius) !important;
 }
+
 .menu__link--active:not(.menu__link--sublist) {
   background: var(--primary-action-color) !important;
 }
@@ -266,22 +317,25 @@ article ol>li:after {
     }
   }
 
-  @media (min-width: 997px) {
-    aside > div[class*='sidebar'] {
-        padding: 28px 8px !important;
-        max-height: calc(100vh - 92px) !important;
-        height: calc(100% - var(--ifm-navbar-height) - 32px) !important;
-        margin-top: var(--ifm-navbar-height) !important;
-        top: calc(var(--ifm-navbar-height) + 16px) !important;
-        background-color: var(--default-surface);
-        border-radius: 20px;
-        width: calc(var(--doc-sidebar-width) - 32px) !important;
-      }
+@media (min-width: 997px) {
+  aside > div[class*='sidebar'] {
+      padding: 28px 8px !important;
+      max-height: calc(100vh - 92px) !important;
+      height: calc(100% - var(--ifm-navbar-height) - 32px) !important;
+      margin-top: var(--ifm-navbar-height) !important;
+      top: calc(var(--ifm-navbar-height) + 16px) !important;
+      background-color: var(--default-surface);
+      border-radius: 20px;
+      width: calc(var(--doc-sidebar-width) - 32px) !important;
     }
+  }
 
-    /*
-    * Navigation on the right side
-    */
+
+
+
+/*
+* Navigation on the right side
+*/
 .table-of-contents__link{
   padding: 5px 11px;
   display: block;
@@ -312,8 +366,11 @@ article ol>li:after {
 /*
 * Middle main column (article)
 */
-div[class*='docItemCol'] {
-  max-width: 65% !important;
+
+@media (min-width: 997px) {
+  div[class*='docItemCol'] {
+    max-width: 65% !important;
+  }
 }
 
 
@@ -372,6 +429,19 @@ div[class*='codeBlockLines'] {
 .token.class-name {
   color: var(--token-class-name) !important;
 }
+
+
+/*
+* Media container
+*/
+.media-container {
+  border-radius: 20px;
+  text-align: center;
+}
+.media-container-highlighted {
+  background-color: var(--default-surface);
+}
+
 
 /*
 * Admonitions: Notes etc.

@@ -12,9 +12,11 @@ module.exports = {
             type: 'category',
             label: 'Screens',
             items: [
+                'android/screens/introduction',
                 'android/screens/home-screen',
-                'android/screens/inspect-screen',
-                'android/screens/new-ticket-screen'
+                'android/screens/new-ticket-screen',
+                'android/screens/drawing-screen',
+                'android/screens/inspect-screen'
             ]
         },
         {

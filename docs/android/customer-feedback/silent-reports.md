@@ -1,6 +1,6 @@
 ﻿---
 id: silent-reports
-title: Silent reports
+title: Silent feedback
 ---
 >Send yourself feedback from the app background, without showing Shake UI.
 

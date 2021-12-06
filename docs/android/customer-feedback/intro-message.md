@@ -2,7 +2,18 @@
 id: intro-message
 title: Intro message
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 There's a simple way to inform all your app users (or testers) how to send feedback.
+
+<table class="media-container media-container-highlighted pb-80">
+<img
+  alt="User feedback intro message"
+  width="380"
+  src={useBaseUrl('screens/android-macro-intro-message@2x.png')}
+/>
+</table>
+
 
 ## How to use
 If enabled, a one-off intro message will be shown to a user as soon as they open up your app for the first time. This message is disabled by default, but you can easily enable it using the following method:
@@ -39,3 +50,4 @@ Shake.setShowIntroMessage(true)
 
 </TabItem>
 </Tabs>
+
