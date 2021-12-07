@@ -32,6 +32,7 @@ html[data-theme='dark'] {
   --primary-action-color: #6552FF; /* Primary brand color - Purple 100 */
   --ifm-navbar-background-color: #1C1C1E; /* Dark mode default background - "OffBlack" */
   --default-background-color: #1C1C1E; /* Dark mode default background - "OffBlack" */
+  --default-opaque-background-color: rgba(28, 28, 30, .8); /* OffBlack 80% opaque */
   --subtle-limiter: #2C2C2E; /* e.g. limiter line on a default background - "Grey 100" */
   --default-paragraph-text: #AEAEB2; /* normal text */
   --almost-highlight: #E5E5EA; /* e.g. top navigation items - "Grey 20" */
@@ -41,6 +42,8 @@ html[data-theme='dark'] {
   --default-surface: #2C2C2E; /* e.g. code block, floating sidebar */
   --default-surface-highlight: #3A3A3C; /* e.g. active item, highlighted code, hovered item, limiter on surface, ordered list bullet background */
   --subtle-text-on-surface: #8E8E93; /* e.g. ordered list bullet text color */
+
+  --default-backdrop: rgba(0, 0, 0, .7);
 
   --token-plain: #F2F2F7;
   --token-keyword: #64B1FD;
@@ -179,7 +182,7 @@ h3 {
   background-color: var(--default-background-color);
 }
 
-article a:not(.hash-link) {
+.markdown a:not(.hash-link) {
   border-bottom: 1px solid;
 }
 
@@ -209,16 +212,16 @@ code {
 }
 
 
-article ul, article ol:not(.tablist) {
+.markdown ul, .markdown ol:not(.tablist) {
 	padding-left: 0;
 }
-article li {
+.markdown ul:not(.tabs) li {
 	list-style: none;
 	position: relative;
 	padding-left: 32px;
 	color: var(--default-paragraph-text);
 }
-article ul:not(.tabs) li:before {
+.markdown ul:not(.tabs) li:before {
     content: "";
     position: absolute;
     width: 6px;
@@ -228,10 +231,10 @@ article ul:not(.tabs) li:before {
     border-radius: 50%;	
     background: var(--secondary-button-outline);
 }
-article ol {
+.markdown ol {
 	counter-reset: listitem;
 }
-article ol>li:after {
+.markdown ol>li:after {
     counter-increment: listitem;
     content: counter(listitem);
     background: var(--default-surface-highlight);
@@ -260,6 +263,17 @@ article ol>li:after {
   box-shadow: none;
   border-bottom: 1px solid;
   border-color: var(--subtle-limiter);
+}
+
+@media (min-width: 997px) {
+  .navbar {
+      backdrop-filter: blur(20px);
+      background-color: var(--default-opaque-background-color);
+  }
+}
+
+.navbar__toggle {
+  content: url('/static/img/menu-burger.4.svg');
 }
 
 .navbar__item {
@@ -298,6 +312,7 @@ article ol>li:after {
 
 
 
+
 /*
 * Main sidebar menu on the left side
 */
@@ -330,6 +345,38 @@ article ol>li:after {
     }
   }
 
+/*
+* Main sidebar menu - mobile
+*/
+.navbar-sidebar {
+  background-color: var(--default-surface);
+}
+.navbar-sidebar__brand {
+  box-shadow: none;
+}
+.navbar-sidebar__backdrop {
+  background-color: var(--default-backdrop);
+}
+.navbar-sidebar__back {
+  background: none;
+  border: 2px solid var(--secondary-button-outline);
+  border-radius: var(--ifm-global-radius);
+  margin: .5rem;
+  width: calc(100% - 1rem);
+  padding: .6rem 1.5rem .8rem;
+}
+.navbar-sidebar__back:hover {
+  border-color: var(--secondary-button-outline-hover);
+}
+.navbar-sidebar__close {
+  content: url('/static/img/delete-disabled.svg');
+}
+@media (max-width: 996px) {
+  .menu__list {
+    padding: .5rem;
+  }
+}
+
 
 
 
@@ -359,6 +406,13 @@ article ol>li:after {
 
 .table-of-contents li {
       margin-right: 0;
+}
+
+/*
+* Navigation on the right side - mobile
+*/
+div[class*='tocCollapsibleContent'] ul {
+  border-top: none;
 }
 
 
