@@ -71,7 +71,6 @@ module.exports = {
                 'android/configuration-and-data/inspect',
                 'android/configuration-and-data/screenshot',
                 'android/configuration-and-data/automatic-screen-recording',
-                'android/configuration-and-data/permissions',
                 'android/configuration-and-data/activity',
                 'android/configuration-and-data/attachments',
                 'android/configuration-and-data/blackbox',

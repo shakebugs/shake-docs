@@ -23,6 +23,21 @@ Automatically attached data includes:
 * screen resolution
 * etc.
 
+Shake also tracks the status of these dangerous Android permissions:
+* CALENDAR
+* CALL_LOG
+* CAMERA
+* CONTACTS
+* LOCATION
+* MICROPHONE
+* PHONE
+* SENSORS
+* SMS
+* STORAGE
+
+On Shake dashboard, Shake lists those permissions that the user has granted access to.
+The ones you don't see listed were either denied or not requested at all.
+
 
 ## Attaching more data
 
