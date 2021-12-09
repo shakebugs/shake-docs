@@ -11,7 +11,7 @@ import TabItem from '@theme/TabItem';
 
 ## Screens
 
-Shake has 5 screens:
+Shake has these screens:
 * Home
 * Chat
 * New ticket
@@ -22,30 +22,33 @@ Here's how those screens are related:
 
 IMAGE
 
-## Accessing Shake
+## Opening Shake
 
-You can open either Shake's Home screeen or New ticket screen, depending on the flow you want to achieve for your users.
-Three most common use cases where to add Shake to your app are listed below.
-Of course, it's entirely up to you how you want to use Shake.
+You can decide to open either Shake's Home screeen or New ticket screen, depending on the flow you want to achieve for your users.
+Common use cases where to add Shake to your app are listed below.
+Of course, it's entirely up to you to decide what suits your app UX.
 
 ### Production ticketing system
 
-In production, apps usually add Shake under
-My account screen → Help screen → "Submit feedback" button → Home screen
+In production, apps usually add Shake under **My account or Setting screen → Help screen**.
+There, they have a **Submit feedback** button and it opens up Shake's [Home screen](android/screens/home-screen.md):
 
-Here, your users can see their previously submitted tickets, chat with you and send new tickets.
+IMAGE
 
 ### Internal feedback collection
 
-This entry point is most commonly used during internal testing, when testers or office colleagues are instructed to invoke Shake instantly when they notice a bug, or have a suggestion what to improve.
+This entry point is most commonly used during internal testing. Your testers or office colleagues are told to invoke Shake whenever they notice a bug or have a suggestion.
+In this case, instruct Shake to open up the [New ticket screen](android/screens/new-ticket-screen.md):
 
-Any screen → "shaking gesture" → New ticket screen
+IMAGE
 
 ### Crash reporting
 
 Lastly, Shake can open up automatically after your app crashes.
+[Enable Crash reports](android/crash-reports/enabling.md) and [enable the Ask for crash description sheet](android/crash-reports/describe-crash.md)
+so your users can describe what happened before the crash:
 
-Any screen → your app crashes → Ask for description sheet → New ticket screen
+IMAGE
 
 
 ## Design and customizations
