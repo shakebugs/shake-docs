@@ -1,25 +1,45 @@
 ---
 id: introduction
-title: Introduction
+title: Overview
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Petar added this page.
-
-> Your users can inspect ticket's [Essentials](android/configuration-and-data/essentials.md) and [Metadata](android/configuration-and-data/metadata.md) — before submitting it.
-
-## Introduction
-
-They access this screen by tapping the *Inspect* button on the [New ticket screen](android/screens/new-ticket-screen.md).
-
-<img
-  alt="Inspect screen"
-  src={useBaseUrl('screens/inspect_screen.png')}
-/>
+> See how Shake's mobile user interface looks like, and how you can customize it.
 
 
-## Show the Inspect button
+## Screens
 
-The *Inspect* button is an optional and feature that [can be disabled](android/configuration-and-data/inspect.md) by passing the appropriate value to the Shake configuration.
+Shake has 5 screens:
+* Home
+* Chat
+* New ticket
+* Drawing
+* Inspect
+
+
+## Screen relationships
+
+Here's how your users can get from your app to Shake, and from one Shake screen to another:
+
+## Entry points
+
+You can open either Shake's Home screeen or New ticket screen, depending on the flow you want to achieve for your users. Here are three most common use cases where to add Shake to your app:
+
+### Customer support
+
+Blah
+
+### Shake to report
+
+This entry point is most commonly used during internal testing, when testers or office colleagues are instructed to invoke Shake whenever they notice an issue with your app, or have a suggestion what to improve.
+
+### Crash
+
+
+## Design and customizations
+
+Shake supports dark and light mode out of the box, there is no need to code anything. It will automatically adapt depending on your app design settings.
+
+Shake also supports white labeling. You can change its main action color and  your Shake Dashboard
