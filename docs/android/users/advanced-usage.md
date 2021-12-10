@@ -4,23 +4,24 @@ title: Advanced usage
 ---
 
 > Some apps might want to register the device itself as a user, or make a transition from the anonymous
-user to the _Signed Up_ user.
+user to the identified user.
 
-## Anonymous user
+## Register an anonymous user
 
-Let's take _Reddit_ app as an example.
-Their users can browse the app as guests for months and only then decide to _Sign Up_:
-* The user has to be registered.
-* All the previous reports from the time when they were anonymous have to be tied to them too.
+Let's take an app like _Reddit_ for example. Their users can browse the app as guests for months before deciding to sign up.
 
-The `Shake.updateUserId` method can be used to perform this transition.
-When the user is browsing your app in the anonymous mode,
-you can register them with Shake using a randomly generated UUID persisted in the app storage.
-This identifier will uniquely identify the device your still-anonymous user is on.
+As soon as your user opens your app — and way before they sign up — you can identify them as an anonymous user so both you and them instantly get all the benefits of the Users module.
 
-Once this user decides to _sign up_, instead of registering them with the `Shake.registerUser` method,
-call the `Shake.updateUserId` method to perform a __transition__, 
-associating all previously-anonymous user metadata and tickets with the newly-identified user.
+You would do so by calling `Shake.registerUser(UUID)`, where the `UUID` is a randomly generated unique device ID persisted in the app storage.
+
+
+## Anonymous user → `Shake.updateUserId`
+
+Let's suppose this anonymous guest user decides to sign up one day, and you want to **keep** their User entity:
+* They have to see all their previously reported tickets.
+* You consider them as a same user, and want to keep all their User metadata.
+
+You would call the `Shake.updateUserId` method with the new user identifier.
 
 :::note
 
@@ -30,18 +31,21 @@ now-anonymous user ie. device.
 
 :::
 
-## Device as a user
 
-Similar to the anonymous flow, this approach also registers the device with an identifier when the user is in the _guest_ mode. 
+## Anonymous user → `Shake.registerUser`
 
-Back to the _Reddit_ example.
-While the user is in that guest mode, you call `Shake.registerUser` with the `deviceIdentifier`.
+Let's suppose an anonymous guest user decides to sign up one day, but you want to treat the newly signed-up user as a **new** User entity instead:
+* You want a fresh new User.
+* This user won't see tickets they reported before they signed up, while being an anonymous user.
 
-Once the user decides to _sign up_, you decide not to perform a transition
-but call `Shake.registerUser` with the new user identifier
-and treat the newly signed-up user as a separate entity.
+You would call the `Shake.registerUser` method with the new user identifier.
 
-If this user decides to delete their account or _log out_ ,
-instead of calling `Shake.unregisterUser`
-you will do a switch back to the device identifier by calling 
-`Shake.registerUser` with the `deviceIdentifier` again.
+### Switch back to the anonymous user
+
+When an identified user decides to delete their account or log out, you might want to switch back to the anonymous User.
+
+To achieve that, instead of calling `Shake.unregisterUser`
+you would do a switch back to the device identifier by calling 
+`Shake.registerUser(UUID)` again.
+
+This User will again see the tickets they had reported before they signed up.
