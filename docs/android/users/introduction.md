@@ -1,18 +1,18 @@
 ---
 id: introduction
-title: Introduction
+title: Overview
 ---
 
->Learn about Users, a simple Shake module that allows you to have all your users listed in one place and one click away.
+>This module enables you see a list of your app users, their attributes and tickets on your Shake dashboard. In parallel, it allows them to see their previously submitted tickets.
 
-It allows you to automatically:
-* Have all your app users listed in one place.
-* Track their custom attributes.
+The featurees today are:
+* Your users can see their previously sent tickets on the [Home screen](/android/screens/home-screen.md).
+* You have all your app users listed in one place on your Shake dashboard.
+* Your users' custom attributes are tracked automatically.
 
-Soon you'll also be able to:
-* See which tester hasn't signed in for a week.
-* See a production user with most crashes.
-* See your MAU and DAU charts.
-* Live chat with all of them.
+Soon, these features will be available too:
+* On your Shake dashboard, you will see a User which has submitted a Ticket. And all Tickets sent by a particular User.
+* You will be able to see your MAU and DAU charts.
+* You and your app users will bee able to live chat with each other.
 
-Visit Shake's [installation guide](android/installation.md) to start using Shake in your app.
+Start by [registering your app users](/android/users/user-registration.md).
