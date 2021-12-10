@@ -9,10 +9,16 @@ offering heaps of contextual data to help you fix them fast.
 ## Introduction
 
 When this module is enabled and your user opens up your app after the crash, you have two options:
-* Send yourself the crash report immediately.
+* Send yourself the crash report instantly and silently.
 * Offer them to [add a description to that crash report](/android/crash-reports/describe-crash.md).
 
-IMAGE
+<table class="media-container">
+<img
+  alt="Crash report options"
+  width="370"
+  src={useBaseUrl('screens/crash-report-options@2x.png')}
+/>
+</table>
 
 ## Shared configuration
 
