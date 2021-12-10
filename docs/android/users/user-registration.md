@@ -6,20 +6,21 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
->Your app user can be registered with Shake by calling the `Shake.registerUser` method.
+>Register your app users with Shake by calling the `Shake.registerUser` method.
 
 The passed _user identifier_ argument should ideally reflect the identifier that uniquely represents the user
 in your database.
 
-The example below shows registering users in a most common login flow. However, Shake's public method is intentionally
-called _register_ and not _logIn_ because contexts of user identification vary across apps.
+Shake's public method is intentionally
+called _register_ and not _logIn_ because user identification contexts vary across apps.
 
 Most apps communicate with their backend through the network layer
 which performs the URL request and asynchronously receives a callback with the request result.
+That callback's body is a common place where developers call the `Shake.registerUser` method,
+but maybe your context is different.
+Make sure to call this method at the place where it fits your app's flow perfectly.
 
-Successful registration request callback's body is a usual place where you would call the `Shake.registerUser` method,
-but not every context can be described in this documentation.
-Make sure to call the method at the place where it best fits your app's flow.
+IMAGE OF A RANDOM SIGN IN SCREEN + ILLUSTRATION
 
 <Tabs
   groupId="android"
@@ -76,9 +77,3 @@ private fun logInUser(email: String, password: String) {
 
 </TabItem>
 </Tabs>
-
-:::note
-
-All user-related Shake operations on a registered user are fully supported when your app is offline too, and will sync with the Shake servers later.
-
-:::
