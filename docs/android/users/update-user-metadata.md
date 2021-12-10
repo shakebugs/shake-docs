@@ -6,29 +6,27 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
->Once you have _registered_ your app user, you can attach a map with key-value pairs that describe 
-additional information about the user and their behavior.
+>Once you have registered your app user, you can attach a map with key-value pairs which contain 
+additional data about the user and their behavior.
 
-Updating the user metadata is performed by calling the `Shake.updateUserMetadata` method anywhere in your code
+Update user metadata by calling the `Shake.updateUserMetadata` method anywhere in your code
 after registering the user.
 
 ## Special keys
 
-Shake Dashboard treats these keys with special care:
-* *first_name*
-* *last_name*
-* *end_user_id*
+Values from these three keys will be presented nicely on Shake dashboard so we suggest you use them:
+* `first_name`
+* `last_name`
+* `end_user_id`
 
-Values from these keys are presented nicely on the Shake dashboard.
 
 ## Updates
 
 Updates to the user metadata are _incremental_, or in other words _merged_.
-This means that user metadata key-value pairs are updated and not overwritten, giving you a possiblity to update
-user metadata in chunks from various points of your app, even when offline.
+This means that user metadata key-value pairs are updated and not overwritten, allowing you to update
+user metadata in segments from various parts of your app, even when offline.
 
-A common approach would be updating generic user metadata from one place in your code, upon every user change, and updating the specific metadata 
-in their respective contexts:
+A common approach developers take is updating **generic** user metadata from one place in your code upon every user change
 
 <Tabs
   groupId="android"
@@ -75,6 +73,8 @@ private fun onLoggedIn(user: User) {
 
 </TabItem>
 </Tabs>
+
+and updating **specific** user metadata in their respective contexts:
 
 <Tabs
   groupId="android"
