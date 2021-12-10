@@ -3,7 +3,15 @@ id: introduction
 title: Overview
 ---
 
->This module enables you see a list of your app users, their attributes and tickets on your Shake dashboard. In parallel, it allows them to see their previously submitted tickets.
+>This module enables you to see a list of your app users, their attributes and tickets on your Shake dashboard. In parallel, it allows them to see their previously submitted tickets.
+
+<table class="media-container">
+<img
+  alt="User module"
+  width="288"
+  src={useBaseUrl('screens/user-module@2x.png')}
+/>
+</table>
 
 The featurees today are:
 * Your users can see their previously sent tickets on the [Home screen](/android/screens/home-screen.md).
