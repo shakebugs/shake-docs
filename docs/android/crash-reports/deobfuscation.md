@@ -6,11 +6,11 @@ title: Deobfuscate
 import Tabs from '@theme/Tabs'; 
 import TabItem from '@theme/TabItem';
 
->If you use ProGuard to obfuscate your code, Shake allows you to upload your *mapping.txt* file so it can deobfuscate the stack traces.
+>If you use ProGuard to obfuscate your code, Shake allows you to upload your *mapping.txt* files so it can deobfuscate stack traces.
 
 ## Upload manually to Shake dashboard
 
-By default, the *mapping.txt* file is created in the build directory of the app module: *project/app/build/outputs/mapping/release/mapping.txt*.  
+By default, the *mapping.txt* file is created in your app's build directory: *project/app/build/outputs/mapping/release/mapping.txt*.  
 
 To upload your app's mapping files to Shake dashboard:
 1. Visit [Settings → Apps](https://app.shakebugs.com/settings/apps).
@@ -20,7 +20,7 @@ To upload your app's mapping files to Shake dashboard:
 
 ## Using the script
 
-If you prefer like to do this automatically, you can do it using this script:
+If you prefer to do this automatically, you can do it using this script:
 
 <Tabs
   groupId="OS"
@@ -128,7 +128,7 @@ echo "Success! Mapping file uploaded successfully."
 
 </TabItem></Tabs>
 
-After this, add the following gradle task to your app's *build.gradle* file:
+After that, add the following gradle task to your app's *build.gradle* file:
 
 ```groovy title="build.gradle"
 // highlight-start
