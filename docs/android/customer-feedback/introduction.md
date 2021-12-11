@@ -8,9 +8,27 @@ title: Overview
 ## Introduction
 
 When this module is enabled, you have various options how, when and where to invoke Shake in your app.
-Explore the docs to learn more.
+Here are just two examples, explore the docs and customize Shake's User feedback module to your needs:
 
-IMAGE
+<table class="media-container">
+<img
+  alt="Open Shake New ticket screen"
+  width="520"
+  src={useBaseUrl('screens/open-shake-new-ticket-screen@2x.png')}
+/>
+</table>
+<p class="p2 center-align">Common internal setup</p>
+
+<table class="media-container">
+<img
+  alt="Open Shake Home screen"
+  width="520"
+  src={useBaseUrl('screens/open-shake-home-screen@2x.png')}
+/>
+</table>
+<p class="p2 center-align">Common production setup</p>
+
+
 
 ## Shared configuration
 
