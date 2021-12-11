@@ -15,7 +15,7 @@ When this module is enabled and your user opens up your app after the crash, you
 <table class="media-container">
 <img
   alt="Crash report options"
-  width="370"
+  width="520"
   src={useBaseUrl('screens/crash-report-options@2x.png')}
 />
 </table>
