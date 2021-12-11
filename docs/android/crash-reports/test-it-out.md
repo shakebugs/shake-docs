@@ -1,14 +1,16 @@
 ---
 id: test-it-out
-title: Test it out
+title: Test it
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs'; 
 import TabItem from '@theme/TabItem';
 
->Let's crash your app to see how crash reporting works.
+>Let's crash your app to see how the crash report looks like on your Shake dashboard.
 
-Enable crash reporting and paste this code to the `onCreate` method in one of your activities.
+## Crash your app
+
+[Enable crash reporting](/android/crash-reports/enabling.md) and paste this code to the `onCreate` method in one of your activities.
 It will crash your app when you tap a button by accessing the array with the out-of-bounds index:
 
 <Tabs
@@ -66,16 +68,18 @@ public class MainActivity : Activity {
 
 Reopen you app, describe the crash and tap *Submit*.
 
+## Visit Shake dashboard
+
 To see your crash report:
 1. Visit your [Shake dashboard](https://app.shakebugs.com/)
 1. Switch to the **Crash reports** tab in the left sidebar.
 
-If the crash report is not visible instantly, wait a minute until the system processes it.
-
-
 <table class="media-container">
 <img
-  alt="User feedback intro message"
-  src={useBaseUrl('screens/dominik-dashboard-example@2x.png')}
+  alt="The first crash report on Shake dashboard"
+  width="522"
+  src={useBaseUrl('screens/first-crash-report-on-dashboard@2x.png')}
 />
 </table>
+
+If your crash report is not visible instantly, wait a minute until the system processes it.
