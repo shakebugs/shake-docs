@@ -3,6 +3,8 @@ id: advanced-usage
 title: Advanced usage
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 > Some apps might want to register the device itself as a user, or make a transition from the anonymous
 user to the identified user.
 

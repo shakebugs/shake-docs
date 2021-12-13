@@ -3,6 +3,8 @@ id: introduction
 title: Overview
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 >This module allows your users and testers to seamlessly report their feedback to you.
 
 ## Introduction

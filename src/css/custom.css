@@ -148,6 +148,13 @@ div[class*='codeBlock'], code{
 .pb-80 {
   padding-bottom: 80px;
 }
+.p2 {
+  font-size: 14px;
+  line-height: 20px;
+}
+.center-align {
+  text-align: center;
+}
 
 
 
@@ -326,6 +333,15 @@ svg[class*='iconExternalLink'] {
 /*
 * Search
 */
+
+@media (min-width: 997px) {
+  div[class*='searchBox'] {
+    position: absolute;
+    left: calc(50% - 177px);
+  }
+}
+
+
 .DocSearch-Container {
 	background-color: var(--default-backdrop) !important;
 }
@@ -352,6 +368,14 @@ svg[class*='iconExternalLink'] {
 	color: var(--inactive-element-color) !important;
 }
 
+.DocSearch-Reset:hover {
+  color: inherit !important;
+}
+
+.DocSearch-Hit-action {
+  display: none !important;
+}
+
 .DocSearch-Footer {
 	background: none !important;
 	box-shadow: none !important;
@@ -367,11 +391,12 @@ svg[class*='iconExternalLink'] {
 
 .DocSearch-Button {
 	border-radius: var(--ifm-global-radius) !important;
+  font-family: inherit;
 }
 
 .DocSearch-Button-Placeholder {
 	color: var(--inactive-element-color) !important;
-	padding: 0 130px 0 6px !important;
+	padding: 0 180px 0 6px !important;
   visibility: hidden;
   position: relative;
 }
@@ -379,8 +404,8 @@ svg[class*='iconExternalLink'] {
   visibility: visible;
   position: absolute;
   top: 0;
-  left: 0;
-  content: 'Find anything';
+  left: 6px;
+  content: 'Search documentation...';
 }
 
 .DocSearch-Button-Key {
@@ -419,6 +444,23 @@ svg[class*='iconExternalLink'] {
 
 
 
+/*
+* Scrollbars
+*/
+
+.menu::-webkit-scrollbar-thumb {		
+  background: #3A3A3C;
+}
+.menu::-webkit-scrollbar-track {
+  background: none;
+}
+.DocSearch-Dropdown::-webkit-scrollbar-thumb {
+background-color: #3A3A3C !important;
+border: 3px solid #2C2C2E !important;
+}
+
+
+
 
 
 /*
@@ -433,7 +475,7 @@ svg[class*='iconExternalLink'] {
   background: var(--primary-action-color) !important;
 }
 .menu__link--sublist {
-  margin-bottom: 0;
+  margin-bottom: .25rem;
 }
 
 @media (min-width: 997px) {

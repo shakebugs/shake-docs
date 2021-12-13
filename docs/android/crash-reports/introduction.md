@@ -2,6 +2,7 @@
 id: introduction
 title: Overview
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 >This module tracks crashes and uncaught exceptions in your app. They are then intelligently grouped on your Shake Dashboard,
 offering heaps of contextual data to help you fix them fast.

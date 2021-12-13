@@ -3,6 +3,8 @@ id: introduction
 title: Overview
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 >This module enables you to see a list of your app users, their attributes and tickets on your Shake dashboard. In parallel, it allows them to see their previously submitted tickets.
 
 <table class="media-container">
