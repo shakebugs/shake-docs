@@ -9,19 +9,148 @@ All of this is done out of the box, you don't need to code anything.
 
 ## Automatically attached
 
-Automatically attached data includes:
-* time when the ticket was reported
-* devide OS
-* device model
-* your app version
-* connectivity details
-* a screen the ticekt was reported from
-* location
-* time zone
-* battery status
-* memory status
-* screen resolution
-* etc.
+<div class="four-columns-default mt-50 mb-5">
+    <div>
+        <img
+            class="small-visual-icon"
+            src={useBaseUrl('img/time-clock.svg')}
+        />
+        <p class="p2">Time when the ticket was reported</p>
+    </div>
+    <div>
+        <img
+            class="small-visual-icon"
+            src={useBaseUrl('img/hashtag-square.svg')}
+        />
+        <p class="p2">Device OS</p>
+    </div>
+    <div>
+        <img
+            class="small-visual-icon"
+            src={useBaseUrl('img/iphone.svg')}
+        />
+        <p class="p2">Device model</p>
+    </div>
+    <div>
+        <img
+            class="small-visual-icon"
+            src={useBaseUrl('img/pin-location-square.svg')}
+        />
+        <p class="p2">Location</p>
+    </div>
+    <div>
+        <img
+            class="small-visual-icon"
+            src={useBaseUrl('img/tools-settings.svg')}
+        />
+        <p class="p2">Your app version</p>
+    </div>
+    <div>
+        <img
+            class="small-visual-icon"
+            src={useBaseUrl('img/wifi-spot-square.svg')}
+        />
+        <p class="p2">Connectivity details</p>
+    </div>
+    <div>
+        <img
+            class="small-visual-icon"
+            src={useBaseUrl('img/user-profile-profile.svg')}
+        />
+        <p class="p2">Screen the ticket was reported from</p>
+    </div>
+    <div>
+        <img
+            class="small-visual-icon"
+            src={useBaseUrl('img/user-profile-time-clock.svg')}
+        />
+        <p class="p2">Time zone</p>
+    </div>
+    <div>
+        <img
+            class="small-visual-icon"
+            src={useBaseUrl('img/battery-charge.svg')}
+        />
+        <p class="p2">Battery status</p>
+    </div>
+    <div>
+        <img
+            class="small-visual-icon"
+            src={useBaseUrl('img/business-chart.svg')}
+        />
+        <p class="p2">Memory status</p>
+    </div>
+    <div>
+        <img
+            class="small-visual-icon"
+            src={useBaseUrl('img/full-screen-zoom-square.svg')}
+        />
+        <p class="p2">Screen resolution</p>
+    </div>
+    <div>
+        <img
+            class="small-visual-icon"
+            src={useBaseUrl('img/rotate-horizontal.svg')}
+        />
+        <p class="p2">Screen orientation</p>
+    </div>
+    <div>
+        <img
+            class="small-visual-icon"
+            src={useBaseUrl('img/language-translate.svg')}
+        />
+        <p class="p2">Locale</p>
+    </div>
+    <div>
+        <img
+            class="small-visual-icon"
+            src={useBaseUrl('img/usb-flash-drive.svg')}
+        />
+        <p class="p2">Low power mode</p>
+    </div>
+    <div>
+        <img
+            class="small-visual-icon"
+            src={useBaseUrl('img/hard-drive-storage-circle.svg')}
+        />
+        <p class="p2">Storage status</p>
+    </div>
+    <div>
+        <img
+            class="small-visual-icon"
+            src={useBaseUrl('img/face-id.svg')}
+        />
+        <p class="p2">Authentication to unlock device</p>
+    </div>
+    <div>
+        <img
+            class="small-visual-icon"
+            src={useBaseUrl('img/stars-light-square.svg')}
+        />
+        <p class="p2">Screen density</p>
+    </div>
+    <div>
+        <img
+            class="small-visual-icon"
+            src={useBaseUrl('img/clock-time.svg')}
+        />
+        <p class="p2">Timeline of app lifecycle events</p>
+    </div>
+    <div>
+        <img
+            class="small-visual-icon"
+            src={useBaseUrl('img/alarm-clock-time-fast.svg')}
+        />
+        <p class="p2">Timeline of console logs</p>
+    </div>
+    <div>
+        <img
+            class="small-visual-icon"
+            src={useBaseUrl('img/programming-code.svg')}
+        />
+        <p class="p2">IDE version</p>
+    </div>
+</div>
 
 Shake also tracks the status of these dangerous Android permissions:
 * CALENDAR
