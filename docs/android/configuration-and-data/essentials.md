@@ -150,9 +150,24 @@ All of this is done out of the box, you don't need to code anything.
         />
         <p class="p2">IDE version</p>
     </div>
+    <div>
+        <img
+            class="small-visual-icon"
+            src={useBaseUrl('img/code-test-error.svg')}
+        />
+        <p class="p2">Crash report stack trace</p>
+    </div>
+    <div>
+        <img
+            class="small-visual-icon"
+            src={useBaseUrl('img/settings-switches-square.svg')}
+        />
+        <p class="p2">Granted dangerous permissions <sup>1</sup></p>
+    </div>
 </div>
 
-Shake also tracks the status of these dangerous Android permissions:
+<p><sup>1</sup> Shake tracks the status of these dangerous Android permissions:</p>
+
 * CALENDAR
 * CALL_LOG
 * CAMERA

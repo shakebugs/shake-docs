@@ -5,37 +5,84 @@
  * and scoped locally.
  */
 
-.heroBanner {
-  padding: 4rem 0;
+.docsHome {
+   max-width: 826px;
+   margin: 0 auto;
+ }
+
+ .docsHome h1, .docsHome h2, .docsHome blockquote {
   text-align: center;
-  position: relative;
-  overflow: hidden;
 }
 
-@media screen and (max-width: 966px) {
-  .heroBanner {
-    padding: 2rem;
+
+
+
+
+.modulesList, .featuresList {
+  display: flex;
+  flex-wrap: wrap;
+}
+.modulesList > div {
+  flex: 0 0 50%;
+  text-align: center;
+  padding: 0 10px 28px;
+}
+
+@media (min-width: 701px) {
+  .modulesList > div:nth-child(2n+1) {
+    padding-left: 0;
+  }
+  .modulesList > div:nth-child(2n) {
+    padding-right: 0;
+  }
+}
+@media (max-width: 700px) {
+  .modulesList > div {
+    flex: 0 0 100%;
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 
-.buttons {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+
+
+
+
+
+
+
+.featuresList > div {
+  flex: 0 0 33%;
+  text-align: center;
+  padding: 0 10px 28px;
 }
 
-.features {
-  display: flex;
-  align-items: center;
-  padding: 2rem 0;
-  width: 100%;
+.featuresList > div > img {
+  width: 100px;
 }
 
-.featureImage {
-  height: 200px;
-  width: 200px;
+.featuresList a{
+  border-bottom: 1px solid;
 }
 
-.getStarted {
-  margin-right: 8px;
+@media (min-width: 701px) {
+  .featuresList > div:nth-child(3n+1) {
+    padding-left: 0;
+  }
+  .featuresList > div:nth-child(3n) {
+    padding-right: 0;
+  }
+}
+@media (max-width: 700px) {
+
+  .featuresList > div {
+    flex: 0 0 50%;
+  }
+
+  .featuresList > div:nth-child(2n+1) {
+    padding-left: 0;
+  }
+  .featuresList > div:nth-child(2n) {
+    padding-right: 0;
+  }
 }

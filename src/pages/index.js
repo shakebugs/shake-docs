@@ -6,62 +6,94 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import styles from './styles.module.css';
 
+const modules = [
+    {
+        destinationUrl: 'android/customer-feedback/introduction/',
+        title: <>User feedback</>,
+      imageUrl: 'img/module-user-feedback@2x.png',
+      description: (
+        <>
+            Testers and users can send you bug reports, questions and suggestions seamlessly.
+        </>
+      ),
+    },
+    {
+        destinationUrl: 'android/users/introduction/',
+      title: <>Users</>,
+     imageUrl: 'img/module-users@2x.png',
+      description: (
+        <>
+            List of all your app users, their attributes and reported tickets, plus live chat.
+        </>
+      ),
+    },
+    {
+        destinationUrl: 'android/crash-reports/introduction/',
+      title: <>Crash reports</>,
+      imageUrl: 'img/module-crash-reports@2x.png',
+      description: (
+        <>
+            Receive stack trace, logs, user’s comment and more whenever your app crashes.
+        </>
+      ),
+    },
+  ];
+
 const features = [
   {
-    title: <>Plug 'n' play</>,
-    imageUrl: 'img/feature-simple.svg',
+    imageUrl: 'img/feature-custom-user-data@2x.png',
     description: (
       <>
-          Minutes from now, your entire app development team will stop wasting hoooours of debugging time each week.
+          Custom User data
       </>
     ),
   },
   {
-    title: <>Reliable and light</>,
-   imageUrl: 'img/feature-reliable.svg',
+   imageUrl: 'img/feature-custom-ticket-data@2x.png',
     description: (
       <>
-          Just as you, we as ambitious engineers are driven by perfection.
-          We spend half of our hours just on testing the SDK while decreasing its size too.
+          Custom Ticket data
       </>
     ),
   },
   {
-    title: <>100% Customizable</>,
-    imageUrl: 'img/feature-customizable.svg',
+    imageUrl: 'img/feature-auto-attach-files@2x.png',
     description: (
       <>
-          Every app has its own variables, of course.
-          That's why we made it easy-peasy to send yourself a value of any variable you want from a user's device.
+          Auto attach files
       </>
     ),
   },
 ];
 
-function Feature({imageUrl, title, description}) {
+function Module({destinationUrl, imageUrl, title, description}) {
+    const imgUrl = useBaseUrl(imageUrl);
+    const destUrl = useBaseUrl(destinationUrl);
+    return (
+        <div>
+            <a href={destUrl}>
+                {imgUrl && (
+                    <img className={styles.moduleImage} src={imgUrl} alt={title} />
+                )}
+                <h3>{title}</h3>
+                <p>{description}</p>
+            </a>
+        </div>
+    );
+  }
+
+function Feature({imageUrl, description}) {
   const imgUrl = useBaseUrl(imageUrl);
   return (
-    <div className={classnames('col col--4', styles.feature)}>
+    <div>
       {imgUrl && (
-        <div className="text--center">
-          <img className={styles.featureImage} src={imgUrl} alt={title} />
-        </div>
+          <img className={styles.featureImage} src={imgUrl} alt={description} />
       )}
-      <h3>{title}</h3>
-      <p>{description}</p>
+      <p>
+          <a href="https://www.shakebugs.com">{description}</a>
+      </p>
     </div>
   );
-}
-
-function Button(text, url) {
-    return <Link
-        className={classnames(
-            'button button--secondary button--lg',
-            styles.getStarted,
-        )}
-        to={useBaseUrl(url)}>
-        {text}
-    </Link>;
 }
 
 function Home() {
@@ -71,30 +103,38 @@ function Home() {
     <Layout
         title={'Shake'}
         description="Description will go into a meta tag in <head />">
-        <header className={styles.heroBanner}>
-            <div className="container">
-                <h1 className="hero__title">{siteConfig.title}</h1>
-                <p className="hero__subtitle">{siteConfig.tagline}</p>
-                <div className={styles.buttons}>
-                    {Button("Android", "android/overview")}
-                    {Button("iOS", "ios/install/setup-spm")}
-                    {Button("React Native", "react/install/installation")}
-                    {Button("Flutter", "flutter/overview")}
-                </div>
-            </div>
-        </header>
-        <main>
-            {features && features.length > 0 && (
-                <section className={styles.features}>
-                    <div className="container">
-                        <div className="row">
-                            {features.map((props, idx) => (
-                                <Feature key={idx} {...props} />
-                            ))}
-                        </div>
-                    </div>
+        
+        <main className={styles.docsHome}>
+
+            <h1>{siteConfig.title}</h1>
+            <blockquote>
+                <p>{siteConfig.tagline}</p>
+            </blockquote>
+
+            <h2>Modules</h2>
+            <blockquote>
+                <p>Each of Shake’s product modules works independently, and they work even better together.</p>
+            </blockquote>
+            {modules && modules.length > 0 && (
+                <section className={styles.modulesList}>
+                    {modules.map((props, idx) => (
+                        <Module key={idx} {...props} />
+                    ))}
                 </section>
             )}
+
+            <h2>Configuration and data</h2>
+            <blockquote>
+                <p>Customize how Shake behaves and looks in your app, and what data is automatically attached to tickets your users send.</p>
+            </blockquote>
+            {features && features.length > 0 && (
+                <section className={styles.featuresList}>
+                    {features.map((props, idx) => (
+                        <Feature key={idx} {...props} />
+                    ))}
+                </section>
+            )}
+
         </main>
     </Layout>
   );
