@@ -7,11 +7,28 @@
 
 .docsHome {
    max-width: 826px;
-   margin: 0 auto;
+   margin: 0 auto 80px;
  }
 
  .docsHome h1, .docsHome h2, .docsHome blockquote {
   text-align: center;
+}
+
+.docsHome h1 {
+  font-size: 62px;
+  line-height: 70px;
+  margin-top: 70px;
+  margin-bottom: 15px;
+}
+.docsHome h2 {
+  margin-top: 80px;
+  margin-bottom: 20px;
+}
+.docsHome blockquote {
+  margin: 0 auto;
+}
+.docsHome h2 + blockquote {
+  max-width: 500px;
 }
 
 
@@ -21,14 +38,26 @@
 .modulesList, .featuresList {
   display: flex;
   flex-wrap: wrap;
+  margin: 40px auto 0;
+  width: 700px;
 }
 .modulesList > div {
   flex: 0 0 50%;
   text-align: center;
   padding: 0 10px 28px;
 }
+.modulesList h3 {
+  margin-top: 12px;
+  margin-bottom: 12px;
+  display: inline-block;
+  border-bottom: 1px solid transparent;
+}
+.modulesList > div:hover > a > h3 {
+  border-bottom-color: inherit;
+}
 
-@media (min-width: 701px) {
+
+@media (min-width: 751px) {
   .modulesList > div:nth-child(2n+1) {
     padding-left: 0;
   }
@@ -36,7 +65,12 @@
     padding-right: 0;
   }
 }
-@media (max-width: 700px) {
+@media (max-width: 750px) {
+
+  .modulesList {
+    width: 340px;
+  }
+
   .modulesList > div {
     flex: 0 0 100%;
     padding-left: 0;
@@ -52,7 +86,7 @@
 
 
 .featuresList > div {
-  flex: 0 0 33%;
+  flex: 0 0 33.333333333333%;
   text-align: center;
   padding: 0 10px 28px;
 }

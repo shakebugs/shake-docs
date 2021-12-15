@@ -286,6 +286,12 @@ code {
   border-bottom: 1px solid;
   border-color: var(--subtle-limiter);
 }
+.navbar__brand {
+  margin-right: .4rem;
+}
+.navbar__logo {
+  height: 1.7rem;
+}
 
 @media (min-width: 997px) {
   .navbar {
@@ -788,7 +794,7 @@ h3 .hash-link {
 
 @media (max-width: 1250px) and (min-width: 501px) {
   .four-columns-default > div {
-    flex: 0 0 33%;
+    flex: 0 0 33.333333333333%;
   }
   .four-columns-default > div:nth-child(3n+1) {
     padding-left: 0;

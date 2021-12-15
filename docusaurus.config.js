@@ -25,10 +25,10 @@ module.exports = {
       indexName: 'shakebugs',
     },
     navbar: {
-      title: 'Shake',
+      
       logo: {
         alt: 'Shake logo',
-        src: 'img/logo.svg',
+        src: 'img/shake-full-logo.svg',
         href: 'https://www.shakebugs.com/',
       },
       items: [

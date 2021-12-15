@@ -41,6 +41,16 @@ const modules = [
 
 const features = [
   {
+    destinationUrl: 'android/configuration-and-data/essentials/',
+    imageUrl: 'img/essential-data@2x.png',
+    description: (
+      <>
+          Data attached by default
+      </>
+    ),
+  },
+  {
+    destinationUrl: 'android/users/update-user-metadata/',
     imageUrl: 'img/feature-custom-user-data@2x.png',
     description: (
       <>
@@ -49,6 +59,7 @@ const features = [
     ),
   },
   {
+    destinationUrl: 'android/configuration-and-data/metadata/',
    imageUrl: 'img/feature-custom-ticket-data@2x.png',
     description: (
       <>
@@ -57,6 +68,43 @@ const features = [
     ),
   },
   {
+    destinationUrl: 'android/configuration-and-data/automatic-screen-recording/',
+    imageUrl: 'img/screen-recording@2x.png',
+    description: (
+      <>
+          Auto screen recording
+      </>
+    ),
+  },
+  {
+    destinationUrl: 'android/customer-feedback/invoke/',
+    imageUrl: 'img/invoke-shake@2x.png',
+    description: (
+      <>
+          Invoke Shake
+      </>
+    ),
+  },
+  {
+    destinationUrl: 'android/configuration-and-data/manage-sensitive-data/',
+    imageUrl: 'img/protect-sensitive-data@2x.png',
+    description: (
+      <>
+          Protect sensitive data
+      </>
+    ),
+  },
+  {
+    destinationUrl: 'android/configuration-and-data/activity/',
+    imageUrl: 'img/steps-to-reproduce@2x.png',
+    description: (
+      <>
+          Auto steps to reproduce
+      </>
+    ),
+  },
+  {
+    destinationUrl: 'android/configuration-and-data/attachments/',
     imageUrl: 'img/feature-auto-attach-files@2x.png',
     description: (
       <>
@@ -82,15 +130,16 @@ function Module({destinationUrl, imageUrl, title, description}) {
     );
   }
 
-function Feature({imageUrl, description}) {
+function Feature({destinationUrl,imageUrl, description}) {
   const imgUrl = useBaseUrl(imageUrl);
+  const destUrl = useBaseUrl(destinationUrl);
   return (
     <div>
       {imgUrl && (
           <img className={styles.featureImage} src={imgUrl} alt={description} />
       )}
       <p>
-          <a href="https://www.shakebugs.com">{description}</a>
+          <a href={destUrl}>{description}</a>
       </p>
     </div>
   );
