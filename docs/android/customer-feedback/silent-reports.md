@@ -1,19 +1,17 @@
 ﻿---
 id: silent-reports
-title: Silent feedback
+title: Silent user feedback
 ---
 >Send yourself feedback from the app background, without showing Shake UI.
 
 ## Overview
-You can send silent reports to yourself by calling the `Shake.silentReport` method anywhere after `Shake.start`.
+You can send silent user feedback to yourself by calling the `Shake.silentReport` method anywhere after `Shake.start`.
 
-Silent report can be configured with the *Description* just like the regular report and with additional *Attached files*. *ShakeReportConfiguration* determines what kind of data is included in the report.
+Call `Shake.silentReport` anywhere after `Shake.start` and
+feel free to add a *Description* and *Attached files* to it.
+*ShakeReportConfiguration* determines which data is included in the silent user feedback.
 
-Call the `Shake.silentReport` method anywhere after `Shake.start`.
-Similar to regular user feedback, feel free to add a *Description* or *Attached files*.
-*ShakeReportConfiguration* determines which data is included in the report
-
-Silent reports will also attach files returned by the [onPrepareData](android/configuration-and-data/attachments.md) callback.
+Silent user feedback will also attach files returned by the [onPrepareData](android/configuration-and-data/attachments.md) callback.
 
 import Tabs from '@theme/Tabs'; 
 import TabItem from '@theme/TabItem';
@@ -84,9 +82,9 @@ private fun createShakeReportData(): ShakeReportData {
 
 ## Show the Ticket submitted message
 
-To optionally notify your user that a silent report has just been submitted,
+To optionally notify your user that a silent user feedback has just been submitted,
 change the `ShakeReportConfiguration` and use that configuration object when
-sending your silent report with the `Shake.silentReport` method:
+sending the silent user feedback with the `Shake.silentReport` method:
 
 <Tabs
   groupId="android"
