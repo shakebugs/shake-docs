@@ -12,7 +12,7 @@ import TabItem from '@theme/TabItem';
 
 They access this screen by tapping the *Inspect* button on the [New ticket screen](android/screens/new-ticket-screen.md).
 
-<table class="media-container">
+<table class="media-container mt-50">
 <img
   alt="Inspect screen"
   width="370"
