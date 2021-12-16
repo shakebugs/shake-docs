@@ -34,7 +34,7 @@ Here are just two examples, explore the docs and customize Shake's User feedback
 
 ## Shared configuration
 
-Just like the Crash reports module, User feedback module pulls your
+Just like the [Crash reports](android/crash-reports/introduction.md) module, User feedback module pulls your
 [Configuration and data](/android/configuration-and-data/introduction.md) settings.
 
 This means that all user feedback comes to you with [auto screenshot](/android/configuration-and-data/screenshot.md)
