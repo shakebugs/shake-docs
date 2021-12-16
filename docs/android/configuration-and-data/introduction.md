@@ -1,6 +1,6 @@
 ---
 id: introduction
-title: Introduction
+title: Overview
 ---
 
 >Customize both the elements of Shake's New ticket screen and the data Shake collects to your needs.
