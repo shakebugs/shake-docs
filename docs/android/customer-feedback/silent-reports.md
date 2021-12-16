@@ -2,7 +2,7 @@
 id: silent-reports
 title: Silent user feedback
 ---
->Send yourself feedback from the app background, without showing Shake UI.
+>Send yourself feedback from the app background, without showing [Shake UI](android/screens/introduction.md).
 
 ## Overview
 You can send silent user feedback to yourself by calling the `Shake.silentReport` method anywhere after `Shake.start`.
