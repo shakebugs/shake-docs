@@ -14,6 +14,7 @@ Whatever you tweak, your configuration settings apply to all Shake modules:
 ## Elements of the New ticket screen
 
 Your users send you their feedback and crash reports from the New ticket screen. Here's what you can customize on it:
+* [Feedback type](android/customer-feedback/feedback-type.md) for User feedback (Crash reports don't have this element).
 * [Email field](android/configuration-and-data/email.md)
 * [Inspect button](android/configuration-and-data/inspect.md)
 
