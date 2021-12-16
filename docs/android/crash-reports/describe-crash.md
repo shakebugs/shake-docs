@@ -19,7 +19,7 @@ This option is disabled by default. If you keep it this way, the crash report wi
 
 If you enable it, a sheet will be shown to your user, givinig them an opportunity to describe what they were doing before the crash, potentially helping you a lot with their comment.
 
-<table class="media-container media-container-highlighted pb-80">
+<table class="media-container media-container-highlighted mt-40 mb-40 pb-80">
 <img
   alt="Ask for description sheet"
   width="380"
@@ -56,6 +56,6 @@ Shake.setAskForCrashDescription(true)
 
 </TabItem></Tabs>
 
-If the user decides they don't want to add their description (they tap outside the sheet), the crash report will be sent to you silently anyway.
+If the user decides they don't want to add their description (they tap outside the sheet) → the crash report will be sent to you silently anyway.
 
-If the user decides they want to add their description (they tap the confirmation button) but then discards the ticket on the New ticket screeen, the crash report will be discarded.
+If the user decides they do want to add their description (they tap the confirmation button) but then discards their ticket on the New ticket screeen → the crash report will be discarded.
