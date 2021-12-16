@@ -71,10 +71,10 @@ Reopen you app, describe the crash and tap *Submit*.
 ## Visit Shake dashboard
 
 To see your crash report:
-1. Visit your [Shake dashboard](https://app.shakebugs.com/)
+1. Visit your [Shake Dashboard](https://app.shakebugs.com).
 1. Switch to the **Crash reports** tab in the left sidebar.
 
-<table class="media-container">
+<table class="media-container mt-40 mb-30">
 <img
   alt="The first crash report on Shake dashboard"
   width="522"
