@@ -2,7 +2,15 @@
 id: feedback-type
 title: Feedback type
 ---
->By default, your users have to categorize their feedback so you can filter and browse it more easily.
+>By default, your users have to categorize their feedback so you can filter and browse it more easily later on.
+
+<table class="media-container media-container-highlighted mt-50 pb-80">
+<img
+  alt="User feedback type"
+  width="380"
+  src={useBaseUrl('screens/feedback-type@2x.png')}
+/>
+</table>
 
 ## Introduction
 
@@ -113,7 +121,7 @@ fun enableVideoCallFeature(contactID:String) {
 </Tabs>
 
 ## Disable
-If you don't want to force your users to categorize their feedback, simply hide this component:
+If you don't want to force your users to categorize their feedback, simply hide this element:
 
 <Tabs
   groupId="android"
