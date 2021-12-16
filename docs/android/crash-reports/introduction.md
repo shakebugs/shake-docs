@@ -23,11 +23,9 @@ When this module is enabled and your user opens up your app after the crash, you
 
 ## Shared configuration
 
-Just like the User feedback module, Crash reports module pulls your
-[Configuration & Data](/android/configuration-and-data/introduction.md).
+Just like the [User feedback](android/customer-feedback/introduction.md) module, Crash reports module pulls your
+[Configuration and data](/android/configuration-and-data/introduction.md).
 
 This means that crash reports also come to you with [auto screenshot](/android/configuration-and-data/screenshot.md)
 and [auto screen recording](/android/configuration-and-data/automatic-screen-recording.md)
-of what happened before the crash, [activity history](/android/configuration-and-data/activity.md) and other useful data.
-
-Everything works offline too.
+of what happened before the crash, [Activity history](/android/configuration-and-data/activity.md) and other useful data.
