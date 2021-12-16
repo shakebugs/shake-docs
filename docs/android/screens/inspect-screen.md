@@ -15,7 +15,7 @@ They access this screen by tapping the *Inspect* button on the [New ticket scree
 <table class="media-container mt-50">
 <img
   alt="Inspect screen"
-  width="370"
+  width="376"
   src={useBaseUrl('screens/android-inspect-screen@2x.png')}
 />
 </table>
