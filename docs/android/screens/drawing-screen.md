@@ -8,6 +8,12 @@ import TabItem from '@theme/TabItem';
 
 > Users can draw on images attached to the ticket, and blur their parts.
 
-IMAGE
+<table class="media-container">
+<img
+  alt="Shake Drawing screen"
+  width="370"
+  src={useBaseUrl('screens/android-drawing-screen@2x.png')}
+/>
+</table>
 
-They access this by tapping any of the images attached to their ticket on the [New ticket screen](android/screens/new-ticket-screen.md).
+They access this screen by tapping any of the images attached to their ticket on the [New ticket screen](android/screens/new-ticket-screen.md).
