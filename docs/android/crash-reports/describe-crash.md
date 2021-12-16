@@ -23,7 +23,7 @@ If you enable it, a sheet will be shown to your user, givinig them an opportunit
 <img
   alt="Ask for description sheet"
   width="386"
-  src={useBaseUrl('screens/ask-for-description@2x.png')}
+  src={useBaseUrl('img/ask-for-description@2x.png')}
 />
 </table>
 

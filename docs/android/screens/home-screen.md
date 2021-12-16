@@ -15,7 +15,7 @@ Here, your user can see:
 * All their previous tickets (user feedback and crash reports).
 To show them their previous tickets, [register your users](android/users/introduction.md) with Shake.
 
-<table class="media-container">
+<table class="media-container mt-50">
 <img
   alt="Shake Home screen"
   width="376"

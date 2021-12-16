@@ -11,7 +11,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 It contains various components, many of which can be tweaked according to your needs.
 Visit [Configuration and data](android/configuration-and-data/introduction.md#elements-of-the-new-ticket-screen) for more details.
 
-<table class="media-container">
+<table class="media-container mt-50">
 <img
   alt="Shake New ticket screen"
   width="370"

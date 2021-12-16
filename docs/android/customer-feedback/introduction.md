@@ -19,7 +19,7 @@ Here are just two examples, explore the docs and customize Shake's User feedback
   src={useBaseUrl('screens/open-shake-new-ticket-screen@2x.png')}
 />
 </table>
-<p class="p2 center-align">Common internal testing setup: <a href="https://www.shakebugs.com/docs/android/screens/new-ticket-screen/">New ticket</a></p>
+<p class="p2 center-align">Common internal testing setup: <a href="/android/screens/new-ticket-screen/">New ticket</a></p>
 
 <table class="media-container mt-50">
 <img
@@ -28,7 +28,7 @@ Here are just two examples, explore the docs and customize Shake's User feedback
   src={useBaseUrl('screens/open-shake-home-screen@2x.png')}
 />
 </table>
-<p class="p2 center-align">Common production setup: <a href="https://www.shakebugs.com/docs/android/screens/home-screen/">Home</a></p>
+<p class="p2 center-align">Common production setup: <a href="/android/screens/home-screen/">Home</a></p>
 
 
 

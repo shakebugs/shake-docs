@@ -2,13 +2,15 @@
 id: feedback-type
 title: Feedback type
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 >By default, your users have to categorize their feedback so you can filter and browse it more easily later on.
 
 <table class="media-container media-container-highlighted mt-50 pb-80">
 <img
   alt="User feedback type"
   width="380"
-  src={useBaseUrl('screens/feedback-type@2x.png')}
+  src={useBaseUrl('img/feedback-type@2x.png')}
 />
 </table>
 

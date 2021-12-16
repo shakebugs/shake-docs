@@ -13,7 +13,7 @@ import TabItem from '@theme/TabItem';
 
 Shake UI consists of five screens and here's how they're related:
 
-<table class="media-container">
+<table class="media-container mt-40">
 <img
   alt="Shake screens structure"
   width="534"
@@ -32,7 +32,7 @@ Of course, it's up to you to decide what suits your app UX the most.
 This entry point is often used during internal testing. Your testers or office colleagues are told to invoke Shake whenever they notice a bug or have a suggestion.
 In this case, instruct Shake to open up the [New ticket screen](android/screens/new-ticket-screen.md):
 
-<table class="media-container">
+<table class="media-container mt-40 mb-40">
 <img
   alt="Open Shake New ticket screen"
   width="520"
@@ -45,7 +45,7 @@ In this case, instruct Shake to open up the [New ticket screen](android/screens/
 In production, apps usually add Shake under **My account or Settings → Help**.
 There, they have a **Submit feedback** button and it opens up Shake's [Home screen](android/screens/home-screen.md):
 
-<table class="media-container">
+<table class="media-container mt-40 mb-40">
 <img
   alt="Open Shake Home screen"
   width="520"
@@ -59,7 +59,7 @@ Lastly, Shake can open up automatically after your app crashes.
 [Enable Crash reports](android/crash-reports/enabling.md) and [enable the Ask for crash description sheet](android/crash-reports/describe-crash.md)
 so your users can describe what happened before your app crashed to them:
 
-<table class="media-container">
+<table class="media-container mt-40 mb-40">
 <img
   alt="Open Shake New ticket screen after the crash"
   width="520"

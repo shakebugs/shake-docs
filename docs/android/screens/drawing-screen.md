@@ -8,7 +8,7 @@ import TabItem from '@theme/TabItem';
 
 > Users can draw on images attached to the ticket, and blur their parts.
 
-<table class="media-container">
+<table class="media-container mt-50">
 <img
   alt="Shake Drawing screen"
   width="370"

@@ -23,7 +23,7 @@ Let's suppose this anonymous guest user decides to sign up one day, and you want
 * They have to see all their previously reported tickets.
 * You consider them as a same user, and want to keep all their User metadata.
 
-<table class="media-container">
+<table class="media-container mt-50 mb-50">
 <img
   alt="Anonymous user update User ID"
   width="520"
@@ -48,7 +48,7 @@ Let's suppose an anonymous guest user decides to sign up one day, but you want t
 * You want a fresh new User.
 * This user won't see tickets they reported before they signed up, while being an anonymous user.
 
-<table class="media-container">
+<table class="media-container mt-50 mb-50">
 <img
   alt="Anonymous user register new user"
   width="520"
