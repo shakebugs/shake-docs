@@ -10,12 +10,20 @@ import TabItem from '@theme/TabItem';
 
 ## Introduction
 
-Here, your user can see quick actions they can make and all their previous tickets (user feedback and crash reports).
-To show them their tickets, [register your users](android/users/introduction.md) with Shake.
+Here, your user can see:
+* A button to submit a new ticket.
+* All their previous tickets (user feedback and crash reports).
+To show them their previous tickets, [register your users](android/users/introduction.md) with Shake.
 
-IMAGE
+<table class="media-container">
+<img
+  alt="Shake Home screen"
+  width="376"
+  src={useBaseUrl('screens/android-home-screen@2x.png')}
+/>
+</table>
 
 ## Show
 
-To show the Home screen to your user, call the `Shake.show` method with the `ShakeScreen.HOME` argument.
-Visit [Invocations](android/customer-feedback/invoke.md/#invoke-through-code) to learn more about manual invocations.
+To show the Home screen to an app user, call the `Shake.show` method with the `ShakeScreen.HOME` argument.
+Visit [manual invocations](android/customer-feedback/invoke.md/#invoke-through-code) to learn more.
