@@ -215,8 +215,8 @@ private fun onFeedbackCenterPressed() {
 </TabItem>
 </Tabs>
 
-If a [screenshot](android/configuration-and-data/screenshot.md) and
-[automatic screen recording](android/configuration-and-data/automatic-screen-recording.md) are enabled,
+If an [auto screenshot](android/configuration-and-data/screenshot.md) and
+[auto screen recording](android/configuration-and-data/automatic-screen-recording.md) are enabled,
 when you call `ShakeScreen.NEW` they will be automatically attached to a ticket.
 
 If enabled, [Activity history](android/configuration-and-data/activity.md),
