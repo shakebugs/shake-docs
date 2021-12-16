@@ -22,7 +22,7 @@ If you enable it, a sheet will be shown to your user, givinig them an opportunit
 <table class="media-container media-container-highlighted mt-40 mb-40 pb-80">
 <img
   alt="Ask for description sheet"
-  width="380"
+  width="386"
   src={useBaseUrl('screens/ask-for-description@2x.png')}
 />
 </table>
