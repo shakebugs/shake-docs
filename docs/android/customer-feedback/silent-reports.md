@@ -36,7 +36,7 @@ private void sendSilentReport() {
     // highlight-start
     ShakeReportConfiguration configuration = new ShakeReportConfiguration();
     configuration.screenshot = true;
-    configuration.video = true;
+    configuration.video = false;
     configuration.blackBoxData = true;
     configuration.activityHistoryData = true;
     
@@ -65,7 +65,7 @@ private fun sendSilentReport() {
     // highlight-start
     val configuration = ShakeReportConfiguration()
     configuration.screenshot = true
-    configuration.video = true
+    configuration.video = false
     configuration.blackBoxData = true
     configuration.activityHistoryData = true
     
