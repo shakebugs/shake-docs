@@ -92,3 +92,7 @@ em, code {
   margin-bottom: 16px;
   padding: 6px 12px!important;
 }
+
+.screen-image {
+  border-radius: 20px;
+}

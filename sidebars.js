@@ -13,6 +13,7 @@ module.exports = {
             label: 'Screens',
             items: [
                 'android/screens/home-screen',
+                'android/screens/chat-screen',
                 'android/screens/inspect-screen',
                 'android/screens/new-ticket-screen'
             ]
@@ -52,7 +53,8 @@ module.exports = {
                         'android/users/unregister-user',
                         'android/users/update-user-metadata',
                         'android/users/update-user-identifier',
-                        'android/users/advanced-usage'
+                        'android/users/advanced-usage',
+                        'android/users/chat',
                     ]
                 },
             ]
@@ -102,6 +104,7 @@ module.exports = {
             label: 'Screens',
             items: [
                 'ios/screens/home-screen',
+                'ios/screens/chat-screen',
                 'ios/screens/inspect-screen',
                 'ios/screens/new-ticket-screen'
             ]
@@ -142,6 +145,7 @@ module.exports = {
                         'ios/users/update-user-metadata',
                         'ios/users/update-user-identifier',
                         'ios/users/advanced-usage',
+                        'ios/users/chat',
                     ]
                 },
             ]

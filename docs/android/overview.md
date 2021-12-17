@@ -32,6 +32,7 @@ constantly adding new features. Below is a table describing the current state of
 | White labeling       |    ✅     |
 | Crash reporting      |    ✅     |
 | Users                |    ✅     |
+| Chat                 |    ✅     |
 
 ## Languages
 
