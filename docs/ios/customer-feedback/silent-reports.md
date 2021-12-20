@@ -30,6 +30,7 @@ SHKShakeReportConfiguration *conf = SHKShakeReportConfiguration.new;
 conf.includesActivityHistoryData = true;
 conf.includesBlackBoxData = true;
 conf.includesScreenshotImage = true;
+conf.includesVideo = false;
 
 NSArray<SHKShakeFile *> * (^fileAttachBlock)(void) = ^NSArray<SHKShakeFile *> *(void) {
 
@@ -53,6 +54,7 @@ let conf = ShakeReportConfiguration()
 conf.includesScreenshotImage = true
 conf.includesBlackBoxData = true
 conf.includesActivityHistoryData = true
+conf.includesVideo = false;
 
 let fileAttachBlock: () -> [ShakeFile] = {
     let file = ShakeFile(name: "myFile.log", data: Data())

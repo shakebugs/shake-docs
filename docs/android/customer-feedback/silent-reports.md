@@ -13,7 +13,7 @@ Silent report can be configured with the *Description* just like the regular rep
 
 :::note
 
-Silent reports will also attach files returned by the [onPrepareData](android/configuration-and-data/attachments.md) callback.
+Silent reports will also attach files returned by the [onPrepareData](android/configuration-and-data/attachments.md) callback and [Automatic Screen Recording](android/configuration-and-data/automatic-screen-recording.md) file if the feature is turned on.
 
 :::
 
@@ -36,6 +36,7 @@ private void sendSilentReport() {
     // highlight-start
     ShakeReportConfiguration configuration = new ShakeReportConfiguration();
     configuration.screenshot = true;
+    configuration.video = false;
     configuration.blackBoxData = true;
     configuration.activityHistoryData = true;
     
@@ -64,6 +65,7 @@ private fun sendSilentReport() {
     // highlight-start
     val configuration = ShakeReportConfiguration()
     configuration.screenshot = true
+    configuration.video = false
     configuration.blackBoxData = true
     configuration.activityHistoryData = true
     
