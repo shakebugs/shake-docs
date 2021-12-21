@@ -38,3 +38,22 @@ const onLoginSuccessful = (user) => {
     Shake.setMetadata('userid', user.id);
 }
 ```
+
+## Clear metadata
+
+If you want to clear existing metadata, you can use `Shake.clearMetadata` method.
+
+For example, you want to clear metadata when the user logs out:
+
+```javascript title="App.js"
+// highlight-next-line
+import Shake from '@shakebugs/react-native-shake';
+
+const onLogOutPressed = () => {
+    loginService.logout();
+
+    // highlight-next-line
+    Shake.clearMetadata();
+}
+```
+

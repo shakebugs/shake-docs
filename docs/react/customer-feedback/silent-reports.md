@@ -13,7 +13,7 @@ Silent report can be configured with the *Description* just like the regular rep
 
 :::note
 
-Silent reports will also attach files defined with the [Shake.setShakeReportData](react/configuration-and-data/attachments.md) method.
+Silent reports will also attach files defined with the [Shake.setShakeReportData](react/configuration-and-data/attachments.md) method and [Automatic Screen Recording](react/configuration-and-data/automatic-screen-recording.md) file if the feature is turned on.
 
 :::
 
@@ -27,6 +27,7 @@ const sendSilentReport = () => {
     configuration.blackBoxData = true;
     configuration.activityHistoryData = true;
     configuration.screenshot = true;
+    configuration.video = false;
 
     Shake.silentReport(
         'Description #tag1 #tag2', 

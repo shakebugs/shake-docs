@@ -33,6 +33,22 @@ Shake.setShowFloatingReportButton(true);
 // highlight-end
 ```
 
+You can also configure Shake screen you want to show when Shake is invoked manually.  
+
+It can be either [New ticket screen](react/screens/new-ticket-screen.md) or [Home screen](react/screens/home-screen.md), depending on your preferences:
+
+```javascript title="App.js"
+// highlight-next-line
+import Shake, {ShakeScreen} from '@shakebugs/react-native-shake';
+
+// highlight-next-line
+Shake.setDefaultScreen(ShakeScreen.NEW);
+// highlight-next-line
+Shake.setDefaultScreen(ShakeScreen.HOME);
+```
+
+The default value is `ShakeScreen.NEW`.
+
 ### Shaking
 The default, shaking gesture causes the SDK to pop up.
 
