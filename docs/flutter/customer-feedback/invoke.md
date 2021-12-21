@@ -33,6 +33,24 @@ Shake.setShowFloatingReportButton(true);
 // highlight-end
 ```
 
+You can also configure Shake screen you want to show when Shake is invoked manually.  
+
+It can be either [New ticket screen](flutter/screens/new-ticket-screen.md) or [Home screen](flutter/screens/home-screen.md), depending on your preferences:
+
+```dart title="main.dart"
+// highlight-start
+import 'package:shake_flutter/shake_flutter.dart';
+import 'package:shake_flutter/enums/shake_screen.dart';
+// highlight-end
+
+// highlight-next-line
+Shake.setDefaultScreen(ShakeScreen.NEW);
+// highlight-next-line
+Shake.setDefaultScreen(ShakeScreen.HOME);
+```
+
+The default value is `ShakeScreen.NEW`.
+
 ### Shaking
 The default, shaking gesture causes the SDK to pop up.
 

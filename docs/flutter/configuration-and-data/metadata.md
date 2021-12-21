@@ -38,3 +38,23 @@ void onLoginSuccessful(User user) {
     Shake.setMetadata('userid', user.id);
 }
 ```
+
+## Clear metadata
+
+If you want to clear existing metadata, you can use `Shake.clearMetadata` method.
+
+For example, you want to clear metadata when the user logs out:
+
+```dart title="main.dart"
+// highlight-start
+import 'package:shake_flutter/shake_flutter.dart';
+import 'package:shake_flutter/enums/shake_screen.dart';
+// highlight-end
+
+void onLogOutPressed() {
+    loginService.logout();
+    
+    // highlight-next-line
+    Shake.clearMetadata();
+}
+```
