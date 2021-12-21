@@ -189,7 +189,8 @@ module.exports = {
             items: [
                 'flutter/screens/home-screen',
                 'flutter/screens/inspect-screen',
-                'flutter/screens/new-ticket-screen'
+                'flutter/screens/new-ticket-screen',
+                'flutter/screens/chat-screen',
             ]
         },
         {
@@ -216,6 +217,7 @@ module.exports = {
                         'flutter/users/update-user-metadata',
                         'flutter/users/update-user-identifier',
                         'flutter/users/advanced-usage',
+                        'flutter/users/chat',
                     ]
                 },
             ]
