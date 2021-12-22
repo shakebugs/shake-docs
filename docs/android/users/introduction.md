@@ -10,19 +10,19 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 <table class="media-container">
 <img
   alt="User module"
-  width="288"
-  src={useBaseUrl('screens/user-module@2x.png')}
+  width="340"
+  src={useBaseUrl('img/module-users@2x.png')}
 />
 </table>
 
-The featurees today are:
+The features today are:
 * Your users can see their previously sent tickets on the [Home screen](/android/screens/home-screen.md).
 * You have all your app users listed in one place on your Shake dashboard.
 * Your users' custom attributes are tracked automatically.
+* You and your app users can live chat with each other.
 
 Soon, these features will be available too:
 * On your Shake dashboard, you will see a User which has submitted a Ticket. And all Tickets sent by a particular User.
 * You will be able to see your MAU and DAU charts.
-* You and your app users will bee able to live chat with each other.
 
 Start by [registering your app users](/android/users/user-registration.md).
