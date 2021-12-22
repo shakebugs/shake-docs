@@ -836,11 +836,16 @@ div[class*='codeBlockLines'] {
 * Media container
 */
 .media-container {
-  border-radius: 20px;
   text-align: center;
 }
 .media-container-highlighted {
+  border-radius: 20px;
   background-color: var(--default-surface);
+}
+@media (max-width: 500px) {
+  .media-container-highlighted img {
+    max-width: 86%;
+  }
 }
 
 

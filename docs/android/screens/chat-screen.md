@@ -19,9 +19,9 @@ Fix issues easier and keep your users happy.
 
 <table class="media-container">
  <img
-   alt="User module"
+   alt="Shake chat screen"
   width="370"
-  src={useBaseUrl('screeens/androd-chat-screen@2x.png')}
+  src={useBaseUrl('screens/android-chat-screen@2x.png')}
  />
  </table>
 

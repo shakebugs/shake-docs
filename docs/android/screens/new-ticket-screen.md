@@ -13,9 +13,9 @@ Visit [Configuration and data](android/configuration-and-data/introduction.md#el
 
 <table class="media-container mt-50">
 <img
-  className="screen-image"
   alt="New ticket screen"
-  src={useBaseUrl('screens/new_screen.png')}
+  width="370"
+  src={useBaseUrl('screens/android-new-ticket-screen@2x.png')}
 />
 </table>
 

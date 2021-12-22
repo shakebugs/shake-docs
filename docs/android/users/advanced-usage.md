@@ -27,7 +27,7 @@ Let's suppose this anonymous guest user decides to sign up one day, and you want
 <img
   alt="Anonymous user update User ID"
   width="520"
-  src={useBaseUrl('screens/anonymous-update-user-id@2x.png')}
+  src={useBaseUrl('screens/anonymous-user-update-user-id.svg')}
 />
 </table>
 
@@ -52,7 +52,7 @@ Let's suppose an anonymous guest user decides to sign up one day, but you want t
 <img
   alt="Anonymous user register new user"
   width="520"
-  src={useBaseUrl('screens/anonymous-register-user@2x.png')}
+  src={useBaseUrl('screens/anonymous-register-user.svg')}
 />
 </table>
 

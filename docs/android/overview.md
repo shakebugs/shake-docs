@@ -35,35 +35,35 @@ title: Overview
 
 <div class="featuresList">
     <div>
-        <img src="/docs/img/essential-data@2x.png" alt="[object Object]"/>
+        <img src="/docs/img/essential-data@2x.png" alt="Data attached by default"/>
         <p><a href="/docs/android/configuration-and-data/essentials/">Data attached by default</a></p>
     </div>
     <div>
-        <img src="/docs/img/feature-custom-user-data@2x.png" alt="[object Object]"/>
+        <img src="/docs/img/feature-custom-user-data@2x.png" alt="Custom User data"/>
         <p><a href="/docs/android/users/update-user-metadata/">Custom User data</a></p>
     </div>
     <div>
-        <img src="/docs/img/feature-custom-ticket-data@2x.png" alt="[object Object]"/>
+        <img src="/docs/img/feature-custom-ticket-data@2x.png" alt="Custom Ticket data"/>
         <p><a href="/docs/android/configuration-and-data/metadata/">Custom Ticket data</a></p>
     </div>
     <div>
-        <img src="/docs/img/screen-recording@2x.png" alt="[object Object]"/>
+        <img src="/docs/img/screen-recording@2x.png" alt="Auto screen recording"/>
         <p><a href="/docs/android/configuration-and-data/automatic-screen-recording/">Auto screen recording</a></p>
     </div>
     <div>
-        <img src="/docs/img/invoke-shake@2x.png" alt="[object Object]"/>
+        <img src="/docs/img/invoke-shake@2x.png" alt="Invoke Shake"/>
         <p><a href="/docs/android/customer-feedback/invoke/">Invoke Shake</a></p>
     </div>
     <div>
-        <img src="/docs/img/protect-sensitive-data@2x.png" alt="[object Object]"/>
+        <img src="/docs/img/protect-sensitive-data@2x.png" alt="Protect sensitive data"/>
         <p><a href="/docs/android/configuration-and-data/manage-sensitive-data/">Protect sensitive data</a></p>
     </div>
     <div>
-        <img src="/docs/img/steps-to-reproduce@2x.png" alt="[object Object]"/>
+        <img src="/docs/img/steps-to-reproduce@2x.png" alt="Auto steps to reproduce"/>
         <p><a href="/docs/android/configuration-and-data/activity/">Auto steps to reproduce</a></p>
     </div>
     <div>
-        <img src="/docs/img/feature-auto-attach-files@2x.png" alt="[object Object]"/>
+        <img src="/docs/img/feature-auto-attach-files@2x.png" alt="Auto attach files"/>
         <p><a href="/docs/android/configuration-and-data/attachments/">Auto attach files</a></p>
     </div>
 </div>

@@ -20,9 +20,6 @@ To show them their previous tickets, [register your users](android/users/introdu
   alt="Shake Home screen"
   width="376"
   src={useBaseUrl('screens/android-home-screen@2x.png')}
-  className="screen-image"
-  alt="Home screen"
-  src={useBaseUrl('screens/home_screen.png')}
 />
 </table>
 
