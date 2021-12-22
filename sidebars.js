@@ -16,7 +16,7 @@ module.exports = {
                 'android/screens/home-screen',
                 'android/screens/new-ticket-screen',
                 'android/screens/drawing-screen',
-                'android/screens/inspect-screen'
+                'android/screens/inspect-screen',
                 'android/screens/chat-screen',
             ]
         },
