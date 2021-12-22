@@ -20,7 +20,13 @@ That callback's body is a common place where developers call the `Shake.register
 but maybe your context is different.
 Make sure to call this method at the place where it fits your app's flow perfectly.
 
-IMAGE OF A RANDOM SIGN IN SCREEN + ILLUSTRATION
+<table class="media-container mt-50 mb-50">
+<img
+  alt="An example of registering a User with Shake"
+  width="520"
+  src={useBaseUrl('screens/register-user-flow.svg')}
+/>
+</table>
 
 <Tabs
   groupId="android"
