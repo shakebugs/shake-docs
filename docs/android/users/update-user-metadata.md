@@ -10,7 +10,7 @@ import TabItem from '@theme/TabItem';
 additional data about the user and their behavior.
 
 Update user metadata by calling the `Shake.updateUserMetadata` method anywhere in your code
-after registering the user.
+after registering the User.
 
 ## Special keys
 
@@ -21,8 +21,6 @@ Values from these three keys will be presented nicely on Shake dashboard so we s
 
 
 ## Updates
-Shake Dashboard uses *first_name* and *last_name* keys from the user metadata for presentation purposes.
-We recommend using these keys when sending appropriate user metadata to have a nice overview of your users on the Dashboard.
 
 Updates to the user metadata are _incremental_, or in other words _merged_.
 This means that user metadata key-value pairs are updated and not overwritten, allowing you to update
@@ -146,5 +144,24 @@ private fun onCartItemsCleared() {
 
 ## Limitations
 
-The total map size of the user metadata must not exceed _50 KB_.
+The total map size of the user metadata must not exceed 50 KB.
 If this validation fails, the update method is dropped with the appropriate console message.
+
+## Different from Ticket metadata
+
+Track User metadata to understand and describe your User better. Examples are:
+
+* First and last name
+* User ID
+* Address
+* Subscription status
+* Date of birth
+
+Use [Ticket metadata](android/configuration-and-data/ticket-metadata) to attach useful custom data to each ticket. Examples are statuses of various app variables at the moment of ticket being sent:
+
+* Current chat room ID
+* List of items curreently in a shopping cart
+* Task synced true/false
+* Number of search results
+* List sorted by what
+* Video muted true/false

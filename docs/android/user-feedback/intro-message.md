@@ -14,9 +14,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 />
 </table>
 
-
-## How to use
-If enabled, a one-off intro message will be shown to every user as soon as they open up your app for the first time.
+If enabled, a one-off intro message will be shown to your users as soon as they open up your app for the first time.
 Its text is automatically set based on the [manual invocations you use](/android/user-feedback/invoke.md#invoke-manually) so you don't need to write anything.
 This message is disabled by default, enable it easily using the following method:
 

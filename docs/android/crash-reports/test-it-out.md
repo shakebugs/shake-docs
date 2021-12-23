@@ -6,7 +6,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs'; 
 import TabItem from '@theme/TabItem';
 
->Let's crash your app to see how the crash report looks like on your Shake dashboard.
+>Let's crash your app to see how the crash report looks like on your Shake Dashboard.
 
 ## Crash your app
 

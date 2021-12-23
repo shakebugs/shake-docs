@@ -6,16 +6,22 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
->The Email field is an element of the SDK [New ticket screen](android/shake-ui/new-ticket-screen.md) screen. It's optional and allows your users to leave their email address with the ticket they're submitting.
+>Here are all the element customizations you can do on the [New ticket screen](android/shake-ui/new-ticket-screen.md).
 
 
-## Adding tags to a bug
-If at the very end of a bug description reporter *#adds #some #hashtags*,
+## Description field
+
+This is a mandatory element and can't be hidden.
+
+Here's a tip that quality assurance teams often find helpful. If *#some #hashtags* are added anywhere in the description,
 those will automatically become <span class="tag-button pink-tag-button">tags</span> in your [Shake Dashboard](https://app.shakebugs.com/).
 
 
-## Hide the *Email* field
-Use the following method if you don't want to show this field in the SDK:
+## Email field
+
+Thie element iis optional and allows your users to leave their email address with the ticket they're submitting.
+
+Use the following method if you don't want to show it:
 
 <Tabs
   groupId="android"
@@ -45,8 +51,7 @@ Shake.getReportConfiguration().isEnableEmailField = false
 </TabItem>
 </Tabs>
 
-## Pre-fill the field
-Use the following method to save your users some time by pre-filling the field with their email address:
+Or, use the following method to save your users some time by pre-filling the field with their email address:
 
 <Tabs
   groupId="android"
@@ -77,29 +82,20 @@ Shake.getReportConfiguration().emailField = "user@email.com"
 </Tabs>
 
 Two tips:
-* Users can always edit email, even if you pre-fill it
+* Users can always edit the email field, even if you pre-fill it.
 * Do you want to always receive user's email? You should then *both* pre-fill and hide the Email field.
 
-## Users and tickets as indepentent entities
+### Users and tickets as indepentent entities
 
-The value you receive in the Email field is just an attribute of that ticket, a simple **string**.
+The value you receive in the email field is just an attribute of that ticket, a simple **string**.
 
-To register a user as an independent unique **entity** which Shake automatically relates to all tickets they submit,
+To register a User as an unique **entity** which Shake automatically relates to all Tickets they submit,
 register your users with the [Users](android/users/overview.md) module.
 
+## Inspect button
 
->Your users can see 
-current ticket details — its [Essentials](android/configuration-and-data/essentials.md) and [Metadata](android/configuration-and-data/ticket-metadata.md) 
-before submitting it.
-
-## Introduction
-
-The Inspect screen is accessed by tapping the *Inspect* button 
-on the [New ticket screen](android/shake-ui/new-ticket-screen.md).
-
-## Hide the *Inspect* button
-
-If you don’t want to show *Inspect* button to your users, hide it using the following method:
+By default, this element is visible to your users. Tapping it takes them to the [Inspect screen](android/shake-ui/inspect-screen).
+If you want to, hide it using the following method:
 
 <Tabs
   groupId="android"

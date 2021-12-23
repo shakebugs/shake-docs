@@ -4,10 +4,7 @@ title: Auto screenshot
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This page covers the screenshot.
-
-## Introduction
-You will find screenshot at the top of your [Dashboard](https://app.shakebugs.com).
+> When Shake's New ticket screen is invoked, a screenshot is automatically attached to it.
 
 :::note
 
@@ -17,19 +14,12 @@ On Android O devices, Shake supports capturing excepted components excluding in 
 
 :::
 
-## User drawing on the screenshot
-When users shake their phone and the SDK pops up, they are encouraged to additionally mark a
-spot on the screenshot that seems odd to them.
+## Disable
 
-## Excluding the screenshot from a report
-Shake provides you with an option to exclude the automatic screenshot from reports.  
+Let's suppose you are invoking Shake through code from the **Settings → Help** screen of your app. You would always receive the same 
+screenshot and it wouldn't be related to all sorts of reported tickets in any way.
 
-For example, you are manually invoking Shake through the code in the settings screen of your app, but this 
-screen is not associated with the feedback in any way, nor will it show the screenshot of the issue.
-
-Once Shake is invoked, users can always manually attach a screenshot that better describes the feedback context.
-
-You can exclude an automatic screenshot from reports using the following snippet:
+Disable auto screenshot using the following snippet:
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';

@@ -62,7 +62,7 @@ fun onLoginSuccessful(user: User) {
 
 ## Different from User metadata
 
-Use Ticket metadata to attach useful custom data to tickes. Examples are statuses of various app variables at the moment of ticket being sent:
+Use Ticket metadata to attach useful custom data to tickets. Examples are statuses of various app variables at the moment of ticket being sent:
 * Current chat room ID
 * List of items curreently in a shopping cart
 * Task synced true/false

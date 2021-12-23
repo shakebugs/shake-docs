@@ -11,7 +11,7 @@ Or, you can use this feature to always record their screen and automatically att
 Do not use this feature in production!
 :::note
 
-## Enable auto screen recording
+## Enable
 Auto screen recording is disabled by default. To enable it:
 1. Call `Shake.getReportConfiguration().setAutoVideoRecording(true)` first.
 1. Then, start Shake with `Shake.start()`.
@@ -47,7 +47,7 @@ Shake.getReportConfiguration().isAutoVideoRecording = true
 </TabItem>
 </Tabs>
 
-Duration of the autp attached screen recording is 15 seconds.
+Duration of the auto attached screen recording is 15 seconds.
 
 ## Privacy
 

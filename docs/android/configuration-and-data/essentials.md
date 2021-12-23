@@ -1,10 +1,10 @@
 ---
 id: essentials
-title: Essentials
+title: Data attached by default
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
->This is the essential data Shake automatically attaches to every ticket, whether it's user feedback or a crash report.
+>This is the data Shake automatically attaches to every ticket you receive, whether it's user feedback or a crash report.
 All of this is done out of the box, you don't need to code anything.
 
 ## Automatically attached
@@ -183,12 +183,12 @@ On Shake dashboard, Shake lists those permissions that the user has granted acce
 The ones you don't see listed were either denied or not requested at all.
 
 
-## Attaching more data
+## Attach more data
 
 If you want Shake to attach custom data to your tickets, you can do that as well.
 Read about attaching your own variables to tickets with [Ticket metadata](android/configuration-and-data/ticket-metadata.md).
 
-Do you also want to attach programmaticaly files, to tickets, images for example? Visit [Attachments](/android/configuration-and-data/auto-attach-files.md).
+Do you also want to attach files to tickets programmaticaly? Visit [Auto attach files](/android/configuration-and-data/auto-attach-files.md).
 
 
 ## Limitations

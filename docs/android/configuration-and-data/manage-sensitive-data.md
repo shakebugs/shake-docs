@@ -1,6 +1,6 @@
 ﻿---
 id: manage-sensitive-data
-title: Manage sensitive data
+title: Protect sensitive data
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';

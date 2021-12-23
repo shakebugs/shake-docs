@@ -28,7 +28,7 @@ If you enable it, a sheet will be shown to your user, givinig them an opportunit
 </table>
 
 To enable it:
-1. Set the `isAskForCrashDescription` flag to `true`.
+1. Set the `isAskForCrashDescription` flag to `true` first.
 1. Then, call the `Shake.start` method.
 
 <Tabs

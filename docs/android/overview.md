@@ -66,76 +66,16 @@ title: Overview
         <img src="/docs/img/feature-auto-attach-files@2x.png" alt="Auto attach files"/>
         <p><a href="/docs/android/configuration-and-data/auto-attach-files/">Auto attach files</a></p>
     </div>
+    <div>
+        <img src="/docs/img/black-box@2x.png" alt="Black box"/>
+        <p><a href="/docs/android/configuration-and-data/black-box/">Black box</a></p>
+    </div>
 </div>
-
-
-
-
-
-
-
-
-
-## Features
-
-Shake has a very rich feature set, yet on some platforms we managed to achieve more than on others and we are 
-constantly adding new features. Below is a table describing the current state of affairs on Android platform.
-
-|                      | Available |
-|----------------------|:---------:|
-| Custom invocation    |    ✅     |
-| Bug screenshot       |    ✅     |
-| Feedback types       |    ✅     |
-| Intro message        |    ✅     |
-| Inspect ticket       |    ✅     |
-| Screen recording     |    ✅     |
-| File attachment      |    ✅     |
-| Metadata             |    ✅     |
-| Black box            |    ✅     |
-| Network requests     |    ✅     |
-| Notification tracking|    ✅     |
-| Touch tracking       |    ✅     |
-| System events        |    ✅     |
-| Custom logs          |    ✅     |
-| Console logs         |    ✅     |
-| Manage sensitive data|    ✅     |
-| Private views        |    ✅     |
-| Silent reports       |    ✅     |
-| Email pre-fill       |    ✅     |
-| White labeling       |    ✅     |
-| Crash reporting      |    ✅     |
-| Users                |    ✅     |
-| Chat                 |    ✅     |
-
-## Languages
-
-|                      | Available |
-|:--------------------:|:---------:|
-|  English             |     ✅    |
-|  German              |     ✅    |
-|  French              |     ✅    |
-|  Spanish             |     ✅    |
-|  Italian             |     ✅    |
-|  Portuguese          |     ✅    |
-|  Japanese            |     ✅    |
-|  Simplified Chinese  |     ✅    |
-|  Traditional Chinese |     ✅    |
-|  Russian             |     ✅    |
-|  Thai                |     ✅    |
-|  Polish              |     ✅    |
-|  Latvian             |     ✅    |
-|  Estonian            |     ✅    |
-|  Hungarian           |     ✅    |
-
-## Latest version
 
 import AndroidVersion from '@site/src/base/AndroidVersion';
 
-|         |      Version      |
-|:-------:|:-----------------:|
-| Shake   | <AndroidVersion/> |
+## Latest version
+> The [latest available version](android/releases) is <AndroidVersion/>.
 
 ## Minimum requirements
-|         |    Version   |
-|:-------:|:------------:|
-| Android |      5.0     |
+> Shake SDK works on Android 5.0 or newer.

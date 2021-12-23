@@ -20,9 +20,9 @@ They categorize it as either a bug report, an improvement suggestion, or a quest
 Depending on what they choose, their feedback arrives with the <span class="tag-button pink-tag-button">bug</span>, <span class="tag-button pink-tag-button">suggestion</span> or <span class="tag-button pink-tag-button">question</span> tag
 to your [Shake Dashboard](https://app.shakebugs.com).
 
-## Custom types
+## Custom feedback types
 
-You can configure Shake to display any number of custom categories related to your product.
+You can configure Shake to display any number of custom feedback types related to your app.
 Shake exposes an internal `FeedbackType` type which is used to encapsulate the properties of your custom category.
 Here's an example:
 

@@ -7,9 +7,6 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 >Shake tracks user's interaction with your app, their network traffic, notifications, logs and system events,
 and automatically attaches all of those to the ticket.
 
-## Shake dashboard
-A link to ticket's *Activity history* is located in the top right corner of the Shake Dashboard:
-
 ## Setup
 
 ### User actions
@@ -362,8 +359,8 @@ In a Premium workspace you can browse the full Activity history.
 Network request limit for both request body and response body is 100 kB each.
 If request body or response body contains binary data, it will be presented as a *Binary data* string.
 
-## Enable and disable
-Activity history is enabled by default, however, you can use the method below to disable it:
+## Disable
+Activity history is enabled by default, use the method below to disable it altogether:
 
 <Tabs
   groupId="android"

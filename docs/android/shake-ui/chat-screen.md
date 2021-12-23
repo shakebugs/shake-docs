@@ -8,8 +8,6 @@ import TabItem from '@theme/TabItem';
 
 >You and your users can live chat about every ticket they have submitted to you.
 
-## Introduction
-
 If you [register users](android/users/register-user/) with Shake, they have all their previous tickets listed on the [Home screen](android/shake-ui/home-screen/).
 Tapping any ticket there opens up this Chat screen.
 

@@ -5,18 +5,12 @@ title: Silent user feedback
 >Send yourself feedback from the app background, without showing [Shake UI](android/shake-ui/overview.md).
 
 ## Overview
-You can send silent user feedback to yourself by calling the `Shake.silentReport` method anywhere after `Shake.start`.
+You can send silent user feedback to yourself by calling the `Shake.silentReport` method anywhere after `Shake.start`. Feel free to add your own description to it as well.
 
-Call `Shake.silentReport` anywhere after `Shake.start` and
-feel free to add a *Description* and *Attached files* to it.
-*ShakeReportConfiguration* determines which data is included in the silent user feedback.
-
-Silent user feedback will also attach files returned by the [onPrepareData](android/configuration-and-data/auto-attach-files.md) callback.
-:::note
-
-Silent reports will also attach files returned by the [onPrepareData](android/configuration-and-data/auto-attach-files.md) callback and [Automatic Screen Recording](android/configuration-and-data/auto-screen-recording.md) file if the feature is turned on.
-
-:::
+*ShakeReportConfiguration* determines which data is attached to the silent user feedback:
+* Files returned by the [onPrepareData](android/configuration-and-data/auto-attach-files.md) callback.
+* [Auto screen recording](android/configuration-and-data/auto-screen-recording.md) if the feature is turned on.
+* Etc.
 
 import Tabs from '@theme/Tabs'; 
 import TabItem from '@theme/TabItem';

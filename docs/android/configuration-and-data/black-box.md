@@ -9,22 +9,23 @@ profile giving you an insight into the last 60 seconds before the ticket was sub
 
 ## Introduction
 Black box includes device and app data, like memory load and connectivity status.
-You'll find the charts right below the screenshot.
+You'll find the charts on your Shake Dashboard right below the screenshot.
 
-## What do the charts show?
+## Charts
+
 ### Device memory usage
 This line chart shows the device's total memory usage.
 When you hover over the chart, the usage percentage,
 and the exact memory usage over the total amount of memory available,
 is shown, for example: 
-* 9% • 224 out of 2464 MB.
+* 9% • 224 out of 2464 MB
 
 Device memory usage is captured every 0.5 seconds.
 
 ### App memory usage
 This line chart shows your app's memory usage. When you hover over the chart,
 the total memory usage of your app is shown, for example: 
-* 122 MB.
+* 122 MB
 
 Your app's memory usage is captured every 0.5 seconds.
 
@@ -50,7 +51,7 @@ When you hover over the chart, the exact state is shown, for example:
 
 App orientation is captured every 2 seconds.
 
-## Enabling or disabling
+## Disable
 Black box is enabled by default. Use the method below to disable it if you want to:
 
 import Tabs from '@theme/Tabs';

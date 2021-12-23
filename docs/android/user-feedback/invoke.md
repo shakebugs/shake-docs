@@ -9,7 +9,6 @@ By default, Shake is invoked when a user shakes their device.
 You don't need to code anything.
 
 But if you want to, you can customize that.
-
 Let's look at an example where you want Shake to be invoked either when your users shake their device, or when they take a screenshot:
 
 import Tabs from '@theme/Tabs';
@@ -88,9 +87,9 @@ Shake.getReportConfiguration().isInvokeShakeOnRightEdgePan = true
 </TabItem>
 </Tabs>
 
-You can also configure Shake screen you want to show when Shake is invoked manually.  
-
-It can be either [New ticket screen](android/shake-ui/new-ticket-screen.md) or [Home screen](android/shake-ui/home-screen.md), depending on your preferences:
+Also, feel free to choose which Shake screen is shown when Shake is invoked manually:
+* [New ticket screen](android/shake-ui/new-ticket-screen.md)
+* [Home screen](android/shake-ui/home-screen.md)
 
 <Tabs
   groupId="android"
@@ -126,7 +125,7 @@ Shake.getReportConfiguration().defaultScreen = ShakeScreen.HOME
 
 The default value is `ShakeScreen.NEW`.
 
-### Shaking
+### Shaking gesture
 By default, the shaking gesture opens up Shake.
 
 :::note
@@ -135,7 +134,7 @@ Android emulator’s default shaking gesture is too weak to invoke Shake.
 
 :::
 
-You can fine-tune shaking gesture sensitivity. Let's lower it as an example, so Shake is easier to invoke:
+You can fine-tune shaking threshold too. Let's lower it as an example, so Shake is easier to invoke:
 
 <Tabs
   groupId="android"
@@ -165,14 +164,11 @@ Shake.getReportConfiguration().shakingThreshold = 400 // Default value is 600.
 </TabItem>
 </Tabs>
 
-In the above example, threshold is reduced a bit, meaning that Shake is a bit easier to invoke with the shaking gesture.
-
-A valid treshold value range is `1 - 1000`, with bigger values representing decreased sensitivity meaning that a stronger 
+A valid treshold value range is `1 - 1000`, with bigger values representing higher threshold, meaning that a stronger 
 motion gesture is required to invoke Shake.
 
-### Button
-This invocation event creates a floating button on top of your app's UI which users can clearly see at all times.
-The button can be dragged around the screen.
+### Floating button
+This invocation event creates a floating button on top of your app's UI which your users can see at all times, and drag around the screen.
 
 :::note
 
@@ -257,6 +253,6 @@ If an [auto screenshot](android/configuration-and-data/auto-screenshot.md) and
 [auto screen recording](android/configuration-and-data/auto-screen-recording.md) are enabled,
 when you call `ShakeScreen.NEW` they will be automatically attached to a ticket.
 
-If enabled, [Activity history](android/configuration-and-data/activity-history.md),
-[Black box](android/configuration-and-data/black-box.md) and all other data are also automatically attached,
+If enabled, [activity history](android/configuration-and-data/activity-history.md),
+[black box](android/configuration-and-data/black-box.md) and all other data are also automatically attached,
 no additional code is required.
