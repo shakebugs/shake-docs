@@ -214,7 +214,7 @@ Shake.clearPrivateViews()
 
 Note that these methods won't delete sensitive views from screen recordings, only screenshots.
 
-You can disable [Automatic screen recording](/ios/configuration-and-data/automatic-screen-recording.md) feature if you want make sure that sensitive data is not recorded:
+You can disable [Automatic screen recording](/ios/configuration-and-data/auto-screen-recording.md) feature if you want make sure that sensitive data is not recorded:
 
 <Tabs
 groupId="ios"
@@ -245,7 +245,7 @@ Shake.configuration.isAutoVideoRecordingEnabled = false
 </Tabs>
 
 ## Touch events
-Marking a view as private will automatically delete its touch events' text properties too. Consequently, you'll see them as `data_redacted` strings in your [Activity history](https://www.shakebugs.com/docs/ios/configuration-and-data/activity).
+Marking a view as private will automatically delete its touch events' text properties too. Consequently, you'll see them as `data_redacted` strings in your [Activity history](https://www.shakebugs.com/docs/ios/configuration-and-data/activity-history).
 
 Bear in mind that the view's ID, accessibility labels and tags remain visible.
 

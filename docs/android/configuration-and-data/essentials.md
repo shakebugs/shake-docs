@@ -186,9 +186,9 @@ The ones you don't see listed were either denied or not requested at all.
 ## Attaching more data
 
 If you want Shake to attach custom data to your tickets, you can do that as well.
-Read about attaching your own variables to tickets with [Ticket metadata](android/configuration-and-data/metadata.md).
+Read about attaching your own variables to tickets with [Ticket metadata](android/configuration-and-data/ticket-metadata.md).
 
-Do you also want to attach programmaticaly files, to tickets, images for example? Visit [Attachments](/android/configuration-and-data/attachments.md).
+Do you also want to attach programmaticaly files, to tickets, images for example? Visit [Attachments](/android/configuration-and-data/auto-attach-files.md).
 
 
 ## Limitations

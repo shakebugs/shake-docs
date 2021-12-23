@@ -287,7 +287,7 @@ public class PaymentActivity : AppCompatActivity() {
 </TabItem>
 </Tabs>
 
-Visit [Auto screen recording](/android/configuration-and-data/automatic-screen-recording.md)
+Visit [Auto screen recording](/android/configuration-and-data/auto-screen-recording.md)
 to read how to turn it off altogether.
 
 ## Jetpack Compose

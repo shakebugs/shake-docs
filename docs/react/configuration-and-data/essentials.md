@@ -19,9 +19,9 @@ and these include data like user's OS, location, memory status, etc.
 
 ## Customizing the data you receive
 
-If you want the SDK to attach any other variable to your bug reports, you can absolutely do that as well! Read about sending custom data with [Metadata](react/configuration-and-data/metadata.md).
+If you want the SDK to attach any other variable to your bug reports, you can absolutely do that as well! Read about sending custom data with [Metadata](react/configuration-and-data/ticket-metadata.md).
 
-Do you also want to attach custom files, like images? Visit [Attachments](/react/configuration-and-data/attachments.md).
+Do you also want to attach custom files, like images? Visit [Attachments](/react/configuration-and-data/auto-attach-files.md).
 
 ## Limitations
 

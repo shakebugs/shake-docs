@@ -10,7 +10,7 @@ import TabItem from '@theme/TabItem';
 
 ## Crash your app
 
-[Enable crash reporting](/android/crash-reports/enabling.md) and paste this code to the `onCreate` method in one of your activities.
+[Enable crash reporting](/android/crash-reports/enable.md) and paste this code to the `onCreate` method in one of your activities.
 It will crash your app when you tap a button by accessing the array with the out-of-bounds index:
 
 <Tabs

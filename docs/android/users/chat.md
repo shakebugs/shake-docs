@@ -3,13 +3,13 @@ id: chat
 title: Chat
 ---
 
-The user [can reply](android/screens/chat-screen.md) to your message sent over the Dashboard and provide you with more details 
+The user [can reply](android/shake-ui/chat-screen.md) to your message sent over the Dashboard and provide you with more details 
 about the reported bug, crash, or feedback - directly from the app without leaving it.
 This allows you to easier fix bugs and makes your customers happy, a win-win situation. 
 
 ## Enabling
 
-Once your user is [registered](android/users/user-registration.md) with Shake, the real time chat feature is enabled automatically.
+Once your user is [registered](android/users/register-user.md) with Shake, the real time chat feature is enabled automatically.
 
 Each reported _Ticket_ represents a separate conversation, and can naturally be used to obtain valuable information directly from the end user. 
 
