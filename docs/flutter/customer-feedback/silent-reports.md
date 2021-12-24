@@ -13,7 +13,7 @@ Silent report can be configured with the *Description* just like the regular rep
 
 :::note
 
-Silent reports will also attach files defined with the [Shake.setShakeReportData](flutter/configuration-and-data/attachments.md) method.
+Silent reports will also attach files defined with the [Shake.setShakeReportData](flutter/configuration-and-data/attachments.md) method and [Automatic Screen Recording](flutter/configuration-and-data/automatic-screen-recording.md) file if the feature is turned on.
 
 :::
 
@@ -30,11 +30,12 @@ void sendSilentReport() {
     configuration.blackBoxData = true;
     configuration.activityHistoryData = true;
     configuration.screenshot = true;
+    configuration.video = false;
     
     Shake.silentReport(
-    configuration: configuration,
-    description: 'Description #tag1 #tag2',
-    shakeFiles: [ShakeFile.create(path)],
+        configuration: configuration,
+        description: 'Description #tag1 #tag2',
+        shakeFiles: [ShakeFile.create(path)],
     );
     // highlight-end
 }

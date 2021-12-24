@@ -1,0 +1,163 @@
+---
+id: chat
+title: Chat
+---
+The user [can reply](react/screens/chat-screen.md) to your message sent over the Dashboard and provide you with more details 
+about the reported bug, crash, or feedback - directly from the app without leaving it.
+This allows you to easier fix bugs and makes your customers happy, a win-win situation. 
+
+## Enabling
+
+Once your user is [registered](react/users/user-registration.md) with Shake, the real time chat feature is enabled automatically.
+
+Each reported _Ticket_ represents a separate conversation, and can naturally be used to obtain valuable information directly from the end user. 
+
+This feature is tightly integrated with, and follows the lifecycle of your _User_ registration, 
+which means that calling `Shake.unregisterUser` also _disconnects_ the current user from chat, 
+so he won't receive any new messages until registered again.
+
+## Notifications
+
+Shake will notify the end-user when a new message is sent over the Dashboard.
+
+:::note
+
+At the moment, Shake supports only _local_ notifications. Which means that end-users won't get notified about new messages when your application is in the _background_.
+
+:::
+
+### Android
+
+Notifications are automatically presented to the end-user, no additional code is required.
+
+### iOS
+
+To present any kind of notifications to the end-user, the host application must __request a permission__ from the user.
+Find a suitable place in your application flow where this native alert dialog will be presented.
+
+In order to be highly customizable and minimally intrusive to existing notification logic of host applications, Shake requires additional setup outlined in the below snippets.
+
+Use the `Shake.report(center: UNUserNotificationCenter ...)` methods to delegate the notification presentation logic to Shake.
+
+```objectivec title="AppDelegate.m"
+#import "AppDelegate.h"
+
+#import <React/RCTBridge.h>
+#import <React/RCTBundleURLProvider.h>
+#import <React/RCTRootView.h>
+
+#ifdef FB_SONARKIT_ENABLED
+#import <FlipperKit/FlipperClient.h>
+#import <FlipperKitLayoutPlugin/FlipperKitLayoutPlugin.h>
+#import <FlipperKitUserDefaultsPlugin/FKUserDefaultsPlugin.h>
+#import <FlipperKitNetworkPlugin/FlipperKitNetworkPlugin.h>
+#import <SKIOSNetworkPlugin/SKIOSNetworkAdapter.h>
+#import <FlipperKitReactPlugin/FlipperKitReactPlugin.h>
+
+// highlight-start
+@import Shake;
+@import UserNotifications;
+// highlight-end
+
+static void InitializeFlipper(UIApplication *application) {
+  FlipperClient *client = [FlipperClient sharedClient];
+  SKDescriptorMapper *layoutDescriptorMapper = [[SKDescriptorMapper alloc] initWithDefaults];
+  [client addPlugin:[[FlipperKitLayoutPlugin alloc] initWithRootNode:application withDescriptorMapper:layoutDescriptorMapper]];
+  [client addPlugin:[[FKUserDefaultsPlugin alloc] initWithSuiteName:nil]];
+  [client addPlugin:[FlipperKitReactPlugin new]];
+  [client addPlugin:[[FlipperKitNetworkPlugin alloc] initWithNetworkAdapter:[SKIOSNetworkAdapter new]]];
+  [client start];
+}
+#endif
+
+@implementation AppDelegate
+
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+{
+#ifdef FB_SONARKIT_ENABLED
+  InitializeFlipper(application);
+#endif
+
+  // highlight-start
+  UNUserNotificationCenter* center = [UNUserNotificationCenter currentNotificationCenter];
+  center.delegate = self;
+  // highlight-end
+
+  RCTBridge *bridge = [[RCTBridge alloc] initWithDelegate:self launchOptions:launchOptions];
+  RCTRootView *rootView = [[RCTRootView alloc] initWithBridge:bridge
+                                                   moduleName:@"example"
+                                            initialProperties:nil];
+
+    if (@available(iOS 13.0, *)) {
+      rootView.backgroundColor = [UIColor systemBackgroundColor];
+    } else {
+      rootView.backgroundColor = [UIColor whiteColor];
+    }
+
+  self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+  UIViewController *rootViewController = [UIViewController new];
+  rootViewController.view = rootView;
+  self.window.rootViewController = rootViewController;
+  [self.window makeKeyAndVisible];
+  return YES;
+}
+
+// highlight-start
+- (void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void (^)(void))completionHandler {
+    if ([response.notification.request.content.categoryIdentifier containsString:SHKNotificationCategoryIdentifierDomain]) {
+        [SHKShake reportNotificationCenter:center didReceiveNotificationResponse:response withCompletionHandler:completionHandler];
+        return;
+    }
+
+    completionHandler();
+}
+// highlight-end
+
+// highlight-start
+- (void)userNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(UNNotificationPresentationOptions))completionHandler {
+    if ([notification.request.content.categoryIdentifier containsString:SHKNotificationCategoryIdentifierDomain]) {
+        [SHKShake reportNotificationCenter:center willPresentNotification:notification withCompletionHandler:completionHandler];
+        return;
+    }
+
+    completionHandler(UNNotificationPresentationOptionAlert | UNNotificationPresentationOptionSound);
+}
+// highlight-end
+
+- (NSURL *)sourceURLForBridge:(RCTBridge *)bridge
+{
+#if DEBUG
+  return [[RCTBundleURLProvider sharedSettings] jsBundleURLForBundleRoot:@"index" fallbackResource:nil];
+#else
+  return [[NSBundle mainBundle] URLForResource:@"main" withExtension:@"jsbundle"];
+#endif
+}
+
+@end
+```
+
+```objectivec title="AppDelegate.h"
+#import <React/RCTBridgeDelegate.h>
+#import <UIKit/UIKit.h>
+
+// highlight-next-line
+@import UserNotifications;
+
+// highlight-next-line
+@interface AppDelegate : UIResponder <UIApplicationDelegate, UNUserNotificationCenterDelegate, RCTBridgeDelegate>
+
+@property (nonatomic, strong) UIWindow *window;
+
+@end
+```
+
+Given the above setup, all notifications originated from Shake are handled by the Shake SDK, and all other notifications remain handled by your application.
+
+
+:::tip
+
+You can cancel the display of notifications in certain contexts by simply not reporting anything to Shake, or even stub the received native completion handler with your own 
+set of _UNNotificationPresentationOptions_ which will be respected by the Shake SDK.
+
+:::
+

@@ -14,6 +14,7 @@ Some of the components, like [Inspect](ios/configuration-and-data/inspect.md) an
 are disabled depending on the report context.
 
 <img
+  className="screen-image"
   alt="New ticket screen"
   src={useBaseUrl('screens/new_screen.png')}
 />

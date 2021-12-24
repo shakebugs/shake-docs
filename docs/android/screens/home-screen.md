@@ -19,6 +19,7 @@ Tickets visible in the table represent the uploaded tickets that are synced with
 The top portion of the screen consists of introductory message and the *Submit new ticket* action.
 
 <img
+  className="screen-image"
   alt="Home screen"
   src={useBaseUrl('screens/home_screen.png')}
 />
