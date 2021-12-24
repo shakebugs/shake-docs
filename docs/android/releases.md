@@ -8,9 +8,26 @@ What would you like us to build next? We're dying to hear from you — upvote up
 
 ## Version
 
+### 15.1.0
+<span class="tag-button">December 20, 2021</span>&nbsp;&nbsp;
+<span class="tag-button green-tag-button">Latest version</span>
+
+**What's new**
+
+[Chat](android/screens/chat-screen.md), the most upvoted feature on our feedback list is now available!
+
+From now, you can reply to your users who report bugs, experience a crash, or send you feedback. 
+Ask a user for bug details over the Dashboard and the user will receive a message notification. 
+The user can reply to your question and provide you more details without leaving your app.
+
+Chat supports dark and light theme and is integrated with the white labeling to show it in your brand color.
+
+**Bug fixes**
+
+There were a few minor bugs that caused problems, like bugs do. We fixed those, and improved the SDK stability too.
+
 ### 15.0.2
 <span class="tag-button">October 27, 2021</span>&nbsp;&nbsp;
-<span class="tag-button green-tag-button">Latest version</span>
 
 **What's new**
 

@@ -13,6 +13,7 @@ module.exports = {
             label: 'Screens',
             items: [
                 'android/screens/home-screen',
+                'android/screens/chat-screen',
                 'android/screens/inspect-screen',
                 'android/screens/new-ticket-screen'
             ]
@@ -52,7 +53,8 @@ module.exports = {
                         'android/users/unregister-user',
                         'android/users/update-user-metadata',
                         'android/users/update-user-identifier',
-                        'android/users/advanced-usage'
+                        'android/users/advanced-usage',
+                        'android/users/chat',
                     ]
                 },
             ]
@@ -102,6 +104,7 @@ module.exports = {
             label: 'Screens',
             items: [
                 'ios/screens/home-screen',
+                'ios/screens/chat-screen',
                 'ios/screens/inspect-screen',
                 'ios/screens/new-ticket-screen'
             ]
@@ -142,6 +145,7 @@ module.exports = {
                         'ios/users/update-user-metadata',
                         'ios/users/update-user-identifier',
                         'ios/users/advanced-usage',
+                        'ios/users/chat',
                     ]
                 },
             ]
@@ -185,7 +189,8 @@ module.exports = {
             items: [
                 'flutter/screens/home-screen',
                 'flutter/screens/inspect-screen',
-                'flutter/screens/new-ticket-screen'
+                'flutter/screens/new-ticket-screen',
+                'flutter/screens/chat-screen',
             ]
         },
         {
@@ -212,6 +217,7 @@ module.exports = {
                         'flutter/users/update-user-metadata',
                         'flutter/users/update-user-identifier',
                         'flutter/users/advanced-usage',
+                        'flutter/users/chat',
                     ]
                 },
             ]
@@ -260,6 +266,7 @@ module.exports = {
             label: 'Screens',
             items: [
                 'react/screens/home-screen',
+                'react/screens/chat-screen',
                 'react/screens/inspect-screen',
                 'react/screens/new-ticket-screen'
             ]
@@ -288,6 +295,7 @@ module.exports = {
                         'react/users/update-user-metadata',
                         'react/users/update-user-identifier',
                         'react/users/advanced-usage',
+                        'react/users/chat',
                     ]
                 },
             ]

@@ -89,6 +89,39 @@ Shake.configuration.isInvokedByRightEdgePan = true
 </TabItem>
 </Tabs>
 
+You can also configure which Shake screen you want to show when Shake is invoked manually.  
+
+It can be either [New ticket screen](ios/screens/new-ticket-screen.md) or [Home screen](ios/screens/home-screen.md), depending on your preferences:
+
+<Tabs
+groupId="ios"
+defaultValue="swift"
+values={[
+{ label: 'Objective-C', value: 'objectivec'},
+{ label: 'Swift', value: 'swift'},
+]
+}>
+
+<TabItem value="swift">
+
+```swift title="AppDelegate.swift"
+// highlight-next-line
+Shake.configuration.defaultShowOption = .new;
+```
+</TabItem>
+
+<TabItem value="objectivec">
+
+```objc title="AppDelegate.m"
+// highlight-next-line
+SHKShake.configuration.defaultShowOption = SHKShowOptionNew;
+```
+
+</TabItem>
+</Tabs>
+
+The default value is `SHKShowOption.new`.
+
 ### Shaking
 The default, shaking gesture causes the SDK to pop up.
 

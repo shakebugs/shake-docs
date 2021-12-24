@@ -12,7 +12,7 @@ The user metadata map has some limitations, the total map size must not exceed _
 If this validation fails, the update method is dropped with the appropriate console message.
 :::
 :::tip
-Shake Dashboard uses *first_name*, *last_name* and *end_user_id* keys from the user metadata for presentation purposes. 
+Shake Dashboard uses *first_name* and *last_name* keys from the user metadata for presentation purposes. 
 We recommend using these keys when sending appropriate user metadata to have a nice overview of your users on the Dashboard.
 :::
 Updates to the user metadata are _incremental_, or perhaps a better way to describe it would be _merged_.

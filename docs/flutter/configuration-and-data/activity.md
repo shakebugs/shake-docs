@@ -51,7 +51,7 @@ Install [shake_dio_interceptor](https://pub.dev/packages/shake_dio_interceptor) 
 ```yaml title="pubspec.yaml"
 dependencies:
 //highlight-next-line
-    shake_dio_interceptor: ^15.0.0
+    shake_dio_interceptor: ^15.1.0
 ```
 
 Add *ShakeDioInterceptor* to your *Dio* instance:
@@ -77,7 +77,7 @@ Install [shake_http_client](https://pub.dev/packages/shake_http_client) extensio
 ```yaml title="pubspec.yaml"
 dependencies:
 //highlight-next-line
-    shake_http_client: ^15.0.0
+    shake_http_client: ^15.1.0
 ```
 
 Use *ShakeHttpClient* to send network requests:
