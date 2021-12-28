@@ -8,8 +8,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 ## Introduction
 
-It contains various components, many of which can be tweaked according to your needs.
-Visit [Configuration and data](android/configuration-and-data/overview.md#elements-of-the-new-ticket-screen) for more details.
+It contains various elements, many of which can be tweaked according to your needs.
+Visit [New ticket screen elements](android/configuration-and-data/new-ticket-screen-elements) for more details.
 
 <table class="media-container mt-50">
 <img
