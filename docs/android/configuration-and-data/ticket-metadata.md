@@ -6,27 +6,16 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
->Attach a value of any variable from user's app to the tickets they report.
-
-## Introduction
-Every app is unique so the [Essentials](/android/configuration-and-data/essentials.md) sent with each ticket are often not enough.
+>Every app is unique so the [Data attached by default](/android/configuration-and-data/essentials) sent with each ticket are often not enough.
 That's why Shake also allows you to attach any custom data from the app to the ticket.
-
-Every app is unique so the [Essentials](/android/configuration-and-data/essentials.md) sent with each bug report are often not enough.
-That's why the Shake SDK allows you to send yourself any custom data from the app using Metadata.
-It's a *String* pair which you can shape any way you want, and you can put anything you want into it.
-
-You can find Ticket metadata in the right column of Shake dashboard.
-
 
 ## How to use
 
-To set the Metadata, call the `Shake.setMetadata` method passing your desired data you want to
-receive on your web Dashboard as a *String* pair.
+To set Ticket metadata, call `Shake.setMetadata` and pass the data you want to
+receive on Shake dashboard as a *String* pair.
 
-You can call the `Shake.setMetadata` method anywhere within your app, but be careful because any subsequent calls with the same *String* key will override the former *String* value.
-Let’s say you wanted to send yourself a user’s ID after he successfully logs into your app using Metadata.
-It would look something like this in code:
+You can call `Shake.setMetadata` anywhere in your app, but be careful because any subsequent calls with the same *String* key will override the former *String* value.
+Let’s say you want to send yourself user’s ID after they successfully log into your app. You would do this:
 
 <Tabs
   groupId="android"
