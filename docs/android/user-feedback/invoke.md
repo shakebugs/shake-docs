@@ -2,14 +2,22 @@
 id: invoke
 title: Invoke
 ---
->Decide how you want Shake to be invoked.
+>Decide how you want Shake user feedback to be invoked.
 
 ## Invoke manually
-By default, Shake is invoked when a user shakes their device.
-You don't need to code anything.
+By default, Shake user feedback is invoked when a user shakes their device.
+You don't need to code anything:
+
+<table class="media-container mt-40 mb-40">
+<img
+  alt="Open Shake New ticket screen"
+  width="520"
+  src={useBaseUrl('screens/open-shake-new-ticket-screen.svg')}
+/>
+</table>
 
 But if you want to, you can customize that.
-Let's look at an example where you want Shake to be invoked either when your users shake their device, or when they take a screenshot:
+Let's look at an example where you want Shake user feedback to be invoked either when your users shake their device, or when they take a screenshot:
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -87,7 +95,7 @@ Shake.getReportConfiguration().isInvokeShakeOnRightEdgePan = true
 </TabItem>
 </Tabs>
 
-Also, feel free to choose which Shake screen is shown when Shake is invoked manually:
+Also, feel free to choose which Shake screen is shown when Shake user feedback is invoked manually:
 * [New ticket screen](android/shake-ui/new-ticket-screen.md)
 * [Home screen](android/shake-ui/home-screen.md)
 
@@ -126,7 +134,7 @@ Shake.getReportConfiguration().defaultScreen = ShakeScreen.HOME
 The default value is `ShakeScreen.NEW`.
 
 ### Shaking gesture
-By default, the shaking gesture opens up Shake.
+By default, the shaking gesture opens up Shake user feedback.
 
 :::note
 
@@ -134,7 +142,7 @@ Android emulator’s default shaking gesture is too weak to invoke Shake.
 
 :::
 
-You can fine-tune shaking threshold too. Let's lower it as an example, so Shake is easier to invoke:
+You can fine-tune shaking threshold too. Let's lower it as an example, so Shake user feedback is easier to invoke:
 
 <Tabs
   groupId="android"
@@ -165,7 +173,7 @@ Shake.getReportConfiguration().shakingThreshold = 400 // Default value is 600.
 </Tabs>
 
 A valid treshold value range is `1 - 1000`, with bigger values representing higher threshold, meaning that a stronger 
-motion gesture is required to invoke Shake.
+motion gesture is required to invoke Shake user feedback.
 
 ### Floating button
 This invocation event creates a floating button on top of your app's UI which your users can see at all times, and drag around the screen.
@@ -178,7 +186,7 @@ Also, system interface elements [may sometimes get in a way](https://help.shakeb
 :::
 
 ### Taking a screenshot
-Shake will be invoked when your user takes a screenshot while using your app.
+Shake user feedback will be invoked when your user takes a screenshot while using your app.
 
 :::note
 
@@ -188,7 +196,7 @@ Because of that, if you opt for this invocation method, the storage permission w
 :::
 
 ### Right edge pan
-Shake will be invoked with a one-finger swiping gesture from the right edge of the screen.
+Shake user feedback will be invoked with a one-finger swiping gesture from the right edge of the screen.
 
 :::note
 
@@ -198,7 +206,7 @@ Use one of the alternative ways to invoke Shake instead.
 :::
 
 ## Invoke through code
-Invoke Shake through code by calling the `Shake.show` method anywhere after `Shake.start`.
+Invoke Shake user feedback through code by calling the `Shake.show` method anywhere after `Shake.start`.
 
 The `show` method can be called with the argument `ShakeScreen` which determines the first presented screen in the Shake UI.
 The default value is `ShakeScreen.NEW`.
