@@ -8,14 +8,14 @@ title: Overview
 ## Introduction
 
 Whatever you tweak, your configuration settings apply to all Shake modules:
-* [User feedback](android/user-feedback/overview)
-* [Crash reports](android/crash-reports/overview)
+* [User feedback](/docs/android/user-feedback/overview)
+* [Crash reports](/docs/android/crash-reports/overview)
 
 ## Elements of the New ticket screen
 
 Your users send you their feedback and crash reports from the New ticket screen. Read how to customize it:
-* [New ticket screen elements](android/configuration-and-data/new-ticket-screen-elements).
-* [Feedback type](android/user-feedback/feedback-type) for User feedback (Crash reports don't have this element).
+* [New ticket screen elements](/docs/android/configuration-and-data/new-ticket-screen-elements)
+* [Feedback type](/docs/android/user-feedback/feedback-type) for User feedback. Crash reports don't have this element.
 
 ## Collected data
 
@@ -24,7 +24,7 @@ Shake attaches useful data both to user feedback and crash reports. Read all abo
 <div class="featuresList">
     <div>
         <img src="/docs/img/description@2x.png" alt="Ticket description"/>
-        <p><a href="/docs/android/configuration-and-data/new-ticket-screen-elements">Ticket description</a></p>
+        <p><a href="/docs/android/configuration-and-data/new-ticket-screen-elements#description-field">Ticket description</a></p>
     </div>
 	<div>
         <img src="/docs/img/essential-data@2x.png" alt="Data attached by default"/>
@@ -59,5 +59,5 @@ Shake attaches useful data both to user feedback and crash reports. Read all abo
 ## Data privacy
 
 Decide what needs to stay private, and learn everything about data Shake collects:
-* [Manage sensitive data](android/configuration-and-data/manage-sensitive-data.md)
+* [Protect sensitive data](android/configuration-and-data/manage-sensitive-data.md)
 * [Data privacy disclosure](android/configuration-and-data/data-privacy-disclosure.md)
