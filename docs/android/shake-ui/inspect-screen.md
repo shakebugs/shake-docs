@@ -6,7 +6,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-> Your users can inspect ticket's [Essentials](android/configuration-and-data/essentials.md) and [Metadata](android/configuration-and-data/ticket-metadata.md) — before submitting it.
+> Before submitting a ticket, your user can freely inspect [Data attached by default](android/configuration-and-data/essentials.md) and [Ticket metadata](android/configuration-and-data/ticket-metadata.md).
 
 ## Introduction
 
@@ -22,6 +22,6 @@ They access this screen by tapping the *Inspect* button on the [New ticket scree
 </table>
 
 
-## Show the Inspect button
+## Hide the Inspect button
 
-The *Inspect* button is an optional and feature that [can be disabled](android/configuration-and-data/new-ticket-screen-elements.md) by passing the appropriate value to the Shake configuration.
+The *Inspect* button is an optional element and [can be disabled](/android/configuration-and-data/new-ticket-screen-elements#inspect-button).
