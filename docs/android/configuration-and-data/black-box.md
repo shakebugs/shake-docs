@@ -7,11 +7,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 >Just like before an airplane crash, Shake records a detailed environment
 profile giving you an insight into the last 60 seconds before the ticket was submitted.
 
-## Introduction
-Black box includes device and app data, like memory load and connectivity status.
-You'll find the charts on your Shake Dashboard right below the screenshot.
-
-## Charts
+## Automatically recorded charts
 
 ### Device memory usage
 This line chart shows the device's total memory usage.
