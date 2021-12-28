@@ -2,6 +2,9 @@
 id: invoke
 title: Invoke
 ---
+
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 >Decide how you want Shake user feedback to be invoked.
 
 ## Invoke manually
@@ -12,7 +15,7 @@ You don't need to code anything:
 <img
   alt="Open Shake New ticket screen"
   width="520"
-  src={useBaseUrl('screens/open-shake-new-ticket-screen.svg')}
+  src={useBaseUrl('img/open-shake-new-ticket-screen.svg')}
 />
 </table>
 

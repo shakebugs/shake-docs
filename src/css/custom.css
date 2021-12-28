@@ -909,10 +909,10 @@ div[class*='codeBlockLines'] {
   position: absolute;
 }
 h2 .hash-link {
-  top: 8px;
+  bottom: 5px;
 }
 h3 .hash-link {
-  top: 4px;
+  bottom: 1px;
 }
 
 
@@ -920,6 +920,9 @@ h3 .hash-link {
 /*
 * Pagination at the bottom of the page
 */
+.pagination-nav {
+  display: none;
+}
 .pagination-nav__link {
   border: 2px solid var(--secondary-button-outline);
 }

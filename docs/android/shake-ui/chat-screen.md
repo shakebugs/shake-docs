@@ -23,4 +23,4 @@ Your users can reply to your messages and provide you with more details
 about the bugs, crashes and feedback they've sent, without ever leaving your app.
 Fix issues easier and keep your users happy.
 
-Visit [Chat](/docs/android/users/chat.md) to learn more.
+Visit [Chat](/docs/android/users/chat/) to learn more.
