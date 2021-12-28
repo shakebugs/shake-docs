@@ -11,9 +11,10 @@ import TabItem from '@theme/TabItem';
 ## Introduction
 
 Here, your user can see:
+* A welcome message that you can change from your [Shake dashboard](https://app.shakebugs.com/settings/workspace#whitelabel).
 * A button to submit a new ticket.
 * All their previous tickets (user feedback and crash reports).
-To show them their previous tickets, [register your users](android/users/overview.md) with Shake.
+To show them their previous tickets, [register your users](android/users/overview) with Shake.
 
 <table class="media-container mt-50">
 <img
@@ -26,4 +27,4 @@ To show them their previous tickets, [register your users](android/users/overvie
 ## Show
 
 To show the Home screen to an app user, call the `Shake.show` method with the `ShakeScreen.HOME` argument.
-Visit [manual invocations](android/user-feedback/invoke.md/#invoke-through-code) to learn more.
+Visit [Invocations](android/user-feedback/invoke#invoke-through-code) to learn more.
