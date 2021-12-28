@@ -35,47 +35,47 @@ title: Overview
 
 <div class="featuresList">
     <div>
+        <img src="/docs/img/invoke-shake@2x.png" alt="Invoke Shake"/>
+        <p><a href="/docs/android/user-feedback/invoke/">Invoke Shake</a></p>
+    </div>
+    <div>
         <img src="/docs/img/essential-data@2x.png" alt="Data attached by default"/>
         <p><a href="/docs/android/configuration-and-data/essentials/">Data attached by default</a></p>
-    </div>
-    <div>
-        <img src="/docs/img/feature-custom-user-data@2x.png" alt="Custom User data"/>
-        <p><a href="/docs/android/users/update-user-metadata/">Custom User data</a></p>
-    </div>
-    <div>
-        <img src="/docs/img/feature-custom-ticket-data@2x.png" alt="Custom Ticket data"/>
-        <p><a href="/docs/android/configuration-and-data/ticket-metadata/">Custom Ticket data</a></p>
     </div>
     <div>
         <img src="/docs/img/screen-recording@2x.png" alt="Auto screen recording"/>
         <p><a href="/docs/android/configuration-and-data/auto-screen-recording/">Auto screen recording</a></p>
     </div>
     <div>
-        <img src="/docs/img/invoke-shake@2x.png" alt="Invoke Shake"/>
-        <p><a href="/docs/android/user-feedback/invoke/">Invoke Shake</a></p>
-    </div>
-    <div>
-        <img src="/docs/img/protect-sensitive-data@2x.png" alt="Protect sensitive data"/>
-        <p><a href="/docs/android/configuration-and-data/manage-sensitive-data/">Protect sensitive data</a></p>
-    </div>
-    <div>
         <img src="/docs/img/steps-to-reproduce@2x.png" alt="Auto steps to reproduce"/>
         <p><a href="/docs/android/configuration-and-data/activity-history/">Auto steps to reproduce</a></p>
+    </div>
+    <div>
+        <img src="/docs/img/black-box@2x.png" alt="Black box"/>
+        <p><a href="/docs/android/configuration-and-data/black-box/">Black box</a></p>
     </div>
     <div>
         <img src="/docs/img/feature-auto-attach-files@2x.png" alt="Auto attach files"/>
         <p><a href="/docs/android/configuration-and-data/auto-attach-files/">Auto attach files</a></p>
     </div>
     <div>
-        <img src="/docs/img/black-box@2x.png" alt="Black box"/>
-        <p><a href="/docs/android/configuration-and-data/black-box/">Black box</a></p>
+        <img src="/docs/img/feature-custom-ticket-data@2x.png" alt="Custom Ticket data"/>
+        <p><a href="/docs/android/configuration-and-data/ticket-metadata/">Custom Ticket data</a></p>
+    </div>
+    <div>
+        <img src="/docs/img/feature-custom-user-data@2x.png" alt="Custom User data"/>
+        <p><a href="/docs/android/users/update-user-metadata/">Custom User data</a></p>
+    </div>
+    <div>
+        <img src="/docs/img/protect-sensitive-data@2x.png" alt="Protect sensitive data"/>
+        <p><a href="/docs/android/configuration-and-data/manage-sensitive-data/">Protect sensitive data</a></p>
     </div>
 </div>
 
 import AndroidVersion from '@site/src/base/AndroidVersion';
 
 ## Latest version
-> The [latest available version](android/releases) is <AndroidVersion/>.
+The [latest available Shake SDK version](/docs/android/releases) is <AndroidVersion/>.
 
 ## Minimum requirements
-> Shake SDK works on Android 5.0 or newer.
+Shake SDK works on Android 5.0 or newer.
