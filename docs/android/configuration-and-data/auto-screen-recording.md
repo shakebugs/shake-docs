@@ -8,7 +8,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 Or, you can use this feature to always record their screen and automatically attach that video to the ticket.
 
 :::note
-Do not use this feature in production!
+Turn off this feature in production!
 :::note
 
 ## Enable
