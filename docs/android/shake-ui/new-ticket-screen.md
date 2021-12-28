@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 ## Introduction
 
 It contains various elements, many of which can be tweaked according to your needs.
-Visit [New ticket screen elements](android/configuration-and-data/new-ticket-screen-elements) for more details.
+Visit [New ticket screen elements](/android/configuration-and-data/new-ticket-screen-elements) for more details.
 
 <table class="media-container mt-50">
 <img
