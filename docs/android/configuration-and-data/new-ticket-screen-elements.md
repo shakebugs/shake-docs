@@ -9,7 +9,15 @@ import TabItem from '@theme/TabItem';
 >Here are all the element customizations you can do on the [New ticket screen](android/shake-ui/new-ticket-screen.md).
 
 
-## Description field
+## Ticket description
+
+<table class="media-container media-container-highlighted mt-40 mb-40 pt-80">
+<img
+  alt="Ticket description field"
+  width="380"
+  src={useBaseUrl('img/element-description@2x.png')}
+/>
+</table>
 
 This is a mandatory element and can't be hidden.
 
@@ -19,7 +27,15 @@ those will automatically become <span class="tag-button pink-tag-button">tags</s
 
 ## Email field
 
-Thie element iis optional and allows your users to leave their email address with the ticket they're submitting.
+<table class="media-container media-container-highlighted mt-40 mb-40">
+<img
+  alt="Email field"
+  width="380"
+  src={useBaseUrl('img/element-email@2x.png')}
+/>
+</table>
+
+Thie element is optional and allows your users to leave their email address with the ticket they're submitting.
 
 Use the following method if you don't want to show it:
 
@@ -87,14 +103,22 @@ Two tips:
 
 ### Users and tickets as indepentent entities
 
-The value you receive in the email field is just an attribute of that ticket, a simple **string**.
+The value you receive in the email field is just an attribute of that ticket, a simple **String**.
 
 To register a User as an unique **entity** which Shake automatically relates to all Tickets they submit,
 register your users with the [Users](android/users/overview.md) module.
 
 ## Inspect button
 
-By default, this element is visible to your users. Tapping it takes them to the [Inspect screen](android/shake-ui/inspect-screen).
+<table class="media-container media-container-highlighted mt-40 mb-40">
+<img
+  alt="Inspect button"
+  width="380"
+  src={useBaseUrl('img/element-inspect@2x.png')}
+/>
+</table>
+
+By default, this element is visible to your users. Tapping it takes them to the [Inspect screen](/docs/android/shake-ui/inspect-screen).
 If you want to, hide it using the following method:
 
 <Tabs
