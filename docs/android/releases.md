@@ -2,17 +2,18 @@
 id: releases
 title: Release notes
 ---
-This page lists all updates to the Shake Android SDK.
+>This page lists all updates to the Shake Android SDK.
 
-What would you like us to build next? We're dying to hear from you — upvote upcoming features and suggest new ideas on [feedback.shakebugs.com](https://feedback.shakebugs.com/)
+## What's next?
 
-## Version
+What would you like us to build next? Upvote upcoming features and suggest new ideas on [Public feedback board](https://feedback.shakebugs.com/)
 
-### 15.1.0
+
+## 15.1.0
 <span class="tag-button">December 20, 2021</span>&nbsp;&nbsp;
 <span class="tag-button green-tag-button">Latest version</span>
 
-**What's new**
+#### What's new
 
 [Chat](android/shake-ui/chat-screen.md), the most upvoted feature on our feedback list is now available!
 
@@ -40,14 +41,14 @@ Your users whose default device language is set to one of these will automatical
 
 There were a few minor bugs that caused problems, like bugs do. We fixed those, and improved the SDK stability too.
 
-### 15.0.1
+## 15.0.1
 <span class="tag-button">October 14, 2021</span>&nbsp;&nbsp;
 
 **Bug fixes**
 
 There were a few minor bugs that caused problems, like bugs do. We fixed those, and improved the SDK stability too.
 
-### 15.0.0
+## 15.0.0
 <span class="tag-button">September 21, 2021</span>&nbsp;&nbsp;
 
 **What's new**
@@ -57,7 +58,7 @@ It also started supporting dark and light theme so it can beautifully fit into y
 
 We've introduced [Home screen](/android/shake-ui/home-screen.md) where [your users](/android/users/overview.md) can see tickets they reported.
 
-### 14.4.0
+## 14.4.0
 <span class="tag-button">July 22, 2021</span>&nbsp;&nbsp;
 
 **What's new**
@@ -69,7 +70,7 @@ From now, you can [register users of your application](/android/users/overview.m
 
 You can now safely call Shake methods before Shake is started, we've handled those crashes.
 
-### 14.3.0
+## 14.3.0
 <span class="tag-button">June 2, 2021</span>&nbsp;&nbsp;
 
 **What's new**
@@ -83,7 +84,7 @@ We've added an option to [exclude the screenshot from the reports](/android/conf
 This version now contains a Portuguese translation, which additionally extends [the lists of languages Shake's been translated to](https://help.shakebugs.com/en/articles/3392092-which-languages-has-shake-sdk-been-translated-to). 
 Your users whose default device language is set to one of these will automatically see Shake in their language.
 
-### 14.2.0
+## 14.2.0
 <span class="tag-button">May 10, 2021</span>&nbsp;&nbsp;
 
 **What's new**
@@ -94,14 +95,14 @@ Read all about it [on its subpage](https://www.shakebugs.com/crash), or dive rig
 
 We've increased the size limit for feedback attachments, now you can attach up to 10 MB per file.
 
-### 14.1.5
+## 14.1.5
 <span class="tag-button">April 28, 2021</span>&nbsp;&nbsp;
 
 **Bug fixes**
 
 There were a few minor bugs that caused problems, like bugs do. We fixed those, and improved the SDK stability too.
 
-### 14.1.4
+## 14.1.4
 <span class="tag-button">April 13, 2021</span>&nbsp;&nbsp;
 
 **What's new**
@@ -113,7 +114,7 @@ Your users whose default device language is set to one of these will automatical
 
 There were a few minor bugs that caused problems, like bugs do. We fixed those, and improved the SDK stability too.
 
-### 14.1.3
+## 14.1.3
 <span class="tag-button">March 24, 2021</span>&nbsp;&nbsp;
 
 **What's new**
@@ -123,21 +124,21 @@ If you’re upgrading from the older version, make sure to [update the dependenc
 
 The `minSdkVersion` has been changed to 21. If your project is using a version lower than 21, you should upgrade the `minSdkVersion` in your module’s *build.gradle* file.
 
-### 14.1.2
+## 14.1.2
 <span class="tag-button">February 4, 2021</span>&nbsp;&nbsp;
 
 **Bug fixes**
 
 We've tinkered with some details and gave the interiors a thorough clean. The SDK is now smoother than it was.
 
-### 14.1.1
+## 14.1.1
 <span class="tag-button">January 21, 2021</span>&nbsp;&nbsp;
 
 **What's new**
 
 We updated the start method. The configuration keys are now loaded via the method, and not with the values from the `.xml` file. Don’t worry, the existing implementation will still work for some time.
 
-### 14.1
+## 14.1
 <span class="tag-button">December 7, 2020</span>&nbsp;&nbsp;
 
 **What's new**
@@ -150,7 +151,7 @@ We've added [console logs](android/configuration-and-data/activity-history.md#co
 
 We've all been waiting for this! Your users can record an additional video of their screen or grab one or two more extra screenshots and attach them to the feedback they're submitting — without ever leaving your app.
 
-### 14.0
+## 14.0
 <span class="tag-button">November 5, 2020</span>&nbsp;&nbsp;
 
 **What's new**
@@ -163,21 +164,21 @@ Shake now allows you to [manage sensitive data](android/configuration-and-data/m
 
 You can now use the in-app Shake [onboarding dialog](android/user-feedback/intro-message.md) to inform your users about Shake availability.
 
-### 13.1
+## 13.1
 <span class="tag-button">August 25, 2020</span>&nbsp;&nbsp;
 
 **What's new**
 
 If you want to, you can now pre-fill or hide the [Email field](/android/configuration-and-data/new-ticket-screen-elements.md) from the SDK. Pretty neat.
 
-### 13.0
+## 13.0
 <span class="tag-button">June 30, 2020</span>
 
 **What's new**
 
 Screenshots are cool, but wouldn't it be even cooler if you could watch a short video of what a user did before reporting the bug? That's why we introduced [Automatic screen recording](/android/configuration-and-data/auto-screen-recording.md).
 
-### 12.0
+## 12.0
 <span class="tag-button">May 19, 2020</span>
 
 **What's new**
@@ -188,7 +189,7 @@ Shake can appear in your brand color and with your logo.
 You wanted us to get rid of Quick Facts (one long concatenated string)
 and introduce [Metadata](/android/configuration-and-data/ticket-metadata.md) (useful key-value pairs) instead. So we did it.
 
-### 11.0
+## 11.0
 <span class="tag-button">April 1, 2020</span>
 
 **What's new**
@@ -205,7 +206,7 @@ If your users want to, they can read how to report great bugs, report any SDK hi
 If you want to, our [Activity history](/android/configuration-and-data/activity-history.md) now allows you to send yourself any custom logs,
 and read the notifications users receive.
 
-### 10.0
+## 10.0
 <span class="tag-button">March 12, 2020</span>
 
 **What's new**
