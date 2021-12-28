@@ -103,6 +103,29 @@ feel free to use `Shake.start()` method in the Activity but make sure you call i
 
 :::
 
-Now build your project and see everything work. To build and run your
-app, select *Run → Run* in the menu bar. This first run will automatically
-add your app to your [Shake Dashboard](https://app.shakebugs.com/) based on your app bundle ID.
+Build and run your project by selecting *Run → Run* in the menu bar. This first run will automatically
+add your app to your [Shake dashboard](https://app.shakebugs.com/) based on your app bundle ID.
+
+## Visit Shake dashboard
+
+Follow the instructions there to send your first feedback with Shake and you're all set.
+
+## SDK customizations
+
+Now that Shake SDK is in your app and you have sent the first feedback for fun, everything else is optional.
+As the next step, try three most popular SDK customizations:
+
+<div class="featuresList">
+    <div>
+        <img src="/docs/img/screen-recording@2x.png" alt="Turn on auto screen recording"/>
+        <p><a href="/docs/android/configuration-and-data/auto-screen-recording/">Turn on auto screen recording</a></p>
+    </div>
+    <div>
+        <img src="/docs/img/steps-to-reproduce@2x.png" alt="Tweak logging to your debugging needs"/>
+        <p><a href="/docs/android/configuration-and-data/activity-history">Tweak logging to your debugging needs</a></p>
+    </div>
+    <div>
+        <img src="/docs/img/crash-reporting@2x.png" alt="Turn on app crash detection"/>
+        <p><a href="/docs/android/crash-reports/overview">Turn on crash detection</a></p>
+    </div>
+</div>
