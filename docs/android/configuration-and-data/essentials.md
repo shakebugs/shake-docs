@@ -166,7 +166,7 @@ All of this is done out of the box, you don't need to code anything.
     </div>
 </div>
 
-<p><sup>1</sup> Shake tracks the status of these dangerous Android permissions:</p>
+<p><sup>1</sup> Shake tracks the status of these runtime permissions, also known as dangerous permissions:</p>
 
 * CALENDAR
 * CALL_LOG
@@ -179,8 +179,8 @@ All of this is done out of the box, you don't need to code anything.
 * SMS
 * STORAGE
 
-On Shake dashboard, Shake lists those permissions that the user has granted access to.
-The ones you don't see listed were either denied or not requested at all.
+On Shake dashboard, only those permissions that the user has granted access to are listed.
+The ones you don't see were either denied or not requested at all.
 
 
 ## Attach more data
