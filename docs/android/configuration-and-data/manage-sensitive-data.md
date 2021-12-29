@@ -344,7 +344,7 @@ In the example above, the *Greeting* component will be removed from the screensh
 
 Marking a view as private will automatically delete its touch events' text properties too.
 Consequently, you'll see them as `data_redacted` strings in ticket's
-[Activity history](https://www.shakebugs.com/docs/android/activity#user-actions).
+[Activity history](/android/configuration-and-data/activity-history).
 The view's ID, accessibility labels and tags remain visible.
 
 ## Network requests
