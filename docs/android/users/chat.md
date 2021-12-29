@@ -3,12 +3,12 @@ id: chat
 title: Chat
 ---
 
-If needed, your users can [chat with you](android/shake-ui/chat-screen) to provide you more details 
+If needed, your users can [chat with you](/android/shake-ui/chat-screen) to provide you more details 
 about their reported bugs, crashes or feedback. You fill fix issues faster and make your customers happier.
 
 ## Enable
 
-Once your user is [registered](android/users/register-user) with Shake, chat feature is enabled automatically.
+Once your user is [registered](/android/users/register-user) with Shake, chat feature is enabled automatically.
 Each ticket they send you is a separate conversation.
 
 This feature is tightly integrated with and follows the lifecycle of your _User_ registration, 
