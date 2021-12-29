@@ -3,7 +3,7 @@ id: disable
 title: Disable
 ---
 
->After you start Shake, you can pause and resume it to any of your users at any point.
+>After you start Shake, you can pause and resume it for any of your users at any point.
 
 ## Example
 
