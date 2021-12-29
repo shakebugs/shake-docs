@@ -85,26 +85,16 @@ and updating **specific** user metadata in their respective contexts:
   ]
 }>
 
+
 <TabItem value="java">
 
-```java title="CartActivity.java"
-private void onCartItemAdded() {
-    updateTotalPrice();
+```java title="UserSettingsActivity.java"
+private void onUserSettingsConfigured() {
+    fetchUserInformation();
 
     // highlight-start
     Map<String, String> metadata = new HashMap<>();
-    metadata.put("cartItems", cartItems.toString());
-
-    Shake.updateUserMetadata(metadata);
-    // highlight-end
-}
-
-private void onCartItemsCleared() {
-    updateTotalPrice();
-    
-    // highlight-start
-    Map<String, String> metadata = new HashMap<>();
-    metadata.put("cartItems", "empty");
+    metadata.put("userSettings", userSettings.toString());
 
     Shake.updateUserMetadata(metadata);
     // highlight-end
@@ -115,24 +105,13 @@ private void onCartItemsCleared() {
 
 <TabItem value="kotlin">
 
-```kotlin title="CartActivity.kt"
-private fun onCartItemAdded() {
-    updateTotalPrice()
+```kotlin title="UserSettingsActivity.kt"
+private fun onUserSettingsConfigured() {
+    fetchUserInformation()
 
     // highlight-start
     val metadata: MutableMap<String, String> = HashMap()
-    metadata["cartItems"] = cartItems.toString()
-    
-    Shake.updateUserMetadata(metadata)
-    // highlight-end
-}
-
-private fun onCartItemsCleared() {
-    updateTotalPrice()
-
-    // highlight-start
-    val metadata: MutableMap<String, String> = HashMap()
-    metadata["cartItems"] = "empty"
+    metadata["userSettings"] = userSettings.toString()
     
     Shake.updateUserMetadata(metadata)
     // highlight-end

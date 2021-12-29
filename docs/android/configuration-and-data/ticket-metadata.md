@@ -15,7 +15,7 @@ To set Ticket metadata, call `Shake.setMetadata` and pass the data you want to
 receive on Shake dashboard as a *String* pair.
 
 You can call `Shake.setMetadata` anywhere in your app, but be careful because any subsequent calls with the same *String* key will override the former *String* value.
-Let’s say you want to send yourself user’s ID after they successfully log into your app. You would do this:
+Let’s say you want to send yourself roomID after user successfully joined into chat room. You would do this:
 
 <Tabs
   groupId="android"
@@ -29,9 +29,9 @@ Let’s say you want to send yourself user’s ID after they successfully log in
 <TabItem value="java">
 
 ```java title="App.java"
-public void onLoginSuccessful(User user) {
+public void onChatRoomJoined(Room room) {
     // highlight-next-line
-    Shake.setMetadata("userid", user.id);
+    Shake.setMetadata("roomId", room.id);
 }
 ```
 
@@ -40,9 +40,9 @@ public void onLoginSuccessful(User user) {
 <TabItem value="kotlin">
 
 ```kotlin title="App.kt"
-fun onLoginSuccessful(user: User) {
+fun onChatRoomJoined(room: Room) {
     // highlight-next-line
-    Shake.setMetadata("userid", user.id)
+    Shake.setMetadata("roomId", room.id)
 }
 ```
 
@@ -83,8 +83,8 @@ For example, you want to clear metadata when the user logs out:
 <TabItem value="java">
 
 ```java title="App.java"
-public void onLogOutPressed() {
-    loginService.logout();
+public void onChatRoomClosed() {
+    chatService.close();
 
     // highlight-next-line
     Shake.clearMetadata();
@@ -96,8 +96,8 @@ public void onLogOutPressed() {
 <TabItem value="kotlin">
 
 ```kotlin title="App.kt"
-fun onLogOutPressed() {
-    loginService.logout()
+fun onChatRoomClosed() {
+    chatService.close()
 
     // highlight-next-line
     Shake.clearMetadata()

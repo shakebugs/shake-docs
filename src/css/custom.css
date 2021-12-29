@@ -183,6 +183,10 @@ div[class*='codeBlock'], code{
   line-height: 20px;
 }
 
+.pt-80 {
+  padding-top: 80px;
+  }
+
 .center-align {
   text-align: center;
 }
