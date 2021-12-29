@@ -61,3 +61,8 @@ Shake attaches useful data both to user feedback and crash reports. Read all abo
 Decide what needs to stay private, and learn everything about data Shake collects:
 * [Protect sensitive data](android/configuration-and-data/manage-sensitive-data.md)
 * [Data privacy disclosure](android/configuration-and-data/data-privacy-disclosure.md)
+
+<p class="p2 mt-80 mb-10">⚡️ Shake is improved every week.
+Stumbled upon a <a href="https://feedback.shakebugs.com/bugs">bug</a>?
+Want a <a href="https://feedback.shakebugs.com/feature-requests">new feature</a> to be addded?
+Create new tickets and upvote existing ones on the Public feedback board.</p>
