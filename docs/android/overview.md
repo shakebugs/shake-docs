@@ -4,7 +4,7 @@ title: Overview
 ---
 
 ## Modules
-> Each of Shake’s product modules works independently, and they work even better together.
+> Shake Android SDK has three modules that work together nicely. Use one, all or any combination of them — whatever suits your needs.
 
 <div class="modulesList">
     <div>
@@ -79,3 +79,8 @@ The [latest available Shake SDK version](/docs/android/releases) is <AndroidVers
 
 ## Minimum requirements
 Shake SDK works on Android 5.0 or newer.
+
+<p class="p2 mt-80 mb-10">⚡️ Shake is improved every week.
+Stumbled upon a <a href="https://feedback.shakebugs.com/bugs">bug</a>?
+Want a <a href="https://feedback.shakebugs.com/feature-requests">new feature</a> to be addded?
+Create new tickets and upvote existing ones on the Public feedback board.</p>
