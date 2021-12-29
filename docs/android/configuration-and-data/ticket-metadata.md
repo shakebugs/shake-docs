@@ -7,7 +7,7 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 >Every app is unique so the [Data attached by default](/android/configuration-and-data/essentials) sent with each ticket are often not enough.
-That's why Shake also allows you to attach any custom data from the app to the ticket.
+That's why Shake also allows you to automatically attach any custom data from your app to the ticket.
 
 ## How to use
 
