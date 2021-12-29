@@ -26,3 +26,8 @@ Soon, these features will be available too:
 * You will be able to see your MAU and DAU charts.
 
 Start by [registering your app users](/android/users/register-user.md).
+
+<p class="p2 mt-80 mb-10">⚡️ Shake is improved every week.
+Stumbled upon a <a href="https://feedback.shakebugs.com/bugs">bug</a>?
+Want a <a href="https://feedback.shakebugs.com/feature-requests">new feature</a> to be addded?
+Create new tickets and upvote existing ones on the Public feedback board.</p>
