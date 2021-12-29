@@ -19,10 +19,10 @@ import TabItem from '@theme/TabItem';
 />
 </table>
 
-This is a mandatory element and can't be hidden.
+Your users describe their ticket here. This is a mandatory element and can't be hidden.
 
 Here's a tip that quality assurance teams often find helpful. If *#some #hashtags* are added anywhere in the description,
-those will automatically become <span class="tag-button pink-tag-button">tags</span> in your [Shake Dashboard](https://app.shakebugs.com/).
+thet will automatically become <span class="tag-button pink-tag-button">tags</span> on your [Shake dashboard](https://app.shakebugs.com/).
 
 
 ## Email field
@@ -35,9 +35,8 @@ those will automatically become <span class="tag-button pink-tag-button">tags</s
 />
 </table>
 
-Thie element is optional and allows your users to leave their email address with the ticket they're submitting.
-
-Use the following method if you don't want to show it:
+This element is optional and allows your users to leave their email address with the ticket they're submitting.
+Use the following method if you waht to hide it:
 
 <Tabs
   groupId="android"
