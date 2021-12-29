@@ -78,3 +78,8 @@ You can change its main action color and its welcome message without coding, fro
 
 Lastly, Shake mobile UI has been localized to [numerous languages](https://help.shakebugs.com/en/articles/3392092-which-languages-has-shake-sdk-been-translated-to).
 Your users whose default device language is set to one of those will automatically use Shake in their native language.
+
+<p class="p2 mt-80 mb-10">⚡️ Shake is improved every week.
+Stumbled upon a <a href="https://feedback.shakebugs.com/bugs">bug</a>?
+Want a <a href="https://feedback.shakebugs.com/feature-requests">new feature</a> to be addded?
+Create new tickets and upvote existing ones on the Public feedback board.</p>
