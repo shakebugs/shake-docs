@@ -157,7 +157,7 @@ Track User metadata to understand and describe your User better. Examples are:
 * Subscription status
 * Date of birth
 
-Use [Ticket metadata](android/configuration-and-data/ticket-metadata) to attach useful custom data to each ticket. Examples are statuses of various app variables at the moment of ticket being sent:
+Use [Ticket metadata](/android/configuration-and-data/ticket-metadata) to attach useful custom data to each ticket. Examples are statuses of various app variables at the moment of ticket being sent:
 
 * Current chat room ID
 * List of items curreently in a shopping cart
