@@ -66,3 +66,4 @@ Decide what needs to stay private, and learn everything about data Shake collect
 Stumbled upon a <a href="https://feedback.shakebugs.com/bugs">bug</a>?
 Want a <a href="https://feedback.shakebugs.com/feature-requests">new feature</a> to be addded?
 Create new tickets and upvote existing ones on the Public feedback board.</p>
+<p></p>

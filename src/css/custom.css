@@ -145,14 +145,24 @@ div[class*='codeBlock'], code{
 /*
 * Helper classes
 */
+
+.mt-80 {
+  margin-top: 80px;
+}
 .mt-50 {
   margin-top: 50px;
 }
 .mt-40 {
   margin-top: 40px;
 }
+.mt-10 {
+  margin-top: 10px;
+}
 .mb-5 {
   margin-bottom: 5px;
+}
+.mb-10 {
+  margin-bottom: 10px;
 }
 .mb-30 {
   margin-bottom: 30px;
@@ -846,6 +856,9 @@ div[class*='codeBlockLines'] {
   .media-container-highlighted img {
     max-width: 86%;
   }
+}
+.media-container > img {
+  margin-bottom: -7px;
 }
 
 

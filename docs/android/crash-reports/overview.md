@@ -34,3 +34,4 @@ of what happened before the crash, [activity history](/android/configuration-and
 Stumbled upon a <a href="https://feedback.shakebugs.com/bugs">bug</a>?
 Want a <a href="https://feedback.shakebugs.com/feature-requests">new feature</a> to be addded?
 Create new tickets and upvote existing ones on the Public feedback board.</p>
+<p></p>
