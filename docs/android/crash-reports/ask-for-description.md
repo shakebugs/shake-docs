@@ -17,7 +17,7 @@ This option is disabled by default. If you keep it this way, the crash report wi
 
 ## Enable
 
-If you enable it, a sheet will be shown to your user, givinig them an opportunity to describe what they were doing before the crash, potentially helping you a lot with their comment.
+If you enable it, a sheet will be shown to your user, giving them an opportunity to describe what they were doing before the crash, potentially helping you a lot with their comment.
 
 <table class="media-container media-container-highlighted mt-40 mb-40 pb-80">
 <img
