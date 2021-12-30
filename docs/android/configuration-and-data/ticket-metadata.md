@@ -49,27 +49,11 @@ fun onChatRoomJoined(room: Room) {
 </TabItem>
 </Tabs>
 
-## Different from User metadata
+## Clear Ticket metadata
 
-Use Ticket metadata to attach useful custom data to tickets. Examples are statuses of various app variables at the moment of ticket being sent:
-* Current chat room ID
-* List of items curreently in a shopping cart
-* Task synced true/false
-* Number of search results
-* List sorted by what
-* Video muted true/false
+If you want to clear existing Ticket metadata, you can use `Shake.clearMetadata` method.
 
-Use [User metadata](android/users/update-user-metadata.md) to attach custom data to users. Examples are:
-* First and last name
-* User ID
-* Address
-* Subscription status
-* Date of birth
-## Clear metadata
-
-If you want to clear existing metadata, you can use `Shake.clearMetadata` method.
-
-For example, you want to clear metadata when the user logs out:
+For example, you want to clear Ticket metadata when the user leaves a chat room:
 
 <Tabs
   groupId="android"
@@ -106,3 +90,20 @@ fun onChatRoomClosed() {
 
 </TabItem>
 </Tabs>
+
+## Ticket metadata vs. User metadata
+
+Use Ticket metadata to attach useful custom data to tickets. Examples are statuses of various app variables at the moment of ticket being sent:
+* Current chat room ID
+* List of items curreently in a shopping cart
+* Task synced true/false
+* Number of search results
+* List sorted by what
+* Video muted true/false
+
+Use [User metadata](android/users/update-user-metadata.md) to attach custom data to users. Examples are:
+* First and last name
+* User ID
+* Address
+* Subscription status
+* Date of birth
