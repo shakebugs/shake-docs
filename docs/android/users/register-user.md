@@ -26,6 +26,7 @@ Make sure to call this method at the place where it fits your app's flow perfect
   src={useBaseUrl('screens/register-user-flow.svg')}
 />
 </table>
+<p class="p2 center-align">A common case is to register users from your app's Login screen</p>
 
 <Tabs
   groupId="android"
