@@ -9,12 +9,75 @@ import TabItem from '@theme/TabItem';
 what data is sent to Shake servers. Shake SDK allows you to filter out sensitive data on the mobile device itself,
 so it never reaches the Shake servers.
 
+## Automatically redacted sensitive data
+
+Shake automatically redacts these sensitive data from your notifications, touch events and network requests:
+* email addresses
+* IP addresses
+* credit card numbers
+* bearer tokens
+
+Shake also redacts network header values if the header key is:
+* password 
+* secret
+* passwd
+* api_key 
+* apikey
+* access_token
+* auth_token
+* credentials
+* mysql_pwd
+* stripetoken
+* Authorization
+* Proxy-Authorization
+* card[number]
+* token
+
+To disable this privacy feature, use the method below:
+
+<Tabs
+groupId="android"
+defaultValue="kotlin"
+values={[
+        { label: 'Java', value: 'java'},
+        { label: 'Kotlin', value: 'kotlin'},
+        ]
+        }>
+
+<TabItem value="java">
+
+```java title="App.java"
+// highlight-start
+Shake.getReportConfiguration().setSensitiveDataRedactionEnabled(false);
+// highlight-end
+```
+
+</TabItem>
+
+<TabItem value="kotlin">
+
+```kotlin title="App.kt"
+// highlight-start
+Shake.getReportConfiguration().isSensitiveDataRedactionEnabled = false
+// highlight-end
+```
+
+</TabItem>
+</Tabs>
+
 ## Views
-You can mark any view as private, and it'll automatically be deleted from the screenshot.
+You can mark any view as private, and it'll automatically be deleted
+from the [auto screenshot](/android/configuration-and-data/auto-screenshot).
 Private views are stored as a weak reference, they get cleared from the memory when not used anymore.
 
-Let's suppose you're building a shopping cart app and you want to delete the name and the credit card number views
-from the screenshot:
+:::note
+
+These methods won't delete sensitive views from auto screen recording, only from the auto screenshot.
+
+:::
+
+Let's suppose you're building a shopping app and you want to delete the name and the credit card number views
+from the auto screenshot:
 
 <Tabs 
   groupId="android"
@@ -64,7 +127,7 @@ private fun maskSensitiveData() {
 </TabItem>
 </Tabs>
 
-To remove view from private views use following method:
+To remove a view from private views use the following method:
 
 <Tabs 
   groupId="android"
@@ -94,7 +157,7 @@ Shake.removePrivateView(view)
 </TabItem>
 </Tabs>
 
-If you want to delete and entire screen from the screenshot, simply mark the whole activity as private:
+If you want to delete an entire screen from the auto screenshot, simply mark the whole activity as private:
 
 <Tabs
 groupId="android"
@@ -216,12 +279,10 @@ Shake.clearPrivateViews()
 </TabItem>
 </Tabs>
 
-These methods won't delete sensitive views from auto screen recording, only from the screenshot.
-
 ## Auto screen recording
 Use Android system flag `FLAG_SECURE` on an activity if you want to prevent 
 sensitive data from being visible on the auto screen recording.
-It will make the activity black on the video:
+It will make the activity black in the video:
 
 <Tabs
 groupId="android"
@@ -596,59 +657,3 @@ private fun setupNotificationsFilter() {
 </Tabs>
 
 To clear the notification events filter, use `Shake.setNotificationEventsFilter(null)`.
-
-## Automatically redacted sensitive data
-
-Shake automatically redacts these sensitive data from your notifications, touch events and network requests:
-* email addresses
-* IP addresses
-* credit card numbers
-* bearer tokens
-
-Shake also redacts network header values if the header key is:
-* password 
-* secret
-* passwd
-* api_key 
-* apikey
-* access_token
-* auth_token
-* credentials
-* mysql_pwd
-* stripetoken
-* Authorization
-* Proxy-Authorization
-* card[number]
-* token
-
-To disable this privacy feature, use the method below:
-
-<Tabs
-groupId="android"
-defaultValue="kotlin"
-values={[
-        { label: 'Java', value: 'java'},
-        { label: 'Kotlin', value: 'kotlin'},
-        ]
-        }>
-
-<TabItem value="java">
-
-```java title="App.java"
-// highlight-start
-Shake.getReportConfiguration().setSensitiveDataRedactionEnabled(false);
-// highlight-end
-```
-
-</TabItem>
-
-<TabItem value="kotlin">
-
-```kotlin title="App.kt"
-// highlight-start
-Shake.getReportConfiguration().isSensitiveDataRedactionEnabled = false
-// highlight-end
-```
-
-</TabItem>
-</Tabs>
