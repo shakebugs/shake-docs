@@ -22,8 +22,8 @@ Values from these three keys will be presented nicely on Shake dashboard so we s
 
 ## Updates
 
-Updates to the user metadata are _incremental_, or in other words _merged_.
-This means that user metadata key-value pairs are updated and not overwritten, allowing you to update
+Updates to the user metadata are _merged_.
+This allows you to update
 user metadata in segments from various parts of your app, even when offline.
 
 A common approach developers take is updating **generic** user metadata from one place in your code upon every user change
@@ -126,7 +126,7 @@ private fun onUserSettingsConfigured() {
 The total map size of the user metadata must not exceed 50 KB.
 If this validation fails, the update method is dropped with the appropriate console message.
 
-## Different from Ticket metadata
+## User metadata vs. Ticket metadata
 
 Track User metadata to understand and describe your User better. Examples are:
 
