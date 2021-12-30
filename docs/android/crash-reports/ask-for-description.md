@@ -17,7 +17,8 @@ This option is disabled by default. If you keep it this way, the crash report wi
 
 ## Enable
 
-If you enable it, a sheet will be shown to your user, giving them an opportunity to describe what they were doing before the crash, potentially helping you a lot with their comment.
+If you enable it, a sheet will be shown to your user, giving them an opportunity to describe what they were doing before the crash,
+potentially helping you a lot with their comment.
 
 <table class="media-container media-container-highlighted mt-40 mb-40 pb-80">
 <img
@@ -28,7 +29,7 @@ If you enable it, a sheet will be shown to your user, giving them an opportunity
 </table>
 
 To enable it:
-1. Set the `isAskForCrashDescription` flag to `true` first.
+1. Set the `setAskForCrashDescription` flag to `true` first.
 1. Then, call the `Shake.start` method.
 
 <Tabs
@@ -55,6 +56,8 @@ Shake.setAskForCrashDescription(true)
 ```
 
 </TabItem></Tabs>
+
+## What happens next
 
 If the user decides they don't want to add their description (they tap outside the sheet) → the crash report will be sent to you silently anyway.
 
