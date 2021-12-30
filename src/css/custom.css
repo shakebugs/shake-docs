@@ -64,6 +64,15 @@ html[data-theme='dark'] {
   --token-class-name: #B77DFF;
 
 
+  --color-blue: #64B1FD;
+  --color-yellow: #fffb70;
+  --color-green: #46D39A;
+  --color-pink: #D75ED7;
+
+  --ifm-table-stripe-background: none;
+  
+
+
   --alert-color: rgb(235, 87, 87);
   --alert-background-color: rgba(235, 87, 87, .3);
 }
@@ -110,34 +119,28 @@ div[class*='codeBlock'], code{
 }
 
 /* Badges */
-.tag-button.yellow-tag-button {
-  background-color: #fff0cc;
-  border: none;
-  color: #e6aa5b;
-}
-
-.tag-button.pink-tag-button {
-  background-color: #fef3ef;
-  border: none;
-  color: #ff9471;
-}
-
-.tag-button.green-tag-button {
-  background-color: #ecf5f2;
-  border: none;
-  color: #15976b;
-}
 
 .tag-button {
-  border: 1px solid #d6dde4;
   border-radius: 25px;
-  color: #4f5a65;
+  background-color: var(--color-blue);
+  color: var(--default-background-color);
   display: inline-block;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 600;
   line-height: 1;
-  margin-bottom: 16px;
-  padding: 6px 12px!important;
+  padding: 3px 7px 5px !important;
+}
+
+.yellow-tag-button {
+  background-color: var(--color-yellow);
+}
+
+.pink-tag-button {
+  background-color: var(--color-pink);
+}
+
+.green-tag-button {
+  background-color: var(--color-green);
 }
 
 
@@ -192,6 +195,49 @@ div[class*='codeBlock'], code{
 }
 
 
+
+/*
+* Table
+*/
+
+table{
+  overflow-y: hidden;
+}
+	
+
+table thead tr {
+  border-bottom: none;
+}
+
+table th {
+  text-align: left;
+}
+
+table td, table th {
+  color: var(--default-paragraph-text);
+	position: relative;
+	border: none;
+	padding: 15px 20px 15px 0;
+}
+	
+
+table td:after {
+  content: "";
+  width: 20px;
+  height: 1px;
+  display: block;
+  position: absolute;
+  bottom: -1px;
+  background: var(--default-background-color);
+  right: 0;
+}
+table thead tr {
+  border-top: none !important;
+}
+table tbody tr{
+  border-top: 1px solid var(--default-surface);
+}
+	
 
 
 /*
@@ -333,6 +379,12 @@ code {
   .home-platforms > div {
     flex: 0 0 50%;
   }
+}
+
+main[class*='docsHome'] .p2 {
+  max-width: 400px;
+  margin: 30px auto;
+  padding: 0 20px;
 }
 
 
@@ -525,10 +577,10 @@ svg[class*='iconExternalLink'] {
 */
 
 .menu::-webkit-scrollbar-thumb {
-  background: #3A3A3C;
+  background: #3A3A3C !important;
 }
 .menu::-webkit-scrollbar-track {
-  background: none;
+  background: none !important;
 }
 .DocSearch-Dropdown::-webkit-scrollbar-thumb {
 background-color: #3A3A3C !important;

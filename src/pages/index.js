@@ -37,7 +37,8 @@ function Home() {
             <p>Flutter</p>
           </a></div>
         </div>
-        <p class="p2 mt-80 mb-10">⚡️ Shake is improved every week.
+        <p class="p2">🧑‍💻 You can try Shake without signing up or coding. <a href="https://shk.sh/demo">See demo Dashboard</a></p>
+        <p class="p2">⚡️ Shake is improved every week.
           Stumbled upon a <a href="https://feedback.shakebugs.com/bugs">bug</a>?
           Want a <a href="https://feedback.shakebugs.com/feature-requests">new feature</a> to be addded?
           Create new tickets and upvote existing ones on the Public feedback board.</p>
