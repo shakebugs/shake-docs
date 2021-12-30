@@ -19,7 +19,7 @@ Visit [New ticket screen elements](/android/configuration-and-data/new-ticket-sc
 />
 </table>
 
-## Show
+## How to show this screen
 
 This screen is shown when your users invoke Shake manually.
 To show this screen programmatically, call `Shake.show` with no arguments since it's the default option.
