@@ -3,8 +3,8 @@ id: chat
 title: Chat
 ---
 
-If needed, your users can [chat with you](/android/shake-ui/chat-screen) to provide you more details 
-about their reported bugs, crashes or feedback. You fill fix issues faster and make your customers happier.
+>If needed, your users can [chat with you](/android/shake-ui/chat-screen) to provide you more details 
+about their reported bugs, crashes or feedback. You will fix issues faster and make your customers happier.
 
 ## Enable
 
@@ -23,6 +23,7 @@ Notifications are presented automatically to the user, you don't have to code an
 
 :::note
 
-As of today, Shake supports only local notifications. That means that your users won't get notified about new messages when your app is in the _background_.
+Shake supports only local notifications. That means that your users won't get notified about new messages
+when your app is in the _background_.
 
 :::
