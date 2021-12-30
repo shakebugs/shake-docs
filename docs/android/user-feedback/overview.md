@@ -19,7 +19,7 @@ Here are just two examples, explore the docs and customize Shake's User feedback
   src={useBaseUrl('screens/open-shake-new-ticket-screen@2x.png')}
 />
 </table>
-<p class="p2 center-align">Common internal testing setup: <a href="/android/shake-ui/new-ticket-screen/">New ticket</a></p>
+<p class="p2 center-align">Common internal testing setup: Make Shake's <a href="/android/shake-ui/new-ticket-screen/">New ticket screen</a> available from anywhere</p>
 
 <table class="media-container mt-50">
 <img
@@ -28,7 +28,7 @@ Here are just two examples, explore the docs and customize Shake's User feedback
   src={useBaseUrl('screens/open-shake-home-screen@2x.png')}
 />
 </table>
-<p class="p2 center-align">Common production setup: <a href="/android/shake-ui/home-screen/">Home</a></p>
+<p class="p2 center-align">Common production setup: A button on your Help screen that opens up Shake's <a href="/android/shake-ui/home-screen/">Home screen</a></p>
 
 
 
@@ -37,8 +37,8 @@ Here are just two examples, explore the docs and customize Shake's User feedback
 Just like the [Crash reports](android/crash-reports/overview.md) module, User feedback module pulls your
 [Configuration and data](/android/configuration-and-data/overview.md) settings.
 
-This means that all user feedback comes to you with [auto screenshot](/android/configuration-and-data/auto-screenshot.md)
-and [auto screen recording](/android/configuration-and-data/auto-screen-recording.md)
+This means that all user feedback comes to you with [auto screenshot](/android/configuration-and-data/auto-screenshot.md),
+[auto screen recording](/android/configuration-and-data/auto-screen-recording.md)
 of what happened before the ticket was submitted, [activity history](/android/configuration-and-data/activity-history.md) and other useful data.
 
 <p class="p2 mt-80 mb-10">⚡️ Shake is improved every week.
