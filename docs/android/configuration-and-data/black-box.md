@@ -10,7 +10,8 @@ profile giving you an insight into the last 60 seconds before the ticket was sub
 ## Automatically recorded charts
 
 ### Device memory usage
-This line chart shows the device's total memory usage.
+This line chart (visible in every ticket on your [Shake dashboard](https://app.shakebugs.com/)) shows
+the device's total memory usage.
 When you hover over the chart, the usage percentage,
 and the exact memory usage over the total amount of memory available,
 is shown, for example: 
