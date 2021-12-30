@@ -6,22 +6,29 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 >Automatically attach a log file to each ticket, or user's profile photo, or whatever will help you fix the ticket faster when you receive it. Files you attach automatically are **not** visible to your users.
 
-## Different from files attached by users
+## Auto attached files vs. Files uploaded by users
 
-When submittinig a ticket from the [New ticket screen](android/shake-ui/new-ticket-screen.md) your users can also attach their files (images, documents) to tickets. That has nothing to do with these auto attached files.
+When submittinig a ticket from the [New ticket screen](android/shake-ui/new-ticket-screen.md),
+your users can also upload their files (images, documents) to tickets.
+That has nothing to do with these auto attached files.
 
 ## Methods
 
 You can programmatically attach files by using any of the methods described below.
 To define which files will be attached when a user submits a ticket,
 you must call the `Shake.onPrepareData` method overriding the `attachedFiles` method inside, as shown in the examples below.
+
+:::note
+
 You can call the `Shake.onPrepareData` method anywhere in your app,
 just be careful to only call it once since any subsequent calls will override the former ones.
 
-*ShakeFile* can be initialized with a desired filename (String) and an absolute file path (String) to your file.
-Instead of a file path, you can initialize it with the actual file object (java.io.File) too.
+:::
 
 ### Set a custom filename and then attach a file
+
+*ShakeFile* can be initialized with a desired filename (String) and an absolute file path (String) to your file.
+Instead of a file path, you can initialize it with the actual file object (java.io.File) too.
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -74,9 +81,9 @@ Shake.onPrepareData {
 Instead of a file path, you can initialize it with the actual file object (java.io.File) too.
 If you initialize it this way, filename shown on the web Dashboard will be determined automatically from the passed file's name.
 
-To define which files will be uploaded when a user reports a bug, you must call the `onPrepareData` method overriding the `attachedFiles` method inside, as shown in the example below.
-
-You can call the `Shake.onPrepareData()` method anywhere in your app, but be careful only to call it once, since subsequent calls will override the former ones.
+To define which files will be uploaded when a user reports a ticket,
+you must call the `onPrepareData` method overriding the `attachedFiles` method inside,
+as shown in the example below.
 
 <Tabs
   groupId="android"
