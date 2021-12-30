@@ -98,8 +98,8 @@ Shake.getReportConfiguration().isInvokeShakeOnRightEdgePan = true
 </TabItem>
 </Tabs>
 
-Also, feel free to choose which Shake screen is shown when Shake user feedback is invoked manually:
-* [New ticket screen](android/shake-ui/new-ticket-screen.md)
+Also, feel free to change which Shake screen is shown when Shake user feedback is invoked manually:
+* [New ticket screen](android/shake-ui/new-ticket-screen.md) (default)
 * [Home screen](android/shake-ui/home-screen.md)
 
 <Tabs
@@ -134,18 +134,17 @@ Shake.getReportConfiguration().defaultScreen = ShakeScreen.HOME
 </TabItem>
 </Tabs>
 
-The default value is `ShakeScreen.NEW`.
-
 ### Shaking gesture
 By default, the shaking gesture opens up Shake user feedback.
 
 :::note
 
-Android emulator’s default shaking gesture is too weak to invoke Shake.
+If you are testing Shake SDK on your computer, keep in mind that Android emulator’s "shaking gesture"
+is too weak to invoke Shake. You can decrease Shake's threshold as described below, or use another invocation method.
 
 :::
 
-You can fine-tune shaking threshold too. Let's lower it as an example, so Shake user feedback is easier to invoke:
+Shaking threshold can be fine-tuned too. Let's decrease it for example, so Shake user feedback is easier to invoke:
 
 <Tabs
   groupId="android"
