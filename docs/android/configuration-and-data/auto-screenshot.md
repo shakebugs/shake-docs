@@ -9,8 +9,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 :::note
 
 Jetpack Compose is a declarative UI toolkit, a paradigm shift from the current View system.
-Shake supports capturing Jetpack Compose screens excepting components like LazyColumn, LazyRow Scaffold and Shapes.
-On Android O devices, Shake supports capturing excepted components excluding in dialogs.
+On devices with OS older than Android O, Shake will capture Jetpack Compose screens but not the LazyColumn, LazyRow, Scaffold and Shapes components.
+On devices with Android O and newer, Shake will capture those components too, if they are not in a dialog.
 
 :::
 
