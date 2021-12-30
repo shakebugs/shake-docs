@@ -19,10 +19,10 @@ import TabItem from '@theme/TabItem';
 />
 </table>
 
-Your users describe their ticket here. This is a mandatory element and can't be hidden.
+Your users describe their tickets here. This is a mandatory element and can't be hidden.
 
 Here's a tip that quality assurance teams often find helpful. If *#some #hashtags* are added anywhere in the description,
-thet will automatically become <span class="tag-button pink-tag-button">tags</span> on your [Shake dashboard](https://app.shakebugs.com/).
+they will automatically become <span class="tag-button pink-tag-button">tags</span> on your [Shake dashboard](https://app.shakebugs.com/).
 
 
 ## Email field
@@ -96,16 +96,10 @@ Shake.getReportConfiguration().emailField = "user@email.com"
 </TabItem>
 </Tabs>
 
-Two tips:
+Three tips:
 * Users can always edit the email field, even if you pre-fill it.
 * Do you want to always receive user's email? You should then *both* pre-fill and hide the Email field.
-
-### Users and tickets as indepentent entities
-
-The value you receive in the email field is just an attribute of that ticket, a simple **String**.
-
-To register a User as an unique **entity** which Shake automatically relates to all Tickets they submit,
-register your users with the [Users](android/users/overview.md) module.
+* The value you receive in the email field is just an attribute of that ticket, a simple **String**. To register a User as an unique **entity** which Shake automatically relates to all Tickets they submit, register your users with the [Users](android/users/overview.md) module.
 
 ## Inspect button
 
