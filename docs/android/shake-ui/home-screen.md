@@ -6,7 +6,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
->Home screen is a central part of the Shake UI.
+>The Home screen is a central part of the Shake UI.
 
 ## Introduction
 
