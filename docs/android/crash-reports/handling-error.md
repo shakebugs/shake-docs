@@ -10,7 +10,7 @@ import TabItem from '@theme/TabItem';
 
 Shake allows you to report those caught errors and group them together.
 These non-fatal error reports will have all of the same 
-contextual information as crash reports, and act as an extension to the crash reporting feature.
+contextual information as crash reports and will act as an extension to the crash reporting feature.
 
 :::note
 
