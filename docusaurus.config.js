@@ -9,7 +9,7 @@ module.exports = {
   projectName: 'shake-docs', // Usually your repo name.
   themeConfig: {
     colorMode: {
-      defaultMode: 'light',
+      defaultMode: 'dark',
       respectPrefersColorScheme: true,
     },
     hideableSidebar: false,

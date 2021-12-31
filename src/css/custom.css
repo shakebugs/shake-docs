@@ -150,36 +150,38 @@ div[class*='codeBlock'], code{
 */
 
 .mt-80 {
-  margin-top: 80px;
+  margin-top: 80px !important;
 }
 .mt-50 {
-  margin-top: 50px;
+  margin-top: 50px !important;
 }
 .mt-40 {
-  margin-top: 40px;
+  margin-top: 40px !important;
 }
 .mt-10 {
-  margin-top: 10px;
+  margin-top: 10px !important;
 }
 .mb-5 {
-  margin-bottom: 5px;
+  margin-bottom: 5px !important;
 }
 .mb-10 {
-  margin-bottom: 10px;
+  margin-bottom: 10px !important;
 }
 .mb-30 {
-  margin-bottom: 30px;
+  margin-bottom: 30px !important;
 }
 .mb-40 {
-  margin-bottom: 40px;
+  margin-bottom: 40px !important;
 }
 .mb-50 {
-  margin-bottom: 50px;
+  margin-bottom: 50px !important;
+}
+.pb-80 {
+  padding-bottom: 80px !important;
 }
 
-.pb-80 {
-  padding-bottom: 80px;
-}
+
+
 
 .p2 {
   font-size: 14px;
@@ -385,6 +387,9 @@ main[class*='docsHome'] .p2 {
   max-width: 400px;
   margin: 30px auto;
   padding: 0 20px;
+}
+main[class*='docsHome'] .p2 a:hover {
+  border-bottom: 1px solid;
 }
 
 

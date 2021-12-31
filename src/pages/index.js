@@ -37,10 +37,10 @@ function Home() {
             <p>Flutter</p>
           </a></div>
         </div>
-        <p class="p2">🧑‍💻 You can try Shake without signing up or coding. <a href="https://shk.sh/demo">See demo Dashboard</a></p>
+        <p class="p2">🧑‍💻 You can try Shake without signing up or coding. <a href="https://shk.sh/demo" target="_blank">See demo Dashboard</a></p>
         <p class="p2">⚡️ Shake is improved every week.
-          Stumbled upon a <a href="https://feedback.shakebugs.com/bugs">bug</a>?
-          Want a <a href="https://feedback.shakebugs.com/feature-requests">new feature</a> to be addded?
+          Stumbled upon a <a href="https://feedback.shakebugs.com/bugs" target="_blank">bug</a>?
+          Want a <a href="https://feedback.shakebugs.com/feature-requests" target="_blank">new feature</a> to be added?
           Create new tickets and upvote existing ones on the Public feedback board.</p>
         <p></p>
 
