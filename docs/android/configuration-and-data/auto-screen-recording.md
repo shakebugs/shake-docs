@@ -47,6 +47,14 @@ Shake.getReportConfiguration().isAutoVideoRecording = true
 </TabItem>
 </Tabs>
 
+<table class="media-container media-container-highlighted mt-40 mb-40">
+<img
+  alt="Auto screen recording"
+  width="380"
+  src={useBaseUrl('img/phone-auto-screenrecording@2x.png')}
+/>
+</table>
+
 Duration of the auto attached screen recording is 15 seconds.
 
 ## Privacy
