@@ -6,7 +6,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs'; 
 import TabItem from '@theme/TabItem';
 
->Let's crash your app to see how the crash report looks like on your Shake Dashboard.
+>Let's crash your app to see what the crash report looks like on your Shake Dashboard.
 
 ## Crash your app
 
@@ -66,13 +66,13 @@ public class MainActivity : Activity {
 
 </TabItem></Tabs>
 
-Reopen you app, describe the crash and tap *Submit*.
+Reopen your app, describe the crash and tap *Submit*.
 
-## Visit Shake dashboard
+## Visit your Shake dashboard
 
 To see your crash report:
-1. Visit your [Shake Dashboard](https://app.shakebugs.com).
-1. Switch to the **Crash reports** tab in the left sidebar.
+1. Visit your [Shake Dashboard](https://app.shakebugs.com)
+1. Switch to the **Crash reports** tab in the left sidebar
 
 <table class="media-container mt-40 mb-30">
 <img
