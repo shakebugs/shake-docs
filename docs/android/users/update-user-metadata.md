@@ -14,7 +14,7 @@ after registering the User.
 
 ## Special keys
 
-Values from these three keys will be presented nicely on Shake dashboard so we suggest you use them:
+Values from these three keys will be presented nicely on the Shake dashboard, so we suggest you use them:
 * `first_name`
 * `last_name`
 * `end_user_id`
@@ -136,10 +136,10 @@ Track User metadata to understand and describe your User better. Examples are:
 * Subscription status
 * Date of birth
 
-Use [Ticket metadata](/android/configuration-and-data/ticket-metadata) to attach useful custom data to each ticket. Examples are statuses of various app variables at the moment of ticket being sent:
+Use [Ticket metadata](/android/configuration-and-data/ticket-metadata) to attach useful custom data to each ticket. Examples are statuses of various app variables at the moment the ticket is sent:
 
 * Current chat room ID
-* List of items curreently in a shopping cart
+* List of items currently in a shopping cart
 * Task synced true/false
 * Number of search results
 * List sorted by what
