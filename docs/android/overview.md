@@ -25,7 +25,7 @@ title: Overview
         <a href="/docs/android/crash-reports/overview/">
             <img src="/docs/img/module-crash-reports@2x.png" alt="Crash reports module"/>
             <h3>Crash reports</h3>
-            <p>Receive stack trace, logs, user’s comment and more whenever your app crashes.</p>
+            <p>Receive stack trace, logs, users’ comments and more whenever your app crashes.</p>
         </a>
     </div>
 </div>
