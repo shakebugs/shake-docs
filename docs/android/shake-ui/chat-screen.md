@@ -17,11 +17,11 @@ import TabItem from '@theme/TabItem';
  </table>
  
 
-If you [register users](/android/users/register-user) with Shake, they have all their previous tickets listed on the [Home screen](/android/shake-ui/home-screen).
+If you [register users](/android/users/register-user) with Shake, they will have all their previous tickets listed on the [Home screen](/android/shake-ui/home-screen).
 Tapping any ticket there opens its Chat screen.
 
 Your users can reply to your messages and provide you with more details 
-about the bugs, crashes and feedback they've sent, without ever leaving your app.
-Fix issues easier and keep your users happy.
+about the bugs, crashes and feedback they've sent, all without ever leaving your app.
+Fix issues more easily and keep your users happy.
 
 Visit [Chat](/android/users/chat/) to learn more.
