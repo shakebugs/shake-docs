@@ -29,10 +29,6 @@ Your app's memory usage is captured every 0.5 seconds.
 ### Network
 This chart shows the connectivity details of the device.
 When you hover over the chart, connectivity details are shown, for example:
-* WiFi • OfficeNetworkName
-* Cellular LTE
-
-Examples:
 * WiFi • Office_Network_Name
 * Cellular 3G
 * Offline
