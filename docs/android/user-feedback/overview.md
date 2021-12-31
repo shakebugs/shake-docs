@@ -5,12 +5,13 @@ title: Overview
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
->User feedback module allows your users and testers to seamlessly report their feedback to you.
+>The User feedback module allows your users and testers to seamlessly report their feedback to you.
 
 ## Introduction
 
-When this module is enabled, you have various options how, when and where to invoke Shake in your app.
-Here are just two examples, explore the docs and customize Shake's User feedback module to your needs:
+When this module is enabled, you have various options for how, when and where to invoke Shake in your app.
+Explore the docs and customize Shake's User feedback module to your needs.
+To get you started, here are just two examples:
 
 <table class="media-container mt-50">
 <img
@@ -28,17 +29,17 @@ Here are just two examples, explore the docs and customize Shake's User feedback
   src={useBaseUrl('screens/open-shake-home-screen@2x.png')}
 />
 </table>
-<p class="p2 center-align">Common production setup: A button on your Help screen that opens up Shake's <a href="/android/shake-ui/home-screen/">Home screen</a></p>
+<p class="p2 center-align">Common production setup: A button on your Help screen that opens Shake's <a href="/android/shake-ui/home-screen/">Home screen</a></p>
 
 
 
 ## Shared configuration
 
-Just like the [Crash reports](android/crash-reports/overview.md) module, User feedback module pulls your
+Just like the [Crash reports](android/crash-reports/overview.md) module, the User feedback module pulls your
 [Configuration and data](/android/configuration-and-data/overview.md) settings.
 
-This means that all user feedback comes to you with [auto screenshot](/android/configuration-and-data/auto-screenshot.md),
-[auto screen recording](/android/configuration-and-data/auto-screen-recording.md)
+This means that all user feedback comes to you with an [auto screenshot](/android/configuration-and-data/auto-screenshot.md),
+an [auto screen recording](/android/configuration-and-data/auto-screen-recording.md)
 of what happened before the ticket was submitted, [activity history](/android/configuration-and-data/activity-history.md) and other useful data.
 
 <p class="p2 mt-80 mb-10">⚡️ Shake is improved every week.
