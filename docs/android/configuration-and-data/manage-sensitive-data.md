@@ -2,6 +2,7 @@
 id: manage-sensitive-data
 title: Protect sensitive data
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
