@@ -4,12 +4,12 @@ title: Overview
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
->Crash reports module tracks crashes and uncaught exceptions in your app. They are then intelligently grouped on your Shake Dashboard,
-offering heaps of contextual data to help you fix them fast.
+>The Crash reports module tracks crashes and uncaught exceptions in your app. They are then intelligently grouped on your Shake Dashboard,
+offering loads of contextual data to help you fix them fast.
 
 ## Introduction
 
-When this module is [enabled](/android/crash-reports/enable) and your user opens up your app after the crash, you have two options:
+When this module is [enabled](/android/crash-reports/enable) and your user opens your app after the crash, you have two options:
 * Send yourself the crash report instantly and silently.
 * [Ask them for an additional description](/android/crash-reports/ask-for-description).
 
@@ -23,12 +23,12 @@ When this module is [enabled](/android/crash-reports/enable) and your user opens
 
 ## Shared configuration
 
-Just like the [User feedback](android/user-feedback/overview.md) module, Crash reports module pulls your
+Just like the [User feedback](android/user-feedback/overview.md) module, the Crash reports module pulls your
 [Configuration and data](/android/configuration-and-data/overview.md) settings.
 
-This means that crash reports also come to you with [auto screenshot](/android/configuration-and-data/auto-screenshot.md),
-[auto screen recording](/android/configuration-and-data/auto-screen-recording.md)
-of what happened before the crash, [activity history](/android/configuration-and-data/activity-history.md) and other useful data.
+This means that crash reports also come to you with an [auto screenshot](/android/configuration-and-data/auto-screenshot.md),
+an [auto screen recording](/android/configuration-and-data/auto-screen-recording.md)
+of what happened before the crash, an [activity history](/android/configuration-and-data/activity-history.md) and other useful data.
 
 <p class="p2 mt-80 mb-10">⚡️ Shake is improved every week.
 Stumbled upon a <a href="https://feedback.shakebugs.com/bugs">bug</a>?
