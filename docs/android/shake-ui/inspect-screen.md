@@ -6,11 +6,11 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-> Before submitting a ticket, your user can freely inspect [Data attached by default](android/configuration-and-data/essentials.md) and [Ticket metadata](android/configuration-and-data/ticket-metadata.md).
+> Before submitting a ticket, your users can freely inspect [Data attached by default](android/configuration-and-data/essentials.md) and [Ticket metadata](android/configuration-and-data/ticket-metadata.md).
 
 ## Introduction
 
-They access this screen by tapping the *Inspect* button on the [New ticket screen](android/shake-ui/new-ticket-screen.md).
+They access the Inspect screen by tapping the *Inspect* button on the [New ticket screen](android/shake-ui/new-ticket-screen.md).
 
 <table class="media-container mt-50">
 <img
