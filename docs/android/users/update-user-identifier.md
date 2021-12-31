@@ -6,10 +6,10 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
->You can update user identifier you had used to register the user. In most app flows, this is a method that's rarely called.
+>You can update the user identifier you had used to register the user. In most app flows, this is a method that's rarely called.
 
-An example would be if you have registered your user with an email.
-However, a user can later change their email in app settings and still continue using your service as the same entity.
+For example, suppose that you have registered your user with an email.
+The user would be able to subsequently change their email in app settings and still continue using your service as the same entity.
 
 Calling `Shake.updateUserId` on an already registered user:
 1. Updates the user identifier in the Shake database.
@@ -17,7 +17,7 @@ Calling `Shake.updateUserId` on an already registered user:
 1. You continue to pass this new user identifier to `Shake.registerUser` on this user's subsequent logins.
 
 :::caution
-Updating user identifier allows various possibilities of how this feature can be used,
+Updating the user identifier allows various possibilities for how this feature can be used
 but can also lead to possibly unwanted results.
 Read the documentation carefully to fully understand possible usages and scenarios.
 :::
