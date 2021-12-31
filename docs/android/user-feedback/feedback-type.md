@@ -18,7 +18,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Your users categorize every feedback as either a bug report, an improvement suggestion, or a question.
 Depending on what they choose, their feedback arrives with the <span class="tag-button pink-tag-button">bug</span>, <span class="tag-button pink-tag-button">suggestion</span> or <span class="tag-button pink-tag-button">question</span> tag
-to your [Shake Dashboard](https://app.shakebugs.com).
+to your [Shake dashboard](https://app.shakebugs.com).
 
 ## Custom feedback types
 
