@@ -4,7 +4,7 @@ title: Overview
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
->The Crash reports module tracks crashes and uncaught exceptions in your app. They are then intelligently grouped on your Shake Dashboard,
+>The Crash reports module tracks crashes and uncaught exceptions in your app. They are then intelligently grouped on your Shake dashboard,
 offering loads of contextual data to help you fix them fast.
 
 ## Introduction
