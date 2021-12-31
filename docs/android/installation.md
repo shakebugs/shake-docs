@@ -98,22 +98,22 @@ If you’re creating a custom *Application* class for the first time, specify it
 :::note
 
 We recommend initializing Shake in the *Application* class.
-If you want to initialize Shake after your app has started though,
-feel free to use `Shake.start()` method in the Activity but make sure you call it in the *onCreate* callback of the *Activity*.
+If, however, you want to initialize Shake after your app has started,
+feel free to use `Shake.start()` method in the Activity. Just make sure you call it in the *onCreate* callback of the *Activity*.
 
 :::
 
 Build and run your project by selecting *Run → Run* in the menu bar. This first run will automatically
 add your app to your [Shake dashboard](https://app.shakebugs.com/) based on your app bundle ID.
 
-## Visit Shake dashboard
+## Visit your Shake dashboard
 
 Follow the instructions there to send your first feedback with Shake and you're all set.
 
 ## SDK customizations
 
 Now that Shake SDK is in your app and you have sent the first feedback for fun, everything else is optional.
-As the next step, try three most popular SDK customizations:
+As the next step, try the three most popular SDK customizations:
 
 <div class="featuresList">
     <div>
