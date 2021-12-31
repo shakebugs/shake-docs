@@ -79,7 +79,7 @@ Shake.onPrepareData {
 
 *ShakeFile* can be initialized without a filename, with just an absolute file path (String) to your file.
 Instead of a file path, you can initialize it with the actual file object (java.io.File) too.
-If you initialize it this way, filename shown on the web Dashboard will be determined automatically from the passed file's name.
+If you initialize it this way, filename shown on your Shake dashboard will be determined automatically from the passed file's name.
 
 To define which files will be uploaded when a user reports a ticket,
 you must call the `onPrepareData` method overriding the `attachedFiles` method inside,
