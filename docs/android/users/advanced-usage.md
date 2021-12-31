@@ -5,14 +5,14 @@ title: Advanced usage
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-> Some apps might want to register the device itself as a user, or make a transition from the anonymous
+> Some apps might want to register the device itself as a user or make a transition from the anonymous
 user to the identified user.
 
 ## Register an anonymous user
 
 Let's take an app like _Reddit_ for example. Their users can browse the app as guests for months before deciding to sign up.
 
-As soon as your user opens your app — and way before they sign up — you can identify them as an anonymous user so both you and them instantly get all the benefits of the Users module.
+As soon as your user opens your app — and way before they sign up — you can identify them as an anonymous user so both of you instantly get all the benefits of the Users module.
 
 You would do so by calling `Shake.registerUser(UUID)`, where the `UUID` is a randomly generated unique device ID persisted in the app storage.
 
@@ -20,8 +20,8 @@ You would do so by calling `Shake.registerUser(UUID)`, where the `UUID` is a ran
 ## Anonymous user → `Shake.updateUserId`
 
 Let's suppose this anonymous guest user decides to sign up one day, and you want to **keep** their User entity:
-* They have to see all their previously reported tickets.
-* You consider them as a same user, and want to keep all their User metadata.
+* They will have the ability to see all their previously reported tickets.
+* You consider them as the same user and want to keep all their User metadata.
 
 <table class="media-container mt-50 mb-50">
 <img
