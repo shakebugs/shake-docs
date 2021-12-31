@@ -5,7 +5,7 @@ title: Overview
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
->User module enables you to see a list of your app users, their attributes and tickets on your Shake dashboard. In parallel, it allows them to see their previously submitted tickets.
+>The User module enables you to see a list of your app users, their attributes and tickets on your Shake dashboard. In parallel, it allows them to see their previously submitted tickets.
 
 <table class="media-container">
 <img
@@ -15,7 +15,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 />
 </table>
 
-The features today are:
+Current features include:
 * Your users can see their previously sent tickets on the [Home screen](/android/shake-ui/home-screen.md).
 * You have all your app users listed in one place on your Shake Dashboard.
 * Your [users' custom attributes](/android/users/update-user-metadata) are tracked automatically.
