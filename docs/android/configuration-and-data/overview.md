@@ -58,7 +58,7 @@ Shake attaches useful data both to user feedback and crash reports. Read all abo
 
 ## Data privacy
 
-Decide what needs to stay private, and learn everything about data Shake collects:
+Decide what needs to stay private and learn everything about data Shake collects:
 * [Protect sensitive data](android/configuration-and-data/manage-sensitive-data.md)
 * [Data privacy disclosure](android/configuration-and-data/data-privacy-disclosure.md)
 
