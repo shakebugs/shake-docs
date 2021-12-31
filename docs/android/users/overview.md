@@ -5,7 +5,7 @@ title: Overview
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
->The User module enables you to see a list of your app users, their attributes and tickets on your Shake dashboard. In parallel, it allows them to see their previously submitted tickets.
+>The Users module enables you to see a list of your app users, their attributes and tickets on your Shake dashboard. In parallel, it allows them to see their previously submitted tickets.
 
 <table class="media-container">
 <img
