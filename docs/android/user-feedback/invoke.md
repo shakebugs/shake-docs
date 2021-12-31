@@ -20,7 +20,7 @@ You don't need to code anything:
 </table>
 
 But if you want to, you can customize that.
-Let's look at an example where you want Shake user feedback to be invoked either when your users shake their device, or when they take a screenshot:
+Let's look at an example where you want Shake user feedback to be invoked either when your users shake their device or when they take a screenshot:
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -59,8 +59,8 @@ Shake.start(this, "client-id", "client-secret")
 </TabItem>
 </Tabs>
 
-You can also change the preferred invocation event on-the-go during runtime.
-Here’s a list of all available options, feel free to use any combination of these:
+You can also change the preferred invocation event on-the-fly during runtime.
+Here’s a list of all available options. Feel free to use any combination of these:
 
 <Tabs
   groupId="android"
@@ -135,16 +135,16 @@ Shake.getReportConfiguration().defaultScreen = ShakeScreen.HOME
 </Tabs>
 
 ### Shaking gesture
-By default, the shaking gesture opens up Shake user feedback.
+By default, the shaking gesture opens Shake user feedback.
 
 :::note
 
-If you are testing Shake SDK on your computer, keep in mind that Android emulator’s "shaking gesture"
+If you are testing Shake SDK on your computer, keep in mind that the Android Emulator’s "shaking gesture"
 is too weak to invoke Shake. You can decrease Shake's threshold as described below, or use another invocation method.
 
 :::
 
-Shaking threshold can be fine-tuned too. Let's decrease it for example, so Shake user feedback is easier to invoke:
+The shaking threshold can be fine-tuned too. Let's decrease it, for example, so that Shake user feedback is easier to invoke:
 
 <Tabs
   groupId="android"
@@ -174,16 +174,17 @@ Shake.getReportConfiguration().shakingThreshold = 400 // Default value is 600.
 </TabItem>
 </Tabs>
 
-A valid treshold value range is `1 - 1000`, with bigger values representing higher threshold, meaning that a stronger 
-motion gesture is required to invoke Shake user feedback.
+A valid threshold value range is `1 - 1000`. Higher values represent higher thresholds, meaning that a stronger 
+motion gesture will be required to invoke Shake user feedback.
 
 ### Floating button
-This invocation event creates a floating button on top of your app's UI which your users can see at all times, and drag around the screen.
+This invocation event creates a floating button on top of your app's UI which your users
+will be able to see and drag around the screen at all times.
 
 :::note
 
-In the emulator, you might need to click the button twice if one click doesn’t do it.
-Also, system interface elements [may sometimes get in a way](https://help.shakebugs.com/en/articles/3321805-the-report-a-bug-button-is-hidden-behind-an-interface-element) of the button.
+In the Android Emulator, you might need to click the button twice if one click doesn’t do it.
+Also, system interface elements [may sometimes get in the way](https://help.shakebugs.com/en/articles/3321805-the-report-a-bug-button-is-hidden-behind-an-interface-element) of the button.
 
 :::
 
@@ -193,7 +194,7 @@ Shake user feedback will be invoked when your user takes a screenshot while usin
 :::note
 
 The only way for any SDK to realize that a screenshot has been captured is to monitor the screenshots directory.
-Because of that, if you opt for this invocation method, the storage permission will be requested from a user when they launch your app.
+Because of that, if you opt for this invocation method, storage permission will be requested from a user when they launch your app.
 
 :::
 
@@ -264,5 +265,5 @@ If an [auto screenshot](android/configuration-and-data/auto-screenshot.md) and
 when you call `ShakeScreen.NEW` they will be automatically attached to a ticket.
 
 If enabled, [activity history](android/configuration-and-data/activity-history.md),
-[black box](android/configuration-and-data/black-box.md) and all other data are also automatically attached,
-no additional code is required.
+[black box](android/configuration-and-data/black-box.md) and all other data are also automatically attached.
+No additional code is required.
