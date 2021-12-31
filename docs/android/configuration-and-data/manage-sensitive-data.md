@@ -66,6 +66,15 @@ Shake.getReportConfiguration().isSensitiveDataRedactionEnabled = false
 </Tabs>
 
 ## Views
+
+<table class="media-container media-container-highlighted mt-40 mb-40">
+<img
+  alt="Private views"
+  width="380"
+  src={useBaseUrl('img/private-view@2x.png')}
+/>
+</table>
+
 You can mark any view as private, and it'll automatically be deleted
 from the [auto screenshot](/android/configuration-and-data/auto-screenshot).
 Private views are stored as a weak reference, they get cleared from the memory when not used anymore.
