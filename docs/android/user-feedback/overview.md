@@ -44,6 +44,6 @@ of what happened before the ticket was submitted, [activity history](/android/co
 
 <p class="p2 mt-80 mb-10">⚡️ Shake is improved every week.
 Stumbled upon a <a href="https://feedback.shakebugs.com/bugs">bug</a>?
-Want a <a href="https://feedback.shakebugs.com/feature-requests">new feature</a> to be addded?
+Want a <a href="https://feedback.shakebugs.com/feature-requests">new feature</a> to be added?
 Create new tickets and upvote existing ones on the Public feedback board.</p>
 <p></p>
