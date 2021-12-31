@@ -6,7 +6,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
->Here are all the element customizations you can do on the [New ticket screen](android/shake-ui/new-ticket-screen.md).
+>Here are all the element customizations you can make on the [New ticket screen](android/shake-ui/new-ticket-screen.md).
 
 
 ## Ticket description
@@ -36,7 +36,7 @@ they will automatically become <span class="tag-button pink-tag-button">tags</sp
 </table>
 
 This element is optional and allows your users to leave their email address with the ticket they're submitting.
-Use the following method if you waht to hide it:
+Use the following method if you want to hide it:
 
 <Tabs
   groupId="android"
@@ -98,7 +98,7 @@ Shake.getReportConfiguration().emailField = "user@email.com"
 
 Three tips:
 * Users can always edit the email field, even if you pre-fill it.
-* Do you want to always receive user's email? You should then *both* pre-fill and hide the Email field.
+* Do you always want to receive a user's email? You should then *both* pre-fill and hide the Email field.
 * The value you receive in the email field is just an attribute of that ticket, a simple **String**. To register a User as an unique **entity** which Shake automatically relates to all Tickets they submit, register your users with the [Users](android/users/overview.md) module.
 
 ## Inspect button
