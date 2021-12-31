@@ -6,6 +6,14 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 > When Shake's New ticket screen is invoked, a screenshot is automatically attached to it.
 
+<table class="media-container media-container-highlighted mt-50 mb-40">
+<img
+  alt="Auto screenshot"
+  width="380"
+  src={useBaseUrl('img/phone-auto-screenshot@2x.png')}
+/>
+</table>
+
 :::note
 
 Jetpack Compose is a declarative UI toolkit, a paradigm shift from the current View system.
