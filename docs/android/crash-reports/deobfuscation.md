@@ -12,11 +12,11 @@ import TabItem from '@theme/TabItem';
 
 By default, the *mapping.txt* file is created in your app's build directory: *project/app/build/outputs/mapping/release/mapping.txt*.  
 
-To upload your app's mapping files to Shake dashboard:
-1. Visit [Settings → Apps](https://app.shakebugs.com/settings/apps).
-1. Click your app name to expand it.
-1. Click the **Mapping files** button.
-1. Drag and drop your *mapping.txt* file there.
+To upload your app's mapping files to the Shake dashboard:
+1. Visit [Settings → Apps](https://app.shakebugs.com/settings/apps)
+1. Click your app name to expand it
+1. Click the **Mapping files** button
+1. Drag and drop your *mapping.txt* file there
 
 ## Using the script
 
