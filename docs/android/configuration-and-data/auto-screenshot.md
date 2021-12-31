@@ -24,8 +24,16 @@ On devices with Android O and newer, Shake will capture those components too, if
 
 ## Disable
 
-Let's suppose you are invoking Shake through code from the **Settings → Help** screen of your app. You would always receive the same 
+Let's suppose you are invoking Shake through code from the **My account → Help** screen of your app. You would always receive the same 
 screenshot and it wouldn't be related to all sorts of reported tickets in any way.
+
+<table class="media-container mt-40 mb-40">
+<img
+  alt="Open Shake Home screen"
+  width="520"
+  src={useBaseUrl('screens/open-shake-home-screen@2x.png')}
+/>
+</table>
 
 Disable auto screenshot using the following snippet:
 
