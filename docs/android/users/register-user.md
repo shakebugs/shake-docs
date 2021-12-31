@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 >Register your app users with Shake by calling the `Shake.registerUser` method.
 
 The passed _user identifier_ argument should ideally reflect the identifier that uniquely represents the user in your database.
-Often it user's email adress, but it may be their User ID, or their device's UUID.
+Often it is the user's email address, but it may be their User ID, or their device's UUID.
 Shake's public method is intentionally
 called _register_ and not _logIn_ because user identification context is different in different apps.
 
