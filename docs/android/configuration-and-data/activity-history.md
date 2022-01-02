@@ -10,7 +10,7 @@ and automatically attaches all of those to the ticket.
 ## Setup
 
 ### User actions
-To set up Shake to observe taps made on your app's UI elements, add this to any Activity you want to track:
+To set up Shake to observe taps made on your app's UI elements, add this to the Activity you want to track:
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -51,7 +51,7 @@ override fun dispatchTouchEvent(event: MotionEvent): Boolean {
 </Tabs>
 
 ### Network requests
-If you want to receive user's network traffic logs, add this line to your `OkHttpClient`:
+If you want to receive users' network traffic logs, add this line to your `OkHttpClient`:
 
 <Tabs
   groupId="android"
@@ -170,7 +170,7 @@ Shake.insertNetworkRequest(networkRequestBuilder)
 </Tabs>
 
 ### System events
-System events - alse known as app lifecycle events - are tracked automatically and require no additional setup.
+System events - also known as app lifecycle events - are tracked automatically and require no additional setup.
 
 ### Notifications
 In order for Shake to track notifications throughout your app, add this line where appropriate:
@@ -210,7 +210,7 @@ startActivity(Intent("android.settings." +
 :::note
 
 This starts the notification listener service, which will require
-users to grant notification access the first time they open up your app.
+users to grant notification access the first time they open your app.
 
 :::
 
@@ -352,12 +352,12 @@ Shake.getReportConfiguration().isConsoleLogsEnabled = false
 </Tabs>
 
 ## Limitations
-In a Free workspace you can see up to 20 events that lead to the ticket being reported.
+In a Free workspace you can see up to 20 events that led to the ticket being reported.
 If you need to dive really deep to find causes of the weirdest bugs,
 In a Premium workspace you can browse the full Activity history.
 
-Network request limit for both request body and response body is 100 kB each.
-If request body or response body contains binary data, it will be presented as a *Binary data* string.
+The network request limits for both the request body and the response body are 100 kB each.
+If the request body or the response body contains binary data, it will be presented as a *Binary data* string.
 
 ## Disable
 Activity history is enabled by default, use the method below to disable it altogether:
