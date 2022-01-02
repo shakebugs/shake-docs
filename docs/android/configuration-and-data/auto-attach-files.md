@@ -4,13 +4,13 @@ title: Auto attach files
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
->Automatically attach a log file to each ticket, or user's profile photo, or whatever will help you fix the ticket faster when you receive it. Files you attach automatically are **not** visible to your users.
+>Automatically attach a log file to each ticket, or user's profile photo, or whatever will help you resolve the ticket faster when you receive it. Files you attach automatically are **not** visible to your users.
 
-## Auto attached files vs. Files uploaded by users
+## Auto-attached files vs. Files uploaded by users
 
-When submittinig a ticket from the [New ticket screen](android/shake-ui/new-ticket-screen.md),
+When submitting a ticket from the [New ticket screen](android/shake-ui/new-ticket-screen.md),
 your users can also upload their files (images, documents) to tickets.
-That has nothing to do with these auto attached files.
+That has nothing to do with these auto-attached files.
 
 ## Methods
 
@@ -78,11 +78,11 @@ Shake.onPrepareData {
 ### Attach a file without the custom filename
 
 *ShakeFile* can be initialized without a filename, with just an absolute file path (String) to your file.
-Instead of a file path, you can initialize it with the actual file object (java.io.File) too.
-If you initialize it this way, filename shown on your Shake dashboard will be determined automatically from the passed file's name.
+Instead of a file path, you can initialize it with the actual file object (java.io.File), too.
+If you initialize it this way, the filename shown on your Shake dashboard will be determined automatically from the passed file's name.
 
 To define which files will be uploaded when a user reports a ticket,
-you must call the `onPrepareData` method overriding the `attachedFiles` method inside,
+you must call the `onPrepareData` method, overriding the `attachedFiles` method inside,
 as shown in the example below.
 
 <Tabs
@@ -133,4 +133,4 @@ The maximum number of auto attached files per ticket is 1 for Free workspaces an
 If more files are attached, Shake SDK will successfully upload only some of them.
 
 The maximum allowed individual size for any of those auto attached files is 10 MB.
-If you programmatically attach a file that's larger than that it won't be uploaded with the ticket.
+If you programmatically attach a file that's larger than that, it won't be uploaded with the ticket.
