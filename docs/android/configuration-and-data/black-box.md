@@ -12,23 +12,23 @@ profile giving you an insight into the last 60 seconds before the ticket was sub
 ### Device memory usage
 This line chart (visible in every ticket on your [Shake dashboard](https://app.shakebugs.com/)) shows
 the device's total memory usage.
-When you hover over the chart, the usage percentage,
-and the exact memory usage over the total amount of memory available,
-is shown, for example: 
+When you hover over the chart, the usage percentage
+and the exact memory usage over the total amount of memory available
+are shown. For example: 
 * 9% • 224 out of 2464 MB
 
 Device memory usage is captured every 0.5 seconds.
 
 ### App memory usage
 This line chart shows your app's memory usage. When you hover over the chart,
-the total memory usage of your app is shown, for example: 
+the total memory usage of your app is shown. For example: 
 * 122 MB
 
 Your app's memory usage is captured every 0.5 seconds.
 
 ### Network
 This chart shows the connectivity details of the device.
-When you hover over the chart, connectivity details are shown, for example:
+When you hover over the chart, connectivity details are shown. For example:
 * WiFi • Office_Network_Name
 * Cellular 3G
 * Offline
@@ -37,7 +37,7 @@ Device connectivity details are captured every 2 seconds.
 
 ### Device orientation
 This chart shows the orientation state of your app.
-When you hover over the chart, the exact state is shown, for example:
+When you hover over the chart, the exact state is shown. For example:
 
 * Portrait
 * Landscape
@@ -45,7 +45,7 @@ When you hover over the chart, the exact state is shown, for example:
 App orientation is captured every 2 seconds.
 
 ## Disable
-Black box is enabled by default. Use the method below to disable it if you want to:
+The Black box is enabled by default. Use the method below to disable it, if you prefer:
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
