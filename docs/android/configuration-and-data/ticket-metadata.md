@@ -12,7 +12,7 @@ That's why Shake also allows you to automatically attach any custom data from yo
 ## How to use
 
 To set ticket metadata, call `Shake.setMetadata` and pass the data you want to
-receive on Shake dashboard as a *String* pair.
+receive on your Shake dashboard as a *String* pair.
 
 :::note
 
@@ -56,7 +56,7 @@ fun onChatRoomJoined(room: Room) {
 
 ## Clear Ticket metadata
 
-If you want to clear existing ticket metadata, you can use `Shake.clearMetadata` method.
+If you want to clear existing ticket metadata, you can use the `Shake.clearMetadata` method.
 
 For example, you want to clear ticket metadata when the user leaves a chat room:
 
@@ -100,7 +100,7 @@ fun onChatRoomClosed() {
 
 Use Ticket metadata to attach useful custom data to tickets. Examples are statuses of various app variables at the moment of ticket being sent:
 * Current chat room ID
-* List of items curreently in a shopping cart
+* List of items currently in a shopping cart
 * Task synced true/false
 * Number of search results
 * List sorted by what
