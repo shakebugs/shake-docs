@@ -19,16 +19,16 @@ What would you like us to build next? Upvote upcoming features and suggest new i
 
 #### Bug fixes
 
-There were a few minor bugs that caused problems, like bugs do. We fixed those, and improved the SDK stability too.
+There were a few minor bugs that caused problems, like bugs do. We fixed those and improved SDK stability too.
 
 ## 15.0.2
 <span class="tag-button">October 27, 2021</span>&nbsp;&nbsp;
 
 #### What's new
 
-Not all of you love the default Shake color. Now, whenever users open it up, Shake can appear in your brand color.
+Not all of you love the default Shake color. Now, whenever users open it, Shake can appear in your brand color.
 
-This version now contains a Russian, Italian, Polish, Latvian, Estonian and Thai translation, which additionally extends [the lists of languages Shake's been translated to](https://help.shakebugs.com/en/articles/3392092-which-languages-has-shake-sdk-been-translated-to). 
+This version now contains Russian, Italian, Polish, Latvian, Estonian and Thai translations, which additionally extend [the lists of languages into which Shake's been translated](https://help.shakebugs.com/en/articles/3392092-which-languages-has-shake-sdk-been-translated-to). 
 Your users whose default device language is set to one of these will automatically see Shake in their language.
 
 ## 15.0.1
@@ -44,33 +44,33 @@ We happily squashed a few pesky bugs.
 #### What's new
 
 We've completely [redesigned Shake](/android/shake-ui/home-screen.md) to continue delivering you more and more options in a scalable manner.
-It also started supporting dark and light theme so it can beautifully fit into your app in either case.
+It also started supporting dark and light themes, so it can beautifully fit into your app in either case.
 
-We introduced [Home screen](/android/shake-ui/home-screen.md) where [your users](/android/users/overview.md) can see tickets they previously reported.
+We introduced a [Home screen](/android/shake-ui/home-screen.md) where [your users](/android/users/overview.md) can see tickets they previously reported.
 
 ## 14.4.0
 <span class="tag-button">July 22, 2021</span>&nbsp;&nbsp;
 
 #### What's new
 
-From now, you can [register your app users](/android/users/overview.md) with Shake. You can assign metadata to each user too.
+From now on, you will be able to [register your app users](/android/users/overview.md) with Shake. You can assign metadata to each user too.
 
 #### Bug fixes
 
-You can now safely call Shake methods before Shake is started, we've handled those crashes.
+You can now safely call Shake methods before Shake is started. We've handled those crashes.
 
 ## 14.3.0
 <span class="tag-button">June 2, 2021</span>&nbsp;&nbsp;
 
 #### What's new
 
-If you are using the shaking gesture as your invocation event, you can now set [how sensitive the device should be to the shaking gesture](/android/user-feedback/invoke.md#shaking).
+If you are using the shaking gesture as your invocation event, you can now [adjust the device’s sensitivity to the shaking gesture](/android/user-feedback/invoke.md#shaking).
  
-Shake now supports [customization of feedback types](/android/user-feedback/feedback-type.md#custom-types), you can configure Shake to display any number of custom categories related to your product.
+Shake now supports [customization of feedback types](/android/user-feedback/feedback-type.md#custom-types). You can configure Shake to display any number of custom categories related to your product.
 
-We've added an option to [exclude the screenshot from tickets](/android/configuration-and-data/auto-screenshot.md#excluding-the-screenshot-from-a-report), this option allows you to capture the screenshot only when required.
+We've added an option to [exclude the screenshot from tickets](/android/configuration-and-data/auto-screenshot.md#excluding-the-screenshot-from-a-report). This option allows you to capture the screenshot only when required.
 
-This version now contains a Portuguese translation, which additionally extends [the lists of languages Shake's been translated to](https://help.shakebugs.com/en/articles/3392092-which-languages-has-shake-sdk-been-translated-to). 
+This version now contains a Portuguese translation, which additionally extends [the lists of languages into which Shake's been translated](https://help.shakebugs.com/en/articles/3392092-which-languages-has-shake-sdk-been-translated-to). 
 Your users whose default device language is set to one of these will automatically see Shake in their language.
 
 ## 14.2.0
