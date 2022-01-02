@@ -78,11 +78,11 @@ Shake.getReportConfiguration().isSensitiveDataRedactionEnabled = false
 
 You can mark any view as private, and it'll automatically be deleted
 from the [auto screenshot](/android/configuration-and-data/auto-screenshot).
-Private views are stored as a weak reference, they get cleared from the memory when not used anymore.
+Private views are stored as a weak reference. They get cleared from the memory when not used anymore.
 
 :::note
 
-These methods won't delete sensitive views from auto screen recording, only from the auto screenshot.
+These methods won't delete sensitive views from auto screen recording — only from the auto screenshot.
 
 :::
 
@@ -290,7 +290,7 @@ Shake.clearPrivateViews()
 </Tabs>
 
 ## Auto screen recording
-Use Android system flag `FLAG_SECURE` on an activity if you want to prevent 
+Use the Android system flag `FLAG_SECURE` on an activity if you want to prevent 
 sensitive data from being visible on the auto screen recording.
 It will make the activity black in the video:
 
@@ -388,7 +388,7 @@ fun ShakePrivateView(content: @Composable () -> Unit) {
 // highlight-end
 ```
 
-Use `ShakePrivateView` *Composeable* like shown below:
+Use `ShakePrivateView` *Composeable* as shown below:
 
 ```kotlin title="MainActivity.kt"
 class MainActivity : ComponentActivity() {
@@ -483,7 +483,7 @@ private fun setupNetworkFilter() {
 </TabItem>
 </Tabs>
 
-If you don't want to log specific network requests, return `null` from the `NetworkRequestsFilter` like below:
+If you don't want to log specific network requests, return `null` from the `NetworkRequestsFilter` as shown below:
 
 <Tabs
 groupId="android"
