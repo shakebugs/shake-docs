@@ -179,7 +179,7 @@ All of this is done out of the box, you don't need to code anything.
 * SMS
 * STORAGE
 
-On Shake dashboard, only those permissions that the user has granted access to are listed.
+On your Shake dashboard, only those permissions that the user has granted access to are listed.
 The ones you don't see were either denied or not requested at all.
 
 
@@ -188,7 +188,7 @@ The ones you don't see were either denied or not requested at all.
 If you want Shake to attach custom data to your tickets, you can do that as well.
 Read about attaching your own variables to tickets with [Ticket metadata](android/configuration-and-data/ticket-metadata.md).
 
-Do you also want to attach files to tickets programmaticaly? Visit [Auto attach files](/android/configuration-and-data/auto-attach-files.md).
+Do you also want to attach files to tickets programmatically? Visit [Auto attach files](/android/configuration-and-data/auto-attach-files.md).
 
 
 ## Limitations
@@ -204,7 +204,7 @@ If that info is important to you, add the following permissions to your app's `A
 // highlight-end
 ```
 
-You also have to request **location** permission from the user and 
+You also have to request **location** permission from the user, and 
 their **location services** have to be turned on while reporting a ticket.
 
 More info on this Android system limitation can be found in the [Wi-Fi scanning overview](https://developer.android.com/guide/topics/connectivity/wifi-scan) guide.
