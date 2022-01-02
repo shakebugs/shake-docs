@@ -5,7 +5,7 @@ title: Auto screen recording
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 >You can rely on your testers to record a video of their screen and attach it to their feedback and crash reports.
-Or, you can use this feature to always record their screen and automatically attach that video to the ticket.
+Or, you can use auto screen recording to always record their screen and automatically attach that video to the ticket.
 
 :::note
 Turn off this feature in production!
@@ -55,7 +55,7 @@ Shake.getReportConfiguration().isAutoVideoRecording = true
 />
 </table>
 
-Duration of the auto attached screen recording is 15 seconds.
+Duration of the auto-attached screen recording is 15 seconds.
 
 ## Privacy
 
