@@ -63,3 +63,6 @@ With this feature turned on, a system dialog will ask your testers if they want 
 to start capturing everything that's displayed on their screen.
 
 Screen recording is automatically paused when your app goes to background so no third-party data is ever recorded.
+
+Visit [Protect sensitive data](/android/configuration-and-data/manage-sensitive-data/#auto-screen-recording) to learn
+how to hide sensitive data from the auto screen recording.
