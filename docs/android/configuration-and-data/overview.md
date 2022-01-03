@@ -24,7 +24,7 @@ Shake attaches useful data both to user feedback and crash reports. Read all abo
 <div class="featuresList">
     <div>
         <img src="/docs/img/description@2x.png" alt="Ticket description"/>
-        <p><a href="/docs/android/configuration-and-data/new-ticket-screen-elements#description-field">Ticket description</a></p>
+        <p><a href="/docs/android/configuration-and-data/new-ticket-screen-elements#ticket-description">Ticket description</a></p>
     </div>
 	<div>
         <img src="/docs/img/essential-data@2x.png" alt="Data attached by default"/>
