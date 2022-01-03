@@ -213,10 +213,14 @@ table thead tr {
 
 table th {
   text-align: left;
+  color: var(--default-highlight-color);
+}
+
+table td {
+  color: var(--default-paragraph-text);
 }
 
 table td, table th {
-  color: var(--default-paragraph-text);
 	position: relative;
 	border: none;
 	padding: 15px 20px 15px 0;
