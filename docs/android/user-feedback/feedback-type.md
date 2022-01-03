@@ -75,8 +75,7 @@ Along with the `setFeedbackTypes` method, Shake also exposes the `getFeedbackTyp
 grab the current set of `FeedbackType` and use them however you like.
 
 As an example, certain parts of your app can have specific features,
-so you can have different feedback types for different parts of your app.
-This allows you to follow your app context and filter out possible issues with the SDK itself.
+so you can have different feedback types for different parts of your app:
 
 <Tabs
   groupId="android"
