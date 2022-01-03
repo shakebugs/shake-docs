@@ -6,7 +6,7 @@ title: Enable
 >The Crash reports module is disabled by default.
 
 This is how you enable it:
-1. First, set the `isCrashReportingEnabled` flag to `true`.
+1. First, set the `setCrashReportingEnabled` flag to `true`.
 1. Then, call the `Shake.start` method.
 
 import Tabs from '@theme/Tabs'; 
