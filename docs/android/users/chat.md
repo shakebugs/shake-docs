@@ -18,7 +18,6 @@ and they won't receive any new messages until registered again.
 ## Notifications
 
 Shake will notify your user when you send them a new message from the Shake dashboard.
-
 Notifications are presented automatically to the user. You don't have to code anything.
 
 :::note
