@@ -2,25 +2,36 @@
 id: overview
 title: Overview
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Shake records crashes and uncaught exceptions that occur in your app and intelligently groups them on the dashboard, offering enough 
-contextual information to help you with solving the issue. It is powerful on its own, but when combined with rest 
-of the Shake features, it becomes a crash reporting power tool.
+>The Crash reports module tracks crashes and uncaught exceptions in your app. They are then intelligently grouped on your Shake dashboard,
+offering loads of contextual data to help you fix them fast.
 
-## Sending the report
+## Introduction
 
-Crash reports are automatically sent during the next app launch after the crash occurs. These reports follow the same rules as regular feedback reports to some extent.
-The crash reports will be saved even if the app is offline and sent later when app regains connection. 
+When this module is [enabled](/ios/crash-reports/enable) and your user opens your app after the crash, you have two options:
+* Send yourself the crash report instantly and silently.
+* [Ask them for an additional description](/ios/crash-reports/ask-for-description).
 
-Your end users can't opt out of sending their crash report as they can with the standard feedback, however they can optionally [provide more information](/ios/crash-reports/ask-for-description) and describe what happened prior to the crash.
+<table class="media-container">
+<img
+  alt="Crash report options"
+  width="520"
+  src={useBaseUrl('screens/crash-report-options@2x.png')}
+/>
+</table>
 
+## Shared configuration
 
-## Report context
+Just like the [User feedback](/ios/user-feedback/overview.md) module, the Crash reports module pulls your
+[Configuration and data](/ios/configuration-and-data/overview.md) settings.
 
-As mentioned before, the crash report is similar to the regular feedback report. 
+This means that crash reports also come to you with an [auto screenshot](/ios/configuration-and-data/auto-screenshot.md),
+an [auto screen recording](/ios/configuration-and-data/auto-screen-recording.md)
+of what happened before the crash, an [activity history](/ios/configuration-and-data/activity-history.md) and other useful data.
 
-All of the existing Shake features elegantly interoperate with it, meaning that your crash report will provide the screenshot of the last thing that user saw, and even better, the last 15 seconds of the screen recording before the crash!
-
-A detailed crash report like this one, along with logs and all other useful information, provides you with plenty of usable data to help you resolve the root issue efficiently.
-
-Check our [installation guide](ios/install/setup-spm.md) to start using Shake in your app.
+<p class="p2 mt-80 mb-10">⚡️ Shake is improved every week.
+Stumbled upon a <a href="https://feedback.shakebugs.com/bugs">bug</a>?
+Want a <a href="https://feedback.shakebugs.com/feature-requests">new feature</a> to be added?
+Create new tickets and upvote existing ones on the Public feedback board.</p>
+<p></p>

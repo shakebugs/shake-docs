@@ -4,49 +4,65 @@ title: Auto screen recording
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-You can rely on testers to record a video of their screen and attach it to their tickets.
-Or, you can use this feature to always record their screen and automatically attach that video to the ticket.
-Do not use this feature in production!
+>You can rely on your testers to record a video of their screen and attach it to their feedback and crash reports.
+Or, you can use auto screen recording to always record their screen and automatically attach that video to the ticket.
 
-## Introduction
-Shake can constantly record your testers' screens and automatically attach those videos to bug reports. Reports with these videos way easier to debug! With this feature turned on, a system dialog will ask testers if they want to allow Shake to start capturing everything that's displayed on their screen.
+:::note
+Turn off this feature in production!
+:::note
 
-<img
-  alt="Attachments screen"
-  src={useBaseUrl('screens/bug_screen.png')}
-/>
-
-## How to use
-Automatic screen recording is disabled by default but can be enabled by calling `Shake.configuration.isAutoVideoRecordingEnabled = true` before `Shake.start()`:
+## Enable
+Auto screen recording is disabled by default. To enable it:
+1. Call `Shake.getReportConfiguration().setAutoVideoRecording(true)` first.
+1. Then, start Shake with `Shake.start()`.
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<Tabs groupId="ios" defaultValue="swift" values={[{ label: 'Objective-C', value: 'objectivec'},{ label: 'Swift', value: 'swift'},]}><TabItem value="objectivec">
+<Tabs
+  groupId="ios"
+  defaultValue="swift"
+  values={[
+    { label: 'Objective-C', value: 'objectivec'},
+    { label: 'Swift', value: 'swift'},
+  ]
+}>
 
-```objectivec title="AppDelegate.m"
-// highlight-next-line
+<TabItem value="objectivec">
+
+```java title="App.m"
+// highlight-next-line 
 SHKShake.configuration.isAutoVideoRecordingEnabled = true;
 ```
 
-</TabItem><TabItem value="swift">
+</TabItem>
 
-```swift title="AppDelegate.swift"
+<TabItem value="swift">
+
+```swift title="App.swift"
 // highlight-next-line
 Shake.configuration.isAutoVideoRecordingEnabled = true
 ```
 
-</TabItem></Tabs>
+</TabItem>
+</Tabs>
 
-Duration of the automatically attached video is 15 seconds.
+<table class="media-container media-container-highlighted mt-40 mb-40">
+<img
+  alt="Auto screen recording"
+  width="380"
+  src={useBaseUrl('img/phone-auto-screenrecording@2x.png')}
+/>
+</table>
 
-:::note
+Duration of the auto-attached screen recording is 15 seconds.
 
-Screen recording runs on iOS 13+ devices only. Testing on iOS simulator may not work and can produce warnings in console log without screen recording.
+## Privacy
 
-:::
+With this feature turned on, a system dialog will ask your testers if they want to allow your app
+to start capturing everything that's displayed on their screen.
 
-## Security
+Screen recording is automatically paused when your app goes to background so no third-party data is ever recorded.
 
-Screen recording is managed by the system and recording is automatically stopped when app goes to background.
-No third party data is recorded.
+Visit [Protect sensitive data](/ios/configuration-and-data/manage-sensitive-data/#auto-screen-recording) to learn
+how to hide sensitive data from the auto screen recording.

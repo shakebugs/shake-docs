@@ -3,14 +3,40 @@ id: new-ticket-screen-elements
 title: New ticket screen elements
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
-
-The *Email* field is part of the SDK [New ticket](ios/shake-ui/new-ticket-screen.md) screen. It's optional and allows your users to leave their email address with the report they're submitting.
-
-## Hide the *Email* field
-Use the following method if you don't want to show this field in the SDK:
-
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+
+>Here are all the element customizations you can make on the [New ticket screen](/ios/shake-ui/new-ticket-screen.md).
+
+
+## Ticket description
+
+<table class="media-container media-container-highlighted mt-40 mb-40 pt-80">
+<img
+  alt="Ticket description field"
+  width="380"
+  src={useBaseUrl('img/element-description@2x.png')}
+/>
+</table>
+
+Your users describe their tickets here. This is a mandatory element and can't be hidden.
+
+Here's a tip that quality assurance teams often find helpful. If *#some #hashtags* are added anywhere in the description,
+they will automatically become <span class="tag-button pink-tag-button">tags</span> on your [Shake dashboard](https://app.shakebugs.com/).
+
+
+## Email field
+
+<table class="media-container media-container-highlighted mt-40 mb-40">
+<img
+  alt="Email field"
+  width="380"
+  src={useBaseUrl('img/element-email@2x.png')}
+/>
+</table>
+
+This element is optional and allows your users to leave their email address with the ticket they're submitting.
+Use the following method if you want to hide it:
 
 <Tabs
   groupId="ios"
@@ -23,9 +49,9 @@ import TabItem from '@theme/TabItem';
 
 <TabItem value="objectivec">
 
-```objectivec title="AppDelegate.m"
-//highlight-start
-SHKShake.configuration.isEmailFieldEnabled = true;
+```java title="App.m"
+//highlight-start 
+SHKShake.configuration.isEmailFieldEnabled = true; 
 //highlight-end
 ```
 
@@ -33,7 +59,7 @@ SHKShake.configuration.isEmailFieldEnabled = true;
 
 <TabItem value="swift">
 
-```swift title="AppDelegate.swift"
+```swift title="App.kt"
 //highlight-start
 Shake.configuration.isEmailFieldEnabled = true
 //highlight-end
@@ -42,8 +68,7 @@ Shake.configuration.isEmailFieldEnabled = true
 </TabItem>
 </Tabs>
 
-## Pre-fill the *Email* field
-Use the following method to save your users some time by pre-filling the field with their email address (users can always edit or delete that email if they want to):
+Or, use the following method to save your users some time by pre-filling the field with their email address:
 
 <Tabs
   groupId="ios"
@@ -56,9 +81,10 @@ Use the following method to save your users some time by pre-filling the field w
 
 <TabItem value="objectivec">
 
-```objectivec title="AppDelegate.m"
-//highlight-start
-SHKShake.configuration.emailField = @"user@email.com";
+```java title="App.m"
+// highlight-next-line
+//highlight-start 
+SHKShake.configuration.emailField = @"user@email.com"; 
 //highlight-end
 ```
 
@@ -66,7 +92,7 @@ SHKShake.configuration.emailField = @"user@email.com";
 
 <TabItem value="swift">
 
-```swift title="AppDelegate.swift"
+```swift title="App.swift"
 //highlight-start
 Shake.configuration.emailField = "user@email.com"
 //highlight-end
@@ -75,8 +101,48 @@ Shake.configuration.emailField = "user@email.com"
 </TabItem>
 </Tabs>
 
-:::note
+Three tips:
+* Users can always edit the email field, even if you pre-fill it.
+* Do you always want to receive a user's email? You should then *both* pre-fill and hide the Email field.
+* The value you receive in the email field is just an attribute of that ticket, a simple **String**. To register a User as an unique **entity** which Shake automatically relates to all Tickets they submit, register your users with the [Users](/ios/users/overview.md) module.
 
-Do you want to make sure you *always* receive user's email with a report? You should then *both* pre-fill and hide the Email field.
+## Inspect button
 
-:::
+<table class="media-container media-container-highlighted mt-40 mb-40">
+<img
+  alt="Inspect button"
+  width="380"
+  src={useBaseUrl('img/element-inspect@2x.png')}
+/>
+</table>
+
+By default, this element is visible to your users. Tapping it takes them to the [Inspect screen](/ios/shake-ui/inspect-screen).
+If you want to, hide it using the following method:
+
+<Tabs
+  groupId="ios"
+  defaultValue="swift"
+  values={[
+    { label: 'Objective-C', value: 'objectivec'},
+    { label: 'Swift', value: 'swift'},
+  ]
+}>
+
+<TabItem value="objectivec">
+
+```java title="App.m"
+// highlight-next-line
+SHKShake.configuration.isInspectScreenEnabled = false;
+```
+
+</TabItem>
+
+<TabItem value="swift">
+
+```swift title="App.swift"
+// highlight-next-line 
+Shake.configuration.isInspectScreenEnabled = false;
+```
+
+</TabItem>
+</Tabs>

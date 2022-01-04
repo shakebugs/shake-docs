@@ -3,11 +3,14 @@ id: enable
 title: Enable
 ---
 
+>The Crash reports module is disabled by default.
+
+This is how you enable it:
+1. First, set the `setCrashReportingEnabled` flag to `true`.
+1. Then, call the `Shake.start` method.
+
 import Tabs from '@theme/Tabs'; 
 import TabItem from '@theme/TabItem';
-
-Crash reporting is disabled by default but can be enabled by setting the `isCrashReportingEnabled` flag to `true` prior 
-to calling the `start` method:
 
 <Tabs
   groupId="ios"
@@ -20,21 +23,19 @@ to calling the `start` method:
 
 <TabItem value="objectivec">
 
-```objectivec title="AppDelegate.m"
-//highlight-start
-SHKShake.configuration.isCrashReportingEnabled = YES;
+```java title="App.m"
+// highlight-next-line
+//highlight-start 
+SHKShake.configuration.isCrashReportingEnabled = YES; 
 //highlight-end
 ```
 
-</TabItem>
+</TabItem><TabItem value="swift">
 
-<TabItem value="swift">
-
-```swift title="AppDelegate.swift"
+```swift title="App.swift"
 //highlight-start
 Shake.configuration.isCrashReportingEnabled = true
 //highlight-end
 ```
 
-</TabItem>
-</Tabs>
+</TabItem></Tabs>

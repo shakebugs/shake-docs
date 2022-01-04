@@ -1,6 +1,6 @@
 ---
 id: symbolicate
-title: Symbolicate
+title: Deobfuscation
 ---
 
 The crash reports are a lot more useful when you see your symbolicated application frames.

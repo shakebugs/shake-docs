@@ -6,32 +6,22 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-*Chat screen* is a part of the app where users who report bugs, experience a crash 
-or send you feedback can reply to your questions sent over the Dashboard.
+>You and your users can live chat about every ticket they have submitted to you.
 
-## Introduction
+<table class="media-container mt-50 mb-30">
+ <img
+   alt="Shake chat screen"
+  width="370"
+  src={useBaseUrl('screens/android-chat-screen@2x.png')}
+ />
+ </table>
+ 
 
-Chat screen complements [Home screen](ios/shake-ui/home-screen.md) which is described on the previous page.
+If you [register users](/ios/users/register-user) with Shake, they will have all their previous tickets listed on the [Home screen](/ios/shake-ui/home-screen).
+Tapping any ticket there opens its Chat screen.
 
-If you registered your *User* with Shake, all of their tickets will be listed on the *Home screen*.
-Pressing the ticket item on the *Home screen* opens the *Chat screen*.
+Your users can reply to your messages and provide you with more details 
+about the bugs, crashes and feedback they've sent, all without ever leaving your app.
+Fix issues more easily and keep your users happy.
 
-The user can reply to your message sent over the Dashboard and provide you with more details 
-about the reported bug, crash, or feedback - directly from the app without leaving it.
-This allows you to easier fix bugs and makes your customers happy, a win-win situation. 
-
-Chat supports dark and light theme and is integrated with the white labeling to show it in your brand color.
-
-<img
-  className="screen-image"
-  alt="Chat screen"
-  src={useBaseUrl('screens/chat_screen.jpg')}
-  width="296"
-/>
-
-## Show
-
-*Chat screen* can be shown by pressing ticket item on the *Home screen*, 
-or by pressing chat message notification in the notifications center.
-
-Check [Chat](ios/users/chat.md) page to learn how to enable real time chat in your app.
+Visit [Chat](/ios/users/chat/) to learn more.

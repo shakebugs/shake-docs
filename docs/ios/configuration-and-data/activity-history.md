@@ -3,73 +3,17 @@ id: activity-history
 title: Activity history
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
 
-Shake diligently tracks user's interaction with your app, their network traffic, notifications, logs and system events, and automatically attaches all of those to every bug report.
+>Shake tracks user's interaction with your app, their network traffic, notifications, logs and system events,
+and automatically attaches all of those to the ticket.
 
-## Introduction
-You can inspect all events that lead to the bug being reported out-of-the-box. You'll see a link to *Activity history* in the top right corner:
-
-<img
-  alt="Activity screen"
-  src={useBaseUrl('screens/activity_screen.png')}
-/>
-
-## Setting up
+## Setup
 
 ### User actions
+To set up Shake to observe taps made on your app's UI elements, add this to the Activity you want to track:
 
-SDK automatically observes taps made on your app's UI elements.
-
-:::note
-This feature is disabled for iOS applications built with __SwiftUI__.
-:::
-
-### Screen changes
-
-SDK automatically tracks application screen changes, more precisely, ViewController lifecycle.
-
-For iOS applications built with __UIKit__, there is no need for additional configuration.
-
-Applications built with __SwiftUI__ should use the Shake provided View extension on their
-top level views which represent screens in their application.
-
-_shakeIntercept_ View extension allows Shake to hook into the View lifecycle and notify Shake of the 
-screen changes. The extension does not alter the View in any way and allows it to passthrough unchanged.
-
-```swift title="MySwiftUIContentView.swift"
-// highlight-start
-struct UserDetailsView: View {
-
-    var user: UserModel
-
-    var body: some View {
-        VStack {
-            user.avatar
-            Text("Name: \(user.name)")
-            /// Additional layout
-        }.shakeIntercept(viewName: "UserDetails")
-    }
-}
-// highlight-end
-```
-
-### Network requests
-
-Shake will capture the user's network traffic and log the events on the web dashboard.
-
-Go through this [setup article](ios/configuration-and-data/network-request-reporting.md) to get started.
-
-### System events
-
-System events are tracked automatically and require no additional setup.
-These are application lifecycle events.
-
-### Notifications
-Notifications are tracked automatically and require no additional setup.
-
-If you want Shake to manually handle notification tracking, you can use this method instead:
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 <Tabs
   groupId="ios"
@@ -82,8 +26,168 @@ If you want Shake to manually handle notification tracking, you can use this met
 
 <TabItem value="objectivec">
 
-```objectivec title="AppDelegate.m"
-// highlight-next-line
+```java title="MainActivity.m"
+@Override
+public boolean dispatchTouchEvent(MotionEvent event) {
+  // highlight-next-line
+  Shake.handleTouchEvent(event, this);
+  return super.dispatchTouchEvent(event);
+}
+```
+
+</TabItem>
+
+<TabItem value="swift">
+
+```java title="MainActivity.swift"
+override fun dispatchTouchEvent(event: MotionEvent): Boolean {
+  // highlight-next-line
+  Shake.handleTouchEvent(event, this)
+  return super.dispatchTouchEvent(event)
+}
+```
+
+</TabItem>
+</Tabs>
+
+### Network requests
+If you want to receive users' network traffic logs, add this line to your `OkHttpClient`:
+
+<Tabs
+  groupId="ios"
+  defaultValue="swift"
+  values={[
+    { label: 'Objective-C', value: 'objectivec'},
+    { label: 'Swift', value: 'swift'},
+  ]
+}>
+
+<TabItem value="objectivec">
+
+```java title="App.m"
+OkHttpClient okHttpClient = new OkHttpClient()
+  .newBuilder()
+  // highlight-next-line
+  .addInterceptor(new ShakeNetworkInterceptor())
+  .build();
+```
+
+</TabItem>
+
+<TabItem value="swift">
+
+```kotlin title="App.swift"
+val okHttpClient = OkHttpClient()
+  .newBuilder()
+  // highlight-next-line
+  .addInterceptor(ShakeNetworkInterceptor())
+  .build()
+```
+
+</TabItem>
+</Tabs>
+
+If you don’t use OkHttpClient, use this method to forward requests to Shake:
+
+<Tabs
+  groupId="ios"
+  defaultValue="swift"
+  values={[
+    { label: 'Objective-C', value: 'objectivec'},
+    { label: 'Swift', value: 'swift'},
+  ]
+}>
+
+<TabItem value="objectivec">
+
+```java title="App.m"
+// highlight-start
+Shake.handleNetworkRequest(
+    HttpURLConnection connection,
+    String requestBody,
+    String responseBody);
+// highlight-end
+```
+
+</TabItem>
+
+<TabItem value="swift">
+
+```kotlin title="App.swift"
+// highlight-start
+Shake.handleNetworkRequest(
+    connection: HttpURLConnection,
+    requestBody: String,
+    responseBody: String)
+// highlight-end
+```
+
+</TabItem>
+</Tabs>
+
+You can log your own custom network requests too:
+
+<Tabs
+  groupId="ios"
+  defaultValue="swift"
+  values={[
+    { label: 'Objective-C', value: 'objectivec'},
+    { label: 'Swift', value: 'swift'},
+  ]
+}>
+
+<TabItem value="objectivec">
+
+```java title="App.m"
+// highlight-start
+NetworkRequestBuilder networkRequestBuilder = new NetworkRequestBuilder()
+                 .setUrl("https://api.github.com")
+                 .setMethod("POST")
+                 .setRequestHeaders(requestHeaders)
+                 .setRequestBody(requestBody)
+                 .setTimestamp(new Date());
+Shake.insertNetworkRequest(networkRequestBuilder);
+// highlight-end
+```
+
+</TabItem>
+
+<TabItem value="swift">
+
+```kotlin title="App.swift"
+// highlight-start
+val networkRequestBuilder = NetworkRequestBuilder()
+                .setUrl("https://api.github.com")
+                .setMethod("POST")
+                .setRequestHeaders(requestHeaders)
+                .setRequestBody(requestBody)
+                .setTimestamp(Date())
+Shake.insertNetworkRequest(networkRequestBuilder)
+// highlight-end
+```
+
+</TabItem>
+</Tabs>
+
+### System events
+System events - also known as app lifecycle events - are tracked automatically and require no additional setup.
+
+### Notifications
+In order for Shake to track notifications throughout your app, add this line where appropriate:
+
+<Tabs
+  groupId="ios"
+  defaultValue="swift"
+  values={[
+    { label: 'Objective-C', value: 'objectivec'},
+    { label: 'Swift', value: 'swift'},
+  ]
+}>
+
+<TabItem value="objectivec">
+
+```java title="App.m"
+// highlight-next-line 
 [SHKShake handleNotificationWithNotificationTitle: notificationTitle notificationDescription:notificationDescription];
 ```
 
@@ -91,17 +195,23 @@ If you want Shake to manually handle notification tracking, you can use this met
 
 <TabItem value="swift">
 
-```swift title="AppDelegate.swift"
-// highlight-next-line
+```swift title="App.swift"
+// highlight-start
+// highlight-next-line 
 Shake.handleNotification(withNotificationTitle: notificationTitle, notificationDescription: notificationDescription)
 ```
 
 </TabItem>
 </Tabs>
 
-### Custom logs
-You can add your own custom logs to Activity history, which will then be shown as part of every bug report.
-Here’s an example of how this would look like in code:
+:::note
+
+This starts the notification listener service, which will require
+users to grant notification access the first time they open your app.
+
+:::
+
+If you want Shake to manually handle notification tracking, use this method instead:
 
 <Tabs
   groupId="ios"
@@ -114,7 +224,46 @@ Here’s an example of how this would look like in code:
 
 <TabItem value="objectivec">
 
-```objectivec title="AppDelegate.m"
+```java title="App.m"
+// highlight-start
+Shake.handleNotification(
+    String notificationTitle,
+    String notificationDescription
+);
+// highlight-end
+```
+
+</TabItem>
+
+<TabItem value="swift">
+
+```kotlin title="App.swift"
+// highlight-start
+Shake.handleNotification(
+    notificationTitle: String,
+    notificationDescription: String
+)
+// highlight-end
+```
+
+</TabItem>
+</Tabs>
+
+### Custom logs
+You can add your own logs to Activity history too:
+
+<Tabs
+  groupId="ios"
+  defaultValue="swift"
+  values={[
+    { label: 'Objective-C', value: 'objectivec'},
+    { label: 'Swift', value: 'swift'},
+  ]
+}>
+
+<TabItem value="objectivec">
+
+```java title="App.m"
 // highlight-next-line
 [SHKShake logWithLevel: LogLevelInfo message:@"Log message goes here!"];
 ```
@@ -123,15 +272,15 @@ Here’s an example of how this would look like in code:
 
 <TabItem value="swift">
 
-```swift title="AppDelegate.swift"
-// highlight-next-line
+```swift title="App.swift"
+// highlight-next-line 
 Shake.log(LogLevel.info, "Log message goes here!")
 ```
 
 </TabItem>
 </Tabs>
 
-Here are all possible log levels you can use:
+You have these log levels at your disposal:
 
 <Tabs
   groupId="ios"
@@ -144,7 +293,7 @@ Here are all possible log levels you can use:
 
 <TabItem value="objectivec">
 
-```objectivec title="AppDelegate.m"
+```java title="App.m"
 LogLevelVerbose
 LogLevelDebug
 LogLevelInfo
@@ -156,33 +305,33 @@ LogLevelError
 
 <TabItem value="swift">
 
-```swift title="AppDelegate.swift"
-LogLevel.verbose
-LogLevel.debug
-LogLevel.info
-LogLevel.warn
-LogLevel.error
+```swift title="App.swift"
+ LogLevel.verbose 
+ LogLevel.debug 
+ LogLevel.info 
+ LogLevel.warn 
+ LogLevel.error
 ```
 
 </TabItem>
 </Tabs>
 
 ### Console logs
-Console logs are recorded automatically and require no additional setup. If you want to disable this
-feature use the method below:
+Console logs are recorded automatically and require no additional setup.
+If you want to disable this feature use the method below:
 
 <Tabs
-groupId="ios"
-defaultValue="swift"
-values={[
-  { label: 'Objective-C', value: 'objectivec'},
-  { label: 'Swift', value: 'swift'},
+  groupId="ios"
+  defaultValue="swift"
+  values={[
+    { label: 'Objective-C', value: 'objectivec'},
+    { label: 'Swift', value: 'swift'},
   ]
 }>
 
 <TabItem value="objectivec">
 
-```objectivec title="AppDelegate.m"
+```java title="App.m"
 // highlight-next-line
 SHKShake.configuration.isConsoleLogsEnabled = false;
 ```
@@ -191,43 +340,50 @@ SHKShake.configuration.isConsoleLogsEnabled = false;
 
 <TabItem value="swift">
 
-```swift title="AppDelegate.swift"
-// highlight-next-line
+```swift title="App.swift"
+// highlight-next-line 
 Shake.configuration.isConsoleLogsEnabled = false
 ```
 
 </TabItem>
 </Tabs>
 
-:::note
-
-Make sure that activity history is enabled if you want to send console logs with your report.
-
-:::
-
 ## Limitations
-In a Free workspace you can see up to 20 events that lead to every bug.
+In a Free workspace you can see up to 20 events that led to the ticket being reported.
 If you need to dive really deep to find causes of the weirdest bugs,
-in a Premium workspace you can browse the entire activity history.
+In a Premium workspace you can browse the full Activity history.
 
-Network request limit for both request body and response body is 100 kB respectively.
-If request body or response body contains binary data, it will be presented as a *Binary data* string.
+The network request limits for both the request body and the response body are 100 kB each.
+If the request body or the response body contains binary data, it will be presented as a *Binary data* string.
 
-## Enabling and disabling
-Activity history is enabled by default, however, you can use the method below to disable it:
+## Disable
+Activity history is enabled by default, use the method below to disable it altogether:
 
-<Tabs groupId="ios" defaultValue="swift" values={[{ label: 'Objective-C', value: 'objectivec'},{ label: 'Swift', value: 'swift'},]}><TabItem value="objectivec">
+<Tabs
+  groupId="ios"
+  defaultValue="swift"
+  values={[
+    { label: 'Objective-C', value: 'objectivec'},
+    { label: 'Swift', value: 'swift'},
+  ]
+}>
 
-```objectivec title="AppDelegate.m"
+<TabItem value="objectivec">
+
+```java title="App.m"
 //highlight-next-line
 SHKShake.configuration.isActivityHistoryEnabled = NO;
 ```
 
-</TabItem><TabItem value="swift">
+</TabItem>
 
-```swift title="AppDelegate.swift"
-//highlight-next-line
+<TabItem value="swift">
+
+```swift title="App.swift"
+//highlight-next-line 
 Shake.configuration.isActivityHistoryEnabled = false
 ```
 
-</TabItem></Tabs>
+</TabItem>
+</Tabs>
+

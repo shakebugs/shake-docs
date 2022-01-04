@@ -101,27 +101,29 @@ module.exports = {
         },
         {
             type: 'category',
-            label: 'Screens',
+            label: 'Shake UI',
             items: [
+                'ios/shake-ui/overview',
                 'ios/shake-ui/home-screen',
                 'ios/shake-ui/chat-screen',
                 'ios/shake-ui/inspect-screen',
+                'ios/shake-ui/drawing-screen',
                 'ios/shake-ui/new-ticket-screen'
             ]
         },
         {
             type: 'category',
-            label: 'Products',
+            label: 'Modules',
             items: [
                 {
                     type: 'category',
-                    label: 'Customer feedback',
+                    label: 'User feedback',
                     items: [
                         'ios/user-feedback/overview',
+                        'ios/user-feedback/invoke',
                         'ios/user-feedback/intro-message',
                         'ios/user-feedback/feedback-type',
-                        'ios/user-feedback/silent-user-feedback',
-                        'ios/user-feedback/invoke'
+                        'ios/user-feedback/silent-user-feedback',                    
                     ]
                 },
                 {
@@ -142,32 +144,29 @@ module.exports = {
                     items: [
                         'ios/users/overview',
                         'ios/users/register-user',
+                        'ios/users/chat',                        
                         'ios/users/unregister-user',
                         'ios/users/update-user-metadata',
                         'ios/users/update-user-identifier',
-                        'ios/users/advanced-usage',
-                        'ios/users/chat',
+                        'ios/users/advanced-usage',                        
                     ]
                 },
             ]
         },
         {
             type: 'category',
-            label: 'Configuration & Data',
+            label: 'Configuration and data',
             items: [
                 'ios/configuration-and-data/overview',
-                'ios/configuration-and-data/essentials',
-                'ios/configuration-and-data/new-ticket-screen-elements',
                 'ios/configuration-and-data/disable',
-                'ios/configuration-and-data/inspect',
+                'ios/configuration-and-data/new-ticket-screen-elements',
+                'ios/configuration-and-data/essentials',
                 'ios/configuration-and-data/auto-screenshot',
                 'ios/configuration-and-data/auto-screen-recording',
-                'ios/configuration-and-data/permissions',
                 'ios/configuration-and-data/activity-history',
-                'ios/configuration-and-data/auto-attach-files',
-                'ios/configuration-and-data/network-request-reporting',
                 'ios/configuration-and-data/black-box',
                 'ios/configuration-and-data/ticket-metadata',
+                'ios/configuration-and-data/auto-attach-files',                
                 'ios/configuration-and-data/manage-sensitive-data',
                 'ios/configuration-and-data/data-privacy-disclosure'
             ]

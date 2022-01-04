@@ -1,21 +1,17 @@
 ---
 id: test-it-out
-title: Test it out
+title: Test it
 ---
-
+import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs'; 
 import TabItem from '@theme/TabItem';
 
-Let's crash you app. 
-Enable crash reporting and paste the snippet below in the `viewDidLoad` method in one of your view controllers.
-We'll crash the app on a button tap by accessing the array with the out of bounds index.
+>Let's crash your app to see what the crash report looks like on your Shake dashboard.
 
-:::note
+## Crash your app
 
-Before testing this, make sure to disconnect your device from the Xcode debugger. Xcode debugger attaches itself 
-to the application process and will disable crash recording.
-
-:::
+[Enable crash reporting](/ios/crash-reports/enable.md) and paste this code to the `onCreate` method in one of your activities.
+It will crash your app when you tap a button by accessing the array with the out-of-bounds index:
 
 <Tabs
   groupId="ios"
@@ -28,11 +24,10 @@ to the application process and will disable crash recording.
 
 <TabItem value="objectivec">
 
-```objectivec title="ViewController.m"
-//highlight-start
-- (void)viewDidLoad {
+```java title="MainActivity.m"
+//highlight-start 
+- (void)viewDidLoad { 
     [super viewDidLoad];
-
     UIButton *crashButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
 
     [crashButton setTitle:@"Crash me" forState:UIControlStateNormal];
@@ -43,18 +38,16 @@ to the application process and will disable crash recording.
 
     [crashButton addTarget:self action:@selector(crashButtonHandler) forControlEvents:UIControlEventTouchUpInside];
 }
-
-- (void)crashButtonHandler {
-    NSArray *arr = @[@1, @2, @3];
-    id myVar = arr[5];
-}
+- (void)crashButtonHandler { 
+    NSArray *arr = @[@1, @2, @3]; 
+    id myVar = arr[5]; 
+} 
 //highlight-end
 ```
-</TabItem>
 
-<TabItem value="swift">
+</TabItem><TabItem value="swift">
 
-```swift title="ViewController.swift"
+```java title="MainActivity.swift"
 //highlight-start
 override func viewDidLoad() {
     super.viewDidLoad()
@@ -67,7 +60,8 @@ override func viewDidLoad() {
 
     self.view.addSubview(crashButton)
 
-    crashButton.addTarget(self, action: #selector(crashButtonHandler), for: .touchUpInside)
+    crashButton.addTarget(self, action: #selector(crashButtonHandler), 
+        for: .touchUpInside)
 }
 
 @objc func crashButtonHandler() {
@@ -77,9 +71,23 @@ override func viewDidLoad() {
 //highlight-end
 ```
 
-</TabItem>
-</Tabs>
+</TabItem></Tabs>
 
-Launch you app after the crash, add a sentence or two if you want to and submit the report. 
-Your report will be visible on the Shake dashboard in a few minutes.
+Reopen your app, describe the crash and tap *Submit*.
+
+## Visit your Shake dashboard
+
+To see your crash report:
+1. Visit your [Shake dashboard](https://app.shakebugs.com)
+1. Switch to the **Crash reports** tab in the left sidebar
+
+<table class="media-container mt-40 mb-30">
+<img
+  alt="The first crash report on Shake dashboard"
+  width="522"
+  src={useBaseUrl('screens/first-crash-report-on-dashboard@2x.png')}
+/>
+</table>
+
+If your crash report is not visible instantly, wait a minute until the system processes it.
 

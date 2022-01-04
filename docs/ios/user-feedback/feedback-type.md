@@ -2,21 +2,29 @@
 id: feedback-type
 title: Feedback type
 ---
-This SDK option allows your users to categorize their feedback.
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+>By default, your users have to categorize their feedback so you can filter and browse it more easily later on.
+
+<table class="media-container media-container-highlighted mt-50 pb-80">
+<img
+  alt="User feedback type"
+  width="380"
+  src={useBaseUrl('img/feedback-type@2x.png')}
+/>
+</table>
 
 ## Introduction
 
-When submitting their feedback, your users immediately categorize it as either a bug report, an improvement suggestion, or just a question.
+Your users categorize every feedback as either a bug report, an improvement suggestion, or a question.
+Depending on what they choose, their feedback arrives with the <span class="tag-button pink-tag-button">bug</span>, <span class="tag-button pink-tag-button">suggestion</span> or <span class="tag-button pink-tag-button">question</span> tag
+to your [Shake dashboard](https://app.shakebugs.com).
 
-Depending on their choice, you automatically receive the <span class="tag-button pink-tag-button">bug</span>, <span class="tag-button pink-tag-button">suggestion</span> or <span class="tag-button pink-tag-button">question</span> tag next to their ticket in your [Shake Dashboard](https://app.shakebugs.com). This way, you can filter and browse them efficiently!
+## Custom feedback types
 
-## Custom types
-
-You can configure Shake to display any number of custom categories related to your product.
-
-Shake exposes an internal *SHKFeedbackEntry* type which is used to encapsulate the properties of your custom category.
-
-The snippet below showcases an example usage of the feature:
+You can configure Shake to display any number of custom feedback types related to your app.
+Shake exposes an internal `FeedbackType` type which is used to encapsulate the properties of your custom category.
+Here's an example:
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -25,20 +33,21 @@ import TabItem from '@theme/TabItem';
   groupId="ios"
   defaultValue="swift"
   values={[
-  { label: 'Objective-C', value: 'objc'},
+    { label: 'Objective-C', value: 'objectivec'},
     { label: 'Swift', value: 'swift'},
   ]
 }>
 
-<TabItem value="objc">
+<TabItem value="objectivec">
 
-```objc title="AppDelegate.m"
+```java title="App.m"
 // highlight-start
-SHKFeedbackEntry *hardwareCategory = [SHKFeedbackEntry entryWithTitle:@"Hardware issue" andTag:@"hardware" icon:nil]; /// Icon is optional
-SHKFeedbackEntry *callCategory = [SHKFeedbackEntry entryWithTitle:@"Call audio problem" andTag:@"call_audio" icon:nil];
+// highlight-start 
+SHKFeedbackEntry hardwareCategory = [SHKFeedbackEntry entryWithTitle:@"Hardware issue" andTag:@"hardware" icon:nil]; /// Icon is optional 
+SHKFeedbackEntry callCategory = [SHKFeedbackEntry entryWithTitle:@"Call audio problem" andTag:@"call_audio" icon:nil]; 
 SHKFeedbackEntry *syncCategory = [SHKFeedbackEntry entryWithTitle:@"File sync issue" andTag:@"file_sync" icon:nil];
 
-[SHKShake setFeedbackTypes:@[hardwareCategory, callCategory, syncCategory]];  
+[SHKShake setFeedbackTypes:@[hardwareCategory, callCategory, syncCategory]];
 // highlight-end
 ```
 
@@ -46,52 +55,50 @@ SHKFeedbackEntry *syncCategory = [SHKFeedbackEntry entryWithTitle:@"File sync is
 
 <TabItem value="swift">
 
-```swift title="AppDelegate.swift"
+```swift title="App.swift"
 // highlight-start
 let hardwareCategory = SHKFeedbackEntry(title: "Hardware issue", andTag: "hardware", icon: hardwareIssueIcon) /// Icon is optional
 let callCategory = SHKFeedbackEntry(title: "Call audio problem", andTag: "call_audio", icon: nil)
 let syncCategory = SHKFeedbackEntry(title: "File sync issue", andTag: "file_sync", icon: nil)
-
 Shake.setFeedbackTypes([hardwareCategory, callCategory, syncCategory])
 // highlight-end
 ```
 
 </TabItem>
-
 </Tabs>
 
 There is no limit to the number of categories you can enter.
 
-Along with *setFeedbackTypes* method, Shake also exposes the *getFeedbackTypes* method which allows you to 
-grab the current set of *SHKFeedbackEntry* and use them how you like.
+Along with the `setFeedbackTypes` method, Shake also exposes the `getFeedbackTypes` method which allows you to 
+grab the current set of `FeedbackType` and use them however you like.
 
-Common use case is that some portions of your application can "unlock" certain features, so you can have different feedback types for different "parts" of 
-your application. This enables you to , in a sense, "follow" your application context and filter out the possible issues on the SDK itself.
+As an example, certain parts of your app can have specific features,
+so you can have different feedback types for different parts of your app:
 
 <Tabs
   groupId="ios"
   defaultValue="swift"
   values={[
-  { label: 'Objective-C', value: 'objc'},
+    { label: 'Objective-C', value: 'objectivec'},
     { label: 'Swift', value: 'swift'},
   ]
 }>
 
-<TabItem value="objc">
+<TabItem value="objectivec">
 
-```objc title="NetworkService.m"
-// highlight-start
+```java title="App.m"
+// highlight-start 
 - (void)enableVideoCallFeature:(NSString *)contactId {
 
-    SHKFeedbackEntry *videoCallCategory = [SHKFeedbackEntry entryWithTitle:@"Video Call" andTag:@"video_call" icon:nil];
+  SHKFeedbackEntry *videoCallCategory = [SHKFeedbackEntry entryWithTitle:@"Video Call" andTag:@"video_call" icon:nil];
 
-    NSMutableArray<SHKFeedbackEntry *> *existing = [SHKShake getFeedbackTypes].mutableCopy;
+  NSMutableArray<SHKFeedbackEntry *> *existing = [SHKShake getFeedbackTypes].mutableCopy;
 
-    [existing addObject:videoCallCategory];
+  [existing addObject:videoCallCategory];
 
-    [SHKShake setFeedbackTypes:existing];
+  [SHKShake setFeedbackTypes:existing];
 
-}
+} 
 // highlight-end
 ```
 
@@ -99,55 +106,51 @@ your application. This enables you to , in a sense, "follow" your application co
 
 <TabItem value="swift">
 
-```swift title="NetworkService.swift"
+```swift title="App.swift"
 // highlight-start  
   func enableVideoCallFeature(contactID: String) {
-
-      let videoCallCategory = SHKFeedbackEntry(title: "Video Call", andTag: "video_call", icon: nil)
-
+      let videoCallCategory = 
+        SHKFeedbackEntry(title: "Video Call", andTag: "video_call", icon: nil)
       var existing = Shake.getFeedbackTypes()
-
       existing.append(videoCallCategory)
-
       Shake.setFeedbackTypes(existing)
   }
 // highlight-end
 ```
 
 </TabItem>
-
 </Tabs>
 
-## Disabling
-If you don’t want your users to have to categorize their feedback, simply hide this option using the following method:
+## Disable
+If you don't want to force your users to categorize their feedback, simply hide this element:
 
 <Tabs
   groupId="ios"
   defaultValue="swift"
   values={[
-  { label: 'Objective-C', value: 'objc'},
+    { label: 'Objective-C', value: 'objectivec'},
     { label: 'Swift', value: 'swift'},
   ]
 }>
 
-<TabItem value="objc">
+<TabItem value="objectivec">
 
-```objc title="AppDelegate.m"
-// highlight-next-line
+```java title="App.m"
+// highlight-next-line 
 SHKShake.configuration.isFeedbackTypeEnabled = false;
+// highlight-end
 ```
 
 </TabItem>
 
 <TabItem value="swift">
 
-```swift title="AppDelegate.swift"
-// highlight-next-line
+```swift title="App.swift"
+// highlight-start
 Shake.configuration.isFeedbackTypeEnabled = false
+// highlight-end
 ```
 
 </TabItem>
-
 </Tabs>
 
-On your Shake Dashboard, all these tickets won't have any specific type (and tag).

@@ -6,19 +6,22 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-The *Inspect screen* allows your user to see the current ticket details — its [Essentials](ios/configuration-and-data/essentials.md) and [Metadata](ios/configuration-and-data/ticket-metadata.md) — before submitting it.
+> Before submitting a ticket, your users can freely inspect [Data attached by default](/ios/configuration-and-data/essentials.md) and [Ticket metadata](/ios/configuration-and-data/ticket-metadata.md).
 
 ## Introduction
 
-The *Inspect screen* can be reached via *Inspect* button on the [New ticket screen](ios/shake-ui/new-ticket-screen.md).
+They access the Inspect screen by tapping the *Inspect* button on the [New ticket screen](/ios/shake-ui/new-ticket-screen.md).
 
+<table class="media-container mt-50">
 <img
   className="screen-image"
   alt="Inspect screen"
-  src={useBaseUrl('screens/inspect_screen.png')}
+  width="376"
+  src={useBaseUrl('screens/android-inspect-screen@2x.png')}
 />
+</table>
 
 
-## Show
+## Hide the Inspect button
 
-*Inspect* button is an optional feature that [can be disabled](ios/configuration-and-data/inspect.md) by passing the appropriate value to the Shake configuration.
+The *Inspect* button is an optional element and [can be disabled](/ios/configuration-and-data/new-ticket-screen-elements#inspect-button).

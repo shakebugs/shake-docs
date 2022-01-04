@@ -1,14 +1,36 @@
 ---
 id: ask-for-description
-title: Ask for description
+title: Ask for a description
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs'; 
 import TabItem from '@theme/TabItem';
 
-On the next app launch after the crash occurs, a sheet offering the user a chance to describe the crash will appear.
+>On the first app launch after the crash, you decide whether or not you want Shake to ask your user to describe the crash.
 
-This can be enabled by setting the `isAskForCrashDescription` flag to `true` prior to calling the `start` method:
+
+## Introduction
+
+This option is disabled by default. If you keep it this way, the crash report will be sent to you instantly and silently.
+
+
+## Enable
+
+If you enable it, a sheet will be shown to your user, giving them an opportunity to describe what they were doing before the crash,
+potentially providing you with additional helpful information.
+
+<table class="media-container media-container-highlighted mt-40 mb-40 pb-80">
+<img
+  alt="Ask for description sheet"
+  width="386"
+  src={useBaseUrl('img/ask-for-description@2x.png')}
+/>
+</table>
+
+To enable it:
+1. First, set the `setAskForCrashDescription` flag to `true`.
+1. Then, call the `Shake.start` method.
 
 <Tabs
   groupId="ios"
@@ -21,25 +43,24 @@ This can be enabled by setting the `isAskForCrashDescription` flag to `true` pri
 
 <TabItem value="objectivec">
 
-```objectivec title="AppDelegate.m"
-//highlight-start
-SHKShake.configuration.isAskForCrashDescriptionEnabled = YES;
+```java title="MainActivity.m"
+//highlight-start 
+SHKShake.configuration.isAskForCrashDescriptionEnabled = YES; 
 //highlight-end
 ```
 
-</TabItem>
+</TabItem><TabItem value="swift">
 
-<TabItem value="swift">
-
-```swift title="AppDelegate.swift"
+```swift title="MainActivity.swift"
 //highlight-start
 Shake.configuration.isAskForCrashDescriptionEnabled = true
 //highlight-end
 ```
 
-</TabItem>
-</Tabs>
+</TabItem></Tabs>
 
+## What happens next
 
-When enabled, this feature allows the user to provide a more detailed description of the actions that could have led up to the 
-crash, and potentially edit the information that is being passed to Shake dashboard.
+If the user decides they don't want to add their own description (they tap outside the sheet) → the crash report will be sent to you silently anyway.
+
+If the user decides they do want to add their own description (they tap the confirmation button) but then discards their ticket on the New ticket screen → the crash report will be discarded.

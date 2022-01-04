@@ -2,63 +2,75 @@
 id: register-user
 title: Register user
 ---
-
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-User of your application can be registered with Shake by calling the `registerUser` method. The passed _user identifier_ argument
-should, ideally, reflect or be a derivation of the identifier that uniquely represents the user in your database or system.
+>Register your app users with Shake by calling the `Shake.registerUser` method.
 
-The example below showcases the user registration in a way that most apps can "relate to", and that is the usual "login flow". 
+The passed _user identifier_ argument should ideally reflect the identifier that uniquely represents the user in your database.
+Often it is the user's email address, but it may be their User ID, or their device's UUID.
+Shake's public method is intentionally
+called _register_ and not _logIn_ because user identification context is different in different apps.
 
-However, the Shake public method is intentionally called _register_ and not _logIn_ because there are different situations and contexts in which the 
-user identification works just as good.
+Most apps communicate with their backend through the network layer
+which performs the URL request and asynchronously receives a callback with the request result.
+That callback's body is a common place where developers call the `Shake.registerUser` method,
+but maybe your context is different.
+Make sure to call this method at the place where it fits your app's flow perfectly.
 
-Most applications will communicate with their backend through some form of the network layer which performs the URL request and asynchronously
-receives a callback with the request result.
+<table class="media-container mt-50">
+<img
+  alt="An example of registering a User with Shake"
+  width="520"
+  src={useBaseUrl('screens/register-user-flow.svg')}
+/>
+</table>
+<p class="p2 center-align mb-50">A common case is to register users from your app's Login screen</p>
 
-Body of your successful registration request callback is the usual place where `registerUser` method would be called, but every context cannot be described
-in this documentation so make sure the method is called at the place where it best fits your application flow.
+<Tabs
+  groupId="ios"
+  defaultValue="swift"
+  values={[
+    { label: 'Objective-C', value: 'objectivec'},
+    { label: 'Swift', value: 'swift'},
+  ]
+}>
 
+<TabItem value="objectivec">
 
-<Tabs groupId="ios" defaultValue="swift" values={[{ label: 'Objective-C', value: 'objectivec'},{ label: 'Swift', value: 'swift'},]}><TabItem value="objectivec">
-
-```objectivec title="UserManager.m"
+```java title="LoginActivity.m"
 @implementation UserManager
-
-- (void)logInUser:(NSString *)userEmail password:(NSString *)password { 
-
+- (void)logInUser:(NSString )userEmail password:(NSString )password {
     __weak typeof (LogInViewModel) *weakSelf = self;
-
     [self.networkService performLogInWithEmail:userEmail password:password completion:^(UserResponse _Nullable userResponse, NSError * _Nullable error) {
-
         if (userResponse) {
         /// Succesfull log in flow
 
-            // highlight-next-line
-            [SHKShake registerUserWithUserId:userEmail];
-            
-            /**
-            Or even better,
-            [SHKShake registerUserWithUserId:userResponse.internalUserIdentifier];
-            */
+        // highlight-next-line
+        [SHKShake registerUserWithUserId:userEmail];
 
-            [weakSelf didLoginWithUserResponse:userResponse];
+        /**
+        Or even better,
+        [SHKShake registerUserWithUserId:userResponse.internalUserIdentifier];
+        */
 
-            return;
-        }
+        [weakSelf didLoginWithUserResponse:userResponse];
 
-        /// Log in failed flow
-     
-    }];
-}
+        return;
+    }
+
+    /// Log in failed flow
+    }]; 
+} 
 @end
 ```
 
-</TabItem><TabItem value="swift">
+</TabItem>
 
-```swift title="UserManager.swift"
+<TabItem value="swift">
+
+```swift title="LoginActivity.swift"
 func logInUser(email: String, password: String) {
 
     self.networkService.performLogin(email: email, password: password) { [weak self] userResponse in
@@ -81,10 +93,6 @@ func logInUser(email: String, password: String) {
     }
 }
 ```
-</TabItem></Tabs>
 
-:::note
-
-All user related Shake operations on a registered user are fully supported when your application is __offline__ too, and will sync with the Shake servers later.
-
-:::
+</TabItem>
+</Tabs>
