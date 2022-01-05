@@ -35,11 +35,11 @@ conf.includesBlackBoxData = true;
 conf.includesScreenshotImage = true; 
 conf.includesVideo = false;
 
-   NSArray<SHKShakeFile *> * (^fileAttachBlock)(void) = ^NSArray<SHKShakeFile *> *(void) {
-   SHKShakeFile *file = [[SHKShakeFile alloc] initWithName:@"myFile.log" andData:NSData.new];
+NSArray<SHKShakeFile *> * (^fileAttachBlock)(void) = ^NSArray<SHKShakeFile *> *(void) {
+SHKShakeFile *file = [[SHKShakeFile alloc] initWithName:@"myFile.log" andData:NSData.new];
 
-    return @[file];
-  };
+  return @[file];
+};
   
 [SHKShake silentReportWithDescription:@"Description #tag1 #tag2" fileAttachBlock:fileAttachBlock reportConfiguration:conf];
 //highlight-end

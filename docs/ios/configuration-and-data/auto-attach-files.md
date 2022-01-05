@@ -137,6 +137,52 @@ Shake.onPrepareReportData = {
 </TabItem>
 </Tabs>
 
+## Just attaching a file 
+Or, you can initialize ShakeFile only with a local file url (NSURL), and the file name shown on the web Dashboard will be determined automatically from the passed file's URL:
+
+<Tabs 
+groupId="ios" 
+defaultValue="swift" 
+values={[ 
+    { label: 'Objective-C', value: 'objectivec'}, 
+    { label: 'Swift', value: 'swift'}, 
+  ] 
+}>
+
+<TabItem value="objectivec">
+
+```java title="AppDelegate.m" 
+NSURL *fileUrl = ...
+//highlight-start 
+SHKShake.onPrepareReportData = ^NSArray<SHKShakeFile *> * _Nonnull { 
+  NSMutableArray <SHKShakeFile *> attachedFiles = NSMutableArray.new; 
+  SHKShakeFile attachedFile = [[SHKShakeFile alloc] initWithFileURL:fileUrl]; 
+  [attachedFiles addObject:attachedFile]; 
+  return attachedFiles; 
+}; 
+//highlight-end
+```
+
+</TabItem>
+
+<TabItem value="swift">
+
+```swift title="AppDelegate.swift"
+let fileUrl: URL = ...
+
+//highlight-start
+Shake.onPrepareReportData = { 
+  var attachedFiles = [ShakeFile]()
+  if let attachedFile = ShakeFile(fileUrl: fileUrl) {
+    attachedFiles.append(attachedFile)
+  }
+  return attachedFiles
+}
+//highlight-end
+```
+
+</TabItem></Tabs>
+
 ## Limitations
 
 The maximum number of auto attached files per ticket is 1 for Free workspaces and 10 for Premium workspaces.

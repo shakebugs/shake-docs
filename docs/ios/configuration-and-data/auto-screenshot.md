@@ -14,14 +14,6 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 />
 </table>
 
-:::note
-
-Jetpack Compose is a declarative UI toolkit, a paradigm shift from the current View system.
-On devices with OS older than Android O, Shake will capture Jetpack Compose screens but not the LazyColumn, LazyRow, Scaffold and Shapes components.
-On devices with Android O and newer, Shake will capture those components too, if they are not in a dialog.
-
-:::
-
 ## Disable
 
 Let's suppose you are invoking Shake through code from the **My account → Help** screen of your app. You would always receive the same 

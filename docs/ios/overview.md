@@ -4,7 +4,7 @@ title: Overview
 ---
 
 ## Modules
-> Shake Android SDK has three modules that work together nicely. Use one, all or any combination of them — whatever suits your needs.
+> Shake iOS SDK has three modules that work together nicely. Use one, all or any combination of them — whatever suits your needs.
 
 <div class="modulesList">
     <div>
