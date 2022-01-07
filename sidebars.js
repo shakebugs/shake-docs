@@ -184,27 +184,29 @@ module.exports = {
         },
         {
             type: 'category',
-            label: 'Screens',
+            label: 'Shake UI',
             items: [
+                'flutter/shake-ui/overview',
                 'flutter/shake-ui/home-screen',
-                'flutter/shake-ui/inspect-screen',
-                'flutter/shake-ui/new-ticket-screen',
                 'flutter/shake-ui/chat-screen',
+                'flutter/shake-ui/inspect-screen',
+                'flutter/shake-ui/drawing-screen',
+                'flutter/shake-ui/new-ticket-screen',
             ]
         },
         {
             type: 'category',
-            label: 'Products',
+            label: 'Modules',
             items: [
                 {
                     type: 'category',
-                    label: 'Customer feedback',
+                    label: 'User feedback',
                     items: [
                         'flutter/user-feedback/overview',
+                        'flutter/user-feedback/invoke',
                         'flutter/user-feedback/intro-message',
                         'flutter/user-feedback/feedback-type',
                         'flutter/user-feedback/silent-user-feedback',
-                        'flutter/user-feedback/invoke'
                     ]
                 },
                 {
@@ -213,31 +215,30 @@ module.exports = {
                     items: [
                         'flutter/users/overview',
                         'flutter/users/register-user',
+                        'flutter/users/chat',
                         'flutter/users/unregister-user',
                         'flutter/users/update-user-metadata',
                         'flutter/users/update-user-identifier',
                         'flutter/users/advanced-usage',
-                        'flutter/users/chat',
+
                     ]
                 },
             ]
         },
         {
             type: 'category',
-            label: 'Configuration & Data',
+            label: 'Configuration and data',
             items: [
                 'flutter/configuration-and-data/overview',
-                'flutter/configuration-and-data/essentials',
-                'flutter/configuration-and-data/new-ticket-screen-elements',
                 'flutter/configuration-and-data/disable',
-                'flutter/configuration-and-data/inspect',
+                'flutter/configuration-and-data/new-ticket-screen-elements',
+                'flutter/configuration-and-data/data-attached-by-default',
                 'flutter/configuration-and-data/auto-screenshot',
-                'flutter/configuration-and-data/auto-screen-recording',
-                'flutter/configuration-and-data/permissions',
+                'flutter/configuration-and-data/auto-screen-recording',                
                 'flutter/configuration-and-data/activity-history',
-                'flutter/configuration-and-data/auto-attach-files',
                 'flutter/configuration-and-data/black-box',
                 'flutter/configuration-and-data/ticket-metadata',
+                'flutter/configuration-and-data/auto-attach-files',
                 'flutter/configuration-and-data/manage-sensitive-data',
                 'flutter/configuration-and-data/data-privacy-disclosure'
             ]
@@ -262,27 +263,29 @@ module.exports = {
         },
         {
             type: 'category',
-            label: 'Screens',
+            label: 'Shake UI',
             items: [
+                'react/shake-ui/overview',
                 'react/shake-ui/home-screen',
+                'react/shake-ui/new-ticket-screen',
                 'react/shake-ui/chat-screen',
+                'react/shake-ui/drawing-screen',
                 'react/shake-ui/inspect-screen',
-                'react/shake-ui/new-ticket-screen'
             ]
         },
         {
             type: 'category',
-            label: 'Products',
+            label: 'Modules',
             items: [
                 {
                     type: 'category',
-                    label: 'Customer feedback',
+                    label: 'User feedback',
                     items: [
                         'react/user-feedback/overview',
+                        'react/user-feedback/invoke',
                         'react/user-feedback/intro-message',
                         'react/user-feedback/feedback-type',
                         'react/user-feedback/silent-user-feedback',
-                        'react/user-feedback/invoke'
                     ]
                 },
                 {
@@ -291,31 +294,29 @@ module.exports = {
                     items: [
                         'react/users/overview',
                         'react/users/register-user',
+                        'react/users/chat',
                         'react/users/unregister-user',
                         'react/users/update-user-metadata',
                         'react/users/update-user-identifier',
                         'react/users/advanced-usage',
-                        'react/users/chat',
                     ]
                 },
             ]
         },
         {
             type: 'category',
-            label: 'Configuration & Data',
+            label: 'Configuration and data',
             items: [
                 'react/configuration-and-data/overview',
-                'react/configuration-and-data/essentials',
-                'react/configuration-and-data/new-ticket-screen-elements',
                 'react/configuration-and-data/disable',
-                'react/configuration-and-data/inspect',
+                'react/configuration-and-data/new-ticket-screen-elements',
+                'react/configuration-and-data/data-attached-by-default',
                 'react/configuration-and-data/auto-screenshot',
                 'react/configuration-and-data/auto-screen-recording',
-                'react/configuration-and-data/permissions',
                 'react/configuration-and-data/activity-history',
-                'react/configuration-and-data/auto-attach-files',
                 'react/configuration-and-data/black-box',
                 'react/configuration-and-data/ticket-metadata',
+                'react/configuration-and-data/auto-attach-files',
                 'react/configuration-and-data/manage-sensitive-data',
                 'react/configuration-and-data/data-privacy-disclosure'
             ]

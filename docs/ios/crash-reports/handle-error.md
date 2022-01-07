@@ -67,3 +67,14 @@ private func functionThatCanThrowError() throws {
 ```
 
 </TabItem></Tabs>
+
+## Error structure
+
+The ``` handleError``` function will accept NSError types which naturally contain the following properties:
+  1. code: ```Int```
+  1. domain: ```String```
+  1. userInfo: ```[AnyHashable : Any]? = nil```
+
+## Caught Exceptions?
+
+Shake doesn't provide an interface to directly report caught NSExceptions. Cocoa APIs are not exception safe, and should be treated as a developer error which terminates the program shortly after. Although the NSException can be caught by using the @catch statement, this is considered a bad practice and really shouldn't be done anywhere in your code.

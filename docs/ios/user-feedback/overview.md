@@ -20,7 +20,7 @@ To get you started, here are just two examples:
   src={useBaseUrl('screens/open-shake-new-ticket-screen@2x.png')}
 />
 </table>
-<p class="p2 center-align">Common internal testing setup: Make Shake's <a href="/android/shake-ui/new-ticket-screen/">New ticket screen</a> available from anywhere</p>
+<p class="p2 center-align">Common internal testing setup: Make Shake's <a href="/ios/shake-ui/new-ticket-screen/">New ticket screen</a> available from anywhere</p>
 
 <table class="media-container mt-50">
 <img
@@ -29,7 +29,7 @@ To get you started, here are just two examples:
   src={useBaseUrl('screens/open-shake-home-screen@2x.png')}
 />
 </table>
-<p class="p2 center-align">Common production setup: A button on your Help screen that opens Shake's <a href="/android/shake-ui/home-screen/">Home screen</a></p>
+<p class="p2 center-align">Common production setup: A button on your Help screen that opens Shake's <a href="/ios/shake-ui/home-screen/">Home screen</a></p>
 
 
 

@@ -13,38 +13,22 @@ your users can also upload their files (images, documents) to tickets.
 That has nothing to do with these auto-attached files.
 
 ## Methods
+You can quietly attach files by using any of the methods described below.
 
-You can programmatically attach files by using any of the methods described below.
-To define which files will be attached when a user submits a ticket,
-you must call the `Shake.onPrepareData` method overriding the `attachedFiles` method inside, as shown in the examples below.
+### Setting a custom filename and adding data
 
-:::note
+ShakeFile can be initialized with a filename (String) and data (NSData / Data). As custom data is provided, the file name cannot be automatically detected so it's mandatory:
 
-You can call the `Shake.onPrepareData` method anywhere in your app,
-just be careful to only call it once since any subsequent calls will override the former ones.
-
-:::
-
-### Set a custom filename and then attach a file
-
-*ShakeFile* can be initialized with a desired filename (String) and an absolute file path (String) to your file.
-Instead of a file path, you can initialize it with the actual file object (java.io.File) too.
-
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
-<Tabs
-  groupId="ios"
-  defaultValue="swift"
-  values={[
-    { label: 'Objective-C', value: 'objectivec'},
-    { label: 'Swift', value: 'swift'},
-  ]
-}>
+<Tabs 
+groupId="ios" 
+defaultValue="swift" 
+values={[ 
+  { label: 'Objective-C', value: 'objectivec'}, 
+  { label: 'Swift', value: 'swift'}, ] }>
 
 <TabItem value="objectivec">
 
-```java title="App.m"
+```java title="AppDelegate.m" 
 NSString fileName = ... 
 NSData fileData = ...
 
@@ -53,7 +37,7 @@ SHKShake.onPrepareReportData = ^NSArray<SHKShakeFile *> * _Nonnull {
   NSMutableArray <SHKShakeFile *> attachedFiles = NSMutableArray.new; 
   SHKShakeFile attachedFile = [[SHKShakeFile alloc] initWithName:fileName andData:fileData]; 
   [attachedFiles addObject:attachedFile]; 
-return attachedFiles; 
+  return attachedFiles; 
 }; 
 //highlight-end
 ```
@@ -62,7 +46,7 @@ return attachedFiles;
 
 <TabItem value="swift">
 
-```swift title="App.swift"
+```swift title="AppDelegate.swift"
 let fileName: String = ...
 let logData: Data = ...
 
@@ -77,31 +61,22 @@ Shake.onPrepareReportData = {
 //highlight-end
 ```
 
-</TabItem>
-</Tabs>
+</TabItem> </Tabs>
 
-### Attach a file without the custom filename
+### Setting a custom filename and then attaching a file
 
-*ShakeFile* can be initialized without a filename, with just an absolute file path (String) to your file.
-Instead of a file path, you can initialize it with the actual file object (java.io.File), too.
-If you initialize it this way, the filename shown on your Shake dashboard will be determined automatically from the passed file's name.
+ShakeFile can also be initialized with a desired filename (String) and a local url (NSURL) to your file:
 
-To define which files will be uploaded when a user reports a ticket,
-you must call the `onPrepareData` method, overriding the `attachedFiles` method inside,
-as shown in the example below.
-
-<Tabs
-  groupId="ios"
-  defaultValue="swift"
-  values={[
-    { label: 'Objective-C', value: 'objectivec'},
-    { label: 'Swift', value: 'swift'},
-  ]
-}>
+<Tabs 
+groupId="ios" 
+defaultValue="swift" 
+values={[ 
+  { label: 'Objective-C', value: 'objectivec'}, 
+  { label: 'Swift', value: 'swift'}, ] }>
 
 <TabItem value="objectivec">
 
-```java title="App.m"
+```java title="AppDelegate.m" 
 NSString fileName = ... 
 NSURL fileUrl = ...
 
@@ -110,16 +85,15 @@ SHKShake.onPrepareReportData = ^NSArray<SHKShakeFile *> * _Nonnull {
   NSMutableArray <SHKShakeFile *> attachedFiles = NSMutableArray.new; 
   SHKShakeFile attachedFile = [[SHKShakeFile alloc] initWithName:fileName andFileURL:fileUrl]; 
   [attachedFiles addObject:attachedFile]; 
-return attachedFiles; 
+  return attachedFiles; 
 }; 
 //highlight-end
 ```
-
 </TabItem>
 
 <TabItem value="swift">
 
-```swift title="App.swift"
+```swift title="AppDelegate.swift"
 let fileName: String = ...
 let fileUrl: URL = ...
 
@@ -133,26 +107,21 @@ Shake.onPrepareReportData = {
 }
 //highlight-end
 ```
+</TabItem> </Tabs>
 
-</TabItem>
-</Tabs>
-
-## Just attaching a file 
+### Just attaching a file
 Or, you can initialize ShakeFile only with a local file url (NSURL), and the file name shown on the web Dashboard will be determined automatically from the passed file's URL:
 
 <Tabs 
 groupId="ios" 
 defaultValue="swift" 
 values={[ 
-    { label: 'Objective-C', value: 'objectivec'}, 
-    { label: 'Swift', value: 'swift'}, 
-  ] 
-}>
+  { label: 'Objective-C', value: 'objectivec'}, 
+  { label: 'Swift', value: 'swift'}, ] }>
 
 <TabItem value="objectivec">
 
-```java title="AppDelegate.m" 
-NSURL *fileUrl = ...
+```objectivec title="AppDelegate.m" NSURL *fileUrl = ...
 //highlight-start 
 SHKShake.onPrepareReportData = ^NSArray<SHKShakeFile *> * _Nonnull { 
   NSMutableArray <SHKShakeFile *> attachedFiles = NSMutableArray.new; 
@@ -162,7 +131,6 @@ SHKShake.onPrepareReportData = ^NSArray<SHKShakeFile *> * _Nonnull {
 }; 
 //highlight-end
 ```
-
 </TabItem>
 
 <TabItem value="swift">
@@ -181,7 +149,7 @@ Shake.onPrepareReportData = {
 //highlight-end
 ```
 
-</TabItem></Tabs>
+</TabItem> </Tabs>
 
 ## Limitations
 

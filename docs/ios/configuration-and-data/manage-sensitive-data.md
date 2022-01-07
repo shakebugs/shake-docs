@@ -67,6 +67,11 @@ Shake.configuration.isSensitiveDataRedactionEnabled = false
 
 ## Views
 
+:::note 
+This feature is disabled for iOS applications built with SwiftUI. 
+:::
+
+
 <table class="media-container media-container-highlighted mt-40 mb-40">
 <img
   alt="Private views"
@@ -277,84 +282,17 @@ Shake.clearPrivateViews()
 </TabItem>
 </Tabs>
 
-## Auto screen recording
-Use the Android system flag `FLAG_SECURE` on an activity if you want to prevent 
-sensitive data from being visible on the auto screen recording.
-It will make the activity black in the video:
-
-<Tabs
-  groupId="ios"
-  defaultValue="swift"
-  values={[
-    { label: 'Objective-C', value: 'objectivec'},
-    { label: 'Swift', value: 'swift'},
-  ]
-}>
-
-<TabItem value="objectivec">
-
-```java title="App.m"
-import android.os.Bundle;
-// highlight-next-line
-import android.view.WindowManager;
-
-import androidx.appcompat.app.AppCompatActivity;
-
-public class PaymentActivity extends AppCompatActivity {
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_payment);
-
-        // highlight-start
-        getWindow().setFlags(
-            WindowManager.LayoutParams.FLAG_SECURE,
-            WindowManager.LayoutParams.FLAG_SECURE);
-        // highlight-end
-    }
-
-    ...
-}
-```
-
-</TabItem>
-
-<TabItem value="swift">
-
-```swift title="App.swift"
-import android.os.Bundle
-// highlight-next-line
-import android.view.WindowManager
-import androidx.appcompat.app.AppCompatActivity
-
-public class PaymentActivity : AppCompatActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_payment)
-
-        // highlight-start
-        window.setFlags(
-            WindowManager.LayoutParams.FLAG_SECURE,
-            WindowManager.LayoutParams.FLAG_SECURE)
-        // highlight-end
-    }
-
-    ...
-}
-```
-
-</TabItem>
-</Tabs>
-
-Visit [Auto screen recording](/ios/configuration-and-data/auto-screen-recording.md)
-to read how to turn it off altogether.
-
 ## Touch events
 
 Marking a view as private will automatically delete its touch events' text properties too.
 Consequently, you'll see them as `data_redacted` strings in ticket's
 [Activity history](/ios/configuration-and-data/activity-history).
 The view's ID, accessibility labels and tags remain visible.
+
+:::note
+Shake supports privacy redaction on all kinds of UIView and its subclasses. On the other side, Shake does not support privacy redaction on UIBarItem(s) like: UIBarButtonItem, UIBarButtonItemGroup and UITabBarItem since those are not UIVew subclasses.
+:::
+
 
 ## Network requests
 Network requests may contain sensitive data which you may not want to send to Shake servers.

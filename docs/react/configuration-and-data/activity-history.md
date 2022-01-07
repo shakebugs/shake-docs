@@ -4,32 +4,22 @@ title: Activity history
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Shake diligently tracks user's interaction with your app, their network traffic, notifications, logs and system events, and automatically attaches all of those to every bug report.
+>Shake tracks user's interaction with your app, their network traffic, notifications, logs and system events,
+and automatically attaches all of those to the ticket.
 
-## Introduction
-You can inspect all events that lead to a bug being reported. A link to *Activity history* is located in the top right corner:
-
-<img
-  alt="Activity screen"
-  src={useBaseUrl('screens/activity_screen.png')}
-/>
-
-## Setting up
+## Setup
 
 ### User actions
-
 SDK automatically observes taps made on your app's UI elements.
+On Android, [code snippet](/react/install/manual-linking) required to enable touch tracking is added by running [add command](/react/install/installation).
 
-On Android, [code snippet](/react/install/manual-linking.md#android) required to enable touch tracking is added by running [add command](/react/install/installation.md#install).
 
 ### Network requests
 Network tracker is disabled by default, to enable network requests tracking use the following method:
-
-```javascript title="App.js"
-// highlight-next-line
+```javascript title="App.js" 
+// highlight-next-line 
 Shake.setNetworkRequestsEnabled(true);
 ```
-
 You can add your own custom network requests at any time:
 
 ```javascript title="App.js"
@@ -52,17 +42,15 @@ Shake.insertNetworkRequest(networkRequestBuilder);
 ```
 
 ### System events
-System events are tracked automatically and require no additional setup.
-These are application lifecycle events.
+System events - also known as app lifecycle events - are tracked automatically and require no additional setup.
 
 ### Notifications
-On iOS, notifications are tracked automatically and require no additional setup.   
-
-Android requires notifications permission in the settings to track notifications.  
+On iOS, notifications are tracked automatically and require no additional setup.
+Android requires notifications permission in the settings to track notifications.
 Use the following code snippet to show notification settings screen to the user:
 
-```javascript title="App.js"
-// highlight-next-line
+```javascript title="App.js" 
+// highlight-next-line 
 Shake.showNotificationsSettings();
 ```
 
@@ -82,16 +70,12 @@ Shake.insertNotificationEvent(notificationEventBuilder);
 ```
 
 ### Custom logs
-You can add your own custom logs to Activity history, which will then be shown as part of every bug report.
-Here’s an example of how this would look like in code:
+You can add your own custom logs to Activity history, which will then be shown as part of every bug report. Here’s an example of how this would look like in code:
 
-```javascript title="App.js"
-// highlight-next-line
-import Shake, { LogLevel } from '@shakebugs/react-native-shake';
-
-const sendCustomLog = () => {
-    // highlight-next-line
-    Shake.log(LogLevel.INFO, 'This is a Shake custom log.');
+```javascript title="App.js" // highlight-next-line import Shake, { LogLevel } from '@shakebugs/react-native-shake';
+const sendCustomLog = () => { 
+// highlight-next-line 
+Shake.log(LogLevel.INFO, 'This is a Shake custom log.'); 
 }
 ```
 
@@ -106,17 +90,15 @@ LogLevel.ERROR
 ```
 
 ### Console logs
-Console logs are recorded automatically and require no additional setup.
-If you want to disable this feature use the method below:
-
-```javascript title="App.js"
-// highlight-next-line
+Console logs are recorded automatically and require no additional setup. If you want to disable this feature use the method below:
+```javascript title="App.js" 
+// highlight-next-line 
 Shake.setConsoleLogsEnabled(false);
 ```
 
-Add the following code snippet to your *AppDelegate.m* to make sure that console logs are recorded by Shake on iOS:
+Add the following code snippet to your *AppDelegate.m* to make sure that console logs are recorded by Shake on iOS.
 
-```objectivec title="AppDelegate.m"
+```java title="AppDelegate.m"
 // highlight-next-line
 #import <React/RCTLog.h>
 
@@ -139,23 +121,21 @@ RCTLogFunction ShakeLogFunction = ^(RCTLogLevel level, __unused RCTLogSource sou
 ```
 
 :::note
-
 Make sure that activity history is enabled if you want to send console logs with your report.
-
 :::
 
 ## Limitations
-In a Free workspace you can see up to 20 events that lead to every bug.
+In a Free workspace you can see up to 20 events that led to the ticket being reported.
 If you need to dive really deep to find causes of the weirdest bugs,
-in a Premium workspace you can browse the entire Activity history.
+In a Premium workspace you can browse the full Activity history.
 
-Network request limit for both request body and response body is 100 kB respectively.
-If request body or response body contains binary data, it will be presented as a *Binary data* string.
+The network request limits for both the request body and the response body are 100 kB each.
+If the request body or the response body contains binary data, it will be presented as a *Binary data* string.
 
-## Enabling and disabling
-Activity history is enabled by default, however, you can use the method below to disable it:
+## Disable
+Activity history is enabled by default, use the method below to disable it altogether:
 
-```javascript title="App.js"
-// highlight-next-line
+```javascript title="App.js" 
+// highlight-next-line 
 Shake.setEnableActivityHistory(false);
 ```

@@ -3,31 +3,24 @@ id: ticket-metadata
 title: Ticket metadata
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
-This page explains how to send a value of any variable you wish from a user's app to your web Dashboard.
-
-## Introduction
-
-Every app is unique so the [Essentials](/flutter/configuration-and-data/essentials.md) sent with each bug report are often not enough.
-That's why the Shake SDK allows you to send yourself any custom data from the app using Metadata.
-It's a *String* pair which you can shape any way you want, and you can put anything you want into it.
-
-You can find Metadata below [Blackbox](/flutter/configuration-and-data/black-box.md) on the web Dashboard, as shown below:
-
-<img
-  alt="Metadata screen"
-  src={useBaseUrl('screens/metadata_screen.png')}
-/>
-
+>Every app is unique so the [Data attached by default](/flutter/configuration-and-data/data-attached-by-default) sent with each ticket are often not enough.
+That's why Shake also allows you to automatically attach any custom data from your app to the ticket.
 
 ## How to use
 
-To set the Metadata, call the `Shake.setMetadata()` method passing your desired data you want to
-receive on your web Dashboard as a *String* pair.
+To set ticket metadata, call `Shake.setMetadata` and pass the data you want to
+receive on your Shake dashboard as a *String* pair.
 
-You can call the `Shake.setMetadata()` method anywhere within your app, but be careful because any subsequent calls with the same *String* key will override the former *String* value.
-Let’s say you wanted to send yourself a user’s ID after he successfully logs into your app using Metadata.
-It would look something like this in code:
+:::note
+
+You can call `Shake.setMetadata` anywhere in your app, but be careful because any subsequent calls with the same *String* key will override the former *String* value.
+
+:::
+
+Let’s say you want to send yourself a roomID after a user successfully joins a chat room. You would do this:
 
 ```dart title="main.dart"
 // highlight-next-line
@@ -39,11 +32,11 @@ void onLoginSuccessful(User user) {
 }
 ```
 
-## Clear metadata
+## Clear Ticket metadata
 
-If you want to clear existing metadata, you can use `Shake.clearMetadata` method.
+If you want to clear existing ticket metadata, you can use the `Shake.clearMetadata` method.
 
-For example, you want to clear metadata when the user logs out:
+For example, you want to clear ticket metadata when the user leaves a chat room:
 
 ```dart title="main.dart"
 // highlight-start
@@ -58,3 +51,21 @@ void onLogOutPressed() {
     Shake.clearMetadata();
 }
 ```
+
+## Ticket metadata vs. User metadata
+
+Use Ticket metadata to attach useful custom data to tickets. Examples are statuses of various app variables at the moment of ticket being sent:
+* Current chat room ID
+* List of items currently in a shopping cart
+* Task synced true/false
+* Number of search results
+* List sorted by what
+* Video muted true/false
+
+Use [User metadata](/flutter/users/update-user-metadata.md) to attach custom data to users. Examples are:
+* First and last name
+* User ID
+* Address
+* Subscription status
+* Date of birth
+

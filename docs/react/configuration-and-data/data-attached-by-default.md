@@ -1,4 +1,4 @@
-﻿---
+---
 id: data-attached-by-default
 title: Data attached by default
 ---
@@ -186,7 +186,7 @@ The ones you don't see were either denied or not requested at all.
 ## Attach more data
 
 If you want Shake to attach custom data to your tickets, you can do that as well.
-Read about attaching your own variables to tickets with [Ticket metadata](/flutter/configuration-and-data/ticket-metadata.md).
+Read about attaching your own variables to tickets with [Ticket metadata](react/configuration-and-data/ticket-metadata.md).
 
-Do you also want to attach files to tickets programmatically? Visit [Auto attach files](/flutter/configuration-and-data/auto-attach-files.md).
+Do you also want to attach files to tickets programmatically? Visit [Auto attach files](/react/configuration-and-data/auto-attach-files.md).
 

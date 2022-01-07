@@ -1,6 +1,6 @@
 ﻿---
 id: manage-sensitive-data
-title: Manage sensitive data
+title: Protect sensitive data
 ---
 As with any third-party service, it’s important for you to understand and have the ability to manage
 what data is sent to Shake servers. Shake SDK allows you to filter out sensitive data on the mobile device itself,

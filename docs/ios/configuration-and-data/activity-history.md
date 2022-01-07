@@ -19,13 +19,44 @@ Shake automatically observes taps made on your app's UI elements.
 This feature is disabled for iOS applications built with SwiftUI.
 :::note
 
+### Screen changes
+
+SDK automatically tracks application screen changes, more precisely, ViewController lifecycle.
+
+For iOS applications built with UIKit, there is no need for additional configuration.
+
+Applications built with SwiftUI should use the Shake provided View extension on their top level views which represent screens in their application.
+
+shakeIntercept View extension allows Shake to hook into the View lifecycle and notify Shake of the screen changes. The extension does not alter the View in any way and allows it to passthrough unchanged.
+
+```swift title="MySwiftUIContentView.swift" 
+// highlight-start 
+struct UserDetailsView: View {
+var user: UserModel
+
+var body: some View {
+    VStack {
+        user.avatar
+        Text("Name: \(user.name)")
+        /// Additional layout
+    }.shakeIntercept(viewName: "UserDetails")
+}
+} 
+// highlight-end
+ ```
+
 
 ### Network requests
-Shake will capture the user's network traffic and log the events on the web dashboard
+
 You can configure Shake to capture all network traffic from a specific URLSession. Network requests are a vital part of all modern applications. Having a clear presentation of network request logs gives you a valuable insight of your application lifecycle.
 
+
+#### Setup
+
 Shake Network Request reporting feature is enabled with the Shake.isActivityHistoryEnabled flag, however this doesn't automatically start intercepting any of your app URL requests.
+
 Shake network intercepting works by stubbing your URLSessionConfiguration object attached to your app's URLSession.
+
 :::note
 Make sure to call registerSessionConfiguration Shake method before initialising your URLSession.
 :::
@@ -79,16 +110,16 @@ Apps can have multiple URLSession_s or even create them for individual requests 
 
 Integration with other networking libraries boils down to registering the URLSessionConfiguration object with Shake and passing the configuration to the library initializer method.
 
-Sensitive data
+#### Sensitive data
 
 Network requests can contain sensitive data that you may not want to send to Shake servers. Although Shake will automatically scan the intercepted requests and redact some of the data it can recognize, you can set your custom network request filter to precisely filter out all sensitive fields from the intercepted network request.
-Checkout the Manage Sensitive Data article.
+Checkout the [Manage Sensitive Data](/ios/configuration-and-data/manage-sensitive-data) article.
 
-Advanced usage
+#### Advanced usage
 
 Advanced users will use client-server authentication mechanism or even register their own URLProtocol classes. This section covers these use cases and provides a way to integrate Shake in these kinds of implementations.
 
-Handling authentication challenges
+#### Handling authentication challenges
 
 Some advanced users will use SSL pinning for their URL requests, which is used to validate the identity of the client to the server or vice versa.
 
@@ -194,12 +225,12 @@ class NetworkService {
 
 The above snippet, if set up correctly, causes all of the authentication challenges from your URLSession to sink through the protocol method in your AuthenticationDelegate class declared in the above snippet.
 
-Custom URLProtocol
+#### Custom URLProtocol
 
 If your app is registering a custom URLProtocol class and is already intercepting your app's requests for various reasons, do not use the Shake.registerSessionConfiguration or Shake.registerAuthDelegate methods as they will interfere with the URLProtocol subclass you defined.
 Instead, use the Shake.insertNetworkRequest method to insert the network requests manually while maintaining your custom implementation intact.
 
-Manual inserting
+#### Manual inserting
 
 Network events can be manually inserted to Shake and require no prior setup.
 We recommend using this option if your application is using its own URLProtocol or there are only certain network events that should be logged.
@@ -260,77 +291,34 @@ private func getUser(withSession session: URLSession, andRequest request: URLReq
 System events - also known as app lifecycle events - are tracked automatically and require no additional setup.
 
 ### Notifications
-In order for Shake to track notifications throughout your app, add this line where appropriate:
 
-<Tabs
-  groupId="ios"
-  defaultValue="swift"
-  values={[
-    { label: 'Objective-C', value: 'objectivec'},
-    { label: 'Swift', value: 'swift'},
-  ]
-}>
+Notifications are tracked automatically and require no additional setup. 
 
-<TabItem value="objectivec">
+If you want Shake to manually handle notification tracking, you can use this method instead: 
 
-```java title="App.m"
-// highlight-next-line 
-[SHKShake handleNotificationWithNotificationTitle: notificationTitle notificationDescription:notificationDescription];
-```
+<Tabs 
+groupId="ios" 
+defaultValue="swift" 
+values={[ 
+  { label: 'Objective-C', value: 'objectivec'}, 
+  { label: 'Swift', value: 'swift'}, ] }> 
+  
+  <TabItem value="objectivec"> 
 
-</TabItem>
-
-<TabItem value="swift">
-
-```swift title="App.swift"
-// highlight-start
-// highlight-next-line 
-Shake.handleNotification(withNotificationTitle: notificationTitle, notificationDescription: notificationDescription)
-```
-
-</TabItem>
-</Tabs>
-
-:::note
-
-This starts the notification listener service, which will require
-users to grant notification access the first time they open your app.
-
-:::
-
-If you want Shake to manually handle notification tracking, use this method instead:
-
-<Tabs
-  groupId="ios"
-  defaultValue="swift"
-  values={[
-    { label: 'Objective-C', value: 'objectivec'},
-    { label: 'Swift', value: 'swift'},
-  ]
-}>
-
-<TabItem value="objectivec">
-
-```java title="App.m"
-// highlight-start
-Shake.handleNotification(
-    String notificationTitle,
-    String notificationDescription
-);
-// highlight-end
-```
+  ```java title="AppDelegate.m" 
+  // highlight-next-line 
+  [SHKShake handleNotificationWithNotificationTitle: notificationTitle 
+  notificationDescription:notificationDescription];
+  ```
 
 </TabItem>
 
 <TabItem value="swift">
 
-```kotlin title="App.swift"
-// highlight-start
-Shake.handleNotification(
-    notificationTitle: String,
-    notificationDescription: String
-)
-// highlight-end
+```swift title="AppDelegate.swift" 
+// highlight-next-line 
+Shake.handleNotification(withNotificationTitle: notificationTitle, 
+  notificationDescription: notificationDescription)
 ```
 
 </TabItem>

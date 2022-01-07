@@ -4,38 +4,30 @@ title: Activity history
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Shake diligently tracks user's interaction with your app, their network traffic, notifications, logs and system events, and automatically attaches all of those to every bug report.
+>Shake tracks user's interaction with your app, their network traffic, notifications, logs and system events,
+and automatically attaches all of those to the ticket.
 
-## Introduction
-You can inspect all events that lead to a bug being reported. A link to *Activity history* is located in the top right corner:
-
-<img
-  alt="Activity screen"
-  src={useBaseUrl('screens/activity_screen.png')}
-/>
-
-## Setting up
+## Setup
 
 ### User actions
 User actions tracking is currently not supported.
 
 ### Network requests
-Shake provides you a wrapper for *dart:io HttpClient* class which allows you to track network requests.
-Additionally, if you are using *dio* or *http* packages for sending network requsts, you can use one our [extensions](https://pub.dev/publishers/shakebugs.com/packages).
+Shake provides you a wrapper for dart:io HttpClient class which allows you to track network requests. Additionally, if you are using dio or http packages for sending network requsts, you can use one our extensions.
 
 #### dart:io
-Use *ShakeHttpClient* wrapper class to perform network requests.
-All network requests sent with the *ShakeHttpClient* instance will be visible on the dashboard:
 
-```dart title="main.dart"
-// highlight-next-line
+Use ShakeHttpClient wrapper class to perform network requests. All network requests sent with the ShakeHttpClient instance will be visible on the dashboard.
+
+```dart title="main.dart" 
+// highlight-next-line 
 import 'package:shake_flutter/network/shake_http_client.dart';
 
-void sendNetworkRequest() async {
-    // highlight-start
-    ShakeHttpClient shakeHttpClient = ShakeHttpClient();
-    await shakeHttpClient.getUrl(Uri.parse("http://www.shakebugs.com"));
-    // highlight-end
+void sendNetworkRequest() async { 
+    // highlight-start 
+    ShakeHttpClient shakeHttpClient = ShakeHttpClient(); 
+    await shakeHttpClient.getUrl(Uri.parse("http://www.shakebugs.com")); 
+    // highlight-end 
 }
 ```
 
@@ -54,24 +46,25 @@ dependencies:
     shake_dio_interceptor: ^15.1.0
 ```
 
-Add *ShakeDioInterceptor* to your *Dio* instance:
+Add ShakeDioInterceptor to your Dio instance:
 
-```dart title="main.dart"
-// highlight-next-line
-import 'package:shake_dio_interceptor/shake_dio_interceptor.dart';
+```dart title="main.dart" // 
+highlight-next-line import 
+'package:shake_dio_interceptor/shake_dio_interceptor.dart';
 
-void sendNetworkRequest() async {
-    // highlight-start
-    Dio dio = Dio();
-    dio.interceptors.add(ShakeDioInterceptor());
-    await dio.get('https://www.shakebugs.com');
-    // highlight-end
+void sendNetworkRequest() async { 
+    // highlight-start 
+    Dio dio = Dio(); 
+    dio.interceptors.add(ShakeDioInterceptor()); 
+    await dio.get('https://www.shakebugs.com'); 
+    // highlight-end 
 }
 ```
 
 All network requests sent with the *Dio* instance will be visible on the dashboard.
 
 #### http
+
 Install [shake_http_client](https://pub.dev/packages/shake_http_client) extension for *http* package:
 
 ```yaml title="pubspec.yaml"
@@ -80,17 +73,17 @@ dependencies:
     shake_http_client: ^15.1.0
 ```
 
-Use *ShakeHttpClient* to send network requests:
+Use ShakeHttpClient to send network requests:
 
-```dart title="main.dart"
-// highlight-next-line
+```dart title="main.dart" 
+// highlight-next-line 
 import 'package:shake_http_client/shake_http_client.dart';
 
-void sendNetworkRequest() async {
-    // highlight-start
-    ShakeHttpClient shakeHttpClient = ShakeHttpClient();
-    await shakeHttpClient.get(Uri.parse('https://www.shakebugs.com'));
-    // highlight-end
+void sendNetworkRequest() async { 
+    // highlight-start 
+    ShakeHttpClient shakeHttpClient = ShakeHttpClient(); 
+    await shakeHttpClient.get(Uri.parse('https://www.shakebugs.com')); 
+    // highlight-end 
 }
 ```
 
@@ -123,17 +116,16 @@ void insertNetworkRequest() {
 ```
 
 ### System events
-System events are tracked automatically and require no additional setup.
-These are application lifecycle events.
+System events - also known as app lifecycle events - are tracked automatically and require no additional setup.
 
 ### Notifications
-On iOS, notifications are tracked automatically and require no additional setup.   
+On iOS, notifications are tracked automatically and require no additional setup.
 
-Android requires notifications permission in the settings to track notifications.  
+Android requires notifications permission in the settings to track notifications.
 Use the following code snippet to show notification settings screen to the user:
 
-```dart title="main.dart"
-// highlight-next-line
+```dart title="main.dart" 
+// highlight-next-line 
 Shake.showNotificationsSettings();
 ```
 
@@ -157,11 +149,10 @@ void insertNotificationEvent() {
 ```
 
 ### Custom logs
-You can add your own custom logs to Activity history, which will then be shown as part of every bug report.
-Here’s an example of how this would look like in code:
+You can add your own custom logs to Activity history, which will then be shown as part of every bug report. Here’s an example of how this would look like in code:
 
-```dart title="main.dart"
-// highlight-next-line
+```dart title="main.dart" 
+// highlight-next-line 
 Shake.log(LogLevel.info, 'This is a Shake custom log.');
 ```
 
@@ -179,8 +170,8 @@ LogLevel.error
 Console logs are recorded automatically and require no additional setup.
 If you want to disable this feature use the method below:
 
-```dart title="main.dart"
-// highlight-next-line
+```dart title="main.dart" 
+// highlight-next-line 
 Shake.setConsoleLogsEnabled(false);
 ```
 
@@ -191,15 +182,15 @@ Make sure that activity history is enabled if you want to send console logs with
 :::
 
 ## Limitations
-In a Free workspace you can see up to 20 events that lead to every bug.
+In a Free workspace you can see up to 20 events that led to the ticket being reported.
 If you need to dive really deep to find causes of the weirdest bugs,
-in a Premium workspace you can browse the entire Activity history.
+In a Premium workspace you can browse the full Activity history.
 
-Network request limit for both request body and response body is 100 kB respectively.
-If request body or response body contains binary data, it will be presented as a *Binary data* string.
+The network request limits for both the request body and the response body are 100 kB each.
+If the request body or the response body contains binary data, it will be presented as a *Binary data* string.
 
-## Enabling and disabling
-Activity history is enabled by default, however, you can use the method below to disable it:
+## Disable
+Activity history is enabled by default, use the method below to disable it altogether:
 
 ```dart title="main.dart"
 // highlight-next-line

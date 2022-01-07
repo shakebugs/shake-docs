@@ -2,7 +2,7 @@
 id: releases
 title: Release notes
 ---
->This page lists all updates to the Shake Android SDK.
+>This page lists all updates to the Shake iOS SDK.
 
 ## What's next?
 
@@ -197,7 +197,7 @@ and read the notifications users receive.
 #### What's new
 
 To continue delivering you more and more options in a scalable manner,
-we have rewritten the whole Android SDK API Version 10.
+we have rewritten the whole iOS SDK API.
 It's like getting a flu shot — feel free to hate us for a few minutes while you tweak a call or two,
 but we sincerely promise you'll enjoy all the benefits 100 times over.
 

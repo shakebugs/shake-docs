@@ -4,23 +4,23 @@ title: New ticket screen
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-*New ticket* screen is used to submit a ticket to Shake.
+>Your users submit tickets from this screen.
 
 ## Introduction
 
-The screen comprises of various components used to fill in the ticket details.
+The New ticket screen contains various elements, many of which can be tweaked according to your needs.
+Visit [Elements of the New ticket screen](/react/configuration-and-data/overview/#elements-of-the-new-ticket-screen) for more details.
 
-Some of the components, like [Inspect](react/configuration-and-data/inspect.md) and [Feedback type](react/user-feedback/feedback-type.md) can be turned off via the Shake configuration, and some
-are disabled depending on the report context.
-
+<table class="media-container mt-50">
 <img
-  className="screen-image"
   alt="New ticket screen"
-  src={useBaseUrl('screens/new_screen.png')}
+  width="370"
+  src={useBaseUrl('screens/android-new-ticket-screen@2x.png')}
 />
+</table>
 
-## Show
+## How to show this screen
 
-This screen is shown upon manual user invocation of Shake.
-To show this screen programmatically, call `Shake.show` with no arguments, as it is the default option.
-Read more about manual invocations on the [Invocations](react/user-feedback/invoke.md/#invoke-through-code) page.
+This screen is shown when your users invoke Shake manually.
+To show this screen programmatically, call `Shake.show` with no arguments since it's the default option.
+Visit [Invocations](/react/user-feedback/invoke.md) to read about various ways to invoke Shake.

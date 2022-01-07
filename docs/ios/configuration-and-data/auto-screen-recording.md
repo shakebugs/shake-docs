@@ -32,7 +32,7 @@ import TabItem from '@theme/TabItem';
 
 ```java title="App.m"
 // highlight-next-line 
-SHKShake.configuration.isAutoVideoRecordingEnabled = true;
+SHKShake.configuration.setAutoVideoRecordingEnabled = true;
 ```
 
 </TabItem>
@@ -41,11 +41,13 @@ SHKShake.configuration.isAutoVideoRecordingEnabled = true;
 
 ```swift title="App.swift"
 // highlight-next-line
-Shake.configuration.isAutoVideoRecordingEnabled = true
+Shake.configuration.setAutoVideoRecordingEnabled = true
 ```
 
 </TabItem>
 </Tabs>
+
+Duration of the auto-attached screen recording is 15 seconds.
 
 <table class="media-container media-container-highlighted mt-40 mb-40">
 <img
@@ -55,7 +57,41 @@ Shake.configuration.isAutoVideoRecordingEnabled = true
 />
 </table>
 
-Duration of the auto-attached screen recording is 15 seconds.
+## How to use
+
+Automatic screen recording is disabled by default but can be enabled by calling Shake.configuration.isAutoVideoRecordingEnabled = true before Shake.start(). 
+
+<Tabs 
+groupId="ios" 
+defaultValue="swift" 
+values={[
+  { label: 'Objective-C', value: 'objectivec'},
+  { label: 'Swift', value: 'swift'},]}>
+
+  <TabItem value="objectivec">
+
+```java title="AppDelegate.m" 
+// highlight-next-line 
+SHKShake.configuration.isAutoVideoRecordingEnabled = true;
+```
+</TabItem>
+
+<TabItem value="swift">
+
+```swift title="AppDelegate.swift"
+// highlight-next-line
+Shake.configuration.isAutoVideoRecordingEnabled = true
+```
+
+</TabItem></Tabs>
+
+:::note
+Screen recording runs on iOS 13+ devices only. Testing on iOS simulator may not work and can produce warnings in console log without screen recording.
+:::
+
+Security
+Screen recording is managed by the system and recording is automatically stopped when app goes to background.
+No third party data is recorded.
 
 ## Privacy
 

@@ -2,17 +2,28 @@
 id: invoke
 title: Invoke
 ---
-This page describes in detail all the different methods that can be used to invoke the SDK.
+
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+>Decide how you want Shake user feedback to be invoked.
 
 ## Invoke manually
-By default, the SDK is invoked when a user shakes their device. You don't need to code anything.
+By default, Shake user feedback is invoked when a user shakes their device.
+You don't need to code anything:
+
+<table class="media-container mt-40 mb-40">
+<img
+  alt="Open Shake New ticket screen"
+  width="520"
+  src={useBaseUrl('img/open-shake-new-ticket-screen.svg')}
+/>
+</table>
 
 But if you want to, you can customize that.
+Let's look at an example where you want Shake user feedback to be invoked either when your users shake their device or when they take a screenshot:
 
-Let's look at an example. You want your users to invoke SDK either when
-they shake their device, or when they take a screenshot. 
-To do that, set true or false for certain configuration properties:
-
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 ```javascript title="App.js"
 // highlight-start
@@ -22,8 +33,8 @@ Shake.start('client-id', 'client-secret');
 // highlight-end
 ```
 
-This method also enables you to change the preferred invocation event on-the-go during runtime.
-Here’s a list of all available ones below, feel free to use any combination of these:
+You can also change the preferred invocation event on-the-fly during runtime.
+Here’s a list of all available options. Feel free to use any combination of these:
 
 ```javascript title="App.js"
 // highlight-start
@@ -33,9 +44,9 @@ Shake.setShowFloatingReportButton(true);
 // highlight-end
 ```
 
-You can also configure Shake screen you want to show when Shake is invoked manually.  
-
-It can be either [New ticket screen](react/shake-ui/new-ticket-screen.md) or [Home screen](react/shake-ui/home-screen.md), depending on your preferences:
+Also, feel free to change which Shake screen is shown when Shake user feedback is invoked manually:
+* [New ticket screen](/react/shake-ui/new-ticket-screen.md) (default)
+* [Home screen](/react/shake-ui/home-screen.md)
 
 ```javascript title="App.js"
 // highlight-next-line
@@ -47,67 +58,62 @@ Shake.setDefaultScreen(ShakeScreen.NEW);
 Shake.setDefaultScreen(ShakeScreen.HOME);
 ```
 
-The default value is `ShakeScreen.NEW`.
-
-### Shaking
-The default, shaking gesture causes the SDK to pop up.
+### Shaking gesture
+By default, the shaking gesture opens Shake user feedback.
 
 :::note
 
-iOS apps in the debug mode will trigger React Native developer tools instead of Shake.
-You should run your app in the release mode if you want to test shake gesture invoking.
+If you are testing Shake SDK on your computer, keep in mind that the Android Emulator’s "shaking gesture"
+is too weak to invoke Shake. You can decrease Shake's threshold as described below, or use another invocation method.
 
 :::
 
-:::note
-
-In case you want to test Shake SDK in Android emulator, it’s useful to know that emulator’s default shaking gesture is too weak to invoke Shake.
-
-:::
-
-Shaking gesture sensitivity can be fine tuned as shown in the snippet below:
+The shaking threshold can be fine-tuned too. Let's decrease it, for example, so that Shake user feedback is easier to invoke:
 
 ```javascript title="App.js"
 // highlight-next-line
 Shake.setShakingThreshold(400); // Default value is 600.
 ```
 
-In the above example, threshold is reduced a bit, meaning that Shake is a bit easier to invoke with the shaking gesture.
+A valid threshold value range is `1 - 1000`. Higher values represent higher thresholds, meaning that a stronger 
+motion gesture will be required to invoke Shake user feedback.
 
-A valid treshold value range is `1 - 1000`, with bigger values representing decreased sensitivity meaning that a stronger 
-motion gesture is required to invoke Shake.
-
-### Button
-This invocation event will create the floating button on top of your app's UI which users can clearly see at all times. This button can be dragged to a more suitable position.
+### Floating button
+This invocation event creates a floating button on top of your app's UI which your users
+will be able to see and drag around the screen at all times.
 
 :::note
 
-In the Android emulator, you might need to click the button twice if one click doesn’t do it.
-Also, system interface elements [may sometimes get in a way](https://help.shakebugs.com/en/articles/3321805-the-report-a-bug-button-is-hidden-behind-an-interface-element) of the button.
+In the Android Emulator, you might need to click the button twice if one click doesn’t do it.
+Also, system interface elements [may sometimes get in the way](https://help.shakebugs.com/en/articles/3321805-the-report-a-bug-button-is-hidden-behind-an-interface-element) of the button.
 
 :::
 
 ### Taking a screenshot
-The SDK will be invoked when users make a screenshot while using your app.
+Shake user feedback will be invoked when your user takes a screenshot while using your app.
 
 :::note
 
-In Android, the only way for any SDK to realize that a screenshot has been captured is to monitor the screenshots directory.
-Because of that, if you opt for this invocation method, the storage permission will be requested from a user when they launch your app.
+The only way for any SDK to realize that a screenshot has been captured is to monitor the screenshots directory.
+Because of that, if you opt for this invocation method, storage permission will be requested from a user when they launch your app.
 
 :::
 
+### Right edge pan
+Shake user feedback will be invoked with a one-finger swiping gesture from the right edge of the screen.
+
 :::note
 
-App Store rejects apps that get in the way of the default screenshot behavior. For that reason, don't use this invocation method in your production releases.
+The right edge pan gesture won’t work if performed over a ListView or ScrollView.
+Use one of the alternative ways to invoke Shake instead.
 
 :::
 
 ## Invoke through code
-You can invoke SDK through code by calling the `Shake.show` method anywhere after `Shake.start`.
+Invoke Shake user feedback through code by calling the `Shake.show` method anywhere after `Shake.start`.
 
-The `show` method can also be called with the argument `ShakeScreen` which determines the first presented screen in the Shake UI. Default value 
-is `ShakeScreen.NEW`.
+The `show` method can be called with the argument `ShakeScreen` which determines the first presented screen in the Shake UI.
+The default value is `ShakeScreen.NEW`.
 
 ```javascript title="App.js"
 // highlight-next-line
@@ -126,7 +132,10 @@ const onFeedbackCenterPressed = () => {
 }
 ```
 
-When Shake is invoked with the `ShakeScreen.NEW`, app screenshot and automatic video recording are automatically attached and visible
-in the attached files section of the UI.
+If an [auto screenshot](/react/configuration-and-data/auto-screenshot.md) and
+[auto screen recording](/react/configuration-and-data/auto-screen-recording.md) are enabled,
+when you call `ShakeScreen.NEW` they will be automatically attached to a ticket.
 
-All other data, like [Activity history](react/configuration-and-data/activity-history.md) or [Black box](react/configuration-and-data/black-box.md), is automatically included in every user’s bug report — no additional code required.
+If enabled, [activity history](/react/configuration-and-data/activity-history.md),
+[black box](/react/configuration-and-data/black-box.md) and all other data are also automatically attached.
+No additional code is required.
