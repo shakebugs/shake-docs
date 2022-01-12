@@ -14,7 +14,7 @@ but don't want *guests* to have Shake features.
 You could never call the `Shake.start()` method for guests, but what if a user switches from host to guest mode?
 
 ## Disable
-Call the `Shake.setEnabled(false)` method wherever you want to in your app. Shake will be disabled immediately, which means:
+Set `Shake.isPaused` property to true wherever you find it appropriate in your app. Shake will be paused immediately, which means:
 
 * Shake can't be invoked any more.
 * Shake stops tracking all data.
@@ -37,13 +37,13 @@ import TabItem from '@theme/TabItem';
 
 ```java title="App.m"
 - (void)didLogInWithUser:(User *)user success:(BOOL)success { 
-    if (user.isHost) 
-      { NSLog(@"User logged in as host. Resuming Shake."); 
+    if (user.isHost) { 
+      NSLog(@"User logged in as host. Resuming Shake."); 
       //highlight-next-line 
       SHKShake.isPaused = NO;  
      } else { 
        NSLog(@"User logged in as guest. Pausing Shake."); 
-      //highlight-next-line 
+       //highlight-next-line 
       SHKShake.isPaused = YES; 
   } 
 }
@@ -72,4 +72,4 @@ func didLogIn(user: User, success: Bool) {
 </Tabs>
 
 ## Enable
-If for some reason you want to enable Shake again, you can easily do so by calling `Shake.setEnabled(true)`.
+If for some reason you want to enable Shake again, you can easily do so by calling `Shake.isPaused = false`.

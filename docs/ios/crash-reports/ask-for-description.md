@@ -29,7 +29,7 @@ potentially providing you with additional helpful information.
 </table>
 
 To enable it:
-1. First, set the `setAskForCrashDescription` flag to `true`.
+1. First, set the `isAskForCrashDescription` flag to `true`.
 1. Then, call the `Shake.start` method.
 
 <Tabs

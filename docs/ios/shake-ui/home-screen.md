@@ -26,5 +26,5 @@ To show them their previous tickets, [register your users](/ios/users/overview) 
 
 ## Show
 
-To show the Home screen to an app user, call the `Shake.show` method with the `ShakeScreen.HOME` argument.
+To show the Home screen to an app user, call the `Shake.show` method with the `SHKShowOptionHome` argument.
 Visit [Invocations](/ios/user-feedback/invoke#invoke-through-code) to learn more.

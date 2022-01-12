@@ -7,7 +7,7 @@ title: Silent user feedback
 ## Overview
 You can send silent user feedback to yourself by calling the `Shake.silentReport` method anywhere after `Shake.start`. Feel free to add your own description to it as well.
 
-*ShakeReportConfiguration* determines which data is attached to the silent user feedback:
+*SHKShakeReportConfiguration* determines which data is attached to the silent user feedback:
 * Files returned by the [onPrepareData](/ios/configuration-and-data/auto-attach-files.md) callback.
 * [Auto screen recording](/ios/configuration-and-data/auto-screen-recording.md) if the feature is turned on.
 * Etc.
@@ -70,8 +70,10 @@ Shake.silentReport(description: "Description #tag1 #tag2", fileAttachBlock: file
 
 ## Show the Ticket submitted message
 
+If your app user is aware of the silent report being sent, Shake can display a small and non-intrusive message notifying the user that the report was sent.
+
 To optionally notify your user that a silent user feedback has just been submitted,
-change the `ShakeReportConfiguration` and use that configuration object when
+change the `SHKShakeReportConfiguration` and use that configuration object when
 sending the silent user feedback with the `Shake.silentReport` method:
 
 <Tabs

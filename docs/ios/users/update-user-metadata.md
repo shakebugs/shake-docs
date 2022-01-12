@@ -126,29 +126,15 @@ and updating **specific** user metadata in their respective contexts:
 <TabItem value="swift">
 
 ```swift title="UserSettingsActivity.swift"
-class CartViewModel {
+func onUserSettingsConfigured() {
+    fetchUserInformation()
 
-    func didAddItem(itemId: String) {
-        /// Item was added to cart operations
-        let cartItems = self.currentCartItems();
-
-        //highlight-start
-        Shake.updateUserMetadata([
-            "cartItems": cartItems.description
-        });
-         //highlight-end
-    }
-
-    func didClearAllCartItems() {
-
-        /// Cart was cleared
+    let metadata: MutableMap<String, String> = HashMap()
+    metadata["userSettings"] = userSettings.toString()
 
         //highlight-start
-        Shake.updateUserMetadata([
-            "cartItems": "empty"
-        ]);
-        //highlight-end
-    }
+    Shake.updateUserMetadata(metadata)
+    //highlight-end
 }
 ```
 
@@ -158,6 +144,8 @@ class CartViewModel {
 ## Limitations
 
 The total map size of the user metadata must not exceed 50 KB.
+
+The user metadata dictionary also supports a maximum of 100 keys and doesn't allow nested dictionaries.
 If this validation fails, the update method is dropped with the appropriate console message.
 
 ## User metadata vs. Ticket metadata

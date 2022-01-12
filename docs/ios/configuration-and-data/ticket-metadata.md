@@ -11,12 +11,12 @@ That's why Shake also allows you to automatically attach any custom data from yo
 
 ## How to use
 
-To set ticket metadata, call `Shake.setMetadata` and pass the data you want to
+To set ticket metadata, call `Shake.setMetadata()` and pass the data you want to
 receive on your Shake dashboard as a *String* pair.
 
 :::note
 
-You can call `Shake.setMetadata` anywhere in your app, but be careful because any subsequent calls with the same *String* key will override the former *String* value.
+You can call `Shake.setMetadata()` anywhere in your app, but be careful because any subsequent calls with the same *String* key will override the former *String* value.
 
 :::
 
@@ -34,9 +34,9 @@ Let’s say you want to send yourself a roomID after a user successfully joins a
 <TabItem value="objectivec">
 
 ```java title="App.m"
-- (void)onLoginSuccessful:(User *)user { 
+- (void)onChatRoomJoined:(Room *)room { 
     // highlight-next-line 
-    [SHKShake setMetadataWithKey: @"userid" value: user.id]; 
+    [SHKShake setMetadataWithKey: @"roomid" value: room.id]; 
 }
 ```
 
@@ -45,9 +45,9 @@ Let’s say you want to send yourself a roomID after a user successfully joins a
 <TabItem value="swift">
 
 ```swift title="App.swift"
-func onLoginSuccessful(user: User) {
+func onChatRoomJoined(room: Room) {
     // highlight-next-line
-    Shake.setMetadata(key: "userid", value: user.id)
+    Shake.setMetadata(key: "roomId", value: room.id)
 ```
 
 </TabItem>
@@ -55,7 +55,7 @@ func onLoginSuccessful(user: User) {
 
 ## Clear Ticket metadata
 
-If you want to clear existing ticket metadata, you can use the `Shake.clearMetadata` method.
+If you want to clear existing ticket metadata, you can use the `Shake.clearMetadata()` method.
 
 For example, you want to clear ticket metadata when the user leaves a chat room:
 
@@ -71,8 +71,8 @@ For example, you want to clear ticket metadata when the user leaves a chat room:
 <TabItem value="objectivec">
 
 ```java title="App.m"
-- (void)onLogOutPressed() { 
-    [self.loginService logout]; 
+- (void)onChatRoomClosed() { 
+    [self.chatService close]; 
     // highlight-next-line 
     [SHKShake clearMetadata]; 
 } 
@@ -83,8 +83,8 @@ For example, you want to clear ticket metadata when the user leaves a chat room:
 <TabItem value="swift">
 
 ```swift title="App.swift"
-func onLogOutPressed() { 
-  loginService.logout();
+func onChatRoomClosed() { 
+  chatService.close();
   // highlight-next-line
   Shake.clearMetadata();
 }

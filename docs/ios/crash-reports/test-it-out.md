@@ -8,6 +8,10 @@ import TabItem from '@theme/TabItem';
 
 >Let's crash your app to see what the crash report looks like on your Shake dashboard.
 
+:::note
+Before testing this, make sure to disconnect your device from the Xcode debugger. Xcode debugger attaches itself to the application process and will disable crash recording.
+:::
+
 ## Crash your app
 
 [Enable crash reporting](/ios/crash-reports/enable.md) and paste this code to the `viewDidLoad` method in one of your view controllers.
@@ -74,6 +78,9 @@ override func viewDidLoad() {
 </TabItem></Tabs>
 
 Reopen your app, describe the crash and tap *Submit*.
+
+Launch you app after the crash, add a sentence or two if you want to and submit the report. 
+Your report will be visible on the Shake dashboard in a few minutes.
 
 ## Visit your Shake dashboard
 

@@ -22,7 +22,17 @@ and they won't receive any new messages until registered again.
 ## Notifications
 
 Shake will notify your user when you send them a new message from the Shake dashboard.
-Notifications are presented automatically to the user. You don't have to code anything.
+
+:::note
+At the moment, Shake supports only local notifications. 
+Which means that end-users won't get notified about new messages when your application is in the background.
+:::
+
+To present any kind of notifications to the end-user, the host application must request a permission from the user. Find a suitable place in your application flow where this native alert dialog will be presented.
+
+In order to be highly customizable and minimally intrusive to existing notification logic of host applications, Shake requires additional setup outlined in the below snippets.
+
+Use the `Shake.report(center: UNUserNotificationCenter ...)` methods to delegate the notification presentation logic to Shake."
 
 <Tabs 
 groupId="ios" 
@@ -102,9 +112,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
 ```
 </TabItem></Tabs>
 
+Given the above setup, all notifications originated from Shake are handled by the Shake SDK, and all other notifications remain handled by your application.
+
 :::note
 
-Shake supports only local notifications. That means that your users won't get notified about new messages
-when your app is in the _background_.
+You can cancel the display of notifications in certain contexts by simply not reporting anything to Shake, or even stub the received native completion handler with your own set of UNNotificationPresentationOptions which will be respected by the Shake SDK.
 
 :::

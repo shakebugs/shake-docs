@@ -166,7 +166,7 @@ Shake.removePrivateView(view)
 </TabItem>
 </Tabs>
 
-If you want to delete an entire screen from the auto screenshot, simply mark the whole activity as private:
+If you want to delete an entire screen from the auto screenshot, simply mark the whole view controller as private:
 
 <Tabs
   groupId="ios"
@@ -222,7 +222,7 @@ class PaymentViewController: STPPaymentOptionsViewController {
 </TabItem>
 </Tabs>
 
-To remove an activity from the list of private views, use the following method:
+To remove an view controller from the list of private views, use the following method:
 
 <Tabs 
   groupId="ios"
@@ -289,6 +289,8 @@ Consequently, you'll see them as `data_redacted` strings in ticket's
 [Activity history](/ios/configuration-and-data/activity-history).
 The view's ID, accessibility labels and tags remain visible.
 
+Bear in mind that the view's ID, accessibility labels and tags remain visible.
+
 :::note
 Shake supports privacy redaction on all kinds of UIView and its subclasses. On the other side, Shake does not support privacy redaction on UIBarItem(s) like: UIBarButtonItem, UIBarButtonItemGroup and UITabBarItem since those are not UIVew subclasses.
 :::
@@ -296,8 +298,10 @@ Shake supports privacy redaction on all kinds of UIView and its subclasses. On t
 
 ## Network requests
 Network requests may contain sensitive data which you may not want to send to Shake servers.
+
 Use the `Shake.setNetworkRequestsFilter()` method to obfuscate sensitive parts of those requests,
 or to entirely prevent certain network requests from being logged.
+
 As an example, if you'd like to obfuscate the *Authorization* header in all network requests sent from your app, do this:
 
 <Tabs
@@ -349,7 +353,7 @@ import Shake func setupNetworkFilter() {
 </TabItem>
 </Tabs>
 
-If you don't want to log specific network requests, return `null` from the `NetworkRequestsFilter` as shown below:
+If you don't want to log specific network requests, return `nil` from the `NetworkRequestsFilter` as shown below:
 
 <Tabs
   groupId="ios"
@@ -400,7 +404,7 @@ Shake.networkRequestsFilter = {
 </TabItem>
 </Tabs>
 
-To clear the network requests filter, use `Shake.setNetworkRequestsFilter(null)`.
+To clear the network requests filter, use `Shake.networkRequestsFilter = nil`.
 
 ## Notification events
 If your app notifications contain sensitive data, use the `Shake.setNotificationEventsFilter()`
@@ -455,7 +459,7 @@ Shake.notificationEventsFilter = {
 </TabItem>
 </Tabs>
 
-If you do not want to track a specific notification event, return `null` from the `NotificationEventsFilter` like below:
+If you do not want to track a specific notification event, return `nil` from the `notificationEventsFilter` like below:
 
 <Tabs
   groupId="ios"
@@ -505,4 +509,4 @@ Shake.notificationEventsFilter = {
 </TabItem>
 </Tabs>
 
-To clear the notification events filter, use `Shake.setNotificationEventsFilter(null)`.
+To clear the notification events filter, use `Shake.notificationEventsFilter = nil`.

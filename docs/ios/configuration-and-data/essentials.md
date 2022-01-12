@@ -168,14 +168,13 @@ All of this is done out of the box, you don't need to code anything.
 
 <p><sup>1</sup> Shake tracks the status of these runtime permissions, also known as dangerous permissions:</p>
 
-* CALENDAR ACCESS
-* CAMERA ACCESS
-* CONTACTS ACCESS
-* LOCATION ACCESS
-* MICROPHONE ACCESS
-* MEDIA LIBRARY ACCESS
-* MICROPHONE ACCESSP
-* PHOTO LIBRARY ACCESS
+* Calendar access
+* Camera access
+* Contacts access
+* Photo library access
+* Location access
+* Media library access
+* Microphone access
 
 
 On your Shake dashboard, only those permissions that the user has granted access to are listed.

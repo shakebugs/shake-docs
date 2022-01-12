@@ -13,7 +13,7 @@ Turn off this feature in production!
 
 ## Enable
 Auto screen recording is disabled by default. To enable it:
-1. Call `Shake.getReportConfiguration().setAutoVideoRecording(true)` first.
+1. Call `Shake.configuration().isAutoVideoRecording = true` first.
 1. Then, start Shake with `Shake.start()`.
 
 import Tabs from '@theme/Tabs';
@@ -47,43 +47,16 @@ Shake.configuration.setAutoVideoRecordingEnabled = true
 </TabItem>
 </Tabs>
 
-Duration of the auto-attached screen recording is 15 seconds.
-
 <table class="media-container media-container-highlighted mt-40 mb-40">
 <img
   alt="Auto screen recording"
   width="380"
   src={useBaseUrl('img/phone-auto-screenrecording@2x.png')}
 />
+
 </table>
 
-## How to use
-
-Automatic screen recording is disabled by default but can be enabled by calling Shake.configuration.isAutoVideoRecordingEnabled = true before Shake.start(). 
-
-<Tabs 
-groupId="ios" 
-defaultValue="swift" 
-values={[
-  { label: 'Objective-C', value: 'objectivec'},
-  { label: 'Swift', value: 'swift'},]}>
-
-  <TabItem value="objectivec">
-
-```java title="AppDelegate.m" 
-// highlight-next-line 
-SHKShake.configuration.isAutoVideoRecordingEnabled = true;
-```
-</TabItem>
-
-<TabItem value="swift">
-
-```swift title="AppDelegate.swift"
-// highlight-next-line
-Shake.configuration.isAutoVideoRecordingEnabled = true
-```
-
-</TabItem></Tabs>
+Duration of the auto-attached screen recording is 15 seconds.
 
 :::note
 Screen recording runs on iOS 13+ devices only. Testing on iOS simulator may not work and can produce warnings in console log without screen recording.

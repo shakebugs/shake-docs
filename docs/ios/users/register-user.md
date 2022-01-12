@@ -10,13 +10,16 @@ import TabItem from '@theme/TabItem';
 
 The passed _user identifier_ argument should ideally reflect the identifier that uniquely represents the user in your database.
 Often it is the user's email address, but it may be their User ID, or their device's UUID.
+
 Shake's public method is intentionally
 called _register_ and not _logIn_ because user identification context is different in different apps.
 
 Most apps communicate with their backend through the network layer
 which performs the URL request and asynchronously receives a callback with the request result.
+
 That callback's body is a common place where developers call the `Shake.registerUser` method,
 but maybe your context is different.
+
 Make sure to call this method at the place where it fits your app's flow perfectly.
 
 <table class="media-container mt-50">
@@ -96,3 +99,7 @@ func logInUser(email: String, password: String) {
 
 </TabItem>
 </Tabs>
+
+:::note
+All user related Shake operations on a registered user are fully supported when your application is offline too, and will sync with the Shake servers later.
+:::

@@ -23,9 +23,9 @@ This feature is disabled for iOS applications built with SwiftUI.
 
 SDK automatically tracks application screen changes, more precisely, ViewController lifecycle.
 
-For iOS applications built with UIKit, there is no need for additional configuration.
+For iOS applications built with __UIKit__, there is no need for additional configuration.
 
-Applications built with SwiftUI should use the Shake provided View extension on their top level views which represent screens in their application.
+Applications built with __SwiftUI__ should use the Shake provided View extension on their top level views which represent screens in their application.
 
 shakeIntercept View extension allows Shake to hook into the View lifecycle and notify Shake of the screen changes. The extension does not alter the View in any way and allows it to passthrough unchanged.
 
@@ -48,7 +48,9 @@ var body: some View {
 
 ### Network requests
 
-You can configure Shake to capture all network traffic from a specific URLSession. Network requests are a vital part of all modern applications. Having a clear presentation of network request logs gives you a valuable insight of your application lifecycle.
+You can configure Shake to capture all network traffic from a specific URLSession. 
+
+Network requests are a vital part of all modern applications. Having a clear presentation of network request logs gives you a valuable insight of your application lifecycle.
 
 
 #### Setup
@@ -121,12 +123,13 @@ Advanced users will use client-server authentication mechanism or even register 
 
 #### Handling authentication challenges
 
-Some advanced users will use SSL pinning for their URL requests, which is used to validate the identity of the client to the server or vice versa.
+Some advanced users will use _SSL_ pinning for their _URL_ requests, which is used to validate the identity of the client to the server or vice versa.
 
-In the normal app usage without Shake, the delegate of the native URLSession will receive authentication challenges via the native URLSession:didReceiveChallenge:completionHandler method and is in charge of calling the completion handler with the appropriate arguments.
-Because of the implementation specifics of Shake Network Request reporting, these authentication delegate methods won't get called, but alternatively, Shake provides additional setup which enables users to handle authentication challenges while still using Shake to intercept requests, making this kind of setup suitable for Production environments.
+In the normal app usage without Shake, the delegate of the native _URLSession_ will receive authentication challenges via the native `URLSession:didReceiveChallenge:completionHandler` method and is in charge of calling the completion handler with the appropriate arguments.
 
-This is achieved by registering an Authentication Delegate which conforms to the SHKSessionAuthenticationProtocol protocol with the Shake SDK. Shake will forward all authentication challenges to the delegate object which is in charge of calling the completionHandler closure with the appropriate result.
+Because of the implementation specifics of _Shake Network Request_ reporting, these authentication delegate methods won't get called, but alternatively, Shake provides additional setup which enables users to handle authentication challenges while still using Shake to intercept requests, making this kind of setup suitable for Production environments.
+
+This is achieved by registering an Authentication Delegate which conforms to the `SHKSessionAuthenticationProtocol` protocol with the Shake SDK. Shake will forward all authentication challenges to the delegate object which is in charge of calling the completionHandler closure with the appropriate result.
 
 Chances are high that apps which require server authentication have already implemented the authentication mechanism, so the additional work to make the existing flow start from the Shake authentication delegate method mentioned above should be minimal and easy to achieve.
 :::note
@@ -422,6 +425,10 @@ Shake.configuration.isConsoleLogsEnabled = false
 
 </TabItem>
 </Tabs>
+
+:::note
+Make sure that activity history is enabled if you want to send console logs with your report.
+:::
 
 ## Limitations
 In a Free workspace you can see up to 20 events that led to the ticket being reported.

@@ -15,8 +15,11 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 </table>
 
 If enabled, a one-off intro message will be shown to your users as soon as they open your app for the first time.
+
 Its text is automatically set based on the [manual invocations you use](/ios/user-feedback/invoke.md#invoke-manually), so you don't need to write anything.
-This message is disabled by default. Enable it easily using the following method:
+This message is disabled by default. 
+
+Enable it easily using the following method:
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';

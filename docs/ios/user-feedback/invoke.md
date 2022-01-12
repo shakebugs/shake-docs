@@ -20,6 +20,7 @@ You don't need to code anything:
 </table>
 
 But if you want to, you can customize that.
+
 Let's look at an example where you want Shake user feedback to be invoked either when your users shake their device or when they take a screenshot:
 
 import Tabs from '@theme/Tabs';
@@ -60,6 +61,7 @@ Shake.start(clientId: "client-id", clientSecret: "client-secret")
 </Tabs>
 
 You can also change the preferred invocation event on-the-fly during runtime.
+
 Here’s a list of all available options. Feel free to use any combination of these:
 
 <Tabs
@@ -130,17 +132,12 @@ Shake.configuration.defaultShowOption = .new;
 </TabItem>
 </Tabs>
 
+The default value is `SHKShowOption.new`.
+
 ### Shaking gesture
-By default, the shaking gesture opens Shake user feedback.
+The default, shaking gesture causes the SDK to pop up.
 
-:::note
-
-If you are testing Shake SDK on your computer, keep in mind that the Android Emulator’s "shaking gesture"
-is too weak to invoke Shake. You can decrease Shake's threshold as described below, or use another invocation method.
-
-:::
-
-The shaking threshold can be fine-tuned too. Let's decrease it, for example, so that Shake user feedback is easier to invoke:
+Shaking gesture sensitivity can be fine tuned as shown in the snippet below:
 
 <Tabs
   groupId="ios"
@@ -177,13 +174,6 @@ motion gesture will be required to invoke Shake user feedback.
 This invocation event creates a floating button on top of your app's UI which your users
 will be able to see and drag around the screen at all times.
 
-:::note
-
-In the Android Emulator, you might need to click the button twice if one click doesn’t do it.
-Also, system interface elements [may sometimes get in the way](https://help.shakebugs.com/en/articles/3321805-the-report-a-bug-button-is-hidden-behind-an-interface-element) of the button.
-
-:::
-
 ### Taking a screenshot
 Shake user feedback will be invoked when your user takes a screenshot while using your app.
 
@@ -194,21 +184,20 @@ Because of that, if you opt for this invocation method, storage permission will 
 
 :::
 
+:::note
+App Store rejects apps that get in the way of the default screenshot behavior. 
+For that reason, don't use this invocation method in your production releases.
+:::
+
 ### Right edge pan
 Shake user feedback will be invoked with a one-finger swiping gesture from the right edge of the screen.
-
-:::note
-
-The right edge pan gesture won’t work if performed over a ListView or ScrollView.
-Use one of the alternative ways to invoke Shake instead.
-
-:::
 
 ## Invoke through code
 Invoke Shake user feedback through code by calling the `Shake.show` method anywhere after `Shake.start`.
 
-The `show` method can be called with the argument `ShakeScreen` which determines the first presented screen in the Shake UI.
-The default value is `ShakeScreen.NEW`.
+The `show` method can also be called with the argument `SHKShowOption` which determines the first presented screen in the Shake UI.
+
+Default value is `SHKShowOptionNew`.
 
 <Tabs
   groupId="ios"
@@ -260,9 +249,7 @@ func onDidPressShowFeedbackCenter() {
 </TabItem>
 </Tabs>
 
-If an [auto screenshot](/ios/configuration-and-data/auto-screenshot.md) and
-[auto screen recording](/ios/configuration-and-data/auto-screen-recording.md) are enabled,
-when you call `ShakeScreen.NEW` they will be automatically attached to a ticket.
+When Shake is invoked with the `SHKShowOptionNew`, app screenshot and automatic video recording are automatically attached and visible in the attached files section of the UI.
 
 If enabled, [activity history](/ios/configuration-and-data/activity-history.md),
 [black box](/ios/configuration-and-data/black-box.md) and all other data are also automatically attached.
