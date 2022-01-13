@@ -1,73 +1,67 @@
 ---
 id: symbolicate
-title: Deobfuscation
+title: Deobfuscate
 ---
 
-The crash reports are a lot more useful when you see your symbolicated application frames.
+>Crash reports are a lot more useful when you see your symbolicated application frames.
 
-In order to symbolicate the reports, Shake needs the dSYMS which can be found on your system.
+## Introduction
 
+In order for crash reports to be symbolicated, you need to upload your dSYM files to Shake.
 
-:::note
-
-Unsymbolicated crash reports will appear in the special section on the Shake dashboard and won't be processed
-if the dSYM files are not uploaded. Dashboard will display the UUID of the required dSYMS which can be found on 
-you system.
-
-:::
-
-### Enable dSYMS for debug builds
-
-If you plan using Shake Crash in a development environment, every debug build action needs to generate dSYM files.
-
-When in your project / workspace, click your *App.xcodeproj* blue project icon — it's usually located at the top of the *File Inspector* tab in your left-hand pane. 
-Select your main app target and open the Build Settings for that target. Navigate to the Build Options section and choose 
-*dwarf with dSYM file* option for your Debug/Development configuration.
+Unsymbolicated crash reports will appear in the special section of your Shake dashboard.
+You will see UUIDs of the required dSYM files which you can then find on your system.
 
 
-## Finding dSYMS
+## Enable dSYMS for debug builds
 
-Run the below command in your terminal:
+If you plan using crash reporting in a development environment, every debug build action needs to generate dSYM files.
+
+When in your project:
+1. Click your *App.xcodeproj* blue project icon usually located at the top of the *File Inspector* tab in your left-hand pane.
+1. Select your main app target.
+1. Open the Build Settings for that target.
+1. Navigate to the Build Options section.
+1. Choose *dwarf with dSYM file* option for your Debug/Development configuration.
+
+
+## Find dSYMS
+
+Run this command in your terminal to list all available dSYM files found on the system so you can identify the ones that are missing:
 
 ```finding_dsyms"
 // highlight-next-line
 mdfind -name .dSYM | while read -r line; do dwarfdump -u "$line"; done 
 ```
 
-This will list all of the available dSYM files found on the system so you can identify the ones that are missing.
+## Upload manually to Shake dashboard
 
-Missing dSYMs are marked on your Shake dashboard.
+Your app's dSYM files are located in the project build folder:
+*Xcode → Preferences → Locations → Derived Data* → click the *Finder* folder link.
 
-DSYMS can be uploaded to Shake with one of the methods listed below. 
+For archived apps with Bitcode enabled, which have already been uploaded to the App Store, visit 
+*Xcode → Window → Organizer* to manually download the App Store generated debug symbols
+by clicking the *Download Debug Symbols* button on the right hand pane.
 
-For the apps built with Bitcode setting, use the Fastlane plugin to grab the correct dSYMS and upload them to Shake.
+Zip the symbolication files before dropping them on the Shake dashboard.
 
-## Upload dSYMS manually via Shake dashboard
-
-Your application dSYM files can be manually zipped and uploaded to the Shake dashboard.
-
-To access your application mapping files on the *Shake Dashboard* click your *avatar* and navigate to *My Account › Apps* and click
-on your application name. Once the menu is expanded click the **Mapping files**.
-
-Symbolication files are located in the project build folder which is easily accessed by navigating to 
-Xcode *Preferences › Locations › Derived Data* and clicking the *Finder* folder link.
-
-For archived applications with Bitcode enabled, which have already been uploaded to the AppStore, use the 
-Xcode *Organizer* tool (*Xcode › Window › Organizer*) to manually download the AppStore generated debug symbols by clicking the *"Download Debug Symbols"* button on the right hand pane.
-
-Make sure to ZIP the symbolication files before dropping them on the Shake dashboard.
+To upload dSYM files to the Shake dashboard:
+1. Visit [Settings → Apps](https://app.shakebugs.com/settings/apps)
+1. Click your app name to expand it
+1. Click the **Mapping files** button
+1. Drag and drop your zipped symbolication files there
 
 ## Upload dSYMS using RunPhase script
 
-Shake ships with the `upload-symbols.sh`script which uploads dSYMS to Shake servers.
+Shake ships with the `upload-symbols.sh` script which uploads dSYMS to Shake servers.
 
+Visit *Xcode → Scheme → EditScheme*.
+Expand the *Build Action* options → *Post Actions*.
+Select the **+** icon → add a new *Run Script Phase* to build post actions.
 
-When your project is opened with Xcode, select the *Scheme* and then *EditScheme* in the dropdown menu.
-
-Expand the *Build Action* options and select *Post Actions*. Select the **+** icon and add a new *Run Script Phase* to build post actions.
-
-This ensures that latest dSYMS are uploaded after every build process. Make sure to replace the placeholder values
-with the correct values for your environment:
+This ensures that the latest dSYMS are uploaded after every build process.
+Make sure to replace the placeholder values with the actual values
+you have in [your workspace settings](https://app.shakebugs.com/settings/workspace#general):
 
 ```script
 //highlight-start
@@ -83,21 +77,16 @@ This method is not suitable for apps using __Bitcode__ binary format.
 
 If your reports are not being symbolicated, make sure the script is working properly
 by doublechecking the Xcode Build log for Shake upload script errors. 
-
-:::tip
-
-When viewing the Build log, search for "SHAKE_SCRIPT" keyword to identify potential problems and check if the upload was successful.
-
-:::
+When viewing the Build log, search for the __"SHAKE_SCRIPT"__ keyword to identify potential problems and check if the upload was successful.
 
 ## Upload dSYMS using fastlane plugin
 
-Fastlane is an open source platform aimed at simplifying mobile development tasks. It handles authentication with 
+fastlane is an open source platform aimed at simplifying mobile development tasks. It handles authentication with 
 App Store Connect and downloading dSYM files.
 
 Use this method if your app has __Bitcode__ format enabled.
 
-### Installing fastlane
+### Install fastlane
 
 It is recommended that you use `Bundler` and `Gemfile` to define your dependency on fastlane. 
 This will clearly define the fastlane version to be used and its dependencies, and will also speed up fastlane execution.
@@ -123,7 +112,7 @@ Navigate your terminal to your project's directory and run `fastlane init` comma
 
 For more info about installing fastlane, visit the [fastlane](http://docs.fastlane.tools) docs.
 
-### Installing Shake plugin 
+### Install Shake plugin 
 
 <TabItem value="ruby">
 
@@ -134,7 +123,7 @@ bundle exec fastlane add_plugin upload_symbols_to_shake
 </TabItem>
 
 
-### Using the plugin
+### Use the plugin
 
 If you have [Bitcode](https://help.apple.com/xcode/mac/current/#/devbbdc5ce4f) enabled in your application's project settings, 
 dSYM files are generated by the App Store when your app is recompiled after the upload, and will need to be downloaded by fastlane.
