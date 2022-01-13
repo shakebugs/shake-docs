@@ -144,9 +144,9 @@ func onUserSettingsConfigured() {
 ## Limitations
 
 The total map size of the user metadata must not exceed 50 KB.
-
 The user metadata dictionary also supports a maximum of 100 keys and doesn't allow nested dictionaries.
-If this validation fails, the update method is dropped with the appropriate console message.
+
+If any of these validations fail, the update method is dropped with the appropriate console message.
 
 ## User metadata vs. Ticket metadata
 
