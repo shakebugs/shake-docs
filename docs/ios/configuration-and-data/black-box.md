@@ -9,6 +9,12 @@ profile giving you an insight into the last 60 seconds before the ticket was sub
 
 ## Automatically recorded charts
 
+### CPU​
+
+This line chart shows the CPU usage of your app. When you hover over the chart, your app's exact CPU load is shown as a percentage of the total available CPU. We account for multi-threading — your percentage can go above 100% which would mean multiple threads were very busy.
+
+Your app's CPU usage is captured every 0.5 seconds.
+
 ### Device memory usage
 This line chart (visible in every ticket on your [Shake dashboard](https://app.shakebugs.com/)) shows
 the device's total memory usage.

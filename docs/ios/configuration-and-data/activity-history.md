@@ -426,10 +426,6 @@ Shake.configuration.isConsoleLogsEnabled = false
 </TabItem>
 </Tabs>
 
-:::note
-Make sure that activity history is enabled if you want to send console logs with your report.
-:::
-
 ## Limitations
 In a Free workspace you can see up to 20 events that led to the ticket being reported.
 If you need to dive really deep to find causes of the weirdest bugs,

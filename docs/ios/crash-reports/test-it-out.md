@@ -79,9 +79,6 @@ override func viewDidLoad() {
 
 Reopen your app, describe the crash and tap *Submit*.
 
-Launch you app after the crash, add a sentence or two if you want to and submit the report. 
-Your report will be visible on the Shake dashboard in a few minutes.
-
 ## Visit your Shake dashboard
 
 To see your crash report:

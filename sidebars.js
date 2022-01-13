@@ -105,10 +105,10 @@ module.exports = {
             items: [
                 'ios/shake-ui/overview',
                 'ios/shake-ui/home-screen',
+                'ios/shake-ui/new-ticket-screen',
                 'ios/shake-ui/chat-screen',
-                'ios/shake-ui/inspect-screen',
                 'ios/shake-ui/drawing-screen',
-                'ios/shake-ui/new-ticket-screen'
+                'ios/shake-ui/inspect-screen',
             ]
         },
         {

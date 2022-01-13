@@ -106,10 +106,6 @@ Three tips:
 * Do you always want to receive a user's email? You should then *both* pre-fill and hide the Email field.
 * The value you receive in the email field is just an attribute of that ticket, a simple **String**. To register a User as an unique **entity** which Shake automatically relates to all Tickets they submit, register your users with the [Users](/ios/users/overview.md) module.
 
-:::note
-Do you want to make sure you always receive user's email with a report? You should then both pre-fill and hide the Email field.
-:::
-
 ## Inspect button
 
 <table class="media-container media-container-highlighted mt-40 mb-40">

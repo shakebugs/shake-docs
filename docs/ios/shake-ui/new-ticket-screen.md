@@ -22,7 +22,5 @@ Visit [Elements of the New ticket screen](/ios/configuration-and-data/overview/#
 ## How to show this screen
 
 This screen is shown when your users invoke Shake manually.
-
 To show this screen programmatically, call `Shake.show` with no arguments since it's the default option.
-
 Visit [Invocations](/ios/user-feedback/invoke.md) to read about various ways to invoke Shake.

@@ -62,10 +62,6 @@ Duration of the auto-attached screen recording is 15 seconds.
 Screen recording runs on iOS 13+ devices only. Testing on iOS simulator may not work and can produce warnings in console log without screen recording.
 :::
 
-Security
-Screen recording is managed by the system and recording is automatically stopped when app goes to background.
-No third party data is recorded.
-
 ## Privacy
 
 With this feature turned on, a system dialog will ask your testers if they want to allow your app

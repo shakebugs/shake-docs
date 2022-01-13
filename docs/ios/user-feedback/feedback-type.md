@@ -23,9 +23,7 @@ to your [Shake dashboard](https://app.shakebugs.com).
 ## Custom feedback types
 
 You can configure Shake to display any number of custom feedback types related to your app.
-
 Shake exposes an internal `SHKFeedbackType` type which is used to encapsulate the properties of your custom category.
-
 Here's an example:
 
 import Tabs from '@theme/Tabs';

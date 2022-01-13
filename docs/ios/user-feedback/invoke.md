@@ -20,7 +20,6 @@ You don't need to code anything:
 </table>
 
 But if you want to, you can customize that.
-
 Let's look at an example where you want Shake user feedback to be invoked either when your users shake their device or when they take a screenshot:
 
 import Tabs from '@theme/Tabs';
@@ -61,7 +60,6 @@ Shake.start(clientId: "client-id", clientSecret: "client-secret")
 </Tabs>
 
 You can also change the preferred invocation event on-the-fly during runtime.
-
 Here’s a list of all available options. Feel free to use any combination of these:
 
 <Tabs
@@ -135,9 +133,9 @@ Shake.configuration.defaultShowOption = .new;
 The default value is `SHKShowOption.new`.
 
 ### Shaking gesture
-The default, shaking gesture causes the SDK to pop up.
+By default, the shaking gesture opens Shake user feedback.
 
-Shaking gesture sensitivity can be fine tuned as shown in the snippet below:
+The shaking threshold can be fine-tuned too. Let's decrease it, for example, so that Shake user feedback is easier to invoke:
 
 <Tabs
   groupId="ios"
@@ -178,13 +176,6 @@ will be able to see and drag around the screen at all times.
 Shake user feedback will be invoked when your user takes a screenshot while using your app.
 
 :::note
-
-The only way for any SDK to realize that a screenshot has been captured is to monitor the screenshots directory.
-Because of that, if you opt for this invocation method, storage permission will be requested from a user when they launch your app.
-
-:::
-
-:::note
 App Store rejects apps that get in the way of the default screenshot behavior. 
 For that reason, don't use this invocation method in your production releases.
 :::
@@ -195,9 +186,7 @@ Shake user feedback will be invoked with a one-finger swiping gesture from the r
 ## Invoke through code
 Invoke Shake user feedback through code by calling the `Shake.show` method anywhere after `Shake.start`.
 
-The `show` method can also be called with the argument `SHKShowOption` which determines the first presented screen in the Shake UI.
-
-Default value is `SHKShowOptionNew`.
+The `show` method can also be called with the argument `SHKShowOption` which determines the first presented screen in the Shake UI. The default value is `SHKShowOptionNew`.
 
 <Tabs
   groupId="ios"
@@ -249,7 +238,7 @@ func onDidPressShowFeedbackCenter() {
 </TabItem>
 </Tabs>
 
-When Shake is invoked with the `SHKShowOptionNew`, app screenshot and automatic video recording are automatically attached and visible in the attached files section of the UI.
+If an [auto screenshot](/ios/configuration-and-data/auto-screenshot.md) and [auto screen recording](/ios/configuration-and-data/auto-screen-recording.md) are enabled, when you call SHKShowOptionNew they will be automatically attached to a ticket.
 
 If enabled, [activity history](/ios/configuration-and-data/activity-history.md),
 [black box](/ios/configuration-and-data/black-box.md) and all other data are also automatically attached.

@@ -32,7 +32,7 @@ To present any kind of notifications to the end-user, the host application must 
 
 In order to be highly customizable and minimally intrusive to existing notification logic of host applications, Shake requires additional setup outlined in the below snippets.
 
-Use the `Shake.report(center: UNUserNotificationCenter ...)` methods to delegate the notification presentation logic to Shake."
+Use the `Shake.report(center: UNUserNotificationCenter ...)` methods to delegate the notification presentation logic to Shake.
 
 <Tabs 
 groupId="ios" 

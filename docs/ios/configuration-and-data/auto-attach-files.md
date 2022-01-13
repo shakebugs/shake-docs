@@ -13,11 +13,11 @@ your users can also upload their files (images, documents) to tickets.
 That has nothing to do with these auto-attached files.
 
 ## Methods
-You can quietly attach files by using any of the methods described below.
+You can programmatically attach files by using any of the methods described below.
 
-### Setting a custom filename and adding data
+### Set a custom filename and add data
 
-ShakeFile can be initialized with a filename (String) and data (NSData / Data). As custom data is provided, the file name cannot be automatically detected so it's mandatory:
+_ShakeFile_ can be initialized with a filename (String) and data (NSData / Data). As custom data is provided, the file name cannot be automatically detected so it's mandatory:
 
 <Tabs 
 groupId="ios" 
@@ -63,9 +63,9 @@ Shake.onPrepareReportData = {
 
 </TabItem> </Tabs>
 
-### Setting a custom filename and then attaching a file
+### Set a custom filename and then attach a file
 
-ShakeFile can also be initialized with a desired filename (String) and a local url (NSURL) to your file:
+_ShakeFile_ can also be initialized with a desired filename (String) and a local url (NSURL) to your file:
 
 <Tabs 
 groupId="ios" 
@@ -109,8 +109,8 @@ Shake.onPrepareReportData = {
 ```
 </TabItem> </Tabs>
 
-### Just attaching a file
-Or, you can initialize ShakeFile only with a local file url (NSURL), and the file name shown on the web Dashboard will be determined automatically from the passed file's URL:
+### Just attach a file
+Or, you can initialize _ShakeFile_ only with a local file url (NSURL), and the file name shown on the web Dashboard will be determined automatically from the passed file's URL:
 
 <Tabs 
 groupId="ios" 

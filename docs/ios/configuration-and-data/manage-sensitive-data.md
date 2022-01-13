@@ -222,7 +222,7 @@ class PaymentViewController: STPPaymentOptionsViewController {
 </TabItem>
 </Tabs>
 
-To remove an view controller from the list of private views, use the following method:
+To remove a view controller from the list of private views, use the following method:
 
 <Tabs 
   groupId="ios"
@@ -289,8 +289,6 @@ Consequently, you'll see them as `data_redacted` strings in ticket's
 [Activity history](/ios/configuration-and-data/activity-history).
 The view's ID, accessibility labels and tags remain visible.
 
-Bear in mind that the view's ID, accessibility labels and tags remain visible.
-
 :::note
 Shake supports privacy redaction on all kinds of UIView and its subclasses. On the other side, Shake does not support privacy redaction on UIBarItem(s) like: UIBarButtonItem, UIBarButtonItemGroup and UITabBarItem since those are not UIVew subclasses.
 :::
@@ -298,10 +296,8 @@ Shake supports privacy redaction on all kinds of UIView and its subclasses. On t
 
 ## Network requests
 Network requests may contain sensitive data which you may not want to send to Shake servers.
-
 Use the `Shake.setNetworkRequestsFilter()` method to obfuscate sensitive parts of those requests,
 or to entirely prevent certain network requests from being logged.
-
 As an example, if you'd like to obfuscate the *Authorization* header in all network requests sent from your app, do this:
 
 <Tabs

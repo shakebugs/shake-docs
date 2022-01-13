@@ -70,8 +70,6 @@ Shake.silentReport(description: "Description #tag1 #tag2", fileAttachBlock: file
 
 ## Show the Ticket submitted message
 
-If your app user is aware of the silent report being sent, Shake can display a small and non-intrusive message notifying the user that the report was sent.
-
 To optionally notify your user that a silent user feedback has just been submitted,
 change the `SHKShakeReportConfiguration` and use that configuration object when
 sending the silent user feedback with the `Shake.silentReport` method:
