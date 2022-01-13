@@ -24,8 +24,8 @@ and they won't receive any new messages until registered again.
 Shake will notify your user when you send them a new message from the Shake dashboard.
 
 :::note
-At the moment, Shake supports only local notifications. 
-Which means that end-users won't get notified about new messages when your application is in the background.
+Shake supports only local notifications.
+That means that your users won't get notified about new messages when your app is in the background.
 :::
 
 To present any kind of notifications to the end-user, the host application must request a permission from the user. Find a suitable place in your application flow where this native alert dialog will be presented.
