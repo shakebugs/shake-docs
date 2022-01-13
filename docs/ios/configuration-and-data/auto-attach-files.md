@@ -17,7 +17,7 @@ You can programmatically attach files by using any of the methods described belo
 
 ### Set a custom filename and add data
 
-_ShakeFile_ can be initialized with a filename (String) and data (NSData / Data). As custom data is provided, the file name cannot be automatically detected so it's mandatory:
+_ShakeFile_ can be initialized with a filename (String) and data (NSData / Data):
 
 <Tabs 
 groupId="ios" 
