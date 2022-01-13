@@ -109,8 +109,9 @@ Shake.onPrepareReportData = {
 ```
 </TabItem> </Tabs>
 
-### Just attach a file
-Or, you can initialize _ShakeFile_ only with a local file url (NSURL), and the file name shown on the web Dashboard will be determined automatically from the passed file's URL:
+### Attach a file without the custom filename
+Lastly, you can initialize _ShakeFile_ only with a local file url (NSURL).
+If you initialize it this way, the filename shown on your Shake dashboard will be determined automatically from the passed file's name.
 
 <Tabs 
 groupId="ios" 
