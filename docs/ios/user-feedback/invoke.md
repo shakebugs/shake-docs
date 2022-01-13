@@ -130,8 +130,6 @@ Shake.configuration.defaultShowOption = .new;
 </TabItem>
 </Tabs>
 
-The default value is `SHKShowOption.new`.
-
 ### Shaking gesture
 By default, the shaking gesture opens Shake user feedback.
 
