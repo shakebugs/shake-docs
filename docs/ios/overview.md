@@ -72,13 +72,13 @@ title: Overview
     </div>
 </div>
 
-import AndroidVersion from '@site/src/base/AndroidVersion';
+import IosVersion from '@site/src/base/IosVersion';
 
 ## Latest version
-The [latest available Shake SDK version](/ios/releases) is <AndroidVersion/>.
+The [latest available Shake SDK version](/ios/releases) is <IosVersion/>.
 
 ## Minimum requirements
-Shake SDK works on Android 5.0 or newer.
+Shake SDK works on iOS 12.0 or newer.
 
 <p class="p2 mt-80 mb-10">⚡️ Shake is improved every week.
 Stumbled upon a <a href="https://feedback.shakebugs.com/bugs">bug</a>?
