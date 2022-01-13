@@ -3,7 +3,7 @@ id: setup-spm
 title: Swift Package Manager
 ---
 
-Learn how to add Shake to your iOS app using Swift Package Manager.
+>Learn how to add Shake to your iOS app using Swift Package Manager.
 
 ## Install the Shake Package
 
