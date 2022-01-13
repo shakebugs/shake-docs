@@ -166,7 +166,7 @@ All of this is done out of the box, you don't need to code anything.
     </div>
 </div>
 
-<p><sup>1</sup> Shake tracks the status of these runtime permissions, also known as dangerous permissions:</p>
+<p><sup>1</sup> Shake tracks the status of these permissions:</p>
 
 * Calendar access
 * Camera access
