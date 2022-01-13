@@ -8,6 +8,8 @@ import TabItem from '@theme/TabItem';
 
 >Make great use of error handling and document these errors.
 
+## Introduction
+
 Shake allows you to report those caught errors and group them together.
 These non-fatal error reports will have all of the same 
 contextual information as crash reports and will act as an extension to the crash reporting feature.
@@ -75,10 +77,10 @@ The ``` handleError``` function will accept NSError types which naturally contai
   * domain: ```String```
   * userInfo: ```[AnyHashable : Any]? = nil```
 
-## Caught Exceptions?
+## Caught exceptions
 
 Shake doesn't provide an interface to directly report caught NSExceptions. 
 
 Cocoa APIs are not exception safe, and should be treated as a developer error which terminates the program shortly after. 
 
-Although the NSException can be caught by using the `@catch` statement, this is considered a bad practice and really shouldn't be done anywhere in your code.
+Although the NSException can be caught by using the `@catch` statement, this is considered a bad practice and shouldn't be done anywhere in your code.
