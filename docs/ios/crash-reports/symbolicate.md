@@ -43,7 +43,7 @@ For archived apps with Bitcode enabled, which have already been uploaded to the 
 *Xcode → Window → Organizer* to manually download the App Store generated debug symbols
 by clicking the *Download Debug Symbols* button on the right hand pane.
 
-Zip the symbolication files before dropping them on the Shake dashboard.
+Now zip the symbolication files.
 
 To upload dSYM files to the Shake dashboard:
 1. Visit [Settings → Apps](https://app.shakebugs.com/settings/apps)
@@ -51,16 +51,15 @@ To upload dSYM files to the Shake dashboard:
 1. Click the **Mapping files** button
 1. Drag and drop your zipped symbolication files there
 
+
 ## Upload dSYMS using RunPhase script
 
 Shake ships with the `upload-symbols.sh` script which uploads dSYMS to Shake servers.
 
-Visit *Xcode → Scheme → EditScheme*.
-Expand the *Build Action* options → *Post Actions*.
-Select the **+** icon → add a new *Run Script Phase* to build post actions.
+To ensure that the latest dSYMS are automatically uploaded after every build process, add a new Run Script Phase:
+*Xcode → Scheme → EditScheme* → expand the *Build Action* options → *Post Actions → +*
 
-This ensures that the latest dSYMS are uploaded after every build process.
-Make sure to replace the placeholder values with the actual values
+Paste this script but make sure to replace the placeholder values with the actual values
 you have in [your workspace settings](https://app.shakebugs.com/settings/workspace#general):
 
 ```script
