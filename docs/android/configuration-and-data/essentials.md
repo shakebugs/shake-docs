@@ -146,13 +146,6 @@ All of this is done out of the box, you don't need to code anything.
     <div>
         <img
             class="small-visual-icon"
-            src={useBaseUrl('img/programming-code.svg')}
-        />
-        <p class="p2">IDE version</p>
-    </div>
-    <div>
-        <img
-            class="small-visual-icon"
             src={useBaseUrl('img/code-test-error.svg')}
         />
         <p class="p2">Crash report stack trace</p>
