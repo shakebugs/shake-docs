@@ -25,14 +25,15 @@ Shake will notify your user when you send them a new message from the Shake dash
 
 :::note
 Shake supports only local notifications.
-That means that your users won't get notified about new messages when your app is in theÂ background.
+That means that your users won't get notified about new messages when your app is in theÊbackground.
 :::
 
-To present any kind of notifications to the end-user, the host application must request a permission from the user. Find a suitable place in your application flow where this native alert dialog will be presented.
+To show notifications to your users, you must request a permission from them.
+Find a proper place and time where you will want to present that native alert dialog.
 
-In order to be highly customizable and minimally intrusive to existing notification logic of host applications, Shake requires additional setup outlined in the below snippets.
-
-Use the `Shake.report(center: UNUserNotificationCenter ...)` methods to delegate the notification presentation logic to Shake.
+To remain customizable and minimally intrusive to an existing notification logic of your app,
+Shake requires additional setup.
+Use `Shake.report(center: UNUserNotificationCenter ...)` methods to delegate notification presentation logic to Shake.
 
 <Tabs 
 groupId="ios" 
@@ -112,10 +113,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
 ```
 </TabItem></Tabs>
 
-Given the above setup, all notifications originated from Shake are handled by the Shake SDK, and all other notifications remain handled by your application.
+With the setup like above, notifications that originate from Shake are handled by Shake,
+and all other notifications are handled by your app.
 
 :::note
-
-You can cancel the display of notifications in certain contexts by simply not reporting anything to Shake, or even stub the received native completion handler with your own set of UNNotificationPresentationOptions which will be respected by the Shake SDK.
-
+If you need to, you can skip showing notifications by simply not reporting anything to Shake,
+or by stubbing the received native completion handler with your own set of *UNNotificationPresentationOptions*
+which Shake will respect.
 :::
