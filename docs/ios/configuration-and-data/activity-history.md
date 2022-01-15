@@ -21,13 +21,13 @@ This feature is disabled for iOS applications built with SwiftUI.
 
 ### Screen changes
 
-SDK automatically tracks application screen changes, more precisely, ViewController lifecycle.
+Shake automatically logs app screen (ViewController lifecycle) changes.
 
-For iOS applications built with __UIKit__, there is no need for additional configuration.
+For apps built with __UIKit__, everything works out of the box.
 
-Applications built with __SwiftUI__ should use the Shake provided View extension on their top level views which represent screens in their application.
-
-shakeIntercept View extension allows Shake to hook into the View lifecycle and notify Shake of the screen changes. The extension does not alter the View in any way and allows it to passthrough unchanged.
+Apps built with __SwiftUI__ have to use the provided View extension in their top-level Views which represent screens.
+shakeIntercept View extension allows Shake to hook into the View lifecycle so it can get notified of screen changes.
+The extension won't alter your Views in any way.
 
 ```swift title="MySwiftUIContentView.swift" 
 // highlight-start 
@@ -48,19 +48,12 @@ var body: some View {
 
 ### Network requests
 
-You can configure Shake to capture all network traffic from a specific URLSession. 
-
-Network requests are a vital part of all modern applications. Having a clear presentation of network request logs gives you a valuable insight of your application lifecycle.
-
-
 #### Setup
 
-Shake Network Request reporting feature is enabled with the Shake.isActivityHistoryEnabled flag, however this doesn't automatically start intercepting any of your app URL requests.
-
-Shake network intercepting works by stubbing your URLSessionConfiguration object attached to your app's URLSession.
+Network request reporting works by stubbing your URLSessionConfiguration object attached to your app's URLSession.
 
 :::note
-Make sure to call registerSessionConfiguration Shake method before initialising your URLSession.
+Make sure to call Shake's registerSessionConfiguration method before initialising your URLSession.
 :::
 
 <Tabs
@@ -102,39 +95,44 @@ let customSession = URLSession(configuration: userConf, delegate: self, delegate
 
 </TabItem></Tabs>
 
-Given the above setup, Shake will start intercepting all of the network requests made by your customSession and the requests will appear on the Shake dashboard.
+In the example above, Shake will start intercepting network requests made by your
+customSession and they will appear in activity history.
 
 :::note
-Shake can intercept only network requests which use the http and https protocol. URL requests that don't use said protocols are not intercepted by Shake and are not affected in any way.
+Shake can intercept only http and https network requests.
+Other protocols are neither intercepted or affected.
 :::
 
-Apps can have multiple URLSession_s or even create them for individual requests but as long as the _URLSessionConfiguration is passed to Shake via Shake.registerSessionConfiguration method, the requests will be intercepted.
+Apps can have multiple URLSessions or create them for individual requests,
+but as long as the _URLSessionConfiguration_ is passed to Shake
+via `Shake.registerSessionConfiguration`, the requests will be intercepted.
 
-Integration with other networking libraries boils down to registering the URLSessionConfiguration object with Shake and passing the configuration to the library initializer method.
+Integration with other networking libraries is done by registering
+the _URLSessionConfiguration_ object with Shake and passing the configuration to the library initializer method.
 
-#### Sensitive data
 
-Network requests can contain sensitive data that you may not want to send to Shake servers. Although Shake will automatically scan the intercepted requests and redact some of the data it can recognize, you can set your custom network request filter to precisely filter out all sensitive fields from the intercepted network request.
-Checkout the [Manage Sensitive Data](/ios/configuration-and-data/manage-sensitive-data) article.
+#### Advanced: Handle authentication challenges
 
-#### Advanced usage
+Advanced users may use SSL pinning for their URL requests.
 
-Advanced users will use client-server authentication mechanism or even register their own URLProtocol classes. This section covers these use cases and provides a way to integrate Shake in these kinds of implementations.
+Without Shake, the delegate of the native _URLSession_ will receive authentication challenges
+via the native `URLSession:didReceiveChallenge:completionHandler` method and is in charge of
+calling the completion handler with the appropriate arguments.
 
-#### Handling authentication challenges
+Because of implementation specifics of Shake network request reporting,
+these authentication delegate methods won't get called.
+However, Shake provides the setup which allows you to handle authentication challenges while still using Shake to intercept requests.
 
-Some advanced users will use _SSL_ pinning for their _URL_ requests, which is used to validate the identity of the client to the server or vice versa.
+This is achieved by registering an Authentication Delegate which conforms
+to the `SHKSessionAuthenticationProtocol` protocol.
+Shake will forward all authentication challenges to the delegate object which is in charge of
+calling the completionHandler closure with the appropriate result.
 
-In the normal app usage without Shake, the delegate of the native _URLSession_ will receive authentication challenges via the native `URLSession:didReceiveChallenge:completionHandler` method and is in charge of calling the completion handler with the appropriate arguments.
+Apps which require server authentication often have the auth mechanism already implemented,
+so the extra effort to make the existing flow start from the Shake authentication delegate is minimal.
 
-Because of the implementation specifics of _Shake Network Request_ reporting, these authentication delegate methods won't get called, but alternatively, Shake provides additional setup which enables users to handle authentication challenges while still using Shake to intercept requests, making this kind of setup suitable for Production environments.
-
-This is achieved by registering an Authentication Delegate which conforms to the `SHKSessionAuthenticationProtocol` protocol with the Shake SDK. Shake will forward all authentication challenges to the delegate object which is in charge of calling the completionHandler closure with the appropriate result.
-
-Chances are high that apps which require server authentication have already implemented the authentication mechanism, so the additional work to make the existing flow start from the Shake authentication delegate method mentioned above should be minimal and easy to achieve.
 :::note
-
-Shake doesn't intercept or affect the authentication mechanism of any third party SDKs contained in your main application.
+Shake doesn't intercept or affect auth mechanisms of other SDKs in your app.
 :::
 
 <Tabs 
@@ -226,18 +224,24 @@ class NetworkService {
 ```
 </TabItem></Tabs>
 
-The above snippet, if set up correctly, causes all of the authentication challenges from your URLSession to sink through the protocol method in your AuthenticationDelegate class declared in the above snippet.
+The snippet above causes authentication challenges from your URLSession to sink through the protocol method
+in your AuthenticationDelegate class.
 
-#### Custom URLProtocol
 
-If your app is registering a custom URLProtocol class and is already intercepting your app's requests for various reasons, do not use the Shake.registerSessionConfiguration or Shake.registerAuthDelegate methods as they will interfere with the URLProtocol subclass you defined.
-Instead, use the Shake.insertNetworkRequest method to insert the network requests manually while maintaining your custom implementation intact.
+#### Advanced: Custom URLProtocol
 
-#### Manual inserting
+If your app is registering a custom URLProtocol class and is already intercepting your app's requests,
+do not use the `Shake.registerSessionConfiguration` or `Shake.registerAuthDelegate` methods as they would interfere
+with the URLProtocol subclass you defined.
+Instead, use the `Shake.insertNetworkRequest` method to insert network requests manually
+while maintaining your custom implementation intact.
 
-Network events can be manually inserted to Shake and require no prior setup.
-We recommend using this option if your application is using its own URLProtocol or there are only certain network events that should be logged.
-An example can be found in the snippet below:
+
+#### Advanced: Manual inserting
+
+Network events can also be manually inserted to Shake's activity history.
+Use this if your app is using its own URLProtocol or if there are only certain network events that should be logged.
+Here's an example:
 
 <Tabs 
 groupId="ios" 
@@ -290,8 +294,10 @@ private func getUser(withSession session: URLSession, andRequest request: URLReq
 </TabItem> 
 </Tabs>
 
+
 ### System events
 System events - also known as app lifecycle events - are tracked automatically and require no additional setup.
+
 
 ### Notifications
 
