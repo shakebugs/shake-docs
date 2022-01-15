@@ -59,7 +59,9 @@ Shake.configuration.setAutoVideoRecordingEnabled = true
 Duration of the auto-attached screen recording is 15 seconds.
 
 :::note
-Screen recording runs on iOS 13+ devices only. Testing on iOS simulator may not work and can produce warnings in console log without screen recording.
+Screen recording works on iOS 13+ devices only.
+
+It may also not work on iOS simulator and could produce console warnings.
 :::
 
 ## Privacy
