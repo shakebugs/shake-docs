@@ -302,8 +302,7 @@ System events - also known as app lifecycle events - are tracked automatically a
 ### Notifications
 
 Notifications are tracked automatically and require no additional setup. 
-
-If you want Shake to manually handle notification tracking, you can use this method instead: 
+If you want Shake to manually handle notification tracking, use this method instead: 
 
 <Tabs 
 groupId="ios" 
