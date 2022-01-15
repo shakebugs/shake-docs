@@ -9,7 +9,8 @@ import TabItem from '@theme/TabItem';
 >Let's crash your app to see what the crash report looks like on your Shake dashboard.
 
 :::note
-Before testing this, make sure to disconnect your device from the Xcode debugger. Xcode debugger attaches itself to the application process and will disable crash recording.
+Before proceeding, disconnect your device from the Xcode debugger.
+Xcode debugger attaches itself to the app process and would disable crash reporting.
 :::
 
 ## Crash your app
