@@ -157,7 +157,7 @@ end
 ```
 </TabItem>
 
-You can also pass the dSYM file paths manually:
+Or, you can pass the dSYM file paths manually:
 
 <TabItem value="ruby">
 
