@@ -290,7 +290,9 @@ Consequently, you'll see them as `data_redacted` strings in ticket's
 The view's ID, accessibility labels and tags remain visible.
 
 :::note
-Shake supports privacy redaction on all kinds of UIView and its subclasses. On the other side, Shake does not support privacy redaction on UIBarItem(s) like: UIBarButtonItem, UIBarButtonItemGroup and UITabBarItem since those are not UIVew subclasses.
+You can mark any UIView or its subclasses as private.
+You can not mark UIBarItems
+(UIBarButtonItem, UIBarButtonItemGroup and UITabBarItem) as private since those are not UIVew subclasses.
 :::
 
 
