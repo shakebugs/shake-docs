@@ -2,6 +2,9 @@
 id: installation
 title: npm
 ---
+
+> Learn how to add Shake to your React Native app using npm.
+
 ## Install
 Execute the `npm install` command in your terminal:
 
@@ -76,10 +79,33 @@ AppRegistry.registerComponent(appName, () => App);
 Shake.start('your-api-client-id', 'your-api-client-secret');
 ```
 
-Now build your project and see everything work!  
-
-To build and run your app, first run `react-native start` command in the terminal. 
+Build and run your project by running `react-native start` command in the terminal. 
 Use `react-native run-android` command to run your app on the Android device. 
 Or use `react-native run-ios` command to run your app on the iOS device. 
  
-This first run will automatically add your app to your [Shake Dashboard](https://app.shakebugs.com/) based on your app application ID.
+This first run will automatically
+add your app to your [Shake dashboard](https://app.shakebugs.com/) based on your app bundle ID.
+
+## Visit your Shake dashboard
+
+Follow the instructions there to send your first feedback with Shake and you're all set.
+
+## SDK customizations
+
+Now that Shake SDK is in your app and you have sent the first feedback for fun, everything else is optional.
+As the next step, try the three most popular SDK customizations:
+
+<div class="featuresList">
+    <div>
+        <img src="/docs/img/screen-recording@2x.png" alt="Turn on auto screen recording"/>
+        <p><a href="/docs/android/configuration-and-data/auto-screen-recording/">Turn on auto screen recording</a></p>
+    </div>
+    <div>
+        <img src="/docs/img/steps-to-reproduce@2x.png" alt="Tweak logging to your debugging needs"/>
+        <p><a href="/docs/android/configuration-and-data/activity-history">Tweak logging to your debugging needs</a></p>
+    </div>
+    <div>
+        <img src="/docs/img/feature-custom-ticket-data@2x.png" alt="Custom Ticket data"/>
+        <p><a href="/docs/android/configuration-and-data/ticket-metadata/">Custom Ticket data</a></p>
+    </div>
+</div>
