@@ -6,10 +6,11 @@ title: Data privacy disclosure
 
 ## Collected data
 
-We made your life easier by marking with
-<img alt="Requested by App Store" class="inline-icon" width="24" src="/docs/img/app-store-icon@2x.png" />
-the App Store categories which you will have to check when submitting your app.
-Visit Apple official page [App privacy details on the App Store](https://developer.apple.com/app-store/app-privacy-details/) to learn more.
+<img alt="Requested by App Store" class="inline-icon mb-10" width="24" src="/docs/img/app-store-icon@2x.png"/>
+
+This icon additionally marks App Store categories which you will have to check when submitting your app.
+Visit [App privacy details on the App Store](https://developer.apple.com/app-store/app-privacy-details/) to learn more.
+
 
 | Data |  Attributes and sensitivity | Description |
 |------|:---------------------------:|-------------|
