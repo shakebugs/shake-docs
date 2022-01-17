@@ -21,7 +21,7 @@ If you [register users](/flutter/users/register-user) with Shake, they will have
 Tapping any ticket there opens its Chat screen.
 
 Your users can reply to your messages and provide you with more details 
-about the bugs, crashes and feedback they've sent, all without ever leaving your app.
+about the bugs and feedback they've sent, all without ever leaving your app.
 Fix issues more easily and keep your users happy.
 
 Visit [Chat](/flutter/users/chat/) to learn more.
