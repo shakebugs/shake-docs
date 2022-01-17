@@ -17,18 +17,17 @@ You will see UUIDs of the required dSYM files which you can then find on your sy
 ## Enable dSYM files for debug builds
 
 If you plan using crash reporting in a development environment, every debug build action needs to generate dSYM files.
-
 When in your project:
-1. Click your *App.xcodeproj* blue project icon usually located at the top of the *File Inspector* tab in your left-hand pane.
-1. Select your main app target.
-1. Open the Build Settings for that target.
-1. Navigate to the Build Options section.
-1. Choose *dwarf with dSYM file* option for your Debug/Development configuration.
+1. Click your *App.xcodeproj* blue project icon usually located at the top of the *File Inspector* tab in your left-hand pane
+1. Select your main app target
+1. Open Build Settings for that target
+1. Navigate to the Build Options section
+1. Choose *dwarf with dSYM file* option for your Debug/Development configuration
 
 
 ## Find dSYM files
 
-Run this command in your terminal to list all available dSYM files found on the system so you can identify the ones that are missing:
+Run this command in your terminal to list all available dSYM files found on your system so you can identify the ones that are missing:
 
 ```finding_dsyms"
 // highlight-next-line
@@ -92,10 +91,7 @@ You can use it to automate App Store Connect authentication and downloading of d
 
 ### Install fastlane
 
-Use `Bundler` and `Gemfile` to define your dependency on fastlane. 
-This will define the fastlane version to be used, its dependencies, and will speed up fastlane execution.
-
-First, run the `bundle init`  command which will generate the Gemfile like this one:
+First, run the `bundle init`  command in your terminal which will generate the Gemfile like this one:
 
 <TabItem value="gemifle">
 
