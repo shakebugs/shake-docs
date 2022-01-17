@@ -4,7 +4,7 @@ title: Overview
 ---
 
 ## Modules
-> Shake Android SDK has three modules that work together nicely. Use one, all or any combination of them — whatever suits your needs.
+> Shake React Native SDK has two modules that work together nicely. Use any one of them, or both — whatever suits your needs.
 
 <div class="modulesList">
     <div>
@@ -65,13 +65,16 @@ title: Overview
     </div>
 </div>
 
-import AndroidVersion from '@site/src/base/AndroidVersion';
+import ReactVersion from '@site/src/base/ReactVersion';
 
 ## Latest version
-The [latest available Shake SDK version](/docs/react/releases) is <AndroidVersion/>.
+The [latest available Shake SDK version](/docs/react/releases) is <ReactVersion/>.
 
 ## Minimum requirements
-Shake SDK works on Android 5.0 or newer.
+Shake SDK works on:
+* React Native 0.56 or newer
+* Android 5.0 or newer
+* iOS 12.0 or newer
 
 <p class="p2 mt-80 mb-10">⚡️ Shake is improved every week.
 Stumbled upon a <a href="https://feedback.shakebugs.com/bugs">bug</a>?
