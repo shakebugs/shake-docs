@@ -1,5 +1,5 @@
 ---
-id: setup-spm
+id: spm
 title: Swift Package Manager
 ---
 

@@ -1076,3 +1076,11 @@ h3 .hash-link {
 .screen-image {
   border-radius: 20px;
 }
+
+
+.inline-icon {
+  vertical-align: top;
+  top: 1px;
+  position: relative;
+  margin-right: 4px;
+}

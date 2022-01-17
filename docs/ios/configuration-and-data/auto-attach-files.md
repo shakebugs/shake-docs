@@ -3,6 +3,8 @@ id: auto-attach-files
 title: Auto attach files
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 >Automatically attach a log file to each ticket, or user's profile photo, or whatever will help you resolve the ticket faster when you receive it. Files you attach automatically are **not** visible to your users.
 
@@ -20,11 +22,13 @@ You can programmatically attach files by using any of the methods described belo
 _ShakeFile_ can be initialized with a filename (String) and data (NSData / Data):
 
 <Tabs 
-groupId="ios" 
-defaultValue="swift" 
-values={[ 
-  { label: 'Objective-C', value: 'objectivec'}, 
-  { label: 'Swift', value: 'swift'}, ] }>
+  groupId="ios" 
+  defaultValue="swift" 
+  values={[ 
+    { label: 'Objective-C', value: 'objectivec'}, 
+    { label: 'Swift', value: 'swift'},
+  ] 
+}>
 
 <TabItem value="objectivec">
 
@@ -61,18 +65,21 @@ Shake.onPrepareReportData = {
 //highlight-end
 ```
 
-</TabItem> </Tabs>
+</TabItem>
+</Tabs>
 
 ### Set a custom filename and then attach a file
 
 _ShakeFile_ can also be initialized with a desired filename (String) and a local url (NSURL) to your file:
 
 <Tabs 
-groupId="ios" 
-defaultValue="swift" 
-values={[ 
-  { label: 'Objective-C', value: 'objectivec'}, 
-  { label: 'Swift', value: 'swift'}, ] }>
+  groupId="ios" 
+  defaultValue="swift" 
+  values={[ 
+    { label: 'Objective-C', value: 'objectivec'}, 
+    { label: 'Swift', value: 'swift'},
+  ] 
+}>
 
 <TabItem value="objectivec">
 
@@ -107,22 +114,25 @@ Shake.onPrepareReportData = {
 }
 //highlight-end
 ```
-</TabItem> </Tabs>
+</TabItem>
+</Tabs>
 
 ### Attach a file without the custom filename
 Lastly, you can initialize _ShakeFile_ only with a local file url (NSURL).
 If you initialize it this way, the filename shown on your Shake dashboard will be determined automatically from the passed file's name.
 
 <Tabs 
-groupId="ios" 
-defaultValue="swift" 
-values={[ 
-  { label: 'Objective-C', value: 'objectivec'}, 
-  { label: 'Swift', value: 'swift'}, ] }>
+  groupId="ios" 
+  defaultValue="swift" 
+  values={[ 
+    { label: 'Objective-C', value: 'objectivec'}, 
+    { label: 'Swift', value: 'swift'},
+  ] 
+}>
 
 <TabItem value="objectivec">
 
-```objectivec title="AppDelegate.m" NSURL *fileUrl = ...
+```java title="AppDelegate.m" NSURL *fileUrl = ...
 //highlight-start 
 SHKShake.onPrepareReportData = ^NSArray<SHKShakeFile *> * _Nonnull { 
   NSMutableArray <SHKShakeFile *> attachedFiles = NSMutableArray.new; 
@@ -150,7 +160,8 @@ Shake.onPrepareReportData = {
 //highlight-end
 ```
 
-</TabItem> </Tabs>
+</TabItem>
+</Tabs>
 
 ## Limitations
 

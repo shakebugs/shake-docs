@@ -1,5 +1,5 @@
 ---
-id: setup-manually
+id: manually
 title: Manually
 ---
 >A guide to add Shake to your app without a dependency manager or a build automation tool.
