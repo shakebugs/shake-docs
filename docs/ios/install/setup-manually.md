@@ -11,12 +11,15 @@ always pull the latest version of Shake into your app. Instead, you will have to
 
 :::
 
-## Download Shake from GitHub
-Visit [Shake iOS SDK GitHub repo](https://github.com/shakebugs/shake-ios) → click the green *Clone* button → *Download ZIP*.
-Shake directory will be downloaded to your computer → drag-and-drop the *Shake.framework* folder into your project.
 
-Then, select *Embed & Sign* for *Shake.xcframework*  in Xcode *General tab* or
-*Frameworks, Libraries, and Embedded content* (Xcode 11, Xcode 12).
+## Download Shake from GitHub
+Visit [Shake iOS SDK GitHub repo](https://github.com/shakebugs/shake-ios)
+→ *Download ZIP*
+→ copy *Shake.framework* folder into your Xcode project
+→ drag the copied *Shake.xcframework* into *Frameworks, Libraries, and Embedded content* section of your project *Target* general settings.
+
+Make sure that *Embed&Sign* option is selected for the *Shake.xcframework*.
+
 
 ## Initialize Shake
 Initialize Shake in the `didFinishLaunchingWithOptions` callback of your *AppDelegate*.
