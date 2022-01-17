@@ -13,7 +13,7 @@ import TabItem from '@theme/TabItem';
 Here, your user can see:
 * A welcome message that you can change from your [Shake dashboard](https://app.shakebugs.com/settings/workspace#whitelabel).
 * A button to submit a new ticket.
-* All their previous tickets (user feedback and crash reports).
+* All their previous tickets.
 To show them their previous tickets, [register your users](/react/users/overview) with Shake.
 
 <table class="media-container mt-50">
