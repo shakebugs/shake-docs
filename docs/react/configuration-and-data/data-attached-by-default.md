@@ -166,7 +166,7 @@ All of this is done out of the box, you don't need to code anything.
     </div>
 </div>
 
-<p><sup>1</sup> Shake tracks the status of these runtime permissions, also known as dangerous permissions:</p>
+<p><sup>1</sup> Shake tracks the status of these Android runtime permissions, also known as dangerous permissions:</p>
 
 * CALENDAR
 * CALL_LOG
@@ -178,6 +178,16 @@ All of this is done out of the box, you don't need to code anything.
 * SENSORS
 * SMS
 * STORAGE
+
+and the status of these iOS permissions:
+
+* Calendar access
+* Camera access
+* Contacts access
+* Photo library access
+* Location access
+* Media library access
+* Microphone access
 
 On your Shake dashboard, only those permissions that the user has granted access to are listed.
 The ones you don't see were either denied or not requested at all.
