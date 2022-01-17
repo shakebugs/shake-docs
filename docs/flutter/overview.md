@@ -4,7 +4,7 @@ title: Overview
 ---
 
 ## Modules
-> Shake Flutter SDK has three modules that work together nicely. Use one, all or any combination of them — whatever suits your needs.
+> Shake Flutter SDK has two modules that work together nicely. Use any one of them, or both — whatever suits your needs.
 
 <div class="modulesList">
     <div>
@@ -65,13 +65,16 @@ title: Overview
     </div>
 </div>
 
-import AndroidVersion from '@site/src/base/AndroidVersion';
+import FlutterVersion from '@site/src/base/FlutterVersion';
 
 ## Latest version
-The [latest available Shake SDK version](/flutter/releases) is <AndroidVersion/>.
+The [latest available Shake SDK version](/flutter/releases) is <FlutterVersion/>.
 
 ## Minimum requirements
-Shake SDK works on Android 5.0 or newer.
+Shake SDK works on:
+* Flutter 1.12 or newer
+* Android 7.0 or newer
+* iOS 12.0 or newer
 
 <p class="p2 mt-80 mb-10">⚡️ Shake is improved every week.
 Stumbled upon a <a href="https://feedback.shakebugs.com/bugs">bug</a>?
