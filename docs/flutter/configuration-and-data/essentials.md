@@ -162,7 +162,7 @@ All of this is done out of the box, you don't need to code anything.
             class="small-visual-icon"
             src={useBaseUrl('img/settings-switches-square.svg')}
         />
-        <p class="p2">Granted dangerous permissions <sup>1</sup></p>
+        <p class="p2">Granted permissions <sup>1</sup></p>
     </div>
 </div>
 
@@ -178,6 +178,16 @@ All of this is done out of the box, you don't need to code anything.
 * SENSORS
 * SMS
 * STORAGE
+
+and the status of these iOS permissions:
+
+* Calendar access
+* Camera access
+* Contacts access
+* Photo library access
+* Location access
+* Media library access
+* Microphone access
 
 On your Shake dashboard, only those permissions that the user has granted access to are listed.
 The ones you don't see were either denied or not requested at all.
