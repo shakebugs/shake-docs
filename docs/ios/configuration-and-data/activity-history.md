@@ -16,14 +16,12 @@ and automatically attaches all of those to the ticket.
 Shake automatically observes taps made on your app's UI elements.
 
 :::note
-This feature is disabled for iOS applications built with SwiftUI.
+This feature is disabled for apps built with SwiftUI.
 :::note
 
 ### Screen changes
 
-Shake automatically logs app screen (ViewController lifecycle) changes.
-
-For apps built with __UIKit__, everything works out of the box.
+In apps built with __UIKit__, Shake automatically logs app screen (ViewController lifecycle) changes.
 
 Apps built with __SwiftUI__ have to use the provided View extension in their top-level Views which represent screens.
 shakeIntercept View extension allows Shake to hook into the View lifecycle so it can get notified of screen changes.
@@ -50,7 +48,7 @@ var body: some View {
 
 #### Setup
 
-Network request reporting works by stubbing your URLSessionConfiguration object attached to your app's URLSession.
+Network request reporting works by stubbing the URLSessionConfiguration object attached to your app's URLSession.
 
 :::note
 Make sure to call Shake's registerSessionConfiguration method before initialising your URLSession.
@@ -116,7 +114,7 @@ the _URLSessionConfiguration_ object with Shake and passing the configuration to
 Advanced users may use SSL pinning for their URL requests.
 
 Without Shake, the delegate of the native _URLSession_ will receive authentication challenges
-via the native `URLSession:didReceiveChallenge:completionHandler` method and is in charge of
+via the native `URLSession:didReceiveChallenge:completionHandler` method and will be in charge of
 calling the completion handler with the appropriate arguments.
 
 Because of implementation specifics of Shake network request reporting,
@@ -239,7 +237,7 @@ while maintaining your custom implementation intact.
 
 #### Advanced: Manual inserting
 
-Network events can also be manually inserted to Shake's activity history.
+Network events can also be manually inserted into Shake's activity history.
 Use this if your app is using its own URLProtocol or if there are only certain network events that should be logged.
 Here's an example:
 
