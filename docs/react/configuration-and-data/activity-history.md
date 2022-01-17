@@ -70,7 +70,7 @@ Shake.insertNotificationEvent(notificationEventBuilder);
 ```
 
 ### Custom logs
-You can add your own custom logs to Activity history, which will then be shown as part of every bug report. Here’s an example of how this would look like in code:
+You can add your own logs to Activity history too:
 
 ```javascript title="App.js" // highlight-next-line import Shake, { LogLevel } from '@shakebugs/react-native-shake';
 const sendCustomLog = () => { 
@@ -79,7 +79,7 @@ Shake.log(LogLevel.INFO, 'This is a Shake custom log.');
 }
 ```
 
-Here are all possible log levels you can use:
+You have these log levels at your disposal:
 
 ```javascript
 LogLevel.VERBOSE
@@ -127,7 +127,7 @@ Make sure that activity history is enabled if you want to send console logs with
 ## Limitations
 In a Free workspace you can see up to 20 events that led to the ticket being reported.
 If you need to dive really deep to find causes of the weirdest bugs,
-In a Premium workspace you can browse the full Activity history.
+in a Premium workspace you can browse the full Activity history.
 
 The network request limits for both the request body and the response body are 100 kB each.
 If the request body or the response body contains binary data, it will be presented as a *Binary data* string.
