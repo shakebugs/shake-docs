@@ -9,7 +9,7 @@ profile giving you an insight into the last 60 seconds before the ticket was sub
 
 ## Automatically recorded charts
 
-### CPU
+### App CPU usage
 
 This line chart (visible in every ticket on your [Shake dashboard](https://app.shakebugs.com/)) shows your app's CPU usage.
 When you hover over the chart, the CPU percentage is shown.
