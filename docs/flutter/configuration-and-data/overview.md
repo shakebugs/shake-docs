@@ -7,18 +7,17 @@ title: Overview
 
 ## Introduction
 
-Whatever you tweak, your configuration settings apply to Shake modules:
-* [User feedback](/flutter/user-feedback/overview)
+Whatever you tweak, your configuration settings apply to the [User feedback](/flutter/user-feedback/overview) module.
 
 ## Elements of the New ticket screen
 
 Your users send you their feedback and crash reports from the New ticket screen. Read how to customize it:
 * [New ticket screen elements](/flutter/configuration-and-data/new-ticket-screen-elements)
-* [Feedback type](/flutter/user-feedback/feedback-type) for User feedback. Crash reports don't have this element.
+* [Feedback type](/flutter/user-feedback/feedback-type)
 
 ## Collected data
 
-Shake attaches useful data both to user feedback and crash reports. Read all about it:
+Shake attaches useful data to user feedback. Read all about it:
 
 <div class="featuresList">
     <div>
