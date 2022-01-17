@@ -162,7 +162,7 @@ All of this is done out of the box, you don't need to code anything.
             class="small-visual-icon"
             src={useBaseUrl('img/settings-switches-square.svg')}
         />
-        <p class="p2">Granted dangerous permissions <sup>1</sup></p>
+        <p class="p2">Granted permissions <sup>1</sup></p>
     </div>
 </div>
 
