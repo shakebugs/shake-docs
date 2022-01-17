@@ -7,9 +7,7 @@ title: Swift Package Manager
 
 ## Install the Shake Package
 
-Select *File → Swift Packages → Add Package Dependency*  
-
-Enter the Shake repository URL when prompted:
+Select *File → Swift Packages → Add Package Dependency*. Enter the Shake repository URL when prompted:
 
 ```swift"
 // highlight-next-line
@@ -18,7 +16,7 @@ https://github.com/shakebugs/shake-ios
 
 Choose the appropriate cloning details and optionally specify the exact Shake version or branch.
 
-Click *Finish* to add the Shake package to your project.
+Click *Finish* to add Shake to your project.
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
