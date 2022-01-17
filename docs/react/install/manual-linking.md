@@ -3,7 +3,7 @@ id: manual-linking
 title: Manual linking
 ---
 
-Normally, linking is done automatically or using link command.
+>Normally, linking is done automatically or using link command.
 If you want to link it manually, you can do it following way.
 
 ### Android
