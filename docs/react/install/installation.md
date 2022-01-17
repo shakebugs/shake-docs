@@ -98,14 +98,14 @@ As the next step, try the three most popular SDK customizations:
 <div class="featuresList">
     <div>
         <img src="/docs/img/screen-recording@2x.png" alt="Turn on auto screen recording"/>
-        <p><a href="/docs/android/configuration-and-data/auto-screen-recording/">Turn on auto screen recording</a></p>
+        <p><a href="/docs/react/configuration-and-data/auto-screen-recording/">Turn on auto screen recording</a></p>
     </div>
     <div>
         <img src="/docs/img/steps-to-reproduce@2x.png" alt="Tweak logging to your debugging needs"/>
-        <p><a href="/docs/android/configuration-and-data/activity-history">Tweak logging to your debugging needs</a></p>
+        <p><a href="/docs/react/configuration-and-data/activity-history">Tweak logging to your debugging needs</a></p>
     </div>
     <div>
         <img src="/docs/img/feature-custom-ticket-data@2x.png" alt="Custom Ticket data"/>
-        <p><a href="/docs/android/configuration-and-data/ticket-metadata/">Custom Ticket data</a></p>
+        <p><a href="/docs/react/configuration-and-data/ticket-metadata/">Custom Ticket data</a></p>
     </div>
 </div>
