@@ -3,7 +3,7 @@ id: installation
 title: Installation
 ---
 
-* >Learn how to add Shake to your Flutter app.
+>Learn how to add Shake to your Flutter app.
 
 :::note
 Shake supports post Flutter 1.12 projects. If your project was created with the older version
