@@ -13,14 +13,14 @@ Execute the `npm install` command in your terminal:
 npm install @shakebugs/react-native-shake
 ```
 
-If you use React Native version 0.60 or greater, you should also run the `add` command:
+If you use React Native version 0.60 or greater, also run the `add` command:
 
 ```bash title="Terminal"
 // highlight-next-line
 react-native add-shake
 ```
 
-If you use React Native version lower than 0.60, you should run the `link` command instead:
+If you use React Native version lower than 0.60, run the `link` command instead:
 
 ```bash title="Terminal"
 // highlight-next-line
@@ -63,7 +63,7 @@ buildscript {
 
 ## Initialize Shake
 
-Call `Shake.start()` method in your *index.js* file. 
+Call `Shake.start()` in your *index.js* file. 
 Replace `your-api-client-id` and `your-api-client-secret` with the actual values you have in [your workspace settings](https://app.shakebugs.com/settings/workspace#general):
 
 ```javascript title="index.js"
@@ -80,8 +80,8 @@ Shake.start('your-api-client-id', 'your-api-client-secret');
 ```
 
 Build and run your project by running `react-native start` command in the terminal. 
-Use `react-native run-android` command to run your app on the Android device. 
-Or use `react-native run-ios` command to run your app on the iOS device. 
+Use the `react-native run-android` command to run your app on the Android device. 
+Or use the `react-native run-ios` command to run your app on the iOS device. 
  
 This first run will automatically
 add your app to your [Shake dashboard](https://app.shakebugs.com/) based on your app bundle ID.
