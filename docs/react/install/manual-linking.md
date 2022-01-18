@@ -58,7 +58,7 @@ defaultConfig {
 
 ### Enable touch tracking
 
-Enable touch tracking in Android apps by adding following code to the *MainActivity.java*:
+Enable touch tracking in Android apps by adding following code to *MainActivity.java*:
 
 ```java title="MainActivity.java"
 package com.shakebugs.react.example;
@@ -90,7 +90,7 @@ public class MainActivity extends ReactActivity {
 
 ## iOS
 
-Open your project in the Xcode by clicking project's *.xcodeproj* file.
+Open your project in Xcode by clicking project's *.xcodeproj* file.
 
 Copy *RNShake.xcodeproj* from *$rootDir/node_modules/@shakebugs/react-native-shake/ios/* to the *Libraries* folder of your project.
 
