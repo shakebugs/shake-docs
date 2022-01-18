@@ -63,14 +63,14 @@ Shake ships with the `upload-symbols.sh` script which uploads dSYM files to Shak
 To ensure that the latest dSYM files are automatically uploaded after every build process, add a new Run Script Phase:
 *Xcode → Scheme → EditScheme* → expand the *Build Action* options → *Post Actions → +*
 
-Paste this script but make sure to replace the placeholder values with the actual values
+Paste this script but make sure to replace `your-api-client-id` and `your-api-client-secret` with the actual values
 you have in [your workspace settings](https://app.shakebugs.com/settings/workspace#general):
 
 ```script
 //highlight-start
 Path/to/upload-symbols.sh \
---client_id your_client_id \
---client_secret your_client_secret
+--client_id your-api-client-id \
+--client_secret your-api-client-secret
 //highlight-end
 ```
 
@@ -137,6 +137,9 @@ end
 // highlight-end
 ```
 </TabItem>
+
+You can find your `<Shake client id>` and `<Shake client secret>` in
+[your workspace settings](https://app.shakebugs.com/settings/workspace#general).
 
 On the other hand, if you have [Bitcode](https://help.apple.com/xcode/mac/current/#/devbbdc5ce4f) disabled,
 add the `upload_symbols_to_shake` action with [gym](http://docs.fastlane.tools/actions/gym/#gym) to upload dSYMs generated from the build:
