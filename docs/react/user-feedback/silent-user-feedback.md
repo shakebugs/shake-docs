@@ -8,8 +8,8 @@ title: Silent user feedback
 You can send silent user feedback to yourself by calling the `Shake.silentReport` method anywhere after `Shake.start`. Feel free to add your own description to it as well.
 
 *ShakeReportConfiguration* determines which data is attached to the silent user feedback:
-* Files returned by the [onPrepareData](react/configuration-and-data/auto-attach-files.md) callback.
-* [Auto screen recording](react/configuration-and-data/auto-screen-recording.md) if the feature is turned on.
+* [Auto attached files](react/configuration-and-data/auto-attach-files.md)
+* [Auto screen recording](react/configuration-and-data/auto-screen-recording.md) if the feature is turned on
 * Etc.
 
 ```javascript title="App.js"
