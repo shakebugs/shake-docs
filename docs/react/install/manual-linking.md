@@ -90,8 +90,6 @@ public class MainActivity extends ReactActivity {
 
 ## iOS
 
-Open your project in Xcode by clicking project's *.xcodeproj* file.
-
-Copy *RNShake.xcodeproj* from *$rootDir/node_modules/@shakebugs/react-native-shake/ios/* to the *Libraries* folder of your project.
-
-Drag *libRNShake.a* from the *Libraries / RNShake / Products* folder to *Link Binary With Libraries* in the *Build Phases* section.
+1. Open your project in Xcode by clicking project's *.xcodeproj* file.
+1. Copy *RNShake.xcodeproj* from *$rootDir/node_modules/@shakebugs/react-native-shake/ios/* to the *Libraries* folder of your project.
+1. Drag *libRNShake.a* from the *Libraries / RNShake / Products* folder to *Link Binary With Libraries* in the *Build Phases* section.
