@@ -71,6 +71,11 @@ Shake.configuration.isSensitiveDataRedactionEnabled = false
 This feature is disabled for iOS applications built with SwiftUI. 
 :::
 
+:::note
+You can mark any UIView or its subclasses as private.
+You can not mark UIBarItems
+(UIBarButtonItem, UIBarButtonItemGroup and UITabBarItem) as private since those are not UIVew subclasses.
+:::
 
 <table class="media-container media-container-highlighted mt-40 mb-40">
 <img
@@ -85,9 +90,7 @@ from the [auto screenshot](/ios/configuration-and-data/auto-screenshot).
 Private views are stored as a weak reference. They get cleared from the memory when not used anymore.
 
 :::note
-
 These methods won't delete sensitive views from auto screen recording — only from the auto screenshot.
-
 :::
 
 Let's suppose you're building a shopping app and you want to delete the name and the credit card number views
@@ -282,6 +285,7 @@ Shake.clearPrivateViews()
 </TabItem>
 </Tabs>
 
+
 ## Touch events
 
 Marking a view as private will automatically delete its touch events' text properties too.
@@ -289,14 +293,9 @@ Consequently, you'll see them as `data_redacted` strings in ticket's
 [Activity history](/ios/configuration-and-data/activity-history).
 The view's ID, accessibility labels and tags remain visible.
 
-:::note
-You can mark any UIView or its subclasses as private.
-You can not mark UIBarItems
-(UIBarButtonItem, UIBarButtonItemGroup and UITabBarItem) as private since those are not UIVew subclasses.
-:::
-
 
 ## Network requests
+
 Network requests may contain sensitive data which you may not want to send to Shake servers.
 Use the `Shake.setNetworkRequestsFilter()` method to obfuscate sensitive parts of those requests,
 or to entirely prevent certain network requests from being logged.
