@@ -19,13 +19,13 @@ User actions tracking is currently not supported.
 ### Network traffic
 
 Shake provides you a wrapper for dart:io HttpClient class which allows you to track network traffic.
-Additionally, if you are using dio or http packages for sending network requsts, you can use one our extensions.
+Additionally, if you use dio or http packages for sending network requsts, you can use one of the extensions below.
 
 
 #### dart:io
 
 Use ShakeHttpClient wrapper class to perform network requests.
-All network requests sent with the ShakeHttpClient instance will be visible on the dashboard.
+All network requests sent with the ShakeHttpClient instance will be visible in Activity history.
 
 ```dart title="main.dart" 
 // highlight-next-line 
@@ -40,13 +40,13 @@ void sendNetworkRequest() async {
 ```
 
 :::note
-The latest version of Shake dart:io HttpClient wrapper will log network request details without request and response body.
+The latest version of Shake dart:io HttpClient wrapper will log network request details without request and response bodies.
 :::
 
 
 #### dio
 
-Install [shake_dio_interceptor](https://pub.dev/packages/shake_dio_interceptor) extension for *dio* package:
+Install [shake_dio_interceptor](https://pub.dev/packages/shake_dio_interceptor) extension for the *dio* package:
 
 ```yaml title="pubspec.yaml"
 dependencies:
@@ -133,9 +133,9 @@ System events - also known as app lifecycle events - are tracked automatically a
 
 ### Notifications
 
-On iOS, notifications are tracked automatically and require no additional setup.
+On *iOS*, notifications are tracked automatically and require no additional setup.
 
-Android requires notifications permission in the settings to track notifications.
+*Android* requires notifications permission in the settings to track notifications.
 Use the following code snippet to show notification settings screen to the user:
 
 ```dart title="main.dart" 
