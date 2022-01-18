@@ -14,7 +14,7 @@ and automatically attaches all of those to the ticket.
 ### User actions
 
 SDK automatically observes taps made on your app's UI elements.
-On Android, [code snippet](/react/install/manual-linking) required to enable touch tracking is added by running [add command](/react/install/installation).
+On Android, [code snippet](/react/install/manual-linking) required to enable touch tracking is added by running [add command](/react/install/npm).
 
 
 ### Network traffic
