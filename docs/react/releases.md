@@ -2,7 +2,7 @@
 id: releases
 title: Release notes
 ---
->This page lists all updates to the Shake Android SDK.
+>This page lists all updates to the Shake React Native SDK.
 
 ## What's next?
 
