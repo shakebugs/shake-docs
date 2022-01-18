@@ -10,6 +10,7 @@ import TabItem from '@theme/TabItem';
 what data is sent to Shake servers. Shake SDK allows you to filter out sensitive data on the mobile device itself,
 so it never reaches the Shake servers.
 
+
 ## Automatically redacted sensitive data
 
 Shake automatically redacts these sensitive data from your notifications, touch events and network requests:
@@ -56,9 +57,7 @@ from the [auto screenshot](/react/configuration-and-data/auto-screenshot).
 Private views are stored as a weak reference. They get cleared from the memory when not used anymore.
 
 :::note
-
 These methods won't delete sensitive views from auto screen recording — only from the auto screenshot.
-
 :::
 
 Let's suppose you're building a shopping app and you want to delete the name and the credit card number views
@@ -92,18 +91,6 @@ To clear all the private views, use the following method:
 Shake.clearPrivateViews();
 ```
 
-## Auto screen recording
-Use the Android system flag `FLAG_SECURE` on an activity if you want to prevent 
-sensitive data from being visible on the auto screen recording.
-It will make the activity black in the video:
-
-```javascript title="App.js" 
-// highlight-next-line 
-Shake.setAutoVideoRecording(false);
-```
-
-Visit [Auto screen recording](/react/configuration-and-data/auto-screen-recording.md)
-to read how to turn it off altogether.
 
 ## Touch events
 
@@ -112,7 +99,9 @@ Consequently, you'll see them as `data_redacted` strings in ticket's
 [Activity history](/react/configuration-and-data/activity-history).
 The view's ID, accessibility labels and tags remain visible.
 
+
 ## Network requests
+
 Network requests may contain sensitive data which you may not want to send to Shake servers.
 Use the `Shake.setNetworkRequestsFilter()` method to obfuscate sensitive parts of those requests,
 or to entirely prevent certain network requests from being logged.
@@ -154,7 +143,9 @@ Shake.setNetworkRequestsFilter((networkRequest) => {
 
 To clear the network requests filter, use `Shake.setNetworkRequestsFilter(null)`.
 
+
 ## Notification events
+
 If your app notifications contain sensitive data, use the `Shake.setNotificationEventsFilter()`
 method to fully or partially obfuscate those notifications.
 
