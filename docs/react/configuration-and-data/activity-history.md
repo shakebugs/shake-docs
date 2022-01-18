@@ -99,14 +99,13 @@ LogLevel.ERROR
 ```
 
 ### Console logs
-Console logs are recorded automatically and require no additional setup. If you want to disable this feature use the method below:
+On *Android*, console logs are recorded automatically and require no additional setup. If you want to disable this feature use the method below:
 ```javascript title="App.js" 
 // highlight-next-line 
 Shake.setConsoleLogsEnabled(false);
 ```
 
-Add the following code snippet to your *AppDelegate.m* to make sure that console logs are recorded by Shake on iOS.
-
+For *iOS* apps, add the following code snippet to your *AppDelegate.m* to make sure that console logs are recorded by Shake:
 ```java title="AppDelegate.m"
 // highlight-next-line
 #import <React/RCTLog.h>
@@ -129,11 +128,9 @@ RCTLogFunction ShakeLogFunction = ^(RCTLogLevel level, __unused RCTLogSource sou
 // highlight-end
 ```
 
-:::note
-Make sure that activity history is enabled if you want to send console logs with your report.
-:::
 
 ## Limitations
+
 In a Free workspace you can see up to 20 events that led to the ticket being reported.
 If you need to dive really deep to find causes of the weirdest bugs,
 in a Premium workspace you can browse the full Activity history.
@@ -141,7 +138,9 @@ in a Premium workspace you can browse the full Activity history.
 The network request limits for both the request body and the response body are 100 kB each.
 If the request body or the response body contains binary data, it will be presented as a *Binary data* string.
 
+
 ## Disable
+
 Activity history is enabled by default, use the method below to disable it altogether:
 
 ```javascript title="App.js" 
