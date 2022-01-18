@@ -16,13 +16,11 @@ That has nothing to do with these auto-attached files.
 
 You can programmatically attach files by using any of the methods described below.
 To define which files will be attached when a user submits a ticket,
-you must call the `Shake.onPrepareData` method overriding the `attachedFiles` method inside, as shown in the examples below.
+you must call the `Shake.setShakeReportData` method overriding the `attachedFiles` method inside, as shown in the examples below.
 
 :::note
-
-You can call the `Shake.onPrepareData` method anywhere in your app,
+You can call the `Shake.setShakeReportData` method anywhere in your app,
 just be careful to only call it once since any subsequent calls will override the former ones.
-
 :::
 
 ### Set a custom filename and then attach a file
@@ -47,7 +45,7 @@ Instead of a file path, you can initialize it with the actual file object (java.
 If you initialize it this way, the filename shown on your Shake dashboard will be determined automatically from the passed file's name.
 
 To define which files will be uploaded when a user reports a ticket,
-you must call the `onPrepareData` method, overriding the `attachedFiles` method inside,
+you must call the `setShakeReportData` method, overriding the `attachedFiles` method inside,
 as shown in the example below.
 
 ```javascript title="App.js" 
