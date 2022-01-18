@@ -7,15 +7,19 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 >Shake tracks user's interaction with your app, their network traffic, notifications, logs and system events,
 and automatically attaches all of those to the ticket.
 
+
 ## Setup
 
+
 ### User actions
+
 SDK automatically observes taps made on your app's UI elements.
 On Android, [code snippet](/react/install/manual-linking) required to enable touch tracking is added by running [add command](/react/install/installation).
 
 
-### Network requests
-Network tracker is disabled by default, to enable network requests tracking use the following method:
+### Network traffic
+
+Network traffic logging is disabled by default. Enable it using the following method:
 ```javascript title="App.js" 
 // highlight-next-line 
 Shake.setNetworkRequestsEnabled(true);
@@ -41,12 +45,17 @@ Shake.insertNetworkRequest(networkRequestBuilder);
 // highlight-end
 ```
 
+
 ### System events
+
 System events - also known as app lifecycle events - are tracked automatically and require no additional setup.
 
+
 ### Notifications
-On iOS, notifications are tracked automatically and require no additional setup.
-Android requires notifications permission in the settings to track notifications.
+
+On *iOS*, notifications are tracked automatically and require no additional setup.
+
+*Android* requires notifications permission in settings to track notifications.
 Use the following code snippet to show notification settings screen to the user:
 
 ```javascript title="App.js" 
