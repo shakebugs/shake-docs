@@ -7,17 +7,25 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 >Shake tracks user's interaction with your app, their network traffic, notifications, logs and system events,
 and automatically attaches all of those to the ticket.
 
+
 ## Setup
 
+
 ### User actions
+
 User actions tracking is currently not supported.
 
-### Network requests
-Shake provides you a wrapper for dart:io HttpClient class which allows you to track network requests. Additionally, if you are using dio or http packages for sending network requsts, you can use one our extensions.
+
+### Network traffic
+
+Shake provides you a wrapper for dart:io HttpClient class which allows you to track network traffic.
+Additionally, if you are using dio or http packages for sending network requsts, you can use one our extensions.
+
 
 #### dart:io
 
-Use ShakeHttpClient wrapper class to perform network requests. All network requests sent with the ShakeHttpClient instance will be visible on the dashboard.
+Use ShakeHttpClient wrapper class to perform network requests.
+All network requests sent with the ShakeHttpClient instance will be visible on the dashboard.
 
 ```dart title="main.dart" 
 // highlight-next-line 
@@ -32,12 +40,12 @@ void sendNetworkRequest() async {
 ```
 
 :::note
-
 The latest version of Shake dart:io HttpClient wrapper will log network request details without request and response body.
-
 :::
 
+
 #### dio
+
 Install [shake_dio_interceptor](https://pub.dev/packages/shake_dio_interceptor) extension for *dio* package:
 
 ```yaml title="pubspec.yaml"
@@ -62,6 +70,7 @@ void sendNetworkRequest() async {
 ```
 
 All network requests sent with the *Dio* instance will be visible on the dashboard.
+
 
 #### http
 
@@ -89,7 +98,9 @@ void sendNetworkRequest() async {
 
 All network requests sent with the *ShakeHttpClient* instance will be visible on the dashboard.
 
+
 #### Manually
+
 You can add your own custom network requests at any time:
 
 ```dart title="main.dart"
@@ -116,9 +127,12 @@ void insertNetworkRequest() {
 ```
 
 ### System events
+
 System events - also known as app lifecycle events - are tracked automatically and require no additional setup.
 
+
 ### Notifications
+
 On iOS, notifications are tracked automatically and require no additional setup.
 
 Android requires notifications permission in the settings to track notifications.
@@ -148,7 +162,9 @@ void insertNotificationEvent() {
 }
 ```
 
+
 ### Custom logs
+
 You can add your own logs to Activity history too:
 
 ```dart title="main.dart" 
@@ -166,7 +182,9 @@ LogLevel.warn
 LogLevel.error
 ```
 
+
 ### Console logs
+
 Console logs are recorded automatically and require no additional setup.
 If you want to disable this feature use the method below:
 
@@ -175,13 +193,9 @@ If you want to disable this feature use the method below:
 Shake.setConsoleLogsEnabled(false);
 ```
 
-:::note
-
-Make sure that activity history is enabled if you want to send console logs with your report.
-
-:::
 
 ## Limitations
+
 In a Free workspace you can see up to 20 events that led to the ticket being reported.
 If you need to dive really deep to find causes of the weirdest bugs,
 in a Premium workspace you can browse the full Activity history.
@@ -189,7 +203,9 @@ in a Premium workspace you can browse the full Activity history.
 The network request limits for both the request body and the response body are 100 kB each.
 If the request body or the response body contains binary data, it will be presented as a *Binary data* string.
 
+
 ## Disable
+
 Activity history is enabled by default, use the method below to disable it altogether:
 
 ```dart title="main.dart"
