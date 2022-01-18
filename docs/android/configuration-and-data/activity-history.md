@@ -7,9 +7,12 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 >Shake tracks user's interaction with your app, their network traffic, notifications, logs and system events,
 and automatically attaches all of those to the ticket.
 
+
 ## Setup
 
+
 ### User actions
+
 To set up Shake to observe taps made on your app's UI elements, add this to the Activity you want to track:
 
 import Tabs from '@theme/Tabs';
@@ -50,7 +53,9 @@ override fun dispatchTouchEvent(event: MotionEvent): Boolean {
 </TabItem>
 </Tabs>
 
-### Network requests
+
+### Network traffic
+
 If you want to receive users' network traffic logs, add this line to your `OkHttpClient`:
 
 <Tabs
@@ -169,10 +174,14 @@ Shake.insertNetworkRequest(networkRequestBuilder)
 </TabItem>
 </Tabs>
 
+
 ### System events
+
 System events - also known as app lifecycle events - are tracked automatically and require no additional setup.
 
+
 ### Notifications
+
 In order for Shake to track notifications throughout your app, add this line where appropriate:
 
 <Tabs
@@ -208,10 +217,8 @@ startActivity(Intent("android.settings." +
 </Tabs>
 
 :::note
-
 This starts the notification listener service, which will require
 users to grant notification access the first time they open your app.
-
 :::
 
 If you want Shake to manually handle notification tracking, use this method instead:
@@ -252,7 +259,9 @@ Shake.handleNotification(
 </TabItem>
 </Tabs>
 
+
 ### Custom logs
+
 You can add your own logs to Activity history too:
 
 <Tabs
@@ -319,7 +328,9 @@ LogLevel.ERROR
 </TabItem>
 </Tabs>
 
+
 ### Console logs
+
 Console logs are recorded automatically and require no additional setup.
 If you want to disable this feature use the method below:
 
@@ -351,7 +362,9 @@ Shake.getReportConfiguration().isConsoleLogsEnabled = false
 </TabItem>
 </Tabs>
 
+
 ## Limitations
+
 In a Free workspace you can see up to 20 events that led to the ticket being reported.
 If you need to dive really deep to find causes of the weirdest bugs,
 in a Premium workspace you can browse the full Activity history.
@@ -359,7 +372,9 @@ in a Premium workspace you can browse the full Activity history.
 The network request limits for both the request body and the response body are 100 kB each.
 If the request body or the response body contains binary data, it will be presented as a *Binary data* string.
 
+
 ## Disable
+
 Activity history is enabled by default, use the method below to disable it altogether:
 
 <Tabs
