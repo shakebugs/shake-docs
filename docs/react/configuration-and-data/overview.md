@@ -11,7 +11,7 @@ Whatever you tweak, your configuration settings apply to the [User feedback](/re
 
 ## Elements of the New ticket screen
 
-Your users send you their feedback and crash reports from the New ticket screen. Read how to customize it:
+Your users send you their feedback from the New ticket screen. Read how to customize it:
 * [New ticket screen elements](/react/configuration-and-data/new-ticket-screen-elements)
 * [Feedback type](/react/user-feedback/feedback-type)
 
