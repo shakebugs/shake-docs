@@ -8,8 +8,8 @@ title: Silent user feedback
 You can send silent user feedback to yourself by calling the `Shake.silentReport` method anywhere after `Shake.start`. Feel free to add your own description to it as well.
 
 *SHKShakeReportConfiguration* determines which data is attached to the silent user feedback:
-* Files returned by the [onPrepareData](/ios/configuration-and-data/auto-attach-files.md) callback.
-* [Auto screen recording](/ios/configuration-and-data/auto-screen-recording.md) if the feature is turned on.
+* [Auto attached files](/ios/configuration-and-data/auto-attach-files.md)
+* [Auto screen recording](/ios/configuration-and-data/auto-screen-recording.md) if the feature is turned on
 * Etc.
 
 import Tabs from '@theme/Tabs'; 
