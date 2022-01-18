@@ -23,11 +23,11 @@ This feature is disabled for apps built with SwiftUI.
 :::note
 
 
-### Network requests
+### Network traffic
 
 #### Setup
 
-Network request reporting works by stubbing the URLSessionConfiguration object attached to your app's URLSession.
+Network traffic logging works by stubbing the URLSessionConfiguration object attached to your app's URLSession.
 
 :::note
 Make sure to call Shake's registerSessionConfiguration method before initialising your URLSession.
@@ -92,21 +92,19 @@ the _URLSessionConfiguration_ object with Shake and passing the configuration to
 
 Advanced users may use SSL pinning for their URL requests.
 
-Without Shake, the delegate of the native _URLSession_ will receive authentication challenges
-via the native `URLSession:didReceiveChallenge:completionHandler` method and will be in charge of
+Without Shake, the delegate of the native _URLSession_ receives authentication challenges
+via the native `URLSession:didReceiveChallenge:completionHandler` method and is in charge of
 calling the completion handler with the appropriate arguments.
 
-Because of implementation specifics of Shake network request reporting,
-these authentication delegate methods won't get called.
-However, Shake provides the setup which allows you to handle authentication challenges while still using Shake to intercept requests.
-
-This is achieved by registering an Authentication Delegate which conforms
+Because of the way Shake network traffic logging works,
+those authentication delegate methods won't get called any more.
+You address that by registering an Authentication Delegate which conforms
 to the `SHKSessionAuthenticationProtocol` protocol.
 Shake will forward all authentication challenges to the delegate object which is in charge of
 calling the completionHandler closure with the appropriate result.
 
-Apps which require server authentication often have the auth mechanism already implemented,
-so the extra effort to make the existing flow start from the Shake authentication delegate is minimal.
+Apps which require server authentication usually have the authentication mechanism already implemented.
+It should be easy to just tweak it so it starts from the Shake authentication delegate instead.
 
 :::note
 Shake doesn't intercept or affect auth mechanisms of other SDKs in your app.

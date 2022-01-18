@@ -57,11 +57,20 @@ from the [auto screenshot](/react/configuration-and-data/auto-screenshot).
 Private views are stored as a weak reference. They get cleared from the memory when not used anymore.
 
 :::note
+When marking a *View* as private, also add the `collapsable={false}` flag to it to avoid the
+"Trying to resolve view with tag number which doesn’t exist" error.
+:::
+
+:::note
 These methods won't delete sensitive views from auto screen recording — only from the auto screenshot.
 :::
 
 Let's suppose you're building a shopping app and you want to delete the name and the credit card number views
 from the auto screenshot:
+
+NEDOSTAJE CODE BLOCK
+
+This is how you mark views as private:
 
 ```javascript title="App.js"
 // highlight-next-line
@@ -82,7 +91,7 @@ To remove a view from private views use the following method:
 Shake.removePrivateView(viewRef);
 ```
 
-If you want to delete an entire screen from the auto screenshot, simply mark the whole activity as private:
+If you want to delete an entire screen from the auto screenshot, simply mark the root of the screen as private.
 
 To clear all the private views, use the following method:
 
