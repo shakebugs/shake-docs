@@ -28,7 +28,8 @@ just be careful to only call it once since any subsequent calls will override th
 ### Set a custom filename and then attach a file
 
 *ShakeFile* can be initialized with a desired filename (String) and an absolute file path (String) to your file.
-Instead of a file path, you can initialize it with the actual file object (java.io.File) too.
+To define which files will be uploaded, call the `Shake.setShakeReportData` method
+and pass the list of *ShakeFile* objects, as shown in the example below:
 
 ```dart title="main.dart"
 // highlight-start
@@ -52,9 +53,8 @@ void attachLogFiles() {
 Instead of a file path, you can initialize it with the actual file object (java.io.File), too.
 If you initialize it this way, the filename shown on your Shake dashboard will be determined automatically from the passed file's name.
 
-To define which files will be uploaded when a user reports a ticket,
-you must call the `setShakeReportData` method, overriding the `attachedFiles` method inside,
-as shown in the example below.
+To define which files will be uploaded, call the `Shake.setShakeReportData` method
+and pass the list of *ShakeFile* objects, as shown in the example below:
 
 ```dart title="main.dart"
 // highlight-start
