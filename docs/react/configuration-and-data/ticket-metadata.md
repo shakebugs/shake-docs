@@ -25,9 +25,10 @@ Let’s say you want to send yourself a roomID after a user successfully joins a
 ```javascript title="App.js" 
 // highlight-next-line 
 import Shake from '@shakebugs/react-native-shake';
-const onLoginSuccessful = (user) => { 
+
+const onChatRoomJoined = (room) => { 
   // highlight-next-line 
-  Shake.setMetadata('userid', user.id); 
+  Shake.setMetadata('roomId', room.id); 
 }
 ```
 
@@ -41,8 +42,8 @@ For example, you want to clear ticket metadata when the user leaves a chat room:
 // highlight-next-line
 import Shake from '@shakebugs/react-native-shake';
 
-const onLogOutPressed = () => {
-    loginService.logout();
+const onChatRoomClosed = () => {
+    chatService.logout();
 
     // highlight-next-line
     Shake.clearMetadata();

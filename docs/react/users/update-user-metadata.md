@@ -45,23 +45,12 @@ const onLoggedIn = user => {
 
 and updating **specific** user metadata in their respective contexts:
 
-```javascript title="Cart.js"
-const onCartItemAdded = () => {
-    updateTotalPrice();
+```javascript title="UserSettings.js"
+const onUserSettingsConfigured = () => {
+    fetchUserInformation();
 
     // highlight-start
-    const metadata = { cartItems: cartItems.toString() };
-
-    Shake.updateUserMetadata(metadata);
-    // highlight-end
-}
-
-const onCartItemsCleared = () => {
-    updateTotalPrice();
-
-    // highlight-start
-    const metadata = { cartItems: 'empty' };
-
+    const metadata = { userSettings: userSettings.toString() };
     Shake.updateUserMetadata(metadata);
     // highlight-end
 }

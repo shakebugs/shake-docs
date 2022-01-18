@@ -1,5 +1,5 @@
 ---
-id: essentials
+id: data-attached-by-default
 title: Data attached by default
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -125,6 +125,13 @@ All of this is done out of the box, you don't need to code anything.
     <div>
         <img
             class="small-visual-icon"
+            src={useBaseUrl('img/stars-light-square.svg')}
+        />
+        <p class="p2">Screen density</p>
+    </div>
+    <div>
+        <img
+            class="small-visual-icon"
             src={useBaseUrl('img/clock-time.svg')}
         />
         <p class="p2">Timeline of app lifecycle events</p>
@@ -139,13 +146,6 @@ All of this is done out of the box, you don't need to code anything.
     <div>
         <img
             class="small-visual-icon"
-            src={useBaseUrl('img/programming-code.svg')}
-        />
-        <p class="p2">IDE version</p>
-    </div>
-    <div>
-        <img
-            class="small-visual-icon"
             src={useBaseUrl('img/code-test-error.svg')}
         />
         <p class="p2">Crash report stack trace</p>
@@ -155,20 +155,22 @@ All of this is done out of the box, you don't need to code anything.
             class="small-visual-icon"
             src={useBaseUrl('img/settings-switches-square.svg')}
         />
-        <p class="p2">Granted permissions <sup>1</sup></p>
+        <p class="p2">Granted dangerous permissions <sup>1</sup></p>
     </div>
 </div>
 
-<p><sup>1</sup> Shake tracks the status of these permissions:</p>
+<p><sup>1</sup> Shake tracks the status of these runtime permissions, also known as dangerous permissions:</p>
 
-* Calendar access
-* Camera access
-* Contacts access
-* Photo library access
-* Location access
-* Media library access
-* Microphone access
-
+* CALENDAR
+* CALL_LOG
+* CAMERA
+* CONTACTS
+* LOCATION
+* MICROPHONE
+* PHONE
+* SENSORS
+* SMS
+* STORAGE
 
 On your Shake dashboard, only those permissions that the user has granted access to are listed.
 The ones you don't see were either denied or not requested at all.
@@ -177,6 +179,25 @@ The ones you don't see were either denied or not requested at all.
 ## Attach more data
 
 If you want Shake to attach custom data to your tickets, you can do that as well.
-Read about attaching your own variables to tickets with [Ticket metadata](/ios/configuration-and-data/ticket-metadata.md).
+Read about attaching your own variables to tickets with [Ticket metadata](android/configuration-and-data/ticket-metadata.md).
 
-Do you also want to attach files to tickets programmatically? Visit [Auto attach files](/ios/configuration-and-data/auto-attach-files.md).
+Do you also want to attach files to tickets programmatically? Visit [Auto attach files](/android/configuration-and-data/auto-attach-files.md).
+
+
+## Limitations
+
+On Android 8.0 and higher it's not possible to get the **name** of the Wi-Fi the device is connected to. 
+If that info is important to you, add the following permissions to your app's `AndroidManifest.xml` file:
+
+```xml title="AndroidManifest.xml"
+// highlight-start
+<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+<uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+// highlight-end
+```
+
+You also have to request **location** permission from the user, and 
+their **location services** have to be turned on while reporting a ticket.
+
+More info on this Android system limitation can be found in the [Wi-Fi scanning overview](https://developer.android.com/guide/topics/connectivity/wifi-scan) guide.

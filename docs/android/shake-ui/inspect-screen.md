@@ -6,7 +6,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-> Before submitting a ticket, your users can freely inspect [Data attached by default](android/configuration-and-data/essentials.md) and [Ticket metadata](android/configuration-and-data/ticket-metadata.md).
+> Before submitting a ticket, your users can freely inspect [Data attached by default](android/configuration-and-data/data-attached-by-default.md) and [Ticket metadata](android/configuration-and-data/ticket-metadata.md).
 
 ## Introduction
 

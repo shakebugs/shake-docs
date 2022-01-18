@@ -26,9 +26,9 @@ Let’s say you want to send yourself a roomID after a user successfully joins a
 // highlight-next-line
 import 'package:shake_flutter/shake_flutter.dart';
 
-void onLoginSuccessful(User user) {
+void onChatRoomJoined(room: Room) {
     // highlight-next-line
-    Shake.setMetadata('userid', user.id);
+    Shake.setMetadata('roomId', room.id);
 }
 ```
 
@@ -44,8 +44,8 @@ import 'package:shake_flutter/shake_flutter.dart';
 import 'package:shake_flutter/enums/shake_screen.dart';
 // highlight-end
 
-void onLogOutPressed() {
-    loginService.logout();
+void onChatRoomClosed() {
+    chatService.logout();
     
     // highlight-next-line
     Shake.clearMetadata();

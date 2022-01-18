@@ -6,7 +6,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-> Before submitting a ticket, your users can freely inspect [Data attached by default](/flutter/configuration-and-data/essentials.md) and [Ticket metadata](/flutter/configuration-and-data/ticket-metadata.md).
+> Before submitting a ticket, your users can freely inspect [Data attached by default](/flutter/configuration-and-data/data-privacy-disclosure.md) and [Ticket metadata](/flutter/configuration-and-data/ticket-metadata.md).
 
 ## Introduction
 

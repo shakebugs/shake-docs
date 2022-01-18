@@ -6,7 +6,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
->Every app is unique so the [Data attached by default](/ios/configuration-and-data/essentials) sent with each ticket are often not enough.
+>Every app is unique so the [Data attached by default](/ios/configuration-and-data/data-attached-by-default) sent with each ticket are often not enough.
 That's why Shake also allows you to automatically attach any custom data from your app to the ticket.
 
 ## How to use

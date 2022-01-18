@@ -46,17 +46,11 @@ void onLoggedIn(User user) {
 and updating **specific** user metadata in their respective contexts:
 
 ```dart title="main.dart"
-void onCartItemAdded() {
-    updateTotalPrice();
+void onUserSettingsConfigured() {
+    fetchUserInformation();
     // highlight-start
-    var metadata = <String, String>{ 'cartItems': cartItems.toString() };
-    Shake.updateUserMetadata(metadata);
-    // highlight-end
-}
-void onCartItemsCleared() {
-    updateTotalPrice();
-    // highlight-start
-    var metadata = <String, String>{ 'cartItems': 'empty' };
+
+    var metadata = <String, String>{ 'userSettings': userSettings.toString() };
     Shake.updateUserMetadata(metadata);
     // highlight-end
 }
