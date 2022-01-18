@@ -10,38 +10,17 @@ import TabItem from '@theme/TabItem';
 >Shake tracks user's interaction with your app, their network traffic, notifications, logs and system events,
 and automatically attaches all of those to the ticket.
 
+
 ## Setup
 
+
 ### User actions
+
 Shake automatically observes taps made on your app's UI elements.
 
 :::note
 This feature is disabled for apps built with SwiftUI.
 :::note
-
-### Screen changes
-
-In apps built with __UIKit__, Shake automatically logs app screen (ViewController lifecycle) changes.
-
-Apps built with __SwiftUI__ have to use the provided View extension in their top-level Views which represent screens.
-shakeIntercept View extension allows Shake to hook into the View lifecycle so it can get notified of screen changes.
-The extension won't alter your Views in any way.
-
-```swift title="MySwiftUIContentView.swift" 
-// highlight-start 
-struct UserDetailsView: View {
-var user: UserModel
-
-var body: some View {
-    VStack {
-        user.avatar
-        Text("Name: \(user.name)")
-        /// Additional layout
-    }.shakeIntercept(viewName: "UserDetails")
-}
-} 
-// highlight-end
- ```
 
 
 ### Network requests
@@ -293,8 +272,38 @@ private func getUser(withSession session: URLSession, andRequest request: URLReq
 </Tabs>
 
 
+
 ### System events
-System events - also known as app lifecycle events - are tracked automatically and require no additional setup.
+
+
+#### App lifecycle events
+
+App lifecycle events are tracked automatically and require no additional setup.
+
+
+#### Screen changes
+
+In apps built with __UIKit__, Shake automatically logs app screen (ViewController lifecycle) changes.
+
+Apps built with __SwiftUI__ have to use the provided View extension in their top-level Views which represent screens.
+shakeIntercept View extension allows Shake to hook into the View lifecycle so it can get notified of screen changes.
+The extension won't alter your Views in any way.
+
+```swift title="MySwiftUIContentView.swift" 
+// highlight-start 
+struct UserDetailsView: View {
+var user: UserModel
+
+var body: some View {
+    VStack {
+        user.avatar
+        Text("Name: \(user.name)")
+        /// Additional layout
+    }.shakeIntercept(viewName: "UserDetails")
+}
+} 
+// highlight-end
+ ```
 
 
 ### Notifications
