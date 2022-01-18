@@ -255,7 +255,7 @@ module.exports = {
                     type: 'category',
                     label: 'Installation',
                     items: [
-                        'react/install/installation',
+                        'react/install/npm',
                         'react/install/manual-linking'
                     ]
                 },
