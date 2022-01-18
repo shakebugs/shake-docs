@@ -43,7 +43,7 @@ We migrated Shake SDK to null safety. Null safety helps you avoid a class of bug
 and as an added bonus enables a range of performance and stability improvements.
 
 ## 14.1.1
-<span class="tag-button">April 28, 2021</span>&nbsp;&nbsp;
+<span class="tag-button">April 29, 2021</span>&nbsp;&nbsp;
 
 #### Bug fixes
 
@@ -90,7 +90,7 @@ You can now use the in-app [intro message](/flutter/user-feedback/intro-message)
 We updated the start method. The configuration keys are now loaded via the method, and not with the values from the `.plist` and `.xml` files.
 
 ## 10.0
-<span class="tag-button">October 16, 2020.</span>&nbsp;&nbsp;
+<span class="tag-button">October 16, 2020</span>&nbsp;&nbsp;
 
 #### What's new
 
