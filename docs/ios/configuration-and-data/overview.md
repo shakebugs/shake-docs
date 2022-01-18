@@ -28,7 +28,7 @@ Shake attaches useful data both to user feedback and crash reports. Read all abo
     </div>
 	<div>
         <img src="/docs/img/essential-data@2x.png" alt="Data attached by default"/>
-        <p><a href="/docs/ios/configuration-and-data/essentials/">Data attached by default</a></p>
+        <p><a href="/docs/ios/configuration-and-data/data-attached-by-default/">Data attached by default</a></p>
     </div>
 	<div>
         <img src="/docs/img/auto-screenshot@2x.png" alt="Auto screenshot"/>

@@ -40,7 +40,7 @@ title: Overview
     </div>
     <div>
         <img src="/docs/img/essential-data@2x.png" alt="Data attached by default"/>
-        <p><a href="/docs/ios/configuration-and-data/essentials/">Data attached by default</a></p>
+        <p><a href="/docs/ios/configuration-and-data/data-attached-by-default/">Data attached by default</a></p>
     </div>
     <div>
         <img src="/docs/img/screen-recording@2x.png" alt="Auto screen recording"/>
