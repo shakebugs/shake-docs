@@ -12,13 +12,7 @@ That's why Shake also allows you to automatically attach any custom data from yo
 ## How to use
 
 To set ticket metadata, call `Shake.setMetadata` and pass the data you want to
-receive on your Shake dashboard as a *String* pair.
-
-:::note
-
-You can call `Shake.setMetadata` anywhere in your app, but be careful because any subsequent calls with the same *String* key will override the former *String* value.
-
-:::
+receive on your Shake dashboard as a *String* pair. You can call `Shake.setMetadata` anywhere in your app, but be careful because any subsequent calls with the same *String* key will override the former *String* value.
 
 Let’s say you want to send yourself a roomID after a user successfully joins a chat room. You would do this:
 

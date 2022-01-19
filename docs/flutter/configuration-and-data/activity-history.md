@@ -57,8 +57,8 @@ dependencies:
 Add ShakeDioInterceptor to your Dio instance:
 
 ```dart title="main.dart" // 
-highlight-next-line import 
-'package:shake_dio_interceptor/shake_dio_interceptor.dart';
+// highlight-next-line 
+import 'package:shake_dio_interceptor/shake_dio_interceptor.dart';
 
 void sendNetworkRequest() async { 
     // highlight-start 

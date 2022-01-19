@@ -78,7 +78,7 @@ class UserManager {
             "email": self.currentUser.email,
             "status": self.currentUser.status,
         ]
-    }
+    };
 }
 ```
 

@@ -61,14 +61,15 @@ When marking a *View* as private, also add the `collapsable={false}` flag to it 
 "Trying to resolve view with tag number which doesn’t exist" error.
 :::
 
-:::note
-These methods won't delete sensitive views from auto screen recording — only from the auto screenshot.
-:::
-
 Let's suppose you're building a shopping app and you want to delete the name and the credit card number views
 from the auto screenshot:
 
-NEDOSTAJE CODE BLOCK
+```java title="App.js"
+// highlight-start
+<Text ref={r => this.cardNumber = r} style={styles.cardNumber}>{this.state.cardNumber}</Text>
+<Text ref={r => this.cardName = r} style={styles.cardName}>{this.state.cardName}</Text>
+// highlight-end
+```
 
 This is how you mark views as private:
 
@@ -100,6 +101,16 @@ To clear all the private views, use the following method:
 Shake.clearPrivateViews();
 ```
 
+:::note
+These methods won't delete sensitive views from auto screen recording — only from the auto screenshot.
+:::
+
+You can disable [Screen Recording](/react/configuration-and-data/auto-screen-recording) feature if you want make sure that sensitive data is not recorded.
+
+```javascript title="App.js"
+// highlight-next-line
+Shake.setAutoVideoRecording(false);
+```
 
 ## Touch events
 

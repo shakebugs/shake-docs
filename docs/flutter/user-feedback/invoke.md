@@ -59,6 +59,8 @@ Shake.setDefaultScreen(ShakeScreen.NEW);
 Shake.setDefaultScreen(ShakeScreen.HOME);
 ```
 
+The default value is `ShakeScreen.NEW`.
+
 ### Shaking gesture
 By default, the shaking gesture opens Shake user feedback.
 
@@ -100,15 +102,9 @@ Because of that, if you opt for this invocation method, storage permission will 
 
 :::
 
-### Right edge pan
-Shake user feedback will be invoked with a one-finger swiping gesture from the right edge of the screen.
-
 :::note
-
-The right edge pan gesture won’t work if performed over a ListView or ScrollView.
-Use one of the alternative ways to invoke Shake instead.
-
-:::
+App Store rejects apps that get in the way of the default screenshot behavior. For that reason, don't use this invocation method in your production releases.
+:::note
 
 ## Invoke through code
 Invoke Shake user feedback through code by calling the `Shake.show` method anywhere after `Shake.start`.
@@ -120,13 +116,17 @@ The default value is `ShakeScreen.NEW`.
 // highlight-start 
 import 'package:shake_flutter/shake_flutter.dart'; 
 import 'package:shake_flutter/enums/shake_screen.dart'; 
+
 // highlight-end
 void onReportProblemPressed() { // Displays Shake with the New Ticket screen. 
 // highlight-next-line 
-Shake.show(); }
+  Shake.show(); 
+}
+
 const onFeedbackCenterPressed() { // Displays Shake starting at the Home screen. 
 // highlight-next-line 
-Shake.show(ShakeScreen.home); } 
+  Shake.show(ShakeScreen.home); 
+} 
 ```
 
 If an [auto screenshot](/flutter/configuration-and-data/auto-screenshot.md) and
