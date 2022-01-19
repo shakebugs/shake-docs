@@ -1,6 +1,6 @@
 module.exports = {
-  title: 'We focus on one thing only. Bug reporting.',
-  tagline: 'And that dedication is why teams put us in their apps time and time again.',
+  title: 'Documentation',
+  tagline: 'Explore guides and examples to integrate Shake into your app.',
   url: 'https://www.shakebugs.com',
   baseUrl: '/docs/',
   favicon: 'img/favicon.ico',
@@ -9,10 +9,12 @@ module.exports = {
   projectName: 'shake-docs', // Usually your repo name.
   themeConfig: {
     colorMode: {
-      defaultMode: 'light',
+      defaultMode: 'dark',
       respectPrefersColorScheme: true,
     },
-    hideableSidebar: true,
+    hideableSidebar: false,
+    scrollToTop: false,
+    scrollToTopOptions: false,
     prism: {
       theme: require('prism-react-renderer/themes/github'),
       darkTheme: require('prism-react-renderer/themes/dracula'),
@@ -23,10 +25,10 @@ module.exports = {
       indexName: 'shakebugs',
     },
     navbar: {
-      title: 'Shake',
+      
       logo: {
         alt: 'Shake logo',
-        src: 'img/logo.svg',
+        src: 'img/shake-full-logo.svg',
         href: 'https://www.shakebugs.com/',
       },
       items: [

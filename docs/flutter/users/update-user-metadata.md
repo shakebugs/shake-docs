@@ -2,26 +2,32 @@
 id: update-user-metadata
 title: Update user metadata
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
-Once you have _registered_ your application user, you can attach a map with key-value pairs that describe 
-additional information about your user, or their application usage.
+>Once you have registered your app user, you can attach a map with key-value pairs which contain
+additional data about the user and their behavior.
 
-Updating the user metadata is performed by calling the `Shake.updateUserMetadata` anywhere in your code after registering the user.
-:::note
-The user metadata map has some limitations, the total map size must not exceed _50 KB_. 
-If this validation fails, the update method is dropped with the appropriate console message.
-:::
-:::tip
-Shake Dashboard uses *first_name* and *last_name* keys from the user metadata for presentation purposes. 
-We recommend using these keys when sending appropriate user metadata to have a nice overview of your users on the Dashboard.
-:::
-Updates to the user metadata are _incremental_, or perhaps a better way to describe it would be _merged_.
+Update user metadata by calling the `Shake.updateUserMetadata` method anywhere in your code
+after registering the User.
 
-This means that the user metadata key-value pairs are being updated and not overwritten, giving you a possiblity to update
-the user metadata in chunks from various points of your application, even when offline.
+## Special keys
 
-A common approach would be updating the generic user metadata from one place in your code, upon every user change, and update the specific metadata
-in their respective contexts.
+Values from these three keys will be presented nicely on the Shake dashboard, so we suggest you use them:
+* `first_name`
+* `last_name`
+* `end_user_id`
+
+
+## Updates
+
+Updates to the user metadata are _merged_.
+This allows you to update
+user metadata in segments from various parts of your app, even when offline.
+
+A common approach developers take is updating **generic** user metadata from one place in your code upon every user change
+
 ```dart title="main.dart"
 void onLoggedIn(User user) {
     // highlight-start
@@ -36,19 +42,41 @@ void onLoggedIn(User user) {
     // highlight-end
 }
 ```
+
+and updating **specific** user metadata in their respective contexts:
+
 ```dart title="main.dart"
-void onCartItemAdded() {
-    updateTotalPrice();
+void onUserSettingsConfigured() {
+    fetchUserInformation();
     // highlight-start
-    var metadata = <String, String>{ 'cartItems': cartItems.toString() };
-    Shake.updateUserMetadata(metadata);
-    // highlight-end
-}
-void onCartItemsCleared() {
-    updateTotalPrice();
-    // highlight-start
-    var metadata = <String, String>{ 'cartItems': 'empty' };
+
+    var metadata = <String, String>{ 'userSettings': userSettings.toString() };
     Shake.updateUserMetadata(metadata);
     // highlight-end
 }
 ```
+
+## Limitations
+
+The total map size of the user metadata must not exceed 50 KB.
+If this validation fails, the update method is dropped with the appropriate console message.
+
+## User metadata vs. Ticket metadata
+
+Track User metadata to understand and describe your User better. Examples are:
+
+* First and last name
+* User ID
+* Address
+* Subscription status
+* Date of birth
+
+Use [Ticket metadata](/flutter/configuration-and-data/ticket-metadata) to attach useful custom data to each ticket. Examples are statuses of various app variables at the moment the ticket is sent:
+
+* Current chat room ID
+* List of items currently in a shopping cart
+* Task synced true/false
+* Number of search results
+* List sorted by what
+* Video muted true/false
+

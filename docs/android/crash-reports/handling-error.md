@@ -6,15 +6,16 @@ title: Handling error
 import Tabs from '@theme/Tabs'; 
 import TabItem from '@theme/TabItem';
 
-Sometimes, the application is making great use of error handling and wants to document these errors, or has some definitive points where caught errors
-could use a bit more context.
+>Make great use of error handling and document these errors.
 
-Shake SDK enables you to report the caught errors and lets you decide how they are grouped. These non-fatal error reports will have all of the same 
-contextual information as crash reports, and act as an extension to the crash reporting feature.
+Shake allows you to report those caught errors and group them together.
+These non-fatal error reports will have all of the same 
+contextual information as crash reports and will act as an extension to the crash reporting feature.
 
 :::note
 
-Avoid using unique values for error *clusterID*  as this will cause a large number of reported errors appear unrelated — although they actually are — which will clog your Shake dashboard.
+Avoid using unique values for error *clusterID*  as that would cause a large number of reported errors to stay
+unrelated and ungrouped, which would clog your Shake dashboard.
 
 :::
 

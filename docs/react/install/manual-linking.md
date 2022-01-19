@@ -3,10 +3,10 @@ id: manual-linking
 title: Manual linking
 ---
 
-Normally, linking is done automatically or using link command.
-If you want to link it manually, you can do it following way.
+>Normally, linking is done automatically or using link command.
+If you want to link it manually, you can do it this way.
 
-### Android
+## Android
 Add the following lines of code to your *settings.gradle* file:
 
 ```groovy title="settings.gradle"
@@ -56,7 +56,9 @@ defaultConfig {
 }
 ```
 
-Enable touch tracking in Android apps by adding following code to the *MainActivity.java*:
+### Enable touch tracking
+
+Enable touch tracking in Android apps by adding following code to *MainActivity.java*:
 
 ```java title="MainActivity.java"
 package com.shakebugs.react.example;
@@ -86,9 +88,8 @@ public class MainActivity extends ReactActivity {
 ```
 
 
-### iOS
-Open your project in the Xcode by clicking project's *.xcodeproj* file.
+## iOS
 
-Copy *RNShake.xcodeproj* from *$rootDir/node_modules/@shakebugs/react-native-shake/ios/* to the *Libraries* folder of your project.
-
-Drag the *libRNShake.a* from the Library *Products* folder to the *Link Binary With Libraries* in the *Build Phases* section.
+1. Open your project in Xcode by clicking project's *.xcodeproj* file.
+1. Copy *RNShake.xcodeproj* from *$rootDir/node_modules/@shakebugs/react-native-shake/ios/* to the *Libraries* folder of your project.
+1. Drag *libRNShake.a* from the *Libraries / RNShake / Products* folder to *Link Binary With Libraries* in the *Build Phases* section.

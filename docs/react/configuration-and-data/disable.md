@@ -2,25 +2,25 @@
 id: disable
 title: Disable
 ---
-This page is about preventing a segment of your users from using Shake.
 
-## Introduction
-Let's start with two use cases.
+>After you start Shake, you can pause and resume it for any of your users at any point.
 
-Maybe some of your users have opted in for beta access, others haven't.
-Or, maybe you're building a new Airbnb and want *hosts* to be able to report bugs back to you, but don't want to show Shake to the *guests*.
+## Example
 
-You could simply never call the  `Shake.start()` method for guest users, but what if a user switches from host to guest mode?
+Let's suppose some of your users have opted in for beta access while others haven't.
+Or, maybe you're building a new Airbnb app and want *hosts* to be able to send you tickets
+but don't want *guests* to have Shake features.
 
-## How to use
-Call the `Shake.setEnabled(false)` method wherever you find it appropriate in your app.
-Shake will be disabled immediately, which means:
+You could never call the `Shake.start()` method for guests, but what if a user switches from host to guest mode?
 
-1. Shake can't be invoked any more
-1. Shake stops tracking all data
+## Disable
+Call the `Shake.setEnabled(false)` method wherever you want to in your app. Shake will be disabled immediately, which means:
 
-So let's suppose you want to allow *hosts* to use Shake, but not the *guests*. 
-You would do this:
+* Shake can't be invoked any more.
+* Shake stops tracking all data.
+
+Back to our example where you want to allow *hosts* to use Shake but not the *guests*. You would do this:
+
 
 ```javascript title="App.js"
 // highlight-next-line
@@ -34,5 +34,5 @@ const loggedInSuccessfully = (user) => {
 }
 ```
 
-## Enable Shake again
-If, for some reason, you want to enable Shake again, you can do it easily by calling `Shake.setEnabled(true)`.
+## Enable
+If for some reason you want to enable Shake again, you can easily do so by calling `Shake.setEnabled(true)`.
