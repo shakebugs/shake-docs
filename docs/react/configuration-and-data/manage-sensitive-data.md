@@ -57,6 +57,10 @@ from the [auto screenshot](/react/configuration-and-data/auto-screenshot).
 Private views are stored as a weak reference. They get cleared from the memory when not used anymore.
 
 :::note
+These methods won't delete sensitive views from auto screen recording — only from the auto screenshot.
+:::
+
+:::note
 When marking a *View* as private, also add the `collapsable={false}` flag to it to avoid the
 "Trying to resolve view with tag number which doesn’t exist" error.
 :::
@@ -101,16 +105,6 @@ To clear all the private views, use the following method:
 Shake.clearPrivateViews();
 ```
 
-:::note
-These methods won't delete sensitive views from auto screen recording — only from the auto screenshot.
-:::
-
-You can disable [Screen Recording](/react/configuration-and-data/auto-screen-recording) feature if you want make sure that sensitive data is not recorded.
-
-```javascript title="App.js"
-// highlight-next-line
-Shake.setAutoVideoRecording(false);
-```
 
 ## Touch events
 

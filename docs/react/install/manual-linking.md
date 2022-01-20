@@ -3,7 +3,7 @@ id: manual-linking
 title: Manual linking
 ---
 
->Normally, linking is done automatically or using link command.
+>Normally, linking is done automatically or using the link command.
 If you want to link it manually, you can do it this way.
 
 ## Android
@@ -42,7 +42,7 @@ Update the `getPackages()` method:
  } 
 ```
 
-If you do not have *multiDexEnabled*, update app level *build.gradle*:
+If you do not have *multiDexEnabled*, update app-level *build.gradle*:
 
 ```groovy title="app/build.gradle"
 defaultConfig {

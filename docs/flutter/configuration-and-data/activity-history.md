@@ -19,13 +19,12 @@ User actions tracking is currently not supported.
 ### Network traffic
 
 Shake provides you a wrapper for dart:io HttpClient class which allows you to track network traffic.
-Additionally, if you use dio or http packages for sending network requsts, you can use one of the extensions below.
+Additionally, if you use dio or http packages for sending network requests, you can use one of the extensions below.
 
 
 #### dart:io
 
-Use ShakeHttpClient wrapper class to perform network requests.
-All network requests sent with the ShakeHttpClient instance will be visible in Activity history.
+Use ShakeHttpClient wrapper class to perform network requests:
 
 ```dart title="main.dart" 
 // highlight-next-line 
@@ -42,6 +41,8 @@ void sendNetworkRequest() async {
 :::note
 The latest version of Shake dart:io HttpClient wrapper will log network request details without request and response bodies.
 :::
+
+All network requests sent with the *ShakeHttpClient* instance will be visible in Activity history.
 
 
 #### dio
@@ -69,7 +70,7 @@ void sendNetworkRequest() async {
 }
 ```
 
-All network requests sent with the *Dio* instance will be visible on the dashboard.
+All network requests sent with the *Dio* instance will be visible in Activity history.
 
 
 #### http
@@ -96,7 +97,7 @@ void sendNetworkRequest() async {
 }
 ```
 
-All network requests sent with the *ShakeHttpClient* instance will be visible on the dashboard.
+All network requests sent with the *ShakeHttpClient* instance will be visible in Activity history.
 
 
 #### Manually
