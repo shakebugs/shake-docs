@@ -15,21 +15,17 @@ That has nothing to do with these auto-attached files.
 ## Methods
 
 You can programmatically attach files by using any of the methods described below.
-To define which files will be attached when a user submits a ticket,
-you must call the `Shake.setShakeReportData` method overriding the `attachedFiles` method inside, as shown in the examples below.
+To define which files will be uploaded, call the `Shake.setShakeReportData` method
+and pass the list of *ShakeFile* objects, as shown in the examples below.
 
 :::note
-
 You can call the `Shake.setShakeReportData` method anywhere in your app,
 just be careful to only call it once since any subsequent calls will override the former ones.
-
 :::
 
 ### Set a custom filename and then attach a file
 
-*ShakeFile* can be initialized with a desired filename (String) and an absolute file path (String) to your file.
-To define which files will be uploaded, call the `Shake.setShakeReportData` method
-and pass the list of *ShakeFile* objects, as shown in the example below:
+*ShakeFile* can be initialized with a desired filename (String) and an absolute file path (String) to your file:
 
 ```dart title="main.dart"
 // highlight-start
@@ -50,11 +46,7 @@ void attachLogFiles() {
 ### Attach a file without the custom filename
 
 *ShakeFile* can be initialized without a filename, with just an absolute file path (String) to your file.
-Instead of a file path, you can initialize it with the actual file object (java.io.File), too.
 If you initialize it this way, the filename shown on your Shake dashboard will be determined automatically from the passed file's name.
-
-To define which files will be uploaded, call the `Shake.setShakeReportData` method
-and pass the list of *ShakeFile* objects, as shown in the example below:
 
 ```dart title="main.dart"
 // highlight-start
