@@ -3,83 +3,76 @@ id: chat
 title: Chat
 ---
 
-import useBaseUrl from '@docusaurus/useBaseUrl';
-import Tabs from '@theme/Tabs';
+import useBaseUrl from '@docusaurus/useBaseUrl'; 
+import Tabs from '@theme/Tabs'; 
 import TabItem from '@theme/TabItem';
 
-The user [can reply](ios/screens/chat-screen.md) to your message sent over the Dashboard and provide you with more details 
-about the reported bug, crash, or feedback - directly from the app without leaving it.
-This allows you to easier fix bugs and makes your customers happy, a win-win situation. 
+>If needed, your users can [chat with you](/ios/shake-ui/chat-screen) to provide you more details 
+about their reported bugs, crashes or feedback. You will be able to fix issues faster and make your customers happier.
 
-## Enabling
+## Enable
 
-Once your user is [registered](android/users/user-registration.md) with Shake, the real time chat feature is enabled automatically.
+Once your user is [registered](/ios/users/register-user) with Shake, the chat feature is enabled automatically.
+Each ticket they send you will be a separate conversation.
 
-Each reported _Ticket_ represents a separate conversation, and can naturally be used to obtain valuable information directly from the end user. 
-
-This feature is tightly integrated with, and follows the lifecycle of your _User_ registration, 
-which means that calling `Shake.unregisterUser` also _disconnects_ the current user from chat, 
-so he won't receive any new messages until registered again.
+This feature is tightly integrated with and follows the lifecycle of your _User_ registration, 
+which means that calling `Shake.unregisterUser` also _disconnects_ the current user from chat 
+and they won't receive any new messages until registered again.
 
 ## Notifications
 
-Shake will notify the end-user when a new message is sent over the Dashboard.
+Shake will notify your user when you send them a new message from the Shake dashboard.
 
 :::note
-
-At the moment, Shake supports only _local_ notifications. Which means that end-users won't get notified about new messages when your application is in the _background_.
-
+Shake supports only local notifications.
+That means that your users won't get notified about new messages when your app is in the background.
 :::
 
-To present any kind of notifications to the end-user, the host application must __request a permission__ from the user.
-Find a suitable place in your application flow where this native alert dialog will be presented.
+To show notifications to your users, you must request a permission from them.
+Find a proper place and time where you will want to present that native alert dialog.
 
-In order to be highly customizable and minimally intrusive to existing notification logic of host applications, Shake requires additional setup outlined in the below snippets.
+To remain customizable and minimally intrusive to an existing notification logic of your app,
+Shake requires additional setup.
+Use `Shake.report(center: UNUserNotificationCenter ...)` methods to delegate notification presentation logic to Shake.
 
-Use the `Shake.report(center: UNUserNotificationCenter ...)` methods to delegate the notification presentation logic to Shake.
+<Tabs 
+groupId="ios" 
+defaultValue="swift" 
+values={[
+    { label: 'Objective-C', value: 'objectivec'},
+    { label: 'Swift', value: 'swift'},
+  ]
+}>
 
-<Tabs groupId="ios" defaultValue="swift" values={[{ label: 'Objective-C', value: 'objectivec'},{ label: 'Swift', value: 'swift'},]}><TabItem value="objectivec">
+<TabItem value="objectivec">
 
 ```objectivec title="AppDelegate.m"
-
-@import Shake;
+@import Shake; 
 @import UserNotifications;
 
 @interface AppDelegate () <UNUserNotificationCenterDelegate>
-
 @end
-
 @implementation AppDelegate
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+- (BOOL)application:(UIApplication )application didFinishLaunchingWithOptions:(NSDictionary )launchOptions {
 
     UNUserNotificationCenter.currentNotificationCenter.delegate = self;
-
     [SHKShake startWithClientId:@"your_client_id" clientSecret:@"your_client_secret"];
-
-    return YES;
+    return YES; 
 }
+- (void)userNotificationCenter:(UNUserNotificationCenter )center didReceiveNotificationResponse:(UNNotificationResponse )response withCompletionHandler:(void (^)(void))completionHandler {
 
-- (void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void (^)(void))completionHandler {
-
-    if ([response.notification.request.content.categoryIdentifier containsString:SHKNotificationCategoryIdentifierDomain]) {
-        [SHKShake reportNotificationCenter:center didReceiveNotificationResponse:response withCompletionHandler:completionHandler];
-        return;
-    }
+    if ([response.notification.request.content.categoryIdentifier containsString:SHKNotificationCategoryIdentifierDomain]) { [SHKShake reportNotificationCenter:center didReceiveNotificationResponse:response withCompletionHandler:completionHandler]; return; }
 
     completionHandler();
 }
 
-- (void)userNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(UNNotificationPresentationOptions))completionHandler {
-
-    if ([notification.request.content.categoryIdentifier containsString:SHKNotificationCategoryIdentifierDomain]) {
-        [SHKShake reportNotificationCenter:center willPresentNotification:notification withCompletionHandler:completionHandler];
-        return;
-    }
-
-    completionHandler(UNNotificationPresentationOptionAlert | UNNotificationPresentationOptionSound);
+- (void)userNotificationCenter:(UNUserNotificationCenter )center willPresentNotification:(UNNotification )notification withCompletionHandler:(void (^)(UNNotificationPresentationOptions))completionHandler {
+    
+    if ([notification.request.content.categoryIdentifier containsString:SHKNotificationCategoryIdentifierDomain]) { [SHKShake reportNotificationCenter:center willPresentNotification:notification withCompletionHandler:completionHandler]; return; 
 }
 
+    completionHandler(UNNotificationPresentationOptionAlert | UNNotificationPresentationOptionSound); }
 ```
 
 </TabItem><TabItem value="swift">
@@ -117,16 +110,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         completionHandler([.badge, .sound, .alert])
     }
 }
-
 ```
 </TabItem></Tabs>
 
-Given the above setup, all notifications originated from Shake are handled by the Shake SDK, and all other notifications remain handled by your application.
+With the setup like above, notifications that originate from Shake are handled by Shake,
+and all other notifications are handled by your app.
 
-
-:::tip
-
-You can cancel the display of notifications in certain contexts by simply not reporting anything to Shake, or even stub the received native completion handler with your own 
-set of _UNNotificationPresentationOptions_ which will be respected by the Shake SDK.
-
+:::note
+If you need to, you can skip showing notifications by simply not reporting anything to Shake,
+or by stubbing the received native completion handler with your own set of *UNNotificationPresentationOptions*
+which Shake will respect.
 :::

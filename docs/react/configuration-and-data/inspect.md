@@ -4,10 +4,10 @@ title: Inspect ticket
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-The *Inspect screen* allows your user to see the current ticket details — its [Essentials](react/configuration-and-data/essentials.md) and [Metadata](react/configuration-and-data/metadata.md) — before submitting it.
+The *Inspect screen* allows your user to see the current ticket details — its [Essentials](react/configuration-and-data/data-privacy-disclosure.md) and [Metadata](react/configuration-and-data/ticket-metadata.md) — before submitting it.
 
 ## Introduction
-The *Inspect screen* can be reached via *Inspect* button on the [New ticket screen](react/screens/new-ticket-screen.md).
+The *Inspect screen* can be reached via *Inspect* button on the [New ticket screen](react/shake-ui/new-ticket-screen.md).
 
 <img
   alt="Inspect screen"

@@ -2,23 +2,23 @@
 id: chat
 title: Chat
 ---
-The user [can reply](react/screens/chat-screen.md) to your message sent over the Dashboard and provide you with more details 
-about the reported bug, crash, or feedback - directly from the app without leaving it.
-This allows you to easier fix bugs and makes your customers happy, a win-win situation. 
 
-## Enabling
+>If needed, your users can [chat with you](/react/shake-ui/chat-screen) to provide you more details
+about their reported bugs, crashes or feedback. You will be able to fix issues faster and make your customers happier.
 
-Once your user is [registered](react/users/user-registration.md) with Shake, the real time chat feature is enabled automatically.
+## Enable
 
-Each reported _Ticket_ represents a separate conversation, and can naturally be used to obtain valuable information directly from the end user. 
+Once your user is [registered](/react/users/register-user) with Shake, the chat feature is enabled automatically.
+Each ticket they send you will be a separate conversation.
 
-This feature is tightly integrated with, and follows the lifecycle of your _User_ registration, 
-which means that calling `Shake.unregisterUser` also _disconnects_ the current user from chat, 
-so he won't receive any new messages until registered again.
+This feature is tightly integrated with and follows the lifecycle of your _User_ registration,
+which means that calling `Shake.unregisterUser` also _disconnects_ the current user from chat
+and they won't receive any new messages until registered again.
 
 ## Notifications
 
-Shake will notify the end-user when a new message is sent over the Dashboard.
+Shake will notify your user when you send them a new message from the Shake dashboard.
+Notifications are presented automatically to the user. You don't have to code anything.
 
 :::note
 
@@ -39,71 +39,29 @@ In order to be highly customizable and minimally intrusive to existing notificat
 
 Use the `Shake.report(center: UNUserNotificationCenter ...)` methods to delegate the notification presentation logic to Shake.
 
+<Tabs groupId="ios" defaultValue="swift" values={[{ label: 'Objective-C', value: 'objectivec'},{ label: 'Swift', value: 'swift'},]}><TabItem value="objectivec">
+
 ```objectivec title="AppDelegate.m"
-#import "AppDelegate.h"
-
-#import <React/RCTBridge.h>
-#import <React/RCTBundleURLProvider.h>
-#import <React/RCTRootView.h>
-
-#ifdef FB_SONARKIT_ENABLED
-#import <FlipperKit/FlipperClient.h>
-#import <FlipperKitLayoutPlugin/FlipperKitLayoutPlugin.h>
-#import <FlipperKitUserDefaultsPlugin/FKUserDefaultsPlugin.h>
-#import <FlipperKitNetworkPlugin/FlipperKitNetworkPlugin.h>
-#import <SKIOSNetworkPlugin/SKIOSNetworkAdapter.h>
-#import <FlipperKitReactPlugin/FlipperKitReactPlugin.h>
-
-// highlight-start
 @import Shake;
 @import UserNotifications;
-// highlight-end
 
-static void InitializeFlipper(UIApplication *application) {
-  FlipperClient *client = [FlipperClient sharedClient];
-  SKDescriptorMapper *layoutDescriptorMapper = [[SKDescriptorMapper alloc] initWithDefaults];
-  [client addPlugin:[[FlipperKitLayoutPlugin alloc] initWithRootNode:application withDescriptorMapper:layoutDescriptorMapper]];
-  [client addPlugin:[[FKUserDefaultsPlugin alloc] initWithSuiteName:nil]];
-  [client addPlugin:[FlipperKitReactPlugin new]];
-  [client addPlugin:[[FlipperKitNetworkPlugin alloc] initWithNetworkAdapter:[SKIOSNetworkAdapter new]]];
-  [client start];
-}
-#endif
+@interface AppDelegate () <UNUserNotificationCenterDelegate>
+
+@end
 
 @implementation AppDelegate
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
-{
-#ifdef FB_SONARKIT_ENABLED
-  InitializeFlipper(application);
-#endif
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
-  // highlight-start
-  UNUserNotificationCenter* center = [UNUserNotificationCenter currentNotificationCenter];
-  center.delegate = self;
-  // highlight-end
+    UNUserNotificationCenter.currentNotificationCenter.delegate = self;
 
-  RCTBridge *bridge = [[RCTBridge alloc] initWithDelegate:self launchOptions:launchOptions];
-  RCTRootView *rootView = [[RCTRootView alloc] initWithBridge:bridge
-                                                   moduleName:@"example"
-                                            initialProperties:nil];
+    [SHKShake startWithClientId:@"your_client_id" clientSecret:@"your_client_secret"];
 
-    if (@available(iOS 13.0, *)) {
-      rootView.backgroundColor = [UIColor systemBackgroundColor];
-    } else {
-      rootView.backgroundColor = [UIColor whiteColor];
-    }
-
-  self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-  UIViewController *rootViewController = [UIViewController new];
-  rootViewController.view = rootView;
-  self.window.rootViewController = rootViewController;
-  [self.window makeKeyAndVisible];
-  return YES;
+    return YES;
 }
 
-// highlight-start
 - (void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void (^)(void))completionHandler {
+
     if ([response.notification.request.content.categoryIdentifier containsString:SHKNotificationCategoryIdentifierDomain]) {
         [SHKShake reportNotificationCenter:center didReceiveNotificationResponse:response withCompletionHandler:completionHandler];
         return;
@@ -111,10 +69,9 @@ static void InitializeFlipper(UIApplication *application) {
 
     completionHandler();
 }
-// highlight-end
 
-// highlight-start
 - (void)userNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(UNNotificationPresentationOptions))completionHandler {
+
     if ([notification.request.content.categoryIdentifier containsString:SHKNotificationCategoryIdentifierDomain]) {
         [SHKShake reportNotificationCenter:center willPresentNotification:notification withCompletionHandler:completionHandler];
         return;
@@ -122,34 +79,47 @@ static void InitializeFlipper(UIApplication *application) {
 
     completionHandler(UNNotificationPresentationOptionAlert | UNNotificationPresentationOptionSound);
 }
-// highlight-end
 
-- (NSURL *)sourceURLForBridge:(RCTBridge *)bridge
-{
-#if DEBUG
-  return [[RCTBundleURLProvider sharedSettings] jsBundleURLForBundleRoot:@"index" fallbackResource:nil];
-#else
-  return [[NSBundle mainBundle] URLForResource:@"main" withExtension:@"jsbundle"];
-#endif
+```
+
+</TabItem><TabItem value="swift">
+
+```swift title="AppDelegate.swift"
+
+class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
+
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+
+        UNUserNotificationCenter.current().delegate = self
+
+        Shake.start(clientId: "your_client_id", clientSecret: "your_client_secret")
+
+        return true
+    }
+
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+
+        if response.notification.request.content.categoryIdentifier.contains(SHKNotificationCategoryIdentifierDomain) {
+            Shake.report(center, didReceive: response, withCompletionHandler: completionHandler)
+            return;
+        }
+
+        completionHandler()
+    }
+
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+
+        if notification.request.content.categoryIdentifier.contains(SHKNotificationCategoryIdentifierDomain) {
+            Shake.report(center, willPresent: notification, withCompletionHandler: completionHandler)
+            return;
+        }
+
+        completionHandler([.badge, .sound, .alert])
+    }
 }
 
-@end
 ```
-
-```objectivec title="AppDelegate.h"
-#import <React/RCTBridgeDelegate.h>
-#import <UIKit/UIKit.h>
-
-// highlight-next-line
-@import UserNotifications;
-
-// highlight-next-line
-@interface AppDelegate : UIResponder <UIApplicationDelegate, UNUserNotificationCenterDelegate, RCTBridgeDelegate>
-
-@property (nonatomic, strong) UIWindow *window;
-
-@end
-```
+</TabItem></Tabs>
 
 Given the above setup, all notifications originated from Shake are handled by the Shake SDK, and all other notifications remain handled by your application.
 

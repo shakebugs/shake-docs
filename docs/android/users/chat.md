@@ -3,29 +3,26 @@ id: chat
 title: Chat
 ---
 
-The user [can reply](android/screens/chat-screen.md) to your message sent over the Dashboard and provide you with more details 
-about the reported bug, crash, or feedback - directly from the app without leaving it.
-This allows you to easier fix bugs and makes your customers happy, a win-win situation. 
+>If needed, your users can [chat with you](/android/shake-ui/chat-screen) to provide you more details 
+about their reported bugs, crashes or feedback. You will be able to fix issues faster and make your customers happier.
 
-## Enabling
+## Enable
 
-Once your user is [registered](android/users/user-registration.md) with Shake, the real time chat feature is enabled automatically.
+Once your user is [registered](/android/users/register-user) with Shake, the chat feature is enabled automatically.
+Each ticket they send you will be a separate conversation.
 
-Each reported _Ticket_ represents a separate conversation, and can naturally be used to obtain valuable information directly from the end user. 
-
-This feature is tightly integrated with, and follows the lifecycle of your _User_ registration, 
-which means that calling `Shake.unregisterUser` also _disconnects_ the current user from chat, 
-so he won't receive any new messages until registered again.
+This feature is tightly integrated with and follows the lifecycle of your _User_ registration, 
+which means that calling `Shake.unregisterUser` also _disconnects_ the current user from chat 
+and they won't receive any new messages until registered again.
 
 ## Notifications
 
-Shake will notify the end-user when a new message is sent over the Dashboard.
-
-
-Notifications are automatically presented to the end-user, no additional code is required.
+Shake will notify your user when you send them a new message from the Shake dashboard.
+Notifications are presented automatically to the user. You don't have to code anything.
 
 :::note
 
-At the moment, Shake supports only _local_ notifications. Which means that end-users won't get notified about new messages when your application is in the _background_.
+Shake supports only local notifications. That means that your users won't get notified about new messages
+when your app is in the _background_.
 
 :::
