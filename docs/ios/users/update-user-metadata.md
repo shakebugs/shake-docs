@@ -39,22 +39,25 @@ A common approach developers take is updating **generic** user metadata from one
 
 <TabItem value="objectivec">
 
-```swift title="LoginActivity.m"
+```objectivec title="UserManager.m"
 @implementation UserManager
-(void)didLoginWithUserResponse:(UserResponse *)userResponse {
-/// Some post log in operations 
-// highlight-next-line 
-[SHKShake updateUserMetadata:[self userInfoDictionary]]; 
+
+- (void)didLoginWithUserResponse:(UserResponse *)userResponse {
+
+    /// Some post log in operations
+    // highlight-next-line
+    [SHKShake updateUserMetadata:[self userInfoDictionary]];
 }
 
-- (nonnull NSDictionary *)userInfoDictionary { 
-  return @{ 
-    @"first_name": self.currentUser.firstName, 
-    @"last_name": self.currentUser.lastName, 
-    @"email": self.currentUser.email, 
-    @"status": self.currentUser.status, 
-    } 
-  }
+- (nonnull NSDictionary *)userInfoDictionary {
+    return @{
+        @"first_name": self.currentUser.firstName,
+        @"last_name": self.currentUser.lastName,
+        @"email": self.currentUser.email,
+        @"status": self.currentUser.status,
+    }
+}
+
 @end
 ```
 
@@ -62,13 +65,13 @@ A common approach developers take is updating **generic** user metadata from one
 
 <TabItem value="swift">
 
-```swift title="LoginActivity.swift"
+```swift title="UserManager.swift"
 class UserManager {
 
     func didLogin(response: UserResponse) {
         /// Some post log in operations
         // highlight-next-line
-        Shake.updateUserMetadata(self.userInfoDictionary());
+        Shake.updateUserMetadata(self.userInfoDictionary())
     }
 
     func userInfoDictionary() -> Dictionary<String, Any> {
@@ -76,9 +79,9 @@ class UserManager {
             "first_name": self.currentUser.firstName,
             "last_name": self.currentUser.lastName,
             "email": self.currentUser.email,
-            "status": self.currentUser.status,
+            "status": self.currentUser.status
         ]
-    };
+    }
 }
 ```
 
@@ -99,40 +102,22 @@ and updating **specific** user metadata in their respective contexts:
 
 <TabItem value="objectivec">
 
-```java title="UserSettingsActivity.m"
-@implementation CartViewModel
-
-- (void)didAddItemWithItemId:(NSString *)itemId {
-  /// Item was added to cart operations
-  NSArray<CartItem *> *cartItems = [self currentCartItems];
-  //highlight-start 
-  [SHKShake updateUserMetadata:@{ @"cartItems": cartItems.description 
-  }]; 
-  //highlight-end 
-}
-- (void)didClearAllCartItems {
-  /// Cart was cleared
-  //highlight-start 
-  [SHKShake updateUserMetadata:@{ 
-      @"cartItems": @"empty" 
-  }]; 
-//highlight-end 
-} 
-@end
+```objectivec title="UserSettingsViewModel.m"
+///KOMPLETNO NEDOSTAJE ISPRAVAN CODEBLOCK
 ```
 
 </TabItem>
 
 <TabItem value="swift">
 
-```swift title="UserSettingsActivity.swift"
+```swift title="UserSettingsViewModel.swift"
 func onUserSettingsConfigured() {
     fetchUserInformation()
 
     let metadata: MutableMap<String, String> = HashMap()
     metadata["userSettings"] = userSettings.toString()
 
-        //highlight-start
+    //highlight-start
     Shake.updateUserMetadata(metadata)
     //highlight-end
 }

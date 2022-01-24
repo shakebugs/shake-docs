@@ -26,5 +26,5 @@ To show them their previous tickets, [register your users](/flutter/users/overvi
 
 ## Show
 
-To show the Home screen to an app user, call the `Shake.show` method with the `ShakeScreen.HOME` argument.
+To show the Home screen to an app user, call the `Shake.show` method with the `ShakeScreen.home` argument.
 Visit [Invocations](/flutter/user-feedback/invoke#invoke-through-code) to learn more.

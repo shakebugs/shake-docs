@@ -35,17 +35,17 @@ import TabItem from '@theme/TabItem';
 
 <TabItem value="objectivec">
 
-```java title="App.m"
-- (void)didLogInWithUser:(User *)user success:(BOOL)success { 
-    if (user.isHost) { 
-      NSLog(@"User logged in as host. Resuming Shake."); 
-      //highlight-next-line 
-      SHKShake.isPaused = NO;  
-     } else { 
-       NSLog(@"User logged in as guest. Pausing Shake."); 
-       //highlight-next-line 
-      SHKShake.isPaused = YES; 
-  } 
+```objectivec title="App.m"
+- (void)didLogInWithUser:(User *)user success:(BOOL)success {
+    if (user.isHost) {
+        NSLog(@"User logged in as host. Resuming Shake.");
+        //highlight-next-line
+        SHKShake.isPaused = NO;
+    } else {
+        NSLog(@"User logged in as guest. Pausing Shake.");
+        //highlight-next-line
+        SHKShake.isPaused = YES;
+    }
 }
 ```
 
@@ -53,7 +53,7 @@ import TabItem from '@theme/TabItem';
 
 <TabItem value="swift">
 
-```swift title="App.swift"
+```swift title="AppDelegate.swift"
 func didLogIn(user: User, success: Bool) {
     if user.isHost {
         print("User logged in as host. Resuming Shake.")
@@ -65,7 +65,6 @@ func didLogIn(user: User, success: Bool) {
         Shake.isPaused = true
     }
 }
-
 ```
 
 </TabItem>

@@ -44,7 +44,7 @@ Make sure to call Shake's registerSessionConfiguration method before initialisin
 
 <TabItem value="objectivec">
 
-```java title="NetworkService.m" 
+```objectivec title="NetworkService.m" 
 //highlight-start
 NSURLSessionConfiguration *userConf = [NSURLSessionConfiguration defaultSessionConfiguration];
 
@@ -60,13 +60,11 @@ NSURLSession *customSession = [NSURLSession sessionWithConfiguration:userConf de
 
 ```swift title="NetworkService.swift"
 //highlight-start
-
 let userConf = URLSessionConfiguration.default
 
 Shake.registerSessionConfiguration(userConf)
 
 let customSession = URLSession(configuration: userConf, delegate: self, delegateQueue: nil)
-
 //highlight-end
 ```
 
@@ -121,7 +119,7 @@ values={[
     
 <TabItem value="objectivec">
 
-```objc title="NetworkService.m"
+```objectivec title="NetworkService.m"
 @interface AuthenticationDelegate () <SHKSessionAuthenticationProtocol>
 
 @end
@@ -145,28 +143,30 @@ values={[
 
 - (void)configureSession {
 
-  NSURLSessionConfiguration *userConf = [NSURLSessionConfiguration defaultSessionConfiguration];
-  [SHKShake registerSessionConfiguration:userConf];
-
-  NSURLSession *customSession = [NSURLSession sessionWithConfiguration:userConf delegate:self delegateQueue:nil];
-
-  AuthenticationDelegate *authDelegate = AuthenticationDelegate.new; /// Inject trust certificate handlers etc...
-
-  [SHKShake registerAuthDelegate:authDelegate];
-
-  self.authenticationDelegate = authDelegate;
+    NSURLSessionConfiguration *userConf = [NSURLSessionConfiguration defaultSessionConfiguration];
+    
+    [SHKShake registerSessionConfiguration:userConf];
+    
+    NSURLSession *customSession = [NSURLSession sessionWithConfiguration:userConf delegate:self delegateQueue:nil];
+    
+    AuthenticationDelegate *authDelegate = AuthenticationDelegate.new; /// Inject trust certificate handlers etc...
+    
+    [SHKShake registerAuthDelegate:authDelegate];
+    
+    self.authenticationDelegate = authDelegate;
+    
 }
+
 @end
 ```
 
 </TabItem><TabItem value="swift">
 
 ```swift title="NetworkService.swift"
-
 class AuthenticationDelegate: NSObject, SHKSessionAuthenticationProtocol {
 
-     func didReceive(_ challenge: URLAuthenticationChallenge, completionHandler: @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void) {
-         /// React to challenge and call the completion handler
+    func didReceive(_ challenge: URLAuthenticationChallenge, completionHandler: @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void) {
+        /// React to challenge and call the completion handler
         completionHandler(.performDefaultHandling, nil)
     }
 
@@ -229,23 +229,23 @@ defaultValue="swift"
 
 <TabItem value="objectivec">
 
-```java title="UserService.m" 
+```objectivec title="UserService.m" 
 //highlight-start 
 - (void)getUserWithSession:(NSURLSession )session andRequest:(NSURLRequest )request {
 
-[[session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+    [[session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
 
-    SHKNetworkRequestEditor *networkRequest = [[SHKNetworkRequestEditor alloc] initWith:request
-                                                                               response:response
-                                                                           responseData:data
-                                                                                  error:error
-                                                                              timestamp:NSDate.new
-                                                                               duration:0.5];
+        SHKNetworkRequestEditor *networkRequest = [[SHKNetworkRequestEditor alloc] initWith:request
+            response:response
+            responseData:data
+            error:error
+            timestamp:NSDate.new
+            duration:0.5];
 
-    [SHKShake insertNetworkRequest:networkRequest];
+        [SHKShake insertNetworkRequest:networkRequest];
 
-}] resume] ;
-} 
+    }] resume] ;
+}
 //highlight-end 
 ```
 
@@ -253,17 +253,19 @@ defaultValue="swift"
 
 <TabItem value="swift">
 
-```swift title="UserService.swift" 
-//highlight-start 
+```swift title="UserService.swift"
+//highlight-start
 private func getUser(withSession session: URLSession, andRequest request: URLRequest) {
 
-    session.dataTask(with: request) { (data, res, error) in 
+    session.dataTask(with: request) { (data, res, error) in
     
-    let networkRequest = NetworkRequestEditor(request, response: res, responseData: data, error: error, timestamp: .init(), duration: 0.5) 
+        let networkRequest = NetworkRequestEditor(request, response: res, responseData: data, error: error, timestamp: .init(), duration: 0.5)
     
-    Shake.insertNetworkRequest(networkRequest) }.resume() 
-    } 
-    //highlight-end 
+        Shake.insertNetworkRequest(networkRequest)
+    
+    }.resume()
+}
+//highlight-end
 ```
 
 </TabItem> 
@@ -288,18 +290,19 @@ shakeIntercept View extension allows Shake to hook into the View lifecycle so it
 The extension won't alter your Views in any way.
 
 ```swift title="MySwiftUIContentView.swift" 
-// highlight-start 
+// highlight-start
 struct UserDetailsView: View {
-var user: UserModel
 
-var body: some View {
-    VStack {
-        user.avatar
-        Text("Name: \(user.name)")
-        /// Additional layout
-    }.shakeIntercept(viewName: "UserDetails")
+    var user: UserModel
+
+    var body: some View {
+        VStack {
+            user.avatar
+            Text("Name: \(user.name)")
+            /// Additional layout
+        }.shakeIntercept(viewName: "UserDetails")
+    }
 }
-} 
 // highlight-end
  ```
 
@@ -316,22 +319,20 @@ values={[
   { label: 'Objective-C', value: 'objectivec'}, 
   { label: 'Swift', value: 'swift'}, ] }> 
   
-  <TabItem value="objectivec"> 
+<TabItem value="objectivec"> 
 
-  ```java title="AppDelegate.m" 
-  // highlight-next-line 
-  [SHKShake handleNotificationWithNotificationTitle: notificationTitle 
-  notificationDescription:notificationDescription];
-  ```
+```objectivec title="AppDelegate.m" 
+// highlight-next-line 
+[SHKShake handleNotificationWithNotificationTitle: notificationTitle notificationDescription:notificationDescription];
+```
 
 </TabItem>
 
 <TabItem value="swift">
 
 ```swift title="AppDelegate.swift" 
-// highlight-next-line 
-Shake.handleNotification(withNotificationTitle: notificationTitle, 
-  notificationDescription: notificationDescription)
+// highlight-next-line
+Shake.handleNotification(withNotificationTitle: notificationTitle, notificationDescription: notificationDescription)
 ```
 
 </TabItem>
@@ -351,7 +352,7 @@ You can add your own logs to Activity history too:
 
 <TabItem value="objectivec">
 
-```java title="App.m"
+```objectivec title="AppDelegate.m"
 // highlight-next-line
 [SHKShake logWithLevel: LogLevelInfo message:@"Log message goes here!"];
 ```
@@ -360,7 +361,7 @@ You can add your own logs to Activity history too:
 
 <TabItem value="swift">
 
-```swift title="App.swift"
+```swift title="AppDelegate.swift"
 // highlight-next-line 
 Shake.log(LogLevel.info, "Log message goes here!")
 ```
@@ -381,7 +382,7 @@ You have these log levels at your disposal:
 
 <TabItem value="objectivec">
 
-```java title="App.m"
+```objectivec title="AppDelegate.m"
 LogLevelVerbose
 LogLevelDebug
 LogLevelInfo
@@ -393,12 +394,12 @@ LogLevelError
 
 <TabItem value="swift">
 
-```swift title="App.swift"
- LogLevel.verbose 
- LogLevel.debug 
- LogLevel.info 
- LogLevel.warn 
- LogLevel.error
+```swift title="AppDelegate.swift"
+LogLevel.verbose
+LogLevel.debug
+LogLevel.info
+LogLevel.warn
+LogLevel.error
 ```
 
 </TabItem>
@@ -419,7 +420,7 @@ If you want to disable this feature use the method below:
 
 <TabItem value="objectivec">
 
-```java title="App.m"
+```objectivec title="AppDelegate.m"
 // highlight-next-line
 SHKShake.configuration.isConsoleLogsEnabled = false;
 ```
@@ -428,8 +429,8 @@ SHKShake.configuration.isConsoleLogsEnabled = false;
 
 <TabItem value="swift">
 
-```swift title="App.swift"
-// highlight-next-line 
+```swift title="AppDelegate.swift"
+// highlight-next-line
 Shake.configuration.isConsoleLogsEnabled = false
 ```
 
@@ -458,7 +459,7 @@ Activity history is enabled by default, use the method below to disable it altog
 
 <TabItem value="objectivec">
 
-```java title="App.m"
+```objectivec title="AppDelegate.m"
 //highlight-next-line
 SHKShake.configuration.isActivityHistoryEnabled = NO;
 ```
@@ -467,11 +468,10 @@ SHKShake.configuration.isActivityHistoryEnabled = NO;
 
 <TabItem value="swift">
 
-```swift title="App.swift"
+```swift title="AppDelegate.swift"
 //highlight-next-line 
 Shake.configuration.isActivityHistoryEnabled = false
 ```
 
 </TabItem>
 </Tabs>
-

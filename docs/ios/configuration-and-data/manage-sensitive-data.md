@@ -47,7 +47,7 @@ To disable this privacy feature, use the method below:
 
 <TabItem value="objectivec">
 
-```java title="App.m"
+```objectivec title="AppDelegate.m"
 // highlight-next-line 
 SHKShake.configuration.isSensitiveDataRedactionEnabled = false;
 // highlight-end
@@ -57,7 +57,7 @@ SHKShake.configuration.isSensitiveDataRedactionEnabled = false;
 
 <TabItem value="swift">
 
-```swift title="App.swift"
+```swift title="AppDelegate.swift"
 // highlight-next-line
 Shake.configuration.isSensitiveDataRedactionEnabled = false
 ```
@@ -107,15 +107,16 @@ from the auto screenshot:
 
 <TabItem value="objectivec">
 
-```objc title="App.m"
-// highlight-next-line 
-@import Shake; 
+```objectivec title="AppDelegate.m"
+// highlight-next-line
+@import Shake;
 @import Stripe;
-(void)maskSensitiveData { 
-  // highlight-next-line 
-  [SHKShake addPrivateView:textUserName]; 
-  // highlight-next-line 
-  [SHKShake addPrivateView:textCardNumber]; 
+
+- (void)maskSensitiveData {
+    // highlight-next-line
+    [SHKShake addPrivateView:textUserName];
+    // highlight-next-line
+    [SHKShake addPrivateView:textCardNumber];
 }
 ```
 
@@ -123,7 +124,7 @@ from the auto screenshot:
 
 <TabItem value="swift">
 
-```swift title="App.swift"
+```swift title="AppDelegate.swift"
 // highlight-next-line
 import Shake
 import Stripe
@@ -152,16 +153,16 @@ To remove a view from private views use the following method:
 
 <TabItem value="objectivec">
 
-```java title="App.m"
- // highlight-next-line 
- [SHKShake removePrivateView:view];
+```objectivec title="AppDelegate.m"
+// highlight-next-line
+[SHKShake removePrivateView:view];
 ```
 
 </TabItem>
 
 <TabItem value="swift">
 
-```swift title="App.swift"
+```swift title="AppDelegate.swift"
 // highlight-next-line
 Shake.removePrivateView(view)
 ```
@@ -182,21 +183,22 @@ If you want to delete an entire screen from the auto screenshot, simply mark the
 
 <TabItem value="objectivec">
 
-```objc title="App.m"
-@import UIKit; 
-// highlight-next-line 
-@import Shake; 
+```objectivec title="ViewController.m"
+@import UIKit;
+// highlight-next-line
+@import Shake;
 @import Stripe;
 
-@interface PaymentViewController: STPPaymentOptionsViewController 
+@interface PaymentViewController: STPPaymentOptionsViewController
 @end
 
 @implementation PaymentViewController
 
-- (void)viewWillAppear:(BOOL)animated { 
-  [super viewWillAppear:animated];
-  // highlight-next-line 
-  [SHKShake addPrivateViewController:self]; 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    // highlight-next-line 
+    [SHKShake addPrivateViewController:self];
 }
 
 @end
@@ -206,7 +208,7 @@ If you want to delete an entire screen from the auto screenshot, simply mark the
 
 <TabItem value="swift">
 
-```swift title="App.swift"
+```swift title="ViewController.swift"
 import UIKit
 // highlight-next-line
 import Shake
@@ -238,8 +240,8 @@ To remove a view controller from the list of private views, use the following me
 
 <TabItem value="objectivec">
 
-```java title="App.m"
-// highlight-next-line 
+```objectivec title="ViewController.m"
+// highlight-next-line
 [SHKShake removePrivateViewController:self];
 ```
 
@@ -247,7 +249,7 @@ To remove a view controller from the list of private views, use the following me
 
 <TabItem value="swift">
 
-```swift title="App.swift"
+```swift title="ViewController.swift"
 // highlight-next-line
 Shake.removePrivateViewController(self)
 ```
@@ -268,16 +270,16 @@ To clear all the private views, use the following method:
 
 <TabItem value="objectivec">
 
-```java title="App.m"
- // highlight-next-line 
- [SHKShake clearPrivateViews];
+```objectivec title="AppDelegate.m"
+// highlight-next-line
+[SHKShake clearPrivateViews];
 ```
 
 </TabItem>
 
 <TabItem value="swift">
 
-```swift title="App.swift"
+```swift title="AppDelegate.swift"
 // highlight-next-line
 Shake.clearPrivateViews()
 ```
@@ -312,20 +314,23 @@ As an example, if you'd like to obfuscate the *Authorization* header in all netw
 
 <TabItem value="objectivec">
 
-```java title="App.m"
-// highlight-next-line 
+```objectivec title="AppDelegate.m"
+// highlight-next-line
 @import Shake;
-- (void)setupNetworkFilter {
-  // highlight-start 
-  SHKShake.networkRequestsFilter = ^SHKNetworkRequestEditor (SHKNetworkRequestEditor * networkRequest) { 
-  NSMutableDictionary<NSString *, NSString *> headers = networkRequest.requestHeaders;
-    if (headers[@"Authorization"] != nil) {
-        headers[@"Authorization"] = @"***";
-    }
 
-    return networkRequest;
-  };
-// highlight-end 
+- (void)setupNetworkFilter {
+
+    // highlight-start
+    SHKShake.networkRequestsFilter = ^SHKNetworkRequestEditor (SHKNetworkRequestEditor * networkRequest) {
+        NSMutableDictionary<NSString *, NSString *> headers = networkRequest.requestHeaders;
+        
+        if (headers[@"Authorization"] != nil) {
+            headers[@"Authorization"] = @"***";
+        }
+
+        return networkRequest;
+    };
+// highlight-end
 }
 ```
 
@@ -333,18 +338,23 @@ As an example, if you'd like to obfuscate the *Authorization* header in all netw
 
 <TabItem value="swift">
 
-```swift title="App.swift"
-// highlight-next-line 
-import Shake func setupNetworkFilter() { 
-  // highlight-start 
-  Shake.networkRequestsFilter = {
-     (networkRequest) in 
-      if networkRequest.requestHeaders["Authorization"] != nil { 
-        networkRequest.requestHeaders["Authorization"] = "***" } 
-        return networkRequest 
-        } 
-        // highlight-end 
-  }
+```swift title="AppDelegate.swift"
+// highlight-next-line
+import Shake
+
+func setupNetworkFilter() {
+
+    // highlight-start
+    Shake.networkRequestsFilter = { (networkRequest) in
+    
+        if networkRequest.requestHeaders["Authorization"] != nil {
+            networkRequest.requestHeaders["Authorization"] = "***"
+        }
+        
+        return networkRequest
+    }
+    // highlight-end
+}
 ```
 
 </TabItem>
@@ -363,19 +373,22 @@ If you don't want to log specific network requests, return `nil` from the `Netwo
 
 <TabItem value="objectivec">
 
-```java title="App.m"
- // highlight-next-line 
- @import Shake;
-- (void)setupNetworkFilter {
-  // highlight-start 
-  SHKShake.networkRequestsFilter = ^SHKNetworkRequestEditor *(SHKNetworkRequestEditor * networkRequest) {
-    if ([networkRequest.url.absoluteString hasPrefix:@"https://api.myapp.com/cards"]) {
-        return nil;
-    }
+```objectivec title="AppDelegate.m"
+// highlight-next-line 
+@import Shake;
 
-    return networkRequest;
-  };
-// highlight-end 
+- (void)setupNetworkFilter {
+
+    // highlight-start 
+    SHKShake.networkRequestsFilter = ^SHKNetworkRequestEditor *(SHKNetworkRequestEditor * networkRequest) {
+    
+        if ([networkRequest.url.absoluteString hasPrefix:@"https://api.myapp.com/cards"]) {
+            return nil;
+        }
+
+        return networkRequest;
+    };
+    // highlight-end 
 }
 ```
 
@@ -383,18 +396,22 @@ If you don't want to log specific network requests, return `nil` from the `Netwo
 
 <TabItem value="swift">
 
-```swift title="App.swift"
-// highlight-next-line 
-import Shake func setupNetworkFilter() { 
-// highlight-start 
-Shake.networkRequestsFilter = {
-   (networkRequest) in 
-    if networkRequest.url.absoluteString.hasPrefix("https://api.myapp.com/cards") { 
-      return nil 
-      } 
-    return networkRequest 
-  } 
-  // highlight-end 
+```swift title="AppDelegate.swift"
+// highlight-next-line
+import Shake
+
+func setupNetworkFilter() {
+
+    // highlight-start
+    Shake.networkRequestsFilter = { (networkRequest) in
+    
+        if networkRequest.url.absoluteString.hasPrefix("https://api.myapp.com/cards") {
+            return nil
+        }
+        
+        return networkRequest
+    }
+    // highlight-end
 }
 ```
 
@@ -403,7 +420,9 @@ Shake.networkRequestsFilter = {
 
 To clear the network requests filter, use `Shake.networkRequestsFilter = nil`.
 
+
 ## Notification events
+
 If your app notifications contain sensitive data, use the `Shake.setNotificationEventsFilter()`
 method to fully or partially obfuscate those notifications.
 
@@ -420,18 +439,21 @@ For example, if you'd like to obfuscate the description of the notification even
 
 <TabItem value="objectivec">
 
-```java title="App.m"
-// highlight-next-line 
+```objectivec title="AppDelegate.m"
+// highlight-next-line
 @import Shake;
-- (void)setupNotificationEventsFilter {
-  // highlight-start 
-  SHKShake.notificationEventsFilter = ^SHKNotificationEventEditor *(SHKNotificationEventEditor * notificationEvent) {
-    if ([notificationEvent.title hasPrefix:@"E-mail changed"]) {
-        notificationEvent.description = @"***@gmail.com";
-    }
 
-    return notificationEvent;
-};
+- (void)setupNotificationEventsFilter {
+
+    // highlight-start
+    SHKShake.notificationEventsFilter = ^SHKNotificationEventEditor *(SHKNotificationEventEditor * notificationEvent) {
+    
+        if ([notificationEvent.title hasPrefix:@"E-mail changed"]) {
+            notificationEvent.description = @"***@gmail.com";
+        }
+
+        return notificationEvent;
+    };
 // highlight-end
 }
 ```
@@ -440,17 +462,23 @@ For example, if you'd like to obfuscate the description of the notification even
 
 <TabItem value="swift">
 
-```swift title="App.swift"
-// highlight-next-line import 
-Shake func setupNotificationEventsFilter() { 
-// highlight-start 
-Shake.notificationEventsFilter = { 
-  (notificationEvent) in if notificationEvent.title.contains("E-mail changed") { 
-    notificationEvent.description = "***@gmail.com" 
-    } 
-  return notificationEvent 
-  } // highlight-end 
-} 
+```swift title="AppDelegate.swift"
+// highlight-next-line
+import Shake
+
+func setupNotificationEventsFilter() {
+
+    // highlight-start
+    Shake.notificationEventsFilter = { (notificationEvent) in
+    
+        if notificationEvent.title.contains("E-mail changed") {
+            notificationEvent.description = "***@gmail.com"
+        }
+        
+        return notificationEvent
+    }
+    // highlight-end
+}
 ```
 
 </TabItem>
@@ -469,19 +497,21 @@ If you do not want to track a specific notification event, return `nil` from the
 
 <TabItem value="objectivec">
 
-```java title="App.m"
-// highlight-next-line 
+```objectivec title="AppDelegate.m"
+// highlight-next-line
 @import Shake;
-- (void)setupNotificationEventsFilter { 
-  // highlight-start 
-  SHKShake.notificationEventsFilter = ^SHKNotificationEventEditor *(SHKNotificationEventEditor * notificationEvent) {
-    if ([notificationEvent.title hasPrefix:@"E-mail changed"]) {
-        return nil;
-    }
 
-  return notificationEvent;
-  }; 
-// highlight-end 
+- (void)setupNotificationEventsFilter {
+    // highlight-start
+    SHKShake.notificationEventsFilter = ^SHKNotificationEventEditor *(SHKNotificationEventEditor * notificationEvent) {
+        
+        if ([notificationEvent.title hasPrefix:@"E-mail changed"]) {
+            return nil;
+        }
+
+        return notificationEvent;
+    };
+    // highlight-end
 }
 ```
 
@@ -489,17 +519,21 @@ If you do not want to track a specific notification event, return `nil` from the
 
 <TabItem value="swift">
 
-```swift title="App.swift"
-highlight-next-line 
-import Shake func setupNotificationEventFilter() { 
-// highlight-start 
-Shake.notificationEventsFilter = { 
-  (notificationEvent) in 
-    if notificationEvent.title.contains("E-mail changed") { 
-      return nil 
-    } 
-  return notificationEvent 
- } // highlight-end 
+```swift title="AppDelegate.swift"
+//highlight-next-line
+import Shake
+
+func setupNotificationEventFilter() {
+    // highlight-start
+    Shake.notificationEventsFilter = { (notificationEvent) in
+    
+        if notificationEvent.title.contains("E-mail changed") {
+            return nil
+        }
+        
+        return notificationEvent
+    }
+    // highlight-end
 }
 ```
 

@@ -39,29 +39,34 @@ Make sure to call this method at the place where it fits your app's flow perfect
 
 <TabItem value="objectivec">
 
-```java title="LoginActivity.m"
+```objectivec title="UserManager.m"
 @implementation UserManager
+
 - (void)logInUser:(NSString )userEmail password:(NSString )password {
+
     __weak typeof (LogInViewModel) *weakSelf = self;
+    
     [self.networkService performLogInWithEmail:userEmail password:password completion:^(UserResponse _Nullable userResponse, NSError * _Nullable error) {
+    
         if (userResponse) {
         /// Succesfull log in flow
 
-        // highlight-next-line
-        [SHKShake registerUserWithUserId:userEmail];
+            // highlight-next-line
+            [SHKShake registerUserWithUserId:userEmail];
 
-        /**
-        Or even better,
-        [SHKShake registerUserWithUserId:userResponse.internalUserIdentifier];
-        */
+            /**
+            Or even better,
+            [SHKShake registerUserWithUserId:userResponse.internalUserIdentifier];
+            */
 
-        [weakSelf didLoginWithUserResponse:userResponse];
+            [weakSelf didLoginWithUserResponse:userResponse];
 
-        return;
-    }
+            return;
+        }
 
-    /// Log in failed flow
-    }]; 
+        /// Log in failed flow
+        
+    }];
 } 
 @end
 ```
@@ -70,7 +75,7 @@ Make sure to call this method at the place where it fits your app's flow perfect
 
 <TabItem value="swift">
 
-```swift title="LoginActivity.swift"
+```swift title="UserManager.swift"
 func logInUser(email: String, password: String) {
 
     self.networkService.performLogin(email: email, password: password) { [weak self] userResponse in

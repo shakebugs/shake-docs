@@ -47,7 +47,7 @@ All network requests sent with the *ShakeHttpClient* instance will be visible in
 
 #### dio
 
-Install [shake_dio_interceptor](https://pub.dev/packages/shake_dio_interceptor) extension for the *dio* package:
+Install the [shake_dio_interceptor](https://pub.dev/packages/shake_dio_interceptor) extension for the *dio* package:
 
 ```yaml title="pubspec.yaml"
 dependencies:
@@ -75,7 +75,7 @@ All network requests sent with the *Dio* instance will be visible in Activity hi
 
 #### http
 
-Install [shake_http_client](https://pub.dev/packages/shake_http_client) extension for *http* package:
+Install the [shake_http_client](https://pub.dev/packages/shake_http_client) extension for *http* package:
 
 ```yaml title="pubspec.yaml"
 dependencies:

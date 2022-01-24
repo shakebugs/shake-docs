@@ -24,8 +24,9 @@ On devices with Android O and newer, Shake will capture those components too, if
 
 ## Disable
 
-Let's suppose you are invoking Shake through code from the **My account → Help** screen of your app. You would always receive the same 
-screenshot and it wouldn't be related to all sorts of reported tickets in any way.
+Imagine a case where you leave the auto screenshot enabled and you set up Shake in a way that your users report all their issues and suggestions
+only by visiting **My account → Help** in your app. Since Shake would always be invoked from that same place, every ticket your users send you
+would always have the identical screenshot attached. That would be both confusing and useless.
 
 <table class="media-container mt-40 mb-40">
 <img

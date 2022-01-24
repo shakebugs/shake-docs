@@ -40,11 +40,10 @@ import TabItem from '@theme/TabItem';
 
 <TabItem value="objectivec">
 
-```java title="App.m"
+```objectivec title="AppDelegate.m"
 // highlight-start
-// highlight-start 
-SHKFeedbackEntry hardwareCategory = [SHKFeedbackEntry entryWithTitle:@"Hardware issue" andTag:@"hardware" icon:nil]; /// Icon is optional 
-SHKFeedbackEntry callCategory = [SHKFeedbackEntry entryWithTitle:@"Call audio problem" andTag:@"call_audio" icon:nil]; 
+SHKFeedbackEntry *hardwareCategory = [SHKFeedbackEntry entryWithTitle:@"Hardware issue" andTag:@"hardware" icon:nil]; /// Icon is optional
+SHKFeedbackEntry *callCategory = [SHKFeedbackEntry entryWithTitle:@"Call audio problem" andTag:@"call_audio" icon:nil];
 SHKFeedbackEntry *syncCategory = [SHKFeedbackEntry entryWithTitle:@"File sync issue" andTag:@"file_sync" icon:nil];
 
 [SHKShake setFeedbackTypes:@[hardwareCategory, callCategory, syncCategory]];
@@ -55,11 +54,12 @@ SHKFeedbackEntry *syncCategory = [SHKFeedbackEntry entryWithTitle:@"File sync is
 
 <TabItem value="swift">
 
-```swift title="App.swift"
+```swift title="AppDelegate.swift"
 // highlight-start
 let hardwareCategory = SHKFeedbackEntry(title: "Hardware issue", andTag: "hardware", icon: hardwareIssueIcon) /// Icon is optional
 let callCategory = SHKFeedbackEntry(title: "Call audio problem", andTag: "call_audio", icon: nil)
 let syncCategory = SHKFeedbackEntry(title: "File sync issue", andTag: "file_sync", icon: nil)
+
 Shake.setFeedbackTypes([hardwareCategory, callCategory, syncCategory])
 // highlight-end
 ```
@@ -86,7 +86,7 @@ so you can have different feedback types for different parts of your app:
 
 <TabItem value="objectivec">
 
-```java title="App.m"
+```objectivec title="NetworkService.m"
 // highlight-start 
 - (void)enableVideoCallFeature:(NSString *)contactId {
 
@@ -106,15 +106,18 @@ so you can have different feedback types for different parts of your app:
 
 <TabItem value="swift">
 
-```swift title="App.swift"
+```swift title="NetworkService.swift"
 // highlight-start  
-  func enableVideoCallFeature(contactID: String) {
-      let videoCallCategory = 
-        SHKFeedbackEntry(title: "Video Call", andTag: "video_call", icon: nil)
-      var existing = Shake.getFeedbackTypes()
-      existing.append(videoCallCategory)
-      Shake.setFeedbackTypes(existing)
-  }
+func enableVideoCallFeature(contactID: String) {
+  
+    let videoCallCategory = SHKFeedbackEntry(title: "Video Call", andTag: "video_call", icon: nil)
+      
+    var existing = Shake.getFeedbackTypes()
+      
+    existing.append(videoCallCategory)
+      
+    Shake.setFeedbackTypes(existing)
+}
 // highlight-end
 ```
 
@@ -135,7 +138,7 @@ If you don't want to force your users to categorize their feedback, simply hide 
 
 <TabItem value="objectivec">
 
-```java title="App.m"
+```objectivec title="App.m"
 // highlight-next-line 
 SHKShake.configuration.isFeedbackTypeEnabled = false;
 // highlight-end

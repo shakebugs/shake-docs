@@ -30,7 +30,7 @@ import TabItem from '@theme/TabItem';
 
 <TabItem value="objectivec">
 
-```java title="App.m"
+```objectivec title="AppDelegate.m"
 // highlight-next-line 
 SHKShake.configuration.setAutoVideoRecordingEnabled = true;
 ```
@@ -39,7 +39,7 @@ SHKShake.configuration.setAutoVideoRecordingEnabled = true;
 
 <TabItem value="swift">
 
-```swift title="App.swift"
+```swift title="AppDelegate.swift"
 // highlight-next-line
 Shake.configuration.setAutoVideoRecordingEnabled = true
 ```

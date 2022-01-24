@@ -20,7 +20,7 @@ You can call `Shake.setMetadata()` anywhere in your app, but be careful because 
 
 :::
 
-Let’s say you want to send yourself a roomID after a user successfully joins a chat room. You would do this:
+Let�s say you want to send yourself a roomID after a user successfully joins a chat room. You would do this:
 
 <Tabs
   groupId="ios"
@@ -33,10 +33,10 @@ Let’s say you want to send yourself a roomID after a user successfully joins a
 
 <TabItem value="objectivec">
 
-```java title="App.m"
-- (void)onChatRoomJoined:(Room *)room { 
-    // highlight-next-line 
-    [SHKShake setMetadataWithKey: @"roomid" value: room.id]; 
+```objectivec title="AppDelegate.m"
+- (void)onChatRoomJoined:(Room *)room {
+    // highlight-next-line
+    [SHKShake setMetadataWithKey: @"roomid" value: room.id];
 }
 ```
 
@@ -44,7 +44,7 @@ Let’s say you want to send yourself a roomID after a user successfully joins a
 
 <TabItem value="swift">
 
-```swift title="App.swift"
+```swift title="AppDelegate.swift"
 func onChatRoomJoined(room: Room) {
     // highlight-next-line
     Shake.setMetadata(key: "roomId", value: room.id)
@@ -52,6 +52,7 @@ func onChatRoomJoined(room: Room) {
 
 </TabItem>
 </Tabs>
+
 
 ## Clear Ticket metadata
 
@@ -70,23 +71,23 @@ For example, you want to clear ticket metadata when the user leaves a chat room:
 
 <TabItem value="objectivec">
 
-```java title="App.m"
-- (void)onChatRoomClosed() { 
-    [self.chatService close]; 
-    // highlight-next-line 
-    [SHKShake clearMetadata]; 
-} 
+```objectivec title="AppDelegate.m"
+- (void)onChatRoomClosed() {
+    [self.chatService close];
+    // highlight-next-line
+    [SHKShake clearMetadata];
+}
 ```
 
 </TabItem>
 
 <TabItem value="swift">
 
-```swift title="App.swift"
-func onChatRoomClosed() { 
-  chatService.close();
-  // highlight-next-line
-  Shake.clearMetadata();
+```swift title="AppDelegate.swift"
+func onChatRoomClosed() {
+    chatService.close();
+    // highlight-next-line
+    Shake.clearMetadata();
 }
 ```
 

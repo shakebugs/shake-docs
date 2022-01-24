@@ -13,7 +13,7 @@ profile giving you an insight into the last 60 seconds before the ticket was sub
 
 This line chart (visible in every ticket on your [Shake dashboard](https://app.shakebugs.com/)) shows your app's CPU usage.
 When you hover over the chart, the CPU percentage is shown.
-Shake accounts for multi-threading so if multiple threads were busy, percentage can go above 100%.
+Shake accounts for multi-threading so if multiple threads are busy, the percentage can go above 100%.
 
 Your app's CPU usage is captured every 0.5 seconds.
 
@@ -68,8 +68,8 @@ import TabItem from '@theme/TabItem';
 
 <TabItem value="objectivec">
 
-```java title="App.m"
-//highlight-next-line 
+```objectivec title="AppDelegate.m"
+//highlight-next-line
 SHKShake.configuration.isBlackBoxEnabled = NO;
 ```
 
@@ -77,7 +77,7 @@ SHKShake.configuration.isBlackBoxEnabled = NO;
 
 <TabItem value="swift">
 
-```swift title="App.swift"
+```swift title="AppDelegate.swift"
 //highlight-next-line
 Shake.configuration.isBlackBoxEnabled = false
 ```

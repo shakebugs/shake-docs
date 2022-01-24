@@ -81,10 +81,13 @@ Shake.insertNotificationEvent(notificationEventBuilder);
 ### Custom logs
 You can add your own logs to Activity history too:
 
-```javascript title="App.js" // highlight-next-line import Shake, { LogLevel } from '@shakebugs/react-native-shake';
-const sendCustomLog = () => { 
-// highlight-next-line 
-Shake.log(LogLevel.INFO, 'This is a Shake custom log.'); 
+```javascript title="App.js"
+// highlight-next-line
+import Shake, { LogLevel } from '@shakebugs/react-native-shake';
+
+const sendCustomLog = () => {
+// highlight-next-line
+    Shake.log(LogLevel.INFO, 'This is a Shake custom log.');
 }
 ```
 

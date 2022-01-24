@@ -23,7 +23,7 @@ import TabItem from '@theme/TabItem';
 
 <TabItem value="objectivec">
 
-```java title="App.m"
+```objectivec title="AppDelegate.m"
 // highlight-next-line
 //highlight-start 
 SHKShake.configuration.isCrashReportingEnabled = YES; 
@@ -32,7 +32,7 @@ SHKShake.configuration.isCrashReportingEnabled = YES;
 
 </TabItem><TabItem value="swift">
 
-```swift title="App.swift"
+```swift title="AppDelegate.swift"
 //highlight-start
 Shake.configuration.isCrashReportingEnabled = true
 //highlight-end
