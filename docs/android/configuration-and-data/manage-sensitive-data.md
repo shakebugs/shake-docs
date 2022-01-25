@@ -42,8 +42,8 @@ defaultValue="kotlin"
 values={[
         { label: 'Java', value: 'java'},
         { label: 'Kotlin', value: 'kotlin'},
-        ]
-        }>
+    ]
+}>
 
 <TabItem value="java">
 
@@ -173,8 +173,8 @@ If you want to delete an entire screen from the auto screenshot, simply mark the
 groupId="android"
 defaultValue="kotlin"
 values={[
-    { label: 'Java', value: 'java'},
-    { label: 'Kotlin', value: 'kotlin'},
+        { label: 'Java', value: 'java'},
+        { label: 'Kotlin', value: 'kotlin'},
     ]
 }>
 
@@ -198,7 +198,6 @@ public class PaymentActivity extends AppCompatActivity {
         // highlight-next-line
         Shake.addPrivateView(this);
     }
-
     ...
 }
 ```
@@ -221,7 +220,6 @@ public class PaymentActivity : AppCompatActivity() {
         // highlight-next-line
         Shake.addPrivateView(this)
     }
-
     ...
 }
 ```
@@ -324,7 +322,6 @@ public class PaymentActivity extends AppCompatActivity {
             WindowManager.LayoutParams.FLAG_SECURE);
         // highlight-end
     }
-
     ...
 }
 ```
@@ -350,7 +347,6 @@ public class PaymentActivity : AppCompatActivity() {
             WindowManager.LayoutParams.FLAG_SECURE)
         // highlight-end
     }
-
     ...
 }
 ```
@@ -399,7 +395,7 @@ class MainActivity : ComponentActivity() {
                 Surface(color = MaterialTheme.colors.background) {
                     // highlight-start
                     ShakePrivateView {
-                        Greeting("Android") 
+                        Greeting("Android")
                     }
                     // highlight-end
                 }
@@ -555,8 +551,8 @@ defaultValue="kotlin"
 values={[
         { label: 'Java', value: 'java'},
         { label: 'Kotlin', value: 'kotlin'},
-        ]
-        }>
+    ]
+}>
 
 <TabItem value="java">
 
@@ -614,8 +610,8 @@ If you do not want to track a specific notification event, return `null` from th
 groupId="android"
 defaultValue="kotlin"
 values={[
-  { label: 'Java', value: 'java'},
-  { label: 'Kotlin', value: 'kotlin'},
+    { label: 'Java', value: 'java'},
+    { label: 'Kotlin', value: 'kotlin'},
   ]
 }>
 

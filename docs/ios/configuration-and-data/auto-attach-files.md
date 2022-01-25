@@ -36,7 +36,7 @@ _ShakeFile_ can be initialized with a filename (String) and data (NSData / Data)
 
 <TabItem value="objectivec">
 
-```objectivec title="AppDelegate.m" 
+```objectivec title="AppDelegate.m"
 NSString fileName = ...
 NSData fileData = ...
 

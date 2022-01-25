@@ -33,11 +33,10 @@ import TabItem from '@theme/TabItem';
 
 <TabItem value="objectivec">
 
-```java title="AppDelegate.m" 
-// highlight-next-line 
-SHKShake.configuration.setShowIntroMessage = YES; 
+```objectivec title="AppDelegate.m"
+// highlight-next-line
+SHKShake.configuration.setShowIntroMessage = YES;
 ```
-
 
 </TabItem>
 

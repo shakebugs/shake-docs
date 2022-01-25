@@ -35,7 +35,7 @@ void onLoggedIn(User user) {
         'first_name': user.getFirstName(),
         'last_name': user.getLastName(),
         'email': user.getEmail(),
-        'status': user.getStatus(),
+        'status': user.getStatus()
     };
     
     Shake.updateUserMetadata(metadata);
@@ -46,11 +46,13 @@ void onLoggedIn(User user) {
 and updating **specific** user metadata in their respective contexts:
 
 ```dart title="main.dart"
-void onUserSettingsConfigured() {
+void onUserSettingsConfigured(UserSettings userSettings) {
     fetchUserInformation();
     // highlight-start
 
-    var metadata = <String, String>{ 'userSettings': userSettings.toString() };
+    var metadata = <String, String> { 
+        'userSettings': userSettings.toString() 
+    };
     Shake.updateUserMetadata(metadata);
     // highlight-end
 }

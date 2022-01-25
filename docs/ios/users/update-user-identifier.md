@@ -53,7 +53,6 @@ It's assumed that the user was previously registered with an email:
             [SHKShake updateUserId:newEmail];
 
         }
-        
     }];
 }
 @end

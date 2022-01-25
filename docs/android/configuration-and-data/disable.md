@@ -38,7 +38,7 @@ import TabItem from '@theme/TabItem';
 ```java title="App.java"
 public void loggedInSuccessfully(User user) {
   if (user.getUserType() == GUEST) {
-    // highlight-next-line    
+    // highlight-next-line
     Shake.setEnabled(false);
   }
 }

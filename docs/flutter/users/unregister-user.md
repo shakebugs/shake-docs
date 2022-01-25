@@ -7,6 +7,7 @@ title: Unregister user
 want the subsequent reports to be associated with the current user.
 
 Unregistering is done by calling the `Shake.unregisterUser` method:
+
 ```dart title="main.dart"
 void logOut() {
     networkService.performLogOut(email,
@@ -14,10 +15,10 @@ void logOut() {
             // highlight-next-line
             Shake.unregisterUser();
             
-            handleLogOut();   
-        }, 
+            handleLogOut();
+        },
         (String message) {
-            // Handle failed log out   
+            // Handle failed log out
         });
 }
 ```

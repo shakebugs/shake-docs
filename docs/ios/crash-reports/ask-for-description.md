@@ -44,7 +44,7 @@ To enable it:
 <TabItem value="objectivec">
 
 ```objectivec title="AppDelegate.m"
-//highlight-start 
+//highlight-start
 SHKShake.configuration.isAskForCrashDescriptionEnabled = YES;
 //highlight-end
 ```

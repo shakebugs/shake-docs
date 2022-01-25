@@ -29,12 +29,12 @@ user metadata in segments from various parts of your app, even when offline.
 A common approach developers take is updating **generic** user metadata from one place in your code upon every user change
 
 ```javascript title="App.js"
-const onLoggedIn = user => {
+const onLoggedIn = (user) => {
     // highlight-start
     const metadata = {
         first_name: user.firstName,
-        last_name: user.lastName
-        email: user.email
+        last_name: user.lastName,
+        email: user.email,
         status: user.status
     };
     
@@ -46,11 +46,13 @@ const onLoggedIn = user => {
 and updating **specific** user metadata in their respective contexts:
 
 ```javascript title="UserSettings.js"
-const onUserSettingsConfigured = () => {
+const onUserSettingsConfigured = (userSettings) => {
     fetchUserInformation();
 
     // highlight-start
-    const metadata = { userSettings: userSettings.toString() };
+    const metadata = { 
+        userSettings: userSettings.toString() 
+    };
     Shake.updateUserMetadata(metadata);
     // highlight-end
 }

@@ -20,8 +20,9 @@ On Android, the [code snippet](/react/install/manual-linking/#enable-touch-track
 ### Network traffic
 
 Network traffic logging is disabled by default. Enable it using the following method:
-```javascript title="App.js" 
-// highlight-next-line 
+
+```javascript title="App.js"
+// highlight-next-line
 Shake.setNetworkRequestsEnabled(true);
 ```
 You can add your own custom network requests at any time:
@@ -45,11 +46,9 @@ Shake.insertNetworkRequest(networkRequestBuilder);
 // highlight-end
 ```
 
-
 ### System events
 
 System events - also known as app lifecycle events - are tracked automatically and require no additional setup.
-
 
 ### Notifications
 
@@ -58,8 +57,8 @@ On *iOS*, notifications are tracked automatically and require no additional setu
 *Android* requires notifications permission in settings to track notifications.
 Use the following code snippet to show notification settings screen to the user:
 
-```javascript title="App.js" 
-// highlight-next-line 
+```javascript title="App.js"
+// highlight-next-line
 Shake.showNotificationsSettings();
 ```
 
@@ -103,13 +102,15 @@ LogLevel.ERROR
 
 ### Console logs
 On *Android*, console logs are recorded automatically and require no additional setup. If you want to disable this feature use the method below:
-```javascript title="App.js" 
-// highlight-next-line 
+
+```javascript title="App.js"
+// highlight-next-line
 Shake.setConsoleLogsEnabled(false);
 ```
 
 For *iOS* apps, add the following code snippet to your *AppDelegate.m* to make sure that console logs are recorded by Shake:
-```java title="AppDelegate.m"
+
+```objectivec title="AppDelegate.m"
 // highlight-next-line
 #import <React/RCTLog.h>
 
@@ -123,14 +124,13 @@ For *iOS* apps, add the following code snippet to your *AppDelegate.m* to make s
 }
 
 // highlight-start
-RCTLogFunction ShakeLogFunction = ^(RCTLogLevel level, __unused RCTLogSource source, NSString *fileName, NSNumber *lineNumber, NSString *message) 
+RCTLogFunction ShakeLogFunction = ^(RCTLogLevel level, __unused RCTLogSource source, NSString *fileName, NSNumber *lineNumber, NSString *message)
 {
   NSString *log = RCTFormatLog([NSDate date], level, fileName, lineNumber, message);
   NSLog(@"%@", log);
 };
 // highlight-end
 ```
-
 
 ## Limitations
 
@@ -141,12 +141,11 @@ in a Premium workspace you can browse the full Activity history.
 The network request limits for both the request body and the response body are 100 kB each.
 If the request body or the response body contains binary data, it will be presented as a *Binary data* string.
 
-
 ## Disable
 
 Activity history is enabled by default, use the method below to disable it altogether:
 
-```javascript title="App.js" 
-// highlight-next-line 
+```javascript title="App.js"
+// highlight-next-line
 Shake.setEnableActivityHistory(false);
 ```

@@ -25,8 +25,8 @@ import TabItem from '@theme/TabItem';
 
 ```objectivec title="AppDelegate.m"
 // highlight-next-line
-//highlight-start 
-SHKShake.configuration.isCrashReportingEnabled = YES; 
+//highlight-start
+SHKShake.configuration.isCrashReportingEnabled = YES;
 //highlight-end
 ```
 

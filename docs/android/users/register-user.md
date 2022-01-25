@@ -47,12 +47,12 @@ private void logInUser(String email, String password) {
             // highlight-next-line
             Shake.registerUser(user.getId());
 
-            handleLogin(user);        
+            handleLogin(user);
         }
 
         @Override
         void onLoginFailed(String message) {
-            // Handle failed login     
+            // Handle failed login
         }
     });
 }

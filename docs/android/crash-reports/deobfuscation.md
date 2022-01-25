@@ -58,7 +58,7 @@ if NOT exist %PATH_TO_MAPPING_FILE% (
 echo "Mapping file found!"
 echo "Uploading mapping file..."
 
-FOR /F "tokens=*" %%G IN  ('curl -X POST -u "%CLIENT_ID%:%CLIENT_SECRET%" -d "grant_type=client_credentials" %AUTH_ENDPOINT%') DO SET APP_TOKEN=%%G
+FOR /F "tokens=*" %%G IN  ('curl -X POST -u "%CLIENT_ID%:%CLIENT_SECRET%" -d "grant_type=client_credentials" %AUTH_ENDPOINT%')DO SET APP_TOKEN=%%G
 
 set APP_TOKEN=%APP_TOKEN:"=%
 set "APP_TOKEN=%APP_TOKEN:~1,-2%"
@@ -148,11 +148,11 @@ task uploadMappingFile {
             if (it.buildType.name == 'release' && mappingFile != null && mappingFile.exists()) {
                 if (Os.isFamily(Os.FAMILY_WINDOWS)) {
                     exec {
-                        commandLine 'cmd', '/c', 'start', 'upload_mapper.bat', mappingFile, client, secret, versionCode, versionName, applicationId
+                        commandLine 'cmd', '/c', 'start', 'upload_mapper.bat', mappingFile, client, secret, versionCode,versionName, applicationId
                     }
                 } else if (Os.isFamily(Os.FAMILY_UNIX)) {
                     exec {
-                        commandLine 'sh', './upload_mapper.sh', mappingFile, client, secret, versionCode, versionName, applicationId
+                        commandLine 'sh', './upload_mapper.sh', mappingFile, client, secret, versionCode, versionName,applicationId
                     }
                 } else {
                     throw new GradleException('Not supported OS!')

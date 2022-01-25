@@ -35,10 +35,10 @@ const logInUser = (email, password) => {
             // highlight-next-line
             Shake.registerUser(user.id);
             
-            handleLogin(user);   
-        }, 
+            handleLogin(user);
+        },
         message => {
-            // Handle failed login   
+            // Handle failed login
         });
 }
 ```

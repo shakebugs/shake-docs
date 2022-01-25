@@ -87,7 +87,7 @@ so you can have different feedback types for different parts of your app:
 <TabItem value="objectivec">
 
 ```objectivec title="NetworkService.m"
-// highlight-start 
+// highlight-start
 - (void)enableVideoCallFeature:(NSString *)contactId {
 
   SHKFeedbackEntry *videoCallCategory = [SHKFeedbackEntry entryWithTitle:@"Video Call" andTag:@"video_call" icon:nil];
@@ -107,7 +107,7 @@ so you can have different feedback types for different parts of your app:
 <TabItem value="swift">
 
 ```swift title="NetworkService.swift"
-// highlight-start  
+// highlight-start
 func enableVideoCallFeature(contactID: String) {
   
     let videoCallCategory = SHKFeedbackEntry(title: "Video Call", andTag: "video_call", icon: nil)
@@ -138,8 +138,8 @@ If you don't want to force your users to categorize their feedback, simply hide 
 
 <TabItem value="objectivec">
 
-```objectivec title="App.m"
-// highlight-next-line 
+```objectivec title="AppDelegate.m"
+// highlight-next-line
 SHKShake.configuration.isFeedbackTypeEnabled = false;
 // highlight-end
 ```
@@ -148,7 +148,7 @@ SHKShake.configuration.isFeedbackTypeEnabled = false;
 
 <TabItem value="swift">
 
-```swift title="App.swift"
+```swift title="AppDelegate.swift"
 // highlight-start
 Shake.configuration.isFeedbackTypeEnabled = false
 // highlight-end

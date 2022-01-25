@@ -35,7 +35,7 @@ import TabItem from '@theme/TabItem';
 
 <TabItem value="objectivec">
 
-```objectivec title="App.m"
+```objectivec title="AppDelegate.m"
 - (void)didLogInWithUser:(User *)user success:(BOOL)success {
     if (user.isHost) {
         NSLog(@"User logged in as host. Resuming Shake.");

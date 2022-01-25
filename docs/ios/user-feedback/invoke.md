@@ -36,10 +36,10 @@ import TabItem from '@theme/TabItem';
 
 <TabItem value="objectivec">
 
-```java title="App.m"
+```objectivec title="AppDelegate.m"
 // highlight-start
 SHKShake.configuration.isInvokedByShakeDeviceEvent = YES;
-SHKShake.configuration.isInvokedByScreenshot = YES; 
+SHKShake.configuration.isInvokedByScreenshot = YES;
 [SHKShake startWithClientId:@"client-id" clientSecret:@"client-secret"];
 // highlight-end
 ```
@@ -48,7 +48,7 @@ SHKShake.configuration.isInvokedByScreenshot = YES;
 
 <TabItem value="swift">
 
-```swift title="App.swift"
+```swift title="AppDelegate.swift"
 // highlight-start
 Shake.configuration.isInvokedByShakeDeviceEvent = true
 Shake.configuration.isInvokedByScreenshot = true
@@ -73,11 +73,11 @@ Here’s a list of all available options. Feel free to use any combination of th
 
 <TabItem value="objectivec">
 
-```java title="App.m"
+```objectivec title="AppDelegate.m"
 // highlight-start
-SHKShake.configuration.isInvokedByShakeDeviceEvent = YES; 
+SHKShake.configuration.isInvokedByShakeDeviceEvent = YES;
 SHKShake.configuration.isFloatingReportButtonShown = YES; 
-SHKShake.configuration.isInvokedByScreenshot = YES; 
+SHKShake.configuration.isInvokedByScreenshot = YES;
 SHKShake.configuration.isInvokedByRightEdgePan = YES;
 // highlight-end
 ```
@@ -86,7 +86,7 @@ SHKShake.configuration.isInvokedByRightEdgePan = YES;
 
 <TabItem value="swift">
 
-```swift title="App.swift"
+```swift title="AppDelegate.swift"
 // highlight-start
 Shake.configuration.isInvokedByShakeDeviceEvent = true
 Shake.configuration.isFloatingReportButtonShown = true
@@ -113,7 +113,7 @@ Also, feel free to change which Shake screen is shown when Shake user feedback i
 
 <TabItem value="objectivec">
 
-```java title="App.m"
+```obbjectivec title="AppDelegate.m"
 // highlight-next-line
 SHKShake.configuration.defaultShowOption = SHKShowOptionNew;
 ```
@@ -122,7 +122,7 @@ SHKShake.configuration.defaultShowOption = SHKShowOptionNew;
 
 <TabItem value="swift">
 
-```swift title="App.swift"
+```swift title="AppDelegate.swift"
 // highlight-next-line
 Shake.configuration.defaultShowOption = .new;
 ```
@@ -146,7 +146,7 @@ The shaking threshold can be fine-tuned too. Let's decrease it, for example, so 
 
 <TabItem value="objectivec">
 
-```java title="App.m"
+```objectivec title="AppDelegate.m"
 // highlight-next-line
 SHKShake.configuration.shakingThreshold = 400; // Default value is 600.
 ```
@@ -155,7 +155,7 @@ SHKShake.configuration.shakingThreshold = 400; // Default value is 600.
 
 <TabItem value="swift">
 
-```swift title="App.swift"
+```swift title="AppDelegate.swift"
 // highlight-next-line
 Shake.configuration.shakingThreshold = 400 // Default value is 600.
 ```
@@ -197,23 +197,23 @@ The `show` method can also be called with the argument `SHKShowOption` which det
 
 <TabItem value="objectivec">
 
-```objc title="SettingsVM.m"
+```objectivec title="SettingsVM.m"
 @interface SettingsVM ()
 
 @end
 
 @implementation SettingsVM
 
-- (void)onDidPressReportProblem { 
-    /// Displays Shake with the New Ticket screen at the top of the stack. 
-    //highlight-next-line 
-    [SHKShake show]; 
+- (void)onDidPressReportProblem {
+    /// Displays Shake with the New Ticket screen at the top of the stack.
+    //highlight-next-line
+    [SHKShake show];
 }
 
-- (void)onDidPressShowFeedbackCenter { 
-    /// Displays Shake starting at the Home screen. 
-    //highlight-next-line 
-    [SHKShake show:SHKShowOptionHome]; 
+- (void)onDidPressShowFeedbackCenter {
+    /// Displays Shake starting at the Home screen.
+    //highlight-next-line
+    [SHKShake show:SHKShowOptionHome];
 }
 
 @end
@@ -227,7 +227,7 @@ The `show` method can also be called with the argument `SHKShowOption` which det
 func onDidPressReportProblem() {
     /// Displays Shake with the New Ticket screen at the top of the stack.
     //highlight-next-line
-    Shake.show()  
+    Shake.show()
 }
 
 func onDidPressShowFeedbackCenter() {

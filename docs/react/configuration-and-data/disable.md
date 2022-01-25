@@ -21,7 +21,6 @@ Call the `Shake.setEnabled(false)` method wherever you want to in your app. Shak
 
 Back to our example where you want to allow *hosts* to use Shake but not the *guests*. You would do this:
 
-
 ```javascript title="App.js"
 // highlight-next-line
 import Shake from '@shakebugs/react-native-shake';

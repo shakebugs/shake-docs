@@ -31,7 +31,7 @@ import TabItem from '@theme/TabItem';
 <TabItem value="objectivec">
 
 ```objectivec title="AppDelegate.m"
-// highlight-next-line 
+// highlight-next-line
 SHKShake.configuration.setAutoVideoRecordingEnabled = true;
 ```
 

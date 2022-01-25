@@ -38,8 +38,8 @@ they will automatically become <span class="tag-button pink-tag-button">tags</sp
 This element is optional and allows your users to leave their email address with the ticket they're submitting.
 Use the following method if you want to hide it:
 
-```dart title="main.dart" 
-// highlight-next-line 
+```dart title="main.dart"
+// highlight-next-line
 Shake.setEnableEmailField(false);
 ```
 
@@ -68,7 +68,7 @@ Three tips:
 By default, this element is visible to your users. Tapping it takes them to the [Inspect screen](/flutter/shake-ui/inspect-screen).
 If you want to, hide it using the following method:
 
-```dart title="main.dart" 
-// highlight-next-line 
+```dart title="main.dart"
+// highlight-next-line
 Shake.setEnableInspectScreen(false);
 ```

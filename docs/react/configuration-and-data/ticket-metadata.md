@@ -16,13 +16,13 @@ receive on your Shake dashboard as a *String* pair. You can call `Shake.setMetad
 
 Let’s say you want to send yourself a roomID after a user successfully joins a chat room. You would do this:
 
-```javascript title="App.js" 
-// highlight-next-line 
+```javascript title="App.js"
+// highlight-next-line
 import Shake from '@shakebugs/react-native-shake';
 
-const onChatRoomJoined = (room) => { 
-  // highlight-next-line 
-  Shake.setMetadata('roomId', room.id); 
+const onChatRoomJoined = (room) => {
+  // highlight-next-line
+  Shake.setMetadata('roomId', room.id);
 }
 ```
 

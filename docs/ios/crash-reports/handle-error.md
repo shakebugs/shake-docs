@@ -32,7 +32,7 @@ unrelated and ungrouped, which would clog your Shake dashboard.
 <TabItem value="objectivec">
 
 ```objectivec title="ViewController.m"
-- (void)viewDidLoad { 
+- (void)viewDidLoad {
     [super viewDidLoad];
     
     NSError *error;
@@ -47,15 +47,15 @@ unrelated and ungrouped, which would clog your Shake dashboard.
 - (void)functionThatCanThrowError:(NSError *)error {
     if (error != NULL) {
         *error = [[NSError alloc] initWithDomain:domain
-            code:errorCode
-            userInfo:userInfo];
+                                                code:errorCode
+                                                userInfo:userInfo];
     }
 }
 ```
 
 </TabItem><TabItem value="swift">
 
-```java title="ViewController.swift"
+```objectivec title="ViewController.swift"
 override func viewDidLoad() {
     super.viewDidLoad()
 
@@ -65,7 +65,6 @@ override func viewDidLoad() {
         // highlight-next-line
         Shake.handleError(error, clusterID: "MyViewController")
     }
-
 }
 
 private func functionThatCanThrowError() throws {

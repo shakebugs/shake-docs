@@ -32,10 +32,10 @@ const changeEmail = email => {
             // highlight-next-line
             Shake.updateUserId(user.email);
             
-            handleEmailChange(user);   
-        }, 
+            handleEmailChange(user);
+        },
         message => {
-            // Handle failed update   
+            // Handle failed update
         });
 }
 ```

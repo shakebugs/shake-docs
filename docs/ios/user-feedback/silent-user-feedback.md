@@ -30,9 +30,9 @@ import TabItem from '@theme/TabItem';
 //highlight-start
 SHKShakeReportConfiguration *conf = SHKShakeReportConfiguration.new;
 
-conf.includesActivityHistoryData = true; 
-conf.includesBlackBoxData = true; 
-conf.includesScreenshotImage = true; 
+conf.includesActivityHistoryData = true;
+conf.includesBlackBoxData = true;
+conf.includesScreenshotImage = true;
 conf.includesVideo = false;
 
 NSArray<SHKShakeFile *> * (^fileAttachBlock)(void) = ^NSArray<SHKShakeFile *> *(void) {
@@ -55,7 +55,7 @@ let conf = ShakeReportConfiguration()
 conf.includesScreenshotImage = true
 conf.includesBlackBoxData = true
 conf.includesActivityHistoryData = true
-conf.includesVideo = false;
+conf.includesVideo = false
 
 let fileAttachBlock: () -> [ShakeFile] = {
     let file = ShakeFile(name: "myFile.log", data: Data())
@@ -86,9 +86,9 @@ sending the silent user feedback with the `Shake.silentReport` method:
 <TabItem value="objectivec">
 
 ```objectivec title="AppDelegate.m"
-//highlight-start 
+//highlight-start
 SHKShakeReportConfiguration *reportConfiguration = SHKShakeReportConfiguration.new;
-reportConfiguration.showsToastMessageOnSend = true; 
+reportConfiguration.showsToastMessageOnSend = true;
 //highlight-end
 ```
 
