@@ -32,10 +32,10 @@ void changeEmail(String email) {
             // highlight-next-line
             Shake.updateUserId(user.getEmail());
             
-            handleEmailChange(user);   
-        }, 
+            handleEmailChange(user);
+        },
         (String message) {
-            // Handle failed update   
+            // Handle failed update
         });
 }
 ```

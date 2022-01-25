@@ -50,7 +50,7 @@ Use the following method if you want to hide it:
 <TabItem value="objectivec">
 
 ```objectivec title="AppDelegate.m"
-//highlight-start 
+//highlight-start
 SHKShake.configuration.isEmailFieldEnabled = true;
 //highlight-end
 ```
@@ -83,7 +83,7 @@ Or, use the following method to save your users some time by pre-filling the fie
 
 ```objectivec title="AppDelegate.m"
 // highlight-next-line
-//highlight-start 
+//highlight-start
 SHKShake.configuration.emailField = @"user@email.com";
 //highlight-end
 ```

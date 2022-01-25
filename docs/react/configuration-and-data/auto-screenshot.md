@@ -30,8 +30,8 @@ would always have the identical screenshot attached. That would be both confusin
 
 Disable auto screenshot using the following snippet:
 
-```javascript title="App.js" 
-// highlight-next-line 
+```javascript title="App.js"
+// highlight-next-line
 Shake.setScreenshotIncluded(false);
 ```
 

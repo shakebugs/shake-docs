@@ -101,8 +101,8 @@ Add a new *Run Script* phase and paste the following script to force the deep si
 
 ```script"
 // highlight-start
-find "${CODESIGNING_FOLDER_PATH}" -name '*.framework' -print0 | while read -d $'\0' framework 
-do 
+find "${CODESIGNING_FOLDER_PATH}" -name '*.framework' -print0 | while read -d $'\0' framework
+do
     codesign --force --deep --sign "${EXPANDED_CODE_SIGN_IDENTITY}" --preserve-metadata=identifier,entitlements --timestamp=none "${framework}" 
 done
 // highlight-end

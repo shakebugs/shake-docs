@@ -42,9 +42,8 @@ Unregistering is done by calling the `Shake.unregisterUser` method:
 
             return;
         }
-        
     }];
-} 
+}
 @end
 ```
 

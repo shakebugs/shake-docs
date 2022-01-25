@@ -68,7 +68,7 @@ When marking a *View* as private, also add the `collapsable={false}` flag to it 
 Let's suppose you're building a shopping app and you want to delete the name and the credit card number views
 from the auto screenshot:
 
-```java title="App.js"
+```javascript title="App.js"
 // highlight-start
 <Text ref={r => this.cardNumber = r} style={styles.cardNumber}>{this.state.cardNumber}</Text>
 <Text ref={r => this.cardName = r} style={styles.cardName}>{this.state.cardName}</Text>
@@ -91,8 +91,8 @@ const maskSensitiveData = () => {
 
 To remove a view from private views use the following method:
 
-```javascript title="App.js" 
-// highlight-next-line 
+```javascript title="App.js"
+// highlight-next-line
 Shake.removePrivateView(viewRef);
 ```
 
@@ -105,14 +105,12 @@ To clear all the private views, use the following method:
 Shake.clearPrivateViews();
 ```
 
-
 ## Touch events
 
 Marking a view as private will automatically delete its touch events' text properties too.
 Consequently, you'll see them as `data_redacted` strings in ticket's
 [Activity history](/react/configuration-and-data/activity-history).
 The view's ID, accessibility labels and tags remain visible.
-
 
 ## Network requests
 
@@ -140,11 +138,11 @@ const setupNetworkFilter = () => {
 
 If you don't want to log specific network requests, return `null` from the `NetworkRequestsFilter` as shown below:
 
-```javascript title="App.js" 
-// highlight-next-line 
+```javascript title="App.js"
+// highlight-next-line
 import Shake from '@shakebugs/react-native-shake';
 
-const setupNetworkFilter = () => { 
+const setupNetworkFilter = () => {
 // highlight-start
     Shake.setNetworkRequestsFilter((networkRequest) => {
         if (networkRequest.getUrl().startsWith('https://api.myapp.com/cards')) {
@@ -157,7 +155,6 @@ const setupNetworkFilter = () => {
 ```
 
 To clear the network requests filter, use `Shake.setNetworkRequestsFilter(null)`.
-
 
 ## Notification events
 
@@ -184,18 +181,18 @@ const setupNotificationsFilter = () => {
 
 If you do not want to track a specific notification event, return `null` from the `NotificationEventsFilter` like below:
 
-```javascript title="App.js" 
-// highlight-next-line 
+```javascript title="App.js"
+// highlight-next-line
 import Shake from '@shakebugs/react-native-shake';
-const setupNotificationsFilter = () => { 
-    // highlight-start 
-    Shake.setNotificationEventsFilter((notificationEvent) => { 
-        if (notificationEvent.getTitle() === 'E-mail changed') { 
-            return null; 
-        } 
-    return notificationEvent; 
-  }); 
-// highlight-end 
+const setupNotificationsFilter = () => {
+    // highlight-start
+    Shake.setNotificationEventsFilter((notificationEvent) => {
+        if (notificationEvent.getTitle() === 'E-mail changed') {
+            return null;
+        }
+    return notificationEvent;
+  });
+// highlight-end
 }
 ```
 

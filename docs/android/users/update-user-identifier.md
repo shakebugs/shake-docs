@@ -42,14 +42,14 @@ private void changeEmail(String email) {
         @Override
         void onUpdateSucceeded(User user) {
             // highlight-next-line
-            Shake.updateUserId(user.getEmail());     
+            Shake.updateUserId(user.getEmail());
 
-            handleEmailChange(user);   
+            handleEmailChange(user);
         }
 
         @Override
         void onUpdateFailed(String message) {
-            // Handle failed update   
+            // Handle failed update
         }
     });
 }
@@ -65,9 +65,9 @@ private fun changeEmail(email: String) {
         @override
         fun onUpdateSucceeded(user: User) {
             // highlight-next-line
-            Shake.updateUserId(user.email) 
+            Shake.updateUserId(user.email)
 
-            handleEmailChange(user) 
+            handleEmailChange(user)
         }
 
         @override

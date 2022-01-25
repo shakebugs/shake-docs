@@ -26,15 +26,15 @@ Additionally, if you use dio or http packages for sending network requests, you 
 
 Use ShakeHttpClient wrapper class to perform network requests:
 
-```dart title="main.dart" 
-// highlight-next-line 
+```dart title="main.dart"
+// highlight-next-line
 import 'package:shake_flutter/network/shake_http_client.dart';
 
-void sendNetworkRequest() async { 
-    // highlight-start 
-    ShakeHttpClient shakeHttpClient = ShakeHttpClient(); 
-    await shakeHttpClient.getUrl(Uri.parse("http://www.shakebugs.com")); 
-    // highlight-end 
+void sendNetworkRequest() async {
+    // highlight-start
+    ShakeHttpClient shakeHttpClient = ShakeHttpClient();
+    await shakeHttpClient.getUrl(Uri.parse("http://www.shakebugs.com"));
+    // highlight-end
 }
 ```
 
@@ -57,16 +57,16 @@ dependencies:
 
 Add ShakeDioInterceptor to your Dio instance:
 
-```dart title="main.dart" // 
-// highlight-next-line 
+```dart title="main.dart"
+// highlight-next-line
 import 'package:shake_dio_interceptor/shake_dio_interceptor.dart';
 
-void sendNetworkRequest() async { 
-    // highlight-start 
-    Dio dio = Dio(); 
-    dio.interceptors.add(ShakeDioInterceptor()); 
-    await dio.get('https://www.shakebugs.com'); 
-    // highlight-end 
+void sendNetworkRequest() async {
+    // highlight-start
+    Dio dio = Dio();
+    dio.interceptors.add(ShakeDioInterceptor());
+    await dio.get('https://www.shakebugs.com');
+    // highlight-end
 }
 ```
 
@@ -85,15 +85,15 @@ dependencies:
 
 Use ShakeHttpClient to send network requests:
 
-```dart title="main.dart" 
-// highlight-next-line 
+```dart title="main.dart"
+// highlight-next-line
 import 'package:shake_http_client/shake_http_client.dart';
 
-void sendNetworkRequest() async { 
-    // highlight-start 
-    ShakeHttpClient shakeHttpClient = ShakeHttpClient(); 
-    await shakeHttpClient.get(Uri.parse('https://www.shakebugs.com')); 
-    // highlight-end 
+void sendNetworkRequest() async {
+    // highlight-start
+    ShakeHttpClient shakeHttpClient = ShakeHttpClient();
+    await shakeHttpClient.get(Uri.parse('https://www.shakebugs.com'));
+    // highlight-end
 }
 ```
 
@@ -168,14 +168,14 @@ void insertNotificationEvent() {
 
 You can add your own logs to Activity history too:
 
-```dart title="main.dart" 
-// highlight-next-line 
+```dart title="main.dart"
+// highlight-next-line
 Shake.log(LogLevel.info, 'This is a Shake custom log.');
 ```
 
 You have these log levels at your disposal:
 
-```dart 
+```dart
 LogLevel.verbose
 LogLevel.debug
 LogLevel.info
@@ -189,8 +189,8 @@ LogLevel.error
 Console logs are recorded automatically and require no additional setup.
 If you want to disable this feature use the method below:
 
-```dart title="main.dart" 
-// highlight-next-line 
+```dart title="main.dart"
+// highlight-next-line
 Shake.setConsoleLogsEnabled(false);
 ```
 

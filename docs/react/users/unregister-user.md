@@ -18,10 +18,10 @@ const logOut = () => {
             // highlight-next-line
             Shake.unregisterUser();
             
-            handleLogOut();   
-        }, 
+            handleLogOut();
+        },
         message => {
-            // Handle failed log out   
+            // Handle failed log out
         });
 }
 ```

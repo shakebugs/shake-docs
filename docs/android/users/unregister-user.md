@@ -30,12 +30,12 @@ private void logOut() {
             // highlight-next-line
             Shake.unregisterUser();
 
-            handleLogOut();        
+            handleLogOut();
         }
 
         @Override
         void onLogOutFailed(String message) {
-            // Handle failed log out     
+            // Handle failed log out
         }
     });
 }
@@ -53,7 +53,7 @@ private fun logOut() {
             // highlight-next-line
             Shake.unregisterUser()
 
-            handleLogOut()  
+            handleLogOut()
         }
 
         @override

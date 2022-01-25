@@ -55,7 +55,7 @@ public class MainActivity : Activity {
 
         // highlight-start
         val buttonCrash: Button = findViewById(R.id.button_crash)
-        buttonCrash.setOnClickListener { 
+        buttonCrash.setOnClickListener {
             val array = arrayOf(1, 2, 3)
             val result = array[5]
         }

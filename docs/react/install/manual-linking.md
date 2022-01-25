@@ -87,7 +87,6 @@ public class MainActivity extends ReactActivity {
 }
 ```
 
-
 ## iOS
 
 1. Open your project in Xcode by clicking project's *.xcodeproj* file.

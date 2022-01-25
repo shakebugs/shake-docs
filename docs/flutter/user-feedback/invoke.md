@@ -54,9 +54,9 @@ import 'package:shake_flutter/enums/shake_screen.dart';
 // highlight-end
 
 // highlight-next-line
-Shake.setDefaultScreen(ShakeScreen.newTicket);
+Shake.setDefaultScreen(ShakeScreen.NEW);
 // highlight-next-line
-Shake.setDefaultScreen(ShakeScreen.home);
+Shake.setDefaultScreen(ShakeScreen.HOME);
 ```
 
 
@@ -118,13 +118,15 @@ import 'package:shake_flutter/shake_flutter.dart';
 import 'package:shake_flutter/enums/shake_screen.dart';
 
 // highlight-end
-void onReportProblemPressed() { // Displays Shake with the New Ticket screen.
-// highlight-next-line
+void onReportProblemPressed() { 
+  // Displays Shake with the New Ticket screen.
+  // highlight-next-line
   Shake.show();
 }
 
-const onFeedbackCenterPressed() { // Displays Shake starting at the Home screen.
-// highlight-next-line
+const onFeedbackCenterPressed() { 
+  // Displays Shake starting at the Home screen.
+  // highlight-next-line
   Shake.show(ShakeScreen.home);
 }
 ```

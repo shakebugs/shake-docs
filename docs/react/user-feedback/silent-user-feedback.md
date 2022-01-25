@@ -25,7 +25,7 @@ const sendSilentReport = () => {
     configuration.video = false;
 
     Shake.silentReport(
-        'Description #tag1 #tag2', 
+        'Description #tag1 #tag2',
         [ShakeFile.create(path)],
         configuration);
      // highlight-end

@@ -48,7 +48,7 @@ To disable this privacy feature, use the method below:
 <TabItem value="objectivec">
 
 ```objectivec title="AppDelegate.m"
-// highlight-next-line 
+// highlight-next-line
 SHKShake.configuration.isSensitiveDataRedactionEnabled = false;
 // highlight-end
 ```
@@ -197,7 +197,7 @@ If you want to delete an entire screen from the auto screenshot, simply mark the
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
-    // highlight-next-line 
+    // highlight-next-line
     [SHKShake addPrivateViewController:self];
 }
 
@@ -287,6 +287,35 @@ Shake.clearPrivateViews()
 </TabItem>
 </Tabs>
 
+You can disable [Screen Recording](/ios/configuration-and-data/auto-screen-recording) feature if you want to make sure that sensitive data is not recorded.
+
+<Tabs 
+  groupId="ios"
+  defaultValue="swift"
+  values={[
+    { label: 'Objective-C', value: 'objectivec'},
+    { label: 'Swift', value: 'swift'},
+  ]
+}>
+
+<TabItem value="objectivec">
+
+```objectivec title="AppDelegate.m"
+// highlight-next-line
+SHKShake.configuration.isAutoVideoRecordingEnabled = false;
+```
+
+</TabItem>
+
+<TabItem value="swift">
+
+```swift title="AppDelegate.swift"
+// highlight-next-line
+Shake.configuration.isAutoVideoRecordingEnabled = false
+```
+
+</TabItem>
+</Tabs>
 
 ## Touch events
 
@@ -374,12 +403,12 @@ If you don't want to log specific network requests, return `nil` from the `Netwo
 <TabItem value="objectivec">
 
 ```objectivec title="AppDelegate.m"
-// highlight-next-line 
+// highlight-next-line
 @import Shake;
 
 - (void)setupNetworkFilter {
 
-    // highlight-start 
+    // highlight-start
     SHKShake.networkRequestsFilter = ^SHKNetworkRequestEditor *(SHKNetworkRequestEditor * networkRequest) {
     
         if ([networkRequest.url.absoluteString hasPrefix:@"https://api.myapp.com/cards"]) {
@@ -388,7 +417,7 @@ If you don't want to log specific network requests, return `nil` from the `Netwo
 
         return networkRequest;
     };
-    // highlight-end 
+    // highlight-end
 }
 ```
 

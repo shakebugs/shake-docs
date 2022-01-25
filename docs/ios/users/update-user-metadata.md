@@ -54,10 +54,9 @@ A common approach developers take is updating **generic** user metadata from one
         @"first_name": self.currentUser.firstName,
         @"last_name": self.currentUser.lastName,
         @"email": self.currentUser.email,
-        @"status": self.currentUser.status,
+        @"status": self.currentUser.status
     }
 }
-
 @end
 ```
 
@@ -103,7 +102,16 @@ and updating **specific** user metadata in their respective contexts:
 <TabItem value="objectivec">
 
 ```objectivec title="UserSettingsViewModel.m"
-///KOMPLETNO NEDOSTAJE ISPRAVAN CODEBLOCK
+@implementation UserSettingsViewmodel
+
+- (void)onUserSettingsConfigured: (UserSettings *) userSettings {
+
+  [self fetchUserInformation];
+
+  [SHKShake updateUserMetadata:@{
+    @"userSettings": self.userSettings.description
+  }]
+}
 ```
 
 </TabItem>
@@ -111,15 +119,13 @@ and updating **specific** user metadata in their respective contexts:
 <TabItem value="swift">
 
 ```swift title="UserSettingsViewModel.swift"
-func onUserSettingsConfigured() {
-    fetchUserInformation()
+func onUserSettingsConfigured(userSettings: UserSettings) {
 
-    let metadata: MutableMap<String, String> = HashMap()
-    metadata["userSettings"] = userSettings.toString()
+  fetchUserInformation()
 
-    //highlight-start
-    Shake.updateUserMetadata(metadata)
-    //highlight-end
+  Shake.updateUserMetadata([
+    "userSettings": userSettings.description
+  ])
 }
 ```
 

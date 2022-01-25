@@ -8,7 +8,6 @@ import TabItem from '@theme/TabItem';
 
 >Here are all the element customizations you can make on the [New ticket screen](react/shake-ui/new-ticket-screen.md).
 
-
 ## Ticket description
 
 <table class="media-container media-container-highlighted mt-40 mb-40 pt-80">
@@ -38,8 +37,8 @@ they will automatically become <span class="tag-button pink-tag-button">tags</sp
 This element is optional and allows your users to leave their email address with the ticket they're submitting.
 Use the following method if you want to hide it:
 
-```javascript title="App.js" 
-// highlight-next-line 
+```javascript title="App.js"
+// highlight-next-line
 Shake.setEnableEmailField(false);
 ```
 
@@ -68,7 +67,7 @@ Three tips:
 By default, this element is visible to your users. Tapping it takes them to the [Inspect screen](/docs/react/shake-ui/inspect-screen).
 If you want to, hide it using the following method:
 
-```javascript title="App.js" 
-// highlight-next-line 
+```javascript title="App.js"
+// highlight-next-line
 Shake.setEnableInspectScreen(false);
 ```

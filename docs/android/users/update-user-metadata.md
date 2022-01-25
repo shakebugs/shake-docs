@@ -49,7 +49,7 @@ private void onLoggedIn(User user) {
     metadata.put("status", user.getStatus());
 
     Shake.updateUserMetadata(metadata);
-    // highlight-end              
+    // highlight-end
 }
 ```
 
@@ -67,7 +67,7 @@ private fun onLoggedIn(user: User) {
     metadata["status"] = user.status
 
     Shake.updateUserMetadata(metadata)
-    // highlight-end              
+    // highlight-end
 }
 ```
 
@@ -89,7 +89,7 @@ and updating **specific** user metadata in their respective contexts:
 <TabItem value="java">
 
 ```java title="UserSettingsActivity.java"
-private void onUserSettingsConfigured() {
+private void onUserSettingsConfigured(UserSettings userSettings) {
     fetchUserInformation();
 
     // highlight-start
@@ -106,7 +106,7 @@ private void onUserSettingsConfigured() {
 <TabItem value="kotlin">
 
 ```kotlin title="UserSettingsActivity.kt"
-private fun onUserSettingsConfigured() {
+private fun onUserSettingsConfigured(userSettings: UserSettings) {
     fetchUserInformation()
 
     // highlight-start
