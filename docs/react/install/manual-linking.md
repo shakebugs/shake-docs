@@ -16,7 +16,7 @@ project(':@shakebugs_react-native-shake').projectDir = new File(rootProject.proj
 // highlight-end
 ```
 
-Then, include the following dependency to app-level *build.gradle* file:
+Then, include the following dependency to the app-level *build.gradle* file:
 
 ```groovy title="app/build.gradle"
 dependencies {

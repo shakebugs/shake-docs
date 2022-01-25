@@ -57,7 +57,7 @@ pod 'Shake'
 import IosVersion from '@site/src/base/IosVersion';
 
 Then, run the `pod install` command in your terminal.
-After the installation also run `pod update Shake` to be perfectly sure you're using the latest Shake <IosVersion/>.
+After the installation also run `pod update Shake` to be perfectly sure that you're using the latest Shake <IosVersion/>.
 
 ## Initialize Shake
 Initialize Shake in the `didFinishLaunchingWithOptions` callback of your *AppDelegate*.

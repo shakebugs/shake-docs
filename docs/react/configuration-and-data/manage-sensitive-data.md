@@ -61,7 +61,7 @@ These methods won't delete sensitive views from auto screen recording — only f
 :::
 
 :::note
-When marking a *View* as private, also add the `collapsable={false}` flag to it to avoid the
+When marking a *View* as private, also add the `collapsable={false}` flag to it in order to avoid the
 "Trying to resolve view with tag number which doesn’t exist" error.
 :::
 
@@ -143,15 +143,16 @@ If you don't want to log specific network requests, return `null` from the `Netw
 ```javascript title="App.js" 
 // highlight-next-line 
 import Shake from '@shakebugs/react-native-shake';
+
 const setupNetworkFilter = () => { 
-// highlight-start 
-Shake.setNetworkRequestsFilter((networkRequest) => { 
-    if (networkRequest.getUrl().startsWith('https://api.myapp.com/cards')) { 
-        return null; 
-    } 
-   return networkRequest;  
-  }); 
-// highlight-end 
+// highlight-start
+    Shake.setNetworkRequestsFilter((networkRequest) => {
+        if (networkRequest.getUrl().startsWith('https://api.myapp.com/cards')) {
+            return null;
+        }
+        return networkRequest;
+    });
+// highlight-end
 }
 ```
 

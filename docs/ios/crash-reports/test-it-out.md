@@ -29,10 +29,11 @@ It will crash your app when you tap a button by accessing the array with the out
 
 <TabItem value="objectivec">
 
-```java title="MainActivity.m"
+```objectivec title="ViewController.m"
 //highlight-start 
-- (void)viewDidLoad { 
+- (void)viewDidLoad {
     [super viewDidLoad];
+    
     UIButton *crashButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
 
     [crashButton setTitle:@"Crash me" forState:UIControlStateNormal];
@@ -43,16 +44,17 @@ It will crash your app when you tap a button by accessing the array with the out
 
     [crashButton addTarget:self action:@selector(crashButtonHandler) forControlEvents:UIControlEventTouchUpInside];
 }
-- (void)crashButtonHandler { 
-    NSArray *arr = @[@1, @2, @3]; 
-    id myVar = arr[5]; 
-} 
+
+- (void)crashButtonHandler {
+    NSArray *arr = @[@1, @2, @3];
+    id myVar = arr[5];
+}
 //highlight-end
 ```
 
 </TabItem><TabItem value="swift">
 
-```java title="MainActivity.swift"
+```swift title="ViewController.swift"
 //highlight-start
 override func viewDidLoad() {
     super.viewDidLoad()
@@ -65,8 +67,7 @@ override func viewDidLoad() {
 
     self.view.addSubview(crashButton)
 
-    crashButton.addTarget(self, action: #selector(crashButtonHandler), 
-        for: .touchUpInside)
+    crashButton.addTarget(self, action: #selector(crashButtonHandler), for: .touchUpInside)
 }
 
 @objc func crashButtonHandler() {

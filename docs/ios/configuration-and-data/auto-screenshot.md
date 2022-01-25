@@ -14,10 +14,12 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 />
 </table>
 
+
 ## Disable
 
-Let's suppose you are invoking Shake through code from the **My account → Help** screen of your app. You would always receive the same 
-screenshot and it wouldn't be related to all sorts of reported tickets in any way.
+Imagine a case where you leave the auto screenshot enabled and you set up Shake in a way that your users report all their issues and suggestions
+only by visiting **My account → Help** in your app. Since Shake would always be invoked from that same place, every ticket your users send you
+would always have the identical screenshot attached. That would be both confusing and useless.
 
 <table class="media-container mt-40 mb-40">
 <img
@@ -43,9 +45,8 @@ import TabItem from '@theme/TabItem';
 
 <TabItem value="objectivec">
 
-```java title="App.m"
-// highlight-next-line
-//highlight-next-line 
+```objectivec title="AppDelegate.m"
+//highlight-next-line
 SHKShake.configuration.isScreenshotIncluded = false;
 ```
 
@@ -53,7 +54,7 @@ SHKShake.configuration.isScreenshotIncluded = false;
 
 <TabItem value="swift">
 
-```swift title="App.swift"
+```swift title="AppDelegate.swift"
 //highlight-next-line
 Shake.configuration.isScreenshotIncluded = false
 ```
@@ -61,6 +62,8 @@ Shake.configuration.isScreenshotIncluded = false
 </TabItem>
 </Tabs>
 
+
 ## Privacy
+
 Visit [Protect sensitive data](/ios/configuration-and-data/manage-sensitive-data/#views) to learn
 how to easily mark any view as private so it's automatically deleted from the auto screenshot.

@@ -199,17 +199,21 @@ The `show` method can also be called with the argument `SHKShowOption` which det
 
 ```objc title="SettingsVM.m"
 @interface SettingsVM ()
+
 @end
+
 @implementation SettingsVM
+
 - (void)onDidPressReportProblem { 
-/// Displays Shake with the New Ticket screen at the top of the stack. 
-//highlight-next-line 
-  [SHKShake show]; 
+    /// Displays Shake with the New Ticket screen at the top of the stack. 
+    //highlight-next-line 
+    [SHKShake show]; 
 }
+
 - (void)onDidPressShowFeedbackCenter { 
-/// Displays Shake starting at the Home screen. 
-//highlight-next-line 
-  [SHKShake show:SHKShowOptionHome]; 
+    /// Displays Shake starting at the Home screen. 
+    //highlight-next-line 
+    [SHKShake show:SHKShowOptionHome]; 
 }
 
 @end

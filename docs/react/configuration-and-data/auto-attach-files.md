@@ -30,12 +30,16 @@ just be careful to only call it once since any subsequent calls will override th
 
 *ShakeFile* can be initialized with a desired filename (String) and an absolute file path (String) to your file:
 
-```javascript title="App.js" // highlight-next-line import Shake, {ShakeFile} from '@shakebugs/react-native-shake';
+```javascript title="App.js"
+// highlight-next-line
+import Shake, {ShakeFile} from '@shakebugs/react-native-shake';
+
 const attachLogFiles = () => { 
 // highlight-start 
-const shakeFile1 = ShakeFile.create(userFile.path, 'userLogs'); 
-const shakeFile2 = ShakeFile.create(deviceFile.path, 'deviceLogs');
-Shake.setShakeReportData([shakeFile1, shakeFile2]);
+    const shakeFile1 = ShakeFile.create(userFile.path, 'userLogs');
+    const shakeFile2 = ShakeFile.create(deviceFile.path, 'deviceLogs');
+    
+    Shake.setShakeReportData([shakeFile1, shakeFile2]);
 // highlight-end
 } 
 ```
@@ -49,11 +53,13 @@ If you initialize it this way, the filename shown on your Shake dashboard will b
 ```javascript title="App.js" 
 // highlight-next-line 
 import Shake, {ShakeFile} from '@shakebugs/react-native-shake'; 
+
 const attachLogFiles = () => { 
 // highlight-start 
-const shakeFile1 = ShakeFile.create(userFile.path); 
-const shakeFile2 = ShakeFile.create(deviceFile.path); 
-Shake.setShakeReportData([shakeFile1, shakeFile2]); 
+    const shakeFile1 = ShakeFile.create(userFile.path);
+    const shakeFile2 = ShakeFile.create(deviceFile.path);
+    
+    Shake.setShakeReportData([shakeFile1, shakeFile2]);
 // highlight-end 
 }
 ```

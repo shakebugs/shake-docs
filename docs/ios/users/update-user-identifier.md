@@ -36,7 +36,7 @@ It's assumed that the user was previously registered with an email:
 
 <TabItem value="objectivec">
 
-```objc title="SettingsActivity.m"
+```objectivec title="UserManager.m"
 @implementation UserManager
 
 - (void)didChangeEmail:(NSString *)newEmail {
@@ -44,6 +44,7 @@ It's assumed that the user was previously registered with an email:
     __weak typeof (SettingsViewModel) *weakSelf = self;
 
     [self.networkService updateUserEmail:newEmail completion:^(User _Nullable user, NSError * _Nullable error) {
+    
         if (user && error == nil) {
 
             weakSelf.currentUser = user;
@@ -52,8 +53,9 @@ It's assumed that the user was previously registered with an email:
             [SHKShake updateUserId:newEmail];
 
         }
-    }]; 
-} 
+        
+    }];
+}
 @end
 ```
 
@@ -61,7 +63,7 @@ It's assumed that the user was previously registered with an email:
 
 <TabItem value="swift">
 
-```swift title="SettingsActivity.swift"
+```swift title="UserManager.swift"
 func didChangeEmail(newEmail: String) {
 
     self.networkService.updateUserEmail(email: newEmail) { [weak self] user in
@@ -70,7 +72,7 @@ func didChangeEmail(newEmail: String) {
 
             self?.currentUser = user;
 
-        // highlight-next-line
+            // highlight-next-line
             Shake.updateUserId(newEmail);
 
             return;

@@ -26,7 +26,7 @@ import TabItem from '@theme/TabItem';
 
 <TabItem value="objectivec">
 
-```java title="App.m"
+```objectivec title="AppDelegate.m"
 //highlight-start
 SHKShakeReportConfiguration *conf = SHKShakeReportConfiguration.new;
 
@@ -36,9 +36,10 @@ conf.includesScreenshotImage = true;
 conf.includesVideo = false;
 
 NSArray<SHKShakeFile *> * (^fileAttachBlock)(void) = ^NSArray<SHKShakeFile *> *(void) {
-SHKShakeFile *file = [[SHKShakeFile alloc] initWithName:@"myFile.log" andData:NSData.new];
 
-  return @[file];
+    SHKShakeFile *file = [[SHKShakeFile alloc] initWithName:@"myFile.log" andData:NSData.new];
+
+    return @[file];
 };
   
 [SHKShake silentReportWithDescription:@"Description #tag1 #tag2" fileAttachBlock:fileAttachBlock reportConfiguration:conf];
@@ -47,7 +48,7 @@ SHKShakeFile *file = [[SHKShakeFile alloc] initWithName:@"myFile.log" andData:NS
 
 </TabItem><TabItem value="swift">
 
-```swift title="App.swift"
+```swift title="AppDelegate.swift"
 //highlight-start
 let conf = ShakeReportConfiguration()
 
@@ -62,7 +63,6 @@ let fileAttachBlock: () -> [ShakeFile] = {
 }
 
 Shake.silentReport(description: "Description #tag1 #tag2", fileAttachBlock: fileAttachBlock, reportConfiguration: conf)
-
 //highlight-end
 ```
 
@@ -85,9 +85,10 @@ sending the silent user feedback with the `Shake.silentReport` method:
 
 <TabItem value="objectivec">
 
-```java title="App.m"
+```objectivec title="AppDelegate.m"
 //highlight-start 
-SHKShakeReportConfiguration *reportConfiguration = SHKShakeReportConfiguration.new; reportConfiguration.showsToastMessageOnSend = true; 
+SHKShakeReportConfiguration *reportConfiguration = SHKShakeReportConfiguration.new;
+reportConfiguration.showsToastMessageOnSend = true; 
 //highlight-end
 ```
 
@@ -95,7 +96,7 @@ SHKShakeReportConfiguration *reportConfiguration = SHKShakeReportConfiguration.n
 
 <TabItem value="swift">
 
-```swift title="App.swift"
+```swift title="AppDelegate.swift"
 //highlight-start
 let reportConfiguration = ShakeReportConfiguration()
 reportConfiguration.showsToastMessageOnSend = true

@@ -49,9 +49,9 @@ Use the following method if you want to hide it:
 
 <TabItem value="objectivec">
 
-```java title="App.m"
+```objectivec title="AppDelegate.m"
 //highlight-start 
-SHKShake.configuration.isEmailFieldEnabled = true; 
+SHKShake.configuration.isEmailFieldEnabled = true;
 //highlight-end
 ```
 
@@ -59,7 +59,7 @@ SHKShake.configuration.isEmailFieldEnabled = true;
 
 <TabItem value="swift">
 
-```swift title="App.kt"
+```swift title="AppDelegate.swift"
 //highlight-start
 Shake.configuration.isEmailFieldEnabled = true
 //highlight-end
@@ -81,10 +81,10 @@ Or, use the following method to save your users some time by pre-filling the fie
 
 <TabItem value="objectivec">
 
-```java title="App.m"
+```objectivec title="AppDelegate.m"
 // highlight-next-line
 //highlight-start 
-SHKShake.configuration.emailField = @"user@email.com"; 
+SHKShake.configuration.emailField = @"user@email.com";
 //highlight-end
 ```
 
@@ -92,7 +92,7 @@ SHKShake.configuration.emailField = @"user@email.com";
 
 <TabItem value="swift">
 
-```swift title="App.swift"
+```swift title="AppDelegate.swift"
 //highlight-start
 Shake.configuration.emailField = "user@email.com"
 //highlight-end
@@ -103,7 +103,7 @@ Shake.configuration.emailField = "user@email.com"
 
 Three tips:
 * Users can always edit the email field, even if you pre-fill it.
-* Do you always want to receive a user's email? You should then *both* pre-fill and hide the Email field.
+* Do you always want to receive a user's email? You should then *both* pre-fill and hide the email field.
 * The value you receive in the email field is just an attribute of that ticket, a simple **String**. To register a User as an unique **entity** which Shake automatically relates to all Tickets they submit, register your users with the [Users](/ios/users/overview.md) module.
 
 ## Inspect button
@@ -130,7 +130,7 @@ If you want to, hide it using the following method:
 
 <TabItem value="objectivec">
 
-```java title="App.m"
+```objectivec title="AppDelegate.m"
 // highlight-next-line
 SHKShake.configuration.isInspectScreenEnabled = false;
 ```
@@ -139,9 +139,9 @@ SHKShake.configuration.isInspectScreenEnabled = false;
 
 <TabItem value="swift">
 
-```swift title="App.swift"
-// highlight-next-line 
-Shake.configuration.isInspectScreenEnabled = false;
+```swift title="AppDelegate.swift"
+// highlight-next-line
+Shake.configuration.isInspectScreenEnabled = false
 ```
 
 </TabItem>

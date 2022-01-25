@@ -39,6 +39,12 @@ Shake.setFeedbackTypes([feedbackType1, feedbackType2, feedbackType3]);
 // highlight-end
 ```
 
+:::note
+Add icons to the native project with the name specified in the code.
+For Android, add icons to the **android/app/src/main/res/drawable** directory.
+For iOS, add icons using XCode to the **Images.xcassets** directory.
+:::
+
 There is no limit to the number of categories you can enter.
 
 Along with the `setFeedbackTypes` method, Shake also exposes the `getFeedbackTypes` method which allows you to 
@@ -60,7 +66,14 @@ void enableVideoCallFeature(String contactId) async {
 // highlight-end
 ```
 
+:::note
+On iOS, the `Shake.getFeedbackTypes` method will return an empty string for the **FeedbackType** icon.
+You will have to manually set the icon if you are using this method.
+:::
+
+
 ## Disable
+
 If you don't want to force your users to categorize their feedback, simply hide this element:
 
 ```dart title="main.dart"

@@ -43,15 +43,15 @@ To enable it:
 
 <TabItem value="objectivec">
 
-```java title="MainActivity.m"
+```objectivec title="AppDelegate.m"
 //highlight-start 
-SHKShake.configuration.isAskForCrashDescriptionEnabled = YES; 
+SHKShake.configuration.isAskForCrashDescriptionEnabled = YES;
 //highlight-end
 ```
 
 </TabItem><TabItem value="swift">
 
-```swift title="MainActivity.swift"
+```swift title="AppDelegate.swift"
 //highlight-start
 Shake.configuration.isAskForCrashDescriptionEnabled = true
 //highlight-end

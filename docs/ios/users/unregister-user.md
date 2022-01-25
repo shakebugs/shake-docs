@@ -22,23 +22,28 @@ Unregistering is done by calling the `Shake.unregisterUser` method:
 
 <TabItem value="objectivec">
 
-```java title="SettingsActivity.m"
+```objectivec title="UserManager.m"
 @implementation UserManager
+
 - (void)logOut {
+
     __weak typeof (SettingsViewModel) *weakSelf = self;
+    
     [self.networkService performLogOutWithEmail:self.currentUser.email completion:^(LogOutResponse _Nullable logOutResponse, NSError * _Nullable error) {
+    
         if (logOutResponse) {
 
-        /// Succesfull log out
+            /// Succesfull log out
 
-        [weakSelf performLogOutCleanup];
+            [weakSelf performLogOutCleanup];
 
-        // highlight-next-line
-        [SHKShake unregisterUser];
+            // highlight-next-line
+            [SHKShake unregisterUser];
 
-        return;
-       }
-    }]; 
+            return;
+        }
+        
+    }];
 } 
 @end
 ```
@@ -47,7 +52,7 @@ Unregistering is done by calling the `Shake.unregisterUser` method:
 
 <TabItem value="swift">
 
-```swift title="SettingsActivity.swift"
+```swift title="UserManager.swift"
 func logOut {
 
     self.networkService.performLogOut(email: email) { [weak self] logOutResponse in

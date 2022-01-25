@@ -52,7 +52,7 @@ Shake.setEmailField('user@email.com');
 
 Three tips:
 * Users can always edit the email field, even if you pre-fill it.
-* Do you always want to receive a user's email? You should then *both* pre-fill and hide the Email field.
+* Do you always want to receive a user's email? You should then *both* pre-fill and hide the email field.
 * The value you receive in the email field is just an attribute of that ticket, a simple **String**. To register a User as an unique **entity** which Shake automatically relates to all Tickets they submit, register your users with the [Users](flutter/users/overview.md) module.
 
 ## Inspect button
