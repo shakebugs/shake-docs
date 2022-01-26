@@ -78,7 +78,7 @@ values={[
 - (void)userNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(UNNotificationPresentationOptions))completionHandler {
     
     if ([notification.request.content.categoryIdentifier containsString:SHKNotificationCategoryIdentifierDomain]){
-        [SHKShake reportNotificationCenter:center willPresentNotification:notification withCompletionHandler:completionHandler; 
+        [SHKShake reportNotificationCenter:center willPresentNotification:notification withCompletionHandler:completionHandler]; 
         return; 
     }
 
