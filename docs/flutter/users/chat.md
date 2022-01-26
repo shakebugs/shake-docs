@@ -48,18 +48,17 @@ import Shake
 
 @UIApplicationMain
 @objc class AppDelegate: FlutterAppDelegate {
-  override func application(
-    _ application: UIApplication,
-    didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
-  ) -> Bool {
-    // highlight-start
-    let center = UNUserNotificationCenter.current()
-    center.delegate = self
-    // highlight-end
+    override func application(
+        _ application: UIApplication,
+        didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+            // highlight-start
+            let center = UNUserNotificationCenter.current()
+            center.delegate = self
+            // highlight-end
 
-    GeneratedPluginRegistrant.register(with: self)
-    return super.application(application, didFinishLaunchingWithOptions: launchOptions)
-  }
+            GeneratedPluginRegistrant.register(with: self)
+            return super.application(application, didFinishLaunchingWithOptions: launchOptions)
+        }
 
   // highlight-start
   override func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
@@ -73,8 +72,8 @@ import Shake
   // highlight-end
 
   // highlight-start
-  override func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
-      if notification.request.content.categoryIdentifier.contains(SHKNotificationCategoryIdentifierDomain) {
+  override func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void){
+      if notification.request.content.categoryIdentifier.contains(SHKNotificationCategoryIdentifierDomain){
           Shake.report(center, willPresent: notification, withCompletionHandler: completionHandler)
           return;
       }

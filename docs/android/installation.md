@@ -52,12 +52,12 @@ import android.app.Application;
 import com.shakebugs.shake.Shake;
 
 public class App extends Application {
-  @Override
-  public void onCreate() {
-    super.onCreate();
-    // highlight-next-line
-    Shake.start(this, "your-api-client-id", "your-api-client-secret");
-  }
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        // highlight-next-line
+        Shake.start(this, "your-api-client-id", "your-api-client-secret");
+    }
 }
 ```
 
@@ -71,11 +71,11 @@ import android.app.Application
 import com.shakebugs.shake.Shake
 
 class App : Application() {
-  override fun onCreate() {
-    super.onCreate()
-    // highlight-next-line
-    Shake.start(this, "your-api-client-id", "your-api-client-secret")
-  }
+    override fun onCreate() {
+        super.onCreate()
+        // highlight-next-line
+        Shake.start(this, "your-api-client-id", "your-api-client-secret")
+    }
 }
 ```
 
@@ -87,11 +87,11 @@ If you’re creating a custom *Application* class for the first time, specify it
 ```xml title="AndroidManifest.xml"
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
-  <application
-      // highlight-start
-      android:name=".App">
-      // highlight-end
-  </application>
+    <application
+        // highlight-start
+        android:name=".App">
+        // highlight-end
+    </application>
 </manifest>
 ```
 

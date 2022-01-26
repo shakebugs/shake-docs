@@ -42,8 +42,8 @@ NSData fileData = ...
 
 //highlight-start
 SHKShake.onPrepareReportData = ^NSArray<SHKShakeFile *> * _Nonnull {
-    NSMutableArray <SHKShakeFile *> attachedFiles = NSMutableArray.new;
-    SHKShakeFile attachedFile = [[SHKShakeFile alloc] initWithName:fileName andData:fileData];
+    NSMutableArray <SHKShakeFile *> *attachedFiles = NSMutableArray.new;
+    SHKShakeFile *attachedFile = [[SHKShakeFile alloc] initWithName:fileName andData:fileData];
     [attachedFiles addObject:attachedFile];
     return attachedFiles;
 };
@@ -94,8 +94,8 @@ NSURL fileUrl = ...
 
 //highlight-start
 SHKShake.onPrepareReportData = ^NSArray<SHKShakeFile *> * _Nonnull {
-    NSMutableArray <SHKShakeFile *> attachedFiles = NSMutableArray.new;
-    SHKShakeFile attachedFile = [[SHKShakeFile alloc] initWithName:fileName andFileURL:fileUrl];
+    NSMutableArray <SHKShakeFile *> *attachedFiles = NSMutableArray.new;
+    SHKShakeFile *attachedFile = [[SHKShakeFile alloc] initWithName:fileName andFileURL:fileUrl];
     [attachedFiles addObject:attachedFile];
     return attachedFiles;
 };
@@ -142,8 +142,8 @@ NSURL *fileUrl = ...
 
 //highlight-start
 SHKShake.onPrepareReportData = ^NSArray<SHKShakeFile *> * _Nonnull {
-    NSMutableArray <SHKShakeFile *> attachedFiles = NSMutableArray.new;
-    SHKShakeFile attachedFile = [[SHKShakeFile alloc] initWithFileURL:fileUrl];
+    NSMutableArray <SHKShakeFile *> *attachedFiles = NSMutableArray.new;
+    SHKShakeFile *attachedFile = [[SHKShakeFile alloc] initWithFileURL:fileUrl];
     [attachedFiles addObject:attachedFile];
     return attachedFiles;
 };

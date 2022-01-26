@@ -48,13 +48,13 @@ import TabItem from '@theme/TabItem';
 ```java title="App.java"
 // highlight-start
 Shake.onPrepareData(new ShakeReportData() {
-  @Override
-  public List<ShakeFile> attachedFiles() {
-    ShakeFile shakeFileOne = new ShakeFile(new File("PathToYourFile"));
-    ShakeFile shakeFileTwo = new ShakeFile("AbsolutePathToYourFile");
+    @Override
+    public List<ShakeFile> attachedFiles() {
+        ShakeFile shakeFileOne = new ShakeFile(new File("PathToYourFile"));
+        ShakeFile shakeFileTwo = new ShakeFile("AbsolutePathToYourFile");
 
-    return Arrays.asList(shakeFileOne, shakeFileTwo);
-  }
+        return Arrays.asList(shakeFileOne, shakeFileTwo);
+    }
 });
 // highlight-end
 ```
@@ -96,13 +96,13 @@ If you initialize it this way, the filename shown on your Shake dashboard will b
 ```java title="App.java"
 // highlight-start
 Shake.onPrepareData(new ShakeReportData() {
-  @Override
-  public List<ShakeFile> attachedFiles() {
-    ShakeFile shakeFileOne = new ShakeFile("fileOne", new File("PathToYourFile"));
-    ShakeFile shakeFileTwo = new ShakeFile("fileTwo", "AbsolutePathToYourFile");
+    @Override
+    public List<ShakeFile> attachedFiles() {
+        ShakeFile shakeFileOne = new ShakeFile("fileOne", new File("PathToYourFile"));
+        ShakeFile shakeFileTwo = new ShakeFile("fileTwo", "AbsolutePathToYourFile");
 
-    return Arrays.asList(shakeFileOne, shakeFileTwo);
-  }
+        return Arrays.asList(shakeFileOne, shakeFileTwo);
+    }
 });
 // highlight-end
 ```

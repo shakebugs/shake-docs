@@ -131,8 +131,8 @@ In this case, use Shake with [download_dsyms](http://docs.fastlane.tools/actions
 ```ruby title="Fastfile"
 // highlight-start
 lane :refresh_dsyms do
-  download_dsyms(version: "latest")
-  upload_symbols_to_shake(client_id: "<Shake client id>", client_secret: "<Shake client secret>", bundle_id: "<Bundle id of project>",  plist_path: "<Path to Info.plist>")
+    download_dsyms(version: "latest")
+    upload_symbols_to_shake(client_id: "<Shake client id>", client_secret: "<Shake client secret>", bundle_id: "<Bundle id of project>",  plist_path: "<Path to Info.plist>")
 end
 // highlight-end
 ```
@@ -149,8 +149,8 @@ add the `upload_symbols_to_shake` action with [gym](http://docs.fastlane.tools/a
 ```ruby title="Fastfile"
 // highlight-start
 lane :refresh_dsyms do
-  gym
-    upload_symbols_to_shake(client_id: "<Shake client id>", client_secret: "<Shake client secret>", bundle_id: "<Bundle id of project>", plist_path: "<Path to Info.plist>")
+    gym
+        upload_symbols_to_shake(client_id: "<Shake client id>", client_secret: "<Shake client secret>", bundle_id: "<Bundle id of project>", plist_path: "<Path to Info.plist>")
 end
 // highlight-end
 ```
@@ -162,6 +162,6 @@ Or, you can pass the dSYM file paths manually:
 
 ```ruby title="Fastfile"
 // highlight-next-line
-  upload_symbols_to_shake(client_id: "<Shake client id>", client_secret: "<Shake client secret>", bundle_id: "<Bundle id of project>", dsym_array_paths: ["./App1.dSYM.zip", "./App2.dSYM.zip"],  plist_path: "<Path to Info.plist>")
+upload_symbols_to_shake(client_id: "<Shake client id>", client_secret: "<Shake client secret>", bundle_id: "<Bundle id of project>", dsym_array_paths: ["./App1.dSYM.zip", "./App2.dSYM.zip"],  plist_path: "<Path to Info.plist>")
 ```
 </TabItem>

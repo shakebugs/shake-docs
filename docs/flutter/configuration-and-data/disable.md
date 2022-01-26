@@ -26,10 +26,10 @@ Back to our example where you want to allow *hosts* to use Shake but not the *gu
 import 'package:shake_flutter/shake_flutter.dart';
 
 void loggedInSuccessfully(User user) {
-  if (user.type == 'GUEST') {
-    // highlight-next-line
-    Shake.setEnabled(false);
-  }
+    if (user.type == 'GUEST') {
+        // highlight-next-line
+        Shake.setEnabled(false);
+    }
 }
 ```
 

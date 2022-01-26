@@ -21,8 +21,8 @@ Let’s say you want to send yourself a roomID after a user successfully joins a
 import Shake from '@shakebugs/react-native-shake';
 
 const onChatRoomJoined = (room) => {
-  // highlight-next-line
-  Shake.setMetadata('roomId', room.id);
+    // highlight-next-line
+    Shake.setMetadata('roomId', room.id);
 }
 ```
 

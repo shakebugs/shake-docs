@@ -31,7 +31,7 @@ dependencies {
 Update the `getPackages()` method:
 
 ```java title="MainApplication.java"
- @Override protected List<ReactPackage> getPackages() {
+@Override protected List<ReactPackage> getPackages() {
     @SuppressWarnings("UnnecessaryLocalVariable")
     List<ReactPackage> packages = new PackageList(this).getPackages();
     // Packages that cannot be autolinked yet can be added manually here, for example:
@@ -46,13 +46,13 @@ If you do not have *multiDexEnabled*, update app-level *build.gradle*:
 
 ```groovy title="app/build.gradle"
 defaultConfig {
-  applicationId "com.shakebugs.react.example"
-  minSdkVersion rootProject.ext.minSdkVersion
-  targetSdkVersion rootProject.ext.targetSdkVersion
-  versionCode 1
-  versionName "1.0.0"
-  // highlight-next-line
-  multiDexEnabled true
+    applicationId "com.shakebugs.react.example"
+    minSdkVersion rootProject.ext.minSdkVersion
+    targetSdkVersion rootProject.ext.targetSdkVersion
+    versionCode 1
+    versionName "1.0.0"
+    // highlight-next-line
+    multiDexEnabled true
 }
 ```
 

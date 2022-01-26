@@ -90,13 +90,13 @@ so you can have different feedback types for different parts of your app:
 // highlight-start
 - (void)enableVideoCallFeature:(NSString *)contactId {
 
-  SHKFeedbackEntry *videoCallCategory = [SHKFeedbackEntry entryWithTitle:@"Video Call" andTag:@"video_call" icon:nil];
+    SHKFeedbackEntry *videoCallCategory = [SHKFeedbackEntry entryWithTitle:@"Video Call" andTag:@"video_call" icon:nil];
 
-  NSMutableArray<SHKFeedbackEntry *> *existing = [SHKShake getFeedbackTypes].mutableCopy;
+    NSMutableArray<SHKFeedbackEntry *> *existing = [SHKShake getFeedbackTypes].mutableCopy;
 
-  [existing addObject:videoCallCategory];
+    [existing addObject:videoCallCategory];
 
-  [SHKShake setFeedbackTypes:existing];
+    [SHKShake setFeedbackTypes:existing];
 
 } 
 // highlight-end

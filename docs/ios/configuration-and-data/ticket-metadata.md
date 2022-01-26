@@ -20,7 +20,7 @@ You can call `Shake.setMetadata()` anywhere in your app, but be careful because 
 
 :::
 
-Let’s say you want to send yourself a roomID after a user successfully joins a chat room. You would do this:
+Let's say you want to send yourself a roomID after a user successfully joins a chat room. You would do this:
 
 <Tabs
   groupId="ios"
@@ -48,6 +48,7 @@ Let’s say you want to send yourself a roomID after a user successfully joins a c
 func onChatRoomJoined(room: Room) {
     // highlight-next-line
     Shake.setMetadata(key: "roomId", value: room.id)
+}
 ```
 
 </TabItem>

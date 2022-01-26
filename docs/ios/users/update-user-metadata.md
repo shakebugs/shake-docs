@@ -106,11 +106,11 @@ and updating **specific** user metadata in their respective contexts:
 
 - (void)onUserSettingsConfigured: (UserSettings *) userSettings {
 
-  [self fetchUserInformation];
+    [self fetchUserInformation];
 
-  [SHKShake updateUserMetadata:@{
-    @"userSettings": self.userSettings.description
-  }]
+    [SHKShake updateUserMetadata:@{
+        @"userSettings": self.userSettings.description
+  }];
 }
 ```
 
@@ -121,11 +121,10 @@ and updating **specific** user metadata in their respective contexts:
 ```swift title="UserSettingsViewModel.swift"
 func onUserSettingsConfigured(userSettings: UserSettings) {
 
-  fetchUserInformation()
+    fetchUserInformation()
 
-  Shake.updateUserMetadata([
-    "userSettings": userSettings.description
-  ])
+    Shake.updateUserMetadata([
+        "userSettings": userSettings.description])
 }
 ```
 

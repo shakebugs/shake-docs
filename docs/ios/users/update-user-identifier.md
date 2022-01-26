@@ -51,7 +51,6 @@ It's assumed that the user was previously registered with an email:
 
             // highlight-next-line
             [SHKShake updateUserId:newEmail];
-
         }
     }];
 }

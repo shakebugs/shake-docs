@@ -113,15 +113,15 @@ import 'package:shake_flutter/shake_flutter.dart';
 void insertNetworkRequest() {
     // highlight-start
     NetworkRequest networkRequest = NetworkRequest()
-      ..method = 'POST'
-      ..status = '200'
-      ..url = 'https://api.example.com'
-      ..requestBody = 'Request body'
-      ..responseBody = 'Response body'
-      ..requestHeaders = {'header1': 'requestHeader'}
-      ..responseHeaders = {'header2': 'responseHeader'}
-      ..duration = 100
-      ..date = new DateTime.now();
+        ..method = 'POST'
+        ..status = '200'
+        ..url = 'https://api.example.com'
+        ..requestBody = 'Request body'
+        ..responseBody = 'Response body'
+        ..requestHeaders = {'header1': 'requestHeader'}
+        ..responseHeaders = {'header2': 'responseHeader'}
+        ..duration = 100
+        ..date = new DateTime.now();
     Shake.insertNetworkRequest(networkRequest);
     // highlight-end
 }
@@ -155,9 +155,9 @@ import 'package:shake_flutter/shake_flutter.dart';
 void insertNotificationEvent() {
     // highlight-start
     NotificationEvent notificationEvent = NotificationEvent()
-      ..id = '0'
-      ..title = 'Title'
-      ..description = 'Description';
+        ..id = '0'
+        ..title = 'Title'
+        ..description = 'Description';
     Shake.insertNotificationEvent(notificationEvent);
     // highlight-end
 }

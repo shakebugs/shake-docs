@@ -37,10 +37,10 @@ import TabItem from '@theme/TabItem';
 
 ```java title="App.java"
 public void loggedInSuccessfully(User user) {
-  if (user.getUserType() == GUEST) {
-    // highlight-next-line
-    Shake.setEnabled(false);
-  }
+    if (user.getUserType() == GUEST) {
+        // highlight-next-line
+        Shake.setEnabled(false);
+    }
 }
 ```
 
@@ -50,10 +50,10 @@ public void loggedInSuccessfully(User user) {
 
 ```kotlin title="App.kt"
 override fun loggedInSuccessfully(user: User) {
-  if (user.getUserType() == GUEST) {
-    // highlight-next-line
-    Shake.setEnabled(false)
-  }
+    if (user.getUserType() == GUEST) {
+        // highlight-next-line
+        Shake.setEnabled(false)
+    }
 }
 ```
 
