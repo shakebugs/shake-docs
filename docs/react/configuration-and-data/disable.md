@@ -26,10 +26,10 @@ Back to our example where you want to allow *hosts* to use Shake but not the *gu
 import Shake from '@shakebugs/react-native-shake';
 
 const loggedInSuccessfully = (user) => {
-  if (user.type === 'GUEST') {
-    // highlight-next-line
-    Shake.setEnabled(false);
-  }
+    if (user.type === 'GUEST') {
+        // highlight-next-line
+        Shake.setEnabled(false);
+    }
 }
 ```
 

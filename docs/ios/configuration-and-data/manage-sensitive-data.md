@@ -350,13 +350,12 @@ As an example, if you'd like to obfuscate the *Authorization* header in all netw
 - (void)setupNetworkFilter {
 
     // highlight-start
-    SHKShake.networkRequestsFilter = ^SHKNetworkRequestEditor (SHKNetworkRequestEditor * networkRequest) {
-        NSMutableDictionary<NSString *, NSString *> headers = networkRequest.requestHeaders;
+    SHKShake.networkRequestsFilter = ^SHKNetworkRequestEditor * (SHKNetworkRequestEditor * networkRequest){
+        NSMutableDictionary<NSString *, NSString *>* headers = networkRequest.requestHeaders;
         
         if (headers[@"Authorization"] != nil) {
             headers[@"Authorization"] = @"***";
         }
-
         return networkRequest;
     };
 // highlight-end
@@ -379,7 +378,6 @@ func setupNetworkFilter() {
         if networkRequest.requestHeaders["Authorization"] != nil {
             networkRequest.requestHeaders["Authorization"] = "***"
         }
-        
         return networkRequest
     }
     // highlight-end
@@ -409,12 +407,11 @@ If you don't want to log specific network requests, return `nil` from the `Netwo
 - (void)setupNetworkFilter {
 
     // highlight-start
-    SHKShake.networkRequestsFilter = ^SHKNetworkRequestEditor *(SHKNetworkRequestEditor * networkRequest) {
+    SHKShake.networkRequestsFilter = ^SHKNetworkRequestEditor *(SHKNetworkRequestEditor * networkRequest){
     
         if ([networkRequest.url.absoluteString hasPrefix:@"https://api.myapp.com/cards"]) {
             return nil;
         }
-
         return networkRequest;
     };
     // highlight-end
@@ -437,7 +434,6 @@ func setupNetworkFilter() {
         if networkRequest.url.absoluteString.hasPrefix("https://api.myapp.com/cards") {
             return nil
         }
-        
         return networkRequest
     }
     // highlight-end
@@ -475,12 +471,11 @@ For example, if you'd like to obfuscate the description of the notification even
 - (void)setupNotificationEventsFilter {
 
     // highlight-start
-    SHKShake.notificationEventsFilter = ^SHKNotificationEventEditor *(SHKNotificationEventEditor * notificationEvent) {
+    SHKShake.notificationEventsFilter = ^SHKNotificationEventEditor *(SHKNotificationEventEditor * notificationEvent){
     
         if ([notificationEvent.title hasPrefix:@"E-mail changed"]) {
             notificationEvent.description = @"***@gmail.com";
         }
-
         return notificationEvent;
     };
 // highlight-end
@@ -503,7 +498,6 @@ func setupNotificationEventsFilter() {
         if notificationEvent.title.contains("E-mail changed") {
             notificationEvent.description = "***@gmail.com"
         }
-        
         return notificationEvent
     }
     // highlight-end
@@ -532,12 +526,11 @@ If you do not want to track a specific notification event, return `nil` from the
 
 - (void)setupNotificationEventsFilter {
     // highlight-start
-    SHKShake.notificationEventsFilter = ^SHKNotificationEventEditor *(SHKNotificationEventEditor * notificationEvent) {
+    SHKShake.notificationEventsFilter = ^SHKNotificationEventEditor *(SHKNotificationEventEditor * notificationEvent){
         
         if ([notificationEvent.title hasPrefix:@"E-mail changed"]) {
             return nil;
         }
-
         return notificationEvent;
     };
     // highlight-end
@@ -559,7 +552,6 @@ func setupNotificationEventFilter() {
         if notificationEvent.title.contains("E-mail changed") {
             return nil
         }
-        
         return notificationEvent
     }
     // highlight-end

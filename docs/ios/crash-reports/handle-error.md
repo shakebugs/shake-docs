@@ -44,7 +44,7 @@ unrelated and ungrouped, which would clog your Shake dashboard.
     }
 }
 
-- (void)functionThatCanThrowError:(NSError *)error {
+- (void)functionThatCanThrowError:(NSError **)error {
     if (error != NULL) {
         *error = [[NSError alloc] initWithDomain:domain
                                                 code:errorCode

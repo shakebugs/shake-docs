@@ -32,9 +32,9 @@ import TabItem from '@theme/TabItem';
 ```java title="MainActivity.java"
 @Override
 public boolean dispatchTouchEvent(MotionEvent event) {
-  // highlight-next-line
-  Shake.handleTouchEvent(event, this);
-  return super.dispatchTouchEvent(event);
+    // highlight-next-line
+    Shake.handleTouchEvent(event, this);
+    return super.dispatchTouchEvent(event);
 }
 ```
 
@@ -42,11 +42,11 @@ public boolean dispatchTouchEvent(MotionEvent event) {
 
 <TabItem value="kotlin">
 
-```java title="MainActivity.kt"
+```kotlin title="MainActivity.kt"
 override fun dispatchTouchEvent(event: MotionEvent): Boolean {
-  // highlight-next-line
-  Shake.handleTouchEvent(event, this)
-  return super.dispatchTouchEvent(event)
+    // highlight-next-line
+    Shake.handleTouchEvent(event, this)
+    return super.dispatchTouchEvent(event)
 }
 ```
 
@@ -71,10 +71,10 @@ If you want to receive users' network traffic logs, add this line to your `OkHtt
 
 ```java title="App.java"
 OkHttpClient okHttpClient = new OkHttpClient()
-  .newBuilder()
-  // highlight-next-line
-  .addInterceptor(new ShakeNetworkInterceptor())
-  .build();
+    .newBuilder()
+    // highlight-next-line
+    .addInterceptor(new ShakeNetworkInterceptor())
+    .build();
 ```
 
 </TabItem>
@@ -83,10 +83,10 @@ OkHttpClient okHttpClient = new OkHttpClient()
 
 ```kotlin title="App.kt"
 val okHttpClient = OkHttpClient()
-  .newBuilder()
-  // highlight-next-line
-  .addInterceptor(ShakeNetworkInterceptor())
-  .build()
+    .newBuilder()
+    // highlight-next-line
+    .addInterceptor(ShakeNetworkInterceptor())
+    .build()
 ```
 
 </TabItem>

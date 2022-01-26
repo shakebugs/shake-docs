@@ -114,20 +114,18 @@ For *iOS* apps, add the following code snippet to your *AppDelegate.m* to make s
 // highlight-next-line
 #import <React/RCTLog.h>
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
-{
-  // highlight-start
-  RCTSetLogThreshold(RCTLogLevelInfo);
-  RCTAddLogFunction(ShakeLogFunction);
-  // highlight-end
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions{
+    // highlight-start
+    RCTSetLogThreshold(RCTLogLevelInfo);
+    RCTAddLogFunction(ShakeLogFunction);
+    // highlight-end
   ...
 }
 
 // highlight-start
-RCTLogFunction ShakeLogFunction = ^(RCTLogLevel level, __unused RCTLogSource source, NSString *fileName, NSNumber *lineNumber, NSString *message)
-{
-  NSString *log = RCTFormatLog([NSDate date], level, fileName, lineNumber, message);
-  NSLog(@"%@", log);
+RCTLogFunction ShakeLogFunction = ^(RCTLogLevel level, __unused RCTLogSource source, NSString *fileName, NSNumber *lineNumber, NSString *message) {
+    NSString *log = RCTFormatLog([NSDate date], level, fileName, lineNumber, message);
+    NSLog(@"%@", log);
 };
 // highlight-end
 ```

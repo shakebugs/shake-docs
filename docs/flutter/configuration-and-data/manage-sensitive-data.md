@@ -55,11 +55,11 @@ import 'package:shake_flutter/shake_flutter.dart';
 void setupNetworkFilter() {
     // highlight-start
     Shake.setNetworkRequestsFilter((NetworkRequest networkRequest) {
-      var headers = networkRequest.requestHeaders;
-      if (headers.containsKey('Authorization')) {
-        headers['Authorization'] = '***';
-      }
-      return networkRequest;
+        var headers = networkRequest.requestHeaders;
+        if (headers.containsKey('Authorization')) {
+            headers['Authorization'] = '***';
+        }
+        return networkRequest;
     });
     // highlight-end
 }
@@ -76,10 +76,10 @@ import 'package:shake_flutter/shake_flutter.dart';
 void setupNetworkFilter() {
     // highlight-start
     Shake.setNetworkRequestsFilter((NetworkRequest networkRequest) {
-      if (networkRequest.url.startsWith('https://api.myapp.com/cards')) {
-        return null;
-      }
-      return networkRequest;
+        if (networkRequest.url.startsWith('https://api.myapp.com/cards')) {
+            return null;
+        }
+        return networkRequest;
     });
     // highlight-end
 }
@@ -104,10 +104,10 @@ import 'package:shake_flutter/shake_flutter.dart';
 void setupNotificationsFilter() {
     // highlight-start
     Shake.setNotificationEventsFilter((NotificationEvent notificationEvent) {
-      if (notificationEvent.title == 'E-mail changed') {
-        notificationEvent.description = '***@gmail.com';
-      }
-      return notificationEvent;
+        if (notificationEvent.title == 'E-mail changed') {
+            notificationEvent.description = '***@gmail.com';
+        }
+        return notificationEvent;
     });
     // highlight-end
 }
@@ -124,10 +124,10 @@ import 'package:shake_flutter/shake_flutter.dart';
 void setupNotificationsFilter() {
     // highlight-start
     Shake.setNotificationEventsFilter((NotificationEvent notificationEvent) {
-      if (notificationEvent.title == 'E-mail changed') {
-        return null;
-      }
-      return notificationEvent;
+        if (notificationEvent.title == 'E-mail changed') {
+            return null;
+        }
+        return notificationEvent;
     });
     // highlight-end
 }

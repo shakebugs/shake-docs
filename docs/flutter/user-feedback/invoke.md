@@ -119,15 +119,15 @@ import 'package:shake_flutter/enums/shake_screen.dart';
 
 // highlight-end
 void onReportProblemPressed() { 
-  // Displays Shake with the New Ticket screen.
-  // highlight-next-line
-  Shake.show();
+    // Displays Shake with the New Ticket screen.
+    // highlight-next-line
+    Shake.show();
 }
 
 const onFeedbackCenterPressed() { 
-  // Displays Shake starting at the Home screen.
-  // highlight-next-line
-  Shake.show(ShakeScreen.home);
+    // Displays Shake starting at the Home screen.
+    // highlight-next-line
+    Shake.show(ShakeScreen.home);
 }
 ```
 

@@ -25,7 +25,7 @@ Shake will notify your user when you send them a new message from the Shake dash
 
 :::note
 Shake supports only local notifications.
-That means that your users won't get notified about new messages when your app is in the background.
+That means that your users won't get notified about new messages when your app is in the background.
 :::
 
 To show notifications to your users, you must request a permission from them.
@@ -51,28 +51,39 @@ values={[
 @import UserNotifications;
 
 @interface AppDelegate () <UNUserNotificationCenterDelegate>
+
 @end
+
 @implementation AppDelegate
 
-- (BOOL)application:(UIApplication )application didFinishLaunchingWithOptions:(NSDictionary )launchOptions {
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
     UNUserNotificationCenter.currentNotificationCenter.delegate = self;
+
     [SHKShake startWithClientId:@"your_client_id" clientSecret:@"your_client_secret"];
+
     return YES; 
 }
-- (void)userNotificationCenter:(UNUserNotificationCenter )center didReceiveNotificationResponse:(UNNotificationResponse )response withCompletionHandler:(void (^)(void))completionHandler {
 
-    if ([response.notification.request.content.categoryIdentifier containsString:SHKNotificationCategoryIdentifierDomain]) { [SHKShake reportNotificationCenter:center didReceiveNotificationResponse:response withCompletionHandler:completionHandler]; return; }
+- (void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void (^)(void))completionHandler {
+
+    if ([response.notification.request.content.categoryIdentifier containsString:SHKNotificationCategoryIdentifierDomain]){ 
+        [SHKShake reportNotificationCenter:center didReceiveNotificationResponse:response withCompletionHandler:completionHandler];
+        return; 
+    }
 
     completionHandler();
 }
 
-- (void)userNotificationCenter:(UNUserNotificationCenter )center willPresentNotification:(UNNotification )notification withCompletionHandler:(void (^)(UNNotificationPresentationOptions))completionHandler {
+- (void)userNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(UNNotificationPresentationOptions))completionHandler {
     
-    if ([notification.request.content.categoryIdentifier containsString:SHKNotificationCategoryIdentifierDomain]) { [SHKShake reportNotificationCenter:center willPresentNotification:notification withCompletionHandler:completionHandler]; return; 
-}
+    if ([notification.request.content.categoryIdentifier containsString:SHKNotificationCategoryIdentifierDomain]){
+        [SHKShake reportNotificationCenter:center willPresentNotification:notification withCompletionHandler:completionHandler]; 
+        return; 
+    }
 
-    completionHandler(UNNotificationPresentationOptionAlert | UNNotificationPresentationOptionSound); }
+    completionHandler(UNNotificationPresentationOptionAlert | UNNotificationPresentationOptionSound); 
+}
 ```
 
 </TabItem><TabItem value="swift">

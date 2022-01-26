@@ -42,7 +42,7 @@ Make sure to call this method at the place where it fits your app's flow perfect
 ```objectivec title="UserManager.m"
 @implementation UserManager
 
-- (void)logInUser:(NSString )userEmail password:(NSString )password {
+- (void)logInUser:(NSString )userEmail password:(NSString *)password {
 
     __weak typeof (LogInViewModel) *weakSelf = self;
     

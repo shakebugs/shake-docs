@@ -127,8 +127,8 @@ values={[
 @implementation AuthenticationDelegate
 
 - (void)didReceiveChallenge:(NSURLAuthenticationChallenge *)challenge completionHandler:(void (^)(NSURLSessionAuthChallengeDisposition, NSURLCredential * _Nullable))completionHandler {
-  /// React to challenge and call the completion handler
-  completionHandler(NSURLSessionAuthChallengePerformDefaultHandling, nil);
+    /// React to challenge and call the completion handler
+    completionHandler(NSURLSessionAuthChallengePerformDefaultHandling, nil);
 }
 
 @end
@@ -154,7 +154,6 @@ values={[
     [SHKShake registerAuthDelegate:authDelegate];
     
     self.authenticationDelegate = authDelegate;
-    
 }
 
 @end
@@ -260,7 +259,6 @@ private func getUser(withSession session: URLSession, andRequest request: URLReq
         let networkRequest = NetworkRequestEditor(request, response: res, responseData: data, error: error, timestamp: .init(), duration: 0.5)
     
         Shake.insertNetworkRequest(networkRequest)
-    
       }
     .resume()
 }

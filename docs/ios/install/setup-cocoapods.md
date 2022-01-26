@@ -81,9 +81,9 @@ Replace `your-api-client-id` and `your-api-client-secret` with the actual values
 
 @implementation AppDelegate
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-  // highlight-next-line
-  [SHKShake startWithClientId:@"your-api-client-id" clientSecret:@"your-api-client-secret"];
-  return YES;
+    // highlight-next-line
+    [SHKShake startWithClientId:@"your-api-client-id" clientSecret:@"your-api-client-secret"];
+    return YES;
 }
 @end
 ```
@@ -99,13 +99,13 @@ import Shake
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-  func application(
-    _ application: UIApplication,
-    didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-      // highlight-next-line
-      Shake.start(clientId: "your-api-client-id", clientSecret: "your-api-client-secret")
-      return true
-  }
+    func application(
+        _ application: UIApplication,
+        didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+            // highlight-next-line
+            Shake.start(clientId: "your-api-client-id", clientSecret: "your-api-client-secret")
+            return true
+    }
 }
 ```
 
