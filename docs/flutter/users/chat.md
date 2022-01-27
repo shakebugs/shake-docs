@@ -60,26 +60,26 @@ import Shake
             return super.application(application, didFinishLaunchingWithOptions: launchOptions)
         }
 
-  // highlight-start
-  override func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
-      if response.notification.request.content.categoryIdentifier.contains(SHKNotificationCategoryIdentifierDomain) {
-          Shake.report(center, didReceive: response, withCompletionHandler: completionHandler)
-          return;
-      }
+    // highlight-start
+    override func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        if response.notification.request.content.categoryIdentifier.contains(SHKNotificationCategoryIdentifierDomain) {
+            Shake.report(center, didReceive: response, withCompletionHandler: completionHandler)
+            return;
+        }
 
-      completionHandler()
-  }
+        completionHandler()
+    }
   // highlight-end
 
-  // highlight-start
-  override func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void){
-      if notification.request.content.categoryIdentifier.contains(SHKNotificationCategoryIdentifierDomain){
-          Shake.report(center, willPresent: notification, withCompletionHandler: completionHandler)
-          return;
-      }
+    // highlight-start
+    override func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void){
+        if notification.request.content.categoryIdentifier.contains(SHKNotificationCategoryIdentifierDomain){
+            Shake.report(center, willPresent: notification, withCompletionHandler: completionHandler)
+            return;
+        }
 
-      completionHandler([.badge, .sound, .alert])
-  }
+        completionHandler([.badge, .sound, .alert])
+    }
   // highlight-end
 }
 ```

@@ -40,7 +40,7 @@ import TabItem from '@theme/TabItem';
 // highlight-start
 SHKShake.configuration.isInvokedByShakeDeviceEvent = YES;
 SHKShake.configuration.isInvokedByScreenshot = YES;
-[SHKShake startWithClientId:@"client-id" clientSecret:@"client-secret"];
+[SHKShake startWithClientId:@"your-api-client-id" clientSecret:@"your-api-client-secret"];
 // highlight-end
 ```
 
@@ -52,7 +52,7 @@ SHKShake.configuration.isInvokedByScreenshot = YES;
 // highlight-start
 Shake.configuration.isInvokedByShakeDeviceEvent = true
 Shake.configuration.isInvokedByScreenshot = true
-Shake.start(clientId: "client-id", clientSecret: "client-secret")
+Shake.start(clientId: "your-api-client-id", clientSecret: "your-api-client-secret")
 // highlight-end
 ```
 

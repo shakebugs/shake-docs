@@ -233,11 +233,11 @@ defaultValue="swift"
     [[session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
 
         SHKNetworkRequestEditor *networkRequest = [[SHKNetworkRequestEditor alloc] initWith:request
-                                                                                  response:response
-                                                                                  responseData:data
-                                                                                  error:error
-                                                                                  timestamp:NSDate.new
-                                                                                  duration:0.5];
+            response:response
+            responseData:data
+            error:error
+            timestamp:NSDate.new
+            duration:0.5];
 
         [SHKShake insertNetworkRequest:networkRequest];
 

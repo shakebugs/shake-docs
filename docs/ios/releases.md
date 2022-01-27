@@ -12,17 +12,19 @@ What would you like us to build next? Upvote upcoming features and suggest new i
 <span class="tag-button">January 19, 2022</span>&nbsp;&nbsp;
 <span class="tag-button green-tag-button">Latest version</span>
 
-**What's new**
+#### What's new
 
 Improved internal logging.
 
-**Bug fixes**
+We have added even more bugs to avoid losing our jobs.
 
-We fixed a bug related to the email component where user entered email was not persisted across tickets.
+#### Bug fixes
 
-Also fixed an internal crash related to read-write problem of the multithreaded environment that some users reported.
+We fixed a bug that caused the entered email address to not persist across tickets.
 
-Some users that were managing their app versions with Xcode reported missing activity history on the web dashboard. This issue is resolved and Shake will always obtain correct SDK version regardless of Info plist settings.
+An internal crash related to a read-write problem of the multithreaded environment has been addressed.
+
+Some users that manage their app versions with Xcode reported that the activity history has disappeared on their Shake dashboard. This issue has now been resolved — Shake will always obtain a correct SDK version, regardless of the Info.plist settings.
 
 ## 15.1.0
 <span class="tag-button">December 20, 2021</span>&nbsp;&nbsp;

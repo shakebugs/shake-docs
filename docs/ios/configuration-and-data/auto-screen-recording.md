@@ -13,7 +13,7 @@ Turn off this feature in production!
 
 ## Enable
 Auto screen recording is disabled by default. To enable it:
-1. Call `Shake.configuration().isAutoVideoRecording = true` first.
+1. Call `Shake.configuration.isAutoVideoRecording = true` first.
 1. Then, start Shake with `Shake.start()`.
 
 import Tabs from '@theme/Tabs';
@@ -32,7 +32,7 @@ import TabItem from '@theme/TabItem';
 
 ```objectivec title="AppDelegate.m"
 // highlight-next-line
-SHKShake.configuration.setAutoVideoRecordingEnabled = true;
+SHKShake.configuration.isAutoVideoRecordingEnabled = true;
 ```
 
 </TabItem>
@@ -41,7 +41,7 @@ SHKShake.configuration.setAutoVideoRecordingEnabled = true;
 
 ```swift title="AppDelegate.swift"
 // highlight-next-line
-Shake.configuration.setAutoVideoRecordingEnabled = true
+Shake.configuration.isAutoVideoRecordingEnabled = true
 ```
 
 </TabItem>
