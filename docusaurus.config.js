@@ -10,7 +10,7 @@ module.exports = {
   themeConfig: {
     colorMode: {
       defaultMode: 'dark',
-      respectPrefersColorScheme: true,
+      respectPrefersColorScheme: false,
     },
     hideableSidebar: false,
     scrollToTop: false,
