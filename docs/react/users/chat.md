@@ -2,23 +2,23 @@
 id: chat
 title: Chat
 ---
-The user [can reply](react/screens/chat-screen.md) to your message sent over the Dashboard and provide you with more details 
-about the reported bug, crash, or feedback - directly from the app without leaving it.
-This allows you to easier fix bugs and makes your customers happy, a win-win situation. 
 
-## Enabling
+>If needed, your users can [chat with you](/react/shake-ui/chat-screen) to provide you more details
+about their reported bugs, crashes or feedback. You will be able to fix issues faster and make your customers happier.
 
-Once your user is [registered](react/users/user-registration.md) with Shake, the real time chat feature is enabled automatically.
+## Enable
 
-Each reported _Ticket_ represents a separate conversation, and can naturally be used to obtain valuable information directly from the end user. 
+Once your user is [registered](/react/users/register-user) with Shake, the chat feature is enabled automatically.
+Each ticket they send you will be a separate conversation.
 
-This feature is tightly integrated with, and follows the lifecycle of your _User_ registration, 
-which means that calling `Shake.unregisterUser` also _disconnects_ the current user from chat, 
-so he won't receive any new messages until registered again.
+This feature is tightly integrated with and follows the lifecycle of your _User_ registration,
+which means that calling `Shake.unregisterUser` also _disconnects_ the current user from chat
+and they won't receive any new messages until registered again.
 
 ## Notifications
 
-Shake will notify the end-user when a new message is sent over the Dashboard.
+Shake will notify your user when you send them a new message from the Shake dashboard.
+Notifications are presented automatically to the user. You don't have to code anything.
 
 :::note
 
@@ -60,51 +60,50 @@ Use the `Shake.report(center: UNUserNotificationCenter ...)` methods to delegate
 // highlight-end
 
 static void InitializeFlipper(UIApplication *application) {
-  FlipperClient *client = [FlipperClient sharedClient];
-  SKDescriptorMapper *layoutDescriptorMapper = [[SKDescriptorMapper alloc] initWithDefaults];
-  [client addPlugin:[[FlipperKitLayoutPlugin alloc] initWithRootNode:application withDescriptorMapper:layoutDescriptorMapper]];
-  [client addPlugin:[[FKUserDefaultsPlugin alloc] initWithSuiteName:nil]];
-  [client addPlugin:[FlipperKitReactPlugin new]];
-  [client addPlugin:[[FlipperKitNetworkPlugin alloc] initWithNetworkAdapter:[SKIOSNetworkAdapter new]]];
-  [client start];
+    FlipperClient *client = [FlipperClient sharedClient];
+    SKDescriptorMapper *layoutDescriptorMapper = [[SKDescriptorMapper alloc] initWithDefaults];
+    [client addPlugin:[[FlipperKitLayoutPlugin alloc] initWithRootNode:application withDescriptorMapper:layoutDescriptorMapper]];
+    [client addPlugin:[[FKUserDefaultsPlugin alloc] initWithSuiteName:nil]];
+    [client addPlugin:[FlipperKitReactPlugin new]];
+    [client addPlugin:[[FlipperKitNetworkPlugin alloc] initWithNetworkAdapter:[SKIOSNetworkAdapter new]]];
+    [client start];
 }
 #endif
 
 @implementation AppDelegate
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
-{
-#ifdef FB_SONARKIT_ENABLED
-  InitializeFlipper(application);
-#endif
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions{
+    #ifdef FB_SONARKIT_ENABLED
+        InitializeFlipper(application);
+    #endif
 
-  // highlight-start
-  UNUserNotificationCenter* center = [UNUserNotificationCenter currentNotificationCenter];
-  center.delegate = self;
-  // highlight-end
+    // highlight-start
+    UNUserNotificationCenter* center = [UNUserNotificationCenter currentNotificationCenter];
+    center.delegate = self;
+    // highlight-end
 
-  RCTBridge *bridge = [[RCTBridge alloc] initWithDelegate:self launchOptions:launchOptions];
-  RCTRootView *rootView = [[RCTRootView alloc] initWithBridge:bridge
+    RCTBridge *bridge = [[RCTBridge alloc] initWithDelegate:self launchOptions:launchOptions];
+    RCTRootView *rootView = [[RCTRootView alloc] initWithBridge:bridge
                                                    moduleName:@"example"
                                             initialProperties:nil];
 
     if (@available(iOS 13.0, *)) {
-      rootView.backgroundColor = [UIColor systemBackgroundColor];
+        rootView.backgroundColor = [UIColor systemBackgroundColor];
     } else {
-      rootView.backgroundColor = [UIColor whiteColor];
+        rootView.backgroundColor = [UIColor whiteColor];
     }
 
-  self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-  UIViewController *rootViewController = [UIViewController new];
-  rootViewController.view = rootView;
-  self.window.rootViewController = rootViewController;
-  [self.window makeKeyAndVisible];
-  return YES;
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    UIViewController *rootViewController = [UIViewController new];
+    rootViewController.view = rootView;
+    self.window.rootViewController = rootViewController;
+    [self.window makeKeyAndVisible];
+    return YES;
 }
 
 // highlight-start
 - (void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void (^)(void))completionHandler {
-    if ([response.notification.request.content.categoryIdentifier containsString:SHKNotificationCategoryIdentifierDomain]) {
+    if ([response.notification.request.content.categoryIdentifier containsString:SHKNotificationCategoryIdentifierDomain]){
         [SHKShake reportNotificationCenter:center didReceiveNotificationResponse:response withCompletionHandler:completionHandler];
         return;
     }
@@ -124,13 +123,12 @@ static void InitializeFlipper(UIApplication *application) {
 }
 // highlight-end
 
-- (NSURL *)sourceURLForBridge:(RCTBridge *)bridge
-{
-#if DEBUG
-  return [[RCTBundleURLProvider sharedSettings] jsBundleURLForBundleRoot:@"index" fallbackResource:nil];
-#else
-  return [[NSBundle mainBundle] URLForResource:@"main" withExtension:@"jsbundle"];
-#endif
+- (NSURL *)sourceURLForBridge:(RCTBridge *)bridge{
+    #if DEBUG
+        return [[RCTBundleURLProvider sharedSettings] jsBundleURLForBundleRoot:@"index" fallbackResource:nil];
+    #else
+        return [[NSBundle mainBundle] URLForResource:@"main" withExtension:@"jsbundle"];
+    #endif
 }
 
 @end

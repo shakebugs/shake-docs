@@ -3,6 +3,14 @@ id: installation
 title: Installation
 ---
 
+>Learn how to add Shake to your Flutter app.
+
+:::note
+Shake supports post Flutter 1.12 projects. If your project was created with the older version
+of Flutter, please migrate your project to the new Android APIs via [official guide](https://flutter.dev/go/android-project-migration) first.
+:::
+
+
 ## Install
 
 Add Shake as a dependency:
@@ -26,7 +34,7 @@ import 'package:shake_flutter/shake_flutter.dart';
 ```
 
 ## Set compileSdkVersion version in the build.gradle file
-Since Shake requires `compileSdkVersion` 29 or greater, verify that `compileSdkVersion` is correctly set in the */android/app/build.gradle* file.
+Since Shake requires `compileSdkVersion` 29 or greater, verify that `compileSdkVersion` is correctly set in the */android/app/build.gradle* file:
 
 ```groovy title="build.gradle"
 android {
@@ -43,10 +51,11 @@ android {
 }
 ```
 
+
 ## Initialize Shake
 
 Call `Shake.start()` method in your *main.dart* file. 
-Replace `your-api-client-id` and `your-api-client-secret` with the actual values you have in [your workspace settings](https://app.shakebugs.com/settings/workspace#general).
+Replace `your-api-client-id` and `your-api-client-secret` with the actual values you have in [your workspace settings](https://app.shakebugs.com/settings/workspace#general):
 
 ```dart title="main.dart"
 //highlight-next-line
@@ -66,13 +75,31 @@ void main() {
 }
 ```
 
-Now build your project and see everything work! To build and run your
-app, select *Run › Run* in the menu bar. This first run will automatically
-add your app to your [Shake Dashboard](https://app.shakebugs.com/) based on your app bundle ID.
+Build and run your project by selecting *Run → Run* in the menu bar. This first run will automatically
+add your app to your [Shake dashboard](https://app.shakebugs.com/) based on your app bundle ID.
 
-:::note
 
-Shake supports post Flutter 1.12 projects. If your project is created with the older version
-of Flutter, you should migrate your project to the new Android APIs via [official guide](https://flutter.dev/go/android-project-migration).
+## Visit your Shake dashboard
 
-:::
+Follow the instructions there to send your first feedback with Shake and you're all set.
+
+
+## SDK customizations
+
+Now that Shake SDK is in your app and you have sent the first feedback for fun, everything else is optional.
+As the next step, try the three most popular SDK customizations:
+
+<div class="featuresList">
+    <div>
+        <img src="/docs/img/screen-recording@2x.png" alt="Turn on auto screen recording"/>
+        <p><a href="/docs/flutter/configuration-and-data/auto-screen-recording/">Turn on auto screen recording</a></p>
+    </div>
+    <div>
+        <img src="/docs/img/steps-to-reproduce@2x.png" alt="Tweak logging to your debugging needs"/>
+        <p><a href="/docs/flutter/configuration-and-data/activity-history">Tweak logging to your debugging needs</a></p>
+    </div>
+    <div>
+        <img src="/docs/img/feature-custom-ticket-data@2x.png" alt="Custom Ticket data"/>
+        <p><a href="/docs/flutter/configuration-and-data/ticket-metadata/">Custom Ticket data</a></p>
+    </div>
+</div>

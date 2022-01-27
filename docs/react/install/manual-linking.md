@@ -3,10 +3,10 @@ id: manual-linking
 title: Manual linking
 ---
 
-Normally, linking is done automatically or using link command.
-If you want to link it manually, you can do it following way.
+>Normally, linking is done automatically or using the link command.
+If you want to link it manually, you can do it this way.
 
-### Android
+## Android
 Add the following lines of code to your *settings.gradle* file:
 
 ```groovy title="settings.gradle"
@@ -16,7 +16,7 @@ project(':@shakebugs_react-native-shake').projectDir = new File(rootProject.proj
 // highlight-end
 ```
 
-Then, include the following dependency to app-level *build.gradle* file:
+Then, include the following dependency to the app-level *build.gradle* file:
 
 ```groovy title="app/build.gradle"
 dependencies {
@@ -31,7 +31,7 @@ dependencies {
 Update the `getPackages()` method:
 
 ```java title="MainApplication.java"
- @Override protected List<ReactPackage> getPackages() {
+@Override protected List<ReactPackage> getPackages() {
     @SuppressWarnings("UnnecessaryLocalVariable")
     List<ReactPackage> packages = new PackageList(this).getPackages();
     // Packages that cannot be autolinked yet can be added manually here, for example:
@@ -42,21 +42,23 @@ Update the `getPackages()` method:
  } 
 ```
 
-If you do not have *multiDexEnabled*, update app level *build.gradle*:
+If you do not have *multiDexEnabled*, update app-level *build.gradle*:
 
 ```groovy title="app/build.gradle"
 defaultConfig {
-  applicationId "com.shakebugs.react.example"
-  minSdkVersion rootProject.ext.minSdkVersion
-  targetSdkVersion rootProject.ext.targetSdkVersion
-  versionCode 1
-  versionName "1.0.0"
-  // highlight-next-line
-  multiDexEnabled true
+    applicationId "com.shakebugs.react.example"
+    minSdkVersion rootProject.ext.minSdkVersion
+    targetSdkVersion rootProject.ext.targetSdkVersion
+    versionCode 1
+    versionName "1.0.0"
+    // highlight-next-line
+    multiDexEnabled true
 }
 ```
 
-Enable touch tracking in Android apps by adding following code to the *MainActivity.java*:
+### Enable touch tracking
+
+Enable touch tracking in Android apps by adding following code to *MainActivity.java*:
 
 ```java title="MainActivity.java"
 package com.shakebugs.react.example;
@@ -85,10 +87,8 @@ public class MainActivity extends ReactActivity {
 }
 ```
 
+## iOS
 
-### iOS
-Open your project in the Xcode by clicking project's *.xcodeproj* file.
-
-Copy *RNShake.xcodeproj* from *$rootDir/node_modules/@shakebugs/react-native-shake/ios/* to the *Libraries* folder of your project.
-
-Drag the *libRNShake.a* from the Library *Products* folder to the *Link Binary With Libraries* in the *Build Phases* section.
+1. Open your project in Xcode by clicking project's *.xcodeproj* file.
+1. Copy *RNShake.xcodeproj* from *$rootDir/node_modules/@shakebugs/react-native-shake/ios/* to the *Libraries* folder of your project.
+1. Drag *libRNShake.a* from the *Libraries / RNShake / Products* folder to *Link Binary With Libraries* in the *Build Phases* section.

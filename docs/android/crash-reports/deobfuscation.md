@@ -1,25 +1,26 @@
 ---
 id: deobfuscation
-title: Deobfuscation
+title: Deobfuscate
 ---
 
 import Tabs from '@theme/Tabs'; 
 import TabItem from '@theme/TabItem';
 
-If you are using Proguard to obfuscate your code, no problem! You can upload your *mapping.txt* file so we can deobfuscate your stack traces on our Dashboard.
+>If you use ProGuard to obfuscate your code, Shake allows you to upload your *mapping.txt* files so it can deobfuscate stack traces.
 
-## Uploading manually via the Dashboard
+## Upload manually to Shake dashboard
 
-By default, *mapping.txt* file is created in the build directory of the app module: *project/app/build/outputs/mapping/release/mapping.txt*.  
+By default, the *mapping.txt* file is created in your app's build directory: *project/app/build/outputs/mapping/release/mapping.txt*.  
 
-To access your application mapping files on the *Shake Dashboard* click your *avatar* and navigate to *My Account › Apps* and click
-on your application name. Once the menu is expanded click the **Mapping files**.
-
-You can simply drag and drop *mapping.txt* file on our Shake dashboard to upload it.
+To upload your app's mapping files to the Shake dashboard:
+1. Visit [Settings → Apps](https://app.shakebugs.com/settings/apps)
+1. Click your app name to expand it
+1. Click the **Mapping files** button
+1. Drag and drop your *mapping.txt* file there
 
 ## Using the script
 
-If you would like to do this automatically, you can do it via script.
+If you prefer to do this automatically, you can do it using this script:
 
 <Tabs
   groupId="OS"
@@ -57,7 +58,7 @@ if NOT exist %PATH_TO_MAPPING_FILE% (
 echo "Mapping file found!"
 echo "Uploading mapping file..."
 
-FOR /F "tokens=*" %%G IN  ('curl -X POST -u "%CLIENT_ID%:%CLIENT_SECRET%" -d "grant_type=client_credentials" %AUTH_ENDPOINT%') DO SET APP_TOKEN=%%G
+FOR /F "tokens=*" %%G IN  ('curl -X POST -u "%CLIENT_ID%:%CLIENT_SECRET%" -d "grant_type=client_credentials" %AUTH_ENDPOINT%')DO SET APP_TOKEN=%%G
 
 set APP_TOKEN=%APP_TOKEN:"=%
 set "APP_TOKEN=%APP_TOKEN:~1,-2%"
@@ -117,8 +118,8 @@ STATUS=$(curl -H "Authorization: Bearer $ACCESS_TOKEN" -F app_version_code="${VE
          -X POST "$FILES_ENDPOINT" --write-out %{http_code})
 
 if [ "${STATUS: -3}" != "200" ]; then
-  echo "Error while uploading mapping files"
-  exit 0
+    echo "Error while uploading mapping files"
+    exit 0
 fi
 
 echo "Success! Mapping file uploaded successfully."
@@ -127,7 +128,7 @@ echo "Success! Mapping file uploaded successfully."
 
 </TabItem></Tabs>
 
-After this, add the following gradle task to your app's *build.gradle* file.
+After that, add the following gradle task to your app's *build.gradle* file:
 
 ```groovy title="build.gradle"
 // highlight-start
@@ -147,11 +148,11 @@ task uploadMappingFile {
             if (it.buildType.name == 'release' && mappingFile != null && mappingFile.exists()) {
                 if (Os.isFamily(Os.FAMILY_WINDOWS)) {
                     exec {
-                        commandLine 'cmd', '/c', 'start', 'upload_mapper.bat', mappingFile, client, secret, versionCode, versionName, applicationId
+                        commandLine 'cmd', '/c', 'start', 'upload_mapper.bat', mappingFile, client, secret, versionCode,versionName, applicationId
                     }
                 } else if (Os.isFamily(Os.FAMILY_UNIX)) {
                     exec {
-                        commandLine 'sh', './upload_mapper.sh', mappingFile, client, secret, versionCode, versionName, applicationId
+                        commandLine 'sh', './upload_mapper.sh', mappingFile, client, secret, versionCode, versionName,applicationId
                     }
                 } else {
                     throw new GradleException('Not supported OS!')

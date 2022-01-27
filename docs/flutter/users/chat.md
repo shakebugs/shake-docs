@@ -2,27 +2,28 @@
 id: chat
 title: Chat
 ---
-The user [can reply](flutter/screens/chat-screen.md) to your message sent over the Dashboard and provide you with more details 
-about the reported bug, crash, or feedback - directly from the app without leaving it.
-This allows you to easier fix bugs and makes your customers happy, a win-win situation. 
 
-## Enabling
+>If needed, your users can [chat with you](/flutter/shake-ui/chat-screen) to provide you more details
+about their reported bugs, crashes or feedback. You will be able to fix issues faster and make your customers happier.
 
-Once your user is [registered](flutter/users/user-registration.md) with Shake, the real time chat feature is enabled automatically.
+## Enable
 
-Each reported _Ticket_ represents a separate conversation, and can naturally be used to obtain valuable information directly from the end user. 
+Once your user is [registered](/flutter/users/register-user) with Shake, the chat feature is enabled automatically.
+Each ticket they send you will be a separate conversation.
 
-This feature is tightly integrated with, and follows the lifecycle of your _User_ registration, 
-which means that calling `Shake.unregisterUser` also _disconnects_ the current user from chat, 
-so he won't receive any new messages until registered again.
+This feature is tightly integrated with and follows the lifecycle of your _User_ registration,
+which means that calling `Shake.unregisterUser` also _disconnects_ the current user from chat
+and they won't receive any new messages until registered again.
 
 ## Notifications
 
-Shake will notify the end-user when a new message is sent over the Dashboard.
+Shake will notify your user when you send them a new message from the Shake dashboard.
+Notifications are presented automatically to the user. You don't have to code anything.
 
 :::note
 
-At the moment, Shake supports only _local_ notifications. Which means that end-users won't get notified about new messages when your application is in the _background_.
+Shake supports only local notifications. That means that your users won't get notified about new messages
+when your app is in the _background_.
 
 :::
 
@@ -47,42 +48,40 @@ import Shake
 
 @UIApplicationMain
 @objc class AppDelegate: FlutterAppDelegate {
-  override func application(
-    _ application: UIApplication,
-    didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
-  ) -> Bool {
+    override func application(
+        _ application: UIApplication,
+        didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+            // highlight-start
+            let center = UNUserNotificationCenter.current()
+            center.delegate = self
+            // highlight-end
+
+            GeneratedPluginRegistrant.register(with: self)
+            return super.application(application, didFinishLaunchingWithOptions: launchOptions)
+        }
+
     // highlight-start
-    let center = UNUserNotificationCenter.current()
-    center.delegate = self
-    // highlight-end
+    override func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        if response.notification.request.content.categoryIdentifier.contains(SHKNotificationCategoryIdentifierDomain) {
+            Shake.report(center, didReceive: response, withCompletionHandler: completionHandler)
+            return;
+        }
 
-    GeneratedPluginRegistrant.register(with: self)
-    return super.application(application, didFinishLaunchingWithOptions: launchOptions)
-  }
-
-  // highlight-start
-  override func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
-      if response.notification.request.content.categoryIdentifier.contains(SHKNotificationCategoryIdentifierDomain) {
-          Shake.report(center, didReceive: response, withCompletionHandler: completionHandler)
-          return;
-      }
-
-      completionHandler()
-  }
+        completionHandler()
+    }
   // highlight-end
 
-  // highlight-start
-  override func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
-      if notification.request.content.categoryIdentifier.contains(SHKNotificationCategoryIdentifierDomain) {
-          Shake.report(center, willPresent: notification, withCompletionHandler: completionHandler)
-          return;
-      }
+    // highlight-start
+    override func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void){
+        if notification.request.content.categoryIdentifier.contains(SHKNotificationCategoryIdentifierDomain){
+            Shake.report(center, willPresent: notification, withCompletionHandler: completionHandler)
+            return;
+        }
 
-      completionHandler([.badge, .sound, .alert])
-  }
+        completionHandler([.badge, .sound, .alert])
+    }
   // highlight-end
 }
-
 ```
 
 Given the above setup, all notifications originated from Shake are handled by the Shake SDK, and all other notifications remain handled by your application.

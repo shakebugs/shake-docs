@@ -2,41 +2,39 @@
 id: update-user-metadata
 title: Update user metadata
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
-Once you have _registered_ your application user, you can attach a map with key-value pairs that describe 
-additional information about your user, or their application usage.
+>Once you have registered your app user, you can attach a map with key-value pairs which contain
+additional data about the user and their behavior.
 
-Updating the user metadata is performed by calling the `Shake.updateUserMetadata` anywhere in your code after registering the user.
+Update user metadata by calling the `Shake.updateUserMetadata` method anywhere in your code
+after registering the User.
 
-:::note
+## Special keys
 
-The user metadata map has some limitations, the total map size must not exceed _50 KB_. 
-If this validation fails, the update method is dropped with the appropriate console message.
+Values from these three keys will be presented nicely on the Shake dashboard, so we suggest you use them:
+* `first_name`
+* `last_name`
+* `end_user_id`
 
-:::
 
-:::tip
+## Updates
 
-Shake Dashboard uses *first_name* and *last_name* keys from the user metadata for presentation purposes. 
-We recommend using these keys when sending appropriate user metadata to have a nice overview of your users on the Dashboard.
+Updates to the user metadata are _merged_.
+This allows you to update
+user metadata in segments from various parts of your app, even when offline.
 
-:::
-
-Updates to the user metadata are _incremental_, or perhaps a better way to describe it would be _merged_.
-
-This means that the user metadata key-value pairs are being updated and not overwritten, giving you a possiblity to update
-the user metadata in chunks from various points of your application, even when offline.
-
-A common approach would be updating the generic user metadata from one place in your code, upon every user change, and update the specific metadata
-in their respective contexts.
+A common approach developers take is updating **generic** user metadata from one place in your code upon every user change
 
 ```javascript title="App.js"
-const onLoggedIn = user => {
+const onLoggedIn = (user) => {
     // highlight-start
     const metadata = {
         first_name: user.firstName,
-        last_name: user.lastName
-        email: user.email
+        last_name: user.lastName,
+        email: user.email,
         status: user.status
     };
     
@@ -45,24 +43,42 @@ const onLoggedIn = user => {
 }
 ```
 
-```javascript title="Cart.js"
-const onCartItemAdded = () => {
-    updateTotalPrice();
+and updating **specific** user metadata in their respective contexts:
+
+```javascript title="UserSettings.js"
+const onUserSettingsConfigured = (userSettings) => {
+    fetchUserInformation();
 
     // highlight-start
-    const metadata = { cartItems: cartItems.toString() };
-
-    Shake.updateUserMetadata(metadata);
-    // highlight-end
-}
-
-const onCartItemsCleared = () => {
-    updateTotalPrice();
-
-    // highlight-start
-    const metadata = { cartItems: 'empty' };
-
+    const metadata = { 
+        userSettings: userSettings.toString() 
+    };
     Shake.updateUserMetadata(metadata);
     // highlight-end
 }
 ```
+
+## Limitations
+
+The total map size of the user metadata must not exceed 50 KB.
+If this validation fails, the update method is dropped with the appropriate console message.
+
+## User metadata vs. Ticket metadata
+
+Track User metadata to understand and describe your User better. Examples are:
+
+* First and last name
+* User ID
+* Address
+* Subscription status
+* Date of birth
+
+Use [Ticket metadata](/react/configuration-and-data/ticket-metadata) to attach useful custom data to each ticket. Examples are statuses of various app variables at the moment the ticket is sent:
+
+* Current chat room ID
+* List of items currently in a shopping cart
+* Task synced true/false
+* Number of search results
+* List sorted by what
+* Video muted true/false
+

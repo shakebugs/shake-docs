@@ -1,20 +1,93 @@
 ﻿---
 id: manage-sensitive-data
-title: Manage sensitive data
+title: Protect sensitive data
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-As with any third-party service, it’s important for you to understand and have the ability to manage
+>As with any third-party service, it’s important for you to understand and have the ability to manage
 what data is sent to Shake servers. Shake SDK allows you to filter out sensitive data on the mobile device itself,
 so it never reaches the Shake servers.
 
-## Views
-You can mark any view as private, and it'll automatically be deleted from the screenshot.
-Private views are stored as a weak reference, they get cleared from the memory when not used anymore.
+## Automatically redacted sensitive data
 
-Let's suppose you're building a shopping cart app and you want to delete the name and the credit card number views
-from the screenshot:
+Shake automatically redacts these sensitive data from your notifications, touch events and network requests:
+* email addresses
+* IP addresses
+* credit card numbers
+* bearer tokens
+
+Shake also redacts network header values if the header key is:
+* password 
+* secret
+* passwd
+* api_key 
+* apikey
+* access_token
+* auth_token
+* credentials
+* mysql_pwd
+* stripetoken
+* Authorization
+* Proxy-Authorization
+* card[number]
+* token
+
+To disable this privacy feature, use the method below:
+
+<Tabs
+groupId="android"
+defaultValue="kotlin"
+values={[
+        { label: 'Java', value: 'java'},
+        { label: 'Kotlin', value: 'kotlin'},
+    ]
+}>
+
+<TabItem value="java">
+
+```java title="App.java"
+// highlight-start
+Shake.getReportConfiguration().setSensitiveDataRedactionEnabled(false);
+// highlight-end
+```
+
+</TabItem>
+
+<TabItem value="kotlin">
+
+```kotlin title="App.kt"
+// highlight-start
+Shake.getReportConfiguration().isSensitiveDataRedactionEnabled = false
+// highlight-end
+```
+
+</TabItem>
+</Tabs>
+
+## Views
+
+<table class="media-container media-container-highlighted mt-40 mb-40">
+<img
+  alt="Private views"
+  width="380"
+  src={useBaseUrl('img/private-view@2x.png')}
+/>
+</table>
+
+You can mark any view as private, and it'll automatically be deleted
+from the [auto screenshot](/android/configuration-and-data/auto-screenshot).
+Private views are stored as a weak reference. They get cleared from the memory when not used anymore.
+
+:::note
+
+These methods won't delete sensitive views from auto screen recording — only from the auto screenshot.
+
+:::
+
+Let's suppose you're building a shopping app and you want to delete the name and the credit card number views
+from the auto screenshot:
 
 <Tabs 
   groupId="android"
@@ -64,7 +137,7 @@ private fun maskSensitiveData() {
 </TabItem>
 </Tabs>
 
-To remove view from private views use following method:
+To remove a view from private views use the following method:
 
 <Tabs 
   groupId="android"
@@ -94,14 +167,14 @@ Shake.removePrivateView(view)
 </TabItem>
 </Tabs>
 
-If you want to delete the whole screen from the screenshot, simply mark the whole activity as private:
+If you want to delete an entire screen from the auto screenshot, simply mark the whole activity as private:
 
 <Tabs
 groupId="android"
 defaultValue="kotlin"
 values={[
-    { label: 'Java', value: 'java'},
-    { label: 'Kotlin', value: 'kotlin'},
+        { label: 'Java', value: 'java'},
+        { label: 'Kotlin', value: 'kotlin'},
     ]
 }>
 
@@ -125,7 +198,6 @@ public class PaymentActivity extends AppCompatActivity {
         // highlight-next-line
         Shake.addPrivateView(this);
     }
-
     ...
 }
 ```
@@ -148,7 +220,6 @@ public class PaymentActivity : AppCompatActivity() {
         // highlight-next-line
         Shake.addPrivateView(this)
     }
-
     ...
 }
 ```
@@ -186,7 +257,7 @@ Shake.removePrivateView(activity)
 </TabItem>
 </Tabs>
 
-If you want to clear all the private views, use the following method:
+To clear all the private views, use the following method:
 
 <Tabs 
   groupId="android"
@@ -216,11 +287,10 @@ Shake.clearPrivateViews()
 </TabItem>
 </Tabs>
 
-Note that these methods won't delete sensitive views from screen recordings, only screenshots.
-
-You can use Android system flag `FLAG_SECURE` on activity if you want to prevent 
-sensitive data from being visible in the screen recording feature.
-`FLAG_SECURE` will make activity black in screen recordings.
+## Auto screen recording
+Use the Android system flag `FLAG_SECURE` on an activity if you want to prevent 
+sensitive data from being visible on the auto screen recording.
+It will make the activity black in the video:
 
 <Tabs
 groupId="android"
@@ -252,7 +322,6 @@ public class PaymentActivity extends AppCompatActivity {
             WindowManager.LayoutParams.FLAG_SECURE);
         // highlight-end
     }
-
     ...
 }
 ```
@@ -278,7 +347,6 @@ public class PaymentActivity : AppCompatActivity() {
             WindowManager.LayoutParams.FLAG_SECURE)
         // highlight-end
     }
-
     ...
 }
 ```
@@ -286,43 +354,14 @@ public class PaymentActivity : AppCompatActivity() {
 </TabItem>
 </Tabs>
 
-You can disable [Screen Recording](/android/configuration-and-data/automatic-screen-recording.md) feature if you want make sure that sensitive data is not recorded.
-
-<Tabs
-  groupId="android"
-  defaultValue="kotlin"
-  values={[
-    { label: 'Java', value: 'java'},
-    { label: 'Kotlin', value: 'kotlin'},
-  ]
-}>
-
-<TabItem value="java">
-
-```java title="App.java"
-// highlight-start
-Shake.getReportConfiguration().setAutoVideoRecording(false);
-// highlight-end
-```
-
-</TabItem>
-
-<TabItem value="kotlin">
-
-```kotlin title="App.kt"
-// highlight-start
-Shake.getReportConfiguration().isAutoVideoRecording = false
-// highlight-end
-```
-
-</TabItem>
-</Tabs>
+Visit [Auto screen recording](/android/configuration-and-data/auto-screen-recording.md)
+to read how to turn it off altogether.
 
 ## Jetpack Compose
 
-In Jetpack Compose, the main building block of the user interface is *Composeable* instead of *View*.
+In Jetpack Compose, the main building block of the UI is *Composeable* instead of *View*.
 
-If you want to make a specific *Composeable* private, copy the following code snippet in to your project:
+If you want to make a specific *Composeable* private, copy the following snippet into your project:
 
 ```kotlin title="ShakePrivateView.kt"
 // highlight-start
@@ -345,7 +384,7 @@ fun ShakePrivateView(content: @Composable () -> Unit) {
 // highlight-end
 ```
 
-Use `ShakePrivateView` *Composeable* like shown below:
+Use `ShakePrivateView` *Composeable* as shown below:
 
 ```kotlin title="MainActivity.kt"
 class MainActivity : ComponentActivity() {
@@ -356,7 +395,7 @@ class MainActivity : ComponentActivity() {
                 Surface(color = MaterialTheme.colors.background) {
                     // highlight-start
                     ShakePrivateView {
-                        Greeting("Android") 
+                        Greeting("Android")
                     }
                     // highlight-end
                 }
@@ -370,15 +409,16 @@ In the example above, the *Greeting* component will be removed from the screensh
 
 ## Touch events
 
-Marking a view as private will automatically delete its touch events' text properties too. Consequently, you'll see them as `data_redacted` strings in your [Activity history](https://www.shakebugs.com/docs/android/activity#user-actions).
-
-Bear in mind that the view's ID, accessibility labels and tags remain visible.
+Marking a view as private will automatically delete its touch events' text properties too.
+Consequently, you'll see them as `data_redacted` strings in ticket's
+[Activity history](/android/configuration-and-data/activity-history).
+The view's ID, accessibility labels and tags remain visible.
 
 ## Network requests
-Certain network requests may contain sensitive data which you may not want to send to Shake servers.
-Use the `Shake.setNetworkRequestsFilter()` method to obfuscate only the sensitive parts of those requests, or to entirely prevent certain network requests from being logged.
-
-For example, if you'd like to obfuscate the *Authorization* header in all network requests sent from your app, do this:
+Network requests may contain sensitive data which you may not want to send to Shake servers.
+Use the `Shake.setNetworkRequestsFilter()` method to obfuscate sensitive parts of those requests,
+or to entirely prevent certain network requests from being logged.
+As an example, if you'd like to obfuscate the *Authorization* header in all network requests sent from your app, do this:
 
 <Tabs
 groupId="android"
@@ -439,7 +479,7 @@ private fun setupNetworkFilter() {
 </TabItem>
 </Tabs>
 
-If you do not want to log specific network requests, return `null` from the `NetworkRequestsFilter` like below:
+If you don't want to log specific network requests, return `null` from the `NetworkRequestsFilter` as shown below:
 
 <Tabs
 groupId="android"
@@ -501,9 +541,9 @@ To clear the network requests filter, use `Shake.setNetworkRequestsFilter(null)`
 
 ## Notification events
 If your app notifications contain sensitive data, use the `Shake.setNotificationEventsFilter()`
-method to obfuscate only the sensitive parts of those notifications, or to entirely prevent certain notifications from being logged.
+method to fully or partially obfuscate those notifications.
 
-For example, if you'd like to obfuscate the description of the notification event that contains e-mail, do this:
+For example, if you'd like to obfuscate the description of the notification event that contains an email, do this:
 
 <Tabs
 groupId="android"
@@ -511,8 +551,8 @@ defaultValue="kotlin"
 values={[
         { label: 'Java', value: 'java'},
         { label: 'Kotlin', value: 'kotlin'},
-        ]
-        }>
+    ]
+}>
 
 <TabItem value="java">
 
@@ -570,8 +610,8 @@ If you do not want to track a specific notification event, return `null` from th
 groupId="android"
 defaultValue="kotlin"
 values={[
-  { label: 'Java', value: 'java'},
-  { label: 'Kotlin', value: 'kotlin'},
+    { label: 'Java', value: 'java'},
+    { label: 'Kotlin', value: 'kotlin'},
   ]
 }>
 
@@ -623,53 +663,3 @@ private fun setupNotificationsFilter() {
 </Tabs>
 
 To clear the notification events filter, use `Shake.setNotificationEventsFilter(null)`.
-
-## Automatically redacted sensitive data
-By default, Shake uses a series of regular expressions to redact sensitive data from notifications, touch events and network requests.
-In addition, Shake will replace any header value with `data_redacted` string if the header has a key that matches any string from the list of keywords below:  
-* password 
-* secret 
-* passwd
-* api_key 
-* apikey
-* access_token
-* auth_token
-* credentials
-* mysql_pwd
-* stripetoken
-* Authorization
-* Proxy-Authorization
-* card[number]
-* token
-
-To disable this feature use the method below:
-
-<Tabs
-groupId="android"
-defaultValue="kotlin"
-values={[
-        { label: 'Java', value: 'java'},
-        { label: 'Kotlin', value: 'kotlin'},
-        ]
-        }>
-
-<TabItem value="java">
-
-```java title="App.java"
-// highlight-start
-Shake.getReportConfiguration().setSensitiveDataRedactionEnabled(false);
-// highlight-end
-```
-
-</TabItem>
-
-<TabItem value="kotlin">
-
-```kotlin title="App.kt"
-// highlight-start
-Shake.getReportConfiguration().isSensitiveDataRedactionEnabled = false
-// highlight-end
-```
-
-</TabItem>
-</Tabs>

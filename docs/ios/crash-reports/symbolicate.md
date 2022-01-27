@@ -3,109 +3,95 @@ id: symbolicate
 title: Symbolicate
 ---
 
-The crash reports are a lot more useful when you see your symbolicated application frames.
-
-In order to symbolicate the reports, Shake needs the dSYMS which can be found on your system.
+>Crash reports are a lot more useful when you see your symbolicated application frames.
 
 
-:::note
+## Introduction
 
-Unsymbolicated crash reports will appear in the special section on the Shake dashboard and won't be processed
-if the dSYM files are not uploaded. Dashboard will display the UUID of the required dSYMS which can be found on 
-you system.
+In order for crash reports to be symbolicated, you need to upload your dSYM files to Shake.
 
-:::
-
-### Enable dSYMS for debug builds
-
-If you plan using Shake Crash in a development environment, every debug build action needs to generate dSYM files.
-
-When in your project / workspace, click your *App.xcodeproj* blue project icon — it's usually located at the top of the *File Inspector* tab in your left-hand pane. 
-Select your main app target and open the Build Settings for that target. Navigate to the Build Options section and choose 
-*dwarf with dSYM file* option for your Debug/Development configuration.
+Unsymbolicated crash reports will appear in the special section of your Shake dashboard.
+You will see UUIDs of the required dSYM files which you can then find on your system.
 
 
-## Finding dSYMS
+## Enable dSYM files for debug builds
 
-Run the below command in your terminal
+If you plan using crash reporting in a development environment, every debug build action needs to generate dSYM files.
+When in your project:
+1. Click your *App.xcodeproj* blue project icon usually located at the top of the *File Inspector* tab in your left-hand pane
+1. Select your main app target
+1. Open Build Settings for that target
+1. Navigate to the Build Options section
+1. Choose *dwarf with dSYM file* option for your Debug/Development configuration
+
+
+## Find dSYM files
+
+Run this command in your terminal to list all available dSYM files found on your system so you can identify the ones that are missing:
 
 ```finding_dsyms"
 // highlight-next-line
 mdfind -name .dSYM | while read -r line; do dwarfdump -u "$line"; done 
 ```
 
-This will list all of the available dSYM files found on the system so you can identify the ones that are missing.
+## Upload manually to Shake dashboard
 
-Missing dSYMs are marked on your Shake dashboard.
+Locate your app's dSYM files:
+*Xcode → Preferences → Locations → Derived Data* → click the *Finder* folder link.
 
-DSYMS can be uploaded to Shake with one of the methods listed below. 
+For archived apps with Bitcode enabled, which have already been uploaded to the App Store, visit 
+*Xcode → Window → Organizer* to manually download the App Store generated debug symbols
+by clicking the *Download Debug Symbols* button on the right hand pane.
 
-For the apps built with Bitcode setting, use the Fastlane plugin to grab the correct dSYMS and upload them to Shake.
+Now zip the symbolication files.
 
-## Upload dSYMS manually via Shake dashboard
-
-Your application dSYM files can be manually zipped and uploaded to the Shake dashboard.
-
-To access your application mapping files on the *Shake Dashboard* click your *avatar* and navigate to *My Account › Apps* and click
-on your application name. Once the menu is expanded click the **Mapping files**.
-
-Symbolication files are located in the project build folder which is easily accessed by navigating to 
-Xcode *Preferences › Locations › Derived Data* and clicking the *Finder* folder link.
-
-For archived applications with Bitcode enabled, which have already been uploaded to the AppStore, use the 
-Xcode *Organizer* tool (*Xcode › Window › Organizer*) to manually download the AppStore generated debug symbols by clicking the *"Download Debug Symbols"* button on the right hand pane.
-
-Make sure to ZIP the symbolication files before dropping them on the Shake dashboard.
-
-## Upload dSYMS using RunPhase script
-
-Shake ships with the `upload-symbols.sh`script which uploads dSYMS to Shake servers.
+To upload dSYM files to the Shake dashboard:
+1. Visit [Settings → Apps](https://app.shakebugs.com/settings/apps)
+1. Click your app name to expand it
+1. Click the **Mapping files** button
+1. Drag and drop your zipped symbolication files there
 
 
-When your project is opened with Xcode, select the *Scheme* and then *EditScheme* in the dropdown menu.
+## Upload dSYM files using RunPhase script
 
-Expand the *Build Action* options and select *Post Actions*. Select the **+** icon and add a new *Run Script Phase* to build post actions.
+:::note
+Use this method if your app doesn't use Bitcode binary format.
+:::
 
-This ensures that latest dSYMS are uploaded after every build process. Make sure to replace the placeholder values
-with the correct values for your environment.
+Shake ships with the `upload-symbols.sh` script which uploads dSYM files to Shake servers.
+
+To ensure that the latest dSYM files are automatically uploaded after every build process, add a new Run Script Phase:
+*Xcode → Scheme → EditScheme* → expand the *Build Action* options → *Post Actions → +*
+
+Paste this script but make sure to replace `your-api-client-id` and `your-api-client-secret` with the actual values
+you have in [your workspace settings](https://app.shakebugs.com/settings/workspace#general):
 
 ```script
 //highlight-start
 Path/to/upload-symbols.sh \
---client_id your_client_id \
---client_secret your_client_secret
+--client_id your-api-client-id \
+--client_secret your-api-client-secret
 //highlight-end
 ```
 
-:::note
-This method is not suitable for apps using __Bitcode__ binary format.
-:::
-
-If your reports are not being symbolicated, make sure the script is working properly
+If your crash reports are not being symbolicated, make sure the script is working properly
 by doublechecking the Xcode Build log for Shake upload script errors. 
+When looking at the Build log, search for the __"SHAKE_SCRIPT"__ keyword to identify potential problems and see whether the upload was successful.
 
-:::tip
 
-When viewing the Build log, search for "SHAKE_SCRIPT" keyword to identify potential problems and check if the upload was successful.
+## Upload dSYM files using fastlane plugin
 
+:::note
+Use this method if your app has Bitcode format enabled.
 :::
 
-## Upload dSYMS using fastlane plugin
+[fastlane](https://fastlane.tools/) is an open source app automation platform ([docs](http://docs.fastlane.tools)).
+You can use it to automate App Store Connect authentication and downloading of dSYM files.
 
-Fastlane is an open source platform aimed at simplifying mobile development tasks. It handles authentication with 
-App Store Connect and downloading dSYM files.
 
-Use this method if your app has __Bitcode__ format enabled.
+### Install fastlane
 
-### Installing fastlane
-
-It is recommended that you use `Bundler` and `Gemfile` to define your dependency on fastlane. 
-This will clearly define the fastlane version to be used and its dependencies, and will also speed up fastlane execution.
-
-First of all, you should run `bundle init`  command which will generate Gemfile.
-After the Gemfile is generated, add `fastlane` gem. 
-
-Now, your newly created Gemfile should look like this:
+First, run the `bundle init`  command in your terminal which will generate the Gemfile like this one:
 
 <TabItem value="gemifle">
 
@@ -117,13 +103,12 @@ gem "fastlane"
 ```
 </TabItem>
 
-Next, run the `bundle install` command which will install fastlane and all associated dependencies.
+Then, run the `bundle install` command to install fastlane and associated dependencies.
 
-Navigate your terminal to your project's directory and run `fastlane init` command.
+Lastly, navigate your terminal to your project's directory and run the `fastlane init` command.
 
-For more info about installing fastlane, visit the [fastlane](http://docs.fastlane.tools) docs.
 
-### Installing Shake plugin 
+### Install Shake plugin 
 
 <TabItem value="ruby">
 
@@ -134,45 +119,49 @@ bundle exec fastlane add_plugin upload_symbols_to_shake
 </TabItem>
 
 
-### Using the plugin
+### Use the plugin
 
-If you have [Bitcode](https://help.apple.com/xcode/mac/current/#/devbbdc5ce4f) enabled in your application's project settings, 
-dSYM files are generated by the App Store when your app is recompiled after the upload, and will need to be downloaded by fastlane.
+If you have [Bitcode](https://help.apple.com/xcode/mac/current/#/devbbdc5ce4f) enabled in your app's project settings, 
+dSYM files are generated by the App Store when your app is recompiled after the upload. fastlane will need to download them.
 
-In this situation you can use Shake plugin with [download_dsyms](http://docs.fastlane.tools/actions/download_dsyms/#download_dsyms) to upload dSYM files:
-
-<TabItem value="ruby">
-
-```ruby title="Fastfile"
-// highlight-start
-lane :refresh_dsyms do
-  download_dsyms(version: "latest")
-  upload_symbols_to_shake(client_id: "<Shake client id>", client_secret: "<Shake client secret>", bundle_id: "<Bundle id of project>",  plist_path: "<Path to Info.plist>")
-end
-// highlight-end
-```
-</TabItem>
-
-On the other hand, if you have [Bitcode](https://help.apple.com/xcode/mac/current/#/devbbdc5ce4f) disabled, add the `upload_symbols_to_shake` action with [gym](http://docs.fastlane.tools/actions/gym/#gym) to upload dSYMs generated from the build:
+In this case, use Shake with [download_dsyms](http://docs.fastlane.tools/actions/download_dsyms/#download_dsyms) to upload dSYM files:
 
 <TabItem value="ruby">
 
 ```ruby title="Fastfile"
 // highlight-start
 lane :refresh_dsyms do
-  gym
-    upload_symbols_to_shake(client_id: "<Shake client id>", client_secret: "<Shake client secret>", bundle_id: "<Bundle id of project>", plist_path: "<Path to Info.plist>")
+    download_dsyms(version: "latest")
+    upload_symbols_to_shake(client_id: "<Shake client id>", client_secret: "<Shake client secret>", bundle_id: "<Bundle id of project>",  plist_path: "<Path to Info.plist>")
 end
 // highlight-end
 ```
 </TabItem>
 
-You can also pass the dSYM file paths manually:
+You can find your `<Shake client id>` and `<Shake client secret>` in
+[your workspace settings](https://app.shakebugs.com/settings/workspace#general).
+
+On the other hand, if you have [Bitcode](https://help.apple.com/xcode/mac/current/#/devbbdc5ce4f) disabled,
+add the `upload_symbols_to_shake` action with [gym](http://docs.fastlane.tools/actions/gym/#gym) to upload dSYMs generated from the build:
+
+<TabItem value="ruby">
+
+```ruby title="Fastfile"
+// highlight-start
+lane :refresh_dsyms do
+    gym
+        upload_symbols_to_shake(client_id: "<Shake client id>", client_secret: "<Shake client secret>", bundle_id: "<Bundle id of project>", plist_path: "<Path to Info.plist>")
+end
+// highlight-end
+```
+</TabItem>
+
+Or, you can pass the dSYM file paths manually:
 
 <TabItem value="ruby">
 
 ```ruby title="Fastfile"
 // highlight-next-line
-  upload_symbols_to_shake(client_id: "<Shake client id>", client_secret: "<Shake client secret>", bundle_id: "<Bundle id of project>", dsym_array_paths: ["./App1.dSYM.zip", "./App2.dSYM.zip"],  plist_path: "<Path to Info.plist>")
+upload_symbols_to_shake(client_id: "<Shake client id>", client_secret: "<Shake client secret>", bundle_id: "<Bundle id of project>", dsym_array_paths: ["./App1.dSYM.zip", "./App2.dSYM.zip"],  plist_path: "<Path to Info.plist>")
 ```
 </TabItem>
