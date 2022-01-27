@@ -401,6 +401,12 @@ main[class*='docsHome'] .p2 a:hover {
 /*
 * Top navbar
 */
+
+/* Hide dark/light switch */
+.navbar__items--right div[class*='toggle'], .navbar-sidebar div[class*='toggle']{
+  display: none !important;
+}
+
 .navbar {
   margin-left: 16px;
   margin-right: 16px;

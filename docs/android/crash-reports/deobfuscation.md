@@ -118,8 +118,8 @@ STATUS=$(curl -H "Authorization: Bearer $ACCESS_TOKEN" -F app_version_code="${VE
          -X POST "$FILES_ENDPOINT" --write-out %{http_code})
 
 if [ "${STATUS: -3}" != "200" ]; then
-  echo "Error while uploading mapping files"
-  exit 0
+    echo "Error while uploading mapping files"
+    exit 0
 fi
 
 echo "Success! Mapping file uploaded successfully."

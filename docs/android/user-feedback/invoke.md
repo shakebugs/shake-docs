@@ -40,7 +40,7 @@ import TabItem from '@theme/TabItem';
 // highlight-start
 Shake.getReportConfiguration().setInvokeShakeOnShakeDeviceEvent(true);
 Shake.getReportConfiguration().setInvokeShakeOnScreenshot(true);
-Shake.start(this, "client-id", "client-secret");
+Shake.start(this, "your-api-client-id", "your-api-client-secret");
 // highlight-end
 ```
 
@@ -52,7 +52,7 @@ Shake.start(this, "client-id", "client-secret");
 // highlight-start
 Shake.getReportConfiguration().isInvokeShakeOnShakeDeviceEvent = true
 Shake.getReportConfiguration().isInvokeShakeOnScreenshot = true
-Shake.start(this, "client-id", "client-secret")
+Shake.start(this, "your-api-client-id", "your-api-client-secret")
 // highlight-end
 ```
 

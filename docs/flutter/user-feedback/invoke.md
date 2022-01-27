@@ -28,7 +28,7 @@ Let's look at an example where you want Shake user feedback to be invoked either
 // highlight-start
 Shake.setInvokeShakeOnShakeDeviceEvent(true);
 Shake.setInvokeShakeOnScreenshot(true);
-Shake.start('client-id', 'client-secret');
+Shake.start('your-api-client-id', 'your-api-client-secret');
 // highlight-end
 ```
 
@@ -116,8 +116,8 @@ The default value is `ShakeScreen.newTicket`.
 // highlight-start
 import 'package:shake_flutter/shake_flutter.dart';
 import 'package:shake_flutter/enums/shake_screen.dart';
-
 // highlight-end
+
 void onReportProblemPressed() { 
     // Displays Shake with the New Ticket screen.
     // highlight-next-line

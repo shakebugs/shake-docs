@@ -48,8 +48,8 @@ and updating **specific** user metadata in their respective contexts:
 ```dart title="main.dart"
 void onUserSettingsConfigured(UserSettings userSettings) {
     fetchUserInformation();
+    
     // highlight-start
-
     var metadata = <String, String> { 
         'userSettings': userSettings.toString() 
     };

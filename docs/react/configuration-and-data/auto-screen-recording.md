@@ -13,7 +13,7 @@ Turn off this feature in production!
 
 ## Enable
 Auto screen recording is disabled by default. To enable it:
-1. Call `Shake.getReportConfiguration().setAutoVideoRecording(true)` first.
+1. Call `Shake.setAutoVideoRecording(true)` first.
 1. Then, start Shake with `Shake.start()`.
 
 ```javascript title="App.js"

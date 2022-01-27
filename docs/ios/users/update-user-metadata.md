@@ -108,9 +108,11 @@ and updating **specific** user metadata in their respective contexts:
 
     [self fetchUserInformation];
 
+    //highlight-start
     [SHKShake updateUserMetadata:@{
         @"userSettings": self.userSettings.description
-  }];
+    }];
+    //highlight-end
 }
 ```
 
@@ -123,8 +125,11 @@ func onUserSettingsConfigured(userSettings: UserSettings) {
 
     fetchUserInformation()
 
+    //highlight-start
     Shake.updateUserMetadata([
-        "userSettings": userSettings.description])
+        "userSettings": userSettings.description
+    ])
+    //highlight-end
 }
 ```
 

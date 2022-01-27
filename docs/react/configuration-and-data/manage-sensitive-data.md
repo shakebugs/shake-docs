@@ -190,8 +190,8 @@ const setupNotificationsFilter = () => {
         if (notificationEvent.getTitle() === 'E-mail changed') {
             return null;
         }
-    return notificationEvent;
-  });
+       return notificationEvent;
+    });
 // highlight-end
 }
 ```

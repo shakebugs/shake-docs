@@ -29,7 +29,7 @@ import TabItem from '@theme/TabItem';
 // highlight-start
 Shake.setInvokeShakeOnShakeDeviceEvent(true);
 Shake.setInvokeShakeOnScreenshot(true);
-Shake.start('client-id', 'client-secret');
+Shake.start('your-api-client-id', 'your-api-client-secret');
 // highlight-end
 ```
 
