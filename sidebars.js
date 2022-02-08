@@ -29,6 +29,7 @@ module.exports = {
                     label: 'User feedback',
                     items: [
                         'android/user-feedback/overview',
+                        'android/user-feedback/enable',
                         'android/user-feedback/invoke',
                         'android/user-feedback/intro-message',
                         'android/user-feedback/feedback-type',
@@ -120,6 +121,7 @@ module.exports = {
                     label: 'User feedback',
                     items: [
                         'ios/user-feedback/overview',
+                        'ios/user-feedback/enable',
                         'ios/user-feedback/invoke',
                         'ios/user-feedback/intro-message',
                         'ios/user-feedback/feedback-type',
