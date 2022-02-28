@@ -8,9 +8,16 @@ title: Release notes
 
 What would you like us to build next? Upvote upcoming features and suggest new ideas on the [Public feedback board](https://feedback.shakebugs.com/).
 
+## 15.1.2
+<span class="tag-button">February 28, 2022</span>&nbsp;&nbsp;
+<span class="tag-button green-tag-button">Latest version</span>
+
+#### Bug fixes
+
+We happily squashed a few pesky bugs.
+
 ## 15.1.1
 <span class="tag-button">January 19, 2022</span>&nbsp;&nbsp;
-<span class="tag-button green-tag-button">Latest version</span>
 
 #### What's new
 
