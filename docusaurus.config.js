@@ -21,7 +21,9 @@ module.exports = {
       additionalLanguages: ['groovy', 'kotlin', 'java', 'swift', 'dart', 'batch'],
     },
     algolia: {
-      apiKey: '0a7f58d03fe8cc9d31b51d69d009654f',
+      appId: 'Q6FOQ6DC6Q',
+      apiKey: 'ece3a70ce6195e5404d1448556bf254a',
+      //apiKey: '0a7f58d03fe8cc9d31b51d69d009654f',
       indexName: 'shakebugs',
     },
     navbar: {
