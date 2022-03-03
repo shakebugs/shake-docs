@@ -479,7 +479,6 @@ svg[class*='iconExternalLink'] {
 
 @media (min-width: 997px) {
   div[class*='searchBox'] {
-    display: none;
     position: absolute;
     left: calc(50% - 177px);
   }
