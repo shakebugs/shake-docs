@@ -123,7 +123,7 @@ module.exports = {
                         'ios/user-feedback/invoke',
                         'ios/user-feedback/intro-message',
                         'ios/user-feedback/feedback-type',
-                        'ios/user-feedback/silent-user-feedback',                    
+                        'ios/user-feedback/silent-user-feedback',
                     ]
                 },
                 {
@@ -144,11 +144,11 @@ module.exports = {
                     items: [
                         'ios/users/overview',
                         'ios/users/register-user',
-                        'ios/users/chat',                        
+                        'ios/users/chat',
                         'ios/users/unregister-user',
                         'ios/users/update-user-metadata',
                         'ios/users/update-user-identifier',
-                        'ios/users/advanced-usage',                        
+                        'ios/users/advanced-usage',
                     ]
                 },
             ]
@@ -166,7 +166,7 @@ module.exports = {
                 'ios/configuration-and-data/activity-history',
                 'ios/configuration-and-data/black-box',
                 'ios/configuration-and-data/ticket-metadata',
-                'ios/configuration-and-data/auto-attach-files',                
+                'ios/configuration-and-data/auto-attach-files',
                 'ios/configuration-and-data/manage-sensitive-data',
                 'ios/configuration-and-data/data-privacy-disclosure'
             ]
@@ -234,7 +234,7 @@ module.exports = {
                 'flutter/configuration-and-data/new-ticket-screen-elements',
                 'flutter/configuration-and-data/data-attached-by-default',
                 'flutter/configuration-and-data/auto-screenshot',
-                'flutter/configuration-and-data/auto-screen-recording',                
+                'flutter/configuration-and-data/auto-screen-recording',
                 'flutter/configuration-and-data/activity-history',
                 'flutter/configuration-and-data/black-box',
                 'flutter/configuration-and-data/ticket-metadata',
@@ -282,6 +282,7 @@ module.exports = {
                     label: 'User feedback',
                     items: [
                         'react/user-feedback/overview',
+                        'react/user-feedback/enable',
                         'react/user-feedback/invoke',
                         'react/user-feedback/intro-message',
                         'react/user-feedback/feedback-type',
@@ -308,7 +309,6 @@ module.exports = {
             label: 'Configuration and data',
             items: [
                 'react/configuration-and-data/overview',
-                'react/configuration-and-data/disable',
                 'react/configuration-and-data/new-ticket-screen-elements',
                 'react/configuration-and-data/data-attached-by-default',
                 'react/configuration-and-data/auto-screenshot',
