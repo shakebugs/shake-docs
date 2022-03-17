@@ -29,6 +29,7 @@ module.exports = {
                     label: 'User feedback',
                     items: [
                         'android/user-feedback/overview',
+                        'android/user-feedback/enable',
                         'android/user-feedback/invoke',
                         'android/user-feedback/intro-message',
                         'android/user-feedback/feedback-type',
@@ -67,7 +68,6 @@ module.exports = {
             label: 'Configuration and data',
             items: [
                 'android/configuration-and-data/overview',
-                'android/configuration-and-data/disable',
                 'android/configuration-and-data/new-ticket-screen-elements',
                 'android/configuration-and-data/data-attached-by-default',
                 'android/configuration-and-data/auto-screenshot',
@@ -120,10 +120,11 @@ module.exports = {
                     label: 'User feedback',
                     items: [
                         'ios/user-feedback/overview',
+                        'ios/user-feedback/enable',
                         'ios/user-feedback/invoke',
                         'ios/user-feedback/intro-message',
                         'ios/user-feedback/feedback-type',
-                        'ios/user-feedback/silent-user-feedback',                    
+                        'ios/user-feedback/silent-user-feedback',
                     ]
                 },
                 {
@@ -144,11 +145,11 @@ module.exports = {
                     items: [
                         'ios/users/overview',
                         'ios/users/register-user',
-                        'ios/users/chat',                        
+                        'ios/users/chat',
                         'ios/users/unregister-user',
                         'ios/users/update-user-metadata',
                         'ios/users/update-user-identifier',
-                        'ios/users/advanced-usage',                        
+                        'ios/users/advanced-usage',
                     ]
                 },
             ]
@@ -158,7 +159,6 @@ module.exports = {
             label: 'Configuration and data',
             items: [
                 'ios/configuration-and-data/overview',
-                'ios/configuration-and-data/disable',
                 'ios/configuration-and-data/new-ticket-screen-elements',
                 'ios/configuration-and-data/data-attached-by-default',
                 'ios/configuration-and-data/auto-screenshot',
@@ -166,7 +166,7 @@ module.exports = {
                 'ios/configuration-and-data/activity-history',
                 'ios/configuration-and-data/black-box',
                 'ios/configuration-and-data/ticket-metadata',
-                'ios/configuration-and-data/auto-attach-files',                
+                'ios/configuration-and-data/auto-attach-files',
                 'ios/configuration-and-data/manage-sensitive-data',
                 'ios/configuration-and-data/data-privacy-disclosure'
             ]
@@ -234,7 +234,7 @@ module.exports = {
                 'flutter/configuration-and-data/new-ticket-screen-elements',
                 'flutter/configuration-and-data/data-attached-by-default',
                 'flutter/configuration-and-data/auto-screenshot',
-                'flutter/configuration-and-data/auto-screen-recording',                
+                'flutter/configuration-and-data/auto-screen-recording',
                 'flutter/configuration-and-data/activity-history',
                 'flutter/configuration-and-data/black-box',
                 'flutter/configuration-and-data/ticket-metadata',
