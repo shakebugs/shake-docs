@@ -3,6 +3,8 @@ id: activity-history
 title: Activity history
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 >Shake tracks user's interaction with your app, their network traffic, notifications, logs and system events,
 and automatically attaches all of those to the ticket.
@@ -13,46 +15,13 @@ and automatically attaches all of those to the ticket.
 
 ### User actions
 
-To set up Shake to observe taps made on your app's UI elements, add this to the Activity you want to track:
+Shake automatically observes taps made on your app's UI elements.
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
+:::note
 
-<Tabs
-  groupId="android"
-  defaultValue="kotlin"
-  values={[
-    { label: 'Java', value: 'java'},
-    { label: 'Kotlin', value: 'kotlin'},
-  ]
-}>
+This feature is disabled for apps built with Jetpack Compose.
 
-<TabItem value="java">
-
-```java title="MainActivity.java"
-@Override
-public boolean dispatchTouchEvent(MotionEvent event) {
-    // highlight-next-line
-    Shake.handleTouchEvent(event, this);
-    return super.dispatchTouchEvent(event);
-}
-```
-
-</TabItem>
-
-<TabItem value="kotlin">
-
-```kotlin title="MainActivity.kt"
-override fun dispatchTouchEvent(event: MotionEvent): Boolean {
-    // highlight-next-line
-    Shake.handleTouchEvent(event, this)
-    return super.dispatchTouchEvent(event)
-}
-```
-
-</TabItem>
-</Tabs>
-
+:::note
 
 ### Network traffic
 

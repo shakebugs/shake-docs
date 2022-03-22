@@ -95,16 +95,67 @@ If you’re creating a custom *Application* class for the first time, specify it
 </manifest>
 ```
 
-:::note
-
-We recommend initializing Shake in the *Application* class.
-If, however, you want to initialize Shake after your app has started,
-feel free to use `Shake.start()` method in the Activity. Just make sure you call it in the *onCreate* callback of the *Activity*.
-
-:::
-
 Build and run your project by selecting *Run → Run* in the menu bar. This first run will automatically
 add your app to your [Shake dashboard](https://app.shakebugs.com/) based on your app bundle ID.
+
+## Conditional initialization
+
+We recommend initializing Shake in the entry point of your app.
+However, depending on your app, you'll want to initialize Shake just in a specific conditions, depending on your app data.
+You can do it as shown in the example below when your app data is available:
+
+<Tabs
+  groupId="android"
+  defaultValue="kotlin"
+  values={[
+    { label: 'Java', value: 'java'},
+    { label: 'Kotlin', value: 'kotlin'},
+  ]
+}>
+
+<TabItem value="java">
+
+```java title="MainActivity.java"
+public class MainActivity extends Activity {
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        if (User.isTester) {
+            // highlight-next-line
+            Shake.start(this, "your-api-client-id", "your-api-client-secret");
+        }
+    }
+}
+```
+
+</TabItem>
+
+<TabItem value="kotlin">
+
+```kotlin title="MainActivity.kt"
+class MainActivity : Activity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        if (User.isTester) {
+            // highlight-next-line
+            Shake.start(this, "your-api-client-id", "your-api-client-secret")
+        }
+    }
+}
+```
+
+</TabItem>
+</Tabs>
+
+:::note
+
+If you are initializing Shake outside *Application* class, make sure you initialize it in the *onCreate* callback of the *Activity*.
+
+:::
 
 ## Visit your Shake dashboard
 
