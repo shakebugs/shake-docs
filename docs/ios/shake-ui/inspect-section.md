@@ -12,9 +12,9 @@ In case of a [Crash report](/ios/crash-reports/ask-for-description/#enable), the
 
 ## Introduction
 
-They access the Inspect screen by tapping the *Inspect* button on the [New ticket screen](/ios/shake-ui/new-ticket-screen.md).
+They access the Inspect section by tapping the *Inspect* button on the [New ticket screen](/ios/shake-ui/new-ticket-screen.md).
 
-## Inspect section screens
+## Screens
 
 The Inspect section consists of five screens. Here's how they're related:
 
@@ -32,7 +32,7 @@ and here's how they look like:
 <img
   className="screen-image"
   alt="Inspect section"
-  width="580"
+  width="586"
   src={useBaseUrl('screens/inspect-section-ui@2x.png')}
 />
 </table>
