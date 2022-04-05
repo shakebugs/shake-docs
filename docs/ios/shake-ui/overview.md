@@ -11,12 +11,12 @@ import TabItem from '@theme/TabItem';
 
 ## Screens
 
-The Shake UI consists of five screens, and here's how they're related:
+The Shake UI consists of nine screens, and here's how they're related:
 
-<table class="media-container mt-40">
+<table class="media-container mt-40 mb-40">
 <img
   alt="Shake screens structure"
-  width="534"
+  width="544"
   src={useBaseUrl('screens/shake-screens-structure.svg')}
 />
 </table>

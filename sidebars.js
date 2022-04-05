@@ -17,7 +17,7 @@ module.exports = {
                 'android/shake-ui/new-ticket-screen',
                 'android/shake-ui/chat-screen',
                 'android/shake-ui/drawing-screen',
-                'android/shake-ui/inspect-screen'
+                'android/shake-ui/inspect-section'
             ]
         },
         {
@@ -108,7 +108,7 @@ module.exports = {
                 'ios/shake-ui/new-ticket-screen',
                 'ios/shake-ui/chat-screen',
                 'ios/shake-ui/drawing-screen',
-                'ios/shake-ui/inspect-screen',
+                'ios/shake-ui/inspect-section',
             ]
         },
         {
@@ -188,10 +188,10 @@ module.exports = {
             items: [
                 'flutter/shake-ui/overview',
                 'flutter/shake-ui/home-screen',
-                'flutter/shake-ui/chat-screen',
-                'flutter/shake-ui/inspect-screen',
-                'flutter/shake-ui/drawing-screen',
                 'flutter/shake-ui/new-ticket-screen',
+                'flutter/shake-ui/chat-screen',
+                'flutter/shake-ui/drawing-screen',
+                'flutter/shake-ui/inspect-screen'
             ]
         },
         {

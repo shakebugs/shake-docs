@@ -17,7 +17,7 @@ The Shake UI consists of five screens, and here's how they're related:
 <img
   alt="Shake screens structure"
   width="534"
-  src={useBaseUrl('screens/shake-screens-structure.svg')}
+  src={useBaseUrl('screens/shake-screens-structure(2).svg')}
 />
 </table>
 

@@ -55,7 +55,7 @@ A common approach developers take is updating **generic** user metadata from one
         @"last_name": self.currentUser.lastName,
         @"email": self.currentUser.email,
         @"status": self.currentUser.status
-    }
+    };
 }
 @end
 ```

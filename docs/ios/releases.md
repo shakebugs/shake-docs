@@ -8,9 +8,18 @@ title: Release notes
 
 What would you like us to build next? Upvote upcoming features and suggest new ideas on the [Public feedback board](https://feedback.shakebugs.com/).
 
+## 15.2.0
+<span class="tag-button">April 5, 2022</span>&nbsp;&nbsp;
+<span class="tag-button green-tag-button">Latest version</span>
+
+#### What's new
+The former Inspect screen has now turned into an entire [Inspect section](/ios/shake-ui/inspect-section). Your testers can now browse, filter and share ticket's Activity history, inspect every log, see Ticket metadata, User metadata and the stack trace — all without ever leaving your app.
+
+#### Bug fixes
+We fixed few minor bugs that were causing problems. Now Shake runs smoother and is more stable.
+
 ## 15.1.2
 <span class="tag-button">February 28, 2022</span>&nbsp;&nbsp;
-<span class="tag-button green-tag-button">Latest version</span>
 
 #### Bug fixes
 
