@@ -51,7 +51,6 @@ android {
 }
 ```
 
-
 ## Initialize Shake
 
 Call `Shake.start()` method in your *main.dart* file. 
@@ -78,11 +77,31 @@ void main() {
 Build and run your project by selecting *Run → Run* in the menu bar. This first run will automatically
 add your app to your [Shake dashboard](https://app.shakebugs.com/) based on your app bundle ID.
 
+## Conditional initialization
+
+We recommend initializing Shake in the entry point of your app.
+However, depending on your app, you'll want to initialize Shake just in a specific conditions, depending on your app data.
+You can do it as shown in the example below when your app data is available:
+
+```dart title="main_screen.dart"
+//highlight-next-line
+import 'package:shake_flutter/shake_flutter.dart';
+
+class _MainScreenState extends State<MainScreen> {
+  @override
+  void initState() {
+    super.initState();
+
+    if (User.isTester) {
+        // highlight-next-line
+        Shake.start('your-api-client-id', 'your-api-client-secret');
+    }
+  }
+```
 
 ## Visit your Shake dashboard
 
 Follow the instructions there to send your first feedback with Shake and you're all set.
-
 
 ## SDK customizations
 

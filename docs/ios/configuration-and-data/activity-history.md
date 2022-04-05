@@ -19,7 +19,9 @@ and automatically attaches all of those to the ticket.
 Shake automatically observes taps made on your app's UI elements.
 
 :::note
+
 This feature is disabled for apps built with SwiftUI.
+
 :::note
 
 

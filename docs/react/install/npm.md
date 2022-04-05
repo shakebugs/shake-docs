@@ -66,7 +66,7 @@ buildscript {
 Call `Shake.start()` in your *index.js* file. 
 Replace `your-api-client-id` and `your-api-client-secret` with the actual values you have in [your workspace settings](https://app.shakebugs.com/settings/workspace#general):
 
-```javascript title="index.js"
+```js title="index.js"
 import {AppRegistry} from 'react-native';
 import App from './src/App';
 import {name as appName} from './app.json';
@@ -85,6 +85,27 @@ Or use the `react-native run-ios` command to run your app on the iOS device.
  
 This first run will automatically
 add your app to your [Shake dashboard](https://app.shakebugs.com/) based on your app bundle ID.
+
+## Conditional initialization
+
+We recommend initializing Shake in the entry point of your app.
+However, depending on your app, you'll want to initialize Shake just in a specific conditions, depending on your app data.
+You can do it as shown in the example below when your app data is available:
+
+```js title="MainScreen.js"
+// highlight-next-line
+import Shake from '@shakebugs/react-native-shake';
+
+const MainScreen = props => {
+
+  useEffect(() => {
+    if (User.isTester) {
+        // highlight-next-line
+        Shake.start('your-api-client-id', 'your-api-client-secret');
+    }
+  }, []);
+}
+```
 
 ## Visit your Shake dashboard
 

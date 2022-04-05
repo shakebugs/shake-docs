@@ -4,11 +4,13 @@
   "private": true,
   "scripts": {
     "start": "npm run start:uat",
+    "start:local": "npm run set:local && docusaurus start --port=5200",
     "start:uat": "npm run set:uat && docusaurus start",
     "start:prd": "npm run set:prd && docusaurus start",
     "build": "npm run build:uat",
     "build:uat": "npm run set:uat && docusaurus build",
     "build:prd": "npm run set:prd && docusaurus build",
+    "set:local": "shx cp ./env/.env.local ./.env",
     "set:uat": "shx cp ./env/.env.uat ./.env",
     "set:prd": "shx cp ./env/.env.prd ./.env",
     "swizzle": "docusaurus swizzle",

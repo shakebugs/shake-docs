@@ -87,6 +87,66 @@ To avoid swizzling conflicts, call `Shake.start()` before initializing other fra
 Now select *Product → Run* in the menu bar. This first run will automatically
 add your app to your [Shake Dashboard](https://app.shakebugs.com/) based on your app bundle ID.
 
+## Conditional initialization
+
+We recommend initializing Shake in the entry point of your app.
+However, depending on your app, you'll want to initialize Shake just in a specific conditions, depending on your app data.
+You can do it as shown in the example below when your app data is available:
+
+<Tabs
+  groupId="ios"
+  defaultValue="swift"
+  values={[
+    { label: 'Objective-C', value: 'objectivec'},
+    { label: 'Swift', value: 'swift'},
+  ]
+}>
+
+<TabItem value="objectivec">
+
+```objectivec title="Main.m"
+#import "Main.h"
+// highlight-next-line
+@import Shake;
+
+@implementation MainVC
+
+- (void)viewDidLoad {
+  [super viewDidLoad];
+
+  if ([User isTester]) {
+    // highlight-next-line
+    [SHKShake startWithClientId:@"_client_id_" clientSecret:@"_client_secret_"];
+  }
+}
+```
+
+</TabItem>
+
+<TabItem value="swift">
+
+```swift title="Main.swift"
+import UIKit
+// highlight-next-line
+import Shake
+
+class MainVC: UIViewController {
+
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    title = "Main"
+
+    if User.isTester() {
+         // highlight-next-line
+         Shake.start(clientId: "_client_id_", clientSecret: "_client_secret_")
+    }
+  }
+}
+```
+
+</TabItem>
+</Tabs>
+
 ## Visit your Shake dashboard
 
 Follow the instructions there to send your first feedback with Shake and you're all set.
