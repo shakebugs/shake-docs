@@ -270,7 +270,7 @@ module.exports = {
                 'react/shake-ui/new-ticket-screen',
                 'react/shake-ui/chat-screen',
                 'react/shake-ui/drawing-screen',
-                'react/shake-ui/inspect-screen',
+                'react/shake-ui/inspect-section',
             ]
         },
         {
