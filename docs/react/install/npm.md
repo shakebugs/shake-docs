@@ -13,20 +13,6 @@ Execute the `npm install` command in your terminal:
 npm install @shakebugs/react-native-shake
 ```
 
-If you use React Native version 0.60 or greater, also run the `add` command:
-
-```bash title="Terminal"
-// highlight-next-line
-react-native add-shake
-```
-
-If you use React Native version lower than 0.60, run the `link` command instead:
-
-```bash title="Terminal"
-// highlight-next-line
-react-native link @shakebugs/react-native-shake
-```
-
 Install pods from the project root directory:
 
 ```bash title="Terminal"
@@ -39,6 +25,7 @@ import ReactVersion from '@site/src/base/ReactVersion';
 After the installation also run `pod update Shake` to be perfectly sure that you're using the latest Shake <ReactVersion/>.
 
 ## Set compileSdkVersion version in the build.gradle file
+
 Since Shake requires `compileSdkVersion` 29 or greater, verify that `compileSdkVersion` is correctly set in the *build.gradle* file:
 
 ```groovy title="android/build.gradle"
@@ -58,6 +45,22 @@ buildscript {
     dependencies {
         classpath("com.android.tools.build:gradle:4.2.1")
     }
+}
+```
+
+## Set multidexEnabled flag in the build.gradle file
+
+If you do not have *multiDexEnabled* flag set, update app-level *build.gradle* like below:
+
+```groovy title="app/build.gradle"
+defaultConfig {
+    applicationId "com.shakebugs.react.example"
+    minSdkVersion rootProject.ext.minSdkVersion
+    targetSdkVersion rootProject.ext.targetSdkVersion
+    versionCode 1
+    versionName "1.0.0"
+    // highlight-next-line
+    multiDexEnabled true
 }
 ```
 

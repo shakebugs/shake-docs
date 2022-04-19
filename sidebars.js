@@ -270,7 +270,7 @@ module.exports = {
                 'react/shake-ui/new-ticket-screen',
                 'react/shake-ui/chat-screen',
                 'react/shake-ui/drawing-screen',
-                'react/shake-ui/inspect-screen',
+                'react/shake-ui/inspect-section',
             ]
         },
         {
@@ -282,6 +282,7 @@ module.exports = {
                     label: 'User feedback',
                     items: [
                         'react/user-feedback/overview',
+                        'react/user-feedback/enable',
                         'react/user-feedback/invoke',
                         'react/user-feedback/intro-message',
                         'react/user-feedback/feedback-type',
@@ -308,7 +309,6 @@ module.exports = {
             label: 'Configuration and data',
             items: [
                 'react/configuration-and-data/overview',
-                'react/configuration-and-data/disable',
                 'react/configuration-and-data/new-ticket-screen-elements',
                 'react/configuration-and-data/data-attached-by-default',
                 'react/configuration-and-data/auto-screenshot',

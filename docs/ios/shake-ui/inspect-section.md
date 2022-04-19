@@ -3,8 +3,6 @@ id: inspect-section
 title: Inspect section
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
 
 > Before submitting a ticket, your users can freely inspect [Data attached by default](/ios/configuration-and-data/data-attached-by-default.md), 
 [Ticket metadata](/ios/configuration-and-data/ticket-metadata.md) and [User metadata](/ios/users/update-user-metadata.md). 

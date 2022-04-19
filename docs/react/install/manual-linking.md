@@ -3,10 +3,10 @@ id: manual-linking
 title: Manual linking
 ---
 
->Normally, linking is done automatically or using the link command.
-If you want to link it manually, you can do it this way.
+> If you want to link library manually, you can do it this way.
 
 ## Android
+
 Add the following lines of code to your *settings.gradle* file:
 
 ```groovy title="settings.gradle"
@@ -40,51 +40,6 @@ Update the `getPackages()` method:
     packages.add(new ShakePackage());
     return packages;
  } 
-```
-
-If you do not have *multiDexEnabled*, update app-level *build.gradle*:
-
-```groovy title="app/build.gradle"
-defaultConfig {
-    applicationId "com.shakebugs.react.example"
-    minSdkVersion rootProject.ext.minSdkVersion
-    targetSdkVersion rootProject.ext.targetSdkVersion
-    versionCode 1
-    versionName "1.0.0"
-    // highlight-next-line
-    multiDexEnabled true
-}
-```
-
-### Enable touch tracking
-
-Enable touch tracking in Android apps by adding following code to *MainActivity.java*:
-
-```java title="MainActivity.java"
-package com.shakebugs.react.example;
-
-// highlight-next-line
-import android.view.MotionEvent;
-
-import com.facebook.react.ReactActivity;
-
-// highlight-next-line
-import com.shakebugs.shake.Shake;
-
-public class MainActivity extends ReactActivity {
-    @Override
-    protected String getMainComponentName() {
-        return "example";
-    }
-
-    // highlight-start
-    @Override
-    public boolean dispatchTouchEvent(MotionEvent ev) {
-        Shake.handleTouchEvent(ev, this);
-        return super.dispatchTouchEvent(ev);
-    }
-    // highlight-end
-}
 ```
 
 ## iOS
