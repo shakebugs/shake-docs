@@ -191,7 +191,7 @@ module.exports = {
                 'flutter/shake-ui/new-ticket-screen',
                 'flutter/shake-ui/chat-screen',
                 'flutter/shake-ui/drawing-screen',
-                'flutter/shake-ui/inspect-screen'
+                'flutter/shake-ui/inspect-section'
             ]
         },
         {
@@ -203,6 +203,7 @@ module.exports = {
                     label: 'User feedback',
                     items: [
                         'flutter/user-feedback/overview',
+                        'flutter/user-feedback/enable',
                         'flutter/user-feedback/invoke',
                         'flutter/user-feedback/intro-message',
                         'flutter/user-feedback/feedback-type',
@@ -230,7 +231,6 @@ module.exports = {
             label: 'Configuration and data',
             items: [
                 'flutter/configuration-and-data/overview',
-                'flutter/configuration-and-data/disable',
                 'flutter/configuration-and-data/new-ticket-screen-elements',
                 'flutter/configuration-and-data/data-attached-by-default',
                 'flutter/configuration-and-data/auto-screenshot',
