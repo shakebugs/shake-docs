@@ -65,7 +65,7 @@ Three tips:
 />
 </table>
 
-By default, this element is visible to your users. Tapping it takes them to the [Inspect screen](/flutter/shake-ui/inspect-screen).
+By default, this element is visible to your users. Tapping it takes them to the [Inspect screen](/flutter/shake-ui/inspect-section).
 If you want to, hide it using the following method:
 
 ```dart title="main.dart"

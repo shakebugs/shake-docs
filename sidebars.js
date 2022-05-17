@@ -191,7 +191,7 @@ module.exports = {
                 'flutter/shake-ui/new-ticket-screen',
                 'flutter/shake-ui/chat-screen',
                 'flutter/shake-ui/drawing-screen',
-                'flutter/shake-ui/inspect-screen'
+                'flutter/shake-ui/inspect-section'
             ]
         },
         {
