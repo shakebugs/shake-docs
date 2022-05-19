@@ -94,3 +94,18 @@ set of _UNNotificationPresentationOptions_ which will be respected by the Shake 
 
 :::
 
+## Unread messages
+
+If you want to show number of unread chat messages somewhere in your app, you can set the unread messages listener.
+The listener is called immediately when set and on each change in the number of unread messages for a registered user:
+
+```dart title="main.dart"
+// highlight-start
+Shake.setUnreadMessagesListener((int count) {
+    // Update number in your text element
+});
+// highlight-end
+```
+
+To remove the unread messages listener, use `Shake.setUnreadMessagesListener(null)`.
+
