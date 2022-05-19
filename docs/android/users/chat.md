@@ -2,6 +2,9 @@
 id: chat
 title: Chat
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 >If needed, your users can [chat with you](/android/shake-ui/chat-screen) to provide you more details 
 about their reported bugs, crashes or feedback. You will be able to fix issues faster and make your customers happier.
@@ -26,3 +29,49 @@ Shake supports only local notifications. That means that your users won't get no
 when your app is in the _background_.
 
 :::
+
+## Unread messages
+
+If you want to show number of unread chat messages somewhere in your app, you can set the unread messages listener.
+The listener is called immediately when set and on each change in the number of unread messages for a registered user:
+
+<Tabs
+  groupId="android"
+  defaultValue="kotlin"
+  values={[
+    { label: 'Java', value: 'java'},
+    { label: 'Kotlin', value: 'kotlin'},
+  ]
+}>
+
+<TabItem value="java">
+
+```java title="MainActivity.java"
+// highlight-start
+Shake.setUnreadChatMessagesListener(new UnreadChatMessagesListener() {
+    @Override
+    public void onUnreadMessagesCountChanged(int count) {
+        // Update number in your text element
+    }
+});
+// highlight-end
+```
+
+</TabItem>
+
+<TabItem value="kotlin">
+
+```kotlin title="MainActivity.kt"
+// highlight-start
+Shake.setUnreadChatMessagesListener(object : UnreadChatMessagesListener {
+    override fun onUnreadMessagesCountChanged(count: Int) {
+        // Update number in your text element
+    }
+})
+// highlight-end
+```
+
+</TabItem>
+</Tabs>
+
+To remove the unread messages listener, use `Shake.setUnreadChatMessagesListener(null)`.
