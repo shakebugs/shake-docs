@@ -8,9 +8,19 @@ title: Release notes
 
 What would you like us to build next? Upvote upcoming features and suggest new ideas on the [Public feedback board](https://feedback.shakebugs.com/).
 
+## 15.3.0
+<span class="tag-button">June 23, 2022</span>&nbsp;&nbsp;
+<span class="tag-button green-tag-button">Latest version</span>
+
+#### What's new
+We introduced chat unread messages listener so you can display to your users how many unread
+messages they have.
+
+#### Bug fixes
+There were a few minor bugs that caused problems, like bugs do. We fixed those, and improved the SDK stability too.
+
 ## 15.2.0
 <span class="tag-button">April 5, 2022</span>&nbsp;&nbsp;
-<span class="tag-button green-tag-button">Latest version</span>
 
 #### What's new
 The former Inspect screen has turned into an entire [Inspect section](/ios/shake-ui/inspect-section). Your testers can now browse, filter and share ticket's Activity history, inspect every log, see Ticket metadata, User metadata and the stack trace — all without ever leaving your app.
