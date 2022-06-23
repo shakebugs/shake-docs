@@ -13,11 +13,11 @@ What would you like us to build next? Upvote upcoming features and suggest new i
 <span class="tag-button green-tag-button">Latest version</span>
 
 #### What's new
-We introduced chat unread messages listener so you can display to your users how many unread
-messages they have.
+The [unread chat messages listener](/ios/users/chat/#unread-messages) is now available in Shake. Anywhere in your app, you can show a user how many unread messages in Shake they have.
 
 #### Bug fixes
-There were a few minor bugs that caused problems, like bugs do. We fixed those, and improved the SDK stability too.
+Whoops! If you passed null to Shake user register or update methods, that would crash your app. Is crashing any good? No — so we knew what to do. Now everything works smoothly.
+While we were at it, we patched a few other obscure edge cases that you were not even aware of. 
 
 ## 15.2.0
 <span class="tag-button">April 5, 2022</span>&nbsp;&nbsp;
