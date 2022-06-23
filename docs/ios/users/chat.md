@@ -2,7 +2,6 @@
 id: chat
 title: Chat
 ---
-
 import useBaseUrl from '@docusaurus/useBaseUrl'; 
 import Tabs from '@theme/Tabs'; 
 import TabItem from '@theme/TabItem';
@@ -132,3 +131,44 @@ If you need to, you can skip showing notifications by simply not reporting anyth
 or by stubbing the received native completion handler with your own set of *UNNotificationPresentationOptions*
 which Shake will respect.
 :::
+
+## Unread messages
+
+If you want to show number of unread chat messages somewhere in your app, you can set the unread messages listener.
+The listener is called immediately when set and on each change in the number of unread messages for a registered user:
+
+<Tabs
+  groupId="ios"
+  defaultValue="swift"
+  values={[
+    { label: 'Objective-C', value: 'objectivec'},
+    { label: 'Swift', value: 'swift'},
+  ]
+}>
+
+<TabItem value="objectivec">
+
+```objectivec title="ViewController.m"
+// highlight-start
+SHKShake.unreadMessagesListener = ^(NSUInteger count) {
+    // Update count in your text element
+};
+// highlight-end
+```
+
+</TabItem>
+
+<TabItem value="swift">
+
+```swift title="ViewController.swift"
+// highlight-start
+Shake.unreadMessagesListener = { count in
+    // Update number in your text element
+}
+// highlight-end
+```
+
+</TabItem>
+</Tabs>
+
+To remove the unread messages listener, use `Shake.unreadMessagesListener = nil`.
