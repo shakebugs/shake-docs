@@ -194,17 +194,6 @@ If you want to disable this feature use the method below:
 Shake.setConsoleLogsEnabled(false);
 ```
 
-
-## Limitations
-
-In a Free workspace you can see up to 20 events that led to the ticket being reported.
-If you need to dive really deep to find causes of the weirdest bugs,
-in a Premium workspace you can browse the full Activity history.
-
-The network request limits for both the request body and the response body are 100 kB each.
-If the request body or the response body contains binary data, it will be presented as a *Binary data* string.
-
-
 ## Disable
 
 Activity history is enabled by default, use the method below to disable it altogether:

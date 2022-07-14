@@ -64,10 +64,3 @@ void attachLogFiles(String username) {
 }
 ```
 
-## Limitations
-
-The maximum number of auto attached files per ticket is 1 for Free workspaces and 10 for Premium workspaces.
-If more files are attached, Shake SDK will successfully upload only some of them.
-
-The maximum allowed individual size for any of those auto attached files is 10 MB.
-If you programmatically attach a file that's larger than that, it won't be uploaded with the ticket.
