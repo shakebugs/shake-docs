@@ -19,9 +19,9 @@ The [unread chat messages listener](/android/users/chat/#unread-messages) is now
 Whoops! If you passed null to Shake user register or update methods, that would crash your app. Is crashing any good? No — so we knew what to do. Now everything works smoothly.
 While we were at it, we patched a few other obscure edge cases that you were not even aware of. 
 
+
 ## 15.2.0
 <span class="tag-button">April 5, 2022</span>&nbsp;&nbsp;
-<span class="tag-button green-tag-button">Latest version</span>
 
 #### What's new
 The former Inspect screen has turned into an entire [Inspect section](/android/shake-ui/inspect-section). Your testers can now browse, filter and share ticket's Activity history, inspect every log, see Ticket metadata, User metadata and the stack trace — all without ever leaving your app.
