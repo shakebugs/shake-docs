@@ -13,6 +13,7 @@ and automatically attaches all of those to the ticket.
 
 ## Setup
 
+## Logs
 
 ### User actions
 
@@ -435,6 +436,89 @@ Shake.configuration.isConsoleLogsEnabled = false
 </TabItem>
 </Tabs>
 
+
+## Screenshot history
+
+> As you navigate through your application Shake is observing screen changes and capturing screenshot whenever you go to different screen.
+
+> Maximum number of those screenshots will be 10 and all excess screenshots will be removed based on date they were captured.
+
+> Every screenshot has it's activity history log attached to it and will be seen on dashboard when clicked on corresponding log.
+
+### Manually taking screenshots
+You can also take screenshots manually. For example if you want to take screenshot on button click.
+
+<Tabs
+  groupId="ios"
+  defaultValue="swift"
+  values={[
+    { label: 'Objective-C', value: 'objectivec'},
+    { label: 'Swift', value: 'swift'},
+  ]
+}>
+
+<TabItem value="objectivec">
+
+```objectivec title="AppDelegate.m"
+// highlight-start
+Button screenshotButton = findViewById(R.id.screenshot_button);
+screenshotButton.setOnClickListener(view -> Shake.takeScreenshotManually());
+// highlight-end
+```
+
+</TabItem>
+
+<TabItem value="swift">
+
+```swift title="AppDelegate.swift"
+// highlight-start
+val screenshotButton = findViewById(R.id.screenshot_button)
+screenshotButton.setOnClickListener{ view ->
+    Shake.takeScreenshotManually()
+}
+// highlight-end
+```
+
+</TabItem>
+</Tabs>
+
+### Disabling screenshot history
+
+:::note
+Screenshot history is enabled by default.
+:::note
+
+If you don't want Shake to track your screens as you navigate through application you can disable this feature. 
+
+<Tabs
+  groupId="ios"
+  defaultValue="swift"
+  values={[
+    { label: 'Objective-C', value: 'objectivec'},
+    { label: 'Swift', value: 'swift'},
+  ]
+}>
+
+<TabItem value="objectivec">
+
+```objectivec title="AppDelegate.m"
+// highlight-start
+SHKShake.configuration.isScreenshotHistoryIncluded = false;
+// highlight-end
+```
+
+</TabItem>
+
+<TabItem value="swift">
+
+```swift title="AppDelegate.swift"
+// highlight-start
+Shake.configuration.isScreenshotHistoryIncluded = false
+// highlight-end
+```
+
+</TabItem>
+</Tabs>
 
 ## Disable
 Activity history is enabled by default, use the method below to disable it altogether:

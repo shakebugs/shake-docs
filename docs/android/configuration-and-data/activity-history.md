@@ -12,6 +12,7 @@ and automatically attaches all of those to the ticket.
 
 ## Setup
 
+## Logs
 
 ### User actions
 
@@ -331,6 +332,87 @@ Shake.getReportConfiguration().isConsoleLogsEnabled = false
 </TabItem>
 </Tabs>
 
+## Screenshot history
+
+> As you navigate through your application Shake is observing screen changes and capturing screenshot whenever you go to different screen.
+
+> Maximum number of those screenshots will be 10 and all excess screenshots will be removed based on date they were captured.
+
+> Every screenshot has it's activity history log attached to it and will be seen on dashboard when clicked on corresponding log.
+
+### Manually taking screenshots
+You can also take screenshots manually. For example if you want to take screenshot on button click.
+
+<Tabs
+  groupId="android"
+  defaultValue="kotlin"
+  values={[
+    { label: 'Java', value: 'java'},
+    { label: 'Kotlin', value: 'kotlin'},
+  ]
+}>
+
+<TabItem value="java">
+
+```java title="App.java"
+// highlight-start
+Button screenshotButton = findViewById(R.id.screenshot_button);
+screenshotButton.setOnClickListener(view -> Shake.takeScreenshotManually());
+// highlight-end
+```
+
+</TabItem>
+
+<TabItem value="kotlin">
+
+```kotlin title="App.kt"
+// highlight-start
+val screenshotButton = findViewById(R.id.screenshot_button)
+screenshotButton.setOnClickListener{ view ->
+    Shake.takeScreenshotManually()
+}
+// highlight-end
+```
+
+</TabItem>
+</Tabs>
+
+### Disabling screenshot history
+:::note
+Screenshot history is enabled by default.
+:::note
+
+If you don't want Shake to track your screens as you navigate through application you can disable this feature. 
+
+<Tabs
+  groupId="android"
+  defaultValue="kotlin"
+  values={[
+    { label: 'Java', value: 'java'},
+    { label: 'Kotlin', value: 'kotlin'},
+  ]
+}>
+
+<TabItem value="java">
+
+```java title="App.java"
+// highlight-start
+Shake.getReportConfiguration().setScreenshotHistoryEnabled(false);
+// highlight-end
+```
+
+</TabItem>
+
+<TabItem value="kotlin">
+
+```kotlin title="App.kt"
+// highlight-start
+Shake.getReportConfiguration().setScreenshotHistoryEnabled = false
+// highlight-end
+```
+
+</TabItem>
+</Tabs>
 
 ## Disable
 
