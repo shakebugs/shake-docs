@@ -4,6 +4,12 @@ title: Installation
 ---
 > Learn how to add Shake to your Android app using Gradle.
 
+## Create a new app on Dashboard
+
+Visit your [Shake Dashboard](https://app.shakebugs.com) and add a new Native Android app by clicking
+the *Add new app* button or from *Top navbar → App → ... → Add new app*.
+Once you're done, you're ready to proceed with the steps below.
+
 ## Add Shake dependency to your app-level build.gradle file
 import AndroidVersionBlock from '@site/src/base/AndroidVersionBlock';
 
@@ -95,8 +101,7 @@ If you’re creating a custom *Application* class for the first time, specify it
 </manifest>
 ```
 
-Build and run your project by selecting *Run → Run* in the menu bar. This first run will automatically
-add your app to your [Shake dashboard](https://app.shakebugs.com/) based on your app bundle ID.
+Build and run your project by selecting *Run → Run* in the menu bar.
 
 ## Conditional initialization
 
@@ -157,7 +162,7 @@ If you are initializing Shake outside *Application* class, make sure you initial
 
 :::
 
-## Visit your Shake dashboard
+## Visit your Shake Dashboard again
 
 Follow the instructions there to send your first feedback with Shake and you're all set.
 

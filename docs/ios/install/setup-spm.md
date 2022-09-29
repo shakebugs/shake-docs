@@ -5,6 +5,12 @@ title: Swift Package Manager
 
 >Learn how to add Shake to your iOS app using Swift Package Manager.
 
+## Create a new app on Dashboard
+
+Visit your [Shake Dashboard](https://app.shakebugs.com) and add a new Native iOS app by clicking
+the *Add new app* button or from *Top navbar → App → ... → Add new app*.
+Once you're done, you're ready to proceed with the steps below.
+
 ## Install the Shake Package
 
 Select *File → Swift Packages → Add Package Dependency*. Enter the Shake repository URL when prompted:
@@ -80,8 +86,7 @@ To avoid swizzling conflicts, call `Shake.start()` before initializing other fra
 
 :::
 
-Now select *Product → Run* in the menu bar. This first run will automatically
-add your app to your [Shake Dashboard](https://app.shakebugs.com/) based on your app bundle ID.
+Build and run your project by selecting *Run → Run* in the menu bar.
 
 ### A know issue and a temporary workaround
 

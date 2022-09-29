@@ -5,6 +5,12 @@ title: npm
 
 > Learn how to add Shake to your React Native app using npm.
 
+## Create a new app on Dashboard
+
+Visit your [Shake Dashboard](https://app.shakebugs.com) and add a new React Native Android/iOS app by clicking
+the *Add new app* button or from *Top navbar → App → ... → Add new app*.
+Once you're done, you're ready to proceed with the steps below.
+
 ## Install
 Execute the `npm install` command in your terminal:
 
@@ -85,9 +91,6 @@ Shake.start('your-api-client-id', 'your-api-client-secret');
 Build and run your project by running `react-native start` command in the terminal. 
 Use the `react-native run-android` command to run your app on the Android device. 
 Or use the `react-native run-ios` command to run your app on the iOS device. 
- 
-This first run will automatically
-add your app to your [Shake dashboard](https://app.shakebugs.com/) based on your app bundle ID.
 
 ## Conditional initialization
 

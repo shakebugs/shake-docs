@@ -11,6 +11,11 @@ always pull the latest version of Shake into your app. Instead, you will have to
 
 :::
 
+## Create a new app on Dashboard
+
+Visit your [Shake Dashboard](https://app.shakebugs.com) and add a new Native iOS app by clicking
+the *Add new app* button or from *Top navbar → App → ... → Add new app*.
+Once you're done, you're ready to proceed with the steps below.
 
 ## Download Shake from GitHub
 Visit [Shake iOS SDK GitHub repo](https://github.com/shakebugs/shake-ios)
@@ -84,8 +89,7 @@ To avoid swizzling conflicts, call `Shake.start()` before initializing other fra
 
 :::
 
-Now select *Product → Run* in the menu bar. This first run will automatically
-add your app to your [Shake Dashboard](https://app.shakebugs.com/) based on your app bundle ID.
+Build and run your project by selecting *Run → Run* in the menu bar.
 
 ## Conditional initialization
 

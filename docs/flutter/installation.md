@@ -11,6 +11,12 @@ of Flutter, please migrate your project to the new Android APIs via [official gu
 :::
 
 
+## Create a new app on Dashboard
+
+Visit your [Shake Dashboard](https://app.shakebugs.com) and add a new Flutter Android/iOS app by clicking
+the *Add new app* button or from *Top navbar → App → ... → Add new app*.
+Once you're done, you're ready to proceed with the steps below.
+
 ## Install
 
 Add Shake as a dependency:
@@ -74,8 +80,7 @@ void main() {
 }
 ```
 
-Build and run your project by selecting *Run → Run* in the menu bar. This first run will automatically
-add your app to your [Shake dashboard](https://app.shakebugs.com/) based on your app bundle ID.
+Build and run your project by selecting *Run → Run* in the menu bar.
 
 ## Conditional initialization
 
