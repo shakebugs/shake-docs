@@ -2,7 +2,8 @@
 id: cocoapods
 title: CocoaPods
 ---
->Learn how to add Shake to your Android app using CocoaPods.
+
+> Learn how to add Shake to your Android app using CocoaPods.
 
 :::note
 
@@ -14,7 +15,7 @@ then run `pod init` in the root of your project and you're done — let's move o
 :::note
 
 Shake SDK is distributed as a binary package, more specifically an XCFramework.
-CocoaPods added support for XCFrameworks in the 1.9 beta release, so make sure your CocoaPods installation is 
+CocoaPods added support for XCFrameworks in the 1.9 beta release, so make sure your CocoaPods installation is
 running with version no lower than 1.9.
 
 :::
@@ -22,7 +23,7 @@ running with version no lower than 1.9.
 ## Create a new app on Dashboard
 
 Visit your [Shake Dashboard](https://app.shakebugs.com) and add a new Native iOS app by clicking
-the *Add new app* button or from *Top navbar → App → ... → Add new app*.
+the _Add new app_ button or from _Top navbar → App → ... → Add new app_.
 Once you're done, you're ready to proceed with the steps below.
 
 ## Add Shake to your Podfile
@@ -31,12 +32,12 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 <Tabs
-  groupId="ios"
-  defaultValue="swift"
-  values={[
-    { label: 'Objective-C', value: 'objectivec'},
-    { label: 'Swift', value: 'swift'},
-  ]
+groupId="ios"
+defaultValue="swift"
+values={[
+{ label: 'Objective-C', value: 'objectivec'},
+{ label: 'Swift', value: 'swift'},
+]
 }>
 
 <TabItem value="objectivec">
@@ -66,16 +67,18 @@ Then, run the `pod install` command in your terminal.
 After the installation also run `pod update Shake` to be perfectly sure that you're using the latest Shake <IosVersion/>.
 
 ## Initialize Shake
-Initialize Shake in the `didFinishLaunchingWithOptions` callback of your *AppDelegate*.
-Replace `your-api-client-id` and `your-api-client-secret` with the actual values you have in [your workspace settings](https://app.shakebugs.com/settings/workspace#general):
+
+Initialize Shake in the `didFinishLaunchingWithOptions` callback of your _AppDelegate_.
+Make sure that your iOS application bundleId matches the application `bundleId` saved in the Shake dashboard.
+Replace `your-api-client-id` and `your-api-client-secret` with the actual values you have in [your workspace administration](https://app.shakebugs.com):
 
 <Tabs
-  groupId="ios"
-  defaultValue="swift"
-  values={[
-    { label: 'Objective-C', value: 'objectivec'},
-    { label: 'Swift', value: 'swift'},
-  ]
+groupId="ios"
+defaultValue="swift"
+values={[
+{ label: 'Objective-C', value: 'objectivec'},
+{ label: 'Swift', value: 'swift'},
+]
 }>
 
 <TabItem value="objectivec">
@@ -125,7 +128,7 @@ To avoid swizzling conflicts, call `Shake.start()` before initializing other fra
 
 :::
 
-Build and run your project by selecting *Run → Run* in the menu bar.
+Build and run your project by selecting _Run → Run_ in the menu bar.
 
 ## Conditional initialization
 
@@ -134,12 +137,12 @@ However, depending on your app, you'll want to initialize Shake just in a specif
 You can do it as shown in the example below when your app data is available:
 
 <Tabs
-  groupId="ios"
-  defaultValue="swift"
-  values={[
-    { label: 'Objective-C', value: 'objectivec'},
-    { label: 'Swift', value: 'swift'},
-  ]
+groupId="ios"
+defaultValue="swift"
+values={[
+{ label: 'Objective-C', value: 'objectivec'},
+{ label: 'Swift', value: 'swift'},
+]
 }>
 
 <TabItem value="objectivec">
