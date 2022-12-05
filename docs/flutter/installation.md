@@ -59,7 +59,7 @@ android {
 
 ## Set applicationId in the build.gradle file
 
-ApplicationId can be set in the `build.gradle` file. You can find your applicationld in Shake Dashboard. Go to `Workspace administration → Apps` and select an app to which you want to add Shake SDK. Check `Essentials` card to find your applicationID as `bundleID`.
+ApplicationId can be set in the _build.gradle_ file. You can find your applicationld in Shake Dashboard. Go to _Workspace administration → Apps_ and select an app to which you want to add Shake SDK. Check _Essentials_ card to find your applicationID as _bundleID_.
 
 ```groovy title="build.gradle"
 android {

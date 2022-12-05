@@ -30,7 +30,7 @@ import TabItem from '@theme/TabItem';
 ## Initialize Shake SDK
 
 Initialize Shake in the `didFinishLaunchingWithOptions` callback of your _AppDelegate_.
-Make sure that your iOS application bundleId matches the application `bundleId` saved in the Shake dashboard.
+Make sure that your iOS application bundleId matches the application _bundleId_ saved in the Shake dashboard.
 Replace `your-api-client-id` and `your-api-client-secret` with the actual values you have in [your workspace administration](https://app.shakebugs.com):
 
 <Tabs
