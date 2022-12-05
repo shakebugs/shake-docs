@@ -3,13 +3,18 @@ id: installation
 title: Installation
 ---
 
->Learn how to add Shake to your Flutter app.
+> Learn how to add Shake to your Flutter app.
 
 :::note
 Shake supports post Flutter 1.12 projects. If your project was created with the older version
 of Flutter, please migrate your project to the new Android APIs via [official guide](https://flutter.dev/go/android-project-migration) first.
 :::
 
+## Create a new app on Dashboard
+
+Visit your [Shake Dashboard](https://app.shakebugs.com) and add a new Flutter Android/iOS app by clicking
+the _Add new app_ button or from _Top navbar → App → ... → Add new app_.
+Once you're done, you're ready to proceed with the steps below.
 
 ## Install
 
@@ -20,7 +25,7 @@ Add Shake as a dependency:
 flutter pub add shake_flutter
 ```
 
-This will add a line like this to your package's *pubspec.yaml* (and run an implicit `flutter pub get`):
+This will add a line like this to your package's _pubspec.yaml_ (and run an implicit `flutter pub get`):
 
 import FlutterVersionBlock from '@site/src/base/FlutterVersionBlock';
 
@@ -34,7 +39,8 @@ import 'package:shake_flutter/shake_flutter.dart';
 ```
 
 ## Set compileSdkVersion version in the build.gradle file
-Since Shake requires `compileSdkVersion` 29 or greater, verify that `compileSdkVersion` is correctly set in the */android/app/build.gradle* file:
+
+Since Shake requires `compileSdkVersion` 29 or greater, verify that `compileSdkVersion` is correctly set in the _/android/app/build.gradle_ file:
 
 ```groovy title="build.gradle"
 android {
@@ -51,10 +57,24 @@ android {
 }
 ```
 
+## Set applicationId in the build.gradle file
+
+ApplicationId can be set in the _build.gradle_ file. You can find your applicationld in Shake Dashboard. Go to _Workspace administration → Apps_ and select an app to which you want to add Shake SDK. Check _Essentials_ card to find your applicationID as _bundleID_.
+
+```groovy title="build.gradle"
+android {
+    compileSdkVersion 29
+    defaultConfig {
+        // highlight-next-line
+        applicationId "com.shakebugs.flutter.example"
+    }
+}
+```
+
 ## Initialize Shake
 
-Call `Shake.start()` method in your *main.dart* file. 
-Replace `your-api-client-id` and `your-api-client-secret` with the actual values you have in [your workspace settings](https://app.shakebugs.com/settings/workspace#general):
+Call `Shake.start()` method in your _main.dart_ file.
+Replace `your-api-client-id` and `your-api-client-secret` with the actual values you have in [your workspace administration](https://app.shakebugs.com):
 
 ```dart title="main.dart"
 //highlight-next-line
@@ -63,7 +83,7 @@ import 'package:shake_flutter/shake_flutter.dart';
 void main() {
     //highlight-start
     WidgetsFlutterBinding.ensureInitialized();
-    
+
     Shake.setShowFloatingReportButton(true);
     Shake.setInvokeShakeOnShakeDeviceEvent(true);
     Shake.setInvokeShakeOnScreenshot(true);
@@ -74,8 +94,7 @@ void main() {
 }
 ```
 
-Build and run your project by selecting *Run → Run* in the menu bar. This first run will automatically
-add your app to your [Shake dashboard](https://app.shakebugs.com/) based on your app bundle ID.
+Build and run your project by selecting _Run → Run_ in the menu bar.
 
 ## Conditional initialization
 

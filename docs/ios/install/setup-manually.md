@@ -2,7 +2,8 @@
 id: manually
 title: Manually
 ---
->A guide to add Shake to your app without a dependency manager or a build automation tool.
+
+> A guide to add Shake to your app without a dependency manager or a build automation tool.
 
 :::note
 
@@ -11,30 +12,36 @@ always pull the latest version of Shake into your app. Instead, you will have to
 
 :::
 
+## Create a new app on Dashboard
+
+Visit your [Shake Dashboard](https://app.shakebugs.com) and add a new Native iOS app by clicking
+the _Add new app_ button or from _Top navbar → App → ... → Add new app_.
+Once you're done, you're ready to proceed with the steps below.
 
 ## Download Shake from GitHub
+
 Visit [Shake iOS SDK GitHub repo](https://github.com/shakebugs/shake-ios)
-→ *Download ZIP*
-→ copy *Shake.framework* folder into your Xcode project
-→ drag the copied *Shake.xcframework* into *Frameworks, Libraries, and Embedded content* section of your project *Target* general settings.
+→ _Download ZIP_
+→ copy _Shake.framework_ folder into your Xcode project
+→ drag the copied _Shake.xcframework_ into _Frameworks, Libraries, and Embedded content_ section of your project _Target_ general settings.
 
-Make sure that *Embed&Sign* option is selected for the *Shake.xcframework*.
-
+Make sure that _Embed&Sign_ option is selected for the _Shake.xcframework_.
 
 ## Initialize Shake
-Initialize Shake in the `didFinishLaunchingWithOptions` callback of your *AppDelegate*.
-Replace `your-api-client-id` and `your-api-client-secret` with the actual values you have in [your workspace settings](https://app.shakebugs.com/settings/workspace#general):
+
+Initialize Shake in the `didFinishLaunchingWithOptions` callback of your _AppDelegate_.
+Replace `your-api-client-id` and `your-api-client-secret` with the actual values you have in [your workspace administration](https://app.shakebugs.com):
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 <Tabs
-  groupId="ios"
-  defaultValue="swift"
-  values={[
-    { label: 'Objective-C', value: 'objectivec'},
-    { label: 'Swift', value: 'swift'},
-  ]
+groupId="ios"
+defaultValue="swift"
+values={[
+{ label: 'Objective-C', value: 'objectivec'},
+{ label: 'Swift', value: 'swift'},
+]
 }>
 
 <TabItem value="objectivec">
@@ -84,8 +91,7 @@ To avoid swizzling conflicts, call `Shake.start()` before initializing other fra
 
 :::
 
-Now select *Product → Run* in the menu bar. This first run will automatically
-add your app to your [Shake Dashboard](https://app.shakebugs.com/) based on your app bundle ID.
+Build and run your project by selecting _Run → Run_ in the menu bar.
 
 ## Conditional initialization
 
@@ -94,12 +100,12 @@ However, depending on your app, you'll want to initialize Shake just in a specif
 You can do it as shown in the example below when your app data is available:
 
 <Tabs
-  groupId="ios"
-  defaultValue="swift"
-  values={[
-    { label: 'Objective-C', value: 'objectivec'},
-    { label: 'Swift', value: 'swift'},
-  ]
+groupId="ios"
+defaultValue="swift"
+values={[
+{ label: 'Objective-C', value: 'objectivec'},
+{ label: 'Swift', value: 'swift'},
+]
 }>
 
 <TabItem value="objectivec">
