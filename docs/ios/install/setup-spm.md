@@ -3,11 +3,17 @@ id: spm
 title: Swift Package Manager
 ---
 
->Learn how to add Shake to your iOS app using Swift Package Manager.
+> Learn how to add Shake to your iOS app using Swift Package Manager.
+
+## Create a new app on Dashboard
+
+Visit your [Shake Dashboard](https://app.shakebugs.com) and add a new Native iOS app by clicking
+the _Add new app_ button or from _Top navbar → App → ... → Add new app_.
+Once you're done, you're ready to proceed with the steps below.
 
 ## Install the Shake Package
 
-Select *File → Swift Packages → Add Package Dependency*. Enter the Shake repository URL when prompted:
+Select _File → Swift Packages → Add Package Dependency_. Enter the Shake repository URL when prompted:
 
 ```swift"
 // highlight-next-line
@@ -16,23 +22,24 @@ https://github.com/shakebugs/shake-ios
 
 Choose the appropriate cloning details and optionally specify the exact Shake version or branch.
 
-Click *Finish* to add Shake to your project.
+Click _Finish_ to add Shake to your project.
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 ## Initialize Shake SDK
-Initialize Shake in the `didFinishLaunchingWithOptions` callback of your *AppDelegate*.
-Replace `your-api-client-id` and `your-api-client-secret` with the actual values you have in [your workspace settings](https://app.shakebugs.com/settings/workspace#general):
+
+Initialize Shake in the `didFinishLaunchingWithOptions` callback of your _AppDelegate_.
+Make sure that your iOS application bundleId matches the application _bundleId_ saved in the Shake dashboard.
+Replace `your-api-client-id` and `your-api-client-secret` with the actual values you have in [your workspace administration](https://app.shakebugs.com/administration):
 
 <Tabs
-  groupId="ios"
-  defaultValue="swift"
-  values={[
-    { label: 'Objective-C', value: 'objectivec'},
-    { label: 'Swift', value: 'swift'},
-  ]}
-  >
+groupId="ios"
+defaultValue="swift"
+values={[
+{ label: 'Objective-C', value: 'objectivec'},
+{ label: 'Swift', value: 'swift'},
+]}>
 
 <TabItem value="objectivec">
 
@@ -70,6 +77,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 }
 ```
+
 </TabItem>
 </Tabs>
 
@@ -80,30 +88,28 @@ To avoid swizzling conflicts, call `Shake.start()` before initializing other fra
 
 :::
 
-Now select *Product → Run* in the menu bar. This first run will automatically
-add your app to your [Shake Dashboard](https://app.shakebugs.com/) based on your app bundle ID.
+Build and run your project by selecting _Run → Run_ in the menu bar.
 
 ### A know issue and a temporary workaround
 
 :::note
 
-Shake is distributed as a binary framework. There is a [known issue](https://bugs.swift.org/browse/SR-13343) 
+Shake is distributed as a binary framework. There is a [known issue](https://bugs.swift.org/browse/SR-13343)
 with SPM signing the binary packages which will pop up when running your app on the real device.
 The issue has been fixed in the Xcode Version 12.2 beta 3.
 
 :::
 
-Select your app target, and add a new *Copy Files phase* to the *Build Phases*.
-Make sure to change the destination to *Frameworks* folder.
+Select your app target, and add a new _Copy Files phase_ to the _Build Phases_.
+Make sure to change the destination to _Frameworks_ folder.
 
-Add a new *Run Script* phase and paste the following script to force the deep signing of frameworks with your own identity:
-
+Add a new _Run Script_ phase and paste the following script to force the deep signing of frameworks with your own identity:
 
 ```script"
 // highlight-start
 find "${CODESIGNING_FOLDER_PATH}" -name '*.framework' -print0 | while read -d $'\0' framework
 do
-    codesign --force --deep --sign "${EXPANDED_CODE_SIGN_IDENTITY}" --preserve-metadata=identifier,entitlements --timestamp=none "${framework}" 
+    codesign --force --deep --sign "${EXPANDED_CODE_SIGN_IDENTITY}" --preserve-metadata=identifier,entitlements --timestamp=none "${framework}"
 done
 // highlight-end
 ```
@@ -115,12 +121,12 @@ However, depending on your app, you'll want to initialize Shake just in a specif
 You can do it as shown in the example below when your app data is available:
 
 <Tabs
-  groupId="ios"
-  defaultValue="swift"
-  values={[
-    { label: 'Objective-C', value: 'objectivec'},
-    { label: 'Swift', value: 'swift'},
-  ]
+groupId="ios"
+defaultValue="swift"
+values={[
+{ label: 'Objective-C', value: 'objectivec'},
+{ label: 'Swift', value: 'swift'},
+]
 }>
 
 <TabItem value="objectivec">

@@ -2,15 +2,24 @@
 id: installation
 title: Installation
 ---
+
 > Learn how to add Shake to your Android app using Gradle.
 
+## Create a new app on Dashboard
+
+Visit your [Shake Dashboard](https://app.shakebugs.com) and add a new Native Android app by clicking
+the _Add new app_ button or from _Top navbar → App → ... → Add new app_.
+Once you're done, you're ready to proceed with the steps below.
+
 ## Add Shake dependency to your app-level build.gradle file
+
 import AndroidVersionBlock from '@site/src/base/AndroidVersionBlock';
 
 <AndroidVersionBlock></AndroidVersionBlock>
 
 ## Set compileSdkVersion version in the build.gradle file
-Since Shake requires `compileSdkVersion` 29 or greater, verify that `compileSdkVersion` is correctly set in the app *build.gradle* file: 
+
+Since Shake requires `compileSdkVersion` 29 or greater, verify that `compileSdkVersion` is correctly set in the app _build.gradle_ file:
 
 ```groovy title="build.gradle"
 android {
@@ -28,20 +37,35 @@ android {
 }
 ```
 
+## Set applicationId in the build.gradle file
+
+ApplicationId can be set in the _build.gradle_ file. You can find your applicationld in Shake Dashboard. Go to _Workspace administration → Apps_ and select an app to which you want to add Shake SDK. Check _Essentials_ card to find your applicationID as _bundleID_.
+
+```groovy title="build.gradle"
+android {
+    compileSdkVersion 30
+    defaultConfig {
+        // highlight-next-line
+        applicationId "com.example"
+    }
+}
+```
+
 ## Initialize Shake
-Initialize Shake in the `onCreate` callback of your *Application*.
-Replace `your-api-client-id` and `your-api-client-secret` with the actual values you have in [your workspace settings](https://app.shakebugs.com/settings/workspace#general):
+
+Initialize Shake in the `onCreate` callback of your _Application_.
+Replace `your-api-client-id` and `your-api-client-secret` with the actual values you have in [your workspace administration](https://app.shakebugs.com/administration):
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 <Tabs
-  groupId="android"
-  defaultValue="kotlin"
-  values={[
-    { label: 'Java', value: 'java'},
-    { label: 'Kotlin', value: 'kotlin'},
-  ]
+groupId="android"
+defaultValue="kotlin"
+values={[
+{ label: 'Java', value: 'java'},
+{ label: 'Kotlin', value: 'kotlin'},
+]
 }>
 
 <TabItem value="java">
@@ -82,7 +106,7 @@ class App : Application() {
 </TabItem>
 </Tabs>
 
-If you’re creating a custom *Application* class for the first time, specify it in your *AndroidManifest.xml*:
+If you’re creating a custom _Application_ class for the first time, specify it in your _AndroidManifest.xml_:
 
 ```xml title="AndroidManifest.xml"
 <?xml version="1.0" encoding="utf-8"?>
@@ -95,8 +119,7 @@ If you’re creating a custom *Application* class for the first time, specify it
 </manifest>
 ```
 
-Build and run your project by selecting *Run → Run* in the menu bar. This first run will automatically
-add your app to your [Shake dashboard](https://app.shakebugs.com/) based on your app bundle ID.
+Build and run your project by selecting _Run → Run_ in the menu bar.
 
 ## Conditional initialization
 
@@ -105,12 +128,12 @@ However, depending on your app, you'll want to initialize Shake just in a specif
 You can do it as shown in the example below when your app data is available:
 
 <Tabs
-  groupId="android"
-  defaultValue="kotlin"
-  values={[
-    { label: 'Java', value: 'java'},
-    { label: 'Kotlin', value: 'kotlin'},
-  ]
+groupId="android"
+defaultValue="kotlin"
+values={[
+{ label: 'Java', value: 'java'},
+{ label: 'Kotlin', value: 'kotlin'},
+]
 }>
 
 <TabItem value="java">
@@ -153,11 +176,11 @@ class MainActivity : Activity() {
 
 :::note
 
-If you are initializing Shake outside *Application* class, make sure you initialize it in the *onCreate* callback of the *Activity*.
+If you are initializing Shake outside _Application_ class, make sure you initialize it in the _onCreate_ callback of the _Activity_.
 
 :::
 
-## Visit your Shake dashboard
+## Visit your Shake Dashboard again
 
 Follow the instructions there to send your first feedback with Shake and you're all set.
 

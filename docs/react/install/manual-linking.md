@@ -5,6 +5,12 @@ title: Manual linking
 
 > If you want to link library manually, you can do it this way.
 
+## Create a new app on Dashboard
+
+Visit your [Shake Dashboard](https://app.shakebugs.com) and add a new React Native Android/iOS app by clicking
+the *Add new app* button or from *Top navbar → App → ... → Add new app*.
+Once you're done, you're ready to proceed with the steps below.
+
 ## Android
 
 Add the following lines of code to your *settings.gradle* file:

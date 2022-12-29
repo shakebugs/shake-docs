@@ -5,7 +5,14 @@ title: npm
 
 > Learn how to add Shake to your React Native app using npm.
 
+## Create a new app on Dashboard
+
+Visit your [Shake Dashboard](https://app.shakebugs.com) and add a new React Native Android/iOS app by clicking
+the _Add new app_ button or from _Top navbar → App → ... → Add new app_.
+Once you're done, you're ready to proceed with the steps below.
+
 ## Install
+
 Execute the `npm install` command in your terminal:
 
 ```bash title="Terminal"
@@ -26,7 +33,7 @@ After the installation also run `pod update Shake` to be perfectly sure that you
 
 ## Set compileSdkVersion version in the build.gradle file
 
-Since Shake requires `compileSdkVersion` 29 or greater, verify that `compileSdkVersion` is correctly set in the *build.gradle* file:
+Since Shake requires `compileSdkVersion` 29 or greater, verify that `compileSdkVersion` is correctly set in the _build.gradle_ file:
 
 ```groovy title="android/build.gradle"
 buildscript {
@@ -50,7 +57,7 @@ buildscript {
 
 ## Set multidexEnabled flag in the build.gradle file
 
-If you do not have *multiDexEnabled* flag set, update app-level *build.gradle* like below:
+If you do not have _multiDexEnabled_ flag set, update app-level _build.gradle_ like below:
 
 ```groovy title="app/build.gradle"
 defaultConfig {
@@ -64,15 +71,26 @@ defaultConfig {
 }
 ```
 
+## Set applicationId in the build.gradle file
+
+ApplicationId can be set in the _build.gradle_ file. You can find your applicationld in Shake Dashboard. Go to _Workspace administration → Apps_ and select an app to which you want to add Shake SDK. Check _Essentials_ card to find your applicationID as _bundleID_.
+
+```groovy title="app/build.gradle"
+defaultConfig {
+    // highlight-next-line
+    applicationId "com.shakebugs.react.example"
+}
+```
+
 ## Initialize Shake
 
-Call `Shake.start()` in your *index.js* file. 
-Replace `your-api-client-id` and `your-api-client-secret` with the actual values you have in [your workspace settings](https://app.shakebugs.com/settings/workspace#general):
+Call `Shake.start()` in your _index.js_ file.
+Replace `your-api-client-id` and `your-api-client-secret` with the actual values you have in [your workspace administration](https://app.shakebugs.com/administration):
 
 ```js title="index.js"
-import {AppRegistry} from 'react-native';
+import { AppRegistry } from 'react-native';
 import App from './src/App';
-import {name as appName} from './app.json';
+import { name as appName } from './app.json';
 // highlight-next-line
 import Shake from '@shakebugs/react-native-shake';
 
@@ -82,12 +100,9 @@ AppRegistry.registerComponent(appName, () => App);
 Shake.start('your-api-client-id', 'your-api-client-secret');
 ```
 
-Build and run your project by running `react-native start` command in the terminal. 
-Use the `react-native run-android` command to run your app on the Android device. 
-Or use the `react-native run-ios` command to run your app on the iOS device. 
- 
-This first run will automatically
-add your app to your [Shake dashboard](https://app.shakebugs.com/) based on your app bundle ID.
+Build and run your project by running `react-native start` command in the terminal.
+Use the `react-native run-android` command to run your app on the Android device.
+Or use the `react-native run-ios` command to run your app on the iOS device.
 
 ## Conditional initialization
 
@@ -99,15 +114,14 @@ You can do it as shown in the example below when your app data is available:
 // highlight-next-line
 import Shake from '@shakebugs/react-native-shake';
 
-const MainScreen = props => {
-
-  useEffect(() => {
-    if (User.isTester) {
-        // highlight-next-line
-        Shake.start('your-api-client-id', 'your-api-client-secret');
-    }
-  }, []);
-}
+const MainScreen = (props) => {
+	useEffect(() => {
+		if (User.isTester) {
+			// highlight-next-line
+			Shake.start('your-api-client-id', 'your-api-client-secret');
+		}
+	}, []);
+};
 ```
 
 ## Visit your Shake dashboard

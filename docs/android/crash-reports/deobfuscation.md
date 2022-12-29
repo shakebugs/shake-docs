@@ -3,32 +3,33 @@ id: deobfuscation
 title: Deobfuscate
 ---
 
-import Tabs from '@theme/Tabs'; 
+import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
->If you use ProGuard to obfuscate your code, Shake allows you to upload your *mapping.txt* files so it can deobfuscate stack traces.
+> If you use ProGuard to obfuscate your code, Shake allows you to upload your _mapping.txt_ files so it can deobfuscate stack traces.
 
 ## Upload manually to Shake dashboard
 
-By default, the *mapping.txt* file is created in your app's build directory: *project/app/build/outputs/mapping/release/mapping.txt*.  
+By default, the _mapping.txt_ file is created in your app's build directory: _project/app/build/outputs/mapping/release/mapping.txt_.
 
 To upload your app's mapping files to the Shake dashboard:
-1. Visit [Settings → Apps](https://app.shakebugs.com/settings/apps)
+
+1. Visit [Workspace administration → Apps](https://app.shakebugs.com/administration)
 1. Click your app name to expand it
 1. Click the **Mapping files** button
-1. Drag and drop your *mapping.txt* file there
+1. Drag and drop your _mapping.txt_ file there
 
 ## Using the script
 
 If you prefer to do this automatically, you can do it using this script:
 
 <Tabs
-  groupId="OS"
-  defaultValue="Windows"
-  values={[
-    { label: 'Windows', value: 'Windows'},
-    { label: 'Mac', value: 'Mac'},
-  ]
+groupId="OS"
+defaultValue="Windows"
+values={[
+{ label: 'Windows', value: 'Windows'},
+{ label: 'Mac', value: 'Mac'},
+]
 }>
 
 <TabItem value="Windows">
@@ -128,7 +129,7 @@ echo "Success! Mapping file uploaded successfully."
 
 </TabItem></Tabs>
 
-After that, add the following gradle task to your app's *build.gradle* file:
+After that, add the following gradle task to your app's _build.gradle_ file:
 
 ```groovy title="build.gradle"
 // highlight-start
