@@ -2,19 +2,21 @@
 id: home-screen
 title: Home screen
 ---
+
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
->The Home screen is a central part of the Shake UI.
+> The Home screen is a central part of the Shake UI.
 
 ## Introduction
 
 Here, your user can see:
-* A welcome message that you can change from your [Shake dashboard](https://app.shakebugs.com/settings/workspace#whitelabel).
-* A button to submit a new ticket.
-* All their previous tickets.
-To show them their previous tickets, [register your users](/flutter/users/overview) with Shake.
+
+- A welcome message that you can change from your [Shake dashboard](https://app.shakebugs.com/administration/white-labeling).
+- A button to submit a new ticket.
+- All their previous tickets.
+  To show them their previous tickets, [register your users](/flutter/users/overview) with Shake.
 
 <table class="media-container mt-50">
 <img

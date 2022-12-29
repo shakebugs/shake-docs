@@ -74,7 +74,7 @@ android {
 ## Initialize Shake
 
 Call `Shake.start()` method in your _main.dart_ file.
-Replace `your-api-client-id` and `your-api-client-secret` with the actual values you have in [your workspace administration](https://app.shakebugs.com):
+Replace `your-api-client-id` and `your-api-client-secret` with the actual values you have in [your workspace administration](https://app.shakebugs.com/administration):
 
 ```dart title="main.dart"
 //highlight-next-line
