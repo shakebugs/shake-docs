@@ -3,7 +3,7 @@ id: cocoapods
 title: CocoaPods
 ---
 
-> Learn how to add Shake to your Android app using CocoaPods.
+> Learn how to add Shake to your iOS app using CocoaPods.
 
 :::note
 
