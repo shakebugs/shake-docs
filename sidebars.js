@@ -5,7 +5,8 @@ module.exports = {
             label: 'Getting started',
             items: [
                 'android/overview',
-                'android/installation'
+                'android/installation',
+                'android/import-from-instabug'
             ]
         },
         {
@@ -96,7 +97,8 @@ module.exports = {
                         'ios/install/cocoapods',
                         'ios/install/manually',
                     ]
-                }
+                },
+                'ios/import-from-instabug'
             ]
         },
         {
@@ -179,7 +181,8 @@ module.exports = {
             label: 'Getting started',
             items: [
                 'flutter/overview',
-                'flutter/installation'
+                'flutter/installation',
+                'flutter/import-from-instabug'
             ]
         },
         {
@@ -259,6 +262,7 @@ module.exports = {
                         'react/install/manual-linking'
                     ]
                 },
+                'react/import-from-instabug'
             ]
         },
         {
