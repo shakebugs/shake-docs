@@ -14,8 +14,8 @@ To do this, log into your Instabug account and navigate to the _Bugs_ tab in the
 From there, select the issues you want to export, press _⋯_ button and then press _Export CSV_ button.
 
 :::note
-Before export, you'll be prompted to select data you want to export into the CSV file.
-Feel free to ignore some of the data if you want, Shake is still able to import bugs if some data is missing.
+Before export, you'll be prompted to select data you want to export into the CSV file.  
+"OS" field is required, feel free to uncheck any other field if you don't want to migrate it.
 :::
 
 You'll receive an email with a download link for the exported CSV file.
