@@ -14,6 +14,13 @@ To do this, log into your Instabug account and navigate to the _Bugs_ tab in the
 From there, select the issues you want to export, press _⋯_ button and then press _Export CSV_ button.
 
 :::note
+With Instabug, you have a unified Flutter app for reporting both iOS and Android bugs.
+In contrast, Shake requires separate apps for each platform, and it's recommended to create separate export files for iOS and Android bugs to be imported into the respective Shake app.
+However, it is possible to create a single export file with a mixture of both iOS and Android bugs, which can then be imported into both Shake apps.
+Any bugs that don't match the platform won't be imported.
+:::
+
+:::note
 Before export, you'll be prompted to select data you want to export into the CSV file.
 Feel free to ignore some of the data if you want, Shake is still able to import bugs if some data is missing.
 :::
@@ -34,8 +41,9 @@ Max import file size is _100MB_, if you have larger file you can divide it into 
 Once you've selected the file, the import process will begin. This process can take up some time, depending on the number of bugs you're migrating and size of attached files to the bugs.
 
 :::note
-Instabug bugs that are not matching Shake app platform will be ignored during the import process, make sure that you import bugs into the correct app.
-Also, if Shake cannot parse some bugs because of different data structure, those bugs will be skipped and not imported.
+Only Instabug bugs that match the platform of the Shake app (Android or iOS) will be imported during the import process.
+Ensure that you import bugs into the correct app.
+Also, if Shake encounters bugs with a different data structure than expected, those bugs won't be imported.
 :::
 
 When the import is completed, you'll be notified by email and you'll be able to view and track migrated tickets within the Shake.
