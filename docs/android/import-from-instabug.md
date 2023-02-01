@@ -34,8 +34,9 @@ Max import file size is _100MB_, if you have larger file you can divide it into 
 Once you've selected the file, the import process will begin. This process can take up some time, depending on the number of bugs you're migrating and size of attached files to the bugs.
 
 :::note
-Instabug bugs that are not matching Shake app platform will be ignored during the import process, make sure that you import bugs into the correct app.
-Also, if Shake cannot parse some bugs because of different data structure, those bugs will be skipped and not imported.
+Only Instabug bugs that match the platform of the Shake app (Android or iOS) will be imported during the import process.
+Ensure that you import bugs into the correct app.
+Also, if Shake encounters bugs with a different data structure than expected, those bugs won't be imported.
 :::
 
 When the import is completed, you'll be notified by email and you'll be able to view and track migrated tickets within the Shake.
