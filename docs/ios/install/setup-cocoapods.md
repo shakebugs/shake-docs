@@ -3,7 +3,7 @@ id: cocoapods
 title: CocoaPods
 ---
 
-> Learn how to add Shake to your Android app using CocoaPods.
+> Learn how to add Shake to your iOS app using CocoaPods.
 
 :::note
 
@@ -70,7 +70,7 @@ After the installation also run `pod update Shake` to be perfectly sure that you
 
 Initialize Shake in the `didFinishLaunchingWithOptions` callback of your _AppDelegate_.
 Make sure that your iOS application bundleId matches the application _bundleId_ saved in the Shake dashboard.
-Replace `your-api-client-id` and `your-api-client-secret` with the actual values you have in [your workspace administration](https://app.shakebugs.com):
+Replace `your-api-client-id` and `your-api-client-secret` with the actual values you have in [your workspace administration](https://app.shakebugs.com/administration):
 
 <Tabs
 groupId="ios"

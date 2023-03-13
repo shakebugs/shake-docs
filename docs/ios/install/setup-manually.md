@@ -30,7 +30,7 @@ Make sure that _Embed&Sign_ option is selected for the _Shake.xcframework_.
 ## Initialize Shake
 
 Initialize Shake in the `didFinishLaunchingWithOptions` callback of your _AppDelegate_.
-Replace `your-api-client-id` and `your-api-client-secret` with the actual values you have in [your workspace administration](https://app.shakebugs.com):
+Replace `your-api-client-id` and `your-api-client-secret` with the actual values you have in [your workspace administration](https://app.shakebugs.com/administration):
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';

@@ -85,7 +85,7 @@ defaultConfig {
 ## Initialize Shake
 
 Call `Shake.start()` in your _index.js_ file.
-Replace `your-api-client-id` and `your-api-client-secret` with the actual values you have in [your workspace administration](https://app.shakebugs.com):
+Replace `your-api-client-id` and `your-api-client-secret` with the actual values you have in [your workspace administration](https://app.shakebugs.com/administration):
 
 ```js title="index.js"
 import { AppRegistry } from 'react-native';

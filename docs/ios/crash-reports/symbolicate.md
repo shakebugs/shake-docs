@@ -45,7 +45,7 @@ Now zip the symbolication files.
 
 To upload dSYM files to the Shake dashboard:
 
-1. Visit [Workspace administration → Apps](https://app.shakebugs.com)
+1. Visit [Workspace administration → Apps](https://app.shakebugs.com/administration)
 1. Click your app name to expand it
 1. Click the **Mapping files** button
 1. Drag and drop your zipped symbolication files there
@@ -62,7 +62,7 @@ To ensure that the latest dSYM files are automatically uploaded after every buil
 _Xcode → Scheme → EditScheme_ → expand the _Build Action_ options → _Post Actions → +_
 
 Paste this script but make sure to replace `your-api-client-id` and `your-api-client-secret` with the actual values
-you have in [your workspace administration](https://app.shakebugs.com):
+you have in [your workspace administration](https://app.shakebugs.com/administration):
 
 ```script
 //highlight-start
@@ -136,7 +136,7 @@ end
 </TabItem>
 
 You can find your `<Shake client id>` and `<Shake client secret>` in
-[your workspace administration](https://app.shakebugs.com).
+[your workspace administration](https://app.shakebugs.com/administration).
 
 On the other hand, if you have [Bitcode](https://help.apple.com/xcode/mac/current/#/devbbdc5ce4f) disabled,
 add the `upload_symbols_to_shake` action with [gym](http://docs.fastlane.tools/actions/gym/#gym) to upload dSYMs generated from the build:

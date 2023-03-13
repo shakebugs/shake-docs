@@ -72,8 +72,8 @@ so your users can describe what happened before your app crashed on them:
 Shake supports dark and light mode out of the box, there is no need to code anything.
 Its UI will automatically adapt depending on your app design settings.
 
-<!-- Shake also supports white labeling.
-From your [Shake dashboard](https://app.shakebugs.com/settings/workspace#whitelabel), you can change its main action color and its welcome message without coding. -->
+Shake also supports white labeling.
+From your [Shake dashboard](https://app.shakebugs.com/administration/white-labeling), you can change its main action color and its welcome message without coding.
 
 Lastly, Shake mobile UI has been localized to support [numerous languages](https://help.shakebugs.com/en/articles/3392092-which-languages-has-shake-sdk-been-translated-to).
 Your users whose default device language is set to one of those will automatically use Shake in their native language.
