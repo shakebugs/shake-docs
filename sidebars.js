@@ -33,7 +33,6 @@ module.exports = {
                         'android/user-feedback/enable',
                         'android/user-feedback/invoke',
                         'android/user-feedback/intro-message',
-                        'android/user-feedback/feedback-type',
                         'android/user-feedback/silent-user-feedback'
                     ]
                 },
@@ -69,7 +68,7 @@ module.exports = {
             label: 'Configuration and data',
             items: [
                 'android/configuration-and-data/overview',
-                'android/configuration-and-data/new-ticket-screen-elements',
+                'android/configuration-and-data/custom-forms',
                 'android/configuration-and-data/data-attached-by-default',
                 'android/configuration-and-data/auto-screenshot',
                 'android/configuration-and-data/auto-screen-recording',
@@ -125,7 +124,6 @@ module.exports = {
                         'ios/user-feedback/enable',
                         'ios/user-feedback/invoke',
                         'ios/user-feedback/intro-message',
-                        'ios/user-feedback/feedback-type',
                         'ios/user-feedback/silent-user-feedback',
                     ]
                 },
@@ -161,7 +159,7 @@ module.exports = {
             label: 'Configuration and data',
             items: [
                 'ios/configuration-and-data/overview',
-                'ios/configuration-and-data/new-ticket-screen-elements',
+                'ios/configuration-and-data/custom-forms',
                 'ios/configuration-and-data/data-attached-by-default',
                 'ios/configuration-and-data/auto-screenshot',
                 'ios/configuration-and-data/auto-screen-recording',

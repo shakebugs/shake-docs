@@ -39,4 +39,4 @@ and here's how they look like:
 
 ## Hide the Inspect button
 
-The *Inspect* button is an optional element and [can be disabled](/android/configuration-and-data/new-ticket-screen-elements#inspect-button).
+The *Inspect* button is an optional element and [can be disabled](/android/configuration-and-data/custom-forms#inspect-button).
