@@ -99,7 +99,7 @@ You can now safely call Shake methods before Shake is started. We've handled tho
 
 If you are using the shaking gesture as your invocation event, you can now [adjust the device’s sensitivity to the shaking gesture](/android/user-feedback/invoke.md#shaking).
  
-Shake now supports [customization of feedback types](/android/user-feedback/feedback-type.md#custom-types). You can configure Shake to display any number of custom categories related to your product.
+Shake now supports customization of feedback types. You can configure Shake to display any number of custom categories related to your product.
 
 We've added an option to [exclude the screenshot from tickets](/android/configuration-and-data/auto-screenshot.md#excluding-the-screenshot-from-a-report). This option allows you to capture the screenshot only when required.
 
@@ -176,7 +176,7 @@ We've all been waiting for this! Your users can record an additional video of th
 
 Shake is available in the new Maven repository. If you're upgrading from the older version, make sure to [update the Maven repository in the build.gradle file](/android/installation.md#add-maven-repository-to-your-top-level-buildgradle-file).
 
-Users can finally report [different types of feedback](/android/user-feedback/feedback-type.md): bugs, suggestions and questions.
+Users can finally report different types of feedback: bugs, suggestions and questions.
 
 Shake now allows you to [protect sensitive data](android/configuration-and-data/manage-sensitive-data.md) on the mobile device itself, so it never reaches the Shake servers. It can be used for notifications, network requests, screens and screen elements.
 
@@ -187,7 +187,7 @@ You can now use the in-app [intro message](android/user-feedback/intro-message.m
 
 #### What's new
 
-If you want to, you can now pre-fill or hide the [Email field](/android/configuration-and-data/new-ticket-screen-elements/#email-field) from the New ticket screen. Pretty neat.
+If you want to, you can now pre-fill or hide the email field from the New ticket screen. Pretty neat.
 
 ## 13.0
 <span class="tag-button">June 30, 2020</span>
@@ -242,4 +242,4 @@ without interrupting your end user whatsoever!
 Privacy options are important. That’s why you now have a method to
 disable or enable [Activity history](/android/configuration-and-data/activity-history.md) whenever you want to.
 
-If you want to, you can [hide the Inspect button](/android/configuration-and-data/new-ticket-screen-elements/#inspect-button) from your users. Brilliant.
+If you want to, you can hide the Inspect button from your users. Brilliant.

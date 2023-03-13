@@ -109,7 +109,7 @@ You can now safely call Shake methods before Shake is started. We've handled tho
 
 If you are using the shaking gesture as your invocation event, you can now [adjust the device’s sensitivity to the shaking gesture](/ios/user-feedback/invoke.md#shaking).
  
-Shake now supports [customization of feedback types](/ios/user-feedback/feedback-type.md#custom-types). You can configure Shake to display any number of custom categories related to your product.
+Shake now supports customization of feedback types. You can configure Shake to display any number of custom categories related to your product.
 
 We've added an option to [exclude the screenshot from tickets](/ios/configuration-and-data/auto-screenshot.md#excluding-the-screenshot-from-a-report). This option allows you to capture the screenshot only when required.
 
@@ -186,7 +186,7 @@ We've all been waiting for this! Your users can record an additional video of th
 
 Shake is available in the new Maven repository. If you're upgrading from the older version, make sure to [update the Maven repository in the build.gradle file](/ios/install/cocoapods).
 
-Users can finally report [different types of feedback](/ios/user-feedback/feedback-type.md): bugs, suggestions and questions.
+Users can finally report different types of feedback: bugs, suggestions and questions.
 
 Shake now allows you to [protect sensitive data](/ios/configuration-and-data/manage-sensitive-data.md) on the mobile device itself, so it never reaches the Shake servers. It can be used for notifications, network requests, screens and screen elements.
 
