@@ -6,7 +6,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
->This page describes how you can create or modify a form displayed on the [New ticket screen](android/shake-ui/new-ticket-screen.md).
+> Learn how to create or modify a form displayed on the [New ticket screen](android/shake-ui/new-ticket-screen.md).
 
 ## Default form
 
@@ -43,7 +43,7 @@ Shake offers several customizable elements that can be added to the Shake form:
 - **[Attachments](#attachments)** This element allows users to attach files or other relevant materials to their submission, providing additional context and information to help facilitate resolution. This can include images, videos, documents, or other relevant files.
 
 :::note
-Note that the Title, Inspect button, and Attachments elements can only be added once to the form.
+Note that the Title, Inspect button, and Attachments elements can only be added to the form one-time.
 If multiple instances of these components are included, only the first instance will be displayed on the screen
 :::note
 
