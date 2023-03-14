@@ -6,7 +6,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
->This page describes how you can create or modify a form displayed on the [New ticket screen](android/shake-ui/new-ticket-screen.md).
+> Learn how to create or modify a form displayed on the [New ticket screen](ios/shake-ui/new-ticket-screen.md).
 
 ## Default form
 
@@ -43,7 +43,7 @@ Shake offers several customizable elements that can be added to the Shake form:
 - **[Attachments](#attachments)** This element allows users to attach files or other relevant materials to their submission, providing additional context and information to help facilitate resolution. This can include images, videos, documents, or other relevant files.
 
 :::note
-Note that the Title, Inspect button, and Attachments elements can only be added once to the form.
+Note that the Title, Inspect button, and Attachments elements can only be added to the form one-time.
 If multiple instances of these components are included, only the first instance will be displayed on the screen
 :::note
 
@@ -68,30 +68,33 @@ Properties:
 Example:
 
 <Tabs
-groupId="android"
-defaultValue="kotlin"
+groupId="ios"
+defaultValue="swift"
 values={[
-{ label: 'Java', value: 'java'},
-{ label: 'Kotlin', value: 'kotlin'},
+{ label: 'Objective-C', value: 'objectivec'},
+{ label: 'Swift', value: 'swift'},
 ]
 }>
 
-<TabItem value="java">
+<TabItem value="objectivec">
 
-```java title="App.java"
-// highlight-start
-ShakeTitle title = new ShakeTitle("Title", R.string.shake_title, "", false);
-// highlight-end
+```objectivec title="AppDelegate.m"
+//highlight-start
+SHKTitle *title = [[SHKTitle alloc] initWithLabel:@"Title"
+                                             required:false
+                                             labelRes:@"com.app.shakeTitle"
+                                         initialValue:nil];
+//highlight-end
 ```
 
 </TabItem>
 
-<TabItem value="kotlin">
+<TabItem value="swift">
 
-```kotlin title="App.kt"
-// highlight-start
-val title = ShakeTitle(label = "Title", labelRes = R.string.shake_title, initialValue = "", required = false)
-// highlight-end
+```swift title="AppDelegate.swift"
+//highlight-start
+let title = SHKTitle(label: "Title", required: false, labelRes: "com.app.shakeTitle", initialValue: nil)
+//highlight-end
 ```
 
 </TabItem>
@@ -123,30 +126,33 @@ Properties:
 Example:
 
 <Tabs
-groupId="android"
-defaultValue="kotlin"
+groupId="ios"
+defaultValue="swift"
 values={[
-{ label: 'Java', value: 'java'},
-{ label: 'Kotlin', value: 'kotlin'},
+{ label: 'Objective-C', value: 'objectivec'},
+{ label: 'Swift', value: 'swift'},
 ]
 }>
 
-<TabItem value="java">
+<TabItem value="objectivec">
 
-```java title="App.java"
-// highlight-start
-TextInput description = new TextInput("Description", R.string.shake_description, "", false);
-// highlight-end
+```objectivec title="AppDelegate.m"
+//highlight-start
+SHKTextInput *description = [[SHKTextInput alloc] initWithLabel:@"Description"
+                                                           required:false
+                                                           labelRes:@"com.app.shakeDescription"
+                                                       initialValue:nil];
+//highlight-end
 ```
 
 </TabItem>
 
-<TabItem value="kotlin">
+<TabItem value="swift">
 
-```kotlin title="App.kt"
-// highlight-start
-val description = TextInput(label = "Description", labelRes = R.string.shake_description, initialValue = "", required = false)
-// highlight-end
+```swift title="AppDelegate.swift"
+//highlight-start
+let description = SHKTextInput(label: "Description", required: false, labelRes: "com.app.shakeDescription", initialValue: nil)
+//highlight-end
 ```
 
 </TabItem>
@@ -173,30 +179,33 @@ Properties:
 Example:
 
 <Tabs
-groupId="android"
-defaultValue="kotlin"
+groupId="ios"
+defaultValue="swift"
 values={[
-{ label: 'Java', value: 'java'},
-{ label: 'Kotlin', value: 'kotlin'},
+{ label: 'Objective-C', value: 'objectivec'},
+{ label: 'Swift', value: 'swift'},
 ]
 }>
 
-<TabItem value="java">
+<TabItem value="objectivec">
 
-```java title="App.java"
-// highlight-start
-ShakeEmail email = new ShakeEmail("Email", R.string.shake_email, "", false);
-// highlight-end
+```objectivec title="AppDelegate.m"
+//highlight-start
+SHKEmail *email = [[SHKEmail alloc] initWithLabel:@"Email"
+                                             required:false
+                                             labelRes:@"com.app.shakeEmail"
+                                         initialValue:nil];
+//highlight-end
 ```
 
 </TabItem>
 
-<TabItem value="kotlin">
+<TabItem value="swift">
 
-```kotlin title="App.kt"
-// highlight-start
-val email = ShakeEmail(label = "Email", labelRes = R.string.shake_email, initialValue = "", required = false)
-// highlight-end
+```swift title="AppDelegate.swift"
+//highlight-start
+let email = SHKEmail(label: "Email", required: false, labelRes: "com.app.shakeEmail", initialValue: nil)
+//highlight-end
 ```
 
 </TabItem>
@@ -225,30 +234,33 @@ Properties:
 Example:
 
 <Tabs
-groupId="android"
-defaultValue="kotlin"
+groupId="ios"
+defaultValue="swift"
 values={[
-{ label: 'Java', value: 'java'},
-{ label: 'Kotlin', value: 'kotlin'},
+{ label: 'Objective-C', value: 'objectivec'},
+{ label: 'Swift', value: 'swift'},
 ]
 }>
 
-<TabItem value="java">
+<TabItem value="objectivec">
 
-```java title="App.java"
-// highlight-start
-ShakePickerItem item = new ShakePickerItem(R.drawable.ic_bug, "Bug", R.string.shake_bug_item, "bug");
-// highlight-end
+```objectivec title="AppDelegate.m"
+//highlight-start
+SHKPickerItem *pickerItem = [[SHKPickerItem alloc] initWithIconName:@"bugIconAssetName"
+                                                                   text:@"Bug"
+                                                                textRes:@"com.app.shakeBugItem"
+                                                                    tag:@"bug"];
+//highlight-end
 ```
 
 </TabItem>
 
-<TabItem value="kotlin">
+<TabItem value="swift">
 
-```kotlin title="App.kt"
-// highlight-start
-val item = ShakePickerItem(icon = R.drawable.ic_bug, text = "Bug", textRes = R.string.shake_bug_item, tag = "bug")
-// highlight-end
+```swift title="AppDelegate.swift"
+//highlight-start
+let pickerItem = SHKPickerItem(iconName: "bugIconAssetName", text: "Bug", textRes: "com.app.shakeBugItem", tag: "bug")
+//highlight-end
 ```
 
 </TabItem>
@@ -265,30 +277,32 @@ Properties:
 Example:
 
 <Tabs
-groupId="android"
-defaultValue="kotlin"
+groupId="ios"
+defaultValue="swift"
 values={[
-{ label: 'Java', value: 'java'},
-{ label: 'Kotlin', value: 'kotlin'},
+{ label: 'Objective-C', value: 'objectivec'},
+{ label: 'Swift', value: 'swift'},
 ]
 }>
 
-<TabItem value="java">
+<TabItem value="objectivec">
 
-```java title="App.java"
-// highlight-start
-ShakePicker picker = new ShakePicker("Ticket type", R.string.shake_picker_label, items);
-// highlight-end
+```objectivec title="AppDelegate.m"
+//highlight-start
+SHKPicker *picker = [[SHKPicker alloc] initWithLabel:@"Ticket type"
+                                                   items:@[pickerItem]
+                                                labelRes:@"com.app.shakePickerLabel"];
+//highlight-end
 ```
 
 </TabItem>
 
-<TabItem value="kotlin">
+<TabItem value="swift">
 
-```kotlin title="App.kt"
-// highlight-start
-val picker = ShakePicker(label = "Ticket type", labelRes = R.string.shake_picker_label, items = items)
-// highlight-end
+```swift title="AppDelegate.swift"
+//highlight-start
+let picker = SHKPicker(label: "Ticket type", items: [pickerItem], labelRes: "com.app.shakePickerLabel")
+//highlight-end
 ```
 
 </TabItem>
@@ -304,35 +318,35 @@ val picker = ShakePicker(label = "Ticket type", labelRes = R.string.shake_picker
 />
 </table>
 
-This element allows your users to inspect ticket data, tapping it takes them to the [Inspect section](/docs/android/shake-ui/inspect-section).
+This element allows your users to inspect ticket data, tapping it takes them to the [Inspect section](/docs/ios/shake-ui/inspect-section).
 
 Example:
 
 <Tabs
-groupId="android"
-defaultValue="kotlin"
+groupId="ios"
+defaultValue="swift"
 values={[
-{ label: 'Java', value: 'java'},
-{ label: 'Kotlin', value: 'kotlin'},
+{ label: 'Objective-C', value: 'objectivec'},
+{ label: 'Swift', value: 'swift'},
 ]
 }>
 
-<TabItem value="java">
+<TabItem value="objectivec">
 
-```java title="App.java"
-// highlight-start
-ShakeInspectButton inspectButton = new ShakeInspectButton();
-// highlight-end
+```objectivec title="AppDelegate.m"
+//highlight-start
+SHKInspectButton *inspect = SHKInspectButton.new;
+//highlight-end
 ```
 
 </TabItem>
 
-<TabItem value="kotlin">
+<TabItem value="swift">
 
-```kotlin title="App.kt"
-// highlight-start
-val inspectButton = ShakeInspectButton()
-// highlight-end
+```swift title="AppDelegate.swift"
+//highlight-start
+let inspectButton = SHKInspectButton()
+//highlight-end
 ```
 
 </TabItem>
@@ -354,30 +368,30 @@ This element allows your users to attach additional images, videos or files to t
 Example:
 
 <Tabs
-groupId="android"
-defaultValue="kotlin"
+groupId="ios"
+defaultValue="swift"
 values={[
-{ label: 'Java', value: 'java'},
-{ label: 'Kotlin', value: 'kotlin'},
+{ label: 'Objective-C', value: 'objectivec'},
+{ label: 'Swift', value: 'swift'},
 ]
 }>
 
-<TabItem value="java">
+<TabItem value="objectivec">
 
-```java title="App.java"
-// highlight-start
-ShakeAttachments attachments = new ShakeAttachments();
-// highlight-end
+```objectivec title="AppDelegate.m"
+//highlight-start
+SHKAttachments *attachments = SHKAttachments.new;
+//highlight-end
 ```
 
 </TabItem>
 
-<TabItem value="kotlin">
+<TabItem value="swift">
 
-```kotlin title="App.kt"
-// highlight-start
-val attachments = ShakeAttachments()
-// highlight-end
+```swift title="AppDelegate.swift"
+//highlight-start
+let attachments = SHKAttachments()
+//highlight-end
 ```
 
 </TabItem>
@@ -401,64 +415,72 @@ The Category field allows users to select a category for their ticket, which cre
 The Inspect button allows users to easily review and verify the data they have provided for their submission, while the Attachments enables users to upload additional files or other materials to provide context and support their submission.
 
 <Tabs
-groupId="android"
-defaultValue="kotlin"
+groupId="ios"
+defaultValue="swift"
 values={[
-{ label: 'Java', value: 'java'},
-{ label: 'Kotlin', value: 'kotlin'},
+{ label: 'Objective-C', value: 'objectivec'},
+{ label: 'Swift', value: 'swift'},
 ]
 }>
 
-<TabItem value="java">
+<TabItem value="objectivec">
 
-```java title="App.java"
-// highlight-start
-ShakeTitle title = new ShakeTitle("Title", null, "", true);
-ShakeTextInput desc = new ShakeTextInput("Description", null, "", true);
-ShakeEmail email = new ShakeEmail("Email", null, "john.doe@gmail.com", false);
-
-ShakePickerItem[] pickerItems = new ShakePickerItem[]{
-        new ShakePickerItem(R.drawable.ic_bug, "Bug", null, "bug"),
-        new ShakePickerItem(R.drawable.ic_suggestion, "Suggestion", null, "suggestion"),
-        new ShakePickerItem(R.drawable.ic_question, "Question", null, "question")
-};
-ShakePicker picker = new ShakePicker("Feedback type", null, Arrays.asList(pickerItems));
-
-ShakeInspectButton inspect = new ShakeInspectButton();
-ShakeAttachments attachments = new ShakeAttachments();
-
-List<ShakeFormComponent> components = Arrays.asList(title, desc, email, picker, inspect, attachments);
-ShakeForm form = new ShakeForm(components);
-
-Shake.getReportConfiguration().setShakeForm(form);
-// highlight-end
+```objectivec title="AppDelegate.m"
+//highlight-start
+SHKShake.configuration.form = [[SHKForm alloc] initWithItems:@[
+        [[SHKTitle alloc] initWithLabel:@"Title"
+                               required:true
+                               labelRes:nil
+                               initialValue:nil],
+        [[SHKTextInput alloc] initWithLabel:@"Description"
+                                   required:true
+                                   labelRes:nil
+                                   initialValue:nil],
+        [[SHKEmail alloc] initWithLabel:@"Email"
+                               required:false
+                               labelRes:@"com.app.shakeEmail"
+                               initialValue:@"john.doe@gmail.com"],
+        [[SHKPicker alloc] initWithLabel:@"Feedback type"
+                                   items:@[
+            [[SHKPickerItem alloc] initWithIconName:@"assetBug"
+                                               text:@"Bug"
+                                            textRes:nil
+                                                tag:nil],
+            [[SHKPickerItem alloc] initWithIconName:@"assetSuggestion"
+                                               text:@"Suggestion"
+                                            textRes:nil
+                                                tag:nil],
+            [[SHKPickerItem alloc] initWithIconName:@"assetQuestion"
+                                               text:@"Question"
+                                            textRes:nil
+                                                tag:nil]
+        ]
+                                labelRes:nil],
+        SHKInspectButton.new,
+        SHKAttachments.new
+    ]];
+//highlight-end
 ```
 
 </TabItem>
 
-<TabItem value="kotlin">
+<TabItem value="swift">
 
-```kotlin title="App.kt"
-// highlight-start
-val title = ShakeTitle(label = "Title", required = true)
-val desc = ShakeTextInput(label = "Description", required = true)
-val email = ShakeEmail(label = "Email", initialValue = "john.doe@gmail.com")
-
-val pickerItems = mutableListOf(
-    ShakePickerItem(icon = R.drawable.ic_bug, text = "Bug", tag = "bug"),
-    ShakePickerItem(icon = R.drawable.ic_suggestion, text = "Suggestion", tag = "suggestion"),
-    ShakePickerItem(icon = R.drawable.ic_question, text = "Question", tag = "question")
-)
-val picker = ShakePicker(label = "Feedback type", items = pickerItems)
-
-val inspect = ShakeInspectButton()
-val attachments = ShakeAttachments()
-
-val components = mutableListOf(title, desc, email, picker, inspect, attachments)
-val form = ShakeForm(components)
-
-Shake.getReportConfiguration().shakeForm = form
-// highlight-end
+```swift title="AppDelegate.swift"
+//highlight-start
+Shake.configuration.form = SHKForm(items: [
+            SHKTitle(label: "Title", required: true, labelRes: nil, initialValue: nil),
+            SHKTextInput(label: "Description", required: true, labelRes: nil, initialValue: nil),
+            SHKEmail(label: "Email", required: false, labelRes: nil, initialValue: "john.doe@gmail.com"),
+            SHKPicker(label: "Feedback Type", items: [
+                SHKPickerItem(iconName: "assetBug", text: "Bug", textRes: nil, tag: nil),
+                SHKPickerItem(iconName: "assetSuggestion", text: "Suggestion", textRes: nil, tag: nil),
+                SHKPickerItem(iconName: "assetQuestion", text: "Question", textRes: nil, tag: nil),
+            ], labelRes: nil),
+            SHKInspectButton(),
+            SHKAttachments(),
+        ])
+//highlight-end
 ```
 
 </TabItem>
@@ -477,42 +499,43 @@ Each language has its own resource file, and the system will automatically load 
 By utilizing resources strings, you can provide a seamless and localized experience for your users, regardless of their language preferences.
 
 <Tabs
-groupId="android"
-defaultValue="kotlin"
+groupId="ios"
+defaultValue="swift"
 values={[
-{ label: 'Java', value: 'java'},
-{ label: 'Kotlin', value: 'kotlin'},
+{ label: 'Objective-C', value: 'objectivec'},
+{ label: 'Swift', value: 'swift'},
 ]
 }>
 
-<TabItem value="java">
+<TabItem value="objectivec">
 
-```java title="App.java"
-// highlight-start
-ShakeTitle title = new ShakeTitle("Title", R.string.shake_form_title, "", true);
-ShakeTextInput repro = new ShakeTextInput("Reproduction steps", R.string.shake_form_repro, "", true);
+```objectivec title="AppDelegate.m"
+//highlight-start
+SHKTitle *title = [[SHKTitle alloc] initWithLabel:@"Title"
+                                             required:false
+                                             labelRes:@"com.app.shakeTitle"
+                                         initialValue:nil];
 
-List<ShakeFormComponent> components = Arrays.asList(title, repro);
-ShakeForm form = new ShakeForm(components);
+SHKTextInput *description = [[SHKTextInput alloc] initWithLabel:@"Description"
+                                                       required:false
+                                                       labelRes:@"com.app.shakeDescription"
+                                                   initialValue:nil];
 
-Shake.getReportConfiguration().setShakeForm(form);
-// highlight-end
+SHKShake.configuration.form = [[SHKForm alloc] initWithItems:@[title, description]];
+//highlight-end
 ```
 
 </TabItem>
 
-<TabItem value="kotlin">
+<TabItem value="swift">
 
-```kotlin title="App.kt"
-// highlight-start
-val title = ShakeTitle(label = "Title", labelRes = R.string.shake_form_title, required = true)
-val repro = ShakeTextInput(label = "Reproduction steps", labelRes = R.string.shake_form_repro, required = true)
+```swift title="AppDelegate.swift"
+//highlight-start
+let title = SHKTitle(label: "Title", required: false, labelRes: "com.app.shakeTitle", initialValue: nil)
+let description = SHKTextInput(label: "Description", required: false, labelRes: "com.app.shakeDescription", initialValue: nil)
 
-val components = mutableListOf(title, repro)
-val form = ShakeForm(components)
-
-Shake.getReportConfiguration().shakeForm = form
-// highlight-end
+Shake.configuration.form = SHKForm(items: [title, description])
+//highlight-end
 ```
 
 </TabItem>
@@ -524,44 +547,40 @@ If you like the default form but want to make some modifications, you can easily
 For example, you may wish to remove the Inspect button from the default form to prevent users from inspecting the ticket data, while keeping the other form elements intact.
 
 <Tabs
-groupId="android"
-defaultValue="kotlin"
+groupId="ios"
+defaultValue="swift"
 values={[
-{ label: 'Java', value: 'java'},
-{ label: 'Kotlin', value: 'kotlin'},
+{ label: 'Objective-C', value: 'objectivec'},
+{ label: 'Swift', value: 'swift'},
 ]
 }>
 
-<TabItem value="java">
+<TabItem value="objectivec">
 
-```java title="App.java"
-// highlight-start
-ShakeForm shakeForm = Shake.getReportConfiguration().getShakeForm();
-ListIterator<ShakeFormComponent> iterator = shakeForm.getComponents().listIterator();
-while(iterator.hasNext()) {
-    ShakeFormComponent component = iterator.next();
-    if (component instanceof ShakeInspectButton) {
-        iterator.remove();
-    }
-}
-// highlight-end
+```objectivec title="AppDelegate.m"
+//highlight-start
+NSArray<id<SHKFormItemProtocol>> *defaultFormItems = SHKShake.configuration.form.items;
+
+NSArray<id<SHKFormItemProtocol>> *filteredItems = [defaultFormItems filteredArrayUsingPredicate:[NSPredicate predicateWithBlock:^BOOL(id  _Nullable evaluatedObject, NSDictionary<NSString *,id> * _Nullable bindings) {
+    return [evaluatedObject isKindOfClass:SHKInspectButton.class];
+}]];
+
+SHKShake.configuration.form = [[SHKForm alloc] initWithItems:@[filteredItems]];
+//highlight-end
 ```
 
 </TabItem>
 
-<TabItem value="kotlin">
+<TabItem value="swift">
 
-```kotlin title="App.kt"
-// highlight-start
-val shakeForm = Shake.getReportConfiguration().shakeForm
-val iterator = shakeForm.components.listIterator()
-while (iterator.hasNext()) {
-    val component = iterator.next()
-    if (component is ShakeInspectButton) {
-        iterator.remove()
-    }
-}
-// highlight-end
+```swift title="AppDelegate.swift"
+//highlight-start
+let customForm = SHKForm(items: Shake.configuration.form.items.filter({ item in
+    return !(item is SHKInspectButton)
+}))
+        
+Shake.configuration.form = customForm
+//highlight-end
 ```
 
 </TabItem>

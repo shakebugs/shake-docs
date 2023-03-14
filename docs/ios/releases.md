@@ -8,9 +8,16 @@ title: Release notes
 
 What would you like us to build next? Upvote upcoming features and suggest new ideas on the [Public feedback board](https://feedback.shakebugs.com/).
 
+## 15.3.1
+<span class="tag-button">January 31, 2023</span>&nbsp;&nbsp;
+<span class="tag-button green-tag-button">Latest version</span>
+
+#### Bug fixes
+
+We happily squashed a few pesky bugs.
+
 ## 15.3.0
 <span class="tag-button">June 23, 2022</span>&nbsp;&nbsp;
-<span class="tag-button green-tag-button">Latest version</span>
 
 #### What's new
 The [unread chat messages listener](/ios/users/chat/#unread-messages) is now available in Shake. Anywhere in your app, you can show a user how many unread messages in Shake they have.
