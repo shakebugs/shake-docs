@@ -135,7 +135,7 @@ values={[
 
 ```java title="App.java"
 // highlight-start
-TextInput description = new TextInput("Description", R.string.shake_description, "", false);
+ShakeTextInput description = new ShakeTextInput("Description", R.string.shake_description, "", false);
 // highlight-end
 ```
 
@@ -145,7 +145,7 @@ TextInput description = new TextInput("Description", R.string.shake_description,
 
 ```kotlin title="App.kt"
 // highlight-start
-val description = TextInput(label = "Description", labelRes = R.string.shake_description, initialValue = "", required = false)
+val description = ShakeTextInput(label = "Description", labelRes = R.string.shake_description, initialValue = "", required = false)
 // highlight-end
 ```
 
