@@ -14,7 +14,7 @@ What would you like us to build next? Upvote upcoming features and suggest new i
 
 #### What's new
 
-We're excited to announce the latest feature in our SDK, which allows you to [create a custom feedback form](/ios/configuration-and-data/custom-forms).
+We're excited to announce the latest feature in our SDK, which allows you to [create a custom feedback form](/android/configuration-and-data/custom-forms).
 Now you can collect even more detailed information from your users and tailor the form to your specific needs.
 Say goodbye to generic feedback form and hello to personalized data collection!
 
