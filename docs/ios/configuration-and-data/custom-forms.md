@@ -49,14 +49,6 @@ If multiple instances of these components are included, only the first instance 
 
 ### Title
 
-<table class="media-container media-container-highlighted mt-40 mb-40 pt-80">
-<img
-  alt="Ticket description field"
-  width="380"
-  src={useBaseUrl('img/element-description@2x.png')}
-/>
-</table>
-
 A component that lets users provide a short and descriptive title for their issue or request.
 
 Properties:
@@ -107,14 +99,6 @@ they will automatically become <span class="tag-button pink-tag-button">tags</sp
 
 ### Text input
 
-<table class="media-container media-container-highlighted mt-40 mb-40">
-<img
-  alt="Email field"
-  width="380"
-  src={useBaseUrl('img/element-email@2x.png')}
-/>
-</table>
-
 This element allows your users to leave textual input  with the ticket they're submitting.
 
 Properties:
@@ -160,14 +144,6 @@ let description = SHKTextInput(label: "Description", required: false, labelRes: 
 
 ### Email input
 
-<table class="media-container media-container-highlighted mt-40 mb-40">
-<img
-  alt="Email field"
-  width="380"
-  src={useBaseUrl('img/element-email@2x.png')}
-/>
-</table>
-
 This element allows your users to leave email address with the ticket they're submitting.
 
 Properties:
@@ -212,14 +188,6 @@ let email = SHKEmail(label: "Email", required: false, labelRes: "com.app.shakeEm
 </Tabs>
 
 ### Picker
-
-<table class="media-container media-container-highlighted mt-40 mb-40">
-<img
-  alt="Email field"
-  width="380"
-  src={useBaseUrl('img/element-email@2x.png')}
-/>
-</table>
 
 This element enables your users to select an option from a pre-defined list of choices.
 
@@ -310,14 +278,6 @@ let picker = SHKPicker(label: "Ticket type", items: [pickerItem], labelRes: "com
 
 ### Inspect button
 
-<table class="media-container media-container-highlighted mt-40 mb-40">
-<img
-  alt="Inspect button"
-  width="380"
-  src={useBaseUrl('img/element-inspect@2x.png')}
-/>
-</table>
-
 This element allows your users to inspect ticket data, tapping it takes them to the [Inspect section](/docs/ios/shake-ui/inspect-section).
 
 Example:
@@ -354,14 +314,6 @@ let inspectButton = SHKInspectButton()
 
 
 ### Attachments
-
-<table class="media-container media-container-highlighted mt-40 mb-40">
-<img
-  alt="Inspect button"
-  width="380"
-  src={useBaseUrl('img/element-inspect@2x.png')}
-/>
-</table>
 
 This element allows your users to attach additional images, videos or files to the ticket.
 
