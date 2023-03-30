@@ -14,8 +14,7 @@ Whatever you tweak, your configuration settings apply to all Shake modules:
 ## Elements of the New ticket screen
 
 Your users send you their feedback and crash reports from the New ticket screen. Read how to customize it:
-* [New ticket screen elements](/docs/android/configuration-and-data/new-ticket-screen-elements)
-* [Feedback type](/docs/android/user-feedback/feedback-type) for User feedback. Crash reports don't have this element.
+* [Custom forms](/docs/android/configuration-and-data/custom-forms)
 
 ## Collected data
 
@@ -23,8 +22,8 @@ Shake attaches useful data both to user feedback and crash reports. Read all abo
 
 <div class="featuresList">
     <div>
-        <img src="/docs/img/description@2x.png" alt="Ticket description"/>
-        <p><a href="/docs/android/configuration-and-data/new-ticket-screen-elements#ticket-description">Ticket description</a></p>
+        <img src="/docs/img/description@2x.png" alt="Custom form"/>
+        <p><a href="/docs/android/configuration-and-data/custom-forms">Custom forms</a></p>
     </div>
 	<div>
         <img src="/docs/img/essential-data@2x.png" alt="Data attached by default"/>

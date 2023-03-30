@@ -8,9 +8,18 @@ title: Release notes
 
 What would you like us to build next? Upvote upcoming features and suggest new ideas on the [Public feedback board](https://feedback.shakebugs.com/).
 
+## 16.0.0
+<span class="tag-button">March 30, 2023</span>&nbsp;&nbsp;
+<span class="tag-button green-tag-button">Latest version</span>
+
+#### What's new
+
+We're excited to announce the latest feature in our SDK, which allows you to [create a custom feedback form](/ios/configuration-and-data/custom-forms).
+Now you can collect even more detailed information from your users and tailor the form to your specific needs.
+Say goodbye to generic feedback form and hello to personalized data collection!
+
 ## 15.3.1
 <span class="tag-button">January 31, 2023</span>&nbsp;&nbsp;
-<span class="tag-button green-tag-button">Latest version</span>
 
 #### Bug fixes
 
@@ -99,7 +108,7 @@ You can now safely call Shake methods before Shake is started. We've handled tho
 
 If you are using the shaking gesture as your invocation event, you can now [adjust the device’s sensitivity to the shaking gesture](/android/user-feedback/invoke.md#shaking).
  
-Shake now supports [customization of feedback types](/android/user-feedback/feedback-type.md#custom-types). You can configure Shake to display any number of custom categories related to your product.
+Shake now supports customization of feedback types. You can configure Shake to display any number of custom categories related to your product.
 
 We've added an option to [exclude the screenshot from tickets](/android/configuration-and-data/auto-screenshot.md#excluding-the-screenshot-from-a-report). This option allows you to capture the screenshot only when required.
 
@@ -176,70 +185,8 @@ We've all been waiting for this! Your users can record an additional video of th
 
 Shake is available in the new Maven repository. If you're upgrading from the older version, make sure to [update the Maven repository in the build.gradle file](/android/installation.md#add-maven-repository-to-your-top-level-buildgradle-file).
 
-Users can finally report [different types of feedback](/android/user-feedback/feedback-type.md): bugs, suggestions and questions.
+Users can finally report different types of feedback: bugs, suggestions and questions.
 
 Shake now allows you to [protect sensitive data](android/configuration-and-data/manage-sensitive-data.md) on the mobile device itself, so it never reaches the Shake servers. It can be used for notifications, network requests, screens and screen elements.
 
 You can now use the in-app [intro message](android/user-feedback/intro-message.md) to inform your users about Shake availability.
-
-## 13.1
-<span class="tag-button">August 25, 2020</span>&nbsp;&nbsp;
-
-#### What's new
-
-If you want to, you can now pre-fill or hide the [Email field](/android/configuration-and-data/new-ticket-screen-elements/#email-field) from the New ticket screen. Pretty neat.
-
-## 13.0
-<span class="tag-button">June 30, 2020</span>
-
-#### What's new
-
-Screenshots are cool, but wouldn't it be even cooler if you could watch a short video of what a user did before reporting the ticket? That's why we introduced [Auto screen recording](/android/configuration-and-data/auto-screen-recording.md).
-
-## 12.0
-<span class="tag-button">May 19, 2020</span>
-
-#### What's new
-
-Not all of you love the default Shake color. Now, whenever users open it up,
-Shake can appear in your brand color and with your logo.
-
-You wanted us to get rid of Quick Facts (one long concatenated string)
-and introduce [Ticket metadata](/android/configuration-and-data/ticket-metadata.md) (useful key-value pairs) instead. So we did it.
-
-## 11.0
-<span class="tag-button">April 1, 2020</span>
-
-#### What's new
-
-Your users can at last attach their own files to tickets!
-They can also remove any of them with a subtle long press. Neat.
-
-There’s no such thing as too many [invocation methods](/android/user-feedback/invoke.md).
-Shake user feedback can now be invoked by a one-finger swiping gesture from the right edge of the screen too.
-
-The Wrap-up screen is now a tiny bit more helpful than before.
-If your users want to, they can read how to report great bugs, report any SDK hiccups to us or recommend Shake.
-
-If you want to, Shake's [Activity history](/android/configuration-and-data/activity-history.md) now allows you to send yourself any custom logs,
-and read the notifications users receive.
-
-## 10.0
-<span class="tag-button">March 12, 2020</span>
-
-#### What's new
-
-To continue delivering you more and more options in a scalable manner,
-we have rewritten the whole Android SDK API Version 10.
-It's like getting a flu shot — feel free to hate us for a few minutes while you tweak a call or two,
-but we sincerely promise you'll enjoy all the benefits 100 times over.
-
-By popular demand, Shake can now be [invoked through code](/android/user-feedback/invoke/#invoke-through-code) as well.
-
-Submit yourself [silent user feedback](/android/user-feedback/silent-user-feedback.md) from the app background,
-without interrupting your end user whatsoever!
-
-Privacy options are important. That’s why you now have a method to
-disable or enable [Activity history](/android/configuration-and-data/activity-history.md) whenever you want to.
-
-If you want to, you can [hide the Inspect button](/android/configuration-and-data/new-ticket-screen-elements/#inspect-button) from your users. Brilliant.
