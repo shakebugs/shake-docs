@@ -48,6 +48,10 @@ Shake.insertNetworkRequest(networkRequestBuilder);
 
 System events - also known as app lifecycle events - are tracked automatically and require no additional setup.
 
+### Screen changes
+
+Screen changes detection is currently not supported.
+
 ### Notifications
 
 On *iOS*, notifications are tracked automatically and require no additional setup.

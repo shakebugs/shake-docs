@@ -3,10 +3,8 @@ id: custom-forms
 title: Custom forms
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
 
-> Learn how to create or modify a form displayed on the [New ticket screen](android/shake-ui/new-ticket-screen.md).
+> Learn how to create or modify a form displayed on the [New ticket screen](react/shake-ui/new-ticket-screen.md).
 
 ## Default form
 
@@ -61,41 +59,16 @@ A component that lets users provide a short and descriptive title for their issu
 
 Properties:
 - label **String** - represents element label
-- labelRes **Int** - loads label from resource id
+- labelRes **String** - loads label from resource id
 - initialValue **String** - initial input value
 - required **Bool** - if true, user can't submit the ticket while the input is empty
 
 Example:
 
-<Tabs
-groupId="android"
-defaultValue="kotlin"
-values={[
-{ label: 'Java', value: 'java'},
-{ label: 'Kotlin', value: 'kotlin'},
-]
-}>
-
-<TabItem value="java">
-
-```java title="App.java"
-// highlight-start
-ShakeTitle title = new ShakeTitle("Title", R.string.shake_title, "", true);
-// highlight-end
+```javascript title="App.js"
+// highlight-next-line
+const title = new ShakeTitle('Title', 'shake_title', '', true);
 ```
-
-</TabItem>
-
-<TabItem value="kotlin">
-
-```kotlin title="App.kt"
-// highlight-start
-val title = ShakeTitle(label = "Title", labelRes = R.string.shake_title, initialValue = "", required = true)
-// highlight-end
-```
-
-</TabItem>
-</Tabs>
 
 :::note
 Here's a tip that quality assurance teams often find helpful. If *#some #hashtags* are added anywhere in the title,
@@ -116,41 +89,16 @@ This element allows your users to leave textual input  with the ticket they're s
 
 Properties:
 - label **String** - represents element label
-- labelRes **Int** - loads label from resource id
+- labelRes **String** - loads label from resource id
 - initialValue **String** - initial input value
 - required **Bool** - if true, user can't submit the ticket while the input is empty
 
 Example:
 
-<Tabs
-groupId="android"
-defaultValue="kotlin"
-values={[
-{ label: 'Java', value: 'java'},
-{ label: 'Kotlin', value: 'kotlin'},
-]
-}>
-
-<TabItem value="java">
-
-```java title="App.java"
-// highlight-start
-ShakeTextInput description = new ShakeTextInput("Steps to reproduce", R.string.shake_description, "", false);
-// highlight-end
+```javascript title="App.js"
+// highlight-next-line
+const description = new ShakeTextInput('Steps to reproduce', 'shake_description', '', false);
 ```
-
-</TabItem>
-
-<TabItem value="kotlin">
-
-```kotlin title="App.kt"
-// highlight-start
-val description = ShakeTextInput(label = "Steps to reproduce", labelRes = R.string.shake_description, initialValue = "", required = false)
-// highlight-end
-```
-
-</TabItem>
-</Tabs>
 
 ### Email input
 
@@ -166,41 +114,16 @@ This element allows your users to leave email address with the ticket they're su
 
 Properties:
 - label **String** - represents element label
-- labelRes **Int** - loads label from resource id
+- labelRes **String** - loads label from resource id
 - initialValue **String** - initial input value
 - required **Bool** - if true, user can't submit the ticket while the input is empty
 
 Example:
 
-<Tabs
-groupId="android"
-defaultValue="kotlin"
-values={[
-{ label: 'Java', value: 'java'},
-{ label: 'Kotlin', value: 'kotlin'},
-]
-}>
-
-<TabItem value="java">
-
-```java title="App.java"
-// highlight-start
-ShakeEmail email = new ShakeEmail("Email to contact you on", R.string.shake_email, "", true);
-// highlight-end
+```javascript title="App.js"
+// highlight-next-line
+const email = new ShakeEmail('Email to contact you on', 'shake_email', '', true);
 ```
-
-</TabItem>
-
-<TabItem value="kotlin">
-
-```kotlin title="App.kt"
-// highlight-start
-val email = ShakeEmail(label = "Email to contact you on", labelRes = R.string.shake_email, initialValue = "", required = true)
-// highlight-end
-```
-
-</TabItem>
-</Tabs>
 
 ### Picker
 
@@ -217,82 +140,31 @@ This element enables your users to select an option from a pre-defined list of c
 #### Picker item
 
 Properties:
-- icon **Int** - represents picker item resource icon
 - text **String** - represents element text
-- textRes **Int** - loads text from resource id
+- textRes **String** - loads text from resource id
+- icon **String** - represents picker item resource icon
 - tag **String** - if item is selected, tag will be automatically added to the ticket
 
 Example:
 
-<Tabs
-groupId="android"
-defaultValue="kotlin"
-values={[
-{ label: 'Java', value: 'java'},
-{ label: 'Kotlin', value: 'kotlin'},
-]
-}>
-
-<TabItem value="java">
-
-```java title="App.java"
-// highlight-start
-ShakePickerItem item = new ShakePickerItem(R.drawable.ic_playbox_mini, "Playbox Mini", R.string.playbox_mini, "playbox-mini");
-// highlight-end
+```javascript title="App.js"
+// highlight-next-line
+const item = new ShakePickerItem('Playbox Mini', 'playbox_mini', 'ic_playbox_mini', 'playbox-mini');
 ```
-
-</TabItem>
-
-<TabItem value="kotlin">
-
-```kotlin title="App.kt"
-// highlight-start
-val item = ShakePickerItem(icon = R.drawable.ic_playbox_mini, text = "Playbox Mini", textRes = R.string.playbox_mini, tag = "playbox-mini")
-// highlight-end
-```
-
-</TabItem>
-</Tabs>
-
 
 #### Picker
 
 Properties:
 - label **String** - represents element label
-- labelRes **Int** - loads label from resource id
 - items **List** - list of items in the picker
+- labelRes **String** - loads label from resource id
 
 Example:
 
-<Tabs
-groupId="android"
-defaultValue="kotlin"
-values={[
-{ label: 'Java', value: 'java'},
-{ label: 'Kotlin', value: 'kotlin'},
-]
-}>
-
-<TabItem value="java">
-
-```java title="App.java"
-// highlight-start
-ShakePicker picker = new ShakePicker("Choose your console", R.string.shake_picker_label, items);
-// highlight-end
+```javascript title="App.js"
+// highlight-next-line
+const picker = new ShakePicker('Choose your console', items, 'shake_picker_label');
 ```
-
-</TabItem>
-
-<TabItem value="kotlin">
-
-```kotlin title="App.kt"
-// highlight-start
-val picker = ShakePicker(label = "Choose your console", labelRes = R.string.shake_picker_label, items = items)
-// highlight-end
-```
-
-</TabItem>
-</Tabs>
 
 ### Inspect button
 
@@ -304,40 +176,14 @@ val picker = ShakePicker(label = "Choose your console", labelRes = R.string.shak
 />
 </table>
 
-This element allows your users to inspect ticket data, tapping it takes them to the [Inspect section](/docs/android/shake-ui/inspect-section).
+This element allows your users to inspect ticket data, tapping it takes them to the [Inspect section](/docs/react/shake-ui/inspect-section).
 
 Example:
 
-<Tabs
-groupId="android"
-defaultValue="kotlin"
-values={[
-{ label: 'Java', value: 'java'},
-{ label: 'Kotlin', value: 'kotlin'},
-]
-}>
-
-<TabItem value="java">
-
-```java title="App.java"
-// highlight-start
-ShakeInspectButton inspectButton = new ShakeInspectButton();
-// highlight-end
+```javascript title="App.js"
+// highlight-next-line
+const inspectButton = new ShakeInspectButton();
 ```
-
-</TabItem>
-
-<TabItem value="kotlin">
-
-```kotlin title="App.kt"
-// highlight-start
-val inspectButton = ShakeInspectButton()
-// highlight-end
-```
-
-</TabItem>
-</Tabs>
-
 
 ### Attachments
 
@@ -353,35 +199,10 @@ This element allows your users to attach additional images, videos or files to t
 
 Example:
 
-<Tabs
-groupId="android"
-defaultValue="kotlin"
-values={[
-{ label: 'Java', value: 'java'},
-{ label: 'Kotlin', value: 'kotlin'},
-]
-}>
-
-<TabItem value="java">
-
-```java title="App.java"
-// highlight-start
-ShakeAttachments attachments = new ShakeAttachments();
-// highlight-end
+```javascript title="App.js"
+// highlight-next-line
+const attachments = new ShakeAttachments();
 ```
-
-</TabItem>
-
-<TabItem value="kotlin">
-
-```kotlin title="App.kt"
-// highlight-start
-val attachments = ShakeAttachments()
-// highlight-end
-```
-
-</TabItem>
-</Tabs>
 
 ## Examples
 
@@ -400,69 +221,33 @@ The Title and Description fields are required and cannot be left blank, while th
 The Category field allows users to select a category for their ticket, which creates a corresponding tag to help with organization and management.
 The Inspect button allows users to easily review and verify the data they have provided for their submission, while the Attachments enables users to upload additional files or other materials to provide context and support their submission.
 
-<Tabs
-groupId="android"
-defaultValue="kotlin"
-values={[
-{ label: 'Java', value: 'java'},
-{ label: 'Kotlin', value: 'kotlin'},
-]
-}>
-
-<TabItem value="java">
-
-```java title="App.java"
+```javascript title="App.js"
 // highlight-start
-ShakeTitle title = new ShakeTitle("Title", null, "", true);
-ShakeTextInput desc = new ShakeTextInput("Description", null, "", true);
-ShakeEmail email = new ShakeEmail("Email", null, "john.doe@gmail.com", false);
+const title = new ShakeTitle('Title', null, '', true);
+const desc = new ShakeTextInput('Description', null, '', true);
+const email = new ShakeEmail('Email', null, 'john.doe@gmail.com', false);
 
-ShakePickerItem[] pickerItems = new ShakePickerItem[]{
-        new ShakePickerItem(R.drawable.ic_bug, "Bug", null, "bug"),
-        new ShakePickerItem(R.drawable.ic_suggestion, "Suggestion", null, "suggestion"),
-        new ShakePickerItem(R.drawable.ic_question, "Question", null, "question")
-};
-ShakePicker picker = new ShakePicker("Feedback type", null, Arrays.asList(pickerItems));
+const pickerItems = [
+    new ShakePickerItem('Bug', null, 'ic_bug', 'bug'),
+    new ShakePickerItem('Suggestion', null, 'ic_suggestion', 'suggestion'),
+    new ShakePickerItem('Question', null, 'ic_question', 'question'),
+];
+const picker = new ShakePicker('Feedback type', pickerItems);
 
-ShakeInspectButton inspect = new ShakeInspectButton();
-ShakeAttachments attachments = new ShakeAttachments();
+const inspect = new ShakeInspectButton();
+const attachments = new ShakeAttachments();
 
-List<ShakeFormComponent> components = Arrays.asList(title, desc, email, picker, inspect, attachments);
-ShakeForm form = new ShakeForm(components);
+const components = [title, desc, email, picker, inspect, attachments];
+const form = new ShakeForm(components);
 
-Shake.getReportConfiguration().setShakeForm(form);
+Shake.setShakeForm(form);
 // highlight-end
 ```
 
-</TabItem>
-
-<TabItem value="kotlin">
-
-```kotlin title="App.kt"
-// highlight-start
-val title = ShakeTitle(label = "Title", required = true)
-val desc = ShakeTextInput(label = "Description", required = true)
-val email = ShakeEmail(label = "Email", initialValue = "john.doe@gmail.com")
-
-val pickerItems = mutableListOf(
-    ShakePickerItem(icon = R.drawable.ic_bug, text = "Bug", tag = "bug"),
-    ShakePickerItem(icon = R.drawable.ic_suggestion, text = "Suggestion", tag = "suggestion"),
-    ShakePickerItem(icon = R.drawable.ic_question, text = "Question", tag = "question")
-)
-val picker = ShakePicker(label = "Feedback type", items = pickerItems)
-
-val inspect = ShakeInspectButton()
-val attachments = ShakeAttachments()
-
-val components = mutableListOf(title, desc, email, picker, inspect, attachments)
-val form = ShakeForm(components)
-
-Shake.getReportConfiguration().shakeForm = form
-// highlight-end
-```
-
-</TabItem>
-</Tabs>
+*ic_bug*, *ic_suggestion* and *ic_question* are icons added to the native Android and iOS project.
+Add icons to the native project with the name specified in the code:
+- For Android, add icons to the **android/app/src/main/res/drawable** directory.
+- For iOS, add icons using XCode to the **Runner/Assets** directory.
 
 ### Creating a form translated to different languages
 
@@ -476,93 +261,74 @@ Each language has its own resource file, and the system will automatically load 
 
 By utilizing resources strings, you can provide a seamless and localized experience for your users, regardless of their language preferences.
 
-<Tabs
-groupId="android"
-defaultValue="kotlin"
-values={[
-{ label: 'Java', value: 'java'},
-{ label: 'Kotlin', value: 'kotlin'},
-]
-}>
-
-<TabItem value="java">
-
-```java title="App.java"
+```javascript title="App.js"
 // highlight-start
-ShakeTitle title = new ShakeTitle("Title", R.string.shake_form_title, "", true);
-ShakeTextInput repro = new ShakeTextInput("Reproduction steps", R.string.shake_form_repro, "", true);
+const title = new ShakeTitle('Title', 'shake_form_title', '', true);
+const repro = new ShakeTextInput('Reproduction steps', 'shake_form_repro', '', true);
 
-List<ShakeFormComponent> components = Arrays.asList(title, repro);
-ShakeForm form = new ShakeForm(components);
+const components = [title, repro];
+const form = new ShakeForm(components);
 
-Shake.getReportConfiguration().setShakeForm(form);
+Shake.setShakeForm(form);
 // highlight-end
 ```
 
-</TabItem>
+For example, you want to translate your form to the English and German language.
 
-<TabItem value="kotlin">
-
-```kotlin title="App.kt"
+#### Android
+Add strings to the **android/app/src/main/res/values/strings.xml** and **android/app/src/main/res/values-de/strings.xml** files.
+```xml title="values/strings.xml"
 // highlight-start
-val title = ShakeTitle(label = "Title", labelRes = R.string.shake_form_title, required = true)
-val repro = ShakeTextInput(label = "Reproduction steps", labelRes = R.string.shake_form_repro, required = true)
-
-val components = mutableListOf(title, repro)
-val form = ShakeForm(components)
-
-Shake.getReportConfiguration().shakeForm = form
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="shake_form_title">Description</string>
+  <string name="shake_form_repro">Reproduction steps</string>
+</resources>
 // highlight-end
-```
+``` 
 
-</TabItem>
-</Tabs>
+```xml title="values-de/strings.xml"
+// highlight-start
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="shake_form_title">Beschreibung</string>
+  <string name="shake_form_repro">Reproduktionsschritte</string>
+</resources>
+// highlight-end
+``` 
+
+#### iOS
+Add strings to the **ios/Runner/en.lproj/Localizable.strings** and **ios/Runner/de.lproj/Localizable.strings** files.
+```text title="en.lproj/Localizable.strings"
+// highlight-start
+"shake_form_title" = "Description";
+"shake_form_repro" = "Reproduction steps";
+// highlight-end
+``` 
+
+```text title="de.lproj/Localizable.strings"
+// highlight-start
+"shake_form_title" = "Beschreibung";
+"shake_form_repro" = "Reproduktionsschritte";
+// highlight-end
+``` 
+
+:::note
+If you don't have Localizable files in your iOS project, you should add it using the XCode *Runner → New File... → Strings File*
+and enable languages you want in the *Project → Info → Localisations*.
+:::note
 
 ### Removing Inspect button from the default form
 
 If you like the default form but want to make some modifications, you can easily do so by editing the Shake default form.
 For example, you may wish to remove the Inspect button from the default form to prevent users from inspecting the ticket data, while keeping the other form elements intact.
 
-<Tabs
-groupId="android"
-defaultValue="kotlin"
-values={[
-{ label: 'Java', value: 'java'},
-{ label: 'Kotlin', value: 'kotlin'},
-]
-}>
-
-<TabItem value="java">
-
-```java title="App.java"
+```javascript title="App.js"
 // highlight-start
-ShakeForm shakeForm = Shake.getReportConfiguration().getShakeForm();
-ListIterator<ShakeFormComponent> iterator = shakeForm.getComponents().listIterator();
-while(iterator.hasNext()) {
-    ShakeFormComponent component = iterator.next();
-    if (component instanceof ShakeInspectButton) {
-        iterator.remove();
-    }
+const setCustomForm = async () => {
+    const shakeForm = await Shake.getShakeForm();
+    shakeForm.components = shakeForm.components.filter(c => c.type !== 'inspect');
+    Shake.setShakeForm(shakeForm); 
 }
 // highlight-end
 ```
-
-</TabItem>
-
-<TabItem value="kotlin">
-
-```kotlin title="App.kt"
-// highlight-start
-val shakeForm = Shake.getReportConfiguration().shakeForm
-val iterator = shakeForm.components.listIterator()
-while (iterator.hasNext()) {
-    val component = iterator.next()
-    if (component is ShakeInspectButton) {
-        iterator.remove()
-    }
-}
-// highlight-end
-```
-
-</TabItem>
-</Tabs>

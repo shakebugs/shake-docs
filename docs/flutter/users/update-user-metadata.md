@@ -17,7 +17,6 @@ after registering the User.
 Values from these three keys will be presented nicely on the Shake dashboard, so we suggest you use them:
 * `first_name`
 * `last_name`
-* `end_user_id`
 
 
 ## Updates

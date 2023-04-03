@@ -8,9 +8,18 @@ title: Release notes
 
 What would you like us to build next? Upvote upcoming features and suggest new ideas on the [Public feedback board](https://feedback.shakebugs.com/).
 
+## 16.0.0
+<span class="tag-button">April 18, 2023</span>&nbsp;&nbsp;
+<span class="tag-button green-tag-button">Latest version</span>
+
+#### What's new
+
+We're excited to announce the latest feature in our SDK, which allows you to [create a custom feedback form](/flutter/configuration-and-data/custom-forms).
+Now you can collect even more detailed information from your users and tailor the form to your specific needs.
+Say goodbye to generic feedback form and hello to personalized data collection!
+
 ## 15.3.0
 <span class="tag-button">July 25, 2022</span>&nbsp;&nbsp;
-<span class="tag-button green-tag-button">Latest version</span>
 
 #### What's new
 The [unread chat messages listener](/flutter/users/chat/#unread-messages) is now available in Shake. Anywhere in your app, you can show a user how many unread messages in Shake they have.
@@ -88,7 +97,7 @@ If your users want to, they can read how to report great bugs, report any SDK hi
 If you want to, Shake's [Activity history](/flutter/configuration-and-data/activity-history) now allows you to send yourself any custom logs,
 and read the notifications users receive.
 
-Users can finally report [different types of feedback](/flutter/user-feedback/feedback-type): bugs, suggestions and questions.
+Users can finally report different types of feedback: bugs, suggestions and questions.
 
 Screenshots are cool, but wouldn't it be even cooler if you could watch a short video of what a user did before reporting the ticket?
 That's why we introduced [Auto screen recording](/flutter/configuration-and-data/auto-screen-recording).
@@ -107,10 +116,3 @@ We've added [console logs](/flutter/configuration-and-data/activity-history/#con
 You can now use the in-app [intro message](/flutter/user-feedback/intro-message) to inform your users about Shake availability.
 
 We updated the start method. The configuration keys are now loaded via the method, and not with the values from the `.plist` and `.xml` files.
-
-## 10.0
-<span class="tag-button">October 16, 2020</span>&nbsp;&nbsp;
-
-#### What's new
-
-You can now use Shake SDK in your Flutter apps. Start with the [Installation guide](/flutter/installation).
