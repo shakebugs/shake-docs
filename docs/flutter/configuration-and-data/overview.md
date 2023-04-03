@@ -12,8 +12,7 @@ Whatever you tweak, your configuration settings apply to the [User feedback](/fl
 ## Elements of the New ticket screen
 
 Your users send you their feedback from the New ticket screen. Read how to customize it:
-* [New ticket screen elements](/flutter/configuration-and-data/new-ticket-screen-elements)
-* [Feedback type](/flutter/user-feedback/feedback-type)
+* [Custom forms](/docs/flutter/configuration-and-data/custom-forms)
 
 ## Collected data
 
@@ -21,8 +20,8 @@ Shake attaches useful data to user feedback. Read all about it:
 
 <div class="featuresList">
     <div>
-        <img src="/docs/img/description@2x.png" alt="Ticket description"/>
-        <p><a href="/docs/flutter/configuration-and-data/new-ticket-screen-elements#ticket-description">Ticket description</a></p>
+        <img src="/docs/img/description@2x.png" alt="Custom form"/>
+        <p><a href="/docs/flutter/configuration-and-data/custom-forms">Custom forms</a></p>   
     </div>
 	<div>
         <img src="/docs/img/essential-data@2x.png" alt="Data attached by default"/>

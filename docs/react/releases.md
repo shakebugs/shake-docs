@@ -8,9 +8,18 @@ title: Release notes
 
 What would you like us to build next? Upvote upcoming features and suggest new ideas on the [Public feedback board](https://feedback.shakebugs.com/).
 
+## 16.0.0
+<span class="tag-button">April 5, 2023</span>&nbsp;&nbsp;
+<span class="tag-button green-tag-button">Latest version</span>
+
+#### What's new
+
+We're excited to announce the latest feature in our SDK, which allows you to [create a custom feedback form](/react/configuration-and-data/custom-forms).
+Now you can collect even more detailed information from your users and tailor the form to your specific needs.
+Say goodbye to generic feedback form and hello to personalized data collection!
+
 ## 15.3.0
 <span class="tag-button">June 23, 2022</span>&nbsp;&nbsp;
-<span class="tag-button green-tag-button">Latest version</span>
 
 #### What's new
 The [unread chat messages listener](/react/users/chat/#unread-messages) is now available in Shake. Anywhere in your app, you can show a user how many unread messages in Shake they have.
@@ -92,7 +101,7 @@ If your users want to, they can read how to report great bugs, report any SDK hi
 If you want to, Shake's [Activity history](/react/configuration-and-data/activity-history) now allows you to send yourself any custom logs,
 and read the notifications users receive.
 
-Users can finally report [different types of feedback](/react/user-feedback/feedback-type): bugs, suggestions and questions.
+Users can finally report different types of feedback: bugs, suggestions and questions.
 
 Screenshots are cool, but wouldn't it be even cooler if you could watch a short video of what a user did before reporting the ticket?
 That's why we introduced [Auto screen recording](/react/configuration-and-data/auto-screen-recording).
@@ -111,19 +120,3 @@ We've added [console logs](/react/configuration-and-data/activity-history/#conso
 You can now use the in-app [intro message](/react/user-feedback/intro-message) to inform your users about Shake availability.
 
 We updated the start method. The configuration keys are now loaded via the method, and not with the values from the `.plist` and `.xml` files.
-
-
-## 10.0
-<span class="tag-button">September 8, 2020</span>&nbsp;&nbsp;
-
-#### What's new
-
-By popular demand, Shake can now be [invoked through code](/react/user-feedback/invoke/#invoke-through-code) as well.
-
-Submit yourself [silent user feedback](/react/user-feedback/silent-user-feedback) from the app background,
-without interrupting your end user whatsoever!
-
-Privacy options are important. That’s why you now have a method to
-disable or enable [Activity history](/react/configuration-and-data/activity-history) whenever you want to.
-
-If you want to, you can [hide the Inspect button](/react/configuration-and-data/new-ticket-screen-elements/#inspect-button) from your users. Brilliant.
