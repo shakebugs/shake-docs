@@ -8,9 +8,19 @@ title: Release notes
 
 What would you like us to build next? Upvote upcoming features and suggest new ideas on the [Public feedback board](https://feedback.shakebugs.com/).
 
+## 16.1.0
+<span class="tag-button">April 20, 2023</span>&nbsp;&nbsp;
+<span class="tag-button green-tag-button">Latest version</span>
+
+#### What's new
+
+Introducing [Custom branding](/android/configuration-and-data/custom-branding)! 🎨️ 
+
+From now you can customize the appearance of the Shake SDK with your brand's colors,
+fonts, and more and align the SDK with your brand's identity for a consistent user experience.
+
 ## 16.0.0
 <span class="tag-button">March 30, 2023</span>&nbsp;&nbsp;
-<span class="tag-button green-tag-button">Latest version</span>
 
 #### What's new
 
