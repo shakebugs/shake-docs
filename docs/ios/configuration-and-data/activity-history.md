@@ -273,13 +273,9 @@ private func getUser(withSession session: URLSession, andRequest request: URLReq
 
 ### System events
 
+System events - also known as app lifecycle events - are tracked automatically and require no additional setup.
 
-#### App lifecycle events
-
-App lifecycle events are tracked automatically and require no additional setup.
-
-
-#### Screen changes
+### Screen changes
 
 In apps built with __UIKit__, Shake automatically logs app screen (ViewController lifecycle) changes.
 
@@ -303,7 +299,6 @@ struct UserDetailsView: View {
 }
 // highlight-end
  ```
-
 
 ### Notifications
 
