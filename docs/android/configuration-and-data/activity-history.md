@@ -148,6 +148,15 @@ Shake.insertNetworkRequest(networkRequestBuilder)
 
 System events - also known as app lifecycle events - are tracked automatically and require no additional setup.
 
+### Screen changes
+
+Screen changes are tracked automatically and require no additional setup.
+
+:::note
+
+The SDK will collect just changes of Android *Activities*, adding, removing or replacing Fragments inside an Activity is not tracked.
+
+:::
 
 ### Notifications
 
