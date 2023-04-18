@@ -8,7 +8,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 ## Introduction
 
-The New ticket screen contains various elements, many of which can be tweaked according to your needs.
+The New ticket screen contains various elements, which can be tweaked according to your needs.
 Visit [Elements of the New ticket screen](/flutter/configuration-and-data/overview/#elements-of-the-new-ticket-screen) for more details.
 
 <table class="media-container mt-50">

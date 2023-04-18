@@ -49,6 +49,14 @@ If multiple instances of these components are included, only the first instance 
 
 ### Title
 
+<table class="media-container media-container-highlighted mt-40 mb-40 pt-80">
+<img
+  alt="Title element"
+  width="380"
+  src={useBaseUrl('img/custom-form-title.png')}
+/>
+</table>
+
 A component that lets users provide a short and descriptive title for their issue or request.
 
 Properties:
@@ -72,7 +80,7 @@ values={[
 
 ```java title="App.java"
 // highlight-start
-ShakeTitle title = new ShakeTitle("Title", R.string.shake_title, "", false);
+ShakeTitle title = new ShakeTitle("Title", R.string.shake_title, "", true);
 // highlight-end
 ```
 
@@ -82,7 +90,7 @@ ShakeTitle title = new ShakeTitle("Title", R.string.shake_title, "", false);
 
 ```kotlin title="App.kt"
 // highlight-start
-val title = ShakeTitle(label = "Title", labelRes = R.string.shake_title, initialValue = "", required = false)
+val title = ShakeTitle(label = "Title", labelRes = R.string.shake_title, initialValue = "", required = true)
 // highlight-end
 ```
 
@@ -95,6 +103,14 @@ they will automatically become <span class="tag-button pink-tag-button">tags</sp
 :::note
 
 ### Text input
+
+<table class="media-container media-container-highlighted mt-40 mb-40 pt-80">
+<img
+  alt="Text element"
+  width="380"
+  src={useBaseUrl('img/custom-form-text.png')}
+/>
+</table>
 
 This element allows your users to leave textual input  with the ticket they're submitting.
 
@@ -119,7 +135,7 @@ values={[
 
 ```java title="App.java"
 // highlight-start
-ShakeTextInput description = new ShakeTextInput("Description", R.string.shake_description, "", false);
+ShakeTextInput description = new ShakeTextInput("Steps to reproduce", R.string.shake_description, "", false);
 // highlight-end
 ```
 
@@ -129,7 +145,7 @@ ShakeTextInput description = new ShakeTextInput("Description", R.string.shake_de
 
 ```kotlin title="App.kt"
 // highlight-start
-val description = ShakeTextInput(label = "Description", labelRes = R.string.shake_description, initialValue = "", required = false)
+val description = ShakeTextInput(label = "Steps to reproduce", labelRes = R.string.shake_description, initialValue = "", required = false)
 // highlight-end
 ```
 
@@ -137,6 +153,14 @@ val description = ShakeTextInput(label = "Description", labelRes = R.string.shak
 </Tabs>
 
 ### Email input
+
+<table class="media-container media-container-highlighted mt-40 mb-40 pt-80">
+<img
+  alt="Email element"
+  width="380"
+  src={useBaseUrl('img/custom-form-email.png')}
+/>
+</table>
 
 This element allows your users to leave email address with the ticket they're submitting.
 
@@ -161,7 +185,7 @@ values={[
 
 ```java title="App.java"
 // highlight-start
-ShakeEmail email = new ShakeEmail("Email", R.string.shake_email, "", false);
+ShakeEmail email = new ShakeEmail("Email to contact you on", R.string.shake_email, "", true);
 // highlight-end
 ```
 
@@ -171,7 +195,7 @@ ShakeEmail email = new ShakeEmail("Email", R.string.shake_email, "", false);
 
 ```kotlin title="App.kt"
 // highlight-start
-val email = ShakeEmail(label = "Email", labelRes = R.string.shake_email, initialValue = "", required = false)
+val email = ShakeEmail(label = "Email to contact you on", labelRes = R.string.shake_email, initialValue = "", required = true)
 // highlight-end
 ```
 
@@ -179,6 +203,14 @@ val email = ShakeEmail(label = "Email", labelRes = R.string.shake_email, initial
 </Tabs>
 
 ### Picker
+
+<table class="media-container media-container-highlighted mt-40 mb-40 pt-80">
+<img
+  alt="Picker element"
+  width="380"
+  src={useBaseUrl('img/custom-form-picker.png')}
+/>
+</table>
 
 This element enables your users to select an option from a pre-defined list of choices.
 
@@ -205,7 +237,7 @@ values={[
 
 ```java title="App.java"
 // highlight-start
-ShakePickerItem item = new ShakePickerItem(R.drawable.ic_bug, "Bug", R.string.shake_bug_item, "bug");
+ShakePickerItem item = new ShakePickerItem(R.drawable.ic_playbox_mini, "Playbox Mini", R.string.playbox_mini, "playbox-mini");
 // highlight-end
 ```
 
@@ -215,7 +247,7 @@ ShakePickerItem item = new ShakePickerItem(R.drawable.ic_bug, "Bug", R.string.sh
 
 ```kotlin title="App.kt"
 // highlight-start
-val item = ShakePickerItem(icon = R.drawable.ic_bug, text = "Bug", textRes = R.string.shake_bug_item, tag = "bug")
+val item = ShakePickerItem(icon = R.drawable.ic_playbox_mini, text = "Playbox Mini", textRes = R.string.playbox_mini, tag = "playbox-mini")
 // highlight-end
 ```
 
@@ -245,7 +277,7 @@ values={[
 
 ```java title="App.java"
 // highlight-start
-ShakePicker picker = new ShakePicker("Ticket type", R.string.shake_picker_label, items);
+ShakePicker picker = new ShakePicker("Choose your console", R.string.shake_picker_label, items);
 // highlight-end
 ```
 
@@ -255,7 +287,7 @@ ShakePicker picker = new ShakePicker("Ticket type", R.string.shake_picker_label,
 
 ```kotlin title="App.kt"
 // highlight-start
-val picker = ShakePicker(label = "Ticket type", labelRes = R.string.shake_picker_label, items = items)
+val picker = ShakePicker(label = "Choose your console", labelRes = R.string.shake_picker_label, items = items)
 // highlight-end
 ```
 
@@ -263,6 +295,14 @@ val picker = ShakePicker(label = "Ticket type", labelRes = R.string.shake_picker
 </Tabs>
 
 ### Inspect button
+
+<table class="media-container media-container-highlighted mt-40 mb-40 pt-80">
+<img
+  alt="Inspect element"
+  width="380"
+  src={useBaseUrl('img/custom-form-inspect.png')}
+/>
+</table>
 
 This element allows your users to inspect ticket data, tapping it takes them to the [Inspect section](/docs/android/shake-ui/inspect-section).
 
@@ -300,6 +340,14 @@ val inspectButton = ShakeInspectButton()
 
 
 ### Attachments
+
+<table class="media-container media-container-highlighted mt-40 mb-40 pt-80">
+<img
+  alt="Attachments element"
+  width="380"
+  src={useBaseUrl('img/custom-form-attachments.png')}
+/>
+</table>
 
 This element allows your users to attach additional images, videos or files to the ticket.
 

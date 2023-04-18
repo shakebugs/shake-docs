@@ -207,7 +207,6 @@ module.exports = {
                         'flutter/user-feedback/enable',
                         'flutter/user-feedback/invoke',
                         'flutter/user-feedback/intro-message',
-                        'flutter/user-feedback/feedback-type',
                         'flutter/user-feedback/silent-user-feedback',
                     ]
                 },
@@ -232,7 +231,7 @@ module.exports = {
             label: 'Configuration and data',
             items: [
                 'flutter/configuration-and-data/overview',
-                'flutter/configuration-and-data/new-ticket-screen-elements',
+                'flutter/configuration-and-data/custom-forms',
                 'flutter/configuration-and-data/data-attached-by-default',
                 'flutter/configuration-and-data/auto-screenshot',
                 'flutter/configuration-and-data/auto-screen-recording',
@@ -287,7 +286,6 @@ module.exports = {
                         'react/user-feedback/enable',
                         'react/user-feedback/invoke',
                         'react/user-feedback/intro-message',
-                        'react/user-feedback/feedback-type',
                         'react/user-feedback/silent-user-feedback',
                     ]
                 },
@@ -311,7 +309,7 @@ module.exports = {
             label: 'Configuration and data',
             items: [
                 'react/configuration-and-data/overview',
-                'react/configuration-and-data/new-ticket-screen-elements',
+                'react/configuration-and-data/custom-forms',
                 'react/configuration-and-data/data-attached-by-default',
                 'react/configuration-and-data/auto-screenshot',
                 'react/configuration-and-data/auto-screen-recording',

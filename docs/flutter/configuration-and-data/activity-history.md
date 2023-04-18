@@ -15,7 +15,6 @@ and automatically attaches all of those to the ticket.
 
 User actions tracking is currently not supported.
 
-
 ### Network traffic
 
 Shake provides you a wrapper for dart:io HttpClient class which allows you to track network traffic.
@@ -131,6 +130,9 @@ void insertNetworkRequest() {
 
 System events - also known as app lifecycle events - are tracked automatically and require no additional setup.
 
+### Screen changes
+
+Screen changes detection is currently not supported.
 
 ### Notifications
 

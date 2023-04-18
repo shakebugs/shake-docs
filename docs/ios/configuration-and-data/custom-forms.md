@@ -49,6 +49,14 @@ If multiple instances of these components are included, only the first instance 
 
 ### Title
 
+<table class="media-container media-container-highlighted mt-40 mb-40 pt-80">
+<img
+  alt="Title element"
+  width="380"
+  src={useBaseUrl('img/custom-form-title.png')}
+/>
+</table>
+
 A component that lets users provide a short and descriptive title for their issue or request.
 
 Properties:
@@ -72,10 +80,7 @@ values={[
 
 ```objectivec title="AppDelegate.m"
 //highlight-start
-SHKTitle *title = [[SHKTitle alloc] initWithLabel:@"Title"
-                                             required:false
-                                             labelRes:@"com.app.shakeTitle"
-                                         initialValue:nil];
+SHKTitle *title = [[SHKTitle alloc] initWithLabel:@"Title" required:true labelRes:@"com.app.shakeTitle" initialValue:nil];
 //highlight-end
 ```
 
@@ -85,7 +90,7 @@ SHKTitle *title = [[SHKTitle alloc] initWithLabel:@"Title"
 
 ```swift title="AppDelegate.swift"
 //highlight-start
-let title = SHKTitle(label: "Title", required: false, labelRes: "com.app.shakeTitle", initialValue: nil)
+let title = SHKTitle(label: "Title", required: true, labelRes: "com.app.shakeTitle", initialValue: nil)
 //highlight-end
 ```
 
@@ -98,6 +103,14 @@ they will automatically become <span class="tag-button pink-tag-button">tags</sp
 :::note
 
 ### Text input
+
+<table class="media-container media-container-highlighted mt-40 mb-40 pt-80">
+<img
+  alt="Text element"
+  width="380"
+  src={useBaseUrl('img/custom-form-text.png')}
+/>
+</table>
 
 This element allows your users to leave textual input  with the ticket they're submitting.
 
@@ -122,10 +135,7 @@ values={[
 
 ```objectivec title="AppDelegate.m"
 //highlight-start
-SHKTextInput *description = [[SHKTextInput alloc] initWithLabel:@"Description"
-                                                           required:false
-                                                           labelRes:@"com.app.shakeDescription"
-                                                       initialValue:nil];
+SHKTextInput *description = [[SHKTextInput alloc] initWithLabel:@"Steps to reproduce" required:false labelRes:@"com.app.shakeDescription" initialValue:nil];
 //highlight-end
 ```
 
@@ -135,7 +145,7 @@ SHKTextInput *description = [[SHKTextInput alloc] initWithLabel:@"Description"
 
 ```swift title="AppDelegate.swift"
 //highlight-start
-let description = SHKTextInput(label: "Description", required: false, labelRes: "com.app.shakeDescription", initialValue: nil)
+let description = SHKTextInput(label: "Steps to reproduce", required: false, labelRes: "com.app.shakeDescription", initialValue: nil)
 //highlight-end
 ```
 
@@ -143,6 +153,14 @@ let description = SHKTextInput(label: "Description", required: false, labelRes: 
 </Tabs>
 
 ### Email input
+
+<table class="media-container media-container-highlighted mt-40 mb-40 pt-80">
+<img
+  alt="Email element"
+  width="380"
+  src={useBaseUrl('img/custom-form-email.png')}
+/>
+</table>
 
 This element allows your users to leave email address with the ticket they're submitting.
 
@@ -167,10 +185,7 @@ values={[
 
 ```objectivec title="AppDelegate.m"
 //highlight-start
-SHKEmail *email = [[SHKEmail alloc] initWithLabel:@"Email"
-                                             required:false
-                                             labelRes:@"com.app.shakeEmail"
-                                         initialValue:nil];
+SHKEmail *email = [[SHKEmail alloc] initWithLabel:@"Email to contact you on" required:true labelRes:@"com.app.shakeEmail" initialValue:nil];
 //highlight-end
 ```
 
@@ -180,7 +195,7 @@ SHKEmail *email = [[SHKEmail alloc] initWithLabel:@"Email"
 
 ```swift title="AppDelegate.swift"
 //highlight-start
-let email = SHKEmail(label: "Email", required: false, labelRes: "com.app.shakeEmail", initialValue: nil)
+let email = SHKEmail(label: "Email to contact you on", required: true, labelRes: "com.app.shakeEmail", initialValue: nil)
 //highlight-end
 ```
 
@@ -188,6 +203,14 @@ let email = SHKEmail(label: "Email", required: false, labelRes: "com.app.shakeEm
 </Tabs>
 
 ### Picker
+
+<table class="media-container media-container-highlighted mt-40 mb-40 pt-80">
+<img
+  alt="Picker element"
+  width="380"
+  src={useBaseUrl('img/custom-form-picker.png')}
+/>
+</table>
 
 This element enables your users to select an option from a pre-defined list of choices.
 
@@ -214,10 +237,7 @@ values={[
 
 ```objectivec title="AppDelegate.m"
 //highlight-start
-SHKPickerItem *pickerItem = [[SHKPickerItem alloc] initWithIconName:@"bugIconAssetName"
-                                                                   text:@"Bug"
-                                                                textRes:@"com.app.shakeBugItem"
-                                                                    tag:@"bug"];
+SHKPickerItem *pickerItem = [[SHKPickerItem alloc] initWithIconName:@"playbox_mini" text:@"Playbox Mini" textRes:@"com.app.playboxMini" tag:@"playbox-mini"];
 //highlight-end
 ```
 
@@ -227,7 +247,7 @@ SHKPickerItem *pickerItem = [[SHKPickerItem alloc] initWithIconName:@"bugIconAss
 
 ```swift title="AppDelegate.swift"
 //highlight-start
-let pickerItem = SHKPickerItem(iconName: "bugIconAssetName", text: "Bug", textRes: "com.app.shakeBugItem", tag: "bug")
+let pickerItem = SHKPickerItem(iconName: "playbox_mini", text: "Playbox Mini", textRes: "com.app.playboxMini", tag: "playbox-mini")
 //highlight-end
 ```
 
@@ -257,9 +277,7 @@ values={[
 
 ```objectivec title="AppDelegate.m"
 //highlight-start
-SHKPicker *picker = [[SHKPicker alloc] initWithLabel:@"Ticket type"
-                                                   items:@[pickerItem]
-                                                labelRes:@"com.app.shakePickerLabel"];
+SHKPicker *picker = [[SHKPicker alloc] initWithLabel:@"Choose your console" items:@[pickerItem] labelRes:@"com.app.shakePickerLabel"];
 //highlight-end
 ```
 
@@ -269,7 +287,7 @@ SHKPicker *picker = [[SHKPicker alloc] initWithLabel:@"Ticket type"
 
 ```swift title="AppDelegate.swift"
 //highlight-start
-let picker = SHKPicker(label: "Ticket type", items: [pickerItem], labelRes: "com.app.shakePickerLabel")
+let picker = SHKPicker(label: "Choose your console", items: [pickerItem], labelRes: "com.app.shakePickerLabel")
 //highlight-end
 ```
 
@@ -277,6 +295,14 @@ let picker = SHKPicker(label: "Ticket type", items: [pickerItem], labelRes: "com
 </Tabs>
 
 ### Inspect button
+
+<table class="media-container media-container-highlighted mt-40 mb-40 pt-80">
+<img
+  alt="Inspect element"
+  width="380"
+  src={useBaseUrl('img/custom-form-inspect.png')}
+/>
+</table>
 
 This element allows your users to inspect ticket data, tapping it takes them to the [Inspect section](/docs/ios/shake-ui/inspect-section).
 
@@ -314,6 +340,14 @@ let inspectButton = SHKInspectButton()
 
 
 ### Attachments
+
+<table class="media-container media-container-highlighted mt-40 mb-40 pt-80">
+<img
+  alt="Attachments element"
+  width="380"
+  src={useBaseUrl('img/custom-form-attachments.png')}
+/>
+</table>
 
 This element allows your users to attach additional images, videos or files to the ticket.
 
