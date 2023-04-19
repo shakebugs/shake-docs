@@ -6,7 +6,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
->You and your users can live chat about every ticket they have submitted to you.
+>You and your app users can live chat about every ticket they have submitted to you.
 
 <table class="media-container mt-50 mb-30">
  <img
@@ -17,11 +17,11 @@ import TabItem from '@theme/TabItem';
  </table>
  
 
-If you [register users](/ios/users/register-user) with Shake, they will have all their previous tickets listed on the [Home screen](/ios/shake-ui/home-screen).
+If you [register app users](/ios/users/register-user) with Shake, they will have all their previous tickets listed on the [Home screen](/ios/shake-ui/home-screen).
 Tapping any ticket there opens its Chat screen.
 
-Your users can reply to your messages and provide you with more details 
+Your app users can reply to your messages and provide you with more details 
 about the bugs, crashes and feedback they've sent, all without ever leaving your app.
-Fix issues more easily and keep your users happy.
+Fix issues more easily and keep your app users happy.
 
 Visit [Chat](/ios/users/chat/) to learn more.

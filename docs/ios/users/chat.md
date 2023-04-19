@@ -6,28 +6,28 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs'; 
 import TabItem from '@theme/TabItem';
 
->If needed, your users can [chat with you](/ios/shake-ui/chat-screen) to provide you more details 
+>If needed, your app users can [chat with you](/ios/shake-ui/chat-screen) to provide you more details 
 about their reported bugs, crashes or feedback. You will be able to fix issues faster and make your customers happier.
 
 ## Enable
 
-Once your user is [registered](/ios/users/register-user) with Shake, the chat feature is enabled automatically.
+Once your app user is [registered](/ios/users/register-user) with Shake, the chat feature is enabled automatically.
 Each ticket they send you will be a separate conversation.
 
 This feature is tightly integrated with and follows the lifecycle of your _User_ registration, 
-which means that calling `Shake.unregisterUser` also _disconnects_ the current user from chat 
+which means that calling `Shake.unregisterUser` also _disconnects_ the current app user from chat 
 and they won't receive any new messages until registered again.
 
 ## Notifications
 
-Shake will notify your user when you send them a new message from the Shake dashboard.
+Shake will notify your app user when you send them a new message from the Shake dashboard.
 
 :::note
 Shake supports only local notifications.
-That means that your users won't get notified about new messages when your app is in the background.
+That means that your app users won't get notified about new messages when your app is in the background.
 :::
 
-To show notifications to your users, you must request a permission from them.
+To show notifications to your app users, you must request a permission from them.
 Find a proper place and time where you will want to present that native alert dialog.
 
 To remain customizable and minimally intrusive to an existing notification logic of your app,
@@ -135,7 +135,7 @@ which Shake will respect.
 ## Unread messages
 
 If you want to show number of unread chat messages somewhere in your app, you can set the unread messages listener.
-The listener is called immediately when set and on each change in the number of unread messages for a registered user:
+The listener is called immediately when set and on each change in the number of unread messages for a registered app user:
 
 <Tabs
   groupId="ios"
