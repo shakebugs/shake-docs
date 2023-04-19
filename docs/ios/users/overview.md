@@ -16,13 +16,13 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 </table>
 
 Current features include:
-* Your users can see their previously sent tickets on the [Home screen](/ios/shake-ui/home-screen.md).
+* Your app users can see their previously sent tickets on the [Home screen](/ios/shake-ui/home-screen.md).
 * You have all your app users listed in one place on your Shake dashboard.
 * Your [users' custom attributes](/ios/users/update-user-metadata) are tracked automatically.
 * You and your app users can [live chat](/ios/users/chat) with each other.
 
 Soon, these features will be available too:
-* On your Shake dashboard, you will see a User which has submitted a Ticket. And all Tickets sent by a particular User.
+* On your Shake dashboard, you will see an app User which has submitted a Ticket. And all Tickets sent by a particular app User.
 * You will be able to see your MAU and DAU charts.
 
 Start by [registering your app users](/ios/users/register-user.md).

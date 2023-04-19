@@ -3,37 +3,37 @@ id: chat
 title: Chat
 ---
 
->If needed, your users can [chat with you](/flutter/shake-ui/chat-screen) to provide you more details
+>If needed, your app users can [chat with you](/flutter/shake-ui/chat-screen) to provide you more details
 about their reported bugs, crashes or feedback. You will be able to fix issues faster and make your customers happier.
 
 ## Enable
 
-Once your user is [registered](/flutter/users/register-user) with Shake, the chat feature is enabled automatically.
+Once your app user is [registered](/flutter/users/register-user) with Shake, the chat feature is enabled automatically.
 Each ticket they send you will be a separate conversation.
 
 This feature is tightly integrated with and follows the lifecycle of your _User_ registration,
-which means that calling `Shake.unregisterUser` also _disconnects_ the current user from chat
+which means that calling `Shake.unregisterUser` also _disconnects_ the current app user from chat
 and they won't receive any new messages until registered again.
 
 ## Notifications
 
-Shake will notify your user when you send them a new message from the Shake dashboard.
-Notifications are presented automatically to the user. You don't have to code anything.
+Shake will notify your app user when you send them a new message from the Shake dashboard.
+Notifications are presented automatically to the app user. You don't have to code anything.
 
 :::note
 
-Shake supports only local notifications. That means that your users won't get notified about new messages
+Shake supports only local notifications. That means that your app users won't get notified about new messages
 when your app is in the _background_.
 
 :::
 
 ### Android
 
-Notifications are automatically presented to the end-user, no additional code is required.
+Notifications are automatically presented to the app user, no additional code is required.
 
 ### iOS
 
-To present any kind of notifications to the end-user, the host application must __request a permission__ from the user.
+To present any kind of notifications to the app user, the host application must __request a permission__ from the app user.
 Find a suitable place in your application flow where this native alert dialog will be presented.
 
 In order to be highly customizable and minimally intrusive to existing notification logic of host applications, Shake requires additional setup outlined in the below snippets.
@@ -97,7 +97,7 @@ set of _UNNotificationPresentationOptions_ which will be respected by the Shake 
 ## Unread messages
 
 If you want to show number of unread chat messages somewhere in your app, you can set the unread messages listener.
-The listener is called immediately when set and on each change in the number of unread messages for a registered user:
+The listener is called immediately when set and on each change in the number of unread messages for a registered app user:
 
 ```dart title="main.dart"
 // highlight-start

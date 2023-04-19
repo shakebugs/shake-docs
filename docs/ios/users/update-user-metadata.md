@@ -1,16 +1,16 @@
 ---
 id: update-user-metadata
-title: Update user metadata
+title: Update app user metadata
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 >Once you have registered your app user, you can attach a map with key-value pairs which contain
-additional data about the user and their behavior.
+additional data about the app user and their behavior.
 
-Update user metadata by calling the `Shake.updateUserMetadata` method anywhere in your code
-after registering the User.
+Update app user metadata by calling the `Shake.updateUserMetadata` method anywhere in your code
+after registering the app User.
 
 ## Special keys
 
@@ -18,14 +18,13 @@ Values from these three keys will be presented nicely on the Shake dashboard, so
 * `first_name`
 * `last_name`
 
-
 ## Updates
 
-Updates to the user metadata are _merged_.
+Updates to the app user metadata are _merged_.
 This allows you to update
 user metadata in segments from various parts of your app, even when offline.
 
-A common approach developers take is updating **generic** user metadata from one place in your code upon every user change
+A common approach developers take is updating **generic** app user metadata from one place in your code upon every app user change
 
 <Tabs
   groupId="ios"
@@ -86,7 +85,7 @@ class UserManager {
 </TabItem>
 </Tabs>
 
-and updating **specific** user metadata in their respective contexts:
+and updating **specific** app user metadata in their respective contexts:
 
 <Tabs
   groupId="ios"
@@ -137,17 +136,17 @@ func onUserSettingsConfigured(userSettings: UserSettings) {
 
 ## Limitations
 
-The total map size of the user metadata must not exceed 50 KB.
-The user metadata dictionary also supports a maximum of 100 keys and doesn't allow nested dictionaries.
+The total map size of the app user metadata must not exceed 50 KB.
+The app user metadata dictionary also supports a maximum of 100 keys and doesn't allow nested dictionaries.
 
 If any of these validations fail, the update method is dropped with the appropriate console message.
 
-## User metadata vs. Ticket metadata
+## App user metadata vs. Ticket metadata
 
-Track User metadata to understand and describe your User better. Examples are:
+Track app User metadata to understand and describe your app User better. Examples are:
 
 * First and last name
-* User ID
+* App user ID
 * Address
 * Subscription status
 * Date of birth
