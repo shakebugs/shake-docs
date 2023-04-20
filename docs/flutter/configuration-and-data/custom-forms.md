@@ -47,11 +47,11 @@ If multiple instances of these components are included, only the first instance 
 
 ### Title
 
-<table class="media-container media-container-highlighted mt-40 mb-40 pt-80">
+<table class="media-container media-container-highlighted mt-40 mb-40">
 <img
   alt="Ticket description field"
   width="380"
-  src={useBaseUrl('img/element-description@2x.png')}
+  src={useBaseUrl('img/custom-form-title.png')}
 />
 </table>
 
@@ -81,7 +81,7 @@ they will automatically become <span class="tag-button pink-tag-button">tags</sp
 <img
   alt="Email field"
   width="380"
-  src={useBaseUrl('img/element-email@2x.png')}
+  src={useBaseUrl('img/custom-form-text.png')}
 />
 </table>
 
@@ -97,7 +97,7 @@ Example:
 
 ```dart title="main.dart"
 // highlight-next-line
-ShakeTextInput description = ShakeTextInput('Description', labelRes: 'shake_description', initialValue: '', required: true);
+ShakeTextInput description = ShakeTextInput('Steps to reproduce', labelRes: 'shake_description', initialValue: '', required: false);
 ```
 
 ### Email input
@@ -106,7 +106,7 @@ ShakeTextInput description = ShakeTextInput('Description', labelRes: 'shake_desc
 <img
   alt="Email field"
   width="380"
-  src={useBaseUrl('img/element-email@2x.png')}
+  src={useBaseUrl('img/custom-form-email.png')}
 />
 </table>
 
@@ -122,7 +122,7 @@ Example:
 
 ```dart title="main.dart"
 // highlight-next-line
-ShakeEmail email = ShakeEmail('Email', labelRes: 'shake_email', initialValue: '', required: true);
+ShakeEmail email = ShakeEmail('Email to contact you on', labelRes: 'shake_email', initialValue: '', required: true);
 ```
 
 ### Picker
@@ -131,7 +131,7 @@ ShakeEmail email = ShakeEmail('Email', labelRes: 'shake_email', initialValue: ''
 <img
   alt="Email field"
   width="380"
-  src={useBaseUrl('img/element-email@2x.png')}
+  src={useBaseUrl('img/custom-form-picker.png')}
 />
 </table>
 
@@ -149,7 +149,7 @@ Example:
 
 ```dart title="main.dart"
 // highlight-next-line
-ShakePickerItem item = ShakePickerItem('Bug', textRes: 'shake_bug_item', icon: 'ic_bug', tag: 'bug');
+ShakePickerItem item = ShakePickerItem('Playbox Mini', textRes: 'playbox_mini', icon: 'ic_playbox_mini', tag: 'playbox-mini');
 ```
 
 #### Picker
@@ -163,7 +163,7 @@ Example:
 
 ```dart title="main.dart"
 // highlight-next-line
-ShakePicker picker = ShakePicker('Ticket type', items, labelRes: 'shake_picker_label');
+ShakePicker picker = ShakePicker('Choose your console', items, labelRes: 'shake_picker_label');
 ```
 
 ### Inspect button
@@ -172,7 +172,7 @@ ShakePicker picker = ShakePicker('Ticket type', items, labelRes: 'shake_picker_l
 <img
   alt="Inspect button"
   width="380"
-  src={useBaseUrl('img/element-inspect@2x.png')}
+  src={useBaseUrl('img/custom-form-inspect.png')}
 />
 </table>
 
@@ -191,7 +191,7 @@ ShakeInspectButton inspectButton = ShakeInspectButton();
 <img
   alt="Inspect button"
   width="380"
-  src={useBaseUrl('img/element-inspect@2x.png')}
+  src={useBaseUrl('img/custom-form-attachments.png')}
 />
 </table>
 
@@ -326,8 +326,12 @@ For example, you may wish to remove the Inspect button from the default form to 
 
 ```dart title="main.dart"
 // highlight-start
-ShakeForm? shakeForm = await Shake.getShakeForm();
-shakeForm?.components.removeWhere((element) => element.type == 'inspect');
-Shake.setShakeForm(shakeForm);
+void setCustomForm() async {
+  ShakeForm? shakeForm = await Shake.getShakeForm();
+  if (shakeForm != null) {
+    shakeForm.components.removeWhere((element) => element.type == 'inspect');
+    Shake.setShakeForm(shakeForm); 
+  }
+}
 // highlight-end
 ```
