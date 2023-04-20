@@ -47,11 +47,11 @@ If multiple instances of these components are included, only the first instance 
 
 ### Title
 
-<table class="media-container media-container-highlighted mt-40 mb-40 pt-80">
+<table class="media-container media-container-highlighted mt-40 mb-40">
 <img
   alt="Ticket description field"
   width="380"
-  src={useBaseUrl('img/element-description@2x.png')}
+  src={useBaseUrl('img/custom-form-title.png')}
 />
 </table>
 
@@ -81,7 +81,7 @@ they will automatically become <span class="tag-button pink-tag-button">tags</sp
 <img
   alt="Email field"
   width="380"
-  src={useBaseUrl('img/element-email@2x.png')}
+  src={useBaseUrl('img/custom-form-text.png')}
 />
 </table>
 
@@ -97,7 +97,7 @@ Example:
 
 ```javascript title="App.js"
 // highlight-next-line
-const description = new ShakeTextInput('Description', 'shake_description', '', false);
+const description = new ShakeTextInput('Steps to reproduce', 'shake_description', '', false);
 ```
 
 ### Email input
@@ -106,7 +106,7 @@ const description = new ShakeTextInput('Description', 'shake_description', '', f
 <img
   alt="Email field"
   width="380"
-  src={useBaseUrl('img/element-email@2x.png')}
+  src={useBaseUrl('img/custom-form-email.png')}
 />
 </table>
 
@@ -122,7 +122,7 @@ Example:
 
 ```javascript title="App.js"
 // highlight-next-line
-const email = new ShakeEmail('Email', 'shake_email', '', false);
+const email = new ShakeEmail('Email to contact you on', 'shake_email', '', true);
 ```
 
 ### Picker
@@ -131,7 +131,7 @@ const email = new ShakeEmail('Email', 'shake_email', '', false);
 <img
   alt="Email field"
   width="380"
-  src={useBaseUrl('img/element-email@2x.png')}
+  src={useBaseUrl('img/custom-form-picker.png')}
 />
 </table>
 
@@ -149,7 +149,7 @@ Example:
 
 ```javascript title="App.js"
 // highlight-next-line
-const item = new ShakePickerItem('Bug', 'shake_bug_item', 'ic_bug', 'bug');
+const item = new ShakePickerItem('Playbox Mini', 'playbox_mini', 'ic_playbox_mini', 'playbox-mini');
 ```
 
 #### Picker
@@ -163,7 +163,7 @@ Example:
 
 ```javascript title="App.js"
 // highlight-next-line
-const picker = new ShakePicker('Ticket type', items, 'shake_picker_label');
+const picker = new ShakePicker('Choose your console', items, 'shake_picker_label');
 ```
 
 ### Inspect button
@@ -172,7 +172,7 @@ const picker = new ShakePicker('Ticket type', items, 'shake_picker_label');
 <img
   alt="Inspect button"
   width="380"
-  src={useBaseUrl('img/element-inspect@2x.png')}
+  src={useBaseUrl('img/custom-form-inspect.png')}
 />
 </table>
 
@@ -191,7 +191,7 @@ const inspectButton = new ShakeInspectButton();
 <img
   alt="Inspect button"
   width="380"
-  src={useBaseUrl('img/element-inspect@2x.png')}
+  src={useBaseUrl('img/custom-form-attachments.png')}
 />
 </table>
 
@@ -325,8 +325,12 @@ For example, you may wish to remove the Inspect button from the default form to 
 
 ```javascript title="App.js"
 // highlight-start
-const shakeForm = await Shake.getShakeForm();
-shakeForm.components = shakeForm.components.filter(c => c.type !== 'inspect');
-Shake.setShakeForm(shakeForm);
+const setCustomForm = async () => {
+    const shakeForm = await Shake.getShakeForm();
+    if (shakeForm) {
+        shakeForm.components = shakeForm.components.filter(c => c.type !== 'inspect');
+        Shake.setShakeForm(shakeForm);  
+    }
+}
 // highlight-end
 ```
