@@ -49,7 +49,7 @@ If multiple instances of these components are included, only the first instance 
 
 ### Title
 
-<table class="media-container media-container-highlighted mt-40 mb-40 pt-80">
+<table class="media-container media-container-highlighted mt-40 mb-40">
 <img
   alt="Title element"
   width="380"
@@ -104,7 +104,7 @@ they will automatically become <span class="tag-button pink-tag-button">tags</sp
 
 ### Text input
 
-<table class="media-container media-container-highlighted mt-40 mb-40 pt-80">
+<table class="media-container media-container-highlighted mt-40 mb-40">
 <img
   alt="Text element"
   width="380"
@@ -154,7 +154,7 @@ val description = ShakeTextInput(label = "Steps to reproduce", labelRes = R.stri
 
 ### Email input
 
-<table class="media-container media-container-highlighted mt-40 mb-40 pt-80">
+<table class="media-container media-container-highlighted mt-40 mb-40">
 <img
   alt="Email element"
   width="380"
@@ -204,7 +204,7 @@ val email = ShakeEmail(label = "Email to contact you on", labelRes = R.string.sh
 
 ### Picker
 
-<table class="media-container media-container-highlighted mt-40 mb-40 pt-80">
+<table class="media-container media-container-highlighted mt-40 mb-40">
 <img
   alt="Picker element"
   width="380"
@@ -296,7 +296,7 @@ val picker = ShakePicker(label = "Choose your console", labelRes = R.string.shak
 
 ### Inspect button
 
-<table class="media-container media-container-highlighted mt-40 mb-40 pt-80">
+<table class="media-container media-container-highlighted mt-40 mb-40">
 <img
   alt="Inspect element"
   width="380"
@@ -341,7 +341,7 @@ val inspectButton = ShakeInspectButton()
 
 ### Attachments
 
-<table class="media-container media-container-highlighted mt-40 mb-40 pt-80">
+<table class="media-container media-container-highlighted mt-40 mb-40">
 <img
   alt="Attachments element"
   width="380"

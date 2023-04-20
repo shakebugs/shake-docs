@@ -49,7 +49,7 @@ If multiple instances of these components are included, only the first instance 
 
 ### Title
 
-<table class="media-container media-container-highlighted mt-40 mb-40 pt-80">
+<table class="media-container media-container-highlighted mt-40 mb-40">
 <img
   alt="Title element"
   width="380"
@@ -104,7 +104,7 @@ they will automatically become <span class="tag-button pink-tag-button">tags</sp
 
 ### Text input
 
-<table class="media-container media-container-highlighted mt-40 mb-40 pt-80">
+<table class="media-container media-container-highlighted mt-40 mb-40">
 <img
   alt="Text element"
   width="380"
@@ -154,7 +154,7 @@ let description = SHKTextInput(label: "Steps to reproduce", required: false, lab
 
 ### Email input
 
-<table class="media-container media-container-highlighted mt-40 mb-40 pt-80">
+<table class="media-container media-container-highlighted mt-40 mb-40">
 <img
   alt="Email element"
   width="380"
@@ -204,7 +204,7 @@ let email = SHKEmail(label: "Email to contact you on", required: true, labelRes:
 
 ### Picker
 
-<table class="media-container media-container-highlighted mt-40 mb-40 pt-80">
+<table class="media-container media-container-highlighted mt-40 mb-40">
 <img
   alt="Picker element"
   width="380"
@@ -296,7 +296,7 @@ let picker = SHKPicker(label: "Choose your console", items: [pickerItem], labelR
 
 ### Inspect button
 
-<table class="media-container media-container-highlighted mt-40 mb-40 pt-80">
+<table class="media-container media-container-highlighted mt-40 mb-40">
 <img
   alt="Inspect element"
   width="380"
@@ -341,7 +341,7 @@ let inspectButton = SHKInspectButton()
 
 ### Attachments
 
-<table class="media-container media-container-highlighted mt-40 mb-40 pt-80">
+<table class="media-container media-container-highlighted mt-40 mb-40">
 <img
   alt="Attachments element"
   width="380"
