@@ -103,6 +103,13 @@ let myDynamicBackground = UIColor { trait in
 </TabItem>
 </Tabs>
 
+:::note
+
+Dynamic colors are available from iOS 13. If you want to support dark and light mode on older versions, you should
+implement theme configuration listener and set appropriate colors through Shake method.
+
+:::
+
 
 ## Changing the default theme
 
@@ -134,6 +141,39 @@ SHKShake.configuration.theme.brandAccentColor = UIColor.orangeColor;
 ```swift title="AppDelegate.swift"
 // highlight-next-line
 Shake.configuration.theme.brandAccentColor = UIColor.orange
+```
+
+</TabItem>
+</Tabs>
+
+## Changing the home screen subtitle
+
+If you want to change subtitle message on the home screen and make it more suitable for your app,
+you can do it using the following method:
+
+<Tabs
+groupId="ios"
+defaultValue="swift"
+values={[
+{ label: 'Objective-C', value: 'objectivec'},
+{ label: 'Swift', value: 'swift'},
+]
+}>
+
+<TabItem value="objectivec">
+
+```objectivec title="AppDelegate.m"
+// highlight-next-line
+SHKShake.configuration.homeSubtitle = @"Feel free to submit your bug reports, suggestions and questions to us.";
+```
+
+</TabItem>
+
+<TabItem value="swift">
+
+```swift title="AppDelegate.swift"
+// highlight-next-line
+Shake.configuration.homeSubtitle = "Feel free to submit your bug reports, suggestions and questions to us."
 ```
 
 </TabItem>
