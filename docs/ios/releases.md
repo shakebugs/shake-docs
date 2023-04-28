@@ -8,9 +8,20 @@ title: Release notes
 
 What would you like us to build next? Upvote upcoming features and suggest new ideas on the [Public feedback board](https://feedback.shakebugs.com/).
 
+## 16.2.0
+<span class="tag-button">May 15, 2023</span>&nbsp;&nbsp;
+<span class="tag-button green-tag-button">Latest version</span>
+
+#### What's new
+
+We're happy to announce a release of our SDK that enhances user experience with two exciting new features.
+
+App users can now invoke a chat directly instead of using New ticket screen. Learn how to invoke chat [here](/ios/user-feedback/invoke).
+
+Additionally, you can now [customize Shake home screen buttons](/ios/configuration-and-data/home-screen) to suit your app needs and preferences.
+
 ## 16.1.0
 <span class="tag-button">May 2, 2023</span>&nbsp;&nbsp;
-<span class="tag-button green-tag-button">Latest version</span>
 
 #### What's new
 

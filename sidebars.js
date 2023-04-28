@@ -68,6 +68,7 @@ module.exports = {
             label: 'Configuration and data',
             items: [
                 'android/configuration-and-data/overview',
+                'android/configuration-and-data/home-screen',
                 'android/configuration-and-data/custom-forms',
                 'android/configuration-and-data/custom-branding',
                 'android/configuration-and-data/data-attached-by-default',
@@ -160,6 +161,7 @@ module.exports = {
             label: 'Configuration and data',
             items: [
                 'ios/configuration-and-data/overview',
+                'ios/configuration-and-data/home-screen',
                 'ios/configuration-and-data/custom-forms',
                 'ios/configuration-and-data/custom-branding',
                 'ios/configuration-and-data/data-attached-by-default',
