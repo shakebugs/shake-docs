@@ -69,6 +69,7 @@ module.exports = {
             items: [
                 'android/configuration-and-data/overview',
                 'android/configuration-and-data/custom-forms',
+                'android/configuration-and-data/custom-branding',
                 'android/configuration-and-data/data-attached-by-default',
                 'android/configuration-and-data/auto-screenshot',
                 'android/configuration-and-data/auto-screen-recording',
@@ -160,6 +161,7 @@ module.exports = {
             items: [
                 'ios/configuration-and-data/overview',
                 'ios/configuration-and-data/custom-forms',
+                'ios/configuration-and-data/custom-branding',
                 'ios/configuration-and-data/data-attached-by-default',
                 'ios/configuration-and-data/auto-screenshot',
                 'ios/configuration-and-data/auto-screen-recording',
