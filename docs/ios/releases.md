@@ -9,7 +9,7 @@ title: Release notes
 What would you like us to build next? Upvote upcoming features and suggest new ideas on the [Public feedback board](https://feedback.shakebugs.com/).
 
 ## 16.1.0
-<span class="tag-button">April 26, 2023</span>&nbsp;&nbsp;
+<span class="tag-button">May 2, 2023</span>&nbsp;&nbsp;
 <span class="tag-button green-tag-button">Latest version</span>
 
 #### What's new
