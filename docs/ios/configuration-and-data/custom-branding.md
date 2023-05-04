@@ -8,6 +8,21 @@ import TabItem from '@theme/TabItem';
 
 > This feature enables you to customize the look and feel of the Shake SDK. You can reflect your brand's identity by modifying colors, fonts, and other attributes of screen elements.
 
+<div class="imagesList">
+    <div>
+        <img src="/docs/img/custom-branding-example-1@2x.png" alt="Star Trek style"/>
+        <p>Start Trek style</p>
+    </div>
+	<div>
+        <img src="/docs/img/custom-branding-example-2@2x.png" alt="Super Mario vibes"/>
+        <p>Super Mario vibes</p>
+    </div>
+	<div>
+        <img src="/docs/img/custom-branding-example-3@2x.png" alt="Batman UI"/>
+        <p>Batman UI</p>
+    </div>
+</div>
+
 ## Setting up a custom theme
 
 Use *SHKTheme* instance to customize appearance of the Shake screens. Here is an example how you can create and set a new Shake theme:

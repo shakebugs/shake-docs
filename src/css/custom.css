@@ -70,7 +70,7 @@ html[data-theme='dark'] {
   --color-pink: #D75ED7;
 
   --ifm-table-stripe-background: none;
-  
+
 
 
   --alert-color: rgb(235, 87, 87);
@@ -205,7 +205,7 @@ div[class*='codeBlock'], code{
 table{
   overflow-y: hidden;
 }
-	
+
 
 table thead tr {
   border-bottom: none;
@@ -225,7 +225,7 @@ table td, table th {
 	border: none;
 	padding: 15px 20px 15px 0;
 }
-	
+
 
 table td:after {
   content: "";
@@ -243,7 +243,7 @@ table thead tr {
 table tbody tr{
   border-top: 1px solid var(--default-surface);
 }
-	
+
 
 
 /*
@@ -737,7 +737,7 @@ div[class*='tocCollapsibleContent'] ul {
 /*
 * Middle main column - modules
 */
-.modulesList, .featuresList {
+.modulesList, .featuresList, .imagesList {
   display: flex;
   flex-wrap: wrap;
   margin: 40px auto 0;
@@ -801,14 +801,6 @@ div[class*='tocCollapsibleContent'] ul {
   }
 }
 
-
-
-
-
-
-
-
-
 /*
 * Middle main column - features
 */
@@ -840,6 +832,46 @@ div[class*='tocCollapsibleContent'] ul {
     padding-left: 0;
   }
   .featuresList > div:nth-child(2n) {
+    padding-right: 0;
+  }
+}
+
+/*
+* Middle main column - images
+*/
+.imagesList > div {
+  flex: 0 0 33.333333333333%;
+  text-align: center;
+  padding: 0 10px;
+}
+
+.imagesList > div > img {
+  width: 200px;
+}
+
+.imagesList > div > p {
+  margin-top: 12px;
+  margin-bottom: 0 !important;
+}
+
+@media (min-width: 501px) {
+  .imagesList > div:nth-child(3n+1) {
+    padding-left: 0;
+  }
+  .imagesList > div:nth-child(3n) {
+    padding-right: 0;
+  }
+}
+@media (max-width: 500px) {
+
+  .imagesList > div {
+    flex: 0 0 50%;
+  }
+
+  .imagesList > div:nth-child(2n+1) {
+    padding-left: 0;
+  }
+  .imagesList > div:nth-child(2n) {
     padding-right: 0;
   }
 }
