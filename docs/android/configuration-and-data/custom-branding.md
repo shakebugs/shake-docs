@@ -11,7 +11,7 @@ import TabItem from '@theme/TabItem';
 <div class="imagesList">
     <div>
         <img src="/docs/img/custom-branding-example-1@2x.png" alt="Star Trek style"/>
-        <p>Start Trek style</p>
+        <p>Star Trek style</p>
     </div>
 	<div>
         <img src="/docs/img/custom-branding-example-2@2x.png" alt="Super Mario vibes"/>
