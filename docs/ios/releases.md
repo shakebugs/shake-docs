@@ -14,11 +14,13 @@ What would you like us to build next? Upvote upcoming features and suggest new i
 
 #### What's new
 
-We're happy to announce a release of our SDK that enhances user experience with two exciting new features.
+We're happy to announce a release of our SDK that enhances user experience with new exciting features.
 
 App users can now invoke a chat directly instead of using New ticket screen. Learn how to invoke chat [here](/ios/user-feedback/invoke).
 
 Additionally, you can now [customize Shake home screen buttons](/ios/configuration-and-data/home-screen) to suit your app needs and preferences.
+
+Shake chat notifications are upgraded with push notifications, from now app users can [receive chat notifications even when app is closed](/ios/users/chat#notifications) 🚀
 
 ## 16.1.0
 <span class="tag-button">May 2, 2023</span>&nbsp;&nbsp;
