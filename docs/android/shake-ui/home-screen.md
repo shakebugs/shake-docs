@@ -14,7 +14,7 @@ import TabItem from '@theme/TabItem';
 Here, your user can see:
 
 - A welcome message that you can change from your [Shake dashboard](https://app.shakebugs.com/administration/white-labeling).
-- A button to submit a new ticket.
+- A button to submit a new ticket. This section can be [customized](/android/configuration-and-data/home-screen#setting-up-custom-actions).
 - All their previous tickets (user feedback and crash reports).
   To show them their previous tickets, [register your users](/android/users/overview) with Shake.
 
