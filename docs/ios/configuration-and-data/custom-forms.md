@@ -60,8 +60,8 @@ If multiple instances of these components are included, only the first instance 
 A component that lets users provide a short and descriptive title for their issue or request.
 
 Properties:
-- label **String** - represents element label
-- labelRes **Int** - loads label from resource id
+- key **String** - represents element on the Shake dashboard
+- label **String** - user facing label (use NSLocalizedString to show the localized version of your label)
 - initialValue **String** - initial input value
 - required **Bool** - if true, user can't submit the ticket while the input is empty
 
@@ -80,7 +80,7 @@ values={[
 
 ```objectivec title="AppDelegate.m"
 //highlight-start
-SHKTitle *title = [[SHKTitle alloc] initWithLabel:@"Title" required:true labelRes:@"com.app.shakeTitle" initialValue:nil];
+SHKTitle *title = [[SHKTitle alloc] initWithKey:@"title" label:@"Title" required:true initialValue:nil];
 //highlight-end
 ```
 
@@ -90,7 +90,7 @@ SHKTitle *title = [[SHKTitle alloc] initWithLabel:@"Title" required:true labelRe
 
 ```swift title="AppDelegate.swift"
 //highlight-start
-let title = SHKTitle(label: "Title", required: true, labelRes: "com.app.shakeTitle", initialValue: nil)
+let title = SHKTitle(key: "title", label:"Title" required: true, initialValue: nil)
 //highlight-end
 ```
 
@@ -115,8 +115,8 @@ they will automatically become <span class="tag-button pink-tag-button">tags</sp
 This element allows your users to leave textual input  with the ticket they're submitting.
 
 Properties:
-- label **String** - represents element label
-- labelRes **Int** - loads label from resource id
+- key **String** - represents element on the Shake dashboard
+- label **String** - user facing label (use NSLocalizedString to show the localized version of your label)
 - initialValue **String** - initial input value
 - required **Bool** - if true, user can't submit the ticket while the input is empty
 
@@ -135,7 +135,7 @@ values={[
 
 ```objectivec title="AppDelegate.m"
 //highlight-start
-SHKTextInput *description = [[SHKTextInput alloc] initWithLabel:@"Steps to reproduce" required:false labelRes:@"com.app.shakeDescription" initialValue:nil];
+SHKTextInput *description = [[SHKTextInput alloc] initWithKey:@"steps_to_reproduce" label:@"Steps to reproduce" required:false initialValue:nil];
 //highlight-end
 ```
 
@@ -145,7 +145,7 @@ SHKTextInput *description = [[SHKTextInput alloc] initWithLabel:@"Steps to repro
 
 ```swift title="AppDelegate.swift"
 //highlight-start
-let description = SHKTextInput(label: "Steps to reproduce", required: false, labelRes: "com.app.shakeDescription", initialValue: nil)
+let description = SHKTextInput(key: "steps_to_reproduce", label:"Steps to reproduce" required: false, initialValue: nil)
 //highlight-end
 ```
 
@@ -165,8 +165,8 @@ let description = SHKTextInput(label: "Steps to reproduce", required: false, lab
 This element allows your users to leave email address with the ticket they're submitting.
 
 Properties:
-- label **String** - represents element label
-- labelRes **Int** - loads label from resource id
+- key **String** - represents element on the Shake dashboard
+- label **String** - user facing label (use NSLocalizedString to show the localized version of your label)
 - initialValue **String** - initial input value
 - required **Bool** - if true, user can't submit the ticket while the input is empty
 
@@ -185,7 +185,7 @@ values={[
 
 ```objectivec title="AppDelegate.m"
 //highlight-start
-SHKEmail *email = [[SHKEmail alloc] initWithLabel:@"Email to contact you on" required:true labelRes:@"com.app.shakeEmail" initialValue:nil];
+SHKEmail *email = [[SHKEmail alloc] initWithKey:@"email" label:@"Email" required:true initialValue:nil];
 //highlight-end
 ```
 
@@ -195,7 +195,7 @@ SHKEmail *email = [[SHKEmail alloc] initWithLabel:@"Email to contact you on" req
 
 ```swift title="AppDelegate.swift"
 //highlight-start
-let email = SHKEmail(label: "Email to contact you on", required: true, labelRes: "com.app.shakeEmail", initialValue: nil)
+let email = SHKEmail(key: "email", label: "Email to contact you on", required: true, initialValue: nil)
 //highlight-end
 ```
 
@@ -217,9 +217,9 @@ This element enables your users to select an option from a pre-defined list of c
 #### Picker item
 
 Properties:
-- icon **Int** - represents picker item resource icon
-- text **String** - represents element text
-- textRes **Int** - loads text from resource id
+- key **String** - represents element on the Shake dashboard
+- text **String** - user facing label (use NSLocalizedString to show the localized version of your label)
+- icon **UIImage** - picker item image reference
 - tag **String** - if item is selected, tag will be automatically added to the ticket
 
 Example:
@@ -237,7 +237,7 @@ values={[
 
 ```objectivec title="AppDelegate.m"
 //highlight-start
-SHKPickerItem *pickerItem = [[SHKPickerItem alloc] initWithIconName:@"playbox_mini" text:@"Playbox Mini" textRes:@"com.app.playboxMini" tag:@"playbox-mini"];
+SHKPickerItem *pickerItem = [[SHKPickerItem alloc] initWithKey:@"playbox_mini" text:@"Playbox Mini" icon:[UIImage imageNamed:@"playbox"] tag:@"playbox-mini"];
 //highlight-end
 ```
 
@@ -247,7 +247,7 @@ SHKPickerItem *pickerItem = [[SHKPickerItem alloc] initWithIconName:@"playbox_mi
 
 ```swift title="AppDelegate.swift"
 //highlight-start
-let pickerItem = SHKPickerItem(iconName: "playbox_mini", text: "Playbox Mini", textRes: "com.app.playboxMini", tag: "playbox-mini")
+let pickerItem = SHKPickerItem(key: "playbox_mini", text: "Playbox Mini", icon: UIImage(named:"playbox"), tag: "playbox-mini")
 //highlight-end
 ```
 
@@ -258,8 +258,8 @@ let pickerItem = SHKPickerItem(iconName: "playbox_mini", text: "Playbox Mini", t
 #### Picker
 
 Properties:
-- label **String** - represents element label
-- labelRes **Int** - loads label from resource id
+- key **String** - represents element on the Shake dashboard
+- label **String** - user facing label (use NSLocalizedString to show the localized version of your label)
 - items **List** - list of items in the picker
 
 Example:
@@ -277,7 +277,7 @@ values={[
 
 ```objectivec title="AppDelegate.m"
 //highlight-start
-SHKPicker *picker = [[SHKPicker alloc] initWithLabel:@"Choose your console" items:@[pickerItem] labelRes:@"com.app.shakePickerLabel"];
+SHKPicker *picker = [[SHKPicker alloc] initWithKey:@"console_picker label:@"Choose your console" items:@[pickerItem]];
 //highlight-end
 ```
 
@@ -287,7 +287,7 @@ SHKPicker *picker = [[SHKPicker alloc] initWithLabel:@"Choose your console" item
 
 ```swift title="AppDelegate.swift"
 //highlight-start
-let picker = SHKPicker(label: "Choose your console", items: [pickerItem], labelRes: "com.app.shakePickerLabel")
+let picker = SHKPicker(key: "console_picker" label: "Choose your console", items: [pickerItem])
 //highlight-end
 ```
 
@@ -413,38 +413,38 @@ values={[
 
 ```objectivec title="AppDelegate.m"
 //highlight-start
-SHKShake.configuration.form = [[SHKForm alloc] initWithItems:@[
-        [[SHKTitle alloc] initWithLabel:@"Title"
-                               required:true
-                               labelRes:nil
-                               initialValue:nil],
-        [[SHKTextInput alloc] initWithLabel:@"Description"
-                                   required:true
-                                   labelRes:nil
-                                   initialValue:nil],
-        [[SHKEmail alloc] initWithLabel:@"Email"
-                               required:false
-                               labelRes:@"com.app.shakeEmail"
-                               initialValue:@"john.doe@gmail.com"],
-        [[SHKPicker alloc] initWithLabel:@"Feedback type"
-                                   items:@[
-            [[SHKPickerItem alloc] initWithIconName:@"assetBug"
-                                               text:@"Bug"
-                                            textRes:nil
-                                                tag:nil],
-            [[SHKPickerItem alloc] initWithIconName:@"assetSuggestion"
-                                               text:@"Suggestion"
-                                            textRes:nil
-                                                tag:nil],
-            [[SHKPickerItem alloc] initWithIconName:@"assetQuestion"
-                                               text:@"Question"
-                                            textRes:nil
-                                                tag:nil]
-        ]
-                                labelRes:nil],
-        SHKInspectButton.new,
-        SHKAttachments.new
-    ]];
+    SHKShake.configuration.form = [[SHKForm alloc] initWithItems:@[
+            [[SHKTitle alloc] initWithKey:@"title"
+                                    label:@"Title"
+                                 required:true
+                             initialValue:nil],
+            [[SHKTextInput alloc] initWithKey:@"description"
+                                        label:@"Description"
+                                     required:true
+                                 initialValue:nil],
+            [[SHKEmail alloc] initWithKey:@"email"
+                                    label:@"Email"
+                                 required:false
+                            initialValue:@"john.doe@gmail.com"],
+            [[SHKPicker alloc] initWithKey:@"feedback_type"
+                                     label:@"Feedback type"
+                                     items:@[
+                [[SHKPickerItem alloc] initWithKey:@"bug"
+                                              text:@"Bug"
+                                              icon:nil
+                                               tag:nil],
+                [[SHKPickerItem alloc] initWithKey:@"suggestion"
+                                              text:@"Suggestion"
+                                              icon:nil
+                                               tag:nil],
+                [[SHKPickerItem alloc] initWithKey:@"question"
+                                              text:@"Question"
+                                              icon:nil
+                                               tag:nil],
+                                            ]],
+            SHKInspectButton.new,
+            SHKAttachments.new
+        ]];
 //highlight-end
 ```
 
@@ -455,14 +455,14 @@ SHKShake.configuration.form = [[SHKForm alloc] initWithItems:@[
 ```swift title="AppDelegate.swift"
 //highlight-start
 Shake.configuration.form = SHKForm(items: [
-            SHKTitle(label: "Title", required: true, labelRes: nil, initialValue: nil),
-            SHKTextInput(label: "Description", required: true, labelRes: nil, initialValue: nil),
-            SHKEmail(label: "Email", required: false, labelRes: nil, initialValue: "john.doe@gmail.com"),
-            SHKPicker(label: "Feedback Type", items: [
-                SHKPickerItem(iconName: "assetBug", text: "Bug", textRes: nil, tag: nil),
-                SHKPickerItem(iconName: "assetSuggestion", text: "Suggestion", textRes: nil, tag: nil),
-                SHKPickerItem(iconName: "assetQuestion", text: "Question", textRes: nil, tag: nil),
-            ], labelRes: nil),
+            SHKTitle(key: "title", label: "Title", required: true, initialValue:nil),
+            SHKTextInput(key: "description", label: "Description", required: true, initialValue:nil),
+            SHKEmail(key: "email", label: "Email", required: true, initialValue: "john.doe@email.com"),
+            SHKPicker(key: "feedback_type", label: "Feedback type", items: [
+                SHKPickerItem(key: "bug", text: "Bug", icon: nil, tag: nil),
+                SHKPickerItem(key: "suggestion", text: "Suggestion", icon: nil, tag: nil),
+                SHKPickerItem(key: "question", text: "Question", icon: nil, tag: nil)
+            ]),
             SHKInspectButton(),
             SHKAttachments(),
         ])
@@ -497,14 +497,14 @@ values={[
 
 ```objectivec title="AppDelegate.m"
 //highlight-start
-SHKTitle *title = [[SHKTitle alloc] initWithLabel:@"Title"
-                                             required:false
-                                             labelRes:@"com.app.shakeTitle"
-                                         initialValue:nil];
+SHKTitle *title = [[SHKTitle alloc] initWithKey:@"title"
+                                          label:NSLocalizedString(@"com.app.shakeTitle", @"")
+                                       required:false
+                                   initialValue:nil];
 
-SHKTextInput *description = [[SHKTextInput alloc] initWithLabel:@"Description"
-                                                       required:false
-                                                       labelRes:@"com.app.shakeDescription"
+SHKTextInput *description = [[SHKTextInput alloc] initWithKey:@"description"
+                                                        label:NSLocalizedString(@"com.app.shakeDescription", @"")
+                                                     required:false
                                                    initialValue:nil];
 
 SHKShake.configuration.form = [[SHKForm alloc] initWithItems:@[title, description]];
@@ -517,8 +517,9 @@ SHKShake.configuration.form = [[SHKForm alloc] initWithItems:@[title, descriptio
 
 ```swift title="AppDelegate.swift"
 //highlight-start
-let title = SHKTitle(label: "Title", required: false, labelRes: "com.app.shakeTitle", initialValue: nil)
-let description = SHKTextInput(label: "Description", required: false, labelRes: "com.app.shakeDescription", initialValue: nil)
+let title = SHKTitle(key: "title", label: NSLocalizedString("com.app.shakeTitle", ""), required: true, initialValue: nil)
+
+let description = SHKTextInput(key: "description", label: NSLocalizedString("com.app.shakeDescription", ""), required: true, initialValue: nil)
 
 Shake.configuration.form = SHKForm(items: [title, description])
 //highlight-end
