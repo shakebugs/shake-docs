@@ -127,7 +127,7 @@ class MyFirebaseMessagingService extends FirebaseMessagingService {
 
         if (id != null && userId != null && title != null && message != null) {
             ChatNotification chatNotification = new ChatNotification(id, userId, title, message);
-            Shake.showChatNotification(chatNotification);
+            Shake.showChatNotification(getApplication(), chatNotification);
         }
         // highlight-end
     }
@@ -151,7 +151,7 @@ class MyFirebaseMessagingService : FirebaseMessagingService() {
 
         if (id != null && userId != null && title != null && message != null) {
             val chatNotification = ChatNotification(id, userId, title, message)
-            Shake.showChatNotification(chatNotification)
+            Shake.showChatNotification(application, chatNotification)
         }
         // highlight-end
     }
