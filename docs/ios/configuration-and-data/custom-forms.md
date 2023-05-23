@@ -219,7 +219,7 @@ This element enables your users to select an option from a pre-defined list of c
 Properties:
 - key **String** - represents element on the Shake dashboard
 - text **String** - user facing label (use NSLocalizedString to show the localized version of your label)
-- icon **UIImage** - picker item image reference
+- icon **UIImage** - represents picker item icon
 - tag **String** - if item is selected, tag will be automatically added to the ticket
 
 Example:
@@ -502,12 +502,12 @@ SHKTitle *title = [[SHKTitle alloc] initWithKey:@"title"
                                        required:false
                                    initialValue:nil];
 
-SHKTextInput *description = [[SHKTextInput alloc] initWithKey:@"description"
-                                                        label:NSLocalizedString(@"com.app.shakeDescription", @"")
+SHKTextInput *repro = [[SHKTextInput alloc] initWithKey:@"repro"
+                                                        label:NSLocalizedString(@"com.app.shakeRepro", @"")
                                                      required:false
                                                    initialValue:nil];
 
-SHKShake.configuration.form = [[SHKForm alloc] initWithItems:@[title, description]];
+SHKShake.configuration.form = [[SHKForm alloc] initWithItems:@[title, repro]];
 //highlight-end
 ```
 
@@ -519,9 +519,9 @@ SHKShake.configuration.form = [[SHKForm alloc] initWithItems:@[title, descriptio
 //highlight-start
 let title = SHKTitle(key: "title", label: NSLocalizedString("com.app.shakeTitle", ""), required: true, initialValue: nil)
 
-let description = SHKTextInput(key: "description", label: NSLocalizedString("com.app.shakeDescription", ""), required: true, initialValue: nil)
+let repro = SHKTextInput(key: "repro", label: NSLocalizedString("com.app.shakeRepro", ""), required: true, initialValue: nil)
 
-Shake.configuration.form = SHKForm(items: [title, description])
+Shake.configuration.form = SHKForm(items: [title, repro])
 //highlight-end
 ```
 

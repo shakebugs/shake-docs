@@ -180,6 +180,13 @@ If you are initializing Shake outside _Application_ class, make sure you initial
 
 :::
 
+
+:::note
+
+If you are using chat feature and push notifications, make sure that Shake is started in the _Application_ class.
+
+:::
+
 ## Visit your Shake Dashboard again
 
 Follow the instructions there to send your first feedback with Shake and you're all set.
