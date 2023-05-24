@@ -20,6 +20,7 @@ You don't need to code anything:
 </table>
 
 But if you want to, you can customize that.
+
 Let's look at an example where you want Shake user feedback to be invoked either when your users shake their device or when they take a screenshot:
 
 import Tabs from '@theme/Tabs';
@@ -101,6 +102,7 @@ Shake.getReportConfiguration().isInvokeShakeOnRightEdgePan = true
 Also, feel free to change which Shake screen is shown when Shake user feedback is invoked manually:
 * [New ticket screen](android/shake-ui/new-ticket-screen.md) (default)
 * [Home screen](android/shake-ui/home-screen.md)
+* [Chat screen](android/shake-ui/chat-screen.md)
 
 <Tabs
   groupId="android"
@@ -118,6 +120,8 @@ Also, feel free to change which Shake screen is shown when Shake user feedback i
 Shake.getReportConfiguration().setDefaultScreen(ShakeScreen.NEW);
 // highlight-next-line
 Shake.getReportConfiguration().setDefaultScreen(ShakeScreen.HOME);
+// highlight-next-line
+Shake.getReportConfiguration().setDefaultScreen(ShakeScreen.CHAT);
 ```
 
 </TabItem>
@@ -129,10 +133,14 @@ Shake.getReportConfiguration().setDefaultScreen(ShakeScreen.HOME);
 Shake.getReportConfiguration().defaultScreen = ShakeScreen.NEW
 // highlight-next-line
 Shake.getReportConfiguration().defaultScreen = ShakeScreen.HOME
+// highlight-next-line
+Shake.getReportConfiguration().defaultScreen = ShakeScreen.CHAT
 ```
 
 </TabItem>
 </Tabs>
+
+If you are showing Shake chat screen, make sure that you have [registered](/android/users/register-user) your app user. Otherwise Shake home screen will be shown.
 
 ### Shaking gesture
 By default, the shaking gesture opens Shake user feedback.
@@ -212,7 +220,6 @@ Use one of the alternative ways to invoke Shake instead.
 Invoke Shake user feedback through code by calling the `Shake.show` method anywhere after `Shake.start`.
 
 The `show` method can be called with the argument `ShakeScreen` which determines the first presented screen in the Shake UI.
-The default value is `ShakeScreen.NEW`.
 
 <Tabs
   groupId="android"
@@ -226,17 +233,12 @@ The default value is `ShakeScreen.NEW`.
 <TabItem value="java">
 
 ```java title="MainActivity.java"
-private void onReportProblemPressed() {
-    // Displays Shake with the New Ticket screen at the top of the stack.
-    // highlight-next-line
-    Shake.show();
-}
-
-private void onFeedbackCenterPressed() {
-    // Displays Shake starting at the Home screen.
-    // highlight-next-line
-    Shake.show(ShakeScreen.HOME);
-}
+// highlight-next-line
+Shake.show(ShakeScreen.NEW);
+// highlight-next-line
+Shake.show(ShakeScreen.HOME);
+// highlight-next-line
+Shake.show(ShakeScreen.CHAT);
 ```
 
 </TabItem>
@@ -244,17 +246,12 @@ private void onFeedbackCenterPressed() {
 <TabItem value="kotlin">
 
 ```kotlin title="MainActivity.kt"
-private fun onReportProblemPressed() {
-    // Displays Shake with the New Ticket screen at the top of the stack.
-    // highlight-next-line
-    Shake.show()
-}
-
-private fun onFeedbackCenterPressed() {
-    // Displays Shake starting at the Home screen.
-    // highlight-next-line
-    Shake.show(ShakeScreen.HOME)
-}
+// highlight-next-line
+Shake.show(ShakeScreen.NEW)
+// highlight-next-line
+Shake.show(ShakeScreen.HOME)
+// highlight-next-line
+Shake.show(ShakeScreen.CHAT)
 ```
 
 </TabItem>
@@ -262,8 +259,10 @@ private fun onFeedbackCenterPressed() {
 
 If an [auto screenshot](android/configuration-and-data/auto-screenshot.md) and
 [auto screen recording](android/configuration-and-data/auto-screen-recording.md) are enabled,
-when you call `ShakeScreen.NEW` they will be automatically attached to a ticket.
+when you call `ShakeScreen.NEW` or `ShakeScreen.CHAT` they will be automatically attached to a ticket.
 
 If enabled, [activity history](android/configuration-and-data/activity-history.md),
 [black box](android/configuration-and-data/black-box.md) and all other data are also automatically attached.
 No additional code is required.
+
+If you are showing Shake chat screen, make sure that you have [registered](/android/users/register-user) your app user. Otherwise Shake home screen will be shown.

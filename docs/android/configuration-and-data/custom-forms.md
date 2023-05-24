@@ -60,8 +60,8 @@ If multiple instances of these components are included, only the first instance 
 A component that lets users provide a short and descriptive title for their issue or request.
 
 Properties:
-- label **String** - represents element label
-- labelRes **Int** - loads label from resource id
+- key **String** - represents element on the Shake dashboard
+- label **String** - user facing label
 - initialValue **String** - initial input value
 - required **Bool** - if true, user can't submit the ticket while the input is empty
 
@@ -80,7 +80,7 @@ values={[
 
 ```java title="App.java"
 // highlight-start
-ShakeTitle title = new ShakeTitle("Title", R.string.shake_title, "", true);
+ShakeTitle title = new ShakeTitle("Title", "Title", "", true);
 // highlight-end
 ```
 
@@ -90,7 +90,7 @@ ShakeTitle title = new ShakeTitle("Title", R.string.shake_title, "", true);
 
 ```kotlin title="App.kt"
 // highlight-start
-val title = ShakeTitle(label = "Title", labelRes = R.string.shake_title, initialValue = "", required = true)
+val title = ShakeTitle(key = "Title", label = "Title", initialValue = "", required = true)
 // highlight-end
 ```
 
@@ -115,8 +115,8 @@ they will automatically become <span class="tag-button pink-tag-button">tags</sp
 This element allows your users to leave textual input  with the ticket they're submitting.
 
 Properties:
-- label **String** - represents element label
-- labelRes **Int** - loads label from resource id
+- key **String** - represents element on the Shake dashboard
+- label **String** - user facing label
 - initialValue **String** - initial input value
 - required **Bool** - if true, user can't submit the ticket while the input is empty
 
@@ -135,7 +135,7 @@ values={[
 
 ```java title="App.java"
 // highlight-start
-ShakeTextInput description = new ShakeTextInput("Steps to reproduce", R.string.shake_description, "", false);
+ShakeTextInput description = new ShakeTextInput("Steps to reproduce", "Steps to reproduce", "", false);
 // highlight-end
 ```
 
@@ -145,7 +145,7 @@ ShakeTextInput description = new ShakeTextInput("Steps to reproduce", R.string.s
 
 ```kotlin title="App.kt"
 // highlight-start
-val description = ShakeTextInput(label = "Steps to reproduce", labelRes = R.string.shake_description, initialValue = "", required = false)
+val description = ShakeTextInput(key = "Steps to reproduce", label = "Steps to reproduce", initialValue = "", required = false)
 // highlight-end
 ```
 
@@ -165,8 +165,8 @@ val description = ShakeTextInput(label = "Steps to reproduce", labelRes = R.stri
 This element allows your users to leave email address with the ticket they're submitting.
 
 Properties:
-- label **String** - represents element label
-- labelRes **Int** - loads label from resource id
+- key **String** - represents element on the Shake dashboard
+- label **String** - user facing label
 - initialValue **String** - initial input value
 - required **Bool** - if true, user can't submit the ticket while the input is empty
 
@@ -185,7 +185,7 @@ values={[
 
 ```java title="App.java"
 // highlight-start
-ShakeEmail email = new ShakeEmail("Email to contact you on", R.string.shake_email, "", true);
+ShakeEmail email = new ShakeEmail("Email to contact you on", "Email to contact you on", "", true);
 // highlight-end
 ```
 
@@ -195,7 +195,7 @@ ShakeEmail email = new ShakeEmail("Email to contact you on", R.string.shake_emai
 
 ```kotlin title="App.kt"
 // highlight-start
-val email = ShakeEmail(label = "Email to contact you on", labelRes = R.string.shake_email, initialValue = "", required = true)
+val email = ShakeEmail(key = "Email to contact you on", label = "Email to contact you on", initialValue = "", required = true)
 // highlight-end
 ```
 
@@ -217,9 +217,9 @@ This element enables your users to select an option from a pre-defined list of c
 #### Picker item
 
 Properties:
-- icon **Int** - represents picker item resource icon
-- text **String** - represents element text
-- textRes **Int** - loads text from resource id
+- key **String** - represents element on the Shake dashboard
+- text **String** - user facing label
+- icon **Drawable** - represents picker item icon
 - tag **String** - if item is selected, tag will be automatically added to the ticket
 
 Example:
@@ -237,7 +237,7 @@ values={[
 
 ```java title="App.java"
 // highlight-start
-ShakePickerItem item = new ShakePickerItem(R.drawable.ic_playbox_mini, "Playbox Mini", R.string.playbox_mini, "playbox-mini");
+ShakePickerItem item = new ShakePickerItem("Playbox Mini", "Playbox Mini", ContextCompat.getDrawable(context, R.drawable.ic_playbox_mini), "playbox-mini");
 // highlight-end
 ```
 
@@ -247,7 +247,7 @@ ShakePickerItem item = new ShakePickerItem(R.drawable.ic_playbox_mini, "Playbox 
 
 ```kotlin title="App.kt"
 // highlight-start
-val item = ShakePickerItem(icon = R.drawable.ic_playbox_mini, text = "Playbox Mini", textRes = R.string.playbox_mini, tag = "playbox-mini")
+val item = ShakePickerItem(key = "Playbox Mini", text = "Playbox Mini", icon = ContextCompat.getDrawable(context, R.drawable.ic_playbox_mini), tag = "playbox-mini")
 // highlight-end
 ```
 
@@ -258,8 +258,8 @@ val item = ShakePickerItem(icon = R.drawable.ic_playbox_mini, text = "Playbox Mi
 #### Picker
 
 Properties:
-- label **String** - represents element label
-- labelRes **Int** - loads label from resource id
+- key **String** - represents element on the Shake dashboard
+- label **String** - user facing label
 - items **List** - list of items in the picker
 
 Example:
@@ -277,7 +277,7 @@ values={[
 
 ```java title="App.java"
 // highlight-start
-ShakePicker picker = new ShakePicker("Choose your console", R.string.shake_picker_label, items);
+ShakePicker picker = new ShakePicker("Choose your console", "Choose your console", items);
 // highlight-end
 ```
 
@@ -287,7 +287,7 @@ ShakePicker picker = new ShakePicker("Choose your console", R.string.shake_picke
 
 ```kotlin title="App.kt"
 // highlight-start
-val picker = ShakePicker(label = "Choose your console", labelRes = R.string.shake_picker_label, items = items)
+val picker = ShakePicker(key = "Choose your console", label = "Choose your console", items = items)
 // highlight-end
 ```
 
@@ -413,16 +413,16 @@ values={[
 
 ```java title="App.java"
 // highlight-start
-ShakeTitle title = new ShakeTitle("Title", null, "", true);
-ShakeTextInput desc = new ShakeTextInput("Description", null, "", true);
-ShakeEmail email = new ShakeEmail("Email", null, "john.doe@gmail.com", false);
+ShakeTitle title = new ShakeTitle("Title", "Title", "", true);
+ShakeTextInput desc = new ShakeTextInput("Description", "Description", "", true);
+ShakeEmail email = new ShakeEmail("Email", "Email", "john.doe@gmail.com", false);
 
 ShakePickerItem[] pickerItems = new ShakePickerItem[]{
-        new ShakePickerItem(R.drawable.ic_bug, "Bug", null, "bug"),
-        new ShakePickerItem(R.drawable.ic_suggestion, "Suggestion", null, "suggestion"),
-        new ShakePickerItem(R.drawable.ic_question, "Question", null, "question")
+        new ShakePickerItem("Bug", "Bug", ContextCompat.getDrawable(context, R.drawable.ic_bug), "bug"),
+        new ShakePickerItem("Suggestion", "Suggestion", ContextCompat.getDrawable(context, R.drawable.ic_suggestion), "suggestion"),
+        new ShakePickerItem("Question", "Question", ContextCompat.getDrawable(context, R.drawable.ic_question), "question")
 };
-ShakePicker picker = new ShakePicker("Feedback type", null, Arrays.asList(pickerItems));
+ShakePicker picker = new ShakePicker("Feedback type", "Feedback type", Arrays.asList(pickerItems));
 
 ShakeInspectButton inspect = new ShakeInspectButton();
 ShakeAttachments attachments = new ShakeAttachments();
@@ -440,16 +440,16 @@ Shake.getReportConfiguration().setShakeForm(form);
 
 ```kotlin title="App.kt"
 // highlight-start
-val title = ShakeTitle(label = "Title", required = true)
-val desc = ShakeTextInput(label = "Description", required = true)
-val email = ShakeEmail(label = "Email", initialValue = "john.doe@gmail.com")
+val title = ShakeTitle(key = "Title", label = "Title", required = true)
+val desc = ShakeTextInput(key = "Description", label = "Description", required = true)
+val email = ShakeEmail(key = "Email", label = "Email", initialValue = "john.doe@gmail.com")
 
 val pickerItems = mutableListOf(
-    ShakePickerItem(icon = R.drawable.ic_bug, text = "Bug", tag = "bug"),
-    ShakePickerItem(icon = R.drawable.ic_suggestion, text = "Suggestion", tag = "suggestion"),
-    ShakePickerItem(icon = R.drawable.ic_question, text = "Question", tag = "question")
+    ShakePickerItem(key = "Bug", text = "Bug", icon = ContextCompat.getDrawable(context, R.drawable.ic_bug), tag = "bug"),
+    ShakePickerItem(key = "Suggestion", text = "Suggestion", icon = ContextCompat.getDrawable(context, R.drawable.ic_suggestion), tag = "suggestion"),
+    ShakePickerItem(key = "Question", text = "Question", icon = ContextCompat.getDrawable(context, R.drawable.ic_question), tag = "question")
 )
-val picker = ShakePicker(label = "Feedback type", items = pickerItems)
+val picker = ShakePicker(key = "Feedback type", label = "Feedback type", items = pickerItems)
 
 val inspect = ShakeInspectButton()
 val attachments = ShakeAttachments()
@@ -489,8 +489,8 @@ values={[
 
 ```java title="App.java"
 // highlight-start
-ShakeTitle title = new ShakeTitle("Title", R.string.shake_form_title, "", true);
-ShakeTextInput repro = new ShakeTextInput("Reproduction steps", R.string.shake_form_repro, "", true);
+ShakeTitle title = new ShakeTitle("Title", context.getString(R.string.shake_form_title), "", true);
+ShakeTextInput repro = new ShakeTextInput("Reproduction steps", context.getString(R.string.shake_form_repro), "", true);
 
 List<ShakeFormComponent> components = Arrays.asList(title, repro);
 ShakeForm form = new ShakeForm(components);
@@ -505,8 +505,8 @@ Shake.getReportConfiguration().setShakeForm(form);
 
 ```kotlin title="App.kt"
 // highlight-start
-val title = ShakeTitle(label = "Title", labelRes = R.string.shake_form_title, required = true)
-val repro = ShakeTextInput(label = "Reproduction steps", labelRes = R.string.shake_form_repro, required = true)
+val title = ShakeTitle(key = "Title", label = context.getString(R.string.shake_form_title), required = true)
+val repro = ShakeTextInput(key = "Reproduction steps", label = context.getString(R.string.shake_form_repro), required = true)
 
 val components = mutableListOf(title, repro)
 val form = ShakeForm(components)

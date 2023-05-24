@@ -303,6 +303,13 @@ struct UserDetailsView: View {
 ### Notifications
 
 Notifications are tracked automatically and require no additional setup. 
+
+::: note
+
+To display notifications to your users, you must ask them for permission first.
+
+:::
+
 If you want Shake to manually handle notification tracking, use this method instead: 
 
 <Tabs 

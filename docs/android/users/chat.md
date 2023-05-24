@@ -20,15 +20,169 @@ and they won't receive any new messages until registered again.
 
 ## Notifications
 
-Shake will notify your app user when you send them a new message from the Shake dashboard.
-Notifications are presented automatically to the app user. You don't have to code anything.
+Shake can notify your app [users](/android/users/register-user) about new messages sent from the Shake dashboard.
+
+Both remote and local notifications are supported, but are mutually exclusive.
+
+### Set up Firebase SDK
+
+Shake uses Firebase for sending push notifications to your Android app.
+
+If you didn't add Firebase to your project yet, follow the official documentation for [adding Firebase into the project](https://firebase.google.com/docs/android/setup).
+
+You'll also have to [set up Firebase Cloud Messaging](https://firebase.google.com/docs/cloud-messaging/android/client) in your app.
 
 :::note
 
-Shake supports only local notifications. That means that your app users won't get notified about new messages
-when your app is in the _background_.
+Don't forget to add notifications permission or notifications won't be shown
 
 :::
+
+### Forwarding device token to the Shake
+
+To target the specific Android device, Shake needs the device Firebase token.
+
+Forward Firebase token to the Shake by calling `Shake.setPushNotificationsToken` method on the app start like shown below:
+
+
+<Tabs
+groupId="android"
+defaultValue="kotlin"
+values={[
+{ label: 'Java', value: 'java'},
+{ label: 'Kotlin', value: 'kotlin'},
+]
+}>
+
+<TabItem value="java">
+
+```java title="App.java"
+// highlight-start
+FirebaseMessaging.getInstance().getToken()
+    .addOnCompleteListener(new OnCompleteListener<String>() {
+        @Override
+        public void onComplete(@NonNull Task<String> task) {
+          if (!task.isSuccessful()) {
+            Log.w("Firebase", "Fetching FCM registration token failed", task.getException());
+            return;
+          }
+
+          String token = task.getResult();
+          Shake.setPushNotificationsToken(token);
+        }
+    });
+// highlight-end
+```
+
+</TabItem>
+
+<TabItem value="kotlin">
+
+```kotlin title="App.kt"
+// highlight-start
+FirebaseMessaging.getInstance().token.addOnCompleteListener(OnCompleteListener { task ->
+    if (!task.isSuccessful) {
+        Log.w("Firebase", "Fetching FCM registration token failed", task.exception)
+        return@OnCompleteListener
+    }
+
+    val token = task.result
+    Shake.setPushNotificationsToken(token)
+})
+// highlight-end
+```
+
+</TabItem>
+</Tabs>
+
+### Presenting notifications to the app users
+
+Shake sends Firebase *data* push notifications to the device which are not presented by default.
+
+In order to present data notifications to the app users you'll have to use `onMessageReceived` callback from the `FirebaseMessagingService`
+and call `Shake.showChatNotification` like shown below:
+
+<Tabs
+groupId="android"
+defaultValue="kotlin"
+values={[
+{ label: 'Java', value: 'java'},
+{ label: 'Kotlin', value: 'kotlin'},
+]
+}>
+
+<TabItem value="java">
+
+```java title="MyFirebaseMessagingService.java"
+class MyFirebaseMessagingService extends FirebaseMessagingService {
+
+    @Override
+    public void onMessageReceived(RemoteMessage remoteMessage) {
+
+        // highlight-start
+        String id = remoteMessage.getData()[ChatNotification.ID];
+        String userId = remoteMessage.getData()[ChatNotification.USER];
+        String title = remoteMessage.getData()[ChatNotification.TITLE];
+        String message = remoteMessage.getData()[ChatNotification.MESSAGE];
+
+        if (id != null && userId != null && title != null && message != null) {
+            ChatNotification chatNotification = new ChatNotification(id, userId, title, message);
+            Shake.showChatNotification(chatNotification);
+        }
+        // highlight-end
+    }
+}
+```
+
+</TabItem>
+
+<TabItem value="kotlin">
+
+```kotlin title="MyFirebaseMessagingService.kt"
+class MyFirebaseMessagingService : FirebaseMessagingService() {
+
+    override fun onMessageReceived(remoteMessage: RemoteMessage) {
+    
+        // highlight-start
+        val id: String? = remoteMessage.data[ChatNotification.ID]
+        val userId: String? = remoteMessage.data[ChatNotification.USER]
+        val title: String? = remoteMessage.data[ChatNotification.TITLE]
+        val message: String? = remoteMessage.data[ChatNotification.MESSAGE]
+
+        if (id != null && userId != null && title != null && message != null) {
+            val chatNotification = ChatNotification(id, userId, title, message)
+            Shake.showChatNotification(chatNotification)
+        }
+        // highlight-end
+    }
+}
+```
+
+</TabItem>
+</Tabs>
+
+### Set up Server Key on the Shake dashboard
+
+The last thing you'll have to do is to add Firebase Cloud Messaging *Server Key* to the Shake Dashboard.
+
+Navigate to the *Project Settings → Cloud Messaging* on the Firebase and and copy *Server Key* to the *Workspace Administration → App settings* on the Shake dashboard.
+
+
+### Local notifications
+
+If for some reason, you don't want to configure remote notifications for your app, Shake can still schedule
+them locally. 
+
+To enable these, you still need to request the user permission, but there is no need for additional steps or code.
+
+:::note
+
+Important thing to note is that local notifications are not shown when app is in the background.
+
+:::note
+
+Shake uses `Shake.setPushNotificationsToken` function to determine if the app is configured to receive remote notifications.
+If that method is called in your app, Shake will disable local notifications and assume that you want to enable remote ones.
 
 ## Unread messages
 

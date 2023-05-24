@@ -20,6 +20,7 @@ You don't need to code anything:
 </table>
 
 But if you want to, you can customize that.
+
 Let's look at an example where you want Shake user feedback to be invoked either when your users shake their device or when they take a screenshot:
 
 import Tabs from '@theme/Tabs';
@@ -101,6 +102,7 @@ Shake.configuration.isInvokedByRightEdgePan = true
 Also, feel free to change which Shake screen is shown when Shake user feedback is invoked manually:
 * [New ticket screen](/ios/shake-ui/new-ticket-screen.md) (default)
 * [Home screen](/ios/shake-ui/home-screen.md)
+* [Chat screen](/ios/shake-ui/chat-screen.md)
 
 <Tabs
   groupId="ios"
@@ -116,6 +118,10 @@ Also, feel free to change which Shake screen is shown when Shake user feedback i
 ```obbjectivec title="AppDelegate.m"
 // highlight-next-line
 SHKShake.configuration.defaultShowOption = SHKShowOptionNew;
+// highlight-next-line
+SHKShake.configuration.defaultShowOption = SHKShowOptionHome;
+// highlight-next-line
+SHKShake.configuration.defaultShowOption = SHKShowOptionNewChat;
 ```
 
 </TabItem>
@@ -124,11 +130,17 @@ SHKShake.configuration.defaultShowOption = SHKShowOptionNew;
 
 ```swift title="AppDelegate.swift"
 // highlight-next-line
-Shake.configuration.defaultShowOption = .new;
+Shake.configuration.defaultShowOption = .new
+// highlight-next-line
+Shake.configuration.defaultShowOption = .home
+// highlight-next-line
+Shake.configuration.defaultShowOption = .newChat
 ```
 
 </TabItem>
 </Tabs>
+
+If you are showing Shake chat screen, make sure that you have [registered](/ios/users/register-user) your app user. Otherwise Shake home screen will be shown.
 
 ### Shaking gesture
 By default, the shaking gesture opens Shake user feedback.
@@ -184,7 +196,7 @@ Shake user feedback will be invoked with a one-finger swiping gesture from the r
 ## Invoke through code
 Invoke Shake user feedback through code by calling the `Shake.show` method anywhere after `Shake.start`.
 
-The `show` method can also be called with the argument `SHKShowOption` which determines the first presented screen in the Shake UI. The default value is `SHKShowOptionNew`.
+The `show` method can also be called with the argument `SHKShowOption` which determines the first presented screen in the Shake UI.
 
 <Tabs
   groupId="ios"
@@ -198,25 +210,12 @@ The `show` method can also be called with the argument `SHKShowOption` which det
 <TabItem value="objectivec">
 
 ```objectivec title="SettingsVM.m"
-@interface SettingsVM ()
-
-@end
-
-@implementation SettingsVM
-
-- (void)onDidPressReportProblem {
-    /// Displays Shake with the New Ticket screen at the top of the stack.
-    //highlight-next-line
-    [SHKShake show];
-}
-
-- (void)onDidPressShowFeedbackCenter {
-    /// Displays Shake starting at the Home screen.
-    //highlight-next-line
-    [SHKShake show:SHKShowOptionHome];
-}
-
-@end
+//highlight-next-line
+[SHKShake show:SHKShowOptionNew];
+//highlight-next-line
+[SHKShake show:SHKShowOptionHome];
+//highlight-next-line
+[SHKShake show:SHKShowOptionNewChat];
 ```
 
 </TabItem>
@@ -224,17 +223,12 @@ The `show` method can also be called with the argument `SHKShowOption` which det
 <TabItem value="swift">
 
 ```swift title="SettingsVM.swift"
-func onDidPressReportProblem() {
-    /// Displays Shake with the New Ticket screen at the top of the stack.
-    //highlight-next-line
-    Shake.show()
-}
-
-func onDidPressShowFeedbackCenter() {
-    /// Displays Shake starting at the Home screen.
-    //highlight-next-line
-    Shake.show(.home)
-}
+//highlight-next-line
+Shake.show(.new)
+//highlight-next-line
+Shake.show(.home)
+//highlight-next-line
+Shake.show(.newChat)
 ```
 
 </TabItem>
@@ -245,3 +239,5 @@ If an [auto screenshot](/ios/configuration-and-data/auto-screenshot.md) and [aut
 If enabled, [activity history](/ios/configuration-and-data/activity-history.md),
 [black box](/ios/configuration-and-data/black-box.md) and all other data are also automatically attached.
 No additional code is required.
+
+If you are showing Shake chat screen, make sure that you have [registered](/ios/users/register-user) your app user. Otherwise Shake home screen will be shown.

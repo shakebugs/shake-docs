@@ -8,9 +8,20 @@ title: Release notes
 
 What would you like us to build next? Upvote upcoming features and suggest new ideas on the [Public feedback board](https://feedback.shakebugs.com/).
 
+## 16.2.0
+<span class="tag-button">May 24, 2023</span>&nbsp;&nbsp;
+<span class="tag-button green-tag-button">Latest version</span>
+
+#### What's new
+
+We’ve made it possible for users to open a New [chat](/ios/user-feedback/invoke) without submitting a New ticket.  
+Additionally, you can [customize Shake home screen buttons](/ios/configuration-and-data/home-screen) according to your taste.
+
+Chat notifications are upgraded with push notifications, so users can [receive chat notifications even when app is closed](/ios/users/chat#notifications).
+Also, there’s now a neat seen indicator that tells you exactly if the message was seen or not. :rocket:
+
 ## 16.1.0
 <span class="tag-button">May 2, 2023</span>&nbsp;&nbsp;
-<span class="tag-button green-tag-button">Latest version</span>
 
 #### What's new
 
