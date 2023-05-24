@@ -121,7 +121,7 @@ SHKShake.configuration.defaultShowOption = SHKShowOptionNew;
 // highlight-next-line
 SHKShake.configuration.defaultShowOption = SHKShowOptionHome;
 // highlight-next-line
-SHKShake.configuration.defaultShowOption = SHKShowOptionChat;
+SHKShake.configuration.defaultShowOption = SHKShowOptionNewChat;
 ```
 
 </TabItem>
@@ -134,7 +134,7 @@ Shake.configuration.defaultShowOption = .new
 // highlight-next-line
 Shake.configuration.defaultShowOption = .home
 // highlight-next-line
-Shake.configuration.defaultShowOption = .chat
+Shake.configuration.defaultShowOption = .newChat
 ```
 
 </TabItem>
@@ -215,7 +215,7 @@ The `show` method can also be called with the argument `SHKShowOption` which det
 //highlight-next-line
 [SHKShake show:SHKShowOptionHome];
 //highlight-next-line
-[SHKShake show:SHKShowOptionChat];
+[SHKShake show:SHKShowOptionNewChat];
 ```
 
 </TabItem>
@@ -228,7 +228,7 @@ Shake.show(.new)
 //highlight-next-line
 Shake.show(.home)
 //highlight-next-line
-Shake.show(.chat)
+Shake.show(.newChat)
 ```
 
 </TabItem>

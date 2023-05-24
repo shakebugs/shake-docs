@@ -55,9 +55,9 @@ All of this is done out of the box, you don't need to code anything.
     <div>
         <img
             class="small-visual-icon"
-            src={useBaseUrl('img/nfc-icon.svg')}
+            src={useBaseUrl('img/accessibility-t-icon.svg')}
         />
-        <p class="p2">NFC status</p>
+        <p class="p2">Font scale</p>
     </div>
     <div>
         <img
