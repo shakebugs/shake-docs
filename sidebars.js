@@ -236,6 +236,7 @@ module.exports = {
             items: [
                 'flutter/configuration-and-data/overview',
                 'flutter/configuration-and-data/custom-forms',
+                'flutter/configuration-and-data/custom-branding',
                 'flutter/configuration-and-data/data-attached-by-default',
                 'flutter/configuration-and-data/auto-screenshot',
                 'flutter/configuration-and-data/auto-screen-recording',
@@ -314,6 +315,7 @@ module.exports = {
             items: [
                 'react/configuration-and-data/overview',
                 'react/configuration-and-data/custom-forms',
+                'react/configuration-and-data/custom-branding',
                 'react/configuration-and-data/data-attached-by-default',
                 'react/configuration-and-data/auto-screenshot',
                 'react/configuration-and-data/auto-screen-recording',
