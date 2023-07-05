@@ -3,7 +3,7 @@ module.exports = {
   tagline: 'Explore guides and examples to integrate Shake into your app.',
   url: 'https://www.shakebugs.com',
   baseUrl: '/docs/',
-  favicon: 'img/favicon.ico',
+  favicon: 'img/favicon.png',
   trailingSlash: true,
   organizationName: 'shakebugs', // Usually your GitHub org/user name.
   projectName: 'shake-docs', // Usually your repo name.
@@ -27,7 +27,7 @@ module.exports = {
       indexName: 'shakebugs',
     },
     navbar: {
-      
+
       logo: {
         alt: 'Shake logo',
         src: 'img/shake-full-logo.svg',
