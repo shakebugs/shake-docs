@@ -50,7 +50,7 @@ module.exports = {
                 },
                 {
                     type: 'category',
-                    label: 'Users',
+                    label: 'App users',
                     items: [
                         'android/users/overview',
                         'android/users/register-user',
@@ -143,7 +143,7 @@ module.exports = {
                 },
                 {
                     type: 'category',
-                    label: 'Users',
+                    label: 'App users',
                     items: [
                         'ios/users/overview',
                         'ios/users/register-user',
@@ -216,7 +216,7 @@ module.exports = {
                 },
                 {
                     type: 'category',
-                    label: 'Users',
+                    label: 'App users',
                     items: [
                         'flutter/users/overview',
                         'flutter/users/register-user',
@@ -296,7 +296,7 @@ module.exports = {
                 },
                 {
                     type: 'category',
-                    label: 'Users',
+                    label: 'App users',
                     items: [
                         'react/users/overview',
                         'react/users/register-user',
