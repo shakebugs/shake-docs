@@ -8,9 +8,22 @@ title: Release notes
 
 What would you like us to build next? Upvote upcoming features and suggest new ideas on the [Public feedback board](https://feedback.shakebugs.com/).
 
+## 16.2.1
+<span class="tag-button">July 10, 2023</span>&nbsp;&nbsp;
+<span class="tag-button green-tag-button">Latest version</span>
+
+#### What's new
+
+From now, you can  [execute a block of code](/android/configuration-and-data/callbacks) when certain actions are triggered within Shake.
+
+This version now contains Turkish, Korean and Dutch translations, which additionally extend [the lists of languages into which Shake's been translated](https://help.shakebugs.com/en/articles/3392092-which-languages-has-shake-sdk-been-translated-to).
+
+#### Bug fixes
+
+We fixed a few minor bugs that were causing problems. Shake is now more stable and runs even smoother.
+
 ## 16.2.0
 <span class="tag-button">May 24, 2023</span>&nbsp;&nbsp;
-<span class="tag-button green-tag-button">Latest version</span>
 
 #### What's new
 
