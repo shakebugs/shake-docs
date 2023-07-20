@@ -60,17 +60,18 @@ values={[
 
 - (BOOL)application:(UIApplication *)application 
 didFinishLaunchingWithOptions:(NSDictionary<UIApplicationLaunchOptionsKey, id> *)launchOptions {
-
-   [UIApplication.shared registerForRemoteNotifications];
-
+    // highlight-next-line
+    [UIApplication.sharedApplication registerForRemoteNotifications];
+    
     /// Rest of the application and Shake setup
-
+    
     return true;
 }
 
 - (void)application:(UIApplication *)application 
 didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
-    [Shake didRegisterForRemoteNotifications:deviceToken];
+    // highlight-next-line
+    [SHKShake didRegisterForRemoteNotificationsWithDeviceToken:deviceToken];
 }
 
 @end
@@ -81,6 +82,7 @@ didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
 ```swift title="AppDelegate.swift"
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
+    // highlight-next-line
     UIApplication.shared.registerForRemoteNotifications()
 
     /// Rest of the application and Shake setup
@@ -89,6 +91,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 }
 
 func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+    // highlight-next-line
     Shake.didRegisterForRemoteNotifications(withDeviceToken: deviceToken)
 }
 ```
@@ -120,17 +123,21 @@ values={[
 <TabItem value="objectivec">
 
 ```objectivec"
- [UNUserNotificationCenter.currentNotificationCenter requestAuthorizationWithOptions:UNAuthorizationOptionAlert | UNAuthorizationOptionBadge | UNAuthorizationOptionSound completionHandler:^(BOOL granted, NSError * _Nullable error) {
-        /// Fallback if not granted
-    }];
+// highlight-start
+[UNUserNotificationCenter.currentNotificationCenter requestAuthorizationWithOptions:(UNAuthorizationOptionAlert | UNAuthorizationOptionBadge | UNAuthorizationOptionSound) completionHandler:^(BOOL granted, NSError * _Nullable error) {
+    /// Fallback if not granted
+}];
+// highlight-end
 ```
 
 </TabItem><TabItem value="swift">
 
 ```swift
+// highlight-start
 UNUserNotificationCenter.current().requestAuthorization(options: [.badge, .sound, .alert]) { granted, error in
-/// Fallback if not granted
+    /// Fallback if not granted
 }
+// highlight-end
 ```
 </TabItem></Tabs>
 
@@ -159,9 +166,12 @@ values={[
 <TabItem value="objectivec">
 
 ```objectivec title="AppDelegate.m"
+// highlight-start
 @import Shake; 
 @import UserNotifications;
+// highlight-end
 
+// highlight-next-line
 @interface AppDelegate () <UNUserNotificationCenterDelegate>
 
 @end
@@ -170,6 +180,7 @@ values={[
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
+    // highlight-next-line
     UNUserNotificationCenter.currentNotificationCenter.delegate = self;
 
     [SHKShake startWithClientId:@"your_client_id" clientSecret:@"your_client_secret"];
@@ -177,35 +188,37 @@ values={[
     return YES; 
 }
 
+// highlight-start
 - (void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void (^)(void))completionHandler {
-
-    if ([Shake isShakeNotification:reponse.notification]){ 
+    if ([SHKShake isShakeNotification:response.notification]){
         [SHKShake reportNotificationCenter:center didReceiveNotificationResponse:response withCompletionHandler:completionHandler];
-        return; 
+        return;
     }
 
     completionHandler();
 }
+// highlight-end
 
+// highlight-start
 - (void)userNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(UNNotificationPresentationOptions))completionHandler {
-    
-    if ([Shake isShakeNotification:notification]){
-        [SHKShake reportNotificationCenter:center willPresentNotification:notification withCompletionHandler:completionHandler]; 
-        return; 
+    if ([SHKShake isShakeNotification:notification]){
+        [SHKShake reportNotificationCenter:center willPresentNotification:notification withCompletionHandler:completionHandler];
+        return;
     }
 
     completionHandler(UNNotificationPresentationOptionAlert | UNNotificationPresentationOptionSound); 
 }
+// highlight-end
 ```
 
 </TabItem><TabItem value="swift">
 
 ```swift title="AppDelegate.swift"
-
+// highlight-next-line
 class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-
+        // highlight-next-line
         UNUserNotificationCenter.current().delegate = self
 
         Shake.start(clientId: "your_client_id", clientSecret: "your_client_secret")
@@ -213,8 +226,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         return true
     }
 
+    // highlight-start
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
-
         if Shake.isShakeNotification(response.notification) {
             Shake.report(center, didReceive: response, withCompletionHandler: completionHandler)
             return;
@@ -222,9 +235,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
 
         completionHandler()
     }
+    // highlight-end
 
+    // highlight-start
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
-
         if Shake.isShakeNotification(notification) {
             Shake.report(center, willPresent: notification, withCompletionHandler: completionHandler)
             return;
@@ -232,6 +246,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
 
         completionHandler([.badge, .sound, .alert])
     }
+    // highlight-end
 }
 ```
 </TabItem></Tabs>
