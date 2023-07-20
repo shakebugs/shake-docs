@@ -214,7 +214,7 @@ If you want Shake to manually handle notification tracking, use this method inst
 
 ```java title="App.java"
 // highlight-start
-Shake.handleNotification(
+Shake.insertNotificationEvent(
     String notificationTitle,
     String notificationDescription
 );
@@ -227,7 +227,7 @@ Shake.handleNotification(
 
 ```kotlin title="App.kt"
 // highlight-start
-Shake.handleNotification(
+Shake.insertNotificationEvent(
     notificationTitle: String,
     notificationDescription: String
 )

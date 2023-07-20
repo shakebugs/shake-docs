@@ -161,37 +161,3 @@ Shake.getReportConfiguration().theme.accentColor = R.color.accent_color
 
 </TabItem>
 </Tabs>
-
-
-## Changing the home screen subtitle
-
-If you want to change subtitle message on the home screen and make it more suitable for your app,
-you can do it using the following method:
-
-<Tabs
-groupId="android"
-defaultValue="kotlin"
-values={[
-{ label: 'Java', value: 'java'},
-{ label: 'Kotlin', value: 'kotlin'},
-]
-}>
-
-<TabItem value="java">
-
-```java title="App.java"
-// highlight-next-line
-Shake.getReportConfiguration().setHomeSubtitle("Feel free to submit your bug reports, suggestions and questions to us.");
-```
-
-</TabItem>
-
-<TabItem value="kotlin">
-
-```kotlin title="App.kt"
-// highlight-next-line
-Shake.getReportConfiguration().homeSubtitle = "Feel free to submit your bug reports, suggestions and questions to us."
-```
-
-</TabItem>
-</Tabs>

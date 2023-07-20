@@ -45,22 +45,22 @@ values={[
 void setShakeHomeActions() { 
     // highlight-start
     ShakeHomeAction customAction = new ShakeHomeAction(
-            "Visit our roadmap",
-            "Feel free to send us a suggestion",
-            ContextCompat.getDrawable(this, R.drawable.ic_open_link),
+            R.string.visit_roadmap,
+            R.string.visit_roadmap_subtitle,
+            R.drawable.ic_open_link,
             () -> {
                 // Open URL
                 return null;
             });
     ShakeHomeAction submitAction = new ShakeHomeSubmitAction(
-            "Submit a new ticket",
-            "Tap on the button to submit us a new ticket",
-            ContextCompat.getDrawable(this, R.drawable.ic_new_ticket)
+             R.string.submit_ticket,
+             R.string.submit_ticket_subtitle,
+             R.drawable.ic_new_ticket,
     );
     ShakeHomeAction chatAction = new ShakeHomeChatAction(
-            "Start a new chat",
-            "Tap on the button to start a live chat",
-            ContextCompat.getDrawable(this, R.drawable.ic_new_chat)
+             R.string.start_chat,
+             R.string.start_chat_subtitle,
+             R.drawable.ic_new_chat,
     );
     
     ArrayList<ShakeHomeAction> actions = (ArrayList<ShakeHomeAction>) Arrays.asList(customAction, submitAction, chatAction);
@@ -77,22 +77,22 @@ void setShakeHomeActions() {
 fun setShakeHomeActions() {
     // highlight-start
     val customAction = ShakeHomeAction(
-        title = "Visit our roadmap",
-        subtitle = "Feel free to send us a suggestion",
-        icon = ContextCompat.getDrawable(context, R.drawable.ic_open_link),
+        title = R.string.visit_roadmap,
+        subtitle = R.string.visit_roadmap_subtitle,
+        icon = R.drawable.ic_open_link,
         handler = { 
             // Open URL
         }
     )
     val submitAction = ShakeHomeSubmitAction(
-        title = "Submit a new ticket",
-        subtitle = "Tap on the button to submit us a new ticket",
-        icon = ContextCompat.getDrawable(context, R.drawable.ic_new_ticket),
+        title = R.string.submit_ticket,
+        subtitle = R.string.submit_ticket_subtitle,
+        icon = R.drawable.ic_new_ticket,
     )
     val chatAction = ShakeHomeChatAction(
-        title = "Start a new chat",
-        subtitle = "Tap on the button to start a live chat",
-        icon = ContextCompat.getDrawable(context, R.drawable.ic_new_chat),
+        title = R.string.start_chat,
+        subtitle = R.string.start_chat_subtitle,
+        icon = R.drawable.ic_new_chat,
     )
 
     val actions = arrayListOf(customAction, submitAction, chatAction)
@@ -121,7 +121,7 @@ values={[
 
 ```java title="App.java"
 // highlight-next-line
-Shake.getReportConfiguration().setHomeSubtitle("Feel free to submit your bug reports, suggestions and questions to us.");
+Shake.getReportConfiguration().setHomeSubtitle(R.string.shake_home_subtitle);
 ```
 
 </TabItem>
@@ -130,7 +130,7 @@ Shake.getReportConfiguration().setHomeSubtitle("Feel free to submit your bug rep
 
 ```kotlin title="App.kt"
 // highlight-next-line
-Shake.getReportConfiguration().homeSubtitle = "Feel free to submit your bug reports, suggestions and questions to us."
+Shake.getReportConfiguration().homeSubtitle = R.string.shake_home_subtitle
 ```
 
 </TabItem>

@@ -161,6 +161,22 @@ class MyFirebaseMessagingService : FirebaseMessagingService() {
 </TabItem>
 </Tabs>
 
+### Customizing notification title and icon
+
+If you want to change chat notification title or icon, you can do it by adding
+metadata in the manifest file inside the application element:
+
+```xml title="AndroidManifest.xml"
+// highlight-start
+<meta-data
+  android:name="com.shakebugs.chat_notification_icon"
+  android:resource="@drawable/ic_notification" />
+<meta-data
+  android:name="com.shakebugs.chat_notification_title"
+  android:resource="@string/app_name" />
+// highlight-end
+```
+
 ### Set up Server Key on the Shake dashboard
 
 The last thing you'll have to do is to add Firebase Cloud Messaging *Server Key* to the Shake Dashboard.
