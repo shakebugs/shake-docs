@@ -8,9 +8,28 @@ title: Release notes
 
 What would you like us to build next? Upvote upcoming features and suggest new ideas on the [Public feedback board](https://feedback.shakebugs.com/).
 
+## 16.2.0
+<span class="tag-button">August 5, 2023</span>&nbsp;&nbsp;
+<span class="tag-button green-tag-button">Latest version</span>
+
+#### What's new
+
+We’ve made it possible for users to open a New [chat](/react/user-feedback/invoke) without submitting a New ticket.  
+Additionally, you can [customize Shake home screen buttons](/react/configuration-and-data/home-screen) according to your taste.
+
+Chat notifications are upgraded with push notifications, so users can [receive chat notifications even when app is closed](/react/users/chat#notifications).
+Also, there’s now a neat seen indicator that tells you exactly if the message was seen or not. :rocket:
+
+From now, you can  [execute a block of code](/react/configuration-and-data/callbacks) when certain actions are triggered within Shake.
+
+This version now contains Turkish, Korean and Dutch translations, which additionally extend [the lists of languages into which Shake's been translated](https://help.shakebugs.com/en/articles/3392092-which-languages-has-shake-sdk-been-translated-to).
+
+#### Bug fixes
+
+We fixed a few minor bugs that were causing problems. Shake is now more stable and runs even smoother.
+
 ## 16.1.0
 <span class="tag-button">July 6, 2023</span>&nbsp;&nbsp;
-<span class="tag-button green-tag-button">Latest version</span>
 
 #### What's new
 

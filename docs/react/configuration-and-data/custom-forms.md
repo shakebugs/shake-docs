@@ -58,16 +58,16 @@ If multiple instances of these components are included, only the first instance 
 A component that lets users provide a short and descriptive title for their issue or request.
 
 Properties:
-- label **String** - represents element label
-- labelRes **String** - loads label from resource id
-- initialValue **String** - initial input value
-- required **Bool** - if true, user can't submit the ticket while the input is empty
+- key **string** - represents element on the Shake dashboard
+- label **string** - represents element label
+- initialValue **string** - initial input value
+- required **bool** - if true, user can't submit the ticket while the input is empty
 
 Example:
 
-```javascript title="App.js"
+```javascript title="index.js"
 // highlight-next-line
-const title = new ShakeTitle('Title', 'shake_title', '', true);
+const title = new ShakeTitle('Title', 'Title', '', true);
 ```
 
 :::note
@@ -88,16 +88,16 @@ they will automatically become <span class="tag-button pink-tag-button">tags</sp
 This element allows your users to leave textual input  with the ticket they're submitting.
 
 Properties:
-- label **String** - represents element label
-- labelRes **String** - loads label from resource id
-- initialValue **String** - initial input value
-- required **Bool** - if true, user can't submit the ticket while the input is empty
+- key **string** - represents element on the Shake dashboard
+- label **string** - represents element label
+- initialValue **string** - initial input value
+- required **bool** - if true, user can't submit the ticket while the input is empty
 
 Example:
 
-```javascript title="App.js"
+```javascript title="index.js"
 // highlight-next-line
-const description = new ShakeTextInput('Steps to reproduce', 'shake_description', '', false);
+const description = new ShakeTextInput('Steps to reproduce', 'Steps to reproduce', '', false);
 ```
 
 ### Email input
@@ -113,16 +113,16 @@ const description = new ShakeTextInput('Steps to reproduce', 'shake_description'
 This element allows your users to leave email address with the ticket they're submitting.
 
 Properties:
-- label **String** - represents element label
-- labelRes **String** - loads label from resource id
-- initialValue **String** - initial input value
-- required **Bool** - if true, user can't submit the ticket while the input is empty
+- key **string** - represents element on the Shake dashboard
+- label **string** - represents element label
+- initialValue **string** - initial input value
+- required **bool** - if true, user can't submit the ticket while the input is empty
 
 Example:
 
-```javascript title="App.js"
+```javascript title="index.js"
 // highlight-next-line
-const email = new ShakeEmail('Email to contact you on', 'shake_email', '', true);
+const email = new ShakeEmail('Email to contact you on', 'Email to contact you on', '', true);
 ```
 
 ### Picker
@@ -140,30 +140,30 @@ This element enables your users to select an option from a pre-defined list of c
 #### Picker item
 
 Properties:
-- text **String** - represents element text
-- textRes **String** - loads text from resource id
-- icon **String** - represents picker item resource icon
-- tag **String** - if item is selected, tag will be automatically added to the ticket
+- key **string** - represents element on the Shake dashboard
+- text **string** - represents element text
+- icon **string | null** - base64 string item icon
+- tag **string | null** - if item is selected, tag will be automatically added to the ticket
 
 Example:
 
-```javascript title="App.js"
+```javascript title="index.js"
 // highlight-next-line
-const item = new ShakePickerItem('Playbox Mini', 'playbox_mini', 'ic_playbox_mini', 'playbox-mini');
+const item = new ShakePickerItem('Playbox Mini', 'Playbox Mini', base64Icon, 'playbox-mini');
 ```
 
 #### Picker
 
 Properties:
-- label **String** - represents element label
+- key **string** - represents element on the Shake dashboard
+- label **string** - represents element label
 - items **List** - list of items in the picker
-- labelRes **String** - loads label from resource id
 
 Example:
 
-```javascript title="App.js"
+```javascript title="index.js"
 // highlight-next-line
-const picker = new ShakePicker('Choose your console', items, 'shake_picker_label');
+const picker = new ShakePicker('Choose your console', 'Choose your console', items);
 ```
 
 ### Inspect button
@@ -180,7 +180,7 @@ This element allows your users to inspect ticket data, tapping it takes them to 
 
 Example:
 
-```javascript title="App.js"
+```javascript title="index.js"
 // highlight-next-line
 const inspectButton = new ShakeInspectButton();
 ```
@@ -199,7 +199,7 @@ This element allows your users to attach additional images, videos or files to t
 
 Example:
 
-```javascript title="App.js"
+```javascript title="index.js"
 // highlight-next-line
 const attachments = new ShakeAttachments();
 ```
@@ -221,18 +221,18 @@ The Title and Description fields are required and cannot be left blank, while th
 The Category field allows users to select a category for their ticket, which creates a corresponding tag to help with organization and management.
 The Inspect button allows users to easily review and verify the data they have provided for their submission, while the Attachments enables users to upload additional files or other materials to provide context and support their submission.
 
-```javascript title="App.js"
+```javascript title="index.js"
 // highlight-start
-const title = new ShakeTitle('Title', null, '', true);
-const desc = new ShakeTextInput('Description', null, '', true);
-const email = new ShakeEmail('Email', null, 'john.doe@gmail.com', false);
+const title = new ShakeTitle('Title', 'Title', '', true);
+const desc = new ShakeTextInput('Description', 'Description', '', true);
+const email = new ShakeEmail('Email', 'Email', 'john.doe@gmail.com', false);
 
 const pickerItems = [
-    new ShakePickerItem('Bug', null, 'ic_bug', 'bug'),
-    new ShakePickerItem('Suggestion', null, 'ic_suggestion', 'suggestion'),
-    new ShakePickerItem('Question', null, 'ic_question', 'question'),
+    new ShakePickerItem('Bug', 'Bug', bugIcon, 'bug'),
+    new ShakePickerItem('Suggestion', 'Suggestion', suggestionIcon, 'suggestion'),
+    new ShakePickerItem('Question', 'Question', questionIcon, 'question'),
 ];
-const picker = new ShakePicker('Feedback type', pickerItems);
+const picker = new ShakePicker('Feedback type', 'Feedback type', pickerItems);
 
 const inspect = new ShakeInspectButton();
 const attachments = new ShakeAttachments();
@@ -244,86 +244,59 @@ Shake.setShakeForm(form);
 // highlight-end
 ```
 
-*ic_bug*, *ic_suggestion* and *ic_question* are icons added to the native Android and iOS project.
-Add icons to the native project with the name specified in the code:
-- For Android, add icons to the **android/app/src/main/res/drawable** directory.
-- For iOS, add icons using XCode to the **Runner/Assets** directory.
+:::note
+
+Picker item icons should be in the base64 format without prefix eg. **data:image/png;base64,...**
+
+:::
 
 ### Creating a form translated to different languages
 
-The following code snippet is an example of how to create a custom form that includes elements with labels translated into different languages.
+The following code snippet is an example of how to create a custom form that has elements with labels translated into different languages.
 
-To achieve this, you can leverage resources strings, which are supported by the platform you are working on. 
-For instance, you may want to have a text input for a required ticket title, as well as a text input for required reproduction steps where the user can describe how they encountered a bug.
+To achieve this, you should listen for language changes in you app and set a new form with proper labels when language is changed.
+Note that component `key` is used for presenting values on the Shake dashboard, and it shouldn't be translated.
 
-**shake_form_title** and **shake_form_repro** are defined as strings in the resource files. 
-Each language has its own resource file, and the system will automatically load the correct file depending on the language settings on the user's phone.
+Here's an example how to translate your form:
 
-By utilizing resources strings, you can provide a seamless and localized experience for your users, regardless of their language preferences.
-
-```javascript title="App.js"
+```javascript title="index.js"
 // highlight-start
-const title = new ShakeTitle('Title', 'shake_form_title', '', true);
-const repro = new ShakeTextInput('Reproduction steps', 'shake_form_repro', '', true);
+const strings = {
+    'en': {
+        'title': 'Title',
+        'repro': 'Steps to reproduce'
+    },
+    'de': {
+        'title': 'Titel',
+        'repro': 'Schritte zum Reproduzieren'
+    },
+    'fr': {
+        'title': 'Titre',
+        'repro': 'Étapes à reproduire'
+    }
+}
+// highlight-end
 
-const components = [title, repro];
-const form = new ShakeForm(components);
+// highlight-start
+// This function should be called when language change is detected
+const onLanguageChanged = (languageCode) => {
+    const title = new ShakeTitle('Title', strings[languageCode].title, '', true);
+    const repro = new ShakeTextInput('Steps to reproduce', strings[languageCode].repro, '', true);
 
-Shake.setShakeForm(form);
+    const components = [title, repro];
+    const form = new ShakeForm(components);
+
+    Shake.setShakeForm(form);  
+}
 // highlight-end
 ```
-
-For example, you want to translate your form to the English and German language.
-
-#### Android
-Add strings to the **android/app/src/main/res/values/strings.xml** and **android/app/src/main/res/values-de/strings.xml** files.
-```xml title="values/strings.xml"
-// highlight-start
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-  <string name="shake_form_title">Description</string>
-  <string name="shake_form_repro">Reproduction steps</string>
-</resources>
-// highlight-end
-``` 
-
-```xml title="values-de/strings.xml"
-// highlight-start
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-  <string name="shake_form_title">Beschreibung</string>
-  <string name="shake_form_repro">Reproduktionsschritte</string>
-</resources>
-// highlight-end
-``` 
-
-#### iOS
-Add strings to the **ios/Runner/en.lproj/Localizable.strings** and **ios/Runner/de.lproj/Localizable.strings** files.
-```text title="en.lproj/Localizable.strings"
-// highlight-start
-"shake_form_title" = "Description";
-"shake_form_repro" = "Reproduction steps";
-// highlight-end
-``` 
-
-```text title="de.lproj/Localizable.strings"
-// highlight-start
-"shake_form_title" = "Beschreibung";
-"shake_form_repro" = "Reproduktionsschritte";
-// highlight-end
-``` 
-
-:::note
-If you don't have Localizable files in your iOS project, you should add it using the XCode *Runner → New File... → Strings File*
-and enable languages you want in the *Project → Info → Localisations*.
-:::note
 
 ### Removing Inspect button from the default form
 
 If you like the default form but want to make some modifications, you can easily do so by editing the Shake default form.
 For example, you may wish to remove the Inspect button from the default form to prevent users from inspecting the ticket data, while keeping the other form elements intact.
 
-```javascript title="App.js"
+```javascript title="index.js"
 // highlight-start
 const setCustomForm = async () => {
     const shakeForm = await Shake.getShakeForm();

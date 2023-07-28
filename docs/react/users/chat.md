@@ -2,6 +2,8 @@
 id: chat
 title: Chat
 ---
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 >If needed, your app users can [chat with you](/react/shake-ui/chat-screen) to provide you more details
 about their reported bugs, crashes or feedback. You will be able to fix issues faster and make your customers happier.
@@ -17,93 +19,256 @@ and they won't receive any new messages until registered again.
 
 ## Notifications
 
-Shake will notify your app user when you send them a new message from the Shake dashboard.
-Notifications are presented automatically to the app user. You don't have to code anything.
+Shake can notify your app [users](/react/users/register-user) about new messages sent from the Shake dashboard.
+
+Both remote and local notifications are supported, but are mutually exclusive.
+
+## Android notifications
+
+### Set up Firebase SDK
+
+Shake uses Firebase for sending push notifications to your Android app.
+
+If you didn't add Firebase to your project yet, follow the official documentation for [adding Firebase into the project](https://rnfirebase.io/#installation).
+
+You'll also have to [set up Firebase Cloud Messaging](https://rnfirebase.io/messaging/usage#installation) in your app.
+
+### Forwarding device token to the Shake
+
+To target the specific Android device, Shake needs the device Firebase token.
+
+Forward Firebase token to the Shake by calling `Shake.setPushNotificationsToken` method on the app start like shown below:
+
+```javascript title="index.js"
+// highlight-next-line
+import Shake from '@shakebugs/react-native-shake';
+
+// highlight-start
+const setShakePushNotificationsToken = async () => {
+    if (Platform.OS === 'android') {
+        // Get FCM token for current session
+        const fcmToken = await messaging().getToken();
+        Shake.setPushNotificationsToken(fcmToken);
+    }
+};
+// highlight-end
+
+// highlight-next-line
+setShakePushNotificationsToken();
+
+Shake.start('client-id', 'client-secret');
+
+AppRegistry.registerComponent(appName, () => App);
+```
+
+### Presenting notifications to the app users
+
+Shake sends Firebase *data* push notifications to the device which are not presented by default.
+
+In order to present data notifications to the app users you'll have to use `onMessage` and `setBackgroundMessageHandler` callbacks
+and call `Shake.showChatNotification` like shown below:
+
+```javascript title="index.js"
+// highlight-start
+import Shake from '@shakebugs/react-native-shake';
+import messaging from '@react-native-firebase/messaging';
+// highlight-end
+
+// highlight-start
+const presentShakePushNotifications = async () => {
+    if (Platform.OS === 'android') {
+        // Showing chat notifications when app in the background
+        messaging().setBackgroundMessageHandler(async remoteMessage => {
+            await Shake.start('client-id', 'client-secret'); // Start Shake with your keys
+            Shake.showChatNotification(remoteMessage.data);
+        });
+        // Showing chat notifications when app in the foreground
+        messaging().onMessage(async remoteMessage => {
+            Shake.showChatNotification(remoteMessage.data);
+        });
+    }
+};
+// highlight-end
+
+
+// highlight-next-line
+presentShakePushNotifications();
+
+Shake.start('client-id', 'client-secret');
+
+AppRegistry.registerComponent(appName, () => App);
+```
 
 :::note
 
-At the moment, Shake supports only _local_ notifications. Which means that end-users won't get notified about new messages when your application is in the _background_.
+Don't forget to request notifications permission or notifications won't be shown
 
 :::
 
-### Android
+### Customizing notification title and icon
 
-Notifications are automatically presented to the end-user, no additional code is required.
+If you want to change chat notification title or icon, you can do it by adding
+metadata in the manifest file inside the application element:
 
-### iOS
+```xml title="AndroidManifest.xml"
+// highlight-start
+<meta-data
+  android:name="com.shakebugs.chat_notification_icon"
+  android:resource="@drawable/ic_notification" />
+<meta-data
+  android:name="com.shakebugs.chat_notification_title"
+  android:resource="@string/app_name" />
+// highlight-end
+```
 
-To present any kind of notifications to the end-user, the host application must __request a permission__ from the app user.
-Find a suitable place in your application flow where this native alert dialog will be presented.
+### Set up Server Key on the Shake dashboard
 
-In order to be highly customizable and minimally intrusive to existing notification logic of host applications, Shake requires additional setup outlined in the below snippets.
+The last thing you'll have to do is to add Firebase Cloud Messaging *Server Key* to the Shake Dashboard.
 
-Use the `Shake.report(center: UNUserNotificationCenter ...)` methods to delegate the notification presentation logic to Shake.
+Navigate to the *Project Settings → Cloud Messaging* on the Firebase and and copy *Server Key* to the *Workspace Administration → App settings* on the Shake dashboard.
+
+
+### Local notifications
+
+If for some reason, you don't want to configure remote notifications for your app, Shake can still schedule
+them locally.
+
+To enable these, you still need to request the user permission, but there is no need for additional steps or code.
+
+:::note
+
+Important thing to note is that local notifications are not shown when app is in the background.
+
+:::note
+
+Shake uses `Shake.setPushNotificationsToken` function to determine if the app is configured to receive remote notifications.
+If that method is called in your app, Shake will disable local notifications and assume that you want to enable remote ones.
+
+## iOS notifications
+
+### Creating a Push Notifications certificate
+
+Shake supports iOS Remote notifications but your application needs the [APS Environment Entitlement](https://developer.apple.com/documentation/bundleresources/entitlements/aps-environment) enabled.
+
+After enabling this app _Capability_, Shake needs your certificate to establish a
+[certificate based connection with APNS](https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/establishing_a_certificate-based_connection_to_apns). Follow the Apple docs and generate a [new Push Notifications certificate](https://developer.apple.com/account/resources/certificates/add) in the _Member Center_.
+
+Once the certificate is generated and downloaded to your local machine, _double click_ on the certificate to import it to the KeychainAccess application. If done correctly, the _Certificate+PrivateKey_ combination will be present in your KeychainAccess application under the _Certificates_ tab.
+
+Export the _Certificate+PrivateKey_ combination as a _.p12_ file and upload the file to Shake _Dashboard_.
+
+
+### Registering iOS application for remote notifications
+
+To target the specific iOS device, Shake needs the device APNS token.
+
+Call the native `registerForRemoteNotifications` method during the application launch, to
+always obtain a fresh copy of the device APNS token and forward it to Shake.
+
+
+<Tabs
+groupId="ios"
+defaultValue="swift"
+values={[
+{ label: 'Objective-C', value: 'objectivec'},
+{ label: 'Swift', value: 'swift'},
+]
+}>
+
+<TabItem value="objectivec">
 
 ```objectivec title="AppDelegate.m"
-#import "AppDelegate.h"
+@implementation AppDelegate
 
-#import <React/RCTBridge.h>
-#import <React/RCTBundleURLProvider.h>
-#import <React/RCTRootView.h>
-
-#ifdef FB_SONARKIT_ENABLED
-#import <FlipperKit/FlipperClient.h>
-#import <FlipperKitLayoutPlugin/FlipperKitLayoutPlugin.h>
-#import <FlipperKitUserDefaultsPlugin/FKUserDefaultsPlugin.h>
-#import <FlipperKitNetworkPlugin/FlipperKitNetworkPlugin.h>
-#import <SKIOSNetworkPlugin/SKIOSNetworkAdapter.h>
-#import <FlipperKitReactPlugin/FlipperKitReactPlugin.h>
+- (BOOL)application:(UIApplication *)application 
+didFinishLaunchingWithOptions:(NSDictionary<UIApplicationLaunchOptionsKey, id> *)launchOptions {
+    // highlight-next-line
+    [UIApplication.sharedApplication registerForRemoteNotifications];
+    
+    /// Rest of the application and Shake setup
+    
+    return true;
+}
 
 // highlight-start
-@import Shake;
+- (void)application:(UIApplication *)application 
+didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
+    [SHKShake didRegisterForRemoteNotificationsWithDeviceToken:deviceToken];
+}
+// highlight-end
+
+@end
+```
+
+</TabItem><TabItem value="swift">
+
+```swift title="AppDelegate.swift"
+class AppDelegate: UIResponder, UIApplicationDelegate {
+
+    override func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+    
+        // highlight-next-line
+        UIApplication.shared.registerForRemoteNotifications()
+    
+        /// Rest of the application and Shake setup
+    
+        return true
+    }
+    
+    // highlight-start
+    override func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        Shake.didRegisterForRemoteNotifications(withDeviceToken: deviceToken)
+    }
+    // highlight-end
+}
+```
+</TabItem></Tabs>
+
+### Presenting iOS notifications
+
+To handle _foreground_ notifications, application needs to set itself as the `UNUserNotificationCenterDelegate` , and implement
+the _didReceiveResponse_, _willPresentNotification_ methods.
+
+To remain customizable and minimally intrusive to an existing notification logic of your app, Shake requires some additional setup.
+
+Use `Shake.report(center: UNUserNotificationCenter ...)` methods to delegate notification presentation logic to Shake.
+
+`Shake.isShakeNotification` method can be used to perform an early check for Shake originated notifications and delegate processing so that Shake
+internally calls Apple completion handlers.
+
+<Tabs
+groupId="ios"
+defaultValue="swift"
+values={[
+{ label: 'Objective-C', value: 'objectivec'},
+{ label: 'Swift', value: 'swift'},
+]
+}>
+
+<TabItem value="objectivec">
+
+```objectivec title="AppDelegate.m"
+// highlight-start
+@import Shake; 
 @import UserNotifications;
 // highlight-end
 
-static void InitializeFlipper(UIApplication *application) {
-    FlipperClient *client = [FlipperClient sharedClient];
-    SKDescriptorMapper *layoutDescriptorMapper = [[SKDescriptorMapper alloc] initWithDefaults];
-    [client addPlugin:[[FlipperKitLayoutPlugin alloc] initWithRootNode:application withDescriptorMapper:layoutDescriptorMapper]];
-    [client addPlugin:[[FKUserDefaultsPlugin alloc] initWithSuiteName:nil]];
-    [client addPlugin:[FlipperKitReactPlugin new]];
-    [client addPlugin:[[FlipperKitNetworkPlugin alloc] initWithNetworkAdapter:[SKIOSNetworkAdapter new]]];
-    [client start];
-}
-#endif
-
+// highlight-next-line
 @implementation AppDelegate
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions{
-    #ifdef FB_SONARKIT_ENABLED
-        InitializeFlipper(application);
-    #endif
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
-    // highlight-start
-    UNUserNotificationCenter* center = [UNUserNotificationCenter currentNotificationCenter];
-    center.delegate = self;
-    // highlight-end
+    // highlight-next-line
+    UNUserNotificationCenter.currentNotificationCenter.delegate = self;
 
-    RCTBridge *bridge = [[RCTBridge alloc] initWithDelegate:self launchOptions:launchOptions];
-    RCTRootView *rootView = [[RCTRootView alloc] initWithBridge:bridge
-                                                   moduleName:@"example"
-                                            initialProperties:nil];
+    [SHKShake startWithClientId:@"your_client_id" clientSecret:@"your_client_secret"];
 
-    if (@available(iOS 13.0, *)) {
-        rootView.backgroundColor = [UIColor systemBackgroundColor];
-    } else {
-        rootView.backgroundColor = [UIColor whiteColor];
-    }
-
-    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    UIViewController *rootViewController = [UIViewController new];
-    rootViewController.view = rootView;
-    self.window.rootViewController = rootViewController;
-    [self.window makeKeyAndVisible];
-    return YES;
+    return YES; 
 }
 
 // highlight-start
 - (void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void (^)(void))completionHandler {
-    if ([response.notification.request.content.categoryIdentifier containsString:SHKNotificationCategoryIdentifierDomain]){
+    if ([SHKShake isShakeNotification:response.notification]){
         [SHKShake reportNotificationCenter:center didReceiveNotificationResponse:response withCompletionHandler:completionHandler];
         return;
     }
@@ -114,57 +279,151 @@ static void InitializeFlipper(UIApplication *application) {
 
 // highlight-start
 - (void)userNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(UNNotificationPresentationOptions))completionHandler {
-    if ([notification.request.content.categoryIdentifier containsString:SHKNotificationCategoryIdentifierDomain]) {
+    if ([SHKShake isShakeNotification:notification]){
         [SHKShake reportNotificationCenter:center willPresentNotification:notification withCompletionHandler:completionHandler];
         return;
     }
 
-    completionHandler(UNNotificationPresentationOptionAlert | UNNotificationPresentationOptionSound);
+    completionHandler(UNNotificationPresentationOptionAlert | UNNotificationPresentationOptionSound); 
 }
 // highlight-end
 
-- (NSURL *)sourceURLForBridge:(RCTBridge *)bridge{
-    #if DEBUG
-        return [[RCTBundleURLProvider sharedSettings] jsBundleURLForBundleRoot:@"index" fallbackResource:nil];
-    #else
-        return [[NSBundle mainBundle] URLForResource:@"main" withExtension:@"jsbundle"];
-    #endif
-}
-
 @end
 ```
+
+</TabItem><TabItem value="swift">
+
+```swift title="AppDelegate.swift"
+// highlight-next-line
+class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
+
+    override func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        // highlight-next-line
+        UNUserNotificationCenter.current().delegate = self
+
+        Shake.start(clientId: "your_client_id", clientSecret: "your_client_secret")
+
+        return true
+    }
+
+    // highlight-start
+    override func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        if Shake.isShakeNotification(response.notification) {
+            Shake.report(center, didReceive: response, withCompletionHandler: completionHandler)
+            return;
+        }
+
+        completionHandler()
+    }
+    // highlight-end
+
+    // highlight-start
+    override func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        if Shake.isShakeNotification(notification) {
+            Shake.report(center, willPresent: notification, withCompletionHandler: completionHandler)
+            return;
+        }
+
+        completionHandler([.badge, .sound, .alert])
+    }
+    // highlight-end
+}
+```
+</TabItem></Tabs>
+
+<Tabs
+groupId="ios"
+defaultValue="swift"
+values={[
+{ label: 'Objective-C', value: 'objectivec'},
+{ label: 'Swift', value: 'swift'},
+]
+}>
+
+<TabItem value="objectivec">
 
 ```objectivec title="AppDelegate.h"
-#import <React/RCTBridgeDelegate.h>
+// highlight-start
+#import <RCTAppDelegate.h>
 #import <UIKit/UIKit.h>
 
-// highlight-next-line
 @import UserNotifications;
 
-// highlight-next-line
-@interface AppDelegate : UIResponder <UIApplicationDelegate, UNUserNotificationCenterDelegate, RCTBridgeDelegate>
-
-@property (nonatomic, strong) UIWindow *window;
-
+@interface AppDelegate : RCTAppDelegate <UNUserNotificationCenterDelegate>
 @end
+// highlight-end
 ```
 
-Given the above setup, all notifications originated from Shake are handled by the Shake SDK, and all other notifications remain handled by your application.
+</TabItem><TabItem value="swift">
 
+```text title="AppDelegate.h"
+Not needed for Swift
+```
+</TabItem></Tabs>
 
-:::tip
+With the setup like above, notifications that originate from Shake are handled by Shake,
+and all other notifications are handled by your app.
 
-You can cancel the display of notifications in certain contexts by simply not reporting anything to Shake, or even stub the received native completion handler with your own 
-set of _UNNotificationPresentationOptions_ which will be respected by the Shake SDK.
+This keeps Shake isolated and configurable, but we do recommend using the above snippets because
+Shake will internally determine if notification should be presented, and also perform expected actions
+when notifications are tapped.
+
+:::note
+
+Don't forget to request notifications permission or notifications won't be shown
 
 :::
+
+### Local notifications
+
+If for some reason, you don't want to configure remote notifications for your app, Shake can still schedule
+them locally.
+
+To enable these, you still need to request the user permission, but there is no need to generate any additional
+certificates or register the iOS application for remote notifications with `registerForRemoteNotifications` method.
+
+:::note
+
+Important thing to note is that local notifications are not shown when app is in the background.
+
+:::note
+
+Shake uses `isRegisteredForRemoteNotifications` property to determine if the app is configured to receive remote notifications.
+If that method returns `true`, Shake will disable local notifications and assume that you want to enable remote ones.
+
+## Requesting Notifications permissions
+
+To show any kind of notifications to your user, you must request a permission.
+
+Requesting a notifications permission triggers a native alert dialog and can be displayed
+to a user only once.
+
+Make sure to find a proper place and time to ask for this permission, because if the user doesn't grant
+permission via the alert dialog, all notifications are disabled and must be enabled manually in the _Settings_ app.
+
+```javascript title="App.js"
+// highlight-start
+import {PermissionsAndroid, Platform} from 'react-native';
+import PushNotificationIOS from '@react-native-community/push-notification-ios';
+// highlight-end
+
+// highlight-start
+const requestNotificationsPermission = () => {
+    if (Platform.OS === 'android') {
+        PermissionsAndroid.request(PermissionsAndroid.PERMISSIONS.POST_NOTIFICATIONS);
+    } else {
+        PushNotificationIOS.requestPermissions();
+    }
+};
+// highlight-end
+```
 
 ## Unread messages
 
 If you want to show number of unread chat messages somewhere in your app, you can set the unread messages listener.
 The listener is called immediately when set and on each change in the number of unread messages for a registered app user:
 
-```javascript title="App.js"
+```javascript title="index.js"
 // highlight-start
 Shake.setUnreadMessagesListener(count => {
     // Update number in your text element
