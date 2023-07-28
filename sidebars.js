@@ -316,8 +316,10 @@ module.exports = {
             label: 'Configuration and data',
             items: [
                 'react/configuration-and-data/overview',
+                'react/configuration-and-data/home-screen',
                 'react/configuration-and-data/custom-forms',
                 'react/configuration-and-data/custom-branding',
+                'react/configuration-and-data/callbacks',
                 'react/configuration-and-data/data-attached-by-default',
                 'react/configuration-and-data/auto-screenshot',
                 'react/configuration-and-data/auto-screen-recording',

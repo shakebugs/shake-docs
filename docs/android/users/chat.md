@@ -32,12 +32,6 @@ If you didn't add Firebase to your project yet, follow the official documentatio
 
 You'll also have to [set up Firebase Cloud Messaging](https://firebase.google.com/docs/cloud-messaging/android/client) in your app.
 
-:::note
-
-Don't forget to add notifications permission or notifications won't be shown
-
-:::
-
 ### Forwarding device token to the Shake
 
 To target the specific Android device, Shake needs the device Firebase token.
@@ -160,6 +154,12 @@ class MyFirebaseMessagingService : FirebaseMessagingService() {
 
 </TabItem>
 </Tabs>
+
+:::note
+
+Don't forget to request notifications permission or notifications won't be shown
+
+:::
 
 ### Customizing notification title and icon
 

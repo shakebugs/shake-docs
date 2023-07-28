@@ -20,10 +20,8 @@ You don't need to code anything:
 </table>
 
 But if you want to, you can customize that.
-Let's look at an example where you want Shake user feedback to be invoked either when your users shake their device or when they take a screenshot:
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
+Let's look at an example where you want Shake user feedback to be invoked either when your users shake their device or when they take a screenshot:
 
 ```javascript title="App.js"
 // highlight-start
@@ -47,6 +45,7 @@ Shake.setShowFloatingReportButton(true);
 Also, feel free to change which Shake screen is shown when Shake user feedback is invoked manually:
 * [New ticket screen](/react/shake-ui/new-ticket-screen.md) (default)
 * [Home screen](/react/shake-ui/home-screen.md)
+* [Chat screen](react/shake-ui/chat-screen.md)
 
 ```javascript title="App.js"
 // highlight-next-line
@@ -56,7 +55,11 @@ import Shake, {ShakeScreen} from '@shakebugs/react-native-shake';
 Shake.setDefaultScreen(ShakeScreen.NEW);
 // highlight-next-line
 Shake.setDefaultScreen(ShakeScreen.HOME);
+// highlight-next-line
+Shake.setDefaultScreen(ShakeScreen.CHAT);
 ```
+
+If you are showing Shake chat screen, make sure that you have [registered](/react/users/register-user) your app user. Otherwise Shake home screen will be shown.
 
 ### Shaking gesture
 By default, the shaking gesture opens Shake user feedback.
@@ -130,6 +133,12 @@ const onFeedbackCenterPressed = () => {
     // highlight-next-line
     Shake.show(ShakeScreen.HOME);
 }
+
+const onStartChatPressed = () => {
+    // Displays Shake empty chat screen.
+    // highlight-next-line
+    Shake.show(ShakeScreen.CHAT);
+}
 ```
 
 If an [auto screenshot](/react/configuration-and-data/auto-screenshot.md) and
@@ -139,3 +148,6 @@ when you call `ShakeScreen.NEW` they will be automatically attached to a ticket.
 If enabled, [activity history](/react/configuration-and-data/activity-history.md),
 [black box](/react/configuration-and-data/black-box.md) and all other data are also automatically attached.
 No additional code is required.
+
+If you are showing Shake chat screen, make sure that you have [registered](/react/users/register-user) your app user. Otherwise Shake home screen will be shown.
+

@@ -104,13 +104,3 @@ shakeTheme.accentColor = '#ff0000';
 Shake.setShakeTheme(shakeTheme);
 // highlight-end
 ```
-
-## Changing the home screen subtitle
-
-If you want to change subtitle message on the home screen and make it more suitable for your app,
-you can do it using the following method:
-
-```javascript title="App.js"
-// highlight-next-line
-Shake.setHomeSubtitle("Feel free to submit your bug reports, suggestions and questions to us.");
-```
