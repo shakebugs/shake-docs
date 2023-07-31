@@ -55,6 +55,13 @@ All of this is done out of the box, you don't need to code anything.
     <div>
         <img
             class="small-visual-icon"
+            src={useBaseUrl('img/nfc-icon.svg')}
+        />
+        <p class="p2">NFC status<sup> Android</sup></p>
+    </div>
+    <div>
+        <img
+            class="small-visual-icon"
             src={useBaseUrl('img/user-profile-profile.svg')}
         />
         <p class="p2">Screen the ticket was reported from</p>
@@ -184,7 +191,6 @@ and the status of these iOS permissions:
 
 On your Shake dashboard, only those permissions that the user has granted access to are listed.
 The ones you don't see were either denied or not requested at all.
-
 
 ## Attach more data
 

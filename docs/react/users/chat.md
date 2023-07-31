@@ -46,7 +46,6 @@ import Shake from '@shakebugs/react-native-shake';
 // highlight-start
 const setShakePushNotificationsToken = async () => {
     if (Platform.OS === 'android') {
-        // Get FCM token for current session
         const fcmToken = await messaging().getToken();
         Shake.setPushNotificationsToken(fcmToken);
     }
@@ -156,7 +155,6 @@ After enabling this app _Capability_, Shake needs your certificate to establish 
 Once the certificate is generated and downloaded to your local machine, _double click_ on the certificate to import it to the KeychainAccess application. If done correctly, the _Certificate+PrivateKey_ combination will be present in your KeychainAccess application under the _Certificates_ tab.
 
 Export the _Certificate+PrivateKey_ combination as a _.p12_ file and upload the file to Shake _Dashboard_.
-
 
 ### Registering iOS application for remote notifications
 

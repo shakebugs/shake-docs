@@ -17,28 +17,166 @@ and they won't receive any new messages until registered again.
 
 ## Notifications
 
-Shake will notify your app user when you send them a new message from the Shake dashboard.
-Notifications are presented automatically to the app user. You don't have to code anything.
+Shake can notify your app [users](/flutter/users/register-user) about new messages sent from the Shake dashboard.
+
+Both remote and local notifications are supported, but are mutually exclusive.
+
+## Android notifications
+
+### Set up Firebase SDK
+
+Shake uses Firebase for sending push notifications to your Android app.
+
+If you didn't add Firebase to your project yet, follow the official documentation for [adding Firebase into the project](https://firebase.google.com/docs/flutter/setup).
+
+You'll also have to [set up Firebase Cloud Messaging](https://firebase.google.com/docs/cloud-messaging/flutter/client) in your app.
+
+### Forwarding device token to the Shake
+
+To target the specific Android device, Shake needs the device Firebase token.
+
+Forward Firebase token to the Shake by calling `Shake.setPushNotificationsToken` method on the app start like shown below:
+
+```dart title="main.dart"
+// highlight-start
+import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
+import 'package:shake_flutter/shake_flutter.dart';
+// highlight-end
+
+// highlight-start
+void setShakePushNotificationsToken() async {
+    String? fcmToken = await FirebaseMessaging.instance.getToken();
+    Shake.setPushNotificationsToken(fcmToken);
+};
+// highlight-end
+
+void main() async {
+    WidgetsFlutterBinding.ensureInitialized();
+
+    await Shake.start('client-id', 'client-secret');
+    await Firebase.initializeApp();
+    
+    // highlight-next-line
+    setShakePushNotificationsToken();
+    
+    runApp(Home());
+}
+```
+
+### Presenting notifications to the app users
+
+Shake sends Firebase *data* push notifications to the device which are not presented by default.
+
+In order to present data notifications to the app users you'll have to use `onMessage` and `onBackgroundMessage` callbacks
+and call `Shake.showChatNotification` like shown below:
+
+```dart title="main.dart"
+// highlight-start
+import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
+import 'package:shake_flutter/shake_flutter.dart';
+// highlight-end
+
+// highlight-start
+@pragma('vm:entry-point')
+Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
+  await Shake.start('client-id', 'client-secret');
+  await Firebase.initializeApp();
+
+  Shake.showChatNotification(message.data);
+}
+// highlight-end
+
+// highlight-start
+void presentShakePushNotifications() {
+    // Showing chat notifications when app in the background
+    FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);
+    
+    // Showing chat notifications when app in the foreground
+    FirebaseMessaging.onMessage.listen((RemoteMessage message) {
+      Shake.showChatNotification(message.data);
+    });
+}
+// highlight-end
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  await Shake.start('client-id', 'client-secret');
+  await Firebase.initializeApp();
+
+  // highlight-next-line
+  presentShakePushNotifications();
+
+  runApp(Home());
+}
+```
 
 :::note
 
-Shake supports only local notifications. That means that your app users won't get notified about new messages
-when your app is in the _background_.
+Don't forget to request notifications permission or notifications won't be shown
 
 :::
 
-### Android
+### Customizing notification title and icon
 
-Notifications are automatically presented to the app user, no additional code is required.
+If you want to change chat notification title or icon, you can do it by adding
+metadata in the manifest file inside the application element:
 
-### iOS
+```xml title="AndroidManifest.xml"
+// highlight-start
+<meta-data
+  android:name="com.shakebugs.chat_notification_icon"
+  android:resource="@drawable/ic_notification" />
+<meta-data
+  android:name="com.shakebugs.chat_notification_title"
+  android:resource="@string/app_name" />
+// highlight-end
+```
 
-To present any kind of notifications to the app user, the host application must __request a permission__ from the app user.
-Find a suitable place in your application flow where this native alert dialog will be presented.
+### Set up Server Key on the Shake dashboard
 
-In order to be highly customizable and minimally intrusive to existing notification logic of host applications, Shake requires additional setup outlined in the below snippets.
+The last thing you'll have to do is to add Firebase Cloud Messaging *Server Key* to the Shake Dashboard.
 
-Use the `Shake.report(center: UNUserNotificationCenter ...)` methods to delegate the notification presentation logic to Shake.
+Navigate to the *Project Settings → Cloud Messaging* on the Firebase and and copy *Server Key* to the *Workspace Administration → App settings* on the Shake dashboard.
+
+
+### Local notifications
+
+If for some reason, you don't want to configure remote notifications for your app, Shake can still schedule
+them locally.
+
+To enable these, you still need to request the user permission, but there is no need for additional steps or code.
+
+:::note
+
+Important thing to note is that local notifications are not shown when app is in the background.
+
+:::note
+
+Shake uses `Shake.setPushNotificationsToken` function to determine if the app is configured to receive remote notifications.
+If that method is called in your app, Shake will disable local notifications and assume that you want to enable remote ones.
+
+## iOS notifications
+
+### Creating a Push Notifications certificate
+
+Shake supports iOS Remote notifications but your application needs the [APS Environment Entitlement](https://developer.apple.com/documentation/bundleresources/entitlements/aps-environment) enabled.
+
+After enabling this app _Capability_, Shake needs your certificate to establish a
+[certificate based connection with APNS](https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/establishing_a_certificate-based_connection_to_apns). Follow the Apple docs and generate a [new Push Notifications certificate](https://developer.apple.com/account/resources/certificates/add) in the _Member Center_.
+
+Once the certificate is generated and downloaded to your local machine, _double click_ on the certificate to import it to the KeychainAccess application. If done correctly, the _Certificate+PrivateKey_ combination will be present in your KeychainAccess application under the _Certificates_ tab.
+
+Export the _Certificate+PrivateKey_ combination as a _.p12_ file and upload the file to Shake _Dashboard_.
+
+### Registering iOS application for remote notifications
+
+To target the specific iOS device, Shake needs the device APNS token.
+
+Call the native `registerForRemoteNotifications` method during the application launch, to
+always obtain a fresh copy of the device APNS token and forward it to Shake.
 
 ```swift title="AppDelegate.swift"
 import UIKit
@@ -48,51 +186,121 @@ import Shake
 
 @UIApplicationMain
 @objc class AppDelegate: FlutterAppDelegate {
-    override func application(
-        _ application: UIApplication,
-        didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-            // highlight-start
-            let center = UNUserNotificationCenter.current()
-            center.delegate = self
-            // highlight-end
+    override func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        // highlight-next-line
+        UIApplication.shared.registerForRemoteNotifications()
+        
+        /// Rest of the application and Shake setup
 
-            GeneratedPluginRegistrant.register(with: self)
-            return super.application(application, didFinishLaunchingWithOptions: launchOptions)
-        }
+        GeneratedPluginRegistrant.register(with: self)
+        return super.application(application, didFinishLaunchingWithOptions: launchOptions)
+    }
+        
+    // highlight-start
+    override func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        Shake.didRegisterForRemoteNotifications(withDeviceToken: deviceToken)
+    }
+    // highlight-end
+}
+```
+
+### Presenting iOS notifications
+
+To handle _foreground_ notifications, application needs to set itself as the `UNUserNotificationCenterDelegate` , and implement
+the _didReceiveResponse_, _willPresentNotification_ methods.
+
+To remain customizable and minimally intrusive to an existing notification logic of your app, Shake requires some additional setup.
+
+Use `Shake.report(center: UNUserNotificationCenter ...)` methods to delegate notification presentation logic to Shake.
+
+`Shake.isShakeNotification` method can be used to perform an early check for Shake originated notifications and delegate processing so that Shake
+internally calls Apple completion handlers.
+
+```swift title="AppDelegate.swift"
+import UIKit
+import Flutter
+// highlight-next-line
+import Shake
+
+// highlight-next-line
+class AppDelegate: FlutterAppDelegate {
+
+    override func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        // highlight-next-line
+        UNUserNotificationCenter.current().delegate = self
+
+        GeneratedPluginRegistrant.register(with: self)
+        return super.application(application, didFinishLaunchingWithOptions: launchOptions)
+    }
 
     // highlight-start
     override func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
-        if response.notification.request.content.categoryIdentifier.contains(SHKNotificationCategoryIdentifierDomain) {
+        if Shake.isShakeNotification(response.notification) {
             Shake.report(center, didReceive: response, withCompletionHandler: completionHandler)
             return;
         }
 
         completionHandler()
     }
-  // highlight-end
+    // highlight-end
 
     // highlight-start
-    override func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void){
-        if notification.request.content.categoryIdentifier.contains(SHKNotificationCategoryIdentifierDomain){
+    override func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        if Shake.isShakeNotification(notification) {
             Shake.report(center, willPresent: notification, withCompletionHandler: completionHandler)
             return;
         }
 
         completionHandler([.badge, .sound, .alert])
     }
-  // highlight-end
+    // highlight-end
 }
 ```
 
-Given the above setup, all notifications originated from Shake are handled by the Shake SDK, and all other notifications remain handled by your application.
+With the setup like above, notifications that originate from Shake are handled by Shake,
+and all other notifications are handled by your app.
 
+This keeps Shake isolated and configurable, but we do recommend using the above snippets because
+Shake will internally determine if notification should be presented, and also perform expected actions
+when notifications are tapped.
 
-:::tip
+:::note
 
-You can cancel the display of notifications in certain contexts by simply not reporting anything to Shake, or even stub the received native completion handler with your own 
-set of _UNNotificationPresentationOptions_ which will be respected by the Shake SDK.
+Don't forget to request notifications permission or notifications won't be shown
 
 :::
+
+### Local notifications
+
+If for some reason, you don't want to configure remote notifications for your app, Shake can still schedule
+them locally.
+
+To enable these, you still need to request the user permission, but there is no need to generate any additional
+certificates or register the iOS application for remote notifications with `registerForRemoteNotifications` method.
+
+:::note
+
+Important thing to note is that local notifications are not shown when app is in the background.
+
+:::note
+
+Shake uses `isRegisteredForRemoteNotifications` property to determine if the app is configured to receive remote notifications.
+If that method returns `true`, Shake will disable local notifications and assume that you want to enable remote ones.
+
+## Requesting Notifications permissions
+
+To show any kind of notifications to your user, you must request a permission.
+
+Requesting a notifications permission triggers a native alert dialog and can be displayed
+to a user only once.
+
+Make sure to find a proper place and time to ask for this permission, because if the user doesn't grant
+permission via the alert dialog, all notifications are disabled and must be enabled manually in the _Settings_ app.
+
+```dart title="main.dart"
+// highlight-next-line
+FirebaseMessaging.instance.requestPermission();
+```
 
 ## Unread messages
 

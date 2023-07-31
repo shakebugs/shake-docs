@@ -67,7 +67,7 @@ const setShakeHomeActions = () => {
     const actions = [
         new ShakeHomeAction(
             'Visit our roadmap',
-            'Check what faetures are next',
+            'Check what features are next',
             roadmapImage,
             () => {
                 // Open URL

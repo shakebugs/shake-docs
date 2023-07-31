@@ -237,8 +237,10 @@ module.exports = {
             label: 'Configuration and data',
             items: [
                 'flutter/configuration-and-data/overview',
+                'flutter/configuration-and-data/home-screen',
                 'flutter/configuration-and-data/custom-forms',
                 'flutter/configuration-and-data/custom-branding',
+                'flutter/configuration-and-data/callbacks',
                 'flutter/configuration-and-data/data-attached-by-default',
                 'flutter/configuration-and-data/auto-screenshot',
                 'flutter/configuration-and-data/auto-screen-recording',
