@@ -301,8 +301,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         // highlight-next-line
         UNUserNotificationCenter.current().delegate = self
 
-        Shake.start(clientId: "your_client_id", clientSecret: "your_client_secret")
-
         return true
     }
 
