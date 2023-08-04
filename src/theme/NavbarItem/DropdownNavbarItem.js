@@ -36,7 +36,6 @@ function isItemActive(item, localPathname) {
 }
 
 function containsActiveItems(items, localPathname) {
-    console.log(items);
   return items.some((item) => isItemActive(item, localPathname));
 }
 
@@ -67,6 +66,8 @@ function DropdownNavbarItemDesktop({label, items, position, className, ...props}
     };
   }, [dropdownRef]);
 
+  if (getActiveLabel(items, label) === "Platform") return null;
+
   return (
     <div
       ref={dropdownRef}
@@ -85,7 +86,7 @@ function DropdownNavbarItemDesktop({label, items, position, className, ...props}
             setShowDropdown(!showDropdown);
           }
         }}>
-        {props.children ?? "Pero"}
+        {props.children ?? ""}
       </NavLink>
       <ul ref={dropdownMenuRef} className="dropdown__menu">
         {items.map((childItemProps, i) => (
@@ -130,6 +131,7 @@ function DropdownNavbarItemMobile({
       setCollapsed(!containsActive);
     }
   }, [localPathname, containsActive]);
+
   return (
     <li
       className={clsx('menu__list-item', {
