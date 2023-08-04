@@ -1,7 +1,7 @@
 module.exports = {
   title: 'Documentation',
   tagline: 'Explore guides and examples to integrate Shake into your app.',
-  url: 'https://www.shakebugs.com',
+  url: 'https://docs.shakebugs.com',
   baseUrl: '/docs/',
   favicon: 'img/favicon.png',
   trailingSlash: true,
@@ -22,12 +22,10 @@ module.exports = {
     },
     algolia: {
       appId: 'Q6FOQ6DC6Q',
-      apiKey: 'ece3a70ce6195e5404d1448556bf254a',
-      //apiKey: '0a7f58d03fe8cc9d31b51d69d009654f',
+      apiKey: '3ebbb9c4424c458a83683abfb66e7bb6',
       indexName: 'shakebugs',
     },
     navbar: {
-
       logo: {
         alt: 'Shake logo',
         src: 'img/shake-full-logo.svg',
