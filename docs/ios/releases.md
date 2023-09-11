@@ -8,9 +8,16 @@ title: Release notes
 
 What would you like us to build next? Upvote upcoming features and suggest new ideas on the [Public feedback board](https://feedback.shakebugs.com/).
 
+## 16.2.2
+<span class="tag-button">September 11, 2023</span>&nbsp;&nbsp;
+<span class="tag-button green-tag-button">Latest version</span>
+
+#### What's new
+
+We know it's important to keep your dashboard clean and well organized, that's why you can now simply [add tags](/ios/configuration-and-data/ticket-tags) to your tickets programmatically via code.
+
 ## 16.2.1
 <span class="tag-button">July 20, 2023</span>&nbsp;&nbsp;
-<span class="tag-button green-tag-button">Latest version</span>
 
 #### What's new
 

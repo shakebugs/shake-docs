@@ -78,6 +78,7 @@ module.exports = {
                 'android/configuration-and-data/activity-history',
                 'android/configuration-and-data/black-box',
                 'android/configuration-and-data/ticket-metadata',
+                'android/configuration-and-data/ticket-tags',
                 'android/configuration-and-data/auto-attach-files',
                 'android/configuration-and-data/manage-sensitive-data',
                 'android/configuration-and-data/data-privacy-disclosure'
@@ -172,6 +173,7 @@ module.exports = {
                 'ios/configuration-and-data/activity-history',
                 'ios/configuration-and-data/black-box',
                 'ios/configuration-and-data/ticket-metadata',
+                'ios/configuration-and-data/ticket-tags',
                 'ios/configuration-and-data/auto-attach-files',
                 'ios/configuration-and-data/manage-sensitive-data',
                 'ios/configuration-and-data/data-privacy-disclosure'
