@@ -78,6 +78,7 @@ module.exports = {
                 'android/configuration-and-data/activity-history',
                 'android/configuration-and-data/black-box',
                 'android/configuration-and-data/ticket-metadata',
+                'android/configuration-and-data/ticket-tags',
                 'android/configuration-and-data/auto-attach-files',
                 'android/configuration-and-data/manage-sensitive-data',
                 'android/configuration-and-data/data-privacy-disclosure'
@@ -172,6 +173,7 @@ module.exports = {
                 'ios/configuration-and-data/activity-history',
                 'ios/configuration-and-data/black-box',
                 'ios/configuration-and-data/ticket-metadata',
+                'ios/configuration-and-data/ticket-tags',
                 'ios/configuration-and-data/auto-attach-files',
                 'ios/configuration-and-data/manage-sensitive-data',
                 'ios/configuration-and-data/data-privacy-disclosure'
@@ -237,8 +239,10 @@ module.exports = {
             label: 'Configuration and data',
             items: [
                 'flutter/configuration-and-data/overview',
+                'flutter/configuration-and-data/home-screen',
                 'flutter/configuration-and-data/custom-forms',
                 'flutter/configuration-and-data/custom-branding',
+                'flutter/configuration-and-data/callbacks',
                 'flutter/configuration-and-data/data-attached-by-default',
                 'flutter/configuration-and-data/auto-screenshot',
                 'flutter/configuration-and-data/auto-screen-recording',
@@ -316,8 +320,10 @@ module.exports = {
             label: 'Configuration and data',
             items: [
                 'react/configuration-and-data/overview',
+                'react/configuration-and-data/home-screen',
                 'react/configuration-and-data/custom-forms',
                 'react/configuration-and-data/custom-branding',
+                'react/configuration-and-data/callbacks',
                 'react/configuration-and-data/data-attached-by-default',
                 'react/configuration-and-data/auto-screenshot',
                 'react/configuration-and-data/auto-screen-recording',

@@ -4,8 +4,6 @@ title: Invoke
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
 
 >Decide how you want Shake user feedback to be invoked.
 
@@ -46,6 +44,7 @@ Shake.setShowFloatingReportButton(true);
 Also, feel free to change which Shake screen is shown when Shake user feedback is invoked manually:
 * [New ticket screen](/flutter/shake-ui/new-ticket-screen.md) (default)
 * [Home screen](/flutter/shake-ui/home-screen.md)
+* [Chat screen](/flutter/shake-ui/chat-screen.md)
 
 ```dart title="main.dart"
 // highlight-start
@@ -54,11 +53,14 @@ import 'package:shake_flutter/enums/shake_screen.dart';
 // highlight-end
 
 // highlight-next-line
-Shake.setDefaultScreen(ShakeScreen.NEW);
+Shake.setDefaultScreen(ShakeScreen.newTicket);
 // highlight-next-line
-Shake.setDefaultScreen(ShakeScreen.HOME);
+Shake.setDefaultScreen(ShakeScreen.home);
+// highlight-next-line
+Shake.setDefaultScreen(ShakeScreen.chat);
 ```
 
+If you are showing Shake chat screen, make sure that you have [registered](/flutter/users/register-user) your app user. Otherwise Shake home screen will be shown.
 
 ### Shaking gesture
 
@@ -129,6 +131,12 @@ const onFeedbackCenterPressed() {
     // highlight-next-line
     Shake.show(ShakeScreen.home);
 }
+
+void onStartChatPressed() {
+    // Displays Shake empty chat screen.
+    // highlight-next-line
+    Shake.show(ShakeScreen.chat);
+}
 ```
 
 If an [auto screenshot](/flutter/configuration-and-data/auto-screenshot.md) and
@@ -138,3 +146,5 @@ when you call `ShakeScreen.newTicket` they will be automatically attached to a t
 If enabled, [activity history](/flutter/configuration-and-data/activity-history.md),
 [black box](/flutter/configuration-and-data/black-box.md) and all other data are also automatically attached.
 No additional code is required.
+
+If you are showing Shake chat screen, make sure that you have [registered](/flutter/users/register-user) your app user. Otherwise Shake home screen will be shown.

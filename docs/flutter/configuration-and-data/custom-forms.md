@@ -58,8 +58,8 @@ If multiple instances of these components are included, only the first instance 
 A component that lets users provide a short and descriptive title for their issue or request.
 
 Properties:
+- key **String** - represents element on the Shake dashboard
 - label **String** - represents element label
-- labelRes **String** - loads label from resource id
 - initialValue **String** - initial input value
 - required **Bool** - if true, user can't submit the ticket while the input is empty
 
@@ -67,7 +67,7 @@ Example:
 
 ```dart title="main.dart"
 // highlight-next-line
-ShakeTitle title = ShakeTitle('Title', labelRes: 'shake_title', initialValue: '', required: true);
+ShakeTitle title = ShakeTitle('Title', 'Title', initialValue: '', required: true);
 ```
 
 :::note
@@ -88,8 +88,8 @@ they will automatically become <span class="tag-button pink-tag-button">tags</sp
 This element allows your users to leave textual input  with the ticket they're submitting.
 
 Properties:
+- key **String** - represents element on the Shake dashboard
 - label **String** - represents element label
-- labelRes **String** - loads label from resource id
 - initialValue **String** - initial input value
 - required **Bool** - if true, user can't submit the ticket while the input is empty
 
@@ -97,7 +97,7 @@ Example:
 
 ```dart title="main.dart"
 // highlight-next-line
-ShakeTextInput description = ShakeTextInput('Steps to reproduce', labelRes: 'shake_description', initialValue: '', required: false);
+ShakeTextInput description = ShakeTextInput('Steps to reproduce', 'Steps to reproduce', initialValue: '', required: false);
 ```
 
 ### Email input
@@ -113,8 +113,8 @@ ShakeTextInput description = ShakeTextInput('Steps to reproduce', labelRes: 'sha
 This element allows your users to leave email address with the ticket they're submitting.
 
 Properties:
+- key **String** - represents element on the Shake dashboard
 - label **String** - represents element label
-- labelRes **String** - loads label from resource id
 - initialValue **String** - initial input value
 - required **Bool** - if true, user can't submit the ticket while the input is empty
 
@@ -122,7 +122,7 @@ Example:
 
 ```dart title="main.dart"
 // highlight-next-line
-ShakeEmail email = ShakeEmail('Email to contact you on', labelRes: 'shake_email', initialValue: '', required: true);
+ShakeEmail email = ShakeEmail('Email to contact you on', 'Email to contact you on', initialValue: '', required: true);
 ```
 
 ### Picker
@@ -140,30 +140,30 @@ This element enables your users to select an option from a pre-defined list of c
 #### Picker item
 
 Properties:
+- key **String** - represents element on the Shake dashboard
 - text **String** - represents element text
-- textRes **String** - loads text from resource id
-- icon **String** - represents picker item resource icon
-- tag **String** - if item is selected, tag will be automatically added to the ticket
+- icon **String?** - base64 string item icon
+- tag **String?** - if item is selected, tag will be automatically added to the ticket
 
 Example:
 
 ```dart title="main.dart"
 // highlight-next-line
-ShakePickerItem item = ShakePickerItem('Playbox Mini', textRes: 'playbox_mini', icon: 'ic_playbox_mini', tag: 'playbox-mini');
+ShakePickerItem item = ShakePickerItem('Playbox Mini', 'Playbox Mini', icon: base64Icon, tag: 'playbox-mini');
 ```
 
 #### Picker
 
 Properties:
+- key **String** - represents element on the Shake dashboard
 - label **String** - represents element label
-- labelRes **String** - loads label from resource id
 - items **List** - list of items in the picker
 
 Example:
 
 ```dart title="main.dart"
 // highlight-next-line
-ShakePicker picker = ShakePicker('Choose your console', items, labelRes: 'shake_picker_label');
+ShakePicker picker = ShakePicker('Choose your console', 'Choose your console', items);
 ```
 
 ### Inspect button
@@ -223,16 +223,16 @@ The Inspect button allows users to easily review and verify the data they have p
 
 ```dart title="main.dart"
 // highlight-start
-ShakeTitle title = ShakeTitle('Title', required: true);
-ShakeTextInput desc = ShakeTextInput('Description', required: true);
-ShakeEmail email = ShakeEmail('Email', initialValue: 'john.doe@gmail.com');
+ShakeTitle title = ShakeTitle('Title', 'Title', required: true);
+ShakeTextInput desc = ShakeTextInput('Description', 'Description', required: true);
+ShakeEmail email = ShakeEmail('Email', 'Email', initialValue: 'john.doe@gmail.com');
 
 List<ShakePickerItem> pickerItems = [
-    ShakePickerItem('Bug', icon: 'ic_bug', tag: 'bug'),
-    ShakePickerItem('Suggestion', icon: 'ic_suggestion', tag: 'suggestion'),
-    ShakePickerItem('Question', icon: 'ic_question', tag: 'question')
+    ShakePickerItem('Bug', 'Bug', icon: bugIcon, tag: 'bug'),
+    ShakePickerItem('Suggestion', 'Suggestion', icon: suggestionIcon, tag: 'suggestion'),
+    ShakePickerItem('Question', 'Question', icon: questionIcon, tag: 'question')
 ];
-ShakePicker picker = ShakePicker('Feedback type', pickerItems);
+ShakePicker picker = ShakePicker('Feedback type', 'Feedback type', pickerItems);
 
 ShakeInspectButton inspect = ShakeInspectButton();
 ShakeAttachments attachments = ShakeAttachments();
@@ -244,28 +244,42 @@ Shake.setShakeForm(form);
 // highlight-end
 ```
 
-*ic_bug*, *ic_suggestion* and *ic_question* are icons added to the native Android and iOS project.
-Add icons to the native project with the name specified in the code:
-- For Android, add icons to the **android/app/src/main/res/drawable** directory.
-- For iOS, add icons using XCode to the **Runner/Assets** directory.
+:::note
 
+Picker item icons should be in the base64 format without prefix eg. **data:image/png;base64,...**
+
+:::
 
 ### Creating a form translated to different languages
 
 The following code snippet is an example of how to create a custom form that includes elements with labels translated into different languages.
 
-To achieve this, you can leverage resources strings, which are supported by the platform you are working on.
-For instance, you may want to have a text input for a required ticket title, as well as a text input for required reproduction steps where the user can describe how they encountered a bug.
+To achieve this, you should listen for language changes in you app and set a new form with proper labels when language is changed.
+Note that component `key` is used for presenting values on the Shake dashboard, and it shouldn't be translated.
 
-**shake_form_title** and **shake_form_repro** are defined as strings in the resource files.
-Each language has its own resource file, and the system will automatically load the correct file depending on the language settings on the user's phone.
-
-By utilizing resources strings, you can provide a seamless and localized experience for your users, regardless of their language preferences.
+Here's an example how to translate your form:
 
 ```dart title="main.dart"
 // highlight-start
-ShakeTitle title = ShakeTitle('Title', labelRes: 'shake_form_title', required: true);
-ShakeTextInput repro = ShakeTextInput('Reproduction steps', labelRes: 'shake_form_repro', required: true);
+const strings = {
+  'en': {
+    'title': 'Title',
+    'repro': 'Steps to reproduce'
+  },
+  'de': {
+    'title': 'Titel',
+    'repro': 'Schritte zum Reproduzieren'
+  },
+  'fr': {
+    'title': 'Titre',
+    'repro': 'Étapes à reproduire'
+  }
+}
+// highlight-end
+
+// highlight-start
+ShakeTitle title = ShakeTitle('Title', strings[languageCode]?["title"] ?? "", required: true);
+ShakeTextInput repro = ShakeTextInput('Steps to reproduce', strings[languageCode]?["repro"] ?? "", required: true);
 
 List<ShakeFormComponent> components = [title, repro];
 ShakeForm form = ShakeForm(components);
@@ -273,51 +287,6 @@ ShakeForm form = ShakeForm(components);
 Shake.setShakeForm(form);
 // highlight-end
 ```
-
-For example, you want to translate your form to the English and German language.
-
-#### Android
-Add strings to the **android/app/src/main/res/values/strings.xml** and **android/app/src/main/res/values-de/strings.xml** files.
-```xml title="values/strings.xml"
-// highlight-start
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-  <string name="shake_form_title">Description</string>
-  <string name="shake_form_repro">Reproduction steps</string>
-</resources>
-// highlight-end
-``` 
-
-```xml title="values-de/strings.xml"
-// highlight-start
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-  <string name="shake_form_title">Beschreibung</string>
-  <string name="shake_form_repro">Reproduktionsschritte</string>
-</resources>
-// highlight-end
-``` 
-
-#### iOS
-Add strings to the **ios/Runner/en.lproj/Localizable.strings** and **ios/Runner/de.lproj/Localizable.strings** files.
-```text title="en.lproj/Localizable.strings"
-// highlight-start
-"shake_form_title" = "Description";
-"shake_form_repro" = "Reproduction steps";
-// highlight-end
-``` 
-
-```text title="de.lproj/Localizable.strings"
-// highlight-start
-"shake_form_title" = "Beschreibung";
-"shake_form_repro" = "Reproduktionsschritte";
-// highlight-end
-``` 
-
-:::note
-If you don't have Localizable files in your iOS project, you should add it using the XCode *Runner → New File... → Strings File*
-and enable languages you want in the *Project → Info → Localisations*.
-:::note
 
 ### Removing Inspect button from the default form
 

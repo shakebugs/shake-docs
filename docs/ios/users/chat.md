@@ -68,11 +68,12 @@ didFinishLaunchingWithOptions:(NSDictionary<UIApplicationLaunchOptionsKey, id> *
     return true;
 }
 
+// highlight-start
 - (void)application:(UIApplication *)application 
 didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
-    // highlight-next-line
     [SHKShake didRegisterForRemoteNotificationsWithDeviceToken:deviceToken];
 }
+// highlight-end
 
 @end
 ```
@@ -80,19 +81,23 @@ didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
 </TabItem><TabItem value="swift">
 
 ```swift title="AppDelegate.swift"
-func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+class AppDelegate: UIResponder, UIApplicationDelegate {
 
-    // highlight-next-line
-    UIApplication.shared.registerForRemoteNotifications()
-
-    /// Rest of the application and Shake setup
-
-    return true
-}
-
-func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
-    // highlight-next-line
-    Shake.didRegisterForRemoteNotifications(withDeviceToken: deviceToken)
+    override func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+    
+        // highlight-next-line
+        UIApplication.shared.registerForRemoteNotifications()
+    
+        /// Rest of the application and Shake setup
+    
+        return true
+    }
+    
+    // highlight-start
+    override func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        Shake.didRegisterForRemoteNotifications(withDeviceToken: deviceToken)
+    }
+    // highlight-end
 }
 ```
 </TabItem></Tabs>
@@ -109,7 +114,6 @@ permission via the alert dialog, all notifications are disabled and must be enab
 
 Shake remote notifications require an `UNAuthorizationOptions` type `alert` , which means that user allows notification banners to 
 be presented.
-
 
 <Tabs 
 groupId="ios" 
@@ -209,6 +213,8 @@ values={[
     completionHandler(UNNotificationPresentationOptionAlert | UNNotificationPresentationOptionSound); 
 }
 // highlight-end
+
+@end
 ```
 
 </TabItem><TabItem value="swift">
@@ -217,7 +223,7 @@ values={[
 // highlight-next-line
 class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+    override func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // highlight-next-line
         UNUserNotificationCenter.current().delegate = self
 
@@ -227,7 +233,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     }
 
     // highlight-start
-    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+    override func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
         if Shake.isShakeNotification(response.notification) {
             Shake.report(center, didReceive: response, withCompletionHandler: completionHandler)
             return;
@@ -238,7 +244,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     // highlight-end
 
     // highlight-start
-    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+    override func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
         if Shake.isShakeNotification(notification) {
             Shake.report(center, willPresent: notification, withCompletionHandler: completionHandler)
             return;

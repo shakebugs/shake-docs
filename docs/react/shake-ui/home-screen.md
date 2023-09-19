@@ -13,8 +13,8 @@ import TabItem from '@theme/TabItem';
 
 Here, your user can see:
 
-- A welcome message that you can change from your [Shake dashboard](https://app.shakebugs.com/administration/white-labeling).
-- A button to submit a new ticket.
+- A welcome message that you can change from [Shake SDK](/react/configuration-and-data/home-screen#changing-the-home-screen-subtitle).
+- A button to submit a new ticket. This section can be [customized](/react/configuration-and-data/home-screen#setting-up-custom-actions).
 - All their previous tickets.
   To show them their previous tickets, [register your users](/react/users/overview) with Shake.
 
