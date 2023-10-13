@@ -36,3 +36,5 @@ Shake.setCrashReportingEnabled(true)
 ```
 
 </TabItem></Tabs>
+
+After you have enabled crash reporting, set up [deobfuscation](/android/crash-reports/deobfuscation) and then [test crash reporting](/android/crash-reports/test-it-out) in your app.

@@ -39,3 +39,6 @@ Shake.configuration.isCrashReportingEnabled = true
 ```
 
 </TabItem></Tabs>
+
+After you have enabled crash reporting, set up [symbolication](/ios/crash-reports/symbolicate) and then [test crash reporting](/ios/crash-reports/test-it-out) in your app.
+

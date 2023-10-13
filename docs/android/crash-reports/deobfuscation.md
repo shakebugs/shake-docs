@@ -6,7 +6,12 @@ title: Deobfuscate
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-> If you use ProGuard to obfuscate your code, Shake allows you to upload your _mapping.txt_ files so it can deobfuscate stack traces.
+> Crash reports are a lot more useful when you see your deobfuscated stack traces.
+
+## Introduction 
+
+Android is using R8 tool to shrink, obfuscate and optimize your code when app is built in release mode - this makes crash stack traces hard to read.
+Shake allows you to upload build's _mapping.txt_ files so you can see deobfuscated stack traces on the Shake dashboard.
 
 ## Upload manually to Shake dashboard
 

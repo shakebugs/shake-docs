@@ -33,7 +33,7 @@ and download the CSV file from the email sent by Instabug.
 
 ### Step 3: Import bugs into the Shake
 Once you've downloaded the CSV file, log into your Shake account and navigate to the [Workspace administration → Apps](https://app.shakebugs.com) page.
-Select the app where you want to import Instabug bugs and press _Choose a file_ button under the _Import user feedback tickets_ section.
+Select the app where you want to import Instabug bugs and press _Choose a file_ button under the _User feedback → Import user feedback tickets_ section.
 
 Now, you'll be prompted to select the CSV file that you want to import.
 Max import file size is _100MB_, if you have larger file you can divide it into separate files.

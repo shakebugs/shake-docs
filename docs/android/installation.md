@@ -7,8 +7,7 @@ title: Installation
 
 ## Create a new app on Dashboard
 
-Visit your [Shake Dashboard](https://app.shakebugs.com) and add a new Native Android app by clicking
-the _Add new app_ button or from _Top navbar → App → ... → Add new app_.
+Visit your [Shake Dashboard](https://app.shakebugs.com) and add a new Native Android app by clicking the _+_ button in the sidebar.
 Once you're done, you're ready to proceed with the steps below.
 
 ## Add Shake dependency to your app-level build.gradle file
@@ -16,40 +15,6 @@ Once you're done, you're ready to proceed with the steps below.
 import AndroidVersionBlock from '@site/src/base/AndroidVersionBlock';
 
 <AndroidVersionBlock></AndroidVersionBlock>
-
-## Set compileSdkVersion version in the build.gradle file
-
-Since Shake requires `compileSdkVersion` 29 or greater, verify that `compileSdkVersion` is correctly set in the app _build.gradle_ file:
-
-```groovy title="build.gradle"
-android {
-    // highlight-next-line
-    compileSdkVersion 30
-    defaultConfig {
-        applicationId "com.example"
-        minSdkVersion 21
-        targetSdkVersion 30
-        versionCode 1
-        versionName "1.0.0"
-        testInstrumentationRunner "androidx.support.test.runner.AndroidJUnitRunner"
-        multiDexEnabled true
-    }
-}
-```
-
-## Set applicationId in the build.gradle file
-
-ApplicationId can be set in the _build.gradle_ file. You can find your applicationld in Shake Dashboard. Go to _Workspace administration → Apps_ and select an app to which you want to add Shake SDK. Check _Essentials_ card to find your applicationID as _bundleID_.
-
-```groovy title="build.gradle"
-android {
-    compileSdkVersion 30
-    defaultConfig {
-        // highlight-next-line
-        applicationId "com.example"
-    }
-}
-```
 
 ## Initialize Shake
 
@@ -105,19 +70,6 @@ class App : Application() {
 
 </TabItem>
 </Tabs>
-
-If you’re creating a custom _Application_ class for the first time, specify it in your _AndroidManifest.xml_:
-
-```xml title="AndroidManifest.xml"
-<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android">
-    <application
-        // highlight-start
-        android:name=".App">
-        // highlight-end
-    </application>
-</manifest>
-```
 
 Build and run your project by selecting _Run → Run_ in the menu bar.
 

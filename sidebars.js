@@ -42,10 +42,10 @@ module.exports = {
                     items: [
                         'android/crash-reports/overview',
                         'android/crash-reports/enable',
-                        'android/crash-reports/ask-for-description',
-                        'android/crash-reports/handling-error',
                         'android/crash-reports/deobfuscation',
-                        'android/crash-reports/test-it-out'
+                        'android/crash-reports/test-it-out',
+                        'android/crash-reports/ask-for-description',
+                        'android/crash-reports/handling-error'
                     ]
                 },
                 {
@@ -137,10 +137,10 @@ module.exports = {
                     items: [
                         'ios/crash-reports/overview',
                         'ios/crash-reports/enable',
-                        'ios/crash-reports/ask-for-description',
-                        'ios/crash-reports/handling-error',
                         'ios/crash-reports/symbolicate',
-                        'ios/crash-reports/test-it-out'
+                        'ios/crash-reports/test-it-out',
+                        'ios/crash-reports/ask-for-description',
+                        'ios/crash-reports/handling-error'
                     ]
                 },
                 {
