@@ -7,8 +7,7 @@ title: Swift Package Manager
 
 ## Create a new app on Dashboard
 
-Visit your [Shake Dashboard](https://app.shakebugs.com) and add a new Native iOS app by clicking
-the _Add new app_ button or from _Top navbar → App → ... → Add new app_.
+Visit your [Shake Dashboard](https://app.shakebugs.com) and add a new Native iOS app by clicking the _+_ button in the sidebar.
 Once you're done, you're ready to proceed with the steps below.
 
 ## Install the Shake Package

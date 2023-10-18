@@ -7,11 +7,10 @@ title: npm
 
 ## Create a new app on Dashboard
 
-Visit your [Shake Dashboard](https://app.shakebugs.com) and add a new React Native Android/iOS app by clicking
-the _Add new app_ button or from _Top navbar → App → ... → Add new app_.
+Visit your [Shake Dashboard](https://app.shakebugs.com) and add a new Android/iOS React Native app by clicking the _+_ button in the sidebar.
 Once you're done, you're ready to proceed with the steps below.
 
-## Install
+## Add Shake dependency to your package.json file
 
 Execute the `npm install` command in your terminal:
 
@@ -30,57 +29,6 @@ cd ios && pod install && cd ..
 import ReactVersion from '@site/src/base/ReactVersion';
 
 After the installation also run `pod update Shake` to be perfectly sure that you're using the latest Shake <ReactVersion/>.
-
-## Set compileSdkVersion version in the build.gradle file
-
-Since Shake requires `compileSdkVersion` 29 or greater, verify that `compileSdkVersion` is correctly set in the _build.gradle_ file:
-
-```groovy title="android/build.gradle"
-buildscript {
-    ext {
-        buildToolsVersion = "30.0.2"
-        minSdkVersion = 21
-        // highlight-next-line
-        compileSdkVersion = 30
-        targetSdkVersion = 30
-        ndkVersion = "20.1.5948944"
-    }
-    repositories {
-        google()
-        mavenCentral()
-    }
-    dependencies {
-        classpath("com.android.tools.build:gradle:4.2.1")
-    }
-}
-```
-
-## Set multidexEnabled flag in the build.gradle file
-
-If you do not have _multiDexEnabled_ flag set, update app-level _build.gradle_ like below:
-
-```groovy title="app/build.gradle"
-defaultConfig {
-    applicationId "com.shakebugs.react.example"
-    minSdkVersion rootProject.ext.minSdkVersion
-    targetSdkVersion rootProject.ext.targetSdkVersion
-    versionCode 1
-    versionName "1.0.0"
-    // highlight-next-line
-    multiDexEnabled true
-}
-```
-
-## Set applicationId in the build.gradle file
-
-ApplicationId can be set in the _build.gradle_ file. You can find your applicationld in Shake Dashboard. Go to _Workspace administration → Apps_ and select an app to which you want to add Shake SDK. Check _Essentials_ card to find your applicationID as _bundleID_.
-
-```groovy title="app/build.gradle"
-defaultConfig {
-    // highlight-next-line
-    applicationId "com.shakebugs.react.example"
-}
-```
 
 ## Initialize Shake
 

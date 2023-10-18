@@ -12,11 +12,10 @@ of Flutter, please migrate your project to the new Android APIs via [official gu
 
 ## Create a new app on Dashboard
 
-Visit your [Shake Dashboard](https://app.shakebugs.com) and add a new Flutter Android/iOS app by clicking
-the _Add new app_ button or from _Top navbar → App → ... → Add new app_.
+Visit your [Shake Dashboard](https://app.shakebugs.com) and add a new Android/iOS Flutter app by clicking the _+_ button in the sidebar.
 Once you're done, you're ready to proceed with the steps below.
 
-## Install
+## Add Shake dependency to your pubspec.yaml file
 
 Add Shake as a dependency:
 
@@ -31,46 +30,6 @@ import FlutterVersionBlock from '@site/src/base/FlutterVersionBlock';
 
 <FlutterVersionBlock></FlutterVersionBlock>
 
-Now in your Dart code, you can use:
-
-```dart title="main.dart"
-//highlight-next-line
-import 'package:shake_flutter/shake_flutter.dart';
-```
-
-## Set compileSdkVersion version in the build.gradle file
-
-Since Shake requires `compileSdkVersion` 29 or greater, verify that `compileSdkVersion` is correctly set in the _/android/app/build.gradle_ file:
-
-```groovy title="build.gradle"
-android {
-    // highlight-next-line
-    compileSdkVersion 29
-
-    defaultConfig {
-        applicationId "com.shakebugs.flutter.example"
-        minSdkVersion 24
-        targetSdkVersion 29
-        versionCode flutterVersionCode.toInteger()
-        versionName flutterVersionName
-    }
-}
-```
-
-## Set applicationId in the build.gradle file
-
-ApplicationId can be set in the _build.gradle_ file. You can find your applicationld in Shake Dashboard. Go to _Workspace administration → Apps_ and select an app to which you want to add Shake SDK. Check _Essentials_ card to find your applicationID as _bundleID_.
-
-```groovy title="build.gradle"
-android {
-    compileSdkVersion 29
-    defaultConfig {
-        // highlight-next-line
-        applicationId "com.shakebugs.flutter.example"
-    }
-}
-```
-
 ## Initialize Shake
 
 Call `Shake.start()` method in your _main.dart_ file.
@@ -83,10 +42,6 @@ import 'package:shake_flutter/shake_flutter.dart';
 void main() {
     //highlight-start
     WidgetsFlutterBinding.ensureInitialized();
-
-    Shake.setShowFloatingReportButton(true);
-    Shake.setInvokeShakeOnShakeDeviceEvent(true);
-    Shake.setInvokeShakeOnScreenshot(true);
     Shake.start('your-api-client-id', 'your-api-client-secret');
     //highlight-end
 

@@ -87,13 +87,5 @@ To see your crash report:
 1. Visit your [Shake dashboard](https://app.shakebugs.com)
 1. Switch to the **Crash reports** tab in the left sidebar
 
-<table class="media-container mt-40 mb-30">
-<img
-  alt="The first crash report on Shake dashboard"
-  width="522"
-  src={useBaseUrl('screens/first-crash-report-on-dashboard@2x.png')}
-/>
-</table>
-
 If your crash report is not visible instantly, wait a minute until the system processes it.
 
