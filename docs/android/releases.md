@@ -8,9 +8,19 @@ title: Release notes
 
 What would you like us to build next? Upvote upcoming features and suggest new ideas on the [Public feedback board](https://feedback.shakebugs.com/).
 
+## 16.2.3
+<span class="tag-button">December 6, 2023</span>&nbsp;&nbsp;
+<span class="tag-button green-tag-button">Latest version</span>
+
+#### Bug fixes
+
+We've sorted out the screen recording hiccup on Android 14, fixed a bug with network requests filter,
+untangled a little collision with Android splash screen, resolved Coil version clashes and made sure you can now easily spot chat bubble timestamps.
+
+It's all about making things smoother and more enjoyable.
+
 ## 16.2.2
 <span class="tag-button">September 11, 2023</span>&nbsp;&nbsp;
-<span class="tag-button green-tag-button">Latest version</span>
 
 #### What's new
 

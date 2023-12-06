@@ -13,12 +13,18 @@ Turn off this feature in production!
 
 ## Enable
 Auto screen recording is disabled by default. To enable it:
-1. Call `Shake.setAutoVideoRecording(true)` first.
+1. Add permission to the **AndroidManifest.xml** to support Android 14+
+1. Call `Shake.setAutoVideoRecording(true)`.
 1. Then, start Shake with `Shake.start()`.
+
+```xml title="AndroidManifest.xml"
+// highlight-next-line
+<uses-permission android:name="android.permission.FOREGROUND_SERVICE_MEDIA_PROJECTION" />
+```
 
 ```javascript title="App.js"
 // highlight-next-line
-Shake.setAutoVideoRecording(false);
+Shake.setAutoVideoRecording(true);
 ```
 
 <table class="media-container media-container-highlighted mt-40 mb-40">

@@ -3,6 +3,8 @@ id: auto-screen-recording
 title: Auto screen recording
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 >You can rely on your testers to record a video of their screen and attach it to their feedback and crash reports.
 Or, you can use auto screen recording to always record their screen and automatically attach that video to the ticket.
@@ -13,11 +15,14 @@ Turn off this feature in production!
 
 ## Enable
 Auto screen recording is disabled by default. To enable it:
-1. Call `Shake.getReportConfiguration().setAutoVideoRecording(true)` first.
+1. Add permission to the **AndroidManifest.xml** to support Android 14+
+1. Call `Shake.getReportConfiguration().setAutoVideoRecording(true)`.
 1. Then, start Shake with `Shake.start()`.
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
+```xml title="AndroidManifest.xml"
+// highlight-next-line
+<uses-permission android:name="android.permission.FOREGROUND_SERVICE_MEDIA_PROJECTION" />
+```
 
 <Tabs
   groupId="android"
