@@ -8,9 +8,20 @@ title: Release notes
 
 What would you like us to build next? Upvote upcoming features and suggest new ideas on the [Public feedback board](https://feedback.shakebugs.com/).
 
+## 16.2.1
+<span class="tag-button">December 12, 2023</span>&nbsp;&nbsp;
+<span class="tag-button green-tag-button">Latest version</span>
+
+#### What's new
+
+We know it's important to keep your dashboard clean and well organized, that's why you can now simply [add tags](/flutter/configuration-and-data/ticket-tags) to your tickets programmatically via code.
+
+#### Bug fixes
+
+We fixed a few minor bugs that were causing problems. Shake is now more stable and runs even smoother.
+
 ## 16.2.0
 <span class="tag-button">September 19, 2023</span>&nbsp;&nbsp;
-<span class="tag-button green-tag-button">Latest version</span>
 
 #### What's new
 

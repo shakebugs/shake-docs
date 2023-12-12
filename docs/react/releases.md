@@ -8,9 +8,20 @@ title: Release notes
 
 What would you like us to build next? Upvote upcoming features and suggest new ideas on the [Public feedback board](https://feedback.shakebugs.com/).
 
+## 16.2.1
+<span class="tag-button">December 12, 2023</span>&nbsp;&nbsp;
+<span class="tag-button green-tag-button">Latest version</span>
+
+#### What's new
+
+We know it's important to keep your dashboard clean and well organized, that's why you can now simply [add tags](/react/configuration-and-data/ticket-tags) to your tickets programmatically via code.
+
+#### Bug fixes
+
+We fixed a few minor bugs that were causing problems. Shake is now more stable and runs even smoother.
+
 ## 16.2.0
 <span class="tag-button">September 19, 2023</span>&nbsp;&nbsp;
-<span class="tag-button green-tag-button">Latest version</span>
 
 #### What's new
 
@@ -56,7 +67,6 @@ The [unread chat messages listener](/react/users/chat/#unread-messages) is now a
 #### Bug fixes
 Whoops! If you passed null to Shake user register or update methods, that would crash your app. Is crashing any good? No — so we knew what to do. Now everything works smoothly.
 While we were at it, we patched a few other obscure edge cases that you were not even aware of. 
-
 
 ## 15.2.0
 <span class="tag-button">April 19, 2022</span>&nbsp;&nbsp;

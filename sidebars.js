@@ -249,6 +249,7 @@ module.exports = {
                 'flutter/configuration-and-data/activity-history',
                 'flutter/configuration-and-data/black-box',
                 'flutter/configuration-and-data/ticket-metadata',
+                'flutter/configuration-and-data/ticket-tags',
                 'flutter/configuration-and-data/auto-attach-files',
                 'flutter/configuration-and-data/manage-sensitive-data',
                 'flutter/configuration-and-data/data-privacy-disclosure'
@@ -330,6 +331,7 @@ module.exports = {
                 'react/configuration-and-data/activity-history',
                 'react/configuration-and-data/black-box',
                 'react/configuration-and-data/ticket-metadata',
+                'react/configuration-and-data/ticket-tags',
                 'react/configuration-and-data/auto-attach-files',
                 'react/configuration-and-data/manage-sensitive-data',
                 'react/configuration-and-data/data-privacy-disclosure'
