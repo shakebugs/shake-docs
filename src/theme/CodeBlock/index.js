@@ -8,8 +8,7 @@ import React, {useEffect, useState} from 'react';
 import clsx from 'clsx';
 import Highlight, {defaultProps} from 'prism-react-renderer';
 import rangeParser from 'parse-numeric-range';
-import usePrismTheme from '@theme/hooks/usePrismTheme';
-import {useThemeConfig, parseCodeBlockTitle} from '@docusaurus/theme-common';
+import {useThemeConfig} from '@docusaurus/theme-common';
 import CopyButton from '../CopyButton';
 import styles from './styles.module.css';
 
@@ -85,6 +84,12 @@ const highlightDirectiveRegex = (lang) => {
   }
 };
 
+const codeBlockTitleRegex = /title=(?<quote>["'])(?<title>.*?)\1/;
+
+function parseCodeBlockTitle(metastring) {
+  return metastring?.match(codeBlockTitleRegex)?.groups.title ?? '';
+}
+
 export default function CodeBlock({
   children,
   className: languageClassName,
@@ -108,7 +113,7 @@ export default function CodeBlock({
 
   const codeBlockTitle = parseCodeBlockTitle(metastring) || title;
   let highlightLines = [];
-  const prismTheme = usePrismTheme(); // In case interleaved Markdown (e.g. when using CodeBlock as standalone component).
+  // const prismTheme = usePrismTheme(); // In case interleaved Markdown (e.g. when using CodeBlock as standalone component).
 
   const content = Array.isArray(children) ? children.join('') : children;
 
@@ -259,7 +264,7 @@ export default function CodeBlock({
     <Highlight
       {...defaultProps}
       key={String(mounted)}
-      theme={prismTheme}
+      theme={prism.darkTheme}
       code={code}
       language={language}>
       {({className, style, tokens, getLineProps, getTokenProps}) => (

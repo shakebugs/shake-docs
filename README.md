@@ -10,7 +10,7 @@ $ npm install
 
 This command installs npm packages required for project to run.
 
-The project **requires Node 12** version.
+The project **requires Node 16** version.
 
 ### Local Development
 

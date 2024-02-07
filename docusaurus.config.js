@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 module.exports = {
   title: 'Documentation',
   tagline: 'Explore guides and examples to integrate Shake into your app.',
@@ -8,11 +10,41 @@ module.exports = {
   organizationName: 'shakebugs', // Usually your GitHub org/user name.
   projectName: 'shake-docs', // Usually your repo name.
   themeConfig: {
+    inkeepConfig: {
+      baseSettings: {
+        apiKey: process.env.INKEEP_KEY || '',
+        integrationId: 'clrhxn3th00stvmh08mx2o9as',
+        organizationId: 'org_8oLDuGb1oVIA7GB3',
+        primaryBrandColor: '#6551FF',
+      },
+      aiChatSettings: {
+        chatSubjectName: 'Shake',
+        botAvatarSrcUrl: 'https://www.shakebugs.com/wp-content/themes/shake/public/shake-banner-image.svg',
+        quickQuestions: [
+          'Can I provide my own internationalization strings?',
+          'How do I customize the theme on iOS?',
+          'Where can I view user feedback and what information does it include?',
+        ],
+        getHelpCallToActions: [
+          {
+            url: 'https://shk.sh/join-slack',
+            name: 'Slack Community',
+            icon: {
+              builtIn: 'FaSlack',
+            },
+          },
+        ],
+      },
+    },
+    docs: {
+      sidebar: {
+        hideable: false
+      }
+    },
     colorMode: {
       defaultMode: 'dark',
       respectPrefersColorScheme: false,
     },
-    hideableSidebar: false,
     scrollToTop: false,
     scrollToTopOptions: false,
     prism: {
@@ -20,11 +52,11 @@ module.exports = {
       darkTheme: require('prism-react-renderer/themes/dracula'),
       additionalLanguages: ['groovy', 'kotlin', 'java', 'swift', 'dart', 'batch'],
     },
-    algolia: {
-      appId: 'Q6FOQ6DC6Q',
-      apiKey: '3ebbb9c4424c458a83683abfb66e7bb6',
-      indexName: 'shakebugs',
-    },
+    // algolia: {
+    //   appId: 'Q6FOQ6DC6Q',
+    //   apiKey: '3ebbb9c4424c458a83683abfb66e7bb6',
+    //   indexName: 'shakebugs',
+    // },
     navbar: {
       logo: {
         alt: 'Shake logo',
@@ -80,4 +112,5 @@ module.exports = {
         },
       ],
   ],
+  themes: ['@inkeep/docusaurus/searchBar'],
 };

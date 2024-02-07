@@ -1,4 +1,4 @@
-image: node:12.13.0
+image: node:16.20.2
 
 pipelines:
   branches:
@@ -8,7 +8,7 @@ pipelines:
           deployment: test
           script:
             - npm install
-            - npm run build:uat
+            - npm run build
             - pipe: atlassian/aws-s3-deploy:0.4.3
               variables:
                 S3_BUCKET: "$BUCKET_NAME/docs"
@@ -23,7 +23,7 @@ pipelines:
           deployment: production
           script:
             - npm install
-            - npm run build:prd
+            - npm run build
             - pipe: atlassian/aws-s3-deploy:0.4.3
               variables:
                 S3_BUCKET: "$BUCKET_NAME/docs"
