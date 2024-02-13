@@ -7,17 +7,16 @@
 import React, {useState, useRef, useEffect} from 'react';
 import clsx from 'clsx';
 import {
-  isSamePath,
   useCollapsible,
   Collapsible,
-  useLocalPathname,
 } from '@docusaurus/theme-common';
-import {NavLink} from '@theme/NavbarItem/DefaultNavbarItem';
 import NavbarItem from '@theme/NavbarItem';
+import NavbarNavLink from '@theme/NavbarItem/NavbarNavLink'
+import {useLocation} from "@docusaurus/router";
 const dropdownLinkActiveClass = 'dropdown__link--active';
 
 function isItemActive(item, localPathname) {
-  if (isSamePath(item.to, localPathname)) {
+  if (localPathname === item.to) {
     return true;
   }
 
@@ -40,12 +39,12 @@ function containsActiveItems(items, localPathname) {
 }
 
 function getActiveLabel(items, defaultLabel) {
-    const localPathname = useLocalPathname();
-    const activeItem = items.find((item) => localPathname.includes(item.activeBasePath));
+    const localPathname = useLocation();
+    const activeItem = items.find((item) => localPathname.pathname.includes(item.activeBasePath));
     return activeItem?.label ?? defaultLabel;
 }
 
-function DropdownNavbarItemDesktop({label, items, position, className, ...props}) {
+export function DropdownNavbarItemDesktop({label, items, position, className, ...props}) {
   const dropdownRef = useRef(null);
   const dropdownMenuRef = useRef(null);
   const [showDropdown, setShowDropdown] = useState(false);
@@ -67,7 +66,7 @@ function DropdownNavbarItemDesktop({label, items, position, className, ...props}
   }, [dropdownRef]);
 
   if (getActiveLabel(items, label) === "Platform") return null;
-
+  
   return (
     <div
       ref={dropdownRef}
@@ -75,7 +74,7 @@ function DropdownNavbarItemDesktop({label, items, position, className, ...props}
         'dropdown--right': position === 'right',
         'dropdown--show': showDropdown,
       })}>
-      <NavLink
+      <NavbarNavLink
         className={clsx('navbar__link', className)}
         {...props}
         label={getActiveLabel(items, label)}
@@ -87,7 +86,7 @@ function DropdownNavbarItemDesktop({label, items, position, className, ...props}
           }
         }}>
         {props.children ?? ""}
-      </NavLink>
+      </NavbarNavLink>
       <ul ref={dropdownMenuRef} className="dropdown__menu">
         {items.map((childItemProps, i) => (
           <NavbarItem
@@ -120,8 +119,8 @@ function DropdownNavbarItemMobile({
   // Need to destructure position from props so that it doesn't get passed on.
   ...props
 }) {
-  const localPathname = useLocalPathname();
-  const containsActive = containsActiveItems(items, localPathname);
+  const localPathname = useLocation()
+  const containsActive = containsActiveItems(items, localPathname.pathname);
   const {collapsed, toggleCollapsed, setCollapsed} = useCollapsible({
     initialState: () => !containsActive,
   }); // Expand/collapse if any item active after a navigation
@@ -137,7 +136,7 @@ function DropdownNavbarItemMobile({
       className={clsx('menu__list-item', {
         'menu__list-item--collapsed': collapsed,
       })}>
-      <NavLink
+      <NavbarNavLink
         role="button"
         className={clsx('menu__link menu__link--sublist', className)}
         {...props}
@@ -146,7 +145,7 @@ function DropdownNavbarItemMobile({
           toggleCollapsed();
         }}>
         {props.children ?? "Pero"}
-      </NavLink>
+      </NavbarNavLink>
       <Collapsible lazy as="ul" className="menu__list" collapsed={collapsed}>
         {items.map((childItemProps, i) => (
           <NavbarItem
@@ -163,9 +162,7 @@ function DropdownNavbarItemMobile({
   );
 }
 
-function DropdownNavbarItem({mobile = false, ...props}) {
+export default function DropdownNavbarItem({mobile = false, ...props}) {
   const Comp = mobile ? DropdownNavbarItemMobile : DropdownNavbarItemDesktop;
   return <Comp {...props} />;
 }
-
-export default DropdownNavbarItem;
