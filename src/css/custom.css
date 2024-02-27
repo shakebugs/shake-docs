@@ -374,14 +374,14 @@ code {
 */
 
 .home-platforms {
-    max-width: 480px;
+    max-width: 680px;
     margin: 26px auto 80px;
     display: flex;
     flex-wrap: wrap;
 }
 
 .home-platforms > div {
-    flex: 0 0 25%;
+    flex: 0 0 20%;
     text-align: center;
     padding: 0 10px 28px;
 }

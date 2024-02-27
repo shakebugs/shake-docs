@@ -1,0 +1,50 @@
+---
+id: overview
+title: Overview
+---
+
+## Modules
+> Shake Web SDK has a user feedback module that enables your users to easily send feedback and bug reports to the Shake dashboard.
+
+<div class="modulesList">
+    <div>
+        <a href="/docs/web/user-feedback/overview/">
+            <img src="/docs/img/module-user-feedback@2x.png" alt="User feedback module"/>
+            <h3>User feedback</h3>
+            <p>Testers and users can send you bug reports, questions and suggestions seamlessly.</p>
+        </a>
+    </div>
+</div>
+
+## Configuration and data
+> Customize how Shake behaves and looks in your app, and what data is automatically attached to tickets your users send.
+
+<div class="featuresList">
+    <div>
+        <img src="/docs/img/invoke-shake@2x.png" alt="Invoke Shake"/>
+        <p><a href="/docs/web/user-feedback/invoke/">Invoke Shake</a></p>
+    </div>
+    <div>
+        <img src="/docs/img/essential-data@2x.png" alt="Data attached by default"/>
+        <p><a href="/docs/web/configuration-and-data/data-attached-by-default/">Data attached by default</a></p>
+    </div>
+    <div>
+        <img src="/docs/img/feature-custom-ticket-data@2x.png" alt="Custom Ticket data"/>
+        <p><a href="/docs/web/configuration-and-data/ticket-metadata/">Custom Ticket data</a></p>
+    </div>
+</div>
+
+import AndroidVersion from '@site/src/base/AndroidVersion';
+
+## Latest version
+The [latest available Shake SDK version](/docs/web/releases) is <AndroidVersion/>.
+
+## Minimum requirements
+Shake SDK is build with pure Javascript and is distributed as a standalone javascript file which works in 
+browser environment.
+
+<p class="p2 mt-80 mb-10">⚡️ Shake is improved every week.
+Stumbled upon a <a href="https://feedback.shakebugs.com/bugs">bug</a>?
+Want a <a href="https://feedback.shakebugs.com/feature-requests">new feature</a> to be added?
+Create new tickets and upvote existing ones on the Public feedback board.</p>
+<p></p>

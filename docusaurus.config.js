@@ -77,7 +77,8 @@ module.exports = {
                         {to: 'android/overview', label: 'Android', activeBasePath: '/android'},
                         {to: 'ios/overview', label: 'iOS', activeBasePath: '/ios'},
                         {to: 'flutter/overview', label: 'Flutter', activeBasePath: '/flutter'},
-                        {to: 'react/overview', label: 'React Native', activeBasePath: '/react'}
+                        {to: 'react/overview', label: 'React Native', activeBasePath: '/react'},
+                        {to: 'web/overview', label: 'Web', activeBasePath: '/web'}
                     ],
                 },
                 {
