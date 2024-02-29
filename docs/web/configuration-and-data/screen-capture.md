@@ -1,5 +1,5 @@
 ﻿---
-id: auto-screenshot
+id: screen-capture
 title: Screen capture
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';

@@ -22,11 +22,11 @@ Shake attaches useful data to user feedback. Read all about it:
     </div>
 	<div>
         <img src="/docs/img/auto-screenshot@2x.png" alt="Auto screenshot"/>
-        <p><a href="/docs/web/configuration-and-data/auto-screenshot/">Screen capture</a></p>
+        <p><a href="/docs/web/configuration-and-data/screen-capture/">Screen capture</a></p>
     </div>
     <div>
         <img src="/docs/img/screen-recording@2x.png" alt="Auto screen recording"/>
-        <p><a href="/docs/web/configuration-and-data/auto-screen-recording/">Screen recording</a></p>
+        <p><a href="/docs/web/configuration-and-data/screen-recording/">Screen recording</a></p>
     </div>
 	<div>
         <img src="/docs/img/feature-custom-ticket-data@2x.png" alt="Custom Ticket data"/>

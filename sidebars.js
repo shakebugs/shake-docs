@@ -372,8 +372,8 @@ module.exports = {
             items: [
                 'web/configuration-and-data/overview',
                 'web/configuration-and-data/data-attached-by-default',
-                'web/configuration-and-data/auto-screenshot',
-                'web/configuration-and-data/auto-screen-recording',
+                'web/configuration-and-data/screen-capture',
+                'web/configuration-and-data/screen-recording',
                 'web/configuration-and-data/ticket-metadata',
                 'web/configuration-and-data/ticket-tags',
                 'web/configuration-and-data/data-privacy-disclosure'
