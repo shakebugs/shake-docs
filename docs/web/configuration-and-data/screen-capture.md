@@ -6,6 +6,13 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 > When Shake's interface is invoked, a screenshot is automatically attached to it. Or it can be attached manually by users.
 
+:::note
+Shake SDK is using **html2canvas** package for capturing screenshots. 
+Currently, this package doesn't support capturing elements with [new color notations](https://developer.mozilla.org/en-US/blog/css-color-module-level-4/#new_functional_notation_for_colors).
+Once this package supports new color notations Shake will be upgraded.
+:::
+
+
 ## Automatic screenshot
 
 When Shake is invoked, it automatically captures screen of the app and adds screenshot to the user ticket.

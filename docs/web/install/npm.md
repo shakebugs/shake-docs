@@ -5,6 +5,11 @@ title: npm
 
 > Learn how to add Shake to your Web app using npm.
 
+:::note
+Shake SDK npm package contains javascript code and CSS styles for Shake SDK.  
+Make sure that your project supports ES6 imports and that you are using CSS loader if you are using npm package. Otherwise, we recommend using Shake from [CDN](/docs/web/install/cdn).
+:::
+
 ## Create a new app on Dashboard
 
 Visit your [Shake Dashboard](https://app.shakebugs.com) and add a new Web app by clicking the _+_ button in the sidebar.
@@ -19,9 +24,9 @@ Execute the `npm install` command in your terminal:
 npm install @shakebugs/browser
 ```
 
-import ReactVersion from '@site/src/base/ReactVersion';
+import WebVersion from '@site/src/base/WebVersion';
 
-Make sure that you're using the latest Shake <ReactVersion/>.
+Make sure that you're using the latest Shake <WebVersion/>.
 
 ## Initialize Shake
 

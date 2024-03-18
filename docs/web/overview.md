@@ -34,10 +34,10 @@ title: Overview
     </div>
 </div>
 
-import AndroidVersion from '@site/src/base/AndroidVersion';
+import WebVersion from '@site/src/base/WebVersion';
 
 ## Latest version
-The [latest available Shake SDK version](/docs/web/releases) is <AndroidVersion/>.
+The [latest available Shake SDK version](/docs/web/releases) is <WebVersion/>.
 
 ## Minimum requirements
 Shake SDK is build with pure Javascript and is distributed as a standalone javascript file which works in 
