@@ -32,13 +32,12 @@ Make sure that you're using the latest Shake <ReactVersion/>.
 ## Initialize Shake
 
 Call `Shake.start()` in your main file.
-Replace `your-api-client-id` and `your-api-client-secret` with the actual values you have in [your workspace administration](https://app.shakebugs.com/administration):
+Replace `your-api-client-id` and `your-api-client-secret` with the actual values you have in [your workspace administration](https://app.shakebugs.com/administration).
+Replace `app-bundle-id` with bundle id of your app located in the _Workspace Administration_ → _Apps_:
 
-```html title="index.html"
-<script>
-    // highlight-next-line
-    window.Shake.start('client-id', 'client-secret');
-</script>
+```js title="index.js"
+// highlight-next-line
+window.Shake.start('client-id', 'client-secret', 'app-bundle-id');
 ```
 
 Now build and run your project. Shake should be working, as simple as that.
@@ -49,14 +48,11 @@ We recommend initializing Shake in the entry point of your app.
 However, depending on your app, you'll want to initialize Shake just in a specific conditions, depending on your app data.
 You can do it as shown in the example below when your app data is available:
 
-```html title="index.html"
-<script>
-    if (window.user.isTester) {
-        // highlight-next-line
-        Shake.start('your-api-client-id', 'your-api-client-secret');
-    }
+```js title="index.js"
+if (User.isTester) {
+    // highlight-next-line
+    window.Shake.start('your-api-client-id', 'your-api-client-secret', 'app-bundle-id');
 }
-</script>
 ```
 
 ## Visit your Shake dashboard

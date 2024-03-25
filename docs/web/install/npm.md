@@ -30,15 +30,16 @@ Make sure that you're using the latest Shake <WebVersion/>.
 
 ## Initialize Shake
 
-Call `Shake.start()` in your _index.js_ file.
-Replace `your-api-client-id` and `your-api-client-secret` with the actual values you have in [your workspace administration](https://app.shakebugs.com/administration):
+Call `Shake.start()` in your main file.
+Replace `your-api-client-id` and `your-api-client-secret` with the actual values you have in [your workspace administration](https://app.shakebugs.com/administration).
+Replace `app-bundle-id` with bundle id of your app located in the _Workspace Administration_ → _Apps_:
 
 ```js title="index.js"
 // highlight-next-line
 import Shake from '@shakebugs/browser';
 
 // highlight-next-line
-Shake.start('your-api-client-id', 'your-api-client-secret');
+Shake.start('your-api-client-id', 'your-api-client-secret', 'app-bundle-id');
 ```
 
 Now build and run your project. Shake should be working, as simple as that.
@@ -57,7 +58,7 @@ const MainScreen = (props) => {
 	useEffect(() => {
 		if (User.isTester) {
 			// highlight-next-line
-			Shake.start('your-api-client-id', 'your-api-client-secret');
+            Shake.start('your-api-client-id', 'your-api-client-secret', 'app-bundle-id');
 		}
 	}, []);
 };
