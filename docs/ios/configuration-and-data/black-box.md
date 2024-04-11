@@ -33,13 +33,6 @@ the total memory usage of your app is shown. For example:
 
 Your app's memory usage is captured every 0.5 seconds.
 
-### Disk space usage
-This line chart shows your device's disk space usage. When you hover over the chart,
-the percentage of free disk space on your device is shown. For example:
-* 51%
-
-Your device's disk space usage is captured every 0.5 seconds.
-
 ### Network
 This chart shows the connectivity details of the device.
 When you hover over the chart, connectivity details are shown. For example:

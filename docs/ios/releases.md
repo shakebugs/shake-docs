@@ -8,9 +8,16 @@ title: Release notes
 
 What would you like us to build next? Upvote upcoming features and suggest new ideas on the [Public feedback board](https://feedback.shakebugs.com/).
 
+## 16.2.4
+<span class="tag-button">April 11, 2024</span>&nbsp;&nbsp;
+<span class="tag-button green-tag-button">Latest version</span>
+
+#### What's new
+
+This version contains Privacy manifest file. Disk space metric is removed from tickets due to Apple requirements.
+
 ## 16.2.3
 <span class="tag-button">January 31, 2024</span>&nbsp;&nbsp;
-<span class="tag-button green-tag-button">Latest version</span>
 
 #### What's new
 
