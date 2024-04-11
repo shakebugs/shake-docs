@@ -118,13 +118,6 @@ All of this is done out of the box, you don't need to code anything.
     <div>
         <img
             class="small-visual-icon"
-            src={useBaseUrl('img/hard-drive-storage-circle.svg')}
-        />
-        <p class="p2">Storage status</p>
-    </div>
-    <div>
-        <img
-            class="small-visual-icon"
             src={useBaseUrl('img/face-id.svg')}
         />
         <p class="p2">Authentication to unlock device</p>
