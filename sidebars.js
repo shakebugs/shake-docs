@@ -339,4 +339,45 @@ module.exports = {
         },
         'react/releases'
     ],
+    webSidebar: [
+        {
+            type: 'category',
+            label: 'Getting started',
+            items: [
+                'web/overview',
+                {
+                    type: 'category',
+                    label: 'Installation',
+                    items: [
+                        'web/install/npm',
+                        'web/install/cdn'
+                    ]
+                }
+            ]
+        },
+        'web/shake-ui',
+        {
+            type: 'category',
+            label: 'User Feedback',
+            items: [
+                'web/user-feedback/overview',
+                'web/user-feedback/invoke',
+                'web/user-feedback/silent-user-feedback',
+            ]
+        },
+        {
+            type: 'category',
+            label: 'Configuration and data',
+            items: [
+                'web/configuration-and-data/overview',
+                'web/configuration-and-data/data-attached-by-default',
+                'web/configuration-and-data/screen-capture',
+                'web/configuration-and-data/screen-recording',
+                'web/configuration-and-data/ticket-metadata',
+                'web/configuration-and-data/ticket-tags',
+                'web/configuration-and-data/data-privacy-disclosure'
+            ]
+        },
+        'web/releases'
+    ],
 };

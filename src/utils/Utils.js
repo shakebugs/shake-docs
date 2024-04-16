@@ -9,7 +9,8 @@ const getSelectedPlatform = (url) => {
         android: "Android",
         ios: "iOS",
         react: "React Native",
-        flutter: "Flutter"
+        flutter: "Flutter",
+        web: "Web",
     };
 
     return platforms[rootName] || "";
