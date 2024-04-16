@@ -41,13 +41,6 @@ All of this is done out of the box, you don't need to code anything.
     <div>
         <img
             class="small-visual-icon"
-            src={useBaseUrl('img/tools-settings.svg')}
-        />
-        <p class="p2">Your app version</p>
-    </div>
-    <div>
-        <img
-            class="small-visual-icon"
             src={useBaseUrl('img/wifi-spot-square.svg')}
         />
         <p class="p2">Connectivity details</p>
@@ -83,13 +76,6 @@ All of this is done out of the box, you don't need to code anything.
     <div>
         <img
             class="small-visual-icon"
-            src={useBaseUrl('img/business-chart.svg')}
-        />
-        <p class="p2">Memory status</p>
-    </div>
-    <div>
-        <img
-            class="small-visual-icon"
             src={useBaseUrl('img/language-translate.svg')}
         />
         <p class="p2">Locale</p>
@@ -97,9 +83,9 @@ All of this is done out of the box, you don't need to code anything.
     <div>
         <img
             class="small-visual-icon"
-            src={useBaseUrl('img/stars-light-square.svg')}
+            src={useBaseUrl('img/browser-icon.svg')}
         />
-        <p class="p2">Screen density</p>
+        <p class="p2">Browser name and version</p>
     </div>
     <div>
         <img
@@ -107,6 +93,41 @@ All of this is done out of the box, you don't need to code anything.
             src={useBaseUrl('img/settings-switches-square.svg')}
         />
         <p class="p2">Browser permissions <sup>1</sup></p>
+    </div>
+    <div>
+        <img
+            class="small-visual-icon"
+            src={useBaseUrl('img/browser-resolution-icon.svg')}
+        />
+        <p class="p2">Browser resolution</p>
+    </div>
+    <div>
+        <img
+            class="small-visual-icon"
+            src={useBaseUrl('img/full-screen-zoom-square.svg')}
+        />
+        <p class="p2">Screen resolution</p>
+    </div>
+    <div>
+        <img
+            class="small-visual-icon"
+            src={useBaseUrl('img/rotate-horizontal.svg')}
+        />
+        <p class="p2">Screen orientation</p>
+    </div>
+    <div>
+        <img
+            class="small-visual-icon"
+            src={useBaseUrl('img/website-mode.svg')}
+        />
+        <p class="p2">Website mode</p>
+    </div>
+    <div>
+        <img
+            class="small-visual-icon"
+            src={useBaseUrl('img/cookies-icon.svg')}
+        />
+        <p class="p2">Cookies</p>
     </div>
 </div>
 

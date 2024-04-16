@@ -33,11 +33,11 @@ Make sure that you're using the latest Shake <ReactVersion/>.
 
 Call `Shake.start()` in your main file.
 Replace `your-api-client-id` and `your-api-client-secret` with the actual values you have in [your workspace administration](https://app.shakebugs.com/administration).
-Replace `app-bundle-id` with bundle id of your app located in the _Workspace Administration_ → _Apps_:
+Replace `website-domain` with bundle id of your app located in the _Workspace Administration_ → _Apps_:
 
 ```js title="index.js"
 // highlight-next-line
-window.Shake.start('client-id', 'client-secret', 'app-bundle-id');
+window.Shake.start('client-id', 'client-secret', 'website-domain');
 ```
 
 Now build and run your project. Shake should be working, as simple as that.

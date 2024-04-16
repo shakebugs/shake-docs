@@ -32,14 +32,14 @@ Make sure that you're using the latest Shake <WebVersion/>.
 
 Call `Shake.start()` in your main file.
 Replace `your-api-client-id` and `your-api-client-secret` with the actual values you have in [your workspace administration](https://app.shakebugs.com/administration).
-Replace `app-bundle-id` with bundle id of your app located in the _Workspace Administration_ → _Apps_:
+Replace `website-domain` with bundle id of your app located in the _Workspace Administration_ → _Apps_:
 
 ```js title="index.js"
 // highlight-next-line
 import Shake from '@shakebugs/browser';
 
 // highlight-next-line
-Shake.start('your-api-client-id', 'your-api-client-secret', 'app-bundle-id');
+Shake.start('your-api-client-id', 'your-api-client-secret', 'website-domain');
 ```
 
 Now build and run your project. Shake should be working, as simple as that.
