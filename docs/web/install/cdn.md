@@ -33,7 +33,7 @@ Make sure that you're using the latest Shake <ReactVersion/>.
 
 Call `Shake.start()` in your main file.
 Replace `your-api-client-id` and `your-api-client-secret` with the actual values you have in [your workspace administration](https://app.shakebugs.com/administration).
-Replace `website-domain` with bundle id of your app located in the _Workspace Administration_ → _Apps_:
+Replace `website-domain` with website domain of your app located in the _Workspace Administration_ → _Apps_:
 
 ```js title="index.js"
 // highlight-next-line
@@ -51,7 +51,7 @@ You can do it as shown in the example below when your app data is available:
 ```js title="index.js"
 if (User.isTester) {
     // highlight-next-line
-    window.Shake.start('your-api-client-id', 'your-api-client-secret', 'app-bundle-id');
+    window.Shake.start('your-api-client-id', 'your-api-client-secret', 'website-domain');
 }
 ```
 
