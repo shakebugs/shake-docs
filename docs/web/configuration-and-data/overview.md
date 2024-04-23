@@ -20,6 +20,10 @@ Shake attaches useful data to user feedback. Read all about it:
         <img src="/docs/img/essential-data@2x.png" alt="Data attached by default"/>
         <p><a href="/docs/web/configuration-and-data/data-attached-by-default/">Data attached by default</a></p>
     </div>
+    <div>
+        <img src="/docs/img/steps-to-reproduce@2x.png" alt="Activity history"/>
+        <p><a href="/docs/web/configuration-and-data/activity-history/">Activity history</a></p>
+    </div>
 	<div>
         <img src="/docs/img/auto-screenshot@2x.png" alt="Auto screenshot"/>
         <p><a href="/docs/web/configuration-and-data/screen-capture/">Screen capture</a></p>

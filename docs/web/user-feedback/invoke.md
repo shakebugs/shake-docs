@@ -15,6 +15,36 @@ By default, Shake screen is invoked by pressing **Send feedback** floating butto
 Send feedback button is automatically added to the screen after `Shake.start` method is called, 
 you don't need to code anything.
 
+You can disable default send feedback button if you want using the code below:
+
+<Tabs
+groupId="web"
+defaultValue="javascript"
+values={[
+{ label: 'Javascript', value: 'javascript'},
+{ label: 'Typescript', value: 'typescript'},
+]
+}>
+
+<TabItem value="javascript">
+
+```javascript title="index.js"
+// highlight-next-line
+Shake.config.floatingButtonEnabled = false;
+```
+
+</TabItem>
+
+<TabItem value="typescript">
+
+```typescript title="index.ts"
+// highlight-next-line
+Shake.config.floatingButtonEnabled = false;
+```
+
+</TabItem>
+</Tabs>
+
 ## Invoke through code
 
 But if you want to, you can customize that.
@@ -49,3 +79,5 @@ Shake.show();
 
 </TabItem>
 </Tabs>
+
+If enabled, [activity history](/web/configuration-and-data/activity-history), and all other data are also automatically attached. No additional code is required.
