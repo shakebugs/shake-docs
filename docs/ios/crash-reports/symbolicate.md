@@ -61,14 +61,11 @@ Shake ships with the `upload-symbols.sh` script which uploads dSYM files to Shak
 To ensure that the latest dSYM files are automatically uploaded after every build process, add a new Run Script Phase:
 _Xcode → Scheme → EditScheme_ → expand the _Build Action_ options → _Post Actions → +_
 
-Paste this script but make sure to replace `your-api-client-id` and `your-api-client-secret` with the actual values
-you have in [your workspace administration](https://app.shakebugs.com/administration):
+Paste this script but make sure to replace `app-api-key` with the actual value you have in [your app settings](https://app.shakebugs.com/administration/apps):
 
 ```script
 //highlight-start
-Path/to/upload-symbols.sh \
---client_id your-api-client-id \
---client_secret your-api-client-secret
+<path/to/upload-symbols.sh> --api_key <app-api-key> 
 //highlight-end
 ```
 
@@ -128,15 +125,14 @@ In this case, use Shake with [download_dsyms](http://docs.fastlane.tools/actions
 // highlight-start
 lane :refresh_dsyms do
     download_dsyms(version: "latest")
-    upload_symbols_to_shake(client_id: "<Shake client id>", client_secret: "<Shake client secret>", bundle_id: "<Bundle id of project>",  plist_path: "<Path to Info.plist>")
+    upload_symbols_to_shake(api_key: "<App api key>", bundle_id: "<Bundle id of project>",  plist_path: "<Path to Info.plist>")
 end
 // highlight-end
 ```
 
 </TabItem>
 
-You can find your `<Shake client id>` and `<Shake client secret>` in
-[your workspace administration](https://app.shakebugs.com/administration).
+You can find `<App api key>` in [your app settings](https://app.shakebugs.com/administration/apps):
 
 On the other hand, if you have [Bitcode](https://help.apple.com/xcode/mac/current/#/devbbdc5ce4f) disabled,
 add the `upload_symbols_to_shake` action with [gym](http://docs.fastlane.tools/actions/gym/#gym) to upload dSYMs generated from the build:
@@ -147,7 +143,7 @@ add the `upload_symbols_to_shake` action with [gym](http://docs.fastlane.tools/a
 // highlight-start
 lane :refresh_dsyms do
     gym
-        upload_symbols_to_shake(client_id: "<Shake client id>", client_secret: "<Shake client secret>", bundle_id: "<Bundle id of project>", plist_path: "<Path to Info.plist>")
+        upload_symbols_to_shake(api_key: "<App api key>", bundle_id: "<Bundle id of project>", plist_path: "<Path to Info.plist>")
 end
 // highlight-end
 ```
@@ -160,7 +156,7 @@ Or, you can pass the dSYM file paths manually:
 
 ```ruby title="Fastfile"
 // highlight-next-line
-upload_symbols_to_shake(client_id: "<Shake client id>", client_secret: "<Shake client secret>", bundle_id: "<Bundle id of project>", dsym_array_paths: ["./App1.dSYM.zip", "./App2.dSYM.zip"],  plist_path: "<Path to Info.plist>")
+upload_symbols_to_shake(api_key: "<App api key>", bundle_id: "<Bundle id of project>", dsym_array_paths: ["./App1.dSYM.zip", "./App2.dSYM.zip"],  plist_path: "<Path to Info.plist>")
 ```
 
 </TabItem>

@@ -33,16 +33,21 @@ import FlutterVersionBlock from '@site/src/base/FlutterVersionBlock';
 ## Initialize Shake
 
 Call `Shake.start()` method in your _main.dart_ file.
-Replace `your-api-client-id` and `your-api-client-secret` with the actual values you have in [your workspace administration](https://app.shakebugs.com/administration):
+Replace `ios-app-api-key` and `android-app-api-key` with the actual values you have in [your apps settings](https://app.shakebugs.com/administration/apps):
 
 ```dart title="main.dart"
-//highlight-next-line
+//highlight-start
+import 'dart:io';
+import 'package:flutter/material.dart';
 import 'package:shake_flutter/shake_flutter.dart';
+//highlight-end
 
 void main() {
     //highlight-start
     WidgetsFlutterBinding.ensureInitialized();
-    Shake.start('your-api-client-id', 'your-api-client-secret');
+
+    String apiKey = Platform.isIOS ? 'ios-app-api-key' : 'android-app-api-key';
+    Shake.start(apiKey);
     //highlight-end
 
     runApp(Home());
@@ -58,8 +63,10 @@ However, depending on your app, you'll want to initialize Shake just in a specif
 You can do it as shown in the example below when your app data is available:
 
 ```dart title="main_screen.dart"
-//highlight-next-line
+//highlight-start
+import 'dart:io';
 import 'package:shake_flutter/shake_flutter.dart';
+//highlight-end
 
 class _MainScreenState extends State<MainScreen> {
   @override
@@ -67,8 +74,10 @@ class _MainScreenState extends State<MainScreen> {
     super.initState();
 
     if (User.isTester) {
-        // highlight-next-line
-        Shake.start('your-api-client-id', 'your-api-client-secret');
+      //highlight-start
+      String apiKey = Platform.isIOS ? 'ios-app-api-key' : 'android-app-api-key';
+      Shake.start(apiKey);
+      //highlight-end
     }
   }
 ```

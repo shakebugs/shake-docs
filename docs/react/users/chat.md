@@ -55,7 +55,7 @@ const setShakePushNotificationsToken = async () => {
 // highlight-next-line
 setShakePushNotificationsToken();
 
-Shake.start('client-id', 'client-secret');
+Shake.start('app-api-key');
 
 AppRegistry.registerComponent(appName, () => App);
 ```
@@ -78,7 +78,7 @@ const presentShakePushNotifications = async () => {
     if (Platform.OS === 'android') {
         // Showing chat notifications when app in the background
         messaging().setBackgroundMessageHandler(async remoteMessage => {
-            await Shake.start('client-id', 'client-secret'); // Start Shake with your keys
+            await Shake.start('app-api-key'); // Start Shake with your key
             Shake.showChatNotification(remoteMessage.data);
         });
         // Showing chat notifications when app in the foreground
@@ -93,7 +93,7 @@ const presentShakePushNotifications = async () => {
 // highlight-next-line
 presentShakePushNotifications();
 
-Shake.start('client-id', 'client-secret');
+Shake.start('app-api-key');
 
 AppRegistry.registerComponent(appName, () => App);
 ```
@@ -259,7 +259,7 @@ values={[
     // highlight-next-line
     UNUserNotificationCenter.currentNotificationCenter.delegate = self;
 
-    [SHKShake startWithClientId:@"your_client_id" clientSecret:@"your_client_secret"];
+    [SHKShake startWithApiKey:@"app-api-key"];
 
     return YES; 
 }
@@ -299,6 +299,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         // highlight-next-line
         UNUserNotificationCenter.current().delegate = self
 
+        Shake.start(apiKey: "app-api-key")
+            
         return true
     }
 

@@ -31,15 +31,15 @@ Make sure that you're using the latest Shake <WebVersion/>.
 ## Initialize Shake
 
 Call `Shake.start()` in your main file.
-Replace `your-api-client-id` and `your-api-client-secret` with the actual values you have in [your workspace administration](https://app.shakebugs.com/administration).
-Replace `website-domain` with website domain of your app located in the _Workspace Administration_ → _Apps_:
+Replace `app-api-key` with the actual value you have in [your app settings](https://app.shakebugs.com/administration/apps):
+Replace `website-domain` with website domain of your app located in app settings.
 
 ```js title="index.js"
 // highlight-next-line
 import Shake from '@shakebugs/browser';
 
 // highlight-next-line
-Shake.start('your-api-client-id', 'your-api-client-secret', 'website-domain');
+Shake.start('app-api-key', 'website-domain');
 ```
 
 Now build and run your project. Shake should be working, as simple as that.
@@ -58,7 +58,7 @@ const MainScreen = (props) => {
 	useEffect(() => {
 		if (User.isTester) {
 			// highlight-next-line
-            Shake.start('your-api-client-id', 'your-api-client-secret', 'website-domain');
+            Shake.start('app-api-key', 'website-domain');
 		}
 	}, []);
 };

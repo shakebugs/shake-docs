@@ -54,7 +54,7 @@ void setShakePushNotificationsToken() async {
 void main() async {
     WidgetsFlutterBinding.ensureInitialized();
 
-    await Shake.start('client-id', 'client-secret');
+    await Shake.start('app-api-key');
     await Firebase.initializeApp();
     
     // highlight-next-line
@@ -81,7 +81,7 @@ import 'package:shake_flutter/shake_flutter.dart';
 // highlight-start
 @pragma('vm:entry-point')
 Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
-  await Shake.start('client-id', 'client-secret');
+  await Shake.start('app-api-key');
   await Firebase.initializeApp();
 
   Shake.showChatNotification(message.data);
@@ -103,7 +103,7 @@ void presentShakePushNotifications() {
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  await Shake.start('client-id', 'client-secret');
+  await Shake.start('app-api-key');
   await Firebase.initializeApp();
 
   // highlight-next-line

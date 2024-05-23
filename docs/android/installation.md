@@ -19,7 +19,7 @@ import AndroidVersionBlock from '@site/src/base/AndroidVersionBlock';
 ## Initialize Shake
 
 Initialize Shake in the `onCreate` callback of your _Application_.
-Replace `your-api-client-id` and `your-api-client-secret` with the actual values you have in [your workspace administration](https://app.shakebugs.com/administration):
+Replace `app-api-key` with the actual value you have in [your app settings](https://app.shakebugs.com/administration/apps):
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -45,7 +45,7 @@ public class App extends Application {
     public void onCreate() {
         super.onCreate();
         // highlight-next-line
-        Shake.start(this, "your-api-client-id", "your-api-client-secret");
+        Shake.start(this, "app-api-key");
     }
 }
 ```
@@ -63,7 +63,7 @@ class App : Application() {
     override fun onCreate() {
         super.onCreate()
         // highlight-next-line
-        Shake.start(this, "your-api-client-id", "your-api-client-secret")
+        Shake.start(this, "app-api-key")
     }
 }
 ```
@@ -99,7 +99,7 @@ public class MainActivity extends Activity {
 
         if (User.isTester) {
             // highlight-next-line
-            Shake.start(this, "your-api-client-id", "your-api-client-secret");
+            Shake.start(this, "app-api-key");
         }
     }
 }
@@ -117,7 +117,7 @@ class MainActivity : Activity() {
 
         if (User.isTester) {
             // highlight-next-line
-            Shake.start(this, "your-api-client-id", "your-api-client-secret")
+            Shake.start(this, "app-api-key")
         }
     }
 }
