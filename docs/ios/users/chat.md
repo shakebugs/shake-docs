@@ -187,7 +187,7 @@ values={[
     // highlight-next-line
     UNUserNotificationCenter.currentNotificationCenter.delegate = self;
 
-    [SHKShake startWithClientId:@"your_client_id" clientSecret:@"your_client_secret"];
+    [SHKShake startWithApiKey:@"app-api-key"];
 
     return YES; 
 }
@@ -227,7 +227,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         // highlight-next-line
         UNUserNotificationCenter.current().delegate = self
 
-        Shake.start(clientId: "your_client_id", clientSecret: "your_client_secret")
+        Shake.start(apiKey: "app-api-key")
 
         return true
     }

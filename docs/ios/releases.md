@@ -8,9 +8,17 @@ title: Release notes
 
 What would you like us to build next? Upvote upcoming features and suggest new ideas on the [Public feedback board](https://feedback.shakebugs.com/).
 
+## 17.0.0
+<span class="tag-button">May 27, 2024</span>&nbsp;&nbsp;
+<span class="tag-button green-tag-button">Latest version</span>
+
+#### What's new
+
+We've introduced api keys. Use api key instead client id and client secret for [starting Shake](/ios/install/setup-spm.md#initialize-shake).
+This improves security and control - you can create multiple api keys or delete old ones if needed.
+
 ## 16.2.5
 <span class="tag-button">April 24, 2024</span>&nbsp;&nbsp;
-<span class="tag-button green-tag-button">Latest version</span>
 
 #### Bug fixes
 
@@ -168,104 +176,3 @@ We've completely [redesigned Shake](/ios/shake-ui/home-screen.md) to continue de
 It also started supporting dark and light themes, so it can beautifully fit into your app in either case.
 
 We introduced a [Home screen](/ios/shake-ui/home-screen.md) where [your users](/ios/users/overview.md) can see tickets they previously reported.
-
-## 14.4.0
-<span class="tag-button">July 22, 2021</span>&nbsp;&nbsp;
-
-#### What's new
-
-From now on, you will be able to [register your app users](/ios/users/overview.md) with Shake. You can assign metadata to each user too.
-
-#### Bug fixes
-
-You can now safely call Shake methods before Shake is started. We've handled those crashes.
-
-## 14.3.0
-<span class="tag-button">June 2, 2021</span>&nbsp;&nbsp;
-
-#### What's new
-
-If you are using the shaking gesture as your invocation event, you can now [adjust the device’s sensitivity to the shaking gesture](/ios/user-feedback/invoke.md#shaking).
- 
-Shake now supports customization of feedback types. You can configure Shake to display any number of custom categories related to your product.
-
-We've added an option to [exclude the screenshot from tickets](/ios/configuration-and-data/auto-screenshot.md#excluding-the-screenshot-from-a-report). This option allows you to capture the screenshot only when required.
-
-This version now contains a Portuguese translation, which additionally extends [the lists of languages into which Shake's been translated](https://help.shakebugs.com/en/articles/3392092-which-languages-has-shake-sdk-been-translated-to).
-Your users whose default device language is set to one of these will automatically see Shake in their language.
-
-## 14.2.0
-<span class="tag-button">May 10, 2021</span>&nbsp;&nbsp;
-
-#### What's new
-
-Shake Crash beta is released. This personalized crash reporting module allows you to prevent bad reviews,
-build user relationships and fix app crashes faster than before with the power of data automation. 
-Read all about it [on its subpage](https://www.shakebugs.com/crash), or dive right into [its docs](/ios/crash-reports/overview.md) to enable it in your app.
-
-We've increased the size limit for feedback attachments, now you can attach up to 10 MB per file.
-
-## 14.1.5
-<span class="tag-button">April 28, 2021</span>&nbsp;&nbsp;
-
-#### Bug fixes
-
-There were a few minor bugs that caused problems, like bugs do. We fixed those, and improved the SDK stability too.
-
-## 14.1.4
-<span class="tag-button">April 13, 2021</span>&nbsp;&nbsp;
-
-#### What's new
-
-This version now contains Traditional and Simplified Chinese translations, which additionally extends [the lists of languages Shake's been translated to](https://help.shakebugs.com/en/articles/3392092-which-languages-has-shake-sdk-been-translated-to). 
-Your users whose default device language is set to one of these will automatically see Shake in their language.
-
-## 14.1.3
-<span class="tag-button">March 24, 2021</span>&nbsp;&nbsp;
-
-#### What's new
-
-JCenter will be sunset soon so we moved Shake to Maven Central.
-If you’re upgrading from the older version, make sure to [update the dependency in the build.gradle file](/ios/install/cocoapods).
-
-The `minSdkVersion` has been changed to 21. If your project is using a version lower than 21, you should upgrade the `minSdkVersion` in your module’s *build.gradle* file.
-
-## 14.1.2
-<span class="tag-button">February 4, 2021</span>&nbsp;&nbsp;
-
-#### Bug fixes
-
-We've tinkered with some details and gave the interiors a thorough clean. The SDK is now smoother than it was.
-
-## 14.1.1
-<span class="tag-button">January 21, 2021</span>&nbsp;&nbsp;
-
-#### What's new
-
-We updated the start method. The configuration keys are now loaded via the method, and not with the values from the `.xml` file. Don’t worry, the existing implementation will still work for some time.
-
-## 14.1
-<span class="tag-button">December 7, 2020</span>&nbsp;&nbsp;
-
-#### What's new
-
-Shake now requires `compileSdkVersion` 29 or higher, make sure to [update the version in the build.gradle file](/ios/install/cocoapods).
-
-Shake will now [automatically redact sensitive data](/ios/configuration-and-data/manage-sensitive-data/#automatically-redacted-sensitive-data) from your network requests, notifications and touch events so it never reaches Shake servers.
-
-We've added [console logs](/ios/configuration-and-data/activity-history.md#console-logs) to Activity history.
-
-We've all been waiting for this! Your users can record an additional video of their screen or grab one or two more extra screenshots and attach them to the ticket they're submitting — without ever leaving your app.
-
-## 14.0
-<span class="tag-button">November 5, 2020</span>&nbsp;&nbsp;
-
-#### What's new
-
-Shake is available in the new Maven repository. If you're upgrading from the older version, make sure to [update the Maven repository in the build.gradle file](/ios/install/cocoapods).
-
-Users can finally report different types of feedback: bugs, suggestions and questions.
-
-Shake now allows you to [protect sensitive data](/ios/configuration-and-data/manage-sensitive-data.md) on the mobile device itself, so it never reaches the Shake servers. It can be used for notifications, network requests, screens and screen elements.
-
-You can now use the in-app [intro message](/ios/user-feedback/intro-message.md) to inform your users about Shake availability.

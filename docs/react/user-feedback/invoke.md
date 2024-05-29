@@ -27,7 +27,7 @@ Let's look at an example where you want Shake user feedback to be invoked either
 // highlight-start
 Shake.setInvokeShakeOnShakeDeviceEvent(true);
 Shake.setInvokeShakeOnScreenshot(true);
-Shake.start('your-api-client-id', 'your-api-client-secret');
+Shake.start('app-api-key');
 // highlight-end
 ```
 

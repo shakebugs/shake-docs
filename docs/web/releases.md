@@ -8,9 +8,17 @@ title: Release notes
 
 What would you like us to build next? Upvote upcoming features and suggest new ideas on the [Public feedback board](https://feedback.shakebugs.com/).
 
+## 2.0.0
+<span class="tag-button">May 27, 2024</span>&nbsp;&nbsp;
+<span class="tag-button green-tag-button">Latest version</span>
+
+#### What's new
+
+We've introduced api keys. Use api key instead client id and client secret for [starting Shake](/web/install/npm#initialize-shake).
+This improves security and control - you can create multiple api keys or delete old ones if needed.
+
 ## 1.1.0
 <span class="tag-button">May 15, 2024</span>&nbsp;&nbsp;
-<span class="tag-button green-tag-button">Latest version</span>
 
 #### What's new
 

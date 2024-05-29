@@ -30,7 +30,7 @@ Make sure that _Embed&Sign_ option is selected for the _Shake.xcframework_.
 ## Initialize Shake
 
 Initialize Shake in the `didFinishLaunchingWithOptions` callback of your _AppDelegate_.
-Replace `your-api-client-id` and `your-api-client-secret` with the actual values you have in [your workspace administration](https://app.shakebugs.com/administration):
+Replace `app-api-key` with the actual value you have in [your app settings](https://app.shakebugs.com/administration/apps):
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -54,7 +54,7 @@ values={[
 @implementation AppDelegate
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // highlight-next-line
-    [SHKShake startWithClientId:@"your-api-client-id" clientSecret:@"your-api-client-secret"];
+    [SHKShake startWithApiKey:@"app-api-key"];
     return YES;
 }
 @end
@@ -75,7 +75,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         _ application: UIApplication,
         didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
             // highlight-next-line
-            Shake.start(clientId: "your-api-client-id", clientSecret: "your-api-client-secret")
+            Shake.start(apiKey: "app-api-key")
             return true
     }
 }
@@ -122,7 +122,7 @@ values={[
 
   if ([User isTester]) {
     // highlight-next-line
-    [SHKShake startWithClientId:@"_client_id_" clientSecret:@"_client_secret_"];
+    [SHKShake startWithApiKey:@"app-api-key"];
   }
 }
 ```
@@ -144,7 +144,7 @@ class MainVC: UIViewController {
 
     if User.isTester() {
          // highlight-next-line
-         Shake.start(clientId: "_client_id_", clientSecret: "_client_secret_")
+         Shake.start(apiKey: "app-api-key")
     }
   }
 }
