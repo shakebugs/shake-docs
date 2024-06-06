@@ -8,9 +8,17 @@ title: Release notes
 
 What would you like us to build next? Upvote upcoming features and suggest new ideas on the [Public feedback board](https://feedback.shakebugs.com/).
 
+## 2.1.0
+<span class="tag-button">Jun 6, 2024</span>&nbsp;&nbsp;
+<span class="tag-button green-tag-button">Latest version</span>
+
+#### What's new
+
+Users can now attach additional files together with regular screenshot and videos directly from the Shake.
+This new feature makes it easier to provide detailed feedback in bug reports.
+
 ## 2.0.0
 <span class="tag-button">May 27, 2024</span>&nbsp;&nbsp;
-<span class="tag-button green-tag-button">Latest version</span>
 
 #### What's new
 
