@@ -119,27 +119,31 @@ After that, add the following gradle task to your app's _build.gradle_ file:
 // highlight-start
 import org.apache.tools.ant.taskdefs.condition.Os
 
-task uploadMappingFile {
+tasks.register('uploadMappingFile') {
     def apiKey = 'app-api-key'
 
     doLast {
-        android.applicationVariants.all {
-            def mappingFile = it.mappingFile
-            def applicationId = it.applicationId
-            def versionName = it.versionName
-            def versionCode = it.versionCode
+        android.applicationVariants.configureEach {
+            if (it.buildType.isMinifyEnabled() && it.buildType.name == 'release') {
+                def mappingProvider = it.getMappingFileProvider()
 
-            if (it.buildType.name == 'release' && mappingFile != null && mappingFile.exists()) {
-                if (Os.isFamily(Os.FAMILY_WINDOWS)) {
-                    exec {
-                        commandLine 'cmd', '/c', 'start', 'upload_mapper.bat', mappingFile, apiKey, versionCode, versionName, applicationId
+                def mappingFile = mappingProvider.get().singleFile
+                def applicationId = it.applicationId
+                def versionName = it.versionName
+                def versionCode = it.versionCode
+
+                if (mappingFile != null && mappingFile.exists()) {
+                    if (Os.isFamily(Os.FAMILY_WINDOWS)) {
+                        exec {
+                            commandLine 'cmd', '/c', 'start', 'upload_mapper.bat', mappingFile, apiKey, versionCode, versionName, applicationId
+                        }
+                    } else if (Os.isFamily(Os.FAMILY_UNIX)) {
+                        exec {
+                            commandLine 'sh', './upload_mapper.sh', mappingFile, apiKey, versionCode, versionName, applicationId
+                        }
+                    } else {
+                        throw new GradleException('Not supported OS!')
                     }
-                } else if (Os.isFamily(Os.FAMILY_UNIX)) {
-                    exec {
-                        commandLine 'sh', './upload_mapper.sh', mappingFile, apiKey, versionCode, versionName, applicationId
-                    }
-                } else {
-                    throw new GradleException('Not supported OS!')
                 }
             }
         }
