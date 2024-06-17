@@ -138,13 +138,35 @@ Screen changes detection is currently not supported.
 
 On *iOS*, notifications are tracked automatically and require no additional setup.
 
-*Android* requires notifications permission in the settings to track notifications.
-Use the following code snippet to show notification settings screen to the user:
+*Android* requires you to add `ShakeNotificationListenerService`
+to your **AndroidManifest** file inside **application** tag:
+
+```xml title="AndroidManifest.xml"
+// highlight-start
+<service
+        android:name="com.shakebugs.shake.ShakeNotificationListenerService"
+        android:exported="false"
+        android:permission="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE">
+  <intent-filter>
+    <action android:name="android.service.notification.NotificationListenerService" />
+  </intent-filter>
+</service>
+// highlight-end
+```
+
+Additionally, app user must manually grant a permission to listen for notifications.
+You can show notifications permission settings screen using the following method:
 
 ```dart title="main.dart" 
 // highlight-next-line 
 Shake.showNotificationsSettings();
 ```
+
+:::note
+Keep in mind that notification listener intercepts notifications in your app.
+This can be a security issue if your notifications contains authorization codes.
+Make sure that you remove sensitive data using notification filter described on our privacy page.
+:::
 
 You can add your own custom notification events at any time:
 
@@ -164,7 +186,6 @@ void insertNotificationEvent() {
     // highlight-end
 }
 ```
-
 
 ### Custom logs
 

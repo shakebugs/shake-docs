@@ -160,7 +160,24 @@ The SDK will collect just changes of Android *Activities*, adding, removing or r
 
 ### Notifications
 
-In order for Shake to track notifications throughout your app, add this line where appropriate:
+In order for Shake to track notifications throughout your app, add `ShakeNotificationListenerService`
+ to your **AndroidManifest** file inside **application** tag:
+
+```xml title="AndroidManifest.xml"
+// highlight-start
+<service
+        android:name="com.shakebugs.shake.ShakeNotificationListenerService"
+        android:exported="false"
+        android:permission="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE">
+  <intent-filter>
+    <action android:name="android.service.notification.NotificationListenerService" />
+  </intent-filter>
+</service>
+// highlight-end
+```
+
+Additionally, app user must manually grant a permission to listen for notifications. 
+You can show notifications permission settings screen using the following method:
 
 <Tabs
   groupId="android"
@@ -175,8 +192,7 @@ In order for Shake to track notifications throughout your app, add this line whe
 
 ```java title="App.java"
 // highlight-start
-startActivity(new Intent("android.settings." +
-    "ACTION_NOTIFICATION_LISTENER_SETTINGS"));
+startActivity(new Intent("android.settings.ACTION_NOTIFICATION_LISTENER_SETTINGS"));
 // highlight-end
 ```
 
@@ -186,8 +202,7 @@ startActivity(new Intent("android.settings." +
 
 ```kotlin title="App.kt"
 // highlight-start
-startActivity(Intent("android.settings." +
-    "ACTION_NOTIFICATION_LISTENER_SETTINGS"))
+startActivity(Intent("android.settings.ACTION_NOTIFICATION_LISTENER_SETTINGS"))
 // highlight-end
 ```
 
@@ -195,11 +210,12 @@ startActivity(Intent("android.settings." +
 </Tabs>
 
 :::note
-This starts the notification listener service, which will require
-users to grant notification access the first time they open your app.
+Keep in mind that notification listener intercepts notifications in your app.
+This can be a security issue if your notifications contains authorization codes.
+Make sure that you remove sensitive data using notification filter described on our privacy page.
 :::
 
-If you want Shake to manually handle notification tracking, use this method instead:
+You can add your own custom notification events at any time:
 
 <Tabs
   groupId="android"
