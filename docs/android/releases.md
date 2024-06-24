@@ -8,9 +8,16 @@ title: Release notes
 
 What would you like us to build next? Upvote upcoming features and suggest new ideas on the [Public feedback board](https://feedback.shakebugs.com/).
 
+## 17.0.1
+<span class="tag-button">June 24, 2024</span>&nbsp;&nbsp;
+<span class="tag-button green-tag-button">Latest version</span>
+
+#### What's new
+
+We've revised permissions for storage, notifications, and screenshot detection, and removed deprecated methods to ensure optimal functionality and performance.
+
 ## 17.0.0
 <span class="tag-button">May 27, 2024</span>&nbsp;&nbsp;
-<span class="tag-button green-tag-button">Latest version</span>
 
 #### What's new
 
