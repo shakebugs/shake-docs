@@ -21,7 +21,7 @@ When in your project:
 1. Select your main app target
 1. Open Build Settings for that target
 1. Navigate to the Build Options section
-1. Choose _dwarf with dSYM file_ option for your Debug/Development configuration
+1. Set **Debug Information Format** option to _dwarf with dSYM file_ for your Debug/Development configuration
 
 ## Find dSYM files
 
@@ -35,10 +35,10 @@ mdfind -name .dSYM | while read -r line; do dwarfdump -u "$line"; done
 ## Upload manually to Shake dashboard
 
 Locate your app's dSYM files:
-_Xcode → Preferences → Locations → Derived Data_ → click the _Finder_ folder link.
+_Xcode → Settings → Locations → Derived Data_ → click the _Finder_ folder link.
 
 For archived apps with Bitcode enabled, which have already been uploaded to the App Store, visit
-_Xcode → Window → Organizer_ to manually download the App Store generated debug symbols
+_Window → Organizer_ in Xcode to manually download the App Store generated debug symbols
 by clicking the _Download Debug Symbols_ button on the right hand pane.
 
 Now zip the symbolication files.
@@ -47,7 +47,7 @@ To upload dSYM files to the Shake dashboard:
 
 1. Visit [Workspace administration → Apps](https://app.shakebugs.com/administration)
 1. Click your app name to expand it
-1. Click the **Mapping files** button
+1. Select **Crash reports** menu and click **Choose a file** button
 1. Drag and drop your zipped symbolication files there
 
 ## Upload dSYM files using RunPhase script
@@ -59,7 +59,7 @@ Use this method if your app doesn't use Bitcode binary format.
 Shake ships with the `upload-symbols.sh` script which uploads dSYM files to Shake servers.
 
 To ensure that the latest dSYM files are automatically uploaded after every build process, add a new Run Script Phase:
-_Xcode → Scheme → EditScheme_ → expand the _Build Action_ options → _Post Actions → +_
+_Product → Scheme → EditScheme_ → expand the _Build_ options → _Post Actions → +_
 
 Paste this script but make sure to replace `app-api-key` with the actual value you have in [your app settings](https://app.shakebugs.com/administration/apps):
 

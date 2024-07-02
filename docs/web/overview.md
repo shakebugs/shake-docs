@@ -40,8 +40,21 @@ import WebVersion from '@site/src/base/WebVersion';
 The [latest available Shake SDK version](/docs/web/releases) is <WebVersion/>.
 
 ## Minimum requirements
-Shake SDK is build with pure Javascript and is distributed as a standalone javascript file which works in 
-browser environment.
+
+
+| Chrome | Edge | Firefox | Opera | Safari | WebView |
+|--------|------|---------|-------|--------|---------|
+| 73     | 79   | 101     | 60    | 16.4   | 73      |
+
+[Report problems with this compatibility data on Slack](https://shk.sh/join-slack)
+
+<!---
+Due to difference in browser support, some of the features are not available on all version.
+  * screen orientation - only mobile platforms
+  * is runing on mobile - Chrome 90, Edge 90, Opera 76
+  * battery status and network type - not available on Firefox and Safari
+  * permissions - not available in WebView
+-->
 
 <p class="p2 mt-80 mb-10">⚡️ Shake is improved every week.
 Stumbled upon a <a href="https://feedback.shakebugs.com/bugs">bug</a>?

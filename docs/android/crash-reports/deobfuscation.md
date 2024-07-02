@@ -21,7 +21,7 @@ To upload your app's mapping files to the Shake dashboard:
 
 1. Visit [Workspace administration → Apps](https://app.shakebugs.com/administration)
 1. Click your app name to expand it
-1. Click the **Mapping files** button
+1. Select **Crash reports** menu and click **Choose a file** button
 1. Drag and drop your _mapping.txt_ file there
 
 ## Using the script
