@@ -8,9 +8,16 @@ title: Release notes
 
 What would you like us to build next? Upvote upcoming features and suggest new ideas on the [Public feedback board](https://feedback.shakebugs.com/).
 
+## 17.0.1
+<span class="tag-button">August 19, 2024</span>&nbsp;&nbsp;
+<span class="tag-button green-tag-button">Latest version</span>
+
+#### Bug fixes
+
+We've updated shake detection mechanism. Shake detection is not much smoother on iPad devices.
+
 ## 17.0.0
 <span class="tag-button">May 27, 2024</span>&nbsp;&nbsp;
-<span class="tag-button green-tag-button">Latest version</span>
 
 #### What's new
 
