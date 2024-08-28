@@ -8,9 +8,17 @@ title: Release notes
 
 What would you like us to build next? Upvote upcoming features and suggest new ideas on the [Public feedback board](https://feedback.shakebugs.com/).
 
+## 2.2.0
+<span class="tag-button">August 28, 2024</span>&nbsp;&nbsp;
+<span class="tag-button green-tag-button">Latest version</span>
+
+#### What's new
+
+We've integrated Shake with Fullstory. If your website is using Fullstory for customer behavior analytics, 
+Fullstory session link will automatically be visible on Shake dashboard.
+
 ## 2.1.3
 <span class="tag-button">July 25, 2024</span>&nbsp;&nbsp;
-<span class="tag-button green-tag-button">Latest version</span>
 
 #### Bug fixes
 
