@@ -15,6 +15,46 @@ By default, Shake screen is invoked by pressing **Send feedback** floating butto
 Send feedback button is automatically added to the screen after `Shake.start` method is called, 
 you don't need to code anything.
 
+### Default screen
+
+Shake will show **New ticket screen** when invoked. Feel free to change which Shake screen is shown on invocation:
+* [New ticket screen](/web/shake-ui#new-ticket)
+* [Home screen](/web/shake-ui#home-screen)
+
+<Tabs
+groupId="web"
+defaultValue="javascript"
+values={[
+{ label: 'Javascript', value: 'javascript'},
+{ label: 'Typescript', value: 'typescript'},
+]
+}>
+
+<TabItem value="javascript">
+
+```javascript title="index.js"
+// highlight-next-line
+Shake.config.defaultScreen = ShakeScreen.NEW_TICKET;
+// highlight-next-line
+Shake.config.defaultScreen = ShakeScreen.HOME_SCREEN;
+```
+
+</TabItem>
+
+<TabItem value="typescript">
+
+```typescript title="index.ts"
+// highlight-next-line
+Shake.config.defaultScreen = ShakeScreen.NEW_TICKET;
+// highlight-next-line
+Shake.config.defaultScreen = ShakeScreen.HOME_SCREEN;
+```
+
+</TabItem>
+</Tabs>
+
+### Disable Send Feedback
+
 You can disable default send feedback button if you want using the code below:
 
 <Tabs
@@ -47,10 +87,9 @@ Shake.config.floatingButtonEnabled = false;
 
 ## Invoke through code
 
-But if you want to, you can customize that.
-
 Shake can be invoked through code by calling the `Shake.show` method anywhere after `Shake.start`.
-This method automatically opens Shake interface where user can send feedback, report a bug or attach additional files.
+
+The `show` method can be called with the argument `ShakeScreen` which determines the first presented screen in the Shake UI.
 
 <Tabs
   groupId="web"
@@ -66,6 +105,10 @@ This method automatically opens Shake interface where user can send feedback, re
 ```javascript title="index.js"
 // highlight-next-line
 Shake.show();
+// highlight-next-line
+Shake.show(ShakeScren.NEW_TICKET);
+// highlight-next-line
+Shake.show(ShakeScren.HOME_SCREEN);
 ```
 
 </TabItem>
@@ -74,7 +117,9 @@ Shake.show();
 
 ```typescript title="index.ts"
 // highlight-next-line
-Shake.show();
+Shake.show(ShakeScren.NEW_TICKET); // Same as Shake.show()
+// highlight-next-line
+Shake.show(ShakeScren.HOME_SCREEN);
 ```
 
 </TabItem>

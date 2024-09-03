@@ -14,7 +14,7 @@ after registering the User.
 
 ## Special keys
 
-Values from these three keys will be presented nicely on the Shake dashboard, so we suggest you use them:
+Values from these two keys will be presented nicely on the Shake dashboard, so we suggest you use them:
 * `first_name`
 * `last_name`
 

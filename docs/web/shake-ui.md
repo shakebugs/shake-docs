@@ -11,16 +11,40 @@ import TabItem from '@theme/TabItem';
 
 ## Screens
 
-The Shake UI consists of one main screen. This screen contains two sections: **Attachments** section and **New ticket** section.
+The Shake UI consists of several different screens:
 
-- Attachments - user can attach additional screenshots, screen recording or other files to the report
-- New ticket - used to provide additional details about the user feedback. For example - description.
+### New ticket
+
+Used to provide additional details about the user feedback. For example - description and file.
 
 <table class="media-container mt-40 mb-40">
 <img
   alt="Shake screens structure"
   width="800"
-  src={useBaseUrl('img/shake-web-sdk.png')}
+  src={useBaseUrl('screens/shake-web-sdk-new-ticket.png')}
+/>
+</table>
+
+### Home screen
+
+Central place for registered app user where all user tickets are listed.
+
+<table class="media-container mt-40 mb-40">
+<img
+  alt="Shake screens structure"
+  width="800"
+  src={useBaseUrl('screens/shake-web-sdk-home.png')}
+/>
+</table>
+
+### Chat screen
+Used to chat and provide more details to the Shake dashboard users.
+
+<table class="media-container mt-40 mb-40">
+<img
+  alt="Shake screens structure"
+  width="800"
+  src={useBaseUrl('screens/shake-web-sdk-chat.png')}
 />
 </table>
 
