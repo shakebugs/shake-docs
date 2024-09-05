@@ -355,14 +355,34 @@ module.exports = {
                 }
             ]
         },
+
         'web/shake-ui',
         {
             type: 'category',
-            label: 'User Feedback',
+            label: 'Modules',
             items: [
-                'web/user-feedback/overview',
-                'web/user-feedback/invoke',
-                'web/user-feedback/silent-user-feedback',
+                {
+                    type: 'category',
+                    label: 'User Feedback',
+                    items: [
+                        'web/user-feedback/overview',
+                        'web/user-feedback/invoke',
+                        'web/user-feedback/silent-user-feedback',
+                    ]
+                },
+                {
+                    type: 'category',
+                    label: 'App users',
+                    items: [
+                        'web/users/overview',
+                        'web/users/register-user',
+                        'web/users/chat',
+                        'web/users/unregister-user',
+                        'web/users/update-user-metadata',
+                        'web/users/update-user-identifier',
+                        'web/users/advanced-usage'
+                    ]
+                },
             ]
         },
         {

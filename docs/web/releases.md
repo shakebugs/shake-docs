@@ -8,9 +8,19 @@ title: Release notes
 
 What would you like us to build next? Upvote upcoming features and suggest new ideas on the [Public feedback board](https://feedback.shakebugs.com/).
 
+## 2.3.0
+<span class="tag-button">September 5, 2024</span>&nbsp;&nbsp;
+<span class="tag-button green-tag-button">Latest version</span>
+
+#### What's new
+
+[App users module](/web/users/overview) is added. 
+
+This module enables you to see a list of your app users, their attributes and tickets on your Shake dashboard.
+You can now chat with app users to provide you more details about their reported tickets.
+
 ## 2.2.0
 <span class="tag-button">August 28, 2024</span>&nbsp;&nbsp;
-<span class="tag-button green-tag-button">Latest version</span>
 
 #### What's new
 
