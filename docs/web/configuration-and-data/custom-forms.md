@@ -203,6 +203,10 @@ const email: ShakeEmail = new ShakeEmail('email', 'Email to contact you on', '',
 </TabItem>
 </Tabs>
 
+:::note
+Keep in mind that email field with key **email** will be automatically hidden if app user is registered and your app user has
+metadata with key **email** set.
+:::note
 
 ### Picker
 
