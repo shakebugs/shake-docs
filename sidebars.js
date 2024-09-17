@@ -390,6 +390,7 @@ module.exports = {
             label: 'Configuration and data',
             items: [
                 'web/configuration-and-data/overview',
+                'web/configuration-and-data/custom-forms',
                 'web/configuration-and-data/data-attached-by-default',
                 'web/configuration-and-data/screen-capture',
                 'web/configuration-and-data/screen-recording',
