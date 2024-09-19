@@ -9,13 +9,20 @@ title: Overview
 
 Shake automatically attaches useful data to the user tickets. Also, you can set up custom data you want to attach to the tickets before ticket is created to make it even more useful.
 
+## Elements of the New ticket screen
 
+Your users send you their feedback from the New ticket screen. Read how to customize it:
+* [Custom forms](/docs/web/configuration-and-data/custom-forms)
 
 ## Collected data
 
 Shake attaches useful data to user feedback. Read all about it:
 
 <div class="featuresList">
+    <div>
+        <img src="/docs/img/description@2x.png" alt="Custom form"/>
+        <p><a href="/docs/web/configuration-and-data/custom-forms">Custom forms</a></p>   
+    </div>
 	<div>
         <img src="/docs/img/essential-data@2x.png" alt="Data attached by default"/>
         <p><a href="/docs/web/configuration-and-data/data-attached-by-default/">Data attached by default</a></p>

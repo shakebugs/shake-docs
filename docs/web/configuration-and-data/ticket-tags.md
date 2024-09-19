@@ -23,6 +23,4 @@ Use form picker to add tags to the ticket.
 
 Depending on the picker item selected by the user, Shake will automatically add defined <span class="tag-button blue-tag-button">tag</span> to the ticket.
 
-User can choose between **bug**, **suggestion** and **improvement** tags
-
-
+Learn more about [Shake form picker element](/web/configuration-and-data/custom-forms#picker).

@@ -8,7 +8,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 ## Default form
 
-Shake provides a default feedback and crash reporting form that enables users to submit valuable input to the reported tickets.
+Shake provides a default feedback form that enables users to submit valuable input to the reported tickets.
 This pre-designed form includes a variety of useful elements for collecting detailed information from the user.
 
 - **Title** The form requires the user to provide a title for their ticket, ensuring that the issue is shortly described.

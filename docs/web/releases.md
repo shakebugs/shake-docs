@@ -8,9 +8,18 @@ title: Release notes
 
 What would you like us to build next? Upvote upcoming features and suggest new ideas on the [Public feedback board](https://feedback.shakebugs.com/).
 
+## 2.4.0
+<span class="tag-button">September 19, 2024</span>&nbsp;&nbsp;
+<span class="tag-button green-tag-button">Latest version</span>
+
+#### What's new
+
+We're excited to announce the latest feature in our SDK, which allows you to [create a custom feedback form](/web/configuration-and-data/custom-forms).
+Now you can collect even more detailed information from your users and tailor the form to your specific needs.
+Say goodbye to generic feedback form and hello to personalized data collection!
+
 ## 2.3.1
 <span class="tag-button">September 11, 2024</span>&nbsp;&nbsp;
-<span class="tag-button green-tag-button">Latest version</span>
 
 #### Bug fixes
 
