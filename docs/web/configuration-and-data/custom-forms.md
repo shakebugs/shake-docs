@@ -65,6 +65,7 @@ Properties:
 - label **string** - user facing label
 - value **string?** - input value
 - required **boolean?** - if true, user can't submit the ticket while the input is empty
+- lines **number?** - initial number of input lines
 
 Example:
 
@@ -81,7 +82,7 @@ values={[
 
 ```javascript title="index.js"
 // highlight-start
-const title = new ShakeTitle('title', 'Title', '', true);
+const title = new ShakeTitle('title', 'Title', '', true, 1);
 // highlight-end
 ```
 
@@ -91,7 +92,7 @@ const title = new ShakeTitle('title', 'Title', '', true);
 
 ```typescript title="index.ts"
 // highlight-start
-const title: ShakeTitle = new ShakeTitle('title', 'Title', '', true);
+const title: ShakeTitle = new ShakeTitle('title', 'Title', '', true, 1);
 // highlight-end
 ```
 
@@ -120,6 +121,7 @@ Properties:
 - label **string** - user facing label
 - value **string?** - input value
 - required **boolean?** - if true, user can't submit the ticket while the input is empty
+- lines **number?** - initial number of input lines
 
 Example:
 
@@ -136,7 +138,7 @@ values={[
 
 ```javascript title="index.js"
 // highlight-start
-const description = new ShakeTextInput('steps_to_reproduce', 'Steps to reproduce', '', false);
+const description = new ShakeTextInput('steps_to_reproduce', 'Steps to reproduce', '', false, 3);
 // highlight-end
 ```
 
@@ -146,7 +148,7 @@ const description = new ShakeTextInput('steps_to_reproduce', 'Steps to reproduce
 
 ```typescript title="index.ts"
 // highlight-start
-const description: ShakeTextInput = new ShakeTextInput('steps_to_reproduce', 'Steps to reproduce', '', false);
+const description: ShakeTextInput = new ShakeTextInput('steps_to_reproduce', 'Steps to reproduce', '', false, 3);
 // highlight-end
 ```
 
