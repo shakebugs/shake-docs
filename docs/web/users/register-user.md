@@ -62,3 +62,11 @@ const onLoginClick = async (email: string, password: string) => {
 
 </TabItem>
 </Tabs>
+
+:::note
+
+Keep in mind that if your app is already published, some users will be already logged in into the app.
+To handle this case, we recommend calling `Shake.registerUser` method also on the first screen app shows.
+Registered user is stored locally and this method won't send registration request if it not needed.
+
+:::note
