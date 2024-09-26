@@ -9,6 +9,40 @@ import TabItem from '@theme/TabItem';
 > Sometimes you'll want to tag your tickets for easier management and organization on the dashboard.
 There are three different options you can use to add tags to the tickets.
 
+## Adding tags from the code
+
+To add tags to a ticket from the code, simply set a list of tags to the tags property of the Shake configuration.
+
+Here's an example how you can add a <span class="tag-button green-tag-button">tag</span> to the ticket:
+
+<Tabs
+groupId="web"
+defaultValue="javascript"
+values={[
+{ label: 'Javascript', value: 'javascript'},
+{ label: 'Typescript', value: 'typescript'},
+]
+}>
+
+<TabItem value="javascript">
+
+```javascript title="index.js"
+// highlight-next-line
+Shake.report.tags = ['tag']
+```
+
+</TabItem>
+
+<TabItem value="typescript">
+
+```typescript title="index.ts"
+// highlight-next-line
+Shake.report.tags = ['tag']
+```
+
+</TabItem>
+</Tabs>
+
 ## Adding tags using the ticket title
 
 Use ticket title to add tags to the ticket.
@@ -17,7 +51,7 @@ Shake automatically identifies and converts any *#some #hashtags* found in the t
 
 They will automatically become <span class="tag-button pink-tag-button">tags</span> on your [Shake dashboard](https://app.shakebugs.com/).
 
-## Adding tags using the feedback type picker
+## Adding tags using the form picker
 
 Use form picker to add tags to the ticket.
 
