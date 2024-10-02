@@ -1,4 +1,5 @@
-﻿---
+﻿
+---
 id: manage-sensitive-data
 title: Protect sensitive data
 ---
