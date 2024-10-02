@@ -135,11 +135,11 @@ metadata in the manifest file inside the application element:
 // highlight-end
 ```
 
-### Set up Server Key on the Shake dashboard
+### Set up Service Account credentials on the Shake dashboard
 
-The last thing you'll have to do is to add Firebase Cloud Messaging *Server Key* to the Shake Dashboard.
+The last thing you'll have to do is to upload Firebase Cloud Messaging *Service Account* credentials to the Shake Dashboard.
 
-Navigate to the *Project Settings → Cloud Messaging* on the Firebase and and copy *Server Key* to the *Workspace Administration → App settings* on the Shake dashboard.
+Navigate to the *Project Settings → Service accounts → Generate new private key → Generate key* on the Firebase and upload *Service Account* credentials to the *Workspace Administration → App settings* on the Shake dashboard.
 
 
 ### Local notifications
