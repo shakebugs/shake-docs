@@ -8,9 +8,22 @@ title: Release notes
 
 What would you like us to build next? Upvote upcoming features and suggest new ideas on the [Public feedback board](https://feedback.shakebugs.com/).
 
+## 2.5.0
+<span class="tag-button">October 2, 2024</span>&nbsp;&nbsp;
+<span class="tag-button green-tag-button">Latest version</span>
+
+#### What's new
+
+[Data privacy is enhanced](/web/configuration-and-data/manage-sensitive-data) by filtering sensitive information directly on the device, ensuring it never reaches Shake servers. 
+Shake also allows you to manage and control what network requests data is sent to third-party services.
+
+#### Bug fixes
+
+- Console logs with multiple output parameters are properly captured.  
+- Speed of opening Shake when new message is received is improved.
+
 ## 2.4.0
 <span class="tag-button">September 19, 2024</span>&nbsp;&nbsp;
-<span class="tag-button green-tag-button">Latest version</span>
 
 #### What's new
 

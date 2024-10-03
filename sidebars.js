@@ -397,6 +397,7 @@ module.exports = {
                 'web/configuration-and-data/activity-history',
                 'web/configuration-and-data/ticket-metadata',
                 'web/configuration-and-data/ticket-tags',
+                'web/configuration-and-data/manage-sensitive-data',
                 'web/configuration-and-data/data-privacy-disclosure'
             ]
         },
