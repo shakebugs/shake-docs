@@ -2,13 +2,23 @@
 id: manual-linking
 title: Manual linking
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 > If you want to link library manually, you can do it this way.
 
 ## Create a new app on Dashboard
 
-Visit your [Shake Dashboard](https://app.shakebugs.com) and add a new React Native Android/iOS app by clicking
-the *Add new app* button or from *Top navbar → App → ... → Add new app*.
+Visit your [Shake Dashboard](https://app.shakebugs.com) and add a new React Native Android/iOS app by clicking the *Add new app* button located in the bottom right corner.
+
+<table class="media-container media-container-highlighted mt-40 mb-40">
+<img
+  alt="Add new app"
+  width="380"
+  src={useBaseUrl('img/add-new-app-button.png')}
+/>
+</table>
+
+On "Add app" screen, select *React Native Android* or *React Native iOS* app.
 Once you're done, you're ready to proceed with the steps below.
 
 ## Android
