@@ -2,6 +2,7 @@
 id: manually
 title: Manually
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 > A guide to add Shake to your app without a dependency manager or a build automation tool.
 
@@ -14,8 +15,16 @@ always pull the latest version of Shake into your app. Instead, you will have to
 
 ## Create a new app on Dashboard
 
-Visit your [Shake Dashboard](https://app.shakebugs.com) and add a new Native iOS app by clicking
-the _Add new app_ button or from _Top navbar → App → ... → Add new app_.
+Visit your [Shake Dashboard](https://app.shakebugs.com) and add a new Native iOS app by clicking the *Add new app* button located in the bottom right corner.
+
+<table class="media-container media-container-highlighted mt-40 mb-40">
+<img
+  alt="Add new app"
+  width="380"
+  src={useBaseUrl('img/add-new-app-button.png')}
+/>
+</table>
+
 Once you're done, you're ready to proceed with the steps below.
 
 ## Download Shake from GitHub
