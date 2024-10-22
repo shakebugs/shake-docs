@@ -3,6 +3,8 @@ id: screen-capture
 title: Screen capture
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 > When Shake's interface is invoked, a screenshot is automatically attached to it. Or it can be attached manually by users.
 
@@ -18,6 +20,36 @@ Once this package supports new color notations Shake will be upgraded.
 When Shake is invoked, it automatically captures screen of the app and adds screenshot to the user ticket.
 
 Users can manually remove automatically taken screenshot before sending a ticket.
+
+You can disable automatic screenshot using the following snippet:
+
+<Tabs
+groupId="web"
+defaultValue="javascript"
+values={[
+{ label: 'Javascript', value: 'javascript'},
+{ label: 'Typescript', value: 'typescript'},
+]
+}>
+
+<TabItem value="javascript">
+
+```javascript title="index.js"
+// highlight-next-line
+Shake.report.screenshotIncluded = false;
+```
+
+</TabItem>
+
+<TabItem value="typescript">
+
+```typescript title="index.ts"
+// highlight-next-line
+Shake.report.screenshotIncluded = false;
+```
+
+</TabItem>
+</Tabs>
 
 ## Manual screenshot
 
