@@ -9,13 +9,15 @@ title: Release notes
 What would you like us to build next? Upvote upcoming features and suggest new ideas on the [Public feedback board](https://feedback.shakebugs.com/).
 
 ## 2.6.0
-<span class="tag-button">October 23, 2024</span>&nbsp;&nbsp;
+<span class="tag-button">October 31, 2024</span>&nbsp;&nbsp;
 <span class="tag-button green-tag-button">Latest version</span>
 
 #### What's new
 
-You can now [customize the Shake invoke button](/web/configuration-and-data/custom-branding) to seamlessly match your app's design. 
-This feature lets you integrate the button naturally, ensuring it feels like a part of your app's interface.
+Introducing [Custom branding](/web/configuration-and-data/custom-branding)! 🎨️
+
+From now you can customize the appearance of the Shake SDK with your brand's colors,
+fonts, and more and align the SDK with your brand's identity for a consistent user experience.
 
 ## 2.5.1
 <span class="tag-button">October 11, 2024</span>&nbsp;&nbsp;
