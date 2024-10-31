@@ -190,6 +190,9 @@ div[class*='codeBlock'], code {
     padding-bottom: 80px !important;
 }
 
+.p-20 {
+    padding: 20px !important;
+}
 
 .p2 {
     font-size: 14px;
