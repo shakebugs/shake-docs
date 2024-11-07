@@ -43,11 +43,10 @@ Make sure that you're using the latest Shake <ReactVersion/>.
 
 Call `Shake.start()` in your main file.
 Replace `app-api-key` with the actual value you have in [your app settings](https://app.shakebugs.com/administration/apps):
-Replace `website-domain` with website domain of your app located in app settings.
 
 ```js title="index.js"
 // highlight-next-line
-window.Shake.start('app-api-key', 'website-domain');
+window.Shake.start('app-api-key');
 ```
 
 Now build and run your project. Shake should be working, as simple as that.
@@ -61,7 +60,7 @@ You can do it as shown in the example below when your app data is available:
 ```js title="index.js"
 if (User.isTester) {
     // highlight-next-line
-    window.Shake.start('app-api-key', 'website-domain');
+    window.Shake.start('app-api-key');
 }
 ```
 
