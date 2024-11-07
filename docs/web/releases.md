@@ -8,9 +8,17 @@ title: Release notes
 
 What would you like us to build next? Upvote upcoming features and suggest new ideas on the [Public feedback board](https://feedback.shakebugs.com/).
 
+## 2.7.0
+<span class="tag-button">November 8, 2024</span>&nbsp;&nbsp;
+<span class="tag-button green-tag-button">Latest version</span>
+
+#### What's new
+
+Shake SDK install process is now smoother - you don't need to set domain name in Shake.start method anymore.
+Instead, control permitted domains from your dashboard.
+
 ## 2.6.0
 <span class="tag-button">October 31, 2024</span>&nbsp;&nbsp;
-<span class="tag-button green-tag-button">Latest version</span>
 
 #### What's new
 
