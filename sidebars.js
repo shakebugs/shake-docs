@@ -395,6 +395,7 @@ module.exports = {
                 'web/configuration-and-data/data-attached-by-default',
                 'web/configuration-and-data/screen-capture',
                 'web/configuration-and-data/screen-recording',
+                'web/configuration-and-data/session-replay',
                 'web/configuration-and-data/activity-history',
                 'web/configuration-and-data/ticket-metadata',
                 'web/configuration-and-data/ticket-tags',
