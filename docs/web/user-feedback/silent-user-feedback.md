@@ -67,7 +67,8 @@ const sendSilentReport = () => {
   // highlight-start
   const config = {
     takeScreenshot: true,
-    showSuccessMessage: true
+    showSuccessMessage: true,
+    includeSessionReplay: true
   }
 
   Shake.silentReport("Description #tag1 #tag2", config);
@@ -84,7 +85,8 @@ const sendSilentReport = () => {
   // highlight-start
   const config: SilentReportConfig  = {
     takeScreenshot: true,
-    showSuccessMessage: true
+    showSuccessMessage: true,
+    includeSessionReplay: true
   }
 
   Shake.silentReport("Description #tag1 #tag2", config);
