@@ -298,8 +298,8 @@ For example, you may wish to remove the Inspect button from the default form to 
 
 ```javascript title="index.js"
 // highlight-start
-const setCustomForm = async () => {
-    const shakeForm = await Shake.getShakeForm();
+const setCustomForm = () => {
+    const shakeForm = Shake.getShakeForm();
     if (shakeForm) {
         shakeForm.components = shakeForm.components.filter(c => c.type !== 'inspect');
         Shake.setShakeForm(shakeForm);  

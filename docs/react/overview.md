@@ -76,6 +76,9 @@ Shake SDK works on:
 * Android 5.0 or newer
 * iOS 12.0 or newer
 
+*Since 17.1.0 version, Shake RN SDK is using RN new architecture.
+If your app is running on old architecture you should use Shake RN SDK 17.0.x.
+
 <p class="p2 mt-80 mb-10">⚡️ Shake is improved every week.
 Stumbled upon a <a href="https://feedback.shakebugs.com/bugs">bug</a>?
 Want a <a href="https://feedback.shakebugs.com/feature-requests">new feature</a> to be added?
