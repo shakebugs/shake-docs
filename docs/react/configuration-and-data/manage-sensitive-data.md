@@ -66,35 +66,35 @@ When marking a *View* as private, also add the `collapsable={false}` flag to it 
 "Trying to resolve view with tag number which doesn’t exist" error.
 :::
 
-Let's suppose you're building a shopping app and you want to delete the name and the credit card number views
+Let's suppose you're building a shopping app and you want to delete the credit card number view
 from the auto screenshot:
 
 ```javascript title="App.js"
-// highlight-start
-<Text ref={r => this.cardNumber = r} style={styles.cardNumber}>{this.state.cardNumber}</Text>
-<Text ref={r => this.cardName = r} style={styles.cardName}>{this.state.cardName}</Text>
-// highlight-end
+// highlight-next-line
+const viewRef = useRef(null);
+
+// highlight-next-line
+<Text ref={viewRef} style={styles.cardNumber}>{this.state.cardNumber}</Text>
 ```
 
-This is how you mark views as private:
+This is how you mark view as a private:
 
 ```javascript title="App.js"
 // highlight-next-line
 import Shake from '@shakebugs/react-native-shake';
 
-const maskSensitiveData = () => {
-    // highlight-start
-    Shake.addPrivateView(cardNumber);
-    Shake.addPrivateView(cardName);
-    // highlight-end
-}
+// highlight-next-line
+Shake.addPrivateView(viewRef.current);
 ```
 
 To remove a view from private views use the following method:
 
 ```javascript title="App.js"
 // highlight-next-line
-Shake.removePrivateView(viewRef);
+import Shake from '@shakebugs/react-native-shake';
+
+// highlight-next-line
+Shake.removePrivateView(viewRef.current);
 ```
 
 If you want to delete an entire screen from the auto screenshot, simply mark the root of the screen as private.

@@ -23,6 +23,13 @@ When in your project:
 1. Navigate to the Build Options section
 1. Set **Debug Information Format** option to _dwarf with dSYM file_ for your Debug/Development configuration
 
+:::note
+
+On Xcode 16+ you should also set **Enable Debug Dylib Support** to _No_. This option affects how dSYM files are generated
+and should be disabled until we support it.
+
+:::note
+
 ## Find dSYM files
 
 Run this command in your terminal to list all available dSYM files found on your system so you can identify the ones that are missing:
