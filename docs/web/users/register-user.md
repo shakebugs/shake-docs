@@ -8,6 +8,14 @@ import TabItem from '@theme/TabItem';
 
 >Register your app users with Shake by calling the `Shake.registerUser` method.
 
+<p class="p2 mt-40">You're viewing the Web docs. Other platforms → &nbsp;
+<a href="/docs/ios/users/register-user/">iOS</a>&nbsp; 
+<a href="/docs/android/users/register-user/">Android</a>&nbsp;
+<a href="/docs/react/users/register-user/">React Native</a>&nbsp;
+<a href="/docs/flutter/users/register-user/">Flutter</a>&nbsp;  
+</p>
+
+
 The passed _user identifier_ argument should ideally reflect the identifier that uniquely represents the app user in your database.
 Often it is the app user's email address, but it may be their app User ID, or their device's UUID.
 Shake's public method is intentionally

@@ -6,6 +6,14 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 > This feature enables you to customize the look and feel of the Shake SDK. You can reflect your brand's identity by modifying colors, fonts, and other attributes of screen elements.
 
+<p class="p2 mt-40">You're viewing the React Native docs. Other platforms → &nbsp;
+<a href="/docs/ios/configuration-and-data/custom-branding/">iOS</a>&nbsp; 
+<a href="/docs/android/configuration-and-data/custom-branding/">Android</a>&nbsp;
+<a href="/docs/flutter/configuration-and-data/custom-branding/">Flutter</a>&nbsp;  
+<a href="/docs/web/configuration-and-data/custom-branding/">Web</a>&nbsp;
+</p>
+
+
 <div class="imagesList">
     <div>
         <img src="/docs/img/custom-branding-example-1@2x.png" alt="Star Trek style"/>

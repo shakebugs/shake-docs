@@ -5,6 +5,14 @@ title: Overview
 
 > Customize both the data Shake collects and the way Shake behaves
 
+<p class="p2 mt-40">You're viewing the Web docs. Other platforms → &nbsp;
+<a href="/docs/ios/configuration-and-data/overview/">iOS</a>&nbsp; 
+<a href="/docs/android/configuration-and-data/overview/">Android</a>&nbsp;
+<a href="/docs/react/configuration-and-data/overview/">React Native</a>&nbsp;
+<a href="/docs/flutter/configuration-and-data/overview/">Flutter</a>&nbsp;  
+</p>
+
+
 ## Introduction
 
 Shake automatically attaches useful data to the user tickets. Also, you can set up custom data you want to attach to the tickets before ticket is created to make it even more useful.

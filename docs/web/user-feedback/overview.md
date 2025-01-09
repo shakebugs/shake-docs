@@ -7,6 +7,14 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 >The User feedback module allows your users and testers to seamlessly report their feedback to you.
 
+<p class="p2 mt-40">You're viewing the Web docs. Other platforms → &nbsp;
+<a href="/docs/ios/user-feedback/overview/">iOS</a>&nbsp; 
+<a href="/docs/android/user-feedback/overview/">Android</a>&nbsp;
+<a href="/docs/react/user-feedback/overview/">React Native</a>&nbsp;
+<a href="/docs/flutter/user-feedback/overview/">Flutter</a>&nbsp;  
+</p>
+
+
 ## Introduction
 
 You have various options for how, when and where to invoke Shake in your app.

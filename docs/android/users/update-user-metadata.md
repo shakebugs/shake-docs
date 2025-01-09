@@ -9,6 +9,13 @@ import TabItem from '@theme/TabItem';
 >Once you have registered your app user, you can attach a map with key-value pairs which contain
 additional data about the app user and their behavior.
 
+<p class="p2 mt-40">You're viewing the Android docs. Other platforms →&nbsp;
+<a href="/docs/ios/users/update-user-metadata/">iOS</a>&nbsp;
+<a href="/docs/react/users/update-user-metadata/">React Native</a>&nbsp;
+<a href="/docs/flutter/users/update-user-metadata/">Flutter</a>&nbsp;
+<a href="/docs/web/users/update-user-metadata/">Web</a>&nbsp;
+</p>
+
 Update app user metadata by calling the `Shake.updateUserMetadata` method anywhere in your code
 after registering the User.
 

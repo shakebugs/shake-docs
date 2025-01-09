@@ -7,6 +7,14 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 >The Users module enables you to see a list of your app users, their attributes and tickets on your Shake dashboard. In parallel, it allows them to see their previously submitted tickets.
 
+<p class="p2 mt-40">You're viewing the React Native docs. Other platforms → &nbsp;
+<a href="/docs/ios/users/overview/">iOS</a>&nbsp; 
+<a href="/docs/android/users/overview/">Android</a>&nbsp;
+<a href="/docs/flutter/users/overview/">Flutter</a>&nbsp;  
+<a href="/docs/web/users/overview/">Web</a>&nbsp;
+</p>
+
+
 <table class="media-container">
 <img
   alt="User module"

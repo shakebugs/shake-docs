@@ -7,6 +7,14 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 >Decide how you want Shake user feedback to be invoked.
 
+<p class="p2 mt-40">You're viewing the iOS docs. Other platforms → &nbsp;
+<a href="/docs/android/user-feedback/invoke/">Android</a>&nbsp;
+<a href="/docs/react/user-feedback/invoke/">React Native</a>&nbsp; 
+<a href="/docs/flutter/user-feedback/invoke/">Flutter</a>&nbsp;  
+<a href="/docs/web/user-feedback/invoke/">Web</a>&nbsp;
+</p>
+
+
 ## Invoke manually
 By default, Shake user feedback is invoked when a user shakes their device.
 You don't need to code anything:

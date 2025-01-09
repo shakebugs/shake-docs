@@ -5,6 +5,13 @@ title: Overview
 
 >Customize both the elements of Shake's New ticket screen and the data Shake collects.
 
+<p class="p2 mt-40">You're viewing the Android docs. Other platforms →&nbsp;
+<a href="/docs/ios/configuration-and-data/overview/">iOS</a>&nbsp;
+<a href="/docs/react/configuration-and-data/overview/">React Native</a>&nbsp;
+<a href="/docs/flutter/configuration-and-data/overview/">Flutter</a>&nbsp;
+<a href="/docs/web/configuration-and-data/overview/">Web</a>&nbsp;
+</p>
+
 ## Introduction
 
 Whatever you tweak, your configuration settings apply to all Shake modules:

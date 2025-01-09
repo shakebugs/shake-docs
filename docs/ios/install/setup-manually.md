@@ -6,6 +6,14 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 > A guide to add Shake to your app without a dependency manager or a build automation tool.
 
+<p class="p2 mt-40">You're viewing the iOS docs. Other platforms → &nbsp;
+<a href="/docs/android/installation/">Android</a>&nbsp;
+<a href="/docs/react/install/manual-linking/">React Native</a>&nbsp; 
+<a href="/docs/flutter/installation/">Flutter</a>&nbsp;  
+<a href="/docs/web/install/cdn/">Web</a>&nbsp;
+</p>
+
+
 :::note
 
 By not using a dependency manager like CocoaPods, you won't be able to use the simple `pod update Shake` command to
