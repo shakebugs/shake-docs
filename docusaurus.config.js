@@ -74,10 +74,10 @@ module.exports = {
                     label: 'Platform',
                     position: 'left',
                     items: [
-                        {to: 'android/overview', label: 'Android', activeBasePath: '/android'},
                         {to: 'ios/overview', label: 'iOS', activeBasePath: '/ios'},
-                        {to: 'flutter/overview', label: 'Flutter', activeBasePath: '/flutter'},
+                        {to: 'android/overview', label: 'Android', activeBasePath: '/android'},
                         {to: 'react/overview', label: 'React Native', activeBasePath: '/react'},
+                        {to: 'flutter/overview', label: 'Flutter', activeBasePath: '/flutter'},
                         {to: 'web/overview', label: 'Web', activeBasePath: '/web'}
                     ],
                 },

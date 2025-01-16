@@ -5,6 +5,14 @@ title: Overview
 
 >Customize both the elements of Shake's New ticket screen and the data Shake collects.
 
+<p class="p2 mt-40">You're viewing the React Native docs. Other platforms → &nbsp;
+<a href="/docs/ios/configuration-and-data/overview/">iOS</a>&nbsp; 
+<a href="/docs/android/configuration-and-data/overview/">Android</a>&nbsp;
+<a href="/docs/flutter/configuration-and-data/overview/">Flutter</a>&nbsp;  
+<a href="/docs/web/configuration-and-data/overview/">Web</a>&nbsp;
+</p>
+
+
 ## Introduction
 
 Whatever you tweak, your configuration settings apply to the [User feedback](/react/user-feedback/overview) module.

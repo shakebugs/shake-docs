@@ -9,6 +9,14 @@ import TabItem from '@theme/TabItem';
 
 > The Home screen is a central part of the Shake UI.
 
+<p class="p2 mt-40">You're viewing the iOS docs. Other platforms → &nbsp;
+<a href="/docs/android/shake-ui/home-screen/">Android</a>&nbsp;
+<a href="/docs/react/shake-ui/home-screen/">React Native</a>&nbsp; 
+<a href="/docs/flutter/shake-ui/home-screen/">Flutter</a>&nbsp;  
+<a href="/docs/web/shake-ui/#home-screen">Web</a>&nbsp;
+</p>
+
+
 ## Introduction
 
 Here, your user can see:

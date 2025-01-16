@@ -9,6 +9,13 @@ import TabItem from '@theme/TabItem';
 >If needed, your app users can [chat with you](/android/shake-ui/chat-screen) to provide you more details 
 about their reported bugs, crashes or feedback. You will be able to fix issues faster and make your customers happier.
 
+<p class="p2 mt-40">You're viewing the Android docs. Other platforms →&nbsp;
+<a href="/docs/ios/users/chat/">iOS</a>&nbsp;
+<a href="/docs/react/users/chat/">React Native</a>&nbsp;
+<a href="/docs/flutter/users/chat/">Flutter</a>&nbsp;
+<a href="/docs/web/users/chat/">Web</a>&nbsp;
+</p>
+
 ## Enable
 
 Once your app user is [registered](/android/users/register-user) with Shake, the chat feature is enabled automatically.

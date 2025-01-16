@@ -6,6 +6,14 @@ title: Ticket tags
 > Sometimes you'll want to tag your tickets for easier management and organization on the dashboard.
 There are three different options you can use to add tags to the tickets.
 
+<p class="p2 mt-40">You're viewing the React Native docs. Other platforms → &nbsp;
+<a href="/docs/ios/configuration-and-data/ticket-tags/">iOS</a>&nbsp; 
+<a href="/docs/android/configuration-and-data/ticket-tags/">Android</a>&nbsp;
+<a href="/docs/flutter/configuration-and-data/ticket-tags/">Flutter</a>&nbsp;  
+<a href="/docs/web/configuration-and-data/ticket-tags/">Web</a>&nbsp;
+</p>
+
+
 ## Adding tags from the code
 
 To add tags to a ticket from the code, simply set a list of tags to the tags property of the Shake configuration.

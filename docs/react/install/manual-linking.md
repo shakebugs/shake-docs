@@ -6,6 +6,14 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 > If you want to link library manually, you can do it this way.
 
+<p class="p2 mt-40">You're viewing the React Native docs. Other platforms → &nbsp;
+<a href="/docs/ios/install/manually/">iOS</a>&nbsp; 
+<a href="/docs/android/installation/">Android</a>&nbsp;
+<a href="/docs/flutter/installation/">Flutter</a>&nbsp;  
+<a href="/docs/web/install/cdn/">Web</a>&nbsp;
+</p>
+
+
 ## Create a new app on Dashboard
 
 Visit your [Shake Dashboard](https://app.shakebugs.com) and add a new React Native Android/iOS app by clicking the *Add new app* button located in the bottom right corner.

@@ -8,6 +8,14 @@ import TabItem from '@theme/TabItem';
 
 >You can update the app user identifier you had used to register the app user. In most app flows, this is a method that's rarely called.
 
+<p class="p2 mt-40">You're viewing the Web docs. Other platforms → &nbsp;
+<a href="/docs/ios/users/update-user-identifier/">iOS</a>&nbsp; 
+<a href="/docs/android/users/update-user-identifier/">Android</a>&nbsp;
+<a href="/docs/react/users/update-user-identifier/">React Native</a>&nbsp;
+<a href="/docs/flutter/users/update-user-identifier/">Flutter</a>&nbsp;  
+</p>
+
+
 For example, suppose that you have registered your app user with an email.
 The app user would be able to subsequently change their email in app settings and still continue using your service as the same entity.
 

@@ -8,6 +8,12 @@ import TabItem from '@theme/TabItem';
 
 > Execute a block of a code when a certain action is executed by Shake
 
+<p class="p2 mt-40">You're viewing the iOS docs. Other platforms → &nbsp;
+<a href="/docs/android/configuration-and-data/callbacks/">Android</a>&nbsp;
+<a href="/docs/react/configuration-and-data/callbacks/">React Native</a>&nbsp; 
+<a href="/docs/flutter/configuration-and-data/callbacks/">Flutter</a>&nbsp;  
+</p>
+
 ## Shake open callback
 
 If you want to perform an action when Shake interface is **opened**, you can do it like shown below:

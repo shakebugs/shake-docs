@@ -10,6 +10,14 @@ import TabItem from '@theme/TabItem';
 what data is sent to Shake servers. Shake SDK allows you to filter out sensitive data on the device itself,
 so it never reaches the Shake servers.
 
+<p class="p2 mt-40">You're viewing the Web docs. Other platforms → &nbsp;
+<a href="/docs/android/configuration-and-data/manage-sensitive-data/">iOS</a>&nbsp; 
+<a href="/docs/android/configuration-and-data/manage-sensitive-data/">Android</a>&nbsp;
+<a href="/docs/android/configuration-and-data/manage-sensitive-data/">React Native</a>&nbsp;
+<a href="/docs/android/configuration-and-data/manage-sensitive-data/">Flutter</a>&nbsp;  
+</p>
+
+
 ## Automatically redacted sensitive data
 
 Shake automatically redacts these sensitive data from your touch events and network requests:

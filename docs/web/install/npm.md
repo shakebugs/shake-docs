@@ -6,6 +6,14 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 > Learn how to add Shake to your Web app using npm.
 
+<p class="p2 mt-40">You're viewing the Web docs. Other platforms → &nbsp;
+<a href="/docs/ios/install/spm/">iOS</a>&nbsp; 
+<a href="/docs/android/installation/">Android</a>&nbsp;
+<a href="/docs/react/install/npm/">React Native</a>&nbsp;
+<a href="/docs/flutter/installation/">Flutter</a>&nbsp;  
+</p>
+
+
 :::note
 Shake SDK npm package contains javascript code and CSS styles for Shake SDK.  
 Make sure that your project supports ES6 imports and that you are using CSS loader if you are using npm package. Otherwise, we recommend using Shake from [CDN](/docs/web/install/cdn).

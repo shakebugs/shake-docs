@@ -6,6 +6,13 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 > Learn how to add Shake to your Flutter app.
 
+<p class="p2 mt-40">You're viewing the Flutter docs. Other platforms → &nbsp;
+<a href="/docs/ios/install/spm/">iOS</a>&nbsp;  
+<a href="/docs/android/installation/">Android</a>&nbsp;
+<a href="/docs/react/install/npm/">React Native</a>&nbsp; 
+<a href="/docs/web/install/npm/">Web</a>&nbsp;
+</p>
+
 :::note
 Shake supports post Flutter 1.12 projects. If your project was created with the older version
 of Flutter, please migrate your project to the new Android APIs via [official guide](https://flutter.dev/go/android-project-migration) first.

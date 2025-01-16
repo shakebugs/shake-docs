@@ -6,6 +6,14 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 > Learn how to add Shake to your Web app using CDN.
 
+<p class="p2 mt-40">You're viewing the Web docs. Other platforms → &nbsp;
+<a href="/docs/ios/install/spm/">iOS</a>&nbsp; 
+<a href="/docs/android/installation/">Android</a>&nbsp;
+<a href="/docs/react/install/manual-linking/">React Native</a>&nbsp;
+<a href="/docs/flutter/installation/">Flutter</a>&nbsp;  
+</p>
+
+
 ## Create a new app on Dashboard
 
 Visit your [Shake Dashboard](https://app.shakebugs.com) and add a new Web app by clicking the *Add new app* button located in the bottom right corner.

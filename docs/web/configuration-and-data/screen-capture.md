@@ -8,6 +8,14 @@ import TabItem from '@theme/TabItem';
 
 > When Shake's interface is invoked, a screenshot is automatically attached to it. Or it can be attached manually by users.
 
+<p class="p2 mt-40">You're viewing the Web docs. Other platforms → &nbsp;
+<a href="/docs/ios/configuration-and-data/auto-screenshot/">iOS</a>&nbsp; 
+<a href="/docs/android/configuration-and-data/auto-screenshot/">Android</a>&nbsp;
+<a href="/docs/react/configuration-and-data/auto-screenshot/">React Native</a>&nbsp;
+<a href="/docs/flutter/configuration-and-data/auto-screenshot/">Flutter</a>&nbsp;  
+</p>
+
+
 :::note
 Shake SDK is using **html2canvas** package for capturing screenshots. 
 Currently, this package doesn't support capturing elements with [new color notations](https://developer.mozilla.org/en-US/blog/css-color-module-level-4/#new_functional_notation_for_colors).

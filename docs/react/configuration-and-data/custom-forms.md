@@ -6,6 +6,14 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 > Learn how to create or modify a form displayed on the [New ticket screen](react/shake-ui/new-ticket-screen.md).
 
+<p class="p2 mt-40">You're viewing the React Native docs. Other platforms → &nbsp;
+<a href="/docs/ios/configuration-and-data/custom-forms/">iOS</a>&nbsp; 
+<a href="/docs/android/configuration-and-data/custom-forms/">Android</a>&nbsp;
+<a href="/docs/flutter/configuration-and-data/custom-forms/">Flutter</a>&nbsp;  
+<a href="/docs/web/configuration-and-data/custom-forms/">Web</a>&nbsp;
+</p>
+
+
 ## Default form
 
 Shake provides a default feedback form that enables users to submit valuable input to the reported tickets.

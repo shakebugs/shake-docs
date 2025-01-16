@@ -9,6 +9,13 @@ import TabItem from '@theme/TabItem';
 >Every app is unique so the [Data attached by default](/flutter/configuration-and-data/data-attached-by-default) sent with each ticket are often not enough.
 That's why Shake also allows you to automatically attach any custom data from your app to the ticket.
 
+<p class="p2 mt-40">You're viewing the Flutter docs. Other platforms → &nbsp;
+<a href="/docs/ios/configuration-and-data/ticket-metadata/">iOS</a>&nbsp;
+<a href="/docs/android/configuration-and-data/ticket-metadata/">Android</a>&nbsp;
+<a href="/docs/react/configuration-and-data/ticket-metadata/">React Native</a>&nbsp; 
+<a href="/docs/web/configuration-and-data/ticket-metadata/">Web</a>&nbsp;
+</p>
+
 ## How to use
 
 To set ticket metadata, call `Shake.setMetadata` and pass the data you want to

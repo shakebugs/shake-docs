@@ -4,6 +4,13 @@ title: Release notes
 ---
 >This page lists all updates to the Shake Android SDK.
 
+<p class="p2 mt-40"> Other platforms →&nbsp;
+<a href="/docs/ios/releases/">iOS</a>&nbsp;
+<a href="/docs/react/releases/">React Native</a>&nbsp;
+<a href="/docs/flutter/releases/">Flutter</a>&nbsp;
+<a href="/docs/web/releases/">Web</a>&nbsp;
+</p>
+
 ## What's next?
 
 What would you like us to build next? Upvote upcoming features and suggest new ideas on the [Public feedback board](https://feedback.shakebugs.com/).

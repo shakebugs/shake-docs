@@ -6,6 +6,12 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 >Automatically attach a log file to each ticket, or user's profile photo, or whatever will help you resolve the ticket faster when you receive it. Files you attach automatically are **not** visible to your users.
 
+<p class="p2 mt-40">You're viewing the Flutter docs. Other platforms → &nbsp;
+<a href="/docs/ios/configuration-and-data/auto-attach-files/">iOS</a>&nbsp;
+<a href="/docs/android/configuration-and-data/auto-attach-files/">Android</a>&nbsp;
+<a href="/docs/react/configuration-and-data/auto-attach-files/">React Native</a>&nbsp;
+</p>
+
 ## Auto-attached files vs. Files uploaded by users
 
 When submitting a ticket from the [New ticket screen](flutter/shake-ui/new-ticket-screen.md),

@@ -6,6 +6,13 @@ title: Overview
 ## Modules
 > Shake Flutter SDK has two modules that work together nicely. Use any one of them, or both — whatever suits your needs.
 
+<p class="p2 mt-40">You're viewing the Flutter docs. Other platforms → &nbsp;
+<a href="/docs/ios/overview/">iOS</a>&nbsp; 
+<a href="/docs/android/overview/">Android</a>&nbsp; 
+<a href="/docs/react/overview/">React Native</a>&nbsp; 
+<a href="/docs/web/overview/">Web</a>&nbsp;
+</p>
+
 <div class="modulesList">
     <div>
         <a href="/docs/flutter/user-feedback/overview/">

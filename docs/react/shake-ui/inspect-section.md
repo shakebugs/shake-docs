@@ -5,7 +5,14 @@ title: Inspect section
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 > Before submitting a ticket, your users can freely inspect [Data attached by default](react/configuration-and-data/data-attached-by-default.md),
-[Ticket metadata](react/configuration-and-data/ticket-metadata.md) and [User metadata](react/users/update-user-metadata.md). 
+[Ticket metadata](react/configuration-and-data/ticket-metadata.md) and [User metadata](react/users/update-user-metadata.md).
+
+<p class="p2 mt-40">You're viewing the React Native docs. Other platforms → &nbsp;
+<a href="/docs/ios/shake-ui/inspect-section/">iOS</a>&nbsp; 
+<a href="/docs/android/shake-ui/inspect-section/">Android</a>&nbsp;
+<a href="/docs/flutter/shake-ui/inspect-section/">Flutter</a>&nbsp;  
+</p>
+
 
 ## Introduction
 

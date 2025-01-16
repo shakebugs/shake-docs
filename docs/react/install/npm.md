@@ -6,6 +6,14 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 > Learn how to add Shake to your React Native app using npm.
 
+<p class="p2 mt-40">You're viewing the React Native docs. Other platforms → &nbsp;
+<a href="/docs/ios/install/spm/">iOS</a>&nbsp; 
+<a href="/docs/android/installation/">Android</a>&nbsp;
+<a href="/docs/flutter/installation/">Flutter</a>&nbsp;  
+<a href="/docs/web/install/npm/">Web</a>&nbsp;
+</p>
+
+
 ## Create a new app on Dashboard
 
 Visit your [Shake Dashboard](https://app.shakebugs.com) and add a new Android/iOS React Native app by clicking the *Add new app* button located in the bottom right corner.
