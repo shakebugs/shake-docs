@@ -4,6 +4,14 @@ title: Silent user feedback
 ---
 >Send yourself feedback from the app background, without showing [Shake UI](/ios/shake-ui/overview).
 
+<p class="p2 mt-40">You're viewing the iOS docs. Other platforms → &nbsp;
+<a href="/docs/android/user-feedback/silent-user-feedback/">Android</a>&nbsp;
+<a href="/docs/react/user-feedback/silent-user-feedback/">React Native</a>&nbsp; 
+<a href="/docs/flutter/user-feedback/silent-user-feedback/">Flutter</a>&nbsp;  
+<a href="/docs/web/user-feedback/silent-user-feedback/">Web</a>&nbsp;
+</p>
+
+
 ## Overview
 You can send silent user feedback to yourself by calling the `Shake.silentReport` method anywhere after `Shake.start`. Feel free to add your own description to it as well.
 

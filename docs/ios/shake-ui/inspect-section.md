@@ -8,6 +8,13 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 [Ticket metadata](/ios/configuration-and-data/ticket-metadata.md) and [User metadata](/ios/users/update-user-metadata.md). 
 In case of a [Crash report](/ios/crash-reports/ask-for-description/#enable), they can also inspect its stack trace.
 
+<p class="p2 mt-40">You're viewing the iOS docs. Other platforms → &nbsp;
+<a href="/docs/android/shake-ui/inspect-section/">Android</a>&nbsp;
+<a href="/docs/react/shake-ui/inspect-section/">React Native</a>&nbsp; 
+<a href="/docs/flutter/shake-ui/inspect-section/">Flutter</a>&nbsp;  
+</p>
+
+
 ## Introduction
 
 They access the Inspect section by tapping the *Inspect* button on the [New ticket screen](/ios/shake-ui/new-ticket-screen.md).

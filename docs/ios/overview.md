@@ -6,6 +6,14 @@ title: Overview
 ## Modules
 > Shake iOS SDK has three modules that work together nicely. Use one, all or any combination of them — whatever suits your needs.
 
+<p class="p2 mt-40">You're viewing the iOS docs. Other platforms → &nbsp;
+<a href="/docs/android/overview/">Android</a>&nbsp;
+<a href="/docs/react/overview/">React Native</a>&nbsp; 
+<a href="/docs/flutter/overview/">Flutter</a>&nbsp;  
+<a href="/docs/web/overview/">Web</a>&nbsp;
+</p>
+
+
 <div class="modulesList">
     <div>
         <a href="/docs/ios/user-feedback/overview/">

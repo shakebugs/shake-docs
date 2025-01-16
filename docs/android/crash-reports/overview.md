@@ -7,6 +7,10 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 >The Crash reports module tracks crashes and uncaught exceptions in your app. They are then intelligently grouped on your Shake dashboard,
 offering loads of contextual data to help you fix them fast.
 
+<p class="p2 mt-40">You're viewing the Android docs. Other platform →&nbsp;
+<a href="/docs/ios/crash-reports/overview/">iOS</a>&nbsp;
+</p>
+
 ## Introduction
 
 When this module is [enabled](/android/crash-reports/enable) and your user opens your app after the crash, you have two options:

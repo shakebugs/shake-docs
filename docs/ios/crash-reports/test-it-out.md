@@ -8,6 +8,11 @@ import TabItem from '@theme/TabItem';
 
 >Let's crash your app to see what the crash report looks like on your Shake dashboard.
 
+<p class="p2 mt-40">You're viewing the iOS docs. Other platform → &nbsp;
+<a href="/docs/android/crash-reports/test-it-out/">Android</a>&nbsp;
+</p>
+
+
 :::note
 Before proceeding, disconnect your device from the Xcode debugger.
 Xcode debugger attaches itself to the app process and would disable crash reporting.

@@ -8,6 +8,10 @@ import TabItem from '@theme/TabItem';
 
 >Let's crash your app to see what the crash report looks like on your Shake dashboard.
 
+<p class="p2 mt-40">You're viewing the Android docs. Other platform →&nbsp;
+<a href="/docs/ios/crash-reports/test-it-out/">iOS</a>&nbsp;
+</p>
+
 ## Crash your app
 
 [Enable crash reporting](/android/crash-reports/enable.md) and paste this code to the `onCreate` method in one of your activities.

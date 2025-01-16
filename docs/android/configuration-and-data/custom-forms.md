@@ -8,6 +8,13 @@ import TabItem from '@theme/TabItem';
 
 > Learn how to create or modify a form displayed on the [New ticket screen](android/shake-ui/new-ticket-screen.md).
 
+<p class="p2 mt-40">You're viewing the Android docs. Other platforms →&nbsp;
+<a href="/docs/ios/configuration-and-data/custom-forms/">iOS</a>&nbsp;
+<a href="/docs/react/configuration-and-data/custom-forms/">React Native</a>&nbsp;
+<a href="/docs/flutter/configuration-and-data/custom-forms/">Flutter</a>&nbsp;
+<a href="/docs/web/configuration-and-data/custom-forms/">Web</a>&nbsp;
+</p>
+
 ## Default form
 
 Shake provides a default feedback and crash reporting form that enables users to submit valuable input to the reported tickets.

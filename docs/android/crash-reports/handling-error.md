@@ -8,6 +8,10 @@ import TabItem from '@theme/TabItem';
 
 >Make great use of error handling and document these errors.
 
+<p class="p2 mt-40">You're viewing the Android docs. Other platform →&nbsp;
+<a href="/docs/ios/crash-reports/handling-error/">iOS</a>&nbsp;
+</p>
+
 Shake allows you to report those caught errors and group them together.
 These non-fatal error reports will have all of the same 
 contextual information as crash reports and will act as an extension to the crash reporting feature.

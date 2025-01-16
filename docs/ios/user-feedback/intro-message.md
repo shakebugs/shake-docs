@@ -6,6 +6,13 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 >There's a simple way to let all your app users or testers know how to send you feedback.
 
+<p class="p2 mt-40">You're viewing the iOS docs. Other platforms → &nbsp;
+<a href="/docs/android/user-feedback/intro-message/">Android</a>&nbsp;
+<a href="/docs/react/user-feedback/intro-message/">React Native</a>&nbsp; 
+<a href="/docs/flutter/user-feedback/intro-message/">Flutter</a>&nbsp;  
+</p>
+
+
 <table class="media-container media-container-highlighted mt-50 pb-80">
 <img
   alt="User feedback intro message"

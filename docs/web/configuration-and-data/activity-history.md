@@ -9,6 +9,14 @@ import TabItem from '@theme/TabItem';
 >Shake tracks user's interaction with your app, their network traffic, logs and system events,
 and automatically attaches all of those to the ticket.
 
+<p class="p2 mt-40">You're viewing the Web docs. Other platforms → &nbsp;
+<a href="/docs/android/configuration-and-data/activity-history/">iOS</a>&nbsp; 
+<a href="/docs/android/configuration-and-data/activity-history/">Android</a>&nbsp;
+<a href="/docs/android/configuration-and-data/activity-history/">React Native</a>&nbsp;
+<a href="/docs/android/configuration-and-data/activity-history/">Flutter</a>&nbsp;  
+</p>
+
+
 ## Setup
 
 Shake activity history feature is enabled by default once you start Shake in your app. 

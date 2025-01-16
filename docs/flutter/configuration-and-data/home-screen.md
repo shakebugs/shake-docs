@@ -6,6 +6,12 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 > Shake enables you to customize home screen according to your preferences and needs.
 
+<p class="p2 mt-40">You're viewing the Flutter docs. Other platforms → &nbsp;
+<a href="/docs/ios/configuration-and-data/home-screen/">iOS</a>&nbsp;
+<a href="/docs/android/configuration-and-data/home-screen/">Android</a>&nbsp;  
+<a href="/docs/react/configuration-and-data/home-screen/">React Native</a>&nbsp; 
+</p>
+
 ## Home screen actions
 
 By default, Home screen shows *Submit new ticket* button and *New chat* button at the top of the screen.

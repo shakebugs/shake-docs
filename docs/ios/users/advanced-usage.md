@@ -8,6 +8,14 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 > Some apps might want to register the device itself as an app user or make a transition from the anonymous
 user to the identified app user.
 
+<p class="p2 mt-40">You're viewing the iOS docs. Other platforms → &nbsp;
+<a href="/docs/android/users/advanced-usage/">Android</a>&nbsp;
+<a href="/docs/react/users/advanced-usage/">React Native</a>&nbsp; 
+<a href="/docs/flutter/users/advanced-usage/">Flutter</a>&nbsp;  
+<a href="/docs/web/users/advanced-usage/">Web</a>&nbsp;
+</p>
+
+
 ## Register an anonymous app user
 
 Let's take an app like _Reddit_ for example. Their app users can browse the app as guests for months before deciding to sign up.
