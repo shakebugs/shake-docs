@@ -12,7 +12,7 @@ import TabItem from '@theme/TabItem';
 <a href="/docs/android/shake-ui/chat-screen/">Android</a>&nbsp;
 <a href="/docs/react/shake-ui/chat-screen/">React Native</a>&nbsp; 
 <a href="/docs/flutter/shake-ui/chat-screen/">Flutter</a>&nbsp;  
-<a href="​​/docs/web/shake-ui/#chat-screen">Web</a>&nbsp;
+<a href="/docs/web/shake-ui/#chat-screen">Web</a>&nbsp;
 </p>
 
 
