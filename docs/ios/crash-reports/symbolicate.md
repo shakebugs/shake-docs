@@ -30,21 +30,13 @@ and should be disabled until we support it.
 
 :::note
 
-## Find dSYM files
-
-Run this command in your terminal to list all available dSYM files found on your system so you can identify the ones that are missing:
-
-```finding_dsyms"
-// highlight-next-line
-mdfind -name .dSYM | while read -r line; do dwarfdump -u "$line"; done
-```
 
 ## Upload manually to Shake dashboard
 
-Locate your app's dSYM files:
+First, open Xcode derived data folder:
 _Xcode → Settings → Locations → Derived Data_ → click the _Finder_ folder link.
 
-Now zip the symbolication files.
+Find you app's derved data folder and zip the symbolication files, files with the _.dSYM_ extension.
 
 To upload dSYM files to the Shake dashboard:
 
@@ -60,12 +52,13 @@ Shake ships with the `upload-symbols.sh` script which uploads dSYM files to Shak
 To ensure that the latest dSYM files are automatically uploaded after every build process, add a new Run Script Phase:
 _Product → Scheme → EditScheme_ → expand the _Build_ options → _Post Actions → +_
 
+Make sure that _Provide build settings from_ option is set to your project to ensure that script can access project variables.
+
 Paste this script but make sure to replace `app-api-key` with the actual value you have in [your app settings](https://app.shakebugs.com/administration/apps):
 
 ```script
-//highlight-start
-<path/to/upload-symbols.sh> --api_key <app-api-key> 
-//highlight-end
+//highlight-next-line
+sh $(find $BUILD_DIR -name "upload-symbols.sh") --api_key <app-api-key> 
 ```
 
 If your crash reports are not being symbolicated, make sure the script is working properly
