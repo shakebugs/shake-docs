@@ -16,9 +16,21 @@ title: Release notes
 
 What would you like us to build next? Upvote upcoming features and suggest new ideas on the [Public feedback board](https://feedback.shakebugs.com/).
 
+## 2.10.0
+<span class="tag-button">March 13, 2025</span>&nbsp;&nbsp;
+<span class="tag-button green-tag-button">Latest version</span>
+
+#### What's new
+
+- Marking bugs on screenshots is now smoother and easier
+- Shake now tracks _fetch_ network requests together with _xhr_
+
+#### Bug fixes
+
+We fixed a few minor bugs that were causing problems.
+
 ## 2.9.0
 <span class="tag-button">November 26, 2024</span>&nbsp;&nbsp;
-<span class="tag-button green-tag-button">Latest version</span>
 
 #### What's new
 
