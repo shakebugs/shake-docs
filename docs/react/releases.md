@@ -26,6 +26,7 @@ What would you like us to build next? Upvote upcoming features and suggest new i
 - Collecting **fetch** type network requests together with **xhr**
 
 #### Bug fixes
+
 - Screen recording on Android 15 fixed
 - Network requests status code fixed
 
@@ -49,7 +50,7 @@ Fixed issue with setting custom form, now Shake picker "key" value is working as
 
 #### What's new
 
-We've introduced api keys. Use api key instead client id and client secret for [starting Shake](/react/install/npm#initialize-shake).
+We've introduced api keys. Use api key instead client id and client secret for [starting Shake](/react/installation#initialize-shake).
 This improves security and control - you can create multiple api keys or delete old ones if needed.
 
 ## 16.2.1
