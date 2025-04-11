@@ -1,10 +1,10 @@
 ---
-id: npm
-title: npm
+id: installation
+title: Installation
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-> Learn how to add Shake to your React Native app using npm.
+> Learn how to add Shake to your React Native app.
 
 <p class="p2 mt-40">You're viewing the React Native docs. Other platforms → &nbsp;
 <a href="/docs/ios/install/spm/">iOS</a>&nbsp; 
@@ -30,6 +30,8 @@ Once you're done, you're ready to proceed with the steps below.
 
 ## Add Shake dependency to your package.json file
 
+### React Native CLI
+
 Execute the `npm install` command in your terminal:
 
 ```bash title="Terminal"
@@ -47,6 +49,23 @@ cd ios && pod install && cd ..
 import ReactVersion from '@site/src/base/ReactVersion';
 
 After the installation also run `pod update Shake` to be perfectly sure that you're using the latest Shake <ReactVersion/>.
+
+
+### Expo
+
+If you are using Expo, recommended way to install packages is by using `expo install` command:
+
+```bash title="Terminal"
+// highlight-next-line
+npx expo install @shakebugs/react-native-shake
+```
+
+:::note
+
+Shake is not supported in Expo Go, you need to set up [development builds](https://docs.expo.dev/develop/development-builds/create-a-build/) 
+in order to use Shake with Expo.
+
+:::
 
 ## Initialize Shake
 
