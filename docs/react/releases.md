@@ -16,9 +16,21 @@ title: Release notes
 
 What would you like us to build next? Upvote upcoming features and suggest new ideas on the [Public feedback board](https://feedback.shakebugs.com/).
 
+## 17.1.1
+<span class="tag-button">April 18, 2025</span>&nbsp;&nbsp;
+<span class="tag-button green-tag-button">Latest version</span>
+
+#### What's new
+
+- Shake now support Expo apps
+- Collecting **fetch** type network requests together with **xhr**
+
+#### Bug fixes
+- Screen recording on Android 15 fixed
+- Network requests status code fixed
+
 ## 17.1.0
 <span class="tag-button">December 16, 2024</span>&nbsp;&nbsp;
-<span class="tag-button green-tag-button">Latest version</span>
 
 #### What's new
 
