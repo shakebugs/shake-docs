@@ -47,9 +47,24 @@ To target the specific Android device, Shake needs the device Firebase token.
 
 Forward Firebase token to the Shake by calling `Shake.setPushNotificationsToken` method on the app start like shown below:
 
+<Tabs
+groupId="react"
+defaultValue="javascript"
+values={[
+{ label: 'Javascript', value: 'javascript'},
+{ label: 'Typescript', value: 'typescript'},
+]
+}>
+
+<TabItem value="javascript">
+
 ```javascript title="index.js"
-// highlight-next-line
+// highlight-start
+import { AppRegistry, Platform } from 'react-native';
+
 import Shake from '@shakebugs/react-native-shake';
+import messaging from '@react-native-firebase/messaging';
+// highlight-end
 
 // highlight-start
 const setShakePushNotificationsToken = async () => {
@@ -68,6 +83,38 @@ Shake.start('app-api-key');
 AppRegistry.registerComponent(appName, () => App);
 ```
 
+</TabItem>
+
+<TabItem value="typescript">
+
+```typescript title="index.ts"
+// highlight-start
+import { AppRegistry, Platform } from 'react-native';
+
+import Shake from '@shakebugs/react-native-shake';
+import messaging from '@react-native-firebase/messaging';
+// highlight-end
+
+// highlight-start
+const setShakePushNotificationsToken = async (): Promise<void> => {
+    if (Platform.OS === 'android') {
+        const fcmToken: string = await messaging().getToken();
+        Shake.setPushNotificationsToken(fcmToken);
+    }
+};
+// highlight-end
+
+// highlight-next-line
+setShakePushNotificationsToken();
+
+Shake.start('app-api-key');
+
+AppRegistry.registerComponent(appName, () => App);
+```
+
+</TabItem>
+</Tabs>
+
 ### Presenting notifications to the app users
 
 Shake sends Firebase *data* push notifications to the device which are not presented by default.
@@ -75,8 +122,21 @@ Shake sends Firebase *data* push notifications to the device which are not prese
 In order to present data notifications to the app users you'll have to use `onMessage` and `setBackgroundMessageHandler` callbacks
 and call `Shake.showChatNotification` like shown below:
 
+<Tabs
+groupId="react"
+defaultValue="javascript"
+values={[
+{ label: 'Javascript', value: 'javascript'},
+{ label: 'Typescript', value: 'typescript'},
+]
+}>
+
+<TabItem value="javascript">
+
 ```javascript title="index.js"
 // highlight-start
+import { AppRegistry, Platform } from 'react-native';
+
 import Shake from '@shakebugs/react-native-shake';
 import messaging from '@react-native-firebase/messaging';
 // highlight-end
@@ -85,14 +145,18 @@ import messaging from '@react-native-firebase/messaging';
 const presentShakePushNotifications = async () => {
     if (Platform.OS === 'android') {
         // Showing chat notifications when app in the background
-        messaging().setBackgroundMessageHandler(async remoteMessage => {
-            await Shake.start('app-api-key'); // Start Shake with your key
-            Shake.showChatNotification(remoteMessage.data);
-        });
+        messaging().setBackgroundMessageHandler(
+            async remoteMessage => {
+                await Shake.start('app-api-key'); // Start Shake with your key
+                Shake.showChatNotification(remoteMessage.data);
+            }
+        );
         // Showing chat notifications when app in the foreground
-        messaging().onMessage(async remoteMessage => {
-            Shake.showChatNotification(remoteMessage.data);
-        });
+        messaging().onMessage(
+            async remoteMessage => {
+                Shake.showChatNotification(remoteMessage.data);
+            }
+        );
     }
 };
 // highlight-end
@@ -105,6 +169,50 @@ Shake.start('app-api-key');
 
 AppRegistry.registerComponent(appName, () => App);
 ```
+
+</TabItem>
+
+<TabItem value="typescript">
+
+```typescript title="index.ts"
+// highlight-start
+import { AppRegistry, Platform } from 'react-native';
+
+import Shake from '@shakebugs/react-native-shake';
+import messaging, { FirebaseMessagingTypes } from '@react-native-firebase/messaging';
+// highlight-end
+
+// highlight-start
+const presentShakePushNotifications = async (): Promise<void> => {
+    if (Platform.OS === 'android') {
+        // Showing chat notifications when app in the background
+        messaging().setBackgroundMessageHandler(
+            async (remoteMessage: FirebaseMessagingTypes.RemoteMessage) => {
+                await Shake.start('app-api-key'); // Start Shake with your key
+                Shake.showChatNotification(remoteMessage.data);
+            }
+        );
+        // Showing chat notifications when app in the foreground
+        messaging().onMessage(
+            async (remoteMessage: FirebaseMessagingTypes.RemoteMessage) => {
+                Shake.showChatNotification(remoteMessage.data);
+            }
+        );
+    }
+};
+// highlight-end
+
+
+// highlight-next-line
+presentShakePushNotifications();
+
+Shake.start('app-api-key');
+
+AppRegistry.registerComponent(appName, () => App);
+```
+
+</TabItem>
+</Tabs>
 
 :::note
 
@@ -407,7 +515,18 @@ to a user only once.
 Make sure to find a proper place and time to ask for this permission, because if the user doesn't grant
 permission via the alert dialog, all notifications are disabled and must be enabled manually in the _Settings_ app.
 
-```javascript title="App.js"
+<Tabs
+groupId="react"
+defaultValue="javascript"
+values={[
+{ label: 'Javascript', value: 'javascript'},
+{ label: 'Typescript', value: 'typescript'},
+]
+}>
+
+<TabItem value="javascript">
+
+```javascript title="index.js"
 // highlight-start
 import {PermissionsAndroid, Platform} from 'react-native';
 import PushNotificationIOS from '@react-native-community/push-notification-ios';
@@ -424,17 +543,73 @@ const requestNotificationsPermission = () => {
 // highlight-end
 ```
 
+</TabItem>
+
+<TabItem value="typescript">
+
+```typescript title="index.ts"
+// highlight-start
+import {PermissionsAndroid, Platform} from 'react-native';
+import PushNotificationIOS from '@react-native-community/push-notification-ios';
+// highlight-end
+
+// highlight-start
+const requestNotificationsPermission = () => {
+    if (Platform.OS === 'android') {
+        PermissionsAndroid.request(PermissionsAndroid.PERMISSIONS.POST_NOTIFICATIONS);
+    } else {
+        PushNotificationIOS.requestPermissions();
+    }
+};
+// highlight-end
+```
+
+</TabItem>
+</Tabs>
+
 ## Unread messages
 
 If you want to show number of unread chat messages somewhere in your app, you can set the unread messages listener.
 The listener is called immediately when set and on each change in the number of unread messages for a registered app user:
 
+<Tabs
+groupId="react"
+defaultValue="javascript"
+values={[
+{ label: 'Javascript', value: 'javascript'},
+{ label: 'Typescript', value: 'typescript'},
+]
+}>
+
+<TabItem value="javascript">
+
 ```javascript title="index.js"
+// highlight-next-line
+import Shake from '@shakebugs/react-native-shake';
+
 // highlight-start
 Shake.setUnreadMessagesListener(count => {
     // Update number in your text element
 });
 // highlight-end
 ```
+
+</TabItem>
+
+<TabItem value="typescript">
+
+```typescript title="index.ts"
+// highlight-next-line
+import Shake from '@shakebugs/react-native-shake';
+
+// highlight-start
+Shake.setUnreadMessagesListener((count: number) => {
+    // Update number in your text element
+});
+// highlight-end
+```
+
+</TabItem>
+</Tabs>
 
 To remove the unread messages listener, use `Shake.setUnreadMessagesListener(null)`.

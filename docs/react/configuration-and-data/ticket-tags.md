@@ -2,6 +2,8 @@
 id: ticket-tags
 title: Ticket tags
 ---
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 > Sometimes you'll want to tag your tickets for easier management and organization on the dashboard.
 There are three different options you can use to add tags to the tickets.
@@ -20,10 +22,33 @@ To add tags to a ticket from the code, simply set a list of tags to the tags pro
 
 Here's an example how you can add a <span class="tag-button green-tag-button">tag</span> to the ticket:
 
-```javascript title="App.js"
+<Tabs
+groupId="react"
+defaultValue="javascript"
+values={[
+{ label: 'Javascript', value: 'javascript'},
+{ label: 'Typescript', value: 'typescript'},
+]
+}>
+
+<TabItem value="javascript">
+
+```javascript title="index.js"
 // highlight-next-line
 Shake.setTags(['tag']);
 ```
+
+</TabItem>
+
+<TabItem value="typescript">
+
+```typescript title="index.ts"
+// highlight-next-line
+Shake.setTags(['tag']);
+```
+
+</TabItem>
+</Tabs>
 
 ## Adding tags using the ticket title
 

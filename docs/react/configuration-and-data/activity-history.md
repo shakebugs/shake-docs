@@ -3,6 +3,8 @@ id: activity-history
 title: Activity history
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 >Shake tracks user's interaction with your app, their network traffic, notifications, logs and system events,
 and automatically attaches all of those to the ticket.
@@ -15,9 +17,7 @@ and automatically attaches all of those to the ticket.
 </p>
 
 
-
 ## Setup
-
 
 ### User actions
 
@@ -27,13 +27,54 @@ SDK automatically observes taps made on your app's UI elements.
 
 Network traffic logging is disabled by default. Enable it using the following method:
 
-```javascript title="App.js"
+<Tabs
+groupId="react"
+defaultValue="javascript"
+values={[
+{ label: 'Javascript', value: 'javascript'},
+{ label: 'Typescript', value: 'typescript'},
+]
+}>
+
+<TabItem value="javascript">
+
+```javascript title="index.js"
+// highlight-next-line
+import Shake from '@shakebugs/react-native-shake';
+
 // highlight-next-line
 Shake.setNetworkRequestsEnabled(true);
 ```
+
+</TabItem>
+
+<TabItem value="typescript">
+
+```typescript title="index.ts"
+// highlight-next-line
+import Shake from '@shakebugs/react-native-shake';
+
+// highlight-next-line
+Shake.setNetworkRequestsEnabled(true);
+```
+
+</TabItem>
+</Tabs>
+
 You can add your own custom network requests at any time:
 
-```javascript title="App.js"
+<Tabs
+groupId="react"
+defaultValue="javascript"
+values={[
+{ label: 'Javascript', value: 'javascript'},
+{ label: 'Typescript', value: 'typescript'},
+]
+}>
+
+<TabItem value="javascript">
+
+```javascript title="index.js"
 // highlight-next-line
 import Shake, { NetworkRequestBuilder } from '@shakebugs/react-native-shake';
 
@@ -51,6 +92,32 @@ const networkRequestBuilder = new NetworkRequestBuilder()
 Shake.insertNetworkRequest(networkRequestBuilder);
 // highlight-end
 ```
+
+</TabItem>
+
+<TabItem value="typescript">
+
+```typescript title="index.ts"
+// highlight-next-line
+import Shake, { NetworkRequestBuilder } from '@shakebugs/react-native-shake';
+
+// highlight-start
+const networkRequestBuilder: NetworkRequestBuilder = new NetworkRequestBuilder()
+    .setMethod('POST')
+    .setStatusCode('200')
+    .setUrl('https://api.example.com')
+    .setRequestBody('Request body')
+    .setResponseBody('Response body')
+    .setRequestHeaders({header1: 'requestHeader'})
+    .setResponseHeaders({header2: 'responseHeader'})
+    .setDuration(100)
+    .setDate(new Date());
+Shake.insertNetworkRequest(networkRequestBuilder);
+// highlight-end
+```
+
+</TabItem>
+</Tabs>
 
 ### System events
 
@@ -83,14 +150,54 @@ to your **AndroidManifest** file inside **application** tag:
 Additionally, app user must manually grant a permission to listen for notifications.
 You can show notifications permission settings screen using the following method:
 
-```javascript title="App.js"
+<Tabs
+groupId="react"
+defaultValue="javascript"
+values={[
+{ label: 'Javascript', value: 'javascript'},
+{ label: 'Typescript', value: 'typescript'},
+]
+}>
+
+<TabItem value="javascript">
+
+```javascript title="index.js"
+// highlight-next-line
+import Shake from '@shakebugs/react-native-shake';
+
 // highlight-next-line
 Shake.showNotificationsSettings();
 ```
 
+</TabItem>
+
+<TabItem value="typescript">
+
+```typescript title="index.ts"
+// highlight-next-line
+import Shake from '@shakebugs/react-native-shake';
+
+// highlight-next-line
+Shake.showNotificationsSettings();
+```
+
+</TabItem>
+</Tabs>
+
 You can add your own custom notification events at any time:
 
-```javascript title="App.js"
+<Tabs
+groupId="react"
+defaultValue="javascript"
+values={[
+{ label: 'Javascript', value: 'javascript'},
+{ label: 'Typescript', value: 'typescript'},
+]
+}>
+
+<TabItem value="javascript">
+
+```javascript title="index.js"
 // highlight-next-line
 import Shake, { NotificationEventBuilder } from '@shakebugs/react-native-shake';
 
@@ -103,18 +210,63 @@ Shake.insertNotificationEvent(notificationEventBuilder);
 // highlight-end
 ```
 
+</TabItem>
+
+<TabItem value="typescript">
+
+```typescript title="index.ts"
+// highlight-next-line
+import Shake, { NotificationEventBuilder } from '@shakebugs/react-native-shake';
+
+// highlight-start
+const notificationEventBuilder: NotificationEventBuilder = new NotificationEventBuilder()
+    .setId('0')
+    .setTitle('Title')
+    .setDescription('Description');
+Shake.insertNotificationEvent(notificationEventBuilder);
+// highlight-end
+```
+
+</TabItem>
+</Tabs>
+
 ### Custom logs
+
 You can add your own logs to Activity history too:
 
-```javascript title="App.js"
+<Tabs
+groupId="react"
+defaultValue="javascript"
+values={[
+{ label: 'Javascript', value: 'javascript'},
+{ label: 'Typescript', value: 'typescript'},
+]
+}>
+
+<TabItem value="javascript">
+
+```javascript title="index.js"
 // highlight-next-line
 import Shake, { LogLevel } from '@shakebugs/react-native-shake';
 
-const sendCustomLog = () => {
 // highlight-next-line
-    Shake.log(LogLevel.INFO, 'This is a Shake custom log.');
-}
+Shake.log(LogLevel.INFO, 'This is a Shake custom log.');
 ```
+
+</TabItem>
+
+<TabItem value="typescript">
+
+```typescript title="index.ts"
+// highlight-next-line
+import Shake, { LogLevel } from '@shakebugs/react-native-shake';
+
+// highlight-next-line
+Shake.log(LogLevel.INFO, 'This is a Shake custom log.');
+```
+
+</TabItem>
+</Tabs>
 
 You have these log levels at your disposal:
 
@@ -129,10 +281,39 @@ LogLevel.ERROR
 ### Console logs
 On *Android*, console logs are recorded automatically and require no additional setup. If you want to disable this feature use the method below:
 
-```javascript title="App.js"
+<Tabs
+groupId="react"
+defaultValue="javascript"
+values={[
+{ label: 'Javascript', value: 'javascript'},
+{ label: 'Typescript', value: 'typescript'},
+]
+}>
+
+<TabItem value="javascript">
+
+```javascript title="index.js"
+// highlight-next-line
+import Shake from '@shakebugs/react-native-shake';
+
 // highlight-next-line
 Shake.setConsoleLogsEnabled(false);
 ```
+
+</TabItem>
+
+<TabItem value="typescript">
+
+```typescript title="index.ts"
+// highlight-next-line
+import Shake from '@shakebugs/react-native-shake';
+
+// highlight-next-line
+Shake.setConsoleLogsEnabled(false);
+```
+
+</TabItem>
+</Tabs>
 
 For *iOS* apps, add the following code snippet to your *AppDelegate.m* to make sure that console logs are recorded by Shake:
 
@@ -160,7 +341,36 @@ RCTLogFunction ShakeLogFunction = ^(RCTLogLevel level, __unused RCTLogSource sou
 
 Activity history is enabled by default, use the method below to disable it altogether:
 
-```javascript title="App.js"
+<Tabs
+groupId="react"
+defaultValue="javascript"
+values={[
+{ label: 'Javascript', value: 'javascript'},
+{ label: 'Typescript', value: 'typescript'},
+]
+}>
+
+<TabItem value="javascript">
+
+```javascript title="index.js"
+// highlight-next-line
+import Shake from '@shakebugs/react-native-shake';
+
 // highlight-next-line
 Shake.setEnableActivityHistory(false);
 ```
+
+</TabItem>
+
+<TabItem value="typescript">
+
+```typescript title="index.ts"
+// highlight-next-line
+import Shake from '@shakebugs/react-native-shake';
+
+// highlight-next-line
+Shake.setEnableActivityHistory(false);
+```
+
+</TabItem>
+</Tabs>

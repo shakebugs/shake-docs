@@ -24,15 +24,43 @@ receive on your Shake dashboard as a *String* pair. You can call `Shake.setMetad
 
 Let’s say you want to send yourself a roomID after a user successfully joins a chat room. You would do this:
 
-```javascript title="App.js"
+<Tabs
+groupId="react"
+defaultValue="javascript"
+values={[
+{ label: 'Javascript', value: 'javascript'},
+{ label: 'Typescript', value: 'typescript'},
+]
+}>
+
+<TabItem value="javascript">
+
+```javascript title="index.js"
 // highlight-next-line
 import Shake from '@shakebugs/react-native-shake';
 
-const onChatRoomJoined = (room) => {
+const onChatRoomJoined = (roomId) => {
     // highlight-next-line
-    Shake.setMetadata('roomId', room.id);
+    Shake.setMetadata('roomId', roomId);
 }
 ```
+
+</TabItem>
+
+<TabItem value="typescript">
+
+```typescript title="index.ts"
+// highlight-next-line
+import Shake from '@shakebugs/react-native-shake';
+
+const onChatRoomJoined = (roomId: string) => {
+    // highlight-next-line
+    Shake.setMetadata('roomId', roomId);
+}
+```
+
+</TabItem>
+</Tabs>
 
 ## Clear Ticket metadata
 
@@ -40,7 +68,18 @@ If you want to clear existing ticket metadata, you can use the `Shake.clearMetad
 
 For example, you want to clear ticket metadata when the user leaves a chat room:
 
-```javascript title="App.js"
+<Tabs
+groupId="react"
+defaultValue="javascript"
+values={[
+{ label: 'Javascript', value: 'javascript'},
+{ label: 'Typescript', value: 'typescript'},
+]
+}>
+
+<TabItem value="javascript">
+
+```javascript title="index.js"
 // highlight-next-line
 import Shake from '@shakebugs/react-native-shake';
 
@@ -51,6 +90,25 @@ const onChatRoomClosed = () => {
     Shake.clearMetadata();
 }
 ```
+
+</TabItem>
+
+<TabItem value="typescript">
+
+```typescript title="index.ts"
+// highlight-next-line
+import Shake from '@shakebugs/react-native-shake';
+
+const onChatRoomClosed = () => {
+    chatService.logout();
+
+    // highlight-next-line
+    Shake.clearMetadata();
+}
+```
+
+</TabItem>
+</Tabs>
 
 ## Ticket metadata vs. User metadata
 

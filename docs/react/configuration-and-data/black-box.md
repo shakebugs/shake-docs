@@ -3,6 +3,8 @@ id: black-box
 title: Black box
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 >Just like before an airplane crash, Shake records a detailed environment
 profile giving you an insight into the last 60 seconds before the ticket was submitted.
@@ -75,7 +77,30 @@ Battery level is captured every 2 seconds.
 ## Disable
 The Black box is enabled by default. Use the method below to disable it, if you prefer:
 
-```javascript title="App.js"
+<Tabs
+groupId="react"
+defaultValue="javascript"
+values={[
+{ label: 'Javascript', value: 'javascript'},
+{ label: 'Typescript', value: 'typescript'},
+]
+}>
+
+<TabItem value="javascript">
+
+```javascript title="index.js"
 // highlight-next-line
 Shake.setEnableBlackBox(false);
 ```
+
+</TabItem>
+
+<TabItem value="typescript">
+
+```typescript title="index.ts"
+// highlight-next-line
+Shake.setEnableBlackBox(false);
+```
+
+</TabItem>
+</Tabs>

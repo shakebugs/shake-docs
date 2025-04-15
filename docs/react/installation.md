@@ -3,6 +3,8 @@ id: installation
 title: Installation
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 > Learn how to add Shake to your React Native app.
 
@@ -72,7 +74,18 @@ in order to use Shake with Expo.
 Call `Shake.start()` in your _index.js_ file.
 Replace `ios-app-api-key` and `android-app-api-key` with the actual values you have in [your apps settings](https://app.shakebugs.com/administration/apps):
 
-```js title="index.js"
+<Tabs
+groupId="react"
+defaultValue="javascript"
+values={[
+{ label: 'Javascript', value: 'javascript'},
+{ label: 'Typescript', value: 'typescript'},
+]
+}>
+
+<TabItem value="javascript">
+
+```javascript title="index.js"
 // highlight-start
 import { Platform } from 'react-native';
 import Shake from '@shakebugs/react-native-shake';
@@ -86,6 +99,27 @@ Shake.start(apiKey);
 // highlight-end
 ```
 
+</TabItem>
+
+<TabItem value="typescript">
+
+```typescript title="index.ts"
+// highlight-start
+import { Platform } from 'react-native';
+import Shake from '@shakebugs/react-native-shake';
+// highlight-end
+
+AppRegistry.registerComponent(appName, () => App);
+
+// highlight-start
+const apiKey: string = Platform.OS === 'ios' ? 'ios-app-api-key' : 'android-app-api-key';
+Shake.start(apiKey);
+// highlight-end
+```
+
+</TabItem>
+</Tabs>
+
 Bundle your project code by running `npm run start` command in the terminal.
 Then use `npm run android` or `npm run ios` command to run your app on the device.
 
@@ -95,23 +129,59 @@ We recommend initializing Shake in the entry point of your app.
 However, depending on your app, you'll want to initialize Shake just in a specific conditions, depending on your app data.
 You can do it as shown in the example below when your app data is available:
 
-```js title="MainScreen.js"
+<Tabs
+groupId="react"
+defaultValue="javascript"
+values={[
+{ label: 'Javascript', value: 'javascript'},
+{ label: 'Typescript', value: 'typescript'},
+]
+}>
+
+<TabItem value="javascript">
+
+```javascript title="index.js"
 // highlight-start
 import { Platform } from 'react-native';
 import Shake from '@shakebugs/react-native-shake';
 // highlight-end
 
-const MainScreen = (props) => {
-	useEffect(() => {
-		if (User.isTester) {
+const MainScreen = () => {
+    useEffect(() => {
+        if (User.isTester) {
             // highlight-start
             const apiKey = Platform.OS === 'ios' ? 'ios-app-api-key' : 'android-app-api-key';
             Shake.start(apiKey);
             // highlight-end
-		}
-	}, []);
+        }
+    }, []);
 };
 ```
+
+</TabItem>
+
+<TabItem value="typescript">
+
+```typescript title="index.ts"
+// highlight-start
+import { Platform } from 'react-native';
+import Shake from '@shakebugs/react-native-shake';
+// highlight-end
+
+const MainScreen = () => {
+    useEffect(() => {
+        if (User.isTester) {
+            // highlight-start
+            const apiKey: string = Platform.OS === 'ios' ? 'ios-app-api-key' : 'android-app-api-key';
+            Shake.start(apiKey);
+            // highlight-end
+        }
+    }, []);
+};
+```
+
+</TabItem>
+</Tabs>
 
 ## Visit your Shake dashboard
 
