@@ -3,6 +3,8 @@ id: custom-branding
 title: Custom branding
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 > This feature enables you to customize the look and feel of the Shake SDK. You can reflect your brand's identity by modifying colors, fonts, and other attributes of screen elements.
 
@@ -33,7 +35,22 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Use *ShakeTheme* instance to customize appearance of the Shake screens. Here is an example how you can create and set a new Shake theme:
 
-```javascript title="App.js"
+<Tabs
+groupId="react"
+defaultValue="javascript"
+values={[
+{ label: 'Javascript', value: 'javascript'},
+{ label: 'Typescript', value: 'typescript'},
+]
+}>
+
+<TabItem value="javascript">
+
+```javascript title="index.js"
+// highlight-start
+import Shake, {ShakeTheme} from '@shakebugs/react-native-shake';
+// highlight-end
+
 // highlight-start
 const shakeTheme = new ShakeTheme();
 shakeTheme.fontFamilyBold = 'CoolFont-Bold';
@@ -55,6 +72,39 @@ Shake.setShakeTheme(shakeTheme);
 // highlight-end
 ```
 
+</TabItem>
+
+<TabItem value="typescript">
+
+```typescript title="index.ts"
+// highlight-start
+import Shake, {ShakeTheme} from '@shakebugs/react-native-shake';
+// highlight-end
+
+// highlight-start
+const shakeTheme: ShakeTheme = new ShakeTheme();
+shakeTheme.fontFamilyBold = 'CoolFont-Bold';
+shakeTheme.fontFamilyMedium = 'CoolFont-Regular';
+shakeTheme.backgroundColor = '#ffffff';
+shakeTheme.secondaryBackgroundColor = '#ffffff';
+shakeTheme.textColor = '#0e0e0e';
+shakeTheme.secondaryTextColor = '#3f3f3f';
+shakeTheme.accentColor = '#ff0000';
+shakeTheme.accentTextColor = '#ffffff';
+shakeTheme.outlineColor = '#464646';
+shakeTheme.borderRadius = 0;
+shakeTheme.elevation = 10;  // Only Android
+shakeTheme.shadowOffset = {width: 0.1, height: 0.1};  // Only iOS
+shakeTheme.shadowRadius = 3;  // Only iOS
+shakeTheme.shadowOpacity = 0.5;  // Only iOS
+
+Shake.setShakeTheme(shakeTheme);
+// highlight-end
+```
+
+</TabItem>
+</Tabs>
+
 ### Custom font
 
 Shake can be configured to use custom font from your application, 
@@ -69,13 +119,24 @@ If you want to create a different appearance for the dark and light mode, you sh
 Here's an example of component you can use to observe dark and light mode changes.
 Feel free to adjust this component and use it as a root in your project.
 
-```javascript title="DarkModeObserver.js"
+<Tabs
+groupId="react"
+defaultValue="javascript"
+values={[
+{ label: 'Javascript', value: 'javascript'},
+{ label: 'Typescript', value: 'typescript'},
+]
+}>
+
+<TabItem value="javascript">
+
+```javascript title="index.js"
 // highlight-start
 import {useColorScheme} from 'react-native';
 import {useEffect} from 'react';
 import Shake, {ShakeTheme} from '@shakebugs/react-native-shake';
 
-const DarkModeObserver = props => {
+const DarkModeObserver = ({ children }) => {
     const colorScheme = useColorScheme();
 
     useEffect(() => {
@@ -90,12 +151,51 @@ const DarkModeObserver = props => {
         }
     }, [colorScheme]);
 
-    return props.children;
+    return <>{children}</>;
 };
 
 export default DarkModeObserver;
 // highlight-end
 ```
+
+</TabItem>
+
+<TabItem value="typescript">
+
+```typescript title="index.ts"
+// highlight-start
+import {useColorScheme} from 'react-native';
+import {useEffect, ReactNode} from 'react';
+import Shake, {ShakeTheme} from '@shakebugs/react-native-shake';
+
+interface DarkModeObserverProps {
+    children: ReactNode;
+}
+
+const DarkModeObserver = ({ children }: DarkModeObserverProps): JSX.Element => {
+    const colorScheme = useColorScheme();
+
+    useEffect(() => {
+        if (colorScheme === 'dark') {
+            const darkTheme: ShakeTheme = new ShakeTheme();
+            darkTheme.accentColor = '#FFFFFF';
+            Shake.setShakeTheme(darkTheme);
+        } else {
+            const lightTheme: ShakeTheme = new ShakeTheme();
+            lightTheme.accentColor = '#000000';
+            Shake.setShakeTheme(lightTheme);
+        }
+    }, [colorScheme]);
+
+    return <>{children}</>;
+};
+
+export default DarkModeObserver;
+// highlight-end
+```
+
+</TabItem>
+</Tabs>
 
 ## Changing the default theme
 
@@ -104,7 +204,21 @@ Let's say you want to change the default accent color on the screens but wants t
 
 You can do it like shown in the example below:
 
-```javascript title="App.js"
+<Tabs
+groupId="react"
+defaultValue="javascript"
+values={[
+{ label: 'Javascript', value: 'javascript'},
+{ label: 'Typescript', value: 'typescript'},
+]
+}>
+
+<TabItem value="javascript">
+
+```javascript title="index.js"
+// highlight-next-line
+import Shake, {ShakeTheme} from '@shakebugs/react-native-shake';
+
 // highlight-start
 const shakeTheme = new ShakeTheme();
 shakeTheme.accentColor = '#ff0000';
@@ -112,3 +226,22 @@ shakeTheme.accentColor = '#ff0000';
 Shake.setShakeTheme(shakeTheme);
 // highlight-end
 ```
+
+</TabItem>
+
+<TabItem value="typescript">
+
+```typescript title="index.ts"
+// highlight-next-line
+import Shake, {ShakeTheme} from '@shakebugs/react-native-shake';
+
+// highlight-start
+const shakeTheme: ShakeTheme = new ShakeTheme();
+shakeTheme.accentColor = '#ff0000';
+
+Shake.setShakeTheme(shakeTheme);
+// highlight-end
+```
+
+</TabItem>
+</Tabs>

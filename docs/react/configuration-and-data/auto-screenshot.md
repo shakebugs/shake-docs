@@ -3,6 +3,8 @@ id: auto-screenshot
 title: Auto screenshot
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 > When Shake's New ticket screen is invoked, a screenshot is automatically attached to it.
 
@@ -37,10 +39,33 @@ would always have the identical screenshot attached. That would be both confusin
 
 Disable auto screenshot using the following snippet:
 
-```javascript title="App.js"
+<Tabs
+groupId="react"
+defaultValue="javascript"
+values={[
+{ label: 'Javascript', value: 'javascript'},
+{ label: 'Typescript', value: 'typescript'},
+]
+}>
+
+<TabItem value="javascript">
+
+```javascript title="index.js"
 // highlight-next-line
 Shake.setScreenshotIncluded(false);
 ```
+
+</TabItem>
+
+<TabItem value="typescript">
+
+```typescript title="index.ts"
+// highlight-next-line
+Shake.setScreenshotIncluded(false);
+```
+
+</TabItem>
+</Tabs>
 
 ## Privacy
 Visit [Protect sensitive data](/react/configuration-and-data/manage-sensitive-data/#views) to learn

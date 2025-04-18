@@ -16,7 +16,6 @@ and automatically attaches all of those to the ticket.
 <a href="/docs/android/configuration-and-data/activity-history/">Flutter</a>&nbsp;  
 </p>
 
-
 ## Setup
 
 Shake activity history feature is enabled by default once you start Shake in your app. 

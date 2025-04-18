@@ -3,6 +3,8 @@ id: intro-message
 title: Intro message
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 >There's a simple way to let all your app users or testers know how to send you feedback.
 
@@ -25,7 +27,30 @@ If enabled, a one-off intro message will be shown to your users as soon as they 
 Its text is automatically set based on the [manual invocations you use](/react/user-feedback/invoke.md#invoke-manually), so you don't need to write anything.
 This message is disabled by default. Enable it easily using the following method:
 
-```javascript title="App.js"
+<Tabs
+groupId="react"
+defaultValue="javascript"
+values={[
+{ label: 'Javascript', value: 'javascript'},
+{ label: 'Typescript', value: 'typescript'},
+]
+}>
+
+<TabItem value="javascript">
+
+```javascript title="index.js"
 // highlight-next-line
 Shake.setShowIntroMessage(true);
 ```
+
+</TabItem>
+
+<TabItem value="typescript">
+
+```typescript title="index.ts"
+// highlight-next-line
+Shake.setShowIntroMessage(true);
+```
+
+</TabItem>
+</Tabs>

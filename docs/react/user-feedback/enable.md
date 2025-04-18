@@ -2,6 +2,8 @@
 id: enable
 title: Enable
 ---
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 >The User feedback module is enabled by default.
 
@@ -16,7 +18,30 @@ This is how you disable it:
 1. First, set the `setUserFeedbackEnabled` flag to `false`.
 1. Then, call the `Shake.start` method.
 
-```javascript title="App.js"
+<Tabs
+groupId="react"
+defaultValue="javascript"
+values={[
+{ label: 'Javascript', value: 'javascript'},
+{ label: 'Typescript', value: 'typescript'},
+]
+}>
+
+<TabItem value="javascript">
+
+```javascript title="index.js"
 // highlight-next-line
 Shake.setUserFeedbackEnabled(false);
 ```
+
+</TabItem>
+
+<TabItem value="typescript">
+
+```typescript title="index.ts"
+// highlight-next-line
+Shake.setUserFeedbackEnabled(false);
+```
+
+</TabItem>
+</Tabs>

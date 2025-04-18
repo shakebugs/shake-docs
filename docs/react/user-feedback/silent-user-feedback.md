@@ -2,6 +2,9 @@
 id: silent-user-feedback
 title: Silent user feedback
 ---
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 >Send yourself feedback from the app background, without showing [Shake UI](react/shake-ui/overview.md).
 
 <p class="p2 mt-40">You're viewing the React Native docs. Other platforms → &nbsp;
@@ -20,7 +23,18 @@ You can send silent user feedback to yourself by calling the `Shake.silentReport
 * [Auto screen recording](react/configuration-and-data/auto-screen-recording.md) if the feature is turned on
 * Etc.
 
-```javascript title="App.js"
+<Tabs
+groupId="react"
+defaultValue="javascript"
+values={[
+{ label: 'Javascript', value: 'javascript'},
+{ label: 'Typescript', value: 'typescript'},
+]
+}>
+
+<TabItem value="javascript">
+
+```javascript title="index.js"
 // highlight-next-line
 import Shake, {ShakeFile, ShakeReportConfiguration} from '@shakebugs/react-native-shake';
 
@@ -36,9 +50,36 @@ const sendSilentReport = () => {
         'Description #tag1 #tag2',
         [ShakeFile.create(path)],
         configuration);
-     // highlight-end
+    // highlight-end
 }
 ```
+
+</TabItem>
+
+<TabItem value="typescript">
+
+```typescript title="index.ts"
+// highlight-next-line
+import Shake, {ShakeFile, ShakeReportConfiguration} from '@shakebugs/react-native-shake';
+
+const sendSilentReport = () => {
+    // highlight-start
+    const configuration: ShakeReportConfiguration = new ShakeReportConfiguration();
+    configuration.blackBoxData = true;
+    configuration.activityHistoryData = true;
+    configuration.screenshot = true;
+    configuration.video = false;
+
+    Shake.silentReport(
+        'Description #tag1 #tag2',
+        [ShakeFile.create(path)],
+        configuration);
+    // highlight-end
+}
+```
+
+</TabItem>
+</Tabs>
 
 ## Show the Ticket submitted message
 
@@ -46,9 +87,34 @@ To optionally notify your user that a silent user feedback has just been submitt
 change the `ShakeReportConfiguration` and use that configuration object when
 sending the silent user feedback with the `Shake.silentReport` method:
 
-```javascript title="App.js"
+<Tabs
+groupId="react"
+defaultValue="javascript"
+values={[
+{ label: 'Javascript', value: 'javascript'},
+{ label: 'Typescript', value: 'typescript'},
+]
+}>
+
+<TabItem value="javascript">
+
+```javascript title="index.js"
 // highlight-start
 const configuration = new ShakeReportConfiguration();
 configuration.showReportSentMessage = true;
 // highlight-end
 ```
+
+</TabItem>
+
+<TabItem value="typescript">
+
+```typescript title="index.ts"
+// highlight-start
+const configuration: ShakeReportConfiguration = new ShakeReportConfiguration();
+configuration.showReportSentMessage = true;
+// highlight-end
+```
+
+</TabItem>
+</Tabs>

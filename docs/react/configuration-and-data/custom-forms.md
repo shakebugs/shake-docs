@@ -3,6 +3,8 @@ id: custom-forms
 title: Custom forms
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 > Learn how to create or modify a form displayed on the [New ticket screen](react/shake-ui/new-ticket-screen.md).
 
@@ -73,10 +75,33 @@ Properties:
 
 Example:
 
+<Tabs
+groupId="react"
+defaultValue="javascript"
+values={[
+{ label: 'Javascript', value: 'javascript'},
+{ label: 'Typescript', value: 'typescript'},
+]
+}>
+
+<TabItem value="javascript">
+
 ```javascript title="index.js"
 // highlight-next-line
 const title = new ShakeTitle('Title', 'Title', '', true);
 ```
+
+</TabItem>
+
+<TabItem value="typescript">
+
+```typescript title="index.ts"
+// highlight-next-line
+const title: ShakeTitle = new ShakeTitle('Title', 'Title', '', true);
+```
+
+</TabItem>
+</Tabs>
 
 :::note
 Here's a tip that quality assurance teams often find helpful. If *#some #hashtags* are added anywhere in the title,
@@ -103,10 +128,33 @@ Properties:
 
 Example:
 
+<Tabs
+groupId="react"
+defaultValue="javascript"
+values={[
+{ label: 'Javascript', value: 'javascript'},
+{ label: 'Typescript', value: 'typescript'},
+]
+}>
+
+<TabItem value="javascript">
+
 ```javascript title="index.js"
 // highlight-next-line
 const description = new ShakeTextInput('Steps to reproduce', 'Steps to reproduce', '', false);
 ```
+
+</TabItem>
+
+<TabItem value="typescript">
+
+```typescript title="index.ts"
+// highlight-next-line
+const description: ShakeTextInput = new ShakeTextInput('Steps to reproduce', 'Steps to reproduce', '', false);
+```
+
+</TabItem>
+</Tabs>
 
 ### Email input
 
@@ -128,10 +176,33 @@ Properties:
 
 Example:
 
+<Tabs
+groupId="react"
+defaultValue="javascript"
+values={[
+{ label: 'Javascript', value: 'javascript'},
+{ label: 'Typescript', value: 'typescript'},
+]
+}>
+
+<TabItem value="javascript">
+
 ```javascript title="index.js"
 // highlight-next-line
 const email = new ShakeEmail('Email to contact you on', 'Email to contact you on', '', true);
 ```
+
+</TabItem>
+
+<TabItem value="typescript">
+
+```typescript title="index.ts"
+// highlight-next-line
+const email: ShakeEmail = new ShakeEmail('Email to contact you on', 'Email to contact you on', '', true);
+```
+
+</TabItem>
+</Tabs>
 
 ### Picker
 
@@ -155,10 +226,33 @@ Properties:
 
 Example:
 
+<Tabs
+groupId="react"
+defaultValue="javascript"
+values={[
+{ label: 'Javascript', value: 'javascript'},
+{ label: 'Typescript', value: 'typescript'},
+]
+}>
+
+<TabItem value="javascript">
+
 ```javascript title="index.js"
 // highlight-next-line
 const item = new ShakePickerItem('Playbox Mini', 'Playbox Mini', base64Icon, 'playbox-mini');
 ```
+
+</TabItem>
+
+<TabItem value="typescript">
+
+```typescript title="index.ts"
+// highlight-next-line
+const item: ShakePickerItem = new ShakePickerItem('Playbox Mini', 'Playbox Mini', base64Icon, 'playbox-mini');
+```
+
+</TabItem>
+</Tabs>
 
 #### Picker
 
@@ -169,10 +263,33 @@ Properties:
 
 Example:
 
+<Tabs
+groupId="react"
+defaultValue="javascript"
+values={[
+{ label: 'Javascript', value: 'javascript'},
+{ label: 'Typescript', value: 'typescript'},
+]
+}>
+
+<TabItem value="javascript">
+
 ```javascript title="index.js"
 // highlight-next-line
 const picker = new ShakePicker('Choose your console', 'Choose your console', items);
 ```
+
+</TabItem>
+
+<TabItem value="typescript">
+
+```typescript title="index.ts"
+// highlight-next-line
+const picker: ShakePicker = new ShakePicker('Choose your console', 'Choose your console', items);
+```
+
+</TabItem>
+</Tabs>
 
 ### Inspect button
 
@@ -188,10 +305,33 @@ This element allows your users to inspect ticket data, tapping it takes them to 
 
 Example:
 
+<Tabs
+groupId="react"
+defaultValue="javascript"
+values={[
+{ label: 'Javascript', value: 'javascript'},
+{ label: 'Typescript', value: 'typescript'},
+]
+}>
+
+<TabItem value="javascript">
+
 ```javascript title="index.js"
 // highlight-next-line
 const inspectButton = new ShakeInspectButton();
 ```
+
+</TabItem>
+
+<TabItem value="typescript">
+
+```typescript title="index.ts"
+// highlight-next-line
+const inspectButton: ShakeInspectButton = new ShakeInspectButton();
+```
+
+</TabItem>
+</Tabs>
 
 ### Attachments
 
@@ -207,10 +347,33 @@ This element allows your users to attach additional images, videos or files to t
 
 Example:
 
+<Tabs
+groupId="react"
+defaultValue="javascript"
+values={[
+{ label: 'Javascript', value: 'javascript'},
+{ label: 'Typescript', value: 'typescript'},
+]
+}>
+
+<TabItem value="javascript">
+
 ```javascript title="index.js"
 // highlight-next-line
 const attachments = new ShakeAttachments();
 ```
+
+</TabItem>
+
+<TabItem value="typescript">
+
+```typescript title="index.ts"
+// highlight-next-line
+const attachments: ShakeAttachments = new ShakeAttachments();
+```
+
+</TabItem>
+</Tabs>
 
 ## Examples
 
@@ -229,7 +392,31 @@ The Title and Description fields are required and cannot be left blank, while th
 The Category field allows users to select a category for their ticket, which creates a corresponding tag to help with organization and management.
 The Inspect button allows users to easily review and verify the data they have provided for their submission, while the Attachments enables users to upload additional files or other materials to provide context and support their submission.
 
+<Tabs
+groupId="react"
+defaultValue="javascript"
+values={[
+{ label: 'Javascript', value: 'javascript'},
+{ label: 'Typescript', value: 'typescript'},
+]
+}>
+
+<TabItem value="javascript">
+
 ```javascript title="index.js"
+// highlight-start
+import Shake, {
+    ShakeAttachments,
+    ShakeEmail,
+    ShakeForm,
+    ShakeInspectButton,
+    ShakePicker,
+    ShakePickerItem,
+    ShakeTextInput,
+    ShakeTitle,
+} from '@shakebugs/react-native-shake';
+// highlight-end
+
 // highlight-start
 const title = new ShakeTitle('Title', 'Title', '', true);
 const desc = new ShakeTextInput('Description', 'Description', '', true);
@@ -252,6 +439,50 @@ Shake.setShakeForm(form);
 // highlight-end
 ```
 
+</TabItem>
+
+<TabItem value="typescript">
+
+```typescript title="index.ts"
+// highlight-start
+import Shake, {
+    ShakeAttachments,
+    ShakeEmail,
+    ShakeForm,
+    ShakeFormComponent,
+    ShakeInspectButton,
+    ShakePicker,
+    ShakePickerItem,
+    ShakeTextInput,
+    ShakeTitle,
+} from '@shakebugs/react-native-shake';
+// highlight-end
+
+// highlight-start
+const title: ShakeTitle = new ShakeTitle('Title', 'Title', '', true);
+const desc: ShakeTextInput = new ShakeTextInput('Description', 'Description', '', true);
+const email: ShakeEmail = new ShakeEmail('Email', 'Email', 'john.doe@gmail.com', false);
+
+const pickerItems: ShakePickerItem[] = [
+    new ShakePickerItem('Bug', 'Bug', bugIcon, 'bug'),
+    new ShakePickerItem('Suggestion', 'Suggestion', suggestionIcon, 'suggestion'),
+    new ShakePickerItem('Question', 'Question', questionIcon, 'question'),
+];
+const picker: ShakePicker = new ShakePicker('Feedback type', 'Feedback type', pickerItems);
+
+const inspect: ShakeInspectButton = new ShakeInspectButton();
+const attachments: ShakeAttachments = new ShakeAttachments();
+
+const components: ShakeFormComponent[] = [title, desc, email, picker, inspect, attachments];
+const form: ShakeForm = new ShakeForm(components);
+
+Shake.setShakeForm(form);
+// highlight-end
+```
+
+</TabItem>
+</Tabs>
+
 :::note
 
 Picker item icons should be in the base64 format without prefix eg. **data:image/png;base64,...**
@@ -267,7 +498,26 @@ Note that component `key` is used for presenting values on the Shake dashboard, 
 
 Here's an example how to translate your form:
 
+<Tabs
+groupId="react"
+defaultValue="javascript"
+values={[
+{ label: 'Javascript', value: 'javascript'},
+{ label: 'Typescript', value: 'typescript'},
+]
+}>
+
+<TabItem value="javascript">
+
 ```javascript title="index.js"
+// highlight-start
+import Shake, {
+    ShakeForm,
+    ShakeTextInput,
+    ShakeTitle,
+} from '@shakebugs/react-native-shake';
+// highlight-end
+
 // highlight-start
 const strings = {
     'en': {
@@ -294,24 +544,106 @@ const onLanguageChanged = (languageCode) => {
     const components = [title, repro];
     const form = new ShakeForm(components);
 
-    Shake.setShakeForm(form);  
+    Shake.setShakeForm(form);
 }
 // highlight-end
 ```
+
+</TabItem>
+
+<TabItem value="typescript">
+
+```typescript title="index.ts"
+// highlight-start
+import Shake, {
+    ShakeForm,
+    ShakeFormComponent,
+    ShakeTextInput,
+    ShakeTitle,
+} from '@shakebugs/react-native-shake';
+// highlight-end
+
+// highlight-start
+const strings: any = {
+    'en': {
+        'title': 'Title',
+        'repro': 'Steps to reproduce'
+    },
+    'de': {
+        'title': 'Titel',
+        'repro': 'Schritte zum Reproduzieren'
+    },
+    'fr': {
+        'title': 'Titre',
+        'repro': 'Étapes à reproduire'
+    }
+}
+// highlight-end
+
+// highlight-start
+// This function should be called when language change is detected
+const onLanguageChanged = (languageCode: string) => {
+    const title: ShakeTitle = new ShakeTitle('Title', strings[languageCode].title, '', true);
+    const repro: ShakeTextInput = new ShakeTextInput('Steps to reproduce', strings[languageCode].repro, '', true);
+
+    const components: ShakeFormComponent[] = [title, repro];
+    const form: ShakeForm = new ShakeForm(components);
+
+    Shake.setShakeForm(form);
+}
+// highlight-end
+```
+
+</TabItem>
+</Tabs>
 
 ### Removing Inspect button from the default form
 
 If you like the default form but want to make some modifications, you can easily do so by editing the Shake default form.
 For example, you may wish to remove the Inspect button from the default form to prevent users from inspecting the ticket data, while keeping the other form elements intact.
 
+<Tabs
+groupId="react"
+defaultValue="javascript"
+values={[
+{ label: 'Javascript', value: 'javascript'},
+{ label: 'Typescript', value: 'typescript'},
+]
+}>
+
+<TabItem value="javascript">
+
 ```javascript title="index.js"
+// highlight-start
+import Shake from '@shakebugs/react-native-shake';
+// highlight-end
+
 // highlight-start
 const setCustomForm = () => {
     const shakeForm = Shake.getShakeForm();
-    if (shakeForm) {
-        shakeForm.components = shakeForm.components.filter(c => c.type !== 'inspect');
-        Shake.setShakeForm(shakeForm);  
-    }
+    shakeForm.components = shakeForm.components.filter(c => c.type !== 'inspect');
+    Shake.setShakeForm(shakeForm);
 }
 // highlight-end
 ```
+
+</TabItem>
+
+<TabItem value="typescript">
+
+```typescript title="index.ts"
+// highlight-start
+import Shake, {ShakeForm} from '@shakebugs/react-native-shake';
+// highlight-end
+
+// highlight-start
+const setCustomForm = () => {
+    const shakeForm: ShakeForm = Shake.getShakeForm();
+    shakeForm.components = shakeForm.components.filter(c => c.type !== 'inspect');
+    Shake.setShakeForm(shakeForm);
+}
+// highlight-end
+```
+
+</TabItem>
+</Tabs>

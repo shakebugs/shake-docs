@@ -3,6 +3,8 @@ id: auto-screen-recording
 title: Auto screen recording
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 >You can rely on your testers to record a video of their screen and attach it to their feedback and crash reports.
 Or, you can use auto screen recording to always record their screen and automatically attach that video to the ticket.
@@ -29,10 +31,33 @@ Auto screen recording is disabled by default. To enable it:
 <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MEDIA_PROJECTION" />
 ```
 
-```javascript title="App.js"
+<Tabs
+groupId="react"
+defaultValue="javascript"
+values={[
+{ label: 'Javascript', value: 'javascript'},
+{ label: 'Typescript', value: 'typescript'},
+]
+}>
+
+<TabItem value="javascript">
+
+```javascript title="index.js"
 // highlight-next-line
 Shake.setAutoVideoRecording(true);
 ```
+
+</TabItem>
+
+<TabItem value="typescript">
+
+```typescript title="index.ts"
+// highlight-next-line
+Shake.setAutoVideoRecording(true);
+```
+
+</TabItem>
+</Tabs>
 
 <table class="media-container media-container-highlighted mt-40 mb-40">
 <img

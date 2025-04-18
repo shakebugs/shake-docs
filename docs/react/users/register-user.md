@@ -36,13 +36,24 @@ Make sure to call this method at the place where it fits your app's flow perfect
 </table>
 <p class="p2 center-align mb-50">A common case is to register app users from your app's Login screen</p>
 
-```javascript title="App.js"
+<Tabs
+groupId="react"
+defaultValue="javascript"
+values={[
+{ label: 'Javascript', value: 'javascript'},
+{ label: 'Typescript', value: 'typescript'},
+]
+}>
+
+<TabItem value="javascript">
+
+```javascript title="index.js"
 const logInUser = (email, password) => {
-    networkService.performLogin(email, password,
+    networkService.login(email, password,
         user => {
             // highlight-next-line
             Shake.registerUser(user.id);
-            
+
             handleLogin(user);
         },
         message => {
@@ -50,6 +61,28 @@ const logInUser = (email, password) => {
         });
 }
 ```
+
+</TabItem>
+
+<TabItem value="typescript">
+
+```typescript title="index.ts"
+const logInUser = (email: string, password: string) => {
+    networkService.login(email, password,
+        (user: User) => {
+            // highlight-next-line
+            Shake.registerUser(user.id);
+
+            handleLogin(user);
+        },
+        (message: string) => {
+            // Handle failed login
+        });
+}
+```
+
+</TabItem>
+</Tabs>
 
 :::note
 

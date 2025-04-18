@@ -8,7 +8,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <p class="p2 mt-40">You're viewing the iOS docs. Other platforms → &nbsp;
 <a href="/docs/android/installation/">Android</a>&nbsp;
-<a href="/docs/react/install/npm/">React Native</a>&nbsp; 
+<a href="/docs/react/installation/">React Native</a>&nbsp; 
 <a href="/docs/flutter/installation/">Flutter</a>&nbsp;  
 <a href="/docs/web/install/npm/">Web</a>&nbsp;
 </p>

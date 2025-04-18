@@ -3,6 +3,8 @@ id: callbacks
 title: Callbacks
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 > Execute a block of a code when a certain action is executed by Shake
 
@@ -17,6 +19,17 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 If you want to perform an action when Shake interface is **opened**, you can do it like shown below:
 
+<Tabs
+groupId="react"
+defaultValue="javascript"
+values={[
+{ label: 'Javascript', value: 'javascript'},
+{ label: 'Typescript', value: 'typescript'},
+]
+}>
+
+<TabItem value="javascript">
+
 ```javascript title="index.js"
 // highlight-start
 Shake.setShakeOpenListener(() => {
@@ -25,9 +38,35 @@ Shake.setShakeOpenListener(() => {
 // highlight-end
 ```
 
+</TabItem>
+
+<TabItem value="typescript">
+
+```typescript title="index.ts"
+// highlight-start
+Shake.setShakeOpenListener(() => {
+    console.log('Shake opened!');
+});
+// highlight-end
+```
+
+</TabItem>
+</Tabs>
+
 ## Shake dismiss callback
 
 If you want to perform an action when Shake interface is **closed**, you can do it like shown below:
+
+<Tabs
+groupId="react"
+defaultValue="javascript"
+values={[
+{ label: 'Javascript', value: 'javascript'},
+{ label: 'Typescript', value: 'typescript'},
+]
+}>
+
+<TabItem value="javascript">
 
 ```javascript title="index.js"
 // highlight-start
@@ -37,6 +76,21 @@ Shake.setShakeDismissListener(() => {
 // highlight-end
 ```
 
+</TabItem>
+
+<TabItem value="typescript">
+
+```typescript title="index.ts"
+// highlight-start
+Shake.setShakeDismissListener(() => {
+    console.log('Shake dismissed!');
+});
+// highlight-end
+```
+
+</TabItem>
+</Tabs>
+
 ## Shake submit callback
 
 To detect when user **pressed a submit button** on the New ticket screen, add a submit listener like in the example below.
@@ -45,6 +99,17 @@ This listener provides **type** and **fields** parameters:
 - reportType: **string** - "crash" or "feedback" depending on the type of the ticket
 - fields: **{ [key: string]: string; }** - key value pairs of submitted form fields
 
+<Tabs
+    groupId="react"
+    defaultValue="javascript"
+    values={[
+    { label: 'Javascript', value: 'javascript'},
+    { label: 'Typescript', value: 'typescript'},
+    ]
+}>
+
+<TabItem value="javascript">
+
 ```javascript title="index.js"
 // highlight-start
 Shake.setShakeSubmitListener((reportType, fields) => {
@@ -52,3 +117,18 @@ Shake.setShakeSubmitListener((reportType, fields) => {
 });
 // highlight-end
 ```
+
+</TabItem>
+
+<TabItem value="typescript">
+
+```typescript title="index.ts"
+// highlight-start
+Shake.setShakeSubmitListener((reportType: string, fields: { [key: string]: string; }) => {
+    console.log('Shake submitted!');
+});
+// highlight-end
+```
+
+</TabItem>
+</Tabs>

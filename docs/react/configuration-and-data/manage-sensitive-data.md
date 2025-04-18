@@ -1,5 +1,4 @@
-﻿
----
+﻿---
 id: manage-sensitive-data
 title: Protect sensitive data
 ---
@@ -45,10 +44,33 @@ Shake also redacts network header values if the header key is:
 
 To disable this privacy feature, use the method below:
 
-```javascript title="App.js"
+<Tabs
+groupId="react"
+defaultValue="javascript"
+values={[
+{ label: 'Javascript', value: 'javascript'},
+{ label: 'Typescript', value: 'typescript'},
+]
+}>
+
+<TabItem value="javascript">
+
+```javascript title="index.js"
 // highlight-next-line
 Shake.setSensitiveDataRedactionEnabled(false);
 ```
+
+</TabItem>
+
+<TabItem value="typescript">
+
+```typescript title="index.ts"
+// highlight-next-line
+Shake.setSensitiveDataRedactionEnabled(false);
+```
+
+</TabItem>
+</Tabs>
 
 ## Views
 
@@ -76,17 +98,54 @@ When marking a *View* as private, also add the `collapsable={false}` flag to it 
 Let's suppose you're building a shopping app and you want to delete the credit card number view
 from the auto screenshot:
 
-```javascript title="App.js"
+<Tabs
+groupId="react"
+defaultValue="javascript"
+values={[
+{ label: 'Javascript', value: 'javascript'},
+{ label: 'Typescript', value: 'typescript'},
+]
+}>
+
+<TabItem value="javascript">
+
+```javascript title="index.js"
 // highlight-next-line
-const viewRef = useRef(null);
+let viewRef = useRef(null);
 
 // highlight-next-line
 <Text ref={viewRef} style={styles.cardNumber}>{this.state.cardNumber}</Text>
 ```
 
+</TabItem>
+
+<TabItem value="typescript">
+
+```typescript title="index.ts"
+// highlight-next-line
+let viewRef = useRef<View | null>(null);
+
+// highlight-next-line
+<Text ref={viewRef} style={styles.cardNumber}>{this.state.cardNumber}</Text>
+```
+
+</TabItem>
+</Tabs>
+
 This is how you mark view as a private:
 
-```javascript title="App.js"
+<Tabs
+groupId="react"
+defaultValue="javascript"
+values={[
+{ label: 'Javascript', value: 'javascript'},
+{ label: 'Typescript', value: 'typescript'},
+]
+}>
+
+<TabItem value="javascript">
+
+```javascript title="index.js"
 // highlight-next-line
 import Shake from '@shakebugs/react-native-shake';
 
@@ -94,9 +153,35 @@ import Shake from '@shakebugs/react-native-shake';
 Shake.addPrivateView(viewRef.current);
 ```
 
+</TabItem>
+
+<TabItem value="typescript">
+
+```typescript title="index.ts"
+// highlight-next-line
+import Shake from '@shakebugs/react-native-shake';
+
+// highlight-next-line
+Shake.addPrivateView(viewRef.current);
+```
+
+</TabItem>
+</Tabs>
+
 To remove a view from private views use the following method:
 
-```javascript title="App.js"
+<Tabs
+groupId="react"
+defaultValue="javascript"
+values={[
+{ label: 'Javascript', value: 'javascript'},
+{ label: 'Typescript', value: 'typescript'},
+]
+}>
+
+<TabItem value="javascript">
+
+```javascript title="index.js"
 // highlight-next-line
 import Shake from '@shakebugs/react-native-shake';
 
@@ -104,14 +189,58 @@ import Shake from '@shakebugs/react-native-shake';
 Shake.removePrivateView(viewRef.current);
 ```
 
+</TabItem>
+
+<TabItem value="typescript">
+
+```typescript title="index.ts"
+// highlight-next-line
+import Shake from '@shakebugs/react-native-shake';
+
+// highlight-next-line
+Shake.removePrivateView(viewRef.current);
+```
+
+</TabItem>
+</Tabs>
+
 If you want to delete an entire screen from the auto screenshot, simply mark the root of the screen as private.
 
 To clear all the private views, use the following method:
 
-```javascript title="App.js"
+<Tabs
+groupId="react"
+defaultValue="javascript"
+values={[
+{ label: 'Javascript', value: 'javascript'},
+{ label: 'Typescript', value: 'typescript'},
+]
+}>
+
+<TabItem value="javascript">
+
+```javascript title="index.js"
+// highlight-next-line
+import Shake from '@shakebugs/react-native-shake';
+
 // highlight-next-line
 Shake.clearPrivateViews();
 ```
+
+</TabItem>
+
+<TabItem value="typescript">
+
+```typescript title="index.ts"
+// highlight-next-line
+import Shake from '@shakebugs/react-native-shake';
+
+// highlight-next-line
+Shake.clearPrivateViews();
+```
+
+</TabItem>
+</Tabs>
 
 ## Touch events
 
@@ -127,7 +256,18 @@ Use the `Shake.setNetworkRequestsFilter()` method to obfuscate sensitive parts o
 or to entirely prevent certain network requests from being logged.
 As an example, if you'd like to obfuscate the *Authorization* header in all network requests sent from your app, do this:
 
-```javascript title="App.js"
+<Tabs
+groupId="react"
+defaultValue="javascript"
+values={[
+{ label: 'Javascript', value: 'javascript'},
+{ label: 'Typescript', value: 'typescript'},
+]
+}>
+
+<TabItem value="javascript">
+
+```javascript title="index.js"
 // highlight-next-line
 import Shake from '@shakebugs/react-native-shake';
 
@@ -144,23 +284,81 @@ const setupNetworkFilter = () => {
 }
 ```
 
+</TabItem>
+
+<TabItem value="typescript">
+
+```typescript title="index.ts"
+// highlight-next-line
+import Shake, {NetworkRequestBuilder} from '@shakebugs/react-native-shake';
+
+const setupNetworkFilter = () => {
+    // highlight-start
+    Shake.setNetworkRequestsFilter((networkRequest: NetworkRequestBuilder): NetworkRequestBuilder | null => {
+        let headers: { [key: string]: string } = networkRequest.getRequestHeaders();
+        if (headers.Authorization) {
+            headers.Authorization = '***';
+        }
+        return networkRequest;
+    });
+    // highlight-end
+}
+```
+
+</TabItem>
+</Tabs>
+
 If you don't want to log specific network requests, return `null` from the `NetworkRequestsFilter` as shown below:
 
-```javascript title="App.js"
+<Tabs
+groupId="react"
+defaultValue="javascript"
+values={[
+{ label: 'Javascript', value: 'javascript'},
+{ label: 'Typescript', value: 'typescript'},
+]
+}>
+
+<TabItem value="javascript">
+
+```javascript title="index.js"
 // highlight-next-line
 import Shake from '@shakebugs/react-native-shake';
 
 const setupNetworkFilter = () => {
-// highlight-start
+    // highlight-start
     Shake.setNetworkRequestsFilter((networkRequest) => {
         if (networkRequest.getUrl().startsWith('https://api.myapp.com/cards')) {
             return null;
         }
         return networkRequest;
     });
-// highlight-end
+    // highlight-end
 }
 ```
+
+</TabItem>
+
+<TabItem value="typescript">
+
+```typescript title="index.ts"
+// highlight-next-line
+import Shake, {NetworkRequestBuilder} from '@shakebugs/react-native-shake';
+
+const setupNetworkFilter = () => {
+    // highlight-start
+    Shake.setNetworkRequestsFilter((networkRequest: NetworkRequestBuilder): NetworkRequestBuilder | null => {
+        if (networkRequest.getUrl().startsWith('https://api.myapp.com/cards')) {
+            return null;
+        }
+        return networkRequest;
+    });
+    // highlight-end
+}
+```
+
+</TabItem>
+</Tabs>
 
 To clear the network requests filter, use `Shake.setNetworkRequestsFilter(null)`.
 
@@ -171,7 +369,18 @@ method to fully or partially obfuscate those notifications.
 
 For example, if you'd like to obfuscate the description of the notification event that contains an email, do this:
 
-```javascript title="App.js"
+<Tabs
+groupId="react"
+defaultValue="javascript"
+values={[
+{ label: 'Javascript', value: 'javascript'},
+{ label: 'Typescript', value: 'typescript'},
+]
+}>
+
+<TabItem value="javascript">
+
+```javascript title="index.js"
 // highlight-next-line
 import Shake from '@shakebugs/react-native-shake';
 
@@ -187,21 +396,79 @@ const setupNotificationsFilter = () => {
 }
 ```
 
+</TabItem>
+
+<TabItem value="typescript">
+
+```typescript title="index.ts"
+// highlight-next-line
+import Shake, {NotificationEventBuilder} from '@shakebugs/react-native-shake';
+
+const setupNotificationsFilter = () => {
+    // highlight-start
+    Shake.setNotificationEventsFilter((notificationEvent: NotificationEventBuilder): NotificationEventBuilder | null => {
+        if (notificationEvent.getTitle() === 'E-mail changed') {
+            notificationEvent.setDescription('***@gmail.com');
+        }
+        return notificationEvent;
+    });
+    // highlight-end
+}
+```
+
+</TabItem>
+</Tabs>
+
 If you do not want to track a specific notification event, return `null` from the `NotificationEventsFilter` like below:
 
-```javascript title="App.js"
+<Tabs
+groupId="react"
+defaultValue="javascript"
+values={[
+{ label: 'Javascript', value: 'javascript'},
+{ label: 'Typescript', value: 'typescript'},
+]
+}>
+
+<TabItem value="javascript">
+
+```javascript title="index.js"
 // highlight-next-line
 import Shake from '@shakebugs/react-native-shake';
+
 const setupNotificationsFilter = () => {
     // highlight-start
     Shake.setNotificationEventsFilter((notificationEvent) => {
         if (notificationEvent.getTitle() === 'E-mail changed') {
             return null;
         }
-       return notificationEvent;
+        return notificationEvent;
     });
 // highlight-end
 }
 ```
+
+</TabItem>
+
+<TabItem value="typescript">
+
+```typescript title="index.ts"
+// highlight-next-line
+import Shake, {NotificationEventBuilder} from '@shakebugs/react-native-shake';
+
+const setupNotificationsFilter = () => {
+    // highlight-start
+    Shake.setNotificationEventsFilter((notificationEvent: NotificationEventBuilder): NotificationEventBuilder | null => {
+        if (notificationEvent.getTitle() === 'E-mail changed') {
+            return null;
+        }
+        return notificationEvent;
+    });
+// highlight-end
+}
+```
+
+</TabItem>
+</Tabs>
 
 To clear the notification events filter, use `Shake.setNotificationEventsFilter(null)`.

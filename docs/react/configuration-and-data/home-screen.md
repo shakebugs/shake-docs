@@ -3,6 +3,8 @@ id: home-screen
 title: Home screen
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 > Shake enables you to customize home screen according to your preferences and needs.
 
@@ -11,7 +13,6 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 <a href="/docs/android/configuration-and-data/home-screen/">Android</a>&nbsp;
 <a href="/docs/flutter/configuration-and-data/home-screen/">Flutter</a>&nbsp;  
 </p>
-
 
 ## Home screen actions
 
@@ -68,7 +69,21 @@ Start a new chat action won't be visible if your app user is not [registered](/r
 
 Here's an example how you can set custom actions on the home screen:
 
-```javascript title="App.js"
+<Tabs
+groupId="react"
+defaultValue="javascript"
+values={[
+{ label: 'Javascript', value: 'javascript'},
+{ label: 'Typescript', value: 'typescript'},
+]
+}>
+
+<TabItem value="javascript">
+
+```javascript title="index.js"
+// highlight-next-line
+import Shake, {ShakeChatAction, ShakeHomeAction, ShakeSubmitAction} from '@shakebugs/react-native-shake';
+
 const setShakeHomeActions = () => {
     // highlight-start
     const actions = [
@@ -97,6 +112,45 @@ const setShakeHomeActions = () => {
 };
 ```
 
+</TabItem>
+
+<TabItem value="typescript">
+
+```typescript title="index.ts"
+// highlight-next-line
+import Shake, {ShakeChatAction, ShakeHomeAction, ShakeSubmitAction, ShakeBaseAction} from '@shakebugs/react-native-shake';
+
+const setShakeHomeActions = () => {
+    // highlight-start
+    const actions: ShakeBaseAction[] = [
+        new ShakeHomeAction(
+            'Visit our roadmap',
+            'Check what features are next',
+            roadmapImage,
+            () => {
+                // Open URL
+            },
+        ),
+        new ShakeSubmitAction(
+            'Submit a new ticket',
+            'Let us know your problem',
+            submitImage,
+        ),
+        new ShakeChatAction(
+            'Start a chat',
+            'We are here to answer you questions',
+            chatImage,
+        ),
+    ];
+
+    Shake.setHomeActions(actions);
+    // highlight-end
+};
+```
+
+</TabItem>
+</Tabs>
+
 :::note
 
 Custom action icon should be in the base64 format without prefix eg. **data:image/png;base64,...**
@@ -107,8 +161,30 @@ Custom action icon should be in the base64 format without prefix eg. **data:imag
 
 If you want to change subtitle message on the home screen, you can do it using the following method:
 
-```javascript title="App.js"
+<Tabs
+groupId="react"
+defaultValue="javascript"
+values={[
+{ label: 'Javascript', value: 'javascript'},
+{ label: 'Typescript', value: 'typescript'},
+]
+}>
+
+<TabItem value="javascript">
+
+```javascript title="index.js"
 // highlight-next-line
 Shake.setHomeSubtitle("Feel free to submit your bug reports, suggestions and questions to us.");
 ```
 
+</TabItem>
+
+<TabItem value="typescript">
+
+```typescript title="index.ts"
+// highlight-next-line
+Shake.setHomeSubtitle("Feel free to submit your bug reports, suggestions and questions to us.");
+```
+
+</TabItem>
+</Tabs>

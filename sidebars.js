@@ -263,14 +263,7 @@ module.exports = {
             label: 'Getting started',
             items: [
                 'react/overview',
-                {
-                    type: 'category',
-                    label: 'Installation',
-                    items: [
-                        'react/install/npm',
-                        'react/install/manual-linking'
-                    ]
-                },
+                'react/installation',
                 'react/import-from-instabug'
             ]
         },

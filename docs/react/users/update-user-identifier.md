@@ -33,13 +33,24 @@ Read the documentation carefully to fully understand possible usages and scenari
 The code snippet below showcases a common scenario in which the app user identifier is updated.
 It's assumed that the app user was previously registered with an email:
 
-```javascript title="App.js"
+<Tabs
+groupId="react"
+defaultValue="javascript"
+values={[
+{ label: 'Javascript', value: 'javascript'},
+{ label: 'Typescript', value: 'typescript'},
+]
+}>
+
+<TabItem value="javascript">
+
+```javascript title="index.js"
 const changeEmail = email => {
     networkService.updateUserEmail(email,
         user => {
             // highlight-next-line
             Shake.updateUserId(user.email);
-            
+
             handleEmailChange(user);
         },
         message => {
@@ -47,3 +58,25 @@ const changeEmail = email => {
         });
 }
 ```
+
+</TabItem>
+
+<TabItem value="typescript">
+
+```typescript title="index.ts"
+const changeEmail = (email: string) => {
+    networkService.updateUserEmail(email,
+        (user: User) => {
+            // highlight-next-line
+            Shake.updateUserId(user.email);
+
+            handleEmailChange(user);
+        },
+        (message: string) => {
+            // Handle failed update
+        });
+}
+```
+
+</TabItem>
+</Tabs>

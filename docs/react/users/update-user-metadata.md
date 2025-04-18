@@ -34,7 +34,18 @@ user metadata in segments from various parts of your app, even when offline.
 
 A common approach developers take is updating **generic** app user metadata from one place in your code upon every app user change
 
-```javascript title="App.js"
+<Tabs
+groupId="react"
+defaultValue="javascript"
+values={[
+{ label: 'Javascript', value: 'javascript'},
+{ label: 'Typescript', value: 'typescript'},
+]
+}>
+
+<TabItem value="javascript">
+
+```javascript title="index.js"
 const onLoggedIn = (user) => {
     // highlight-start
     const metadata = {
@@ -43,26 +54,79 @@ const onLoggedIn = (user) => {
         email: user.email,
         status: user.status
     };
-    
+
     Shake.updateUserMetadata(metadata);
     // highlight-end
 }
 ```
 
+</TabItem>
+
+<TabItem value="typescript">
+
+```typescript title="index.ts"
+const onLoggedIn = (user: User) => {
+    // highlight-start
+    const metadata: { [key: string]: string } = {
+        first_name: user.firstName,
+        last_name: user.lastName,
+        email: user.email,
+        status: user.status
+    };
+
+    Shake.updateUserMetadata(metadata);
+    // highlight-end
+}
+```
+
+</TabItem>
+</Tabs>
+
 and updating **specific** app user metadata in their respective contexts:
 
-```javascript title="UserSettings.js"
+<Tabs
+groupId="react"
+defaultValue="javascript"
+values={[
+{ label: 'Javascript', value: 'javascript'},
+{ label: 'Typescript', value: 'typescript'},
+]
+}>
+
+<TabItem value="javascript">
+
+```javascript title="index.js"
 const onUserSettingsConfigured = (userSettings) => {
     fetchUserInformation();
 
     // highlight-start
-    const metadata = { 
-        userSettings: userSettings.toString() 
+    const metadata = {
+        userSettings: userSettings.toString()
     };
     Shake.updateUserMetadata(metadata);
     // highlight-end
 }
 ```
+
+</TabItem>
+
+<TabItem value="typescript">
+
+```typescript title="index.ts"
+const onUserSettingsConfigured = (userSettings: UserSettings) => {
+    fetchUserInformation();
+
+    // highlight-start
+    const metadata: { [key: string]: string } = {
+        userSettings: userSettings.toString()
+    };
+    Shake.updateUserMetadata(metadata);
+    // highlight-end
+}
+```
+
+</TabItem>
+</Tabs>
 
 ## Limitations
 

@@ -15,9 +15,16 @@ title: Release notes
 
 What would you like us to build next? Upvote upcoming features and suggest new ideas on the [Public feedback board](https://feedback.shakebugs.com/).
 
+## 17.1.1
+<span class="tag-button">April 16, 2025</span>&nbsp;&nbsp;
+<span class="tag-button green-tag-button">Latest version</span>
+
+#### Bug fixes
+
+We fixed a few minor bugs that were causing problems. Shake is now more stable and runs even smoother.
+
 ## 17.1.0
 <span class="tag-button">December 16, 2024</span>&nbsp;&nbsp;
-<span class="tag-button green-tag-button">Latest version</span>
 
 #### Bug fixes
 

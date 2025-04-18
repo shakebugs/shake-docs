@@ -19,13 +19,24 @@ want the subsequent tickets to be associated with the current app user.
 
 Unregistering is done by calling the `Shake.unregisterUser` method:
 
-```javascript title="App.js"
-const logOut = () => {
-    networkService.performLogOut(email,
+<Tabs
+groupId="react"
+defaultValue="javascript"
+values={[
+{ label: 'Javascript', value: 'javascript'},
+{ label: 'Typescript', value: 'typescript'},
+]
+}>
+
+<TabItem value="javascript">
+
+```javascript title="index.js"
+const logOut = (email) => {
+    networkService.logOut(email,
         () => {
             // highlight-next-line
             Shake.unregisterUser();
-            
+
             handleLogOut();
         },
         message => {
@@ -33,3 +44,25 @@ const logOut = () => {
         });
 }
 ```
+
+</TabItem>
+
+<TabItem value="typescript">
+
+```typescript title="index.ts"
+const logOut = (email: string) => {
+    networkService.logOut(email,
+        () => {
+            // highlight-next-line
+            Shake.unregisterUser();
+
+            handleLogOut();
+        },
+        (message: string) => {
+            // Handle failed log out
+        });
+}
+```
+
+</TabItem>
+</Tabs>

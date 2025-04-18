@@ -4,6 +4,8 @@ title: Invoke
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 >Decide how you want Shake user feedback to be invoked.
 
@@ -31,7 +33,18 @@ But if you want to, you can customize that.
 
 Let's look at an example where you want Shake user feedback to be invoked either when your users shake their device or when they take a screenshot:
 
-```javascript title="App.js"
+<Tabs
+groupId="react"
+defaultValue="javascript"
+values={[
+{ label: 'Javascript', value: 'javascript'},
+{ label: 'Typescript', value: 'typescript'},
+]
+}>
+
+<TabItem value="javascript">
+
+```javascript title="index.js"
 // highlight-start
 Shake.setInvokeShakeOnShakeDeviceEvent(true);
 Shake.setInvokeShakeOnScreenshot(true);
@@ -39,10 +52,37 @@ Shake.start('app-api-key');
 // highlight-end
 ```
 
+</TabItem>
+
+<TabItem value="typescript">
+
+```typescript title="index.ts"
+// highlight-start
+Shake.setInvokeShakeOnShakeDeviceEvent(true);
+Shake.setInvokeShakeOnScreenshot(true);
+Shake.start('app-api-key');
+// highlight-end
+```
+
+</TabItem>
+</Tabs>
+
+
 You can also change the preferred invocation event on-the-fly during runtime.
 Here’s a list of all available options. Feel free to use any combination of these:
 
-```javascript title="App.js"
+<Tabs
+groupId="react"
+defaultValue="javascript"
+values={[
+{ label: 'Javascript', value: 'javascript'},
+{ label: 'Typescript', value: 'typescript'},
+]
+}>
+
+<TabItem value="javascript">
+
+```javascript title="index.js"
 // highlight-start
 Shake.setInvokeShakeOnShakeDeviceEvent(true);
 Shake.setInvokeShakeOnScreenshot(true);
@@ -50,12 +90,38 @@ Shake.setShowFloatingReportButton(true);
 // highlight-end
 ```
 
+</TabItem>
+
+<TabItem value="typescript">
+
+```typescript title="index.ts"
+// highlight-start
+Shake.setInvokeShakeOnShakeDeviceEvent(true);
+Shake.setInvokeShakeOnScreenshot(true);
+Shake.setShowFloatingReportButton(true);
+// highlight-end
+```
+
+</TabItem>
+</Tabs>
+
 Also, feel free to change which Shake screen is shown when Shake user feedback is invoked manually:
 * [New ticket screen](/react/shake-ui/new-ticket-screen.md) (default)
 * [Home screen](/react/shake-ui/home-screen.md)
 * [Chat screen](react/shake-ui/chat-screen.md)
 
-```javascript title="App.js"
+<Tabs
+groupId="react"
+defaultValue="javascript"
+values={[
+{ label: 'Javascript', value: 'javascript'},
+{ label: 'Typescript', value: 'typescript'},
+]
+}>
+
+<TabItem value="javascript">
+
+```javascript title="index.js"
 // highlight-next-line
 import Shake, {ShakeScreen} from '@shakebugs/react-native-shake';
 
@@ -66,6 +132,25 @@ Shake.setDefaultScreen(ShakeScreen.HOME);
 // highlight-next-line
 Shake.setDefaultScreen(ShakeScreen.CHAT);
 ```
+
+</TabItem>
+
+<TabItem value="typescript">
+
+```typescript title="index.ts"
+// highlight-next-line
+import Shake, {ShakeScreen} from '@shakebugs/react-native-shake';
+
+// highlight-next-line
+Shake.setDefaultScreen(ShakeScreen.NEW);
+// highlight-next-line
+Shake.setDefaultScreen(ShakeScreen.HOME);
+// highlight-next-line
+Shake.setDefaultScreen(ShakeScreen.CHAT);
+```
+
+</TabItem>
+</Tabs>
 
 If you are showing Shake chat screen, make sure that you have [registered](/react/users/register-user) your app user. Otherwise Shake home screen will be shown.
 
@@ -81,10 +166,33 @@ is too weak to invoke Shake. You can decrease Shake's threshold as described bel
 
 The shaking threshold can be fine-tuned too. Let's decrease it, for example, so that Shake user feedback is easier to invoke:
 
-```javascript title="App.js"
+<Tabs
+groupId="react"
+defaultValue="javascript"
+values={[
+{ label: 'Javascript', value: 'javascript'},
+{ label: 'Typescript', value: 'typescript'},
+]
+}>
+
+<TabItem value="javascript">
+
+```javascript title="index.js"
 // highlight-next-line
 Shake.setShakingThreshold(400); // Default value is 600.
 ```
+
+</TabItem>
+
+<TabItem value="typescript">
+
+```typescript title="index.ts"
+// highlight-next-line
+Shake.setShakingThreshold(400); // Default value is 600.
+```
+
+</TabItem>
+</Tabs>
 
 A valid threshold value range is `1 - 1000`. Higher values represent higher thresholds, meaning that a stronger 
 motion gesture will be required to invoke Shake user feedback.
@@ -126,7 +234,18 @@ Invoke Shake user feedback through code by calling the `Shake.show` method anywh
 The `show` method can be called with the argument `ShakeScreen` which determines the first presented screen in the Shake UI.
 The default value is `ShakeScreen.NEW`.
 
-```javascript title="App.js"
+<Tabs
+groupId="react"
+defaultValue="javascript"
+values={[
+{ label: 'Javascript', value: 'javascript'},
+{ label: 'Typescript', value: 'typescript'},
+]
+}>
+
+<TabItem value="javascript">
+
+```javascript title="index.js"
 // highlight-next-line
 import Shake, {ShakeScreen} from '@shakebugs/react-native-shake';
 
@@ -148,6 +267,36 @@ const onStartChatPressed = () => {
     Shake.show(ShakeScreen.CHAT);
 }
 ```
+
+</TabItem>
+
+<TabItem value="typescript">
+
+```typescript title="index.ts"
+// highlight-next-line
+import Shake, {ShakeScreen} from '@shakebugs/react-native-shake';
+
+const onReportProblemPressed = () => {
+    // Displays Shake with the New Ticket screen at the top of the stack.
+    // highlight-next-line
+    Shake.show();
+}
+
+const onFeedbackCenterPressed = () => {
+    // Displays Shake starting at the Home screen.
+    // highlight-next-line
+    Shake.show(ShakeScreen.HOME);
+}
+
+const onStartChatPressed = () => {
+    // Displays Shake empty chat screen.
+    // highlight-next-line
+    Shake.show(ShakeScreen.CHAT);
+}
+```
+
+</TabItem>
+</Tabs>
 
 If an [auto screenshot](/react/configuration-and-data/auto-screenshot.md) and
 [auto screen recording](/react/configuration-and-data/auto-screen-recording.md) are enabled,
