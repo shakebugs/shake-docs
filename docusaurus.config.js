@@ -78,7 +78,8 @@ module.exports = {
                         {to: 'android/overview', label: 'Android', activeBasePath: '/android'},
                         {to: 'react/overview', label: 'React Native', activeBasePath: '/react'},
                         {to: 'flutter/overview', label: 'Flutter', activeBasePath: '/flutter'},
-                        {to: 'web/overview', label: 'Web', activeBasePath: '/web'}
+                        {to: 'web/overview', label: 'Web', activeBasePath: '/web'},
+                        {to: 'chrome-extension/overview', label: 'Chrome extension', activeBasePath: '/chrome-extension'}
                     ],
                 },
                 {

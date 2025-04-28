@@ -9,6 +9,7 @@ title: Release notes
 <a href="/docs/react/releases/">React Native</a>&nbsp; 
 <a href="/docs/flutter/releases/">Flutter</a>&nbsp;  
 <a href="/docs/web/releases/">Web</a>&nbsp;
+<a href="/docs/chrome-extension/releases/">Chrome Extension</a>&nbsp;
 </p>
 
 

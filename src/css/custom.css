@@ -377,10 +377,9 @@ code {
 */
 
 .home-platforms {
-    max-width: 680px;
     margin: 26px auto 80px;
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
 }
 
 .home-platforms > div {

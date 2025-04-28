@@ -11,6 +11,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 <a href="/docs/react/installation/">React Native</a>&nbsp; 
 <a href="/docs/flutter/installation/">Flutter</a>&nbsp;  
 <a href="/docs/web/install/cdn/">Web</a>&nbsp;
+<a href="/docs/chrome-extension/installation/">Chrome Extension</a>&nbsp;
 </p>
 
 

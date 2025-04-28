@@ -9,6 +9,7 @@ title: Data privacy disclosure
 <a href="/docs/react/configuration-and-data/data-privacy-disclosure/">React Native</a>&nbsp;
 <a href="/docs/flutter/configuration-and-data/data-privacy-disclosure/">Flutter</a>&nbsp;
 <a href="/docs/web/configuration-and-data/data-privacy-disclosure/">Web</a>&nbsp;
+<a href="/docs/chrome-extension/configuration-and-data/data-privacy-disclosure/">Chrome Extension</a>&nbsp;
 </p>
 
 ## Collected data

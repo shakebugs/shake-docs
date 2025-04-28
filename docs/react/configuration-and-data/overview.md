@@ -12,7 +12,6 @@ title: Overview
 <a href="/docs/web/configuration-and-data/overview/">Web</a>&nbsp;
 </p>
 
-
 ## Introduction
 
 Whatever you tweak, your configuration settings apply to the [User feedback](/react/user-feedback/overview) module.
