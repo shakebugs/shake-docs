@@ -394,9 +394,35 @@ module.exports = {
                 'web/configuration-and-data/ticket-metadata',
                 'web/configuration-and-data/ticket-tags',
                 'web/configuration-and-data/manage-sensitive-data',
+                'web/configuration-and-data/language',
                 'web/configuration-and-data/data-privacy-disclosure'
             ]
         },
         'web/releases'
+    ],
+    chromeExtensionSidebar: [
+        {
+            type: 'category',
+            label: 'Getting started',
+            items: [
+                'chrome-extension/overview',
+                'chrome-extension/installation',
+            ]
+        },
+        'chrome-extension/shake-ui',
+        'chrome-extension/settings',
+        {
+            type: 'category',
+            label: 'Configuration and data',
+            items: [
+                'chrome-extension/configuration-and-data/data-attached-by-default',
+                'chrome-extension/configuration-and-data/ticket-metadata',
+                'chrome-extension/configuration-and-data/keyboard-shortcuts',
+                'chrome-extension/configuration-and-data/data-privacy-disclosure'
+            ]
+        },
+        'chrome-extension/incognito-mode',
+        'chrome-extension/mobile-inspector',
+        'chrome-extension/releases'
     ],
 };

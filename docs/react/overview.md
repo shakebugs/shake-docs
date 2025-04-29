@@ -11,6 +11,7 @@ title: Overview
 <a href="/docs/android/overview/">Android</a>&nbsp;
 <a href="/docs/flutter/overview/">Flutter</a>&nbsp;  
 <a href="/docs/web/overview/">Web</a>&nbsp;
+<a href="/docs/chrome-extension/overview/">Chrome Extension</a>&nbsp;
 </p>
 
 

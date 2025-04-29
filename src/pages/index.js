@@ -40,6 +40,10 @@ function Home() {
             <img src="/docs/img/icon-web.svg" alt="Shake Web documentation"/>
             <p>Web</p>
           </a></div>
+          <div><a href="/docs/chrome-extension/overview">
+            <img src="/docs/img/icon-chrome.svg" alt="Shake Chrome extension documentation"/>
+            <p>Chrome Extension</p>
+          </a></div>
         </div>
         <p class="p2">🧑‍💻 You can try Shake without signing up or coding. <a href="https://shk.sh/demo" target="_blank">See
           demo Dashboard</a></p>
