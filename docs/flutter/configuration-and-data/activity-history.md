@@ -58,7 +58,7 @@ Install the [shake_dio_interceptor](https://pub.dev/packages/shake_dio_intercept
 ```yaml title="pubspec.yaml"
 dependencies:
 //highlight-next-line
-    shake_dio_interceptor: ^17.0.1
+    shake_dio_interceptor: ^17.0.2
 ```
 
 Add ShakeDioInterceptor to your Dio instance:
