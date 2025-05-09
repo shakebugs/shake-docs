@@ -31,7 +31,7 @@ Once you're done, you're ready to proceed with the steps below.
 
 ## Install the Shake Package
 
-Select _File → Swift Packages → Add Package Dependency_. Enter the Shake repository URL when prompted:
+Select _File → Add Package Dependencies..._. Enter the Shake repository URL when prompted:
 
 ```swift"
 // highlight-next-line

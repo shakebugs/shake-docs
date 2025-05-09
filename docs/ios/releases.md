@@ -17,9 +17,16 @@ title: Release notes
 
 What would you like us to build next? Upvote upcoming features and suggest new ideas on the [Public feedback board](https://feedback.shakebugs.com/).
 
+## 17.1.1
+<span class="tag-button">May 9, 2025</span>&nbsp;&nbsp;
+<span class="tag-button green-tag-button">Latest version</span>
+
+#### Bug fixes
+
+We've fixed touch and gesture glitches on iOS 18.
+
 ## 17.1.0
 <span class="tag-button">December 16, 2024</span>&nbsp;&nbsp;
-<span class="tag-button green-tag-button">Latest version</span>
 
 #### Bug fixes
 
