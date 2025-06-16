@@ -17,9 +17,20 @@ title: Release notes
 
 What would you like us to build next? Upvote upcoming features and suggest new ideas on the [Public feedback board](https://feedback.shakebugs.com/).
 
+## 17.1.2
+<span class="tag-button">May 28, 2025</span>&nbsp;&nbsp;
+<span class="tag-button green-tag-button">Latest version</span>
+
+#### What's new
+
+Shake now supports React Native 0.79.
+
+#### Bug fixes
+
+We fixed Shake custom theme background color and added a few defensive try catch blocks to ensure app doesn't crash.
+
 ## 17.1.1
 <span class="tag-button">April 18, 2025</span>&nbsp;&nbsp;
-<span class="tag-button green-tag-button">Latest version</span>
 
 #### What's new
 

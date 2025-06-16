@@ -17,9 +17,23 @@ title: Release notes
 
 What would you like us to build next? Upvote upcoming features and suggest new ideas on the [Public feedback board](https://feedback.shakebugs.com/).
 
+## 2.12.3
+<span class="tag-button">June 6, 2025</span>&nbsp;&nbsp;
+<span class="tag-button green-tag-button">Latest version</span>
+
+#### Bug fixes
+
+We improved app archiving mechanism, network requests are now not sent if your app is archived on the dashboard.
+
+## 2.12.2
+<span class="tag-button">May 12, 2025</span>&nbsp;&nbsp;
+
+#### Bug fixes
+
+We fixed a few minor bugs in network requests interceptor.
+
 ## 2.12.1
 <span class="tag-button">May 6, 2025</span>&nbsp;&nbsp;
-<span class="tag-button green-tag-button">Latest version</span>
 
 #### Bug fixes
 
