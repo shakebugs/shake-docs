@@ -479,6 +479,164 @@ Shake.configuration.form = SHKForm(items: [
 </TabItem>
 </Tabs>
 
+### Using multiple custom forms
+
+Sometimes, you’ll want to display different Shake forms for different use cases within your app.
+For example, you might want to show one form layout when the user taps the **Report a bug** button, and a different layout when they tap the **Send feedback** button.
+
+You can accomplish this using Shake’s custom forms, as shown in the example below:
+
+<Tabs
+groupId="ios"
+defaultValue="swift"
+values={[
+{ label: 'Objective-C', value: 'objectivec'},
+{ label: 'Swift', value: 'swift'},
+]
+}>
+
+<TabItem value="objectivec">
+
+```objectivec title="AppDelegate.m"
+//highlight-start
+- (void)onBugReportClick {
+    SHKShake.configuration.form = [[SHKForm alloc] initWithItems:@[
+            [[SHKTitle alloc] initWithKey:@"title"
+                                    label:@"Title"
+                                 required:true
+                             initialValue:nil],
+            [[SHKTextInput alloc] initWithKey:@"repro"
+                                        label:@"Repro steps"
+                                     required:true
+                                 initialValue:nil],
+            [[SHKEmail alloc] initWithKey:@"email"
+                                    label:@"Email"
+                                 required:false
+                            initialValue:@"john.doe@gmail.com"]
+        ]];
+}
+
+- (void)onSendFeedbackClick {
+      SHKShake.configuration.form = [[SHKForm alloc] initWithItems:@[
+            [[SHKTitle alloc] initWithKey:@"title"
+                                    label:@"Title"
+                                 required:true
+                             initialValue:nil],
+            [[SHKTextInput alloc] initWithKey:@"like"
+                                        label:@"What do you like most about the app?"
+                                     required:true
+                                 initialValue:nil],
+            [[SHKTextInput alloc] initWithKey:@"dislike"
+                                        label:@"Is there anything you dislike about the app?"
+                                     required:true
+                                 initialValue:nil],
+            [[SHKEmail alloc] initWithKey:@"email"
+                                    label:@"Email"
+                                 required:false
+                            initialValue:@"john.doe@gmail.com"]
+        ]];
+}
+//highlight-end
+```
+
+</TabItem>
+
+<TabItem value="swift">
+
+```swift title="AppDelegate.swift"
+//highlight-start
+func onBugReportClick() {
+  Shake.configuration.form = SHKForm(items: [
+              SHKTitle(key: "title", label: "Title", required: true, initialValue:nil),
+              SHKTextInput(key: "repro", label: "Repro steps", required: true, initialValue:nil),
+              SHKEmail(key: "email", label: "Email", required: true, initialValue: "john.doe@email.com"),
+          ])
+}
+
+func onSendFeedbackClick() {
+  Shake.configuration.form = SHKForm(items: [
+              SHKTitle(key: "title", label: "Title", required: true, initialValue:nil),
+              SHKTextInput(key: "like", label: "What do you like most about the app?", required: true, initialValue:nil),
+              SHKTextInput(key: "dislike", label: "Is there anything you dislike about the app?", required: true, initialValue:nil),
+              SHKEmail(key: "email", label: "Email", required: true, initialValue: "john.doe@email.com"),
+          ])
+}
+//highlight-end
+```
+
+</TabItem>
+</Tabs>
+
+### Change default feedback type
+
+By default, the Shake form’s feedback type picker is set to **Bug**. However, you can change this to any other feedback type you prefer.
+
+For example, if you want to set **Suggestion** as the default option instead of **Bug**, you can do it like this:
+
+<Tabs
+groupId="ios"
+defaultValue="swift"
+values={[
+{ label: 'Objective-C', value: 'objectivec'},
+{ label: 'Swift', value: 'swift'},
+]
+}>
+
+<TabItem value="objectivec">
+
+```objectivec title="AppDelegate.m"
+//highlight-start
+NSArray<id<SHKFormItemProtocol>> *defaultFormItems = SHKShake.configuration.form.items;
+NSMutableArray<id<SHKFormItemProtocol>> *newItems = [defaultFormItems mutableCopy];
+
+for (NSUInteger i = 0; i < newItems.count; i++) {
+    id item = newItems[i];
+    if ([item isKindOfClass:[SHKPicker class]]) {
+        SHKPicker *picker = (SHKPicker *)item;
+
+        NSMutableArray<SHKPickerItem *> *pickerItems = [picker.items mutableCopy];
+        
+        // bug=0,suggestion=1,question=2
+        SHKPickerItem *temp = pickerItems[0];
+        pickerItems[0] = pickerItems[1];
+        pickerItems[1] = temp;
+
+        picker.items = pickerItems;
+    }
+}
+
+SHKShake.configuration.form = [[SHKForm alloc] initWithItems:newItems];
+//highlight-end
+```
+
+</TabItem>
+
+<TabItem value="swift">
+
+```swift title="AppDelegate.swift"
+//highlight-start
+let defaultFormItems = SHKShake.configuration.form.items
+var newItems = defaultFormItems
+
+for (index, item) in newItems.enumerated() {
+    if let picker = item as? SHKPicker {
+        var pickerItems = picker.items
+        
+        // bug=0,suggestion=1,question=2
+        let temp = pickerItems[0]
+        pickerItems[0] = pickerItems[1]
+        pickerItems[1] = temp
+        picker.items = pickerItems
+    }
+}
+
+SHKShake.configuration.form = SHKForm(items: newItems)
+//highlight-end
+```
+
+</TabItem>
+</Tabs>
+
 ### Creating a form translated to different languages
 
 The following code snippet is an example of how to create a custom form that includes elements with labels translated into different languages.

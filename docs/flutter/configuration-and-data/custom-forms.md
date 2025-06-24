@@ -257,6 +257,68 @@ Picker item icons should be in the base64 format without prefix eg. **data:image
 
 :::
 
+### Using multiple custom forms
+
+Sometimes, you’ll want to display different Shake forms for different use cases within your app.
+For example, you might want to show one form layout when the user taps the **Report a bug** button, and a different layout when they tap the **Send feedback** button.
+
+You can accomplish this using Shake’s custom forms, as shown in the example below:
+
+```dart title="main.dart"
+// highlight-start
+void onBugReportClick() {
+  ShakeTitle title = ShakeTitle('title', 'Title', required: true);
+  ShakeTextInput repro = ShakeTextInput('repro', 'Repro steps', required: true);
+  ShakeEmail email = ShakeEmail('email', 'Email', initialValue: 'john.doe@gmail.com');
+  
+  List<ShakeFormComponent> components = [title, repro, email];
+  ShakeForm form = ShakeForm(components);
+  
+  Shake.setShakeForm(form);
+}
+
+void onSendFeedbackClick() {
+  ShakeTitle title = ShakeTitle('title', 'Title', required: true);
+  ShakeTextInput like = ShakeTextInput('like', 'What do you like most about the app?', required: true);
+  ShakeTextInput dislike = ShakeTextInput('dislike', 'Is there anything you dislike about the app?', required: true);
+  ShakeEmail email = ShakeEmail('email', 'Email', initialValue: 'john.doe@gmail.com');
+
+  List<ShakeFormComponent> components = [title, like, dislike, email];
+  ShakeForm form = ShakeForm(components);
+
+  Shake.setShakeForm(form);
+}
+// highlight-end
+```
+
+### Change default feedback type
+
+By default, the Shake form’s feedback type picker is set to **Bug**. However, you can change this to any other feedback type you prefer.
+
+For example, if you want to set **Suggestion** as the default option instead of **Bug**, you can do it like this:
+
+```dart title="main.dart"
+// highlight-start
+void setDefaultFeedbackType() async {
+  ShakeForm? shakeForm = await Shake.getShakeForm();
+  if (shakeForm != null) {
+    for (var c in shakeForm.components) {
+      if (c.type == 'picker') {
+        ShakePicker picker = c as ShakePicker;
+
+        // bug=0,suggestion=1,question=2
+        ShakePickerItem tmpItem = picker.items[0];
+        picker.items[0] = picker.items[1];
+        picker.items[1] = tmpItem;
+
+        break;
+      }
+    }
+  }
+}
+// highlight-end
+```
+
 ### Creating a form translated to different languages
 
 The following code snippet is an example of how to create a custom form that includes elements with labels translated into different languages.
