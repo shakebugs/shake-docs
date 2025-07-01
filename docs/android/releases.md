@@ -16,9 +16,25 @@ title: Release notes
 
 What would you like us to build next? Upvote upcoming features and suggest new ideas on the [Public feedback board](https://feedback.shakebugs.com/).
 
+## 17.1.3
+<span class="tag-button">June 30, 2025</span>&nbsp;&nbsp;
+<span class="tag-button green-tag-button">Latest version</span>
+
+#### What's new
+
+- Improved speed when opening the Shake user interface
+- The `FOREGROUND_SERVICE_MEDIA_PROJECTION` permission is now included by default
+
+#### Bug fixes
+
+We’ve made several improvements to enhance performance and stability:
+
+- Resolved an issue causing excessive log spam from touch events
+- Fixed a crash when pressing the new chat action on the home screen
+- Addressed a problem where the Shake database could grow too large
+
 ## 17.1.2
 <span class="tag-button">May 21, 2025</span>&nbsp;&nbsp;
-<span class="tag-button green-tag-button">Latest version</span>
 
 #### Bug fixes
 
