@@ -407,6 +407,18 @@ values={[
 
 ```javascript title="index.js"
 // highlight-start
+import Shake, {
+    ShakeAttachments,
+    ShakeForm,
+    ShakePicker,
+    ShakePickerItem,
+    ShakeTitle,
+    ShakeTextInput,
+    ShakeEmail
+} from '@shakebugs/browser';
+// highlight-end
+
+// highlight-start
 const title = new ShakeTitle('title', 'Title', '', true);
 const desc = new ShakeTextInput('description', 'Description', '', true);
 const email = new ShakeEmail('email', 'Email', 'john.doe@gmail.com', false);
@@ -432,6 +444,18 @@ Shake.config.shakeForm = shakeForm;
 
 ```typescript title="index.ts"
 // highlight-start
+import Shake, {
+    ShakeAttachments,
+    ShakeForm,
+    ShakePicker,
+    ShakePickerItem,
+    ShakeTitle,
+    ShakeTextInput,
+    ShakeEmail
+} from '@shakebugs/browser';
+// highlight-end
+
+// highlight-start
 const title: ShakeTitle = new ShakeTitle('title', 'Title', '', true);
 const desc: ShakeTextInput  = new ShakeTextInput('description', 'Description', '', true);
 const email: ShakeEmail = new ShakeEmail('email', 'Email', 'john.doe@gmail.com', false);
@@ -448,6 +472,180 @@ const attachments: ShakeAttachments = new ShakeAttachments();
 const shakeForm: ShakeForm = new ShakeForm([title, desc, email, picker, attachments]);
 
 Shake.config.shakeForm = shakeForm;
+// highlight-end
+```
+
+</TabItem>
+</Tabs>
+
+### Using multiple custom forms
+
+Sometimes, you’ll want to display different Shake forms for different use cases within your app.
+For example, you might want to show one form layout when the user taps the **Report a bug** button, and a different layout when they tap the **Send feedback** button.
+
+You can accomplish this using Shake’s custom forms, as shown in the example below:
+
+<Tabs
+groupId="web"
+defaultValue="javascript"
+values={[
+{ label: 'Javascript', value: 'javascript'},
+{ label: 'Typescript', value: 'typescript'},
+]
+}>
+
+<TabItem value="javascript">
+
+```javascript title="index.js"
+// highlight-start
+import Shake, {
+    ShakeForm,
+    ShakeTitle,
+    ShakeTextInput,
+    ShakeEmail
+} from '@shakebugs/browser';
+// highlight-end
+
+// highlight-start
+const onBugReportClick = () => {
+    const title = new ShakeTitle('title', 'Title', '', true);
+    const repro = new ShakeTextInput('repro', 'Repro steps', '', true);
+    const email = new ShakeEmail('email', 'Email', 'john.doe@gmail.com', false);
+    const shakeForm = new ShakeForm([title, repro, email]);
+  
+    Shake.config.shakeForm = shakeForm;
+
+    Shake.show();
+}
+
+const onSendFeedbackClick = () => {
+    const title = new ShakeTitle('title', 'Title', '', true);
+    const like = new ShakeTextInput('like', 'What do you like most about the app?', '', true);
+    const dislike = new ShakeTextInput('dislike', 'Is there anything you dislike about the app?', '', true);
+    const email = new ShakeEmail('email', 'Email', 'john.doe@gmail.com', false);
+    const shakeForm = new ShakeForm([title, like, dislike, email]);
+
+    Shake.config.shakeForm = shakeForm;
+
+    Shake.show();
+}
+// highlight-end
+```
+
+</TabItem>
+
+<TabItem value="typescript">
+
+```typescript title="index.ts"
+// highlight-start
+import Shake, {
+    ShakeForm,
+    ShakeTitle,
+    ShakeTextInput,
+    ShakeEmail
+} from '@shakebugs/browser';
+// highlight-end
+
+// highlight-start
+const onBugReportClick = () => {
+    const title: ShakeTitle = new ShakeTitle('title', 'Title', '', true);
+    const repro: ShakeTextInput = new ShakeTextInput('repro', 'Repro steps', '', true);
+    const email: ShakeEmail = new ShakeEmail('email', 'Email', 'john.doe@gmail.com', false);
+    const shakeForm: ShakeForm = new ShakeForm([title, repro, email]);
+
+    Shake.config.shakeForm = shakeForm;
+
+    Shake.show();
+}
+
+const onSendFeedbackClick = () => {
+    const title: ShakeTitle = new ShakeTitle('title', 'Title', '', true);
+    const like: ShakeTextInput = new ShakeTextInput('like', 'What do you like most about the app?', '', true);
+    const dislike: ShakeTextInput = new ShakeTextInput('dislike', 'Is there anything you dislike about the app?', '', true);
+    const email: ShakeEmail = new ShakeEmail('email', 'Email', 'john.doe@gmail.com', false);
+    const shakeForm: ShakeForm = new ShakeForm([title, like, dislike, email]);
+
+    Shake.config.shakeForm = shakeForm;
+
+    Shake.show();
+}
+// highlight-end
+```
+
+</TabItem>
+</Tabs>
+
+### Change default feedback type
+
+By default, the Shake form’s feedback type picker is set to **Bug**. However, you can change this to any other feedback type you prefer.
+
+For example, if you want to set **Suggestion** as the default option instead of **Bug**, you can do it like this:
+
+<Tabs
+groupId="web"
+defaultValue="javascript"
+values={[
+{ label: 'Javascript', value: 'javascript'},
+{ label: 'Typescript', value: 'typescript'},
+]
+}>
+
+<TabItem value="javascript">
+
+```javascript title="index.js"
+// highlight-start
+import Shake, {
+    DefaultFormKeys,
+    defaultShakeForm,
+} from '@shakebugs/browser';
+// highlight-end
+
+// highlight-start
+const setDefaultFeedbackType = () => {
+    const shakeForm = defaultShakeForm();
+    const picker = shakeForm.items.find(
+        (i) => i.key === DefaultFormKeys.feedbackType
+    );
+
+    // bug=0,suggestion=1,question=2
+    const tmpItem = picker.items[0];
+    picker.items[0] = picker.items[1];
+    picker.items[1] = tmpItem;
+
+    Shake.config.shakeForm = shakeForm;
+}
+// highlight-end
+```
+
+</TabItem>
+
+<TabItem value="typescript">
+
+```typescript title="index.ts"
+// highlight-start
+import Shake, {
+    DefaultFormKeys,
+    defaultShakeForm,
+    ShakeForm,
+    ShakePicker,
+    ShakePickerItem,
+} from '@shakebugs/browser';
+// highlight-end
+
+// highlight-start
+const setDefaultFeedbackType = () => {
+    const shakeForm: ShakeForm = defaultShakeForm();
+    const picker: ShakePicker = shakeForm.items.find(
+        (i) => i.key === DefaultFormKeys.feedbackType
+    ) as ShakePicker;
+
+    // bug=0,suggestion=1,question=2
+    const tmpItem: ShakePickerItem = picker.items[0];
+    picker.items[0] = picker.items[1];
+    picker.items[1] = tmpItem;
+
+    Shake.config.shakeForm = shakeForm;
+}
 // highlight-end
 ```
 
@@ -475,6 +673,14 @@ values={[
 <TabItem value="javascript">
 
 ```javascript title="index.js"
+// highlight-start
+import Shake, {
+    ShakeTitle,
+    ShakeTextInput,
+    ShakeForm
+} from '@shakebugs/browser';
+// highlight-end
+
 // highlight-start
 const strings = {
     'en': {
@@ -510,6 +716,14 @@ const onLanguageChanged = (languageCode) => {
 <TabItem value="typescript">
 
 ```typescript title="index.ts"
+// highlight-start
+import Shake, {
+    ShakeTitle,
+    ShakeTextInput,
+    ShakeForm
+} from '@shakebugs/browser';
+// highlight-end
+
 // highlight-start
 const strings: any = {
     'en': {
@@ -561,6 +775,12 @@ values={[
 
 ```javascript title="index.js"
 // highlight-start
+import Shake, {
+    DefaultFormKeys,
+} from '@shakebugs/browser';
+// highlight-end
+
+// highlight-start
 const setCustomForm = () => {
     const shakeForm = Shake.config.shakeForm;
     shakeForm.items = shakeForm.items.filter(i => i.key !== DefaultFormKeys.attachments);
@@ -574,6 +794,14 @@ const setCustomForm = () => {
 <TabItem value="typescript">
 
 ```typescript title="index.ts"
+// highlight-start
+import Shake, {
+    DefaultFormKeys,
+    defaultShakeForm,
+    ShakeForm
+} from '@shakebugs/browser';
+// highlight-end
+
 // highlight-start
 const setCustomForm = () => {
     const shakeForm: ShakeForm = defaultShakeForm();

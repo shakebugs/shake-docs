@@ -471,6 +471,140 @@ Shake.getReportConfiguration().shakeForm = form
 </TabItem>
 </Tabs>
 
+### Using multiple custom forms
+
+Sometimes, you’ll want to display different Shake forms for different use cases within your app.
+For example, you might want to show one form layout when the user taps the **Report a bug** button, and a different layout when they tap the **Send feedback** button.
+
+You can accomplish this using Shake’s custom forms, as shown in the example below:
+
+<Tabs
+groupId="android"
+defaultValue="kotlin"
+values={[
+{ label: 'Java', value: 'java'},
+{ label: 'Kotlin', value: 'kotlin'},
+]
+}>
+
+<TabItem value="java">
+
+```java title="MainActivity.java"
+// highlight-start
+private void onBugReportClick() {
+    ShakeTitle title = new ShakeTitle("title", R.string.shake_form_title, "", true);
+    ShakeTextInput repro = new ShakeTextInput("repro", R.string.shake_form_repro, "", true);
+    ShakeEmail email = new ShakeEmail("email", R.string.shake_form_email, "john.doe@gmail.com", false);
+    
+    List<ShakeFormComponent> components = Arrays.asList(title, repro, email);
+    ShakeForm form = new ShakeForm(components);
+    
+    Shake.getReportConfiguration().setShakeForm(form);
+}
+
+private void onSendFeedbackClick() {
+    ShakeTitle title = new ShakeTitle("title", R.string.shake_form_title, "", true);
+    ShakeTextInput like = new ShakeTextInput("like", R.string.shake_form_what_do_you_like, "", true);
+    ShakeTextInput dislike = new ShakeTextInput("dislike", R.string.shake_form_what_do_you_dislike, "", true);
+    ShakeEmail email = new ShakeEmail("email", R.string.shake_form_email, "john.doe@gmail.com", false);
+    
+    List<ShakeFormComponent> components = Arrays.asList(title, like, dislike, email);
+    ShakeForm form = new ShakeForm(components);
+    
+    Shake.getReportConfiguration().setShakeForm(form);
+}
+// highlight-end
+```
+
+</TabItem>
+
+<TabItem value="kotlin">
+
+```kotlin title="MainActivity.kt"
+// highlight-start
+private fun onBugReportClick() {
+    val title = ShakeTitle(key = "title", label = R.string.shake_form_title, required = true)
+    val repro = ShakeTextInput(key = "repro", label = R.string.shake_form_repro, required = true)
+    val email = ShakeEmail(key = "email", label = R.string.shake_form_email, initialValue = "john.doe@gmail.com")
+    
+    val components = mutableListOf<ShakeFormComponent>(title, repro, email)
+    val form = ShakeForm(components)
+    
+    Shake.getReportConfiguration().shakeForm = form
+}
+
+private fun onSendFeedbackClick() {
+    val title = ShakeTitle(key = "title", label = R.string.shake_form_title, required = true)
+    val like = ShakeTextInput(key = "like", label = R.string.shake_form_what_do_you_like, required = true)
+    val dislike = ShakeTextInput(key = "dislike", label = R.string.shake_form_what_do_you_dislike, required = true)
+    val email = ShakeEmail(key = "email", label = R.string.shake_form_email, initialValue = "john.doe@gmail.com")
+    
+    val components = mutableListOf<ShakeFormComponent>(title, like, dislike, email)
+    val form = ShakeForm(components)
+    
+    Shake.getReportConfiguration().shakeForm = form
+}
+// highlight-end
+```
+
+</TabItem>
+</Tabs>
+
+### Change default feedback type
+
+By default, the Shake form’s feedback type picker is set to **Bug**. However, you can change this to any other feedback type you prefer.
+
+For example, if you want to set **Suggestion** as the default option instead of **Bug**, you can do it like this:
+
+<Tabs
+groupId="android"
+defaultValue="kotlin"
+values={[
+{ label: 'Java', value: 'java'},
+{ label: 'Kotlin', value: 'kotlin'},
+]
+}>
+
+<TabItem value="java">
+
+```java title="App.java"
+// highlight-start
+ShakeForm shakeForm = Shake.getReportConfiguration().getShakeForm();
+for (ShakeFormComponent component : shakeForm.getComponents()) {
+    if (component instanceof ShakePicker) {
+        ShakePicker picker = (ShakePicker) component;
+
+        // bug=0,suggestion=1,question=2
+        ShakePickerItem tmpItem = picker.getItems().get(0);
+        picker.getItems().set(0, picker.getItems().get(1));
+        picker.getItems().set(1, tmpItem);
+    }
+}
+// highlight-end
+```
+
+</TabItem>
+
+<TabItem value="kotlin">
+
+```kotlin title="App.kt"
+// highlight-start
+val shakeForm = Shake.getReportConfiguration().shakeForm
+for (component in shakeForm.components) {
+    if (component is ShakePicker) {
+
+        // bug=0,suggestion=1,question=2
+        val tmpItem = component.items[0]
+        component.items[0] = component.items[1]
+        component.items[1] = tmpItem
+    }
+}
+// highlight-end
+```
+
+</TabItem>
+</Tabs>
+
 ### Creating a form translated to different languages
 
 The following code snippet is an example of how to create a custom form that includes elements with labels translated into different languages.

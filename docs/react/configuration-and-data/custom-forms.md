@@ -489,6 +489,184 @@ Picker item icons should be in the base64 format without prefix eg. **data:image
 
 :::
 
+### Using multiple custom forms
+
+Sometimes, you’ll want to display different Shake forms for different use cases within your app.
+For example, you might want to show one form layout when the user taps the **Report a bug** button, and a different layout when they tap the **Send feedback** button.
+
+You can accomplish this using Shake’s custom forms, as shown in the example below:
+
+<Tabs
+groupId="react"
+defaultValue="javascript"
+values={[
+{ label: 'Javascript', value: 'javascript'},
+{ label: 'Typescript', value: 'typescript'},
+]
+}>
+
+<TabItem value="javascript">
+
+```javascript title="settings.js"
+// highlight-start
+import Shake, {
+    ShakeEmail,
+    ShakeForm,
+    ShakeTextInput,
+    ShakeTitle,
+} from '@shakebugs/react-native-shake';
+// highlight-end
+
+// highlight-start
+const onBugReportClick = () => {
+    const title = new ShakeTitle('title', 'Title', '', true);
+    const repro = new ShakeTextInput('repro', 'Repro steps', '', true);
+    const email = new ShakeEmail('email', 'Email', 'john.doe@gmail.com', false);
+    
+    const components = [title, repro, email];
+    const form = new ShakeForm(components);
+
+    Shake.setShakeForm(form);
+    Shake.show();
+}
+
+const onSendFeedbackClick = () => {
+    const title = new ShakeTitle('title', 'Title', '', true);
+    const like = new ShakeTextInput('like', 'What do you like most about the app?', '', true);
+    const dislike = new ShakeTextInput('dislike', 'Is there anything you dislike about the app?', '', true);
+    const email = new ShakeEmail('email', 'Email', 'john.doe@gmail.com', false);
+
+    const components = [title, like, dislike, email];
+    const form = new ShakeForm(components);
+
+    Shake.setShakeForm(form);
+    Shake.show();
+}
+// highlight-end
+```
+
+</TabItem>
+
+<TabItem value="typescript">
+
+```typescript title="settings.ts"
+// highlight-start
+import Shake, {
+    ShakeEmail,
+    ShakeForm,
+    ShakeFormComponent,
+    ShakeTextInput,
+    ShakeTitle,
+} from '@shakebugs/react-native-shake';
+// highlight-end
+
+// highlight-start
+const onBugReportClick = () => {
+    const title: ShakeTitle = new ShakeTitle('title', 'Title', '', true);
+    const repro: ShakeTextInput = new ShakeTextInput('repro', 'Repro steps', '', true);
+    const email: ShakeEmail = new ShakeEmail('email', 'Email', 'john.doe@gmail.com', false);
+
+    const components: ShakeFormComponent[] = [title, repro, email];
+    const form: ShakeForm = new ShakeForm(components);
+
+    Shake.setShakeForm(form);
+    Shake.show();
+}
+
+const onSendFeedbackClick = () => {
+    const title: ShakeTitle = new ShakeTitle('title', 'Title', '', true);
+    const like: ShakeTextInput = new ShakeTextInput('like', 'What do you like most about the app?', '', true);
+    const dislike: ShakeTextInput = new ShakeTextInput('dislike', 'Is there anything you dislike about the app?', '', true);
+    const email: ShakeEmail = new ShakeEmail('email', 'Email', 'john.doe@gmail.com', false);
+
+    const components: ShakeFormComponent[] = [title, like, dislike, email];
+    const form: ShakeForm = new ShakeForm(components);
+
+    Shake.setShakeForm(form);
+    Shake.show();
+}
+// highlight-end
+```
+
+</TabItem>
+</Tabs>
+
+### Change default feedback type
+
+By default, the Shake form’s feedback type picker is set to **Bug**. However, you can change this to any other feedback type you prefer.
+
+For example, if you want to set **Suggestion** as the default option instead of **Bug**, you can do it like this:
+
+<Tabs
+groupId="react"
+defaultValue="javascript"
+values={[
+{ label: 'Javascript', value: 'javascript'},
+{ label: 'Typescript', value: 'typescript'},
+]
+}>
+
+<TabItem value="javascript">
+
+```javascript title="index.js"
+// highlight-start
+import Shake from '@shakebugs/react-native-shake';
+// highlight-end
+
+// highlight-start
+const setDefaultFeedbackType = () => {
+    const shakeForm = Shake.getShakeForm();
+    for (const component of shakeForm.components) {
+        if (component.type === "picker") {
+            const picker = component;
+            
+            // bug=0,suggestion=1,question=2
+            const tmpItem = picker.items[0];
+            picker.items[0] = picker.items[1];
+            picker.items[1] = tmpItem
+
+            break;
+        }
+    }
+
+    Shake.setShakeForm(shakeForm);
+}
+// highlight-end
+```
+
+</TabItem>
+
+<TabItem value="typescript">
+
+```typescript title="index.ts"
+// highlight-start
+import Shake, {ShakeForm, ShakePicker, ShakePickerItem} from '@shakebugs/react-native-shake';
+// highlight-end
+
+// highlight-start
+const setDefaultFeedbackType = () => {
+    const shakeForm: ShakeForm = Shake.getShakeForm();
+    for (const component of shakeForm.components) {
+        if (component.type === "picker") {
+            const picker: ShakePicker = component as ShakePicker;
+
+            // bug=0,suggestion=1,question=2
+            const tmpItem: ShakePickerItem = picker.items[0];
+            picker.items[0] = picker.items[1];
+            picker.items[1] = tmpItem
+            
+            break;
+        }
+    }
+
+    Shake.setShakeForm(shakeForm);
+}
+// highlight-end
+```
+
+</TabItem>
+</Tabs>
+
 ### Creating a form translated to different languages
 
 The following code snippet is an example of how to create a custom form that has elements with labels translated into different languages.
