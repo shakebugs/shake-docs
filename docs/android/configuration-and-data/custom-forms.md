@@ -524,7 +524,7 @@ private void onSendFeedbackClick() {
 // highlight-start
 private fun onBugReportClick() {
     val title = ShakeTitle(key = "title", label = R.string.shake_form_title, required = true)
-    val repro = ShakeTextInput(key = "repro", label = R.string.shake_form_repro, required = true);
+    val repro = ShakeTextInput(key = "repro", label = R.string.shake_form_repro, required = true)
     val email = ShakeEmail(key = "email", label = R.string.shake_form_email, initialValue = "john.doe@gmail.com")
     
     val components = mutableListOf<ShakeFormComponent>(title, repro, email)
@@ -535,8 +535,8 @@ private fun onBugReportClick() {
 
 private fun onSendFeedbackClick() {
     val title = ShakeTitle(key = "title", label = R.string.shake_form_title, required = true)
-    val like = ShakeTextInput(key = "like", label = R.string.shake_form_what_do_you_like, required = true);
-    val dislike = ShakeTextInput(key = "dislike", label = R.string.shake_form_what_do_you_dislike, required = true);
+    val like = ShakeTextInput(key = "like", label = R.string.shake_form_what_do_you_like, required = true)
+    val dislike = ShakeTextInput(key = "dislike", label = R.string.shake_form_what_do_you_dislike, required = true)
     val email = ShakeEmail(key = "email", label = R.string.shake_form_email, initialValue = "john.doe@gmail.com")
     
     val components = mutableListOf<ShakeFormComponent>(title, like, dislike, email)
