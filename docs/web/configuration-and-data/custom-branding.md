@@ -483,7 +483,7 @@ If you want to use different color scheme for dark and light mode, you can use *
 ```
 
 Optionally, if you need to change theme on a button click, you can create two distinct CSS classes (one for a light mode and one for a dark mode)
-and apply classes to the body element of your page when needed.
+and apply classes to the document element of your app when needed.
 
 Keep in mind that CSS variables are assigned at the creation time so you'll need to update them accordingly.
 
@@ -499,3 +499,41 @@ Keep in mind that CSS variables are assigned at the creation time so you'll need
     --shake-sdk-main-card-background: var(--shake-sdk-background-color-primary);
 }
 ```
+
+<Tabs
+groupId="web"
+defaultValue="javascript"
+values={[
+{ label: 'Javascript', value: 'javascript'},
+{ label: 'Typescript', value: 'typescript'},
+]
+}>
+
+<TabItem value="javascript">
+
+```javascript title='settings.js'
+const onThemeChanged = (theme) => {
+    document.documentElement.classList.remove('dark-mode');
+    document.documentElement.classList.remove('light-mode');
+    
+    // highlight-next-line
+    document.documentElement.classList.add(theme === 'dark' ? 'dark-mode' : 'light-mode');
+}
+```
+
+</TabItem>
+
+<TabItem value='typescript'>
+
+```typescript title='settings.ts'
+const onThemeChanged = (theme: string) => {
+    document.documentElement.classList.remove('dark-mode');
+    document.documentElement.classList.remove('light-mode');
+    
+    // highlight-next-line
+    document.documentElement.classList.add(theme === 'dark' ? 'dark-mode' : 'light-mode');
+}
+```
+
+</TabItem>
+</Tabs>
