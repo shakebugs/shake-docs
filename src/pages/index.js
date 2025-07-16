@@ -37,11 +37,11 @@ function Home() {
             <p>Flutter</p>
           </a></div>
           <div><a href="/docs/web/overview">
-            <img src="/docs/img/icon-web.svg" alt="Shake Web documentation"/>
+            <img src="/docs/img/icon-web@2x.png" alt="Shake Web documentation"/>
             <p>Web</p>
           </a></div>
           <div><a href="/docs/chrome-extension/overview">
-            <img src="/docs/img/icon-chrome.svg" alt="Shake Chrome extension documentation"/>
+            <img src="/docs/img/icon-chrome@2x.png" alt="Shake Chrome extension documentation"/>
             <p>Chrome Extension</p>
           </a></div>
         </div>
