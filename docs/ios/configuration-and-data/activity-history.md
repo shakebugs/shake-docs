@@ -370,7 +370,7 @@ You can add your own logs to Activity history too:
 
 ```swift title="AppDelegate.swift"
 // highlight-next-line
-Shake.log(LogLevel.info, "Log message goes here!")
+Shake.log(ShakeLogLevel.LogLevelInfo, "Log message goes here!")
 ```
 
 </TabItem>
@@ -402,11 +402,11 @@ LogLevelError
 <TabItem value="swift">
 
 ```swift title="AppDelegate.swift"
-LogLevel.verbose
-LogLevel.debug
-LogLevel.info
-LogLevel.warn
-LogLevel.error
+ShakeLogLevel.LogLevelVerbose
+ShakeLogLevel.LogLevelDebug
+ShakeLogLevel.LogLevelInfo
+ShakeLogLevel.LogLevelWarn
+ShakeLogLevel.LogLevelError
 ```
 
 </TabItem>
