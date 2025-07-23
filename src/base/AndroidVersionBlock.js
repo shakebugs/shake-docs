@@ -19,13 +19,25 @@ class AndroidVersionBlock extends React.Component {
     }
 
     render() {
+        if (this.props.language === "kotlin") {
+            return (
+                <div>
+                    <CodeBlock
+                        metastring={'{2} title="build.gradle.kts"'}
+                        className={'kotlin'}
+                        children={'dependencies {\n' +
+                            `    implementation("com.shakebugs:shake:${this.state.version}")\n` +
+                            '}'}/>
+                </div>
+            );
+        }
         return (
             <div>
                 <CodeBlock
                     metastring={'{2} title="build.gradle"'}
                     className={'groovy'}
                     children={'dependencies {\n' +
-                    `    implementation 'com.shakebugs:shake:${this.state.version}'\n` +
+                    `    implementation "com.shakebugs:shake:${this.state.version}"\n` +
                     '}'}/>
             </div>
         );

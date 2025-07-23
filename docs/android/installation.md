@@ -3,6 +3,8 @@ id: installation
 title: Installation
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 > Learn how to add Shake to your Android app using Gradle.
 
@@ -32,15 +34,35 @@ Once you're done, you're ready to proceed with the steps below.
 
 import AndroidVersionBlock from '@site/src/base/AndroidVersionBlock';
 
-<AndroidVersionBlock></AndroidVersionBlock>
+<Tabs
+groupId="android"
+defaultValue="kotlin"
+values={[
+{ label: 'Groovy', value: 'groovy'},
+{ label: 'Kotlin', value: 'kotlin'},
+]
+}>
+
+<TabItem value="groovy">
+
+<AndroidVersionBlock language="groovy"></AndroidVersionBlock>
+
+</TabItem>
+
+<TabItem value="kotlin">
+
+<AndroidVersionBlock language="kotlin"></AndroidVersionBlock>
+
+</TabItem>
+</Tabs>
+
+
+
 
 ## Initialize Shake
 
 Initialize Shake in the `onCreate` callback of your _Application_.
 Replace `app-api-key` with the actual value you have in [your app settings](https://app.shakebugs.com/administration/apps):
-
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
 
 <Tabs
 groupId="android"
