@@ -38,12 +38,12 @@ import AndroidVersionBlock from '@site/src/base/AndroidVersionBlock';
 groupId="android"
 defaultValue="kotlin"
 values={[
-{ label: 'Groovy', value: 'groovy'},
+{ label: 'Groovy', value: 'java'},
 { label: 'Kotlin', value: 'kotlin'},
 ]
 }>
 
-<TabItem value="groovy">
+<TabItem value="java">
 
 <AndroidVersionBlock language="groovy"></AndroidVersionBlock>
 
@@ -55,9 +55,6 @@ values={[
 
 </TabItem>
 </Tabs>
-
-
-
 
 ## Initialize Shake
 

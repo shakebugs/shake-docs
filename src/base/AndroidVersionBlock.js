@@ -37,7 +37,7 @@ class AndroidVersionBlock extends React.Component {
                     metastring={'{2} title="build.gradle"'}
                     className={'groovy'}
                     children={'dependencies {\n' +
-                    `    implementation "com.shakebugs:shake:${this.state.version}"\n` +
+                    `    implementation 'com.shakebugs:shake:${this.state.version}'\n` +
                     '}'}/>
             </div>
         );
