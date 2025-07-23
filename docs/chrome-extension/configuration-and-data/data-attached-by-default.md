@@ -7,7 +7,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 >This is the data Shake automatically attaches to every ticket you receive.
 All of this is done out of the box, you don't need to code anything.
 
-<p class="p2 mt-40">You're viewing the Chrome Extension docs. Other platforms → &nbsp;
+<p class="p2 mt-40">You're viewing the Chrome extension docs. Other platforms → &nbsp;
 <a href="/docs/android/configuration-and-data/data-attached-by-default/">iOS</a>&nbsp; 
 <a href="/docs/android/configuration-and-data/data-attached-by-default/">Android</a>&nbsp;
 <a href="/docs/android/configuration-and-data/data-attached-by-default/">React Native</a>&nbsp;

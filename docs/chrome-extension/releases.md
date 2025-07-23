@@ -2,7 +2,7 @@
 id: releases
 title: Release notes
 ---
->This page lists all updates to the Shake Chrome Extension.
+>This page lists all updates to the Shake Chrome extension.
 
 <p class="p2 mt-40">Other platforms → &nbsp;
 <a href="/docs/ios/releases/">iOS</a>&nbsp; 

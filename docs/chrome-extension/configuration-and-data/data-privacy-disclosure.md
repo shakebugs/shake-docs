@@ -4,7 +4,7 @@ title: Data privacy disclosure
 ---
 >When users send you tickets, Shake "magically" and automatically captures a lot of other data, too. Although it feels like magic, it's not. We want you to fully understand and control it.
 
-<p class="p2 mt-40">You're viewing the Chrome Extension docs. Other platforms → &nbsp;
+<p class="p2 mt-40">You're viewing the Chrome extension docs. Other platforms → &nbsp;
 <a href="/docs/ios/configuration-and-data/data-privacy-disclosure/">iOS</a>&nbsp; 
 <a href="/docs/android/configuration-and-data/data-privacy-disclosure/">Android</a>&nbsp;
 <a href="/docs/react/configuration-and-data/data-privacy-disclosure/">React Native</a>&nbsp;

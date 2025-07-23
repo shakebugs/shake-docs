@@ -15,7 +15,7 @@ There are a few ways you can utilize Shake extension:
 
 ## Create a ticket and share a link
 
-With the Shake Chrome Extension, you can easily create a public ticket to share with others or keep for personal reference.
+With the Shake Chrome extension, you can easily create a public ticket to share with others or keep for personal reference.
 
 Simply select the option _Just a link I can share_ and submit the ticket. Once sent, the ticket will open automatically, providing instant access.
 
