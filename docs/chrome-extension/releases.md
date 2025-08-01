@@ -16,9 +16,18 @@ title: Release notes
 
 What would you like us to build next? Upvote upcoming features and suggest new ideas on the [Public feedback board](https://feedback.shakebugs.com/).
 
+## 1.4.x
+<span class="tag-button">July 30, 2025</span>&nbsp;&nbsp;
+<span class="tag-button green-tag-button">Latest version</span>
+
+#### What's new
+
+We’ve redesigned the Shake extension interface to provide a cleaner, more intuitive experience that’s easier and more pleasant to use. 
+In this update, the extension also captures more detailed network request data — including images, media files, documents, and more — giving you greater visibility into what’s happening behind the scenes. 
+Additionally, we’ve fixed several bugs that were causing the interface to freeze, resulting in a smoother and more stable experience overall.
+
 ## 1.3.x
 <span class="tag-button">April 18, 2025</span>&nbsp;&nbsp;
-<span class="tag-button green-tag-button">Latest version</span>
 
 #### What's new
 
