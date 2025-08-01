@@ -9,7 +9,7 @@ title: Release notes
 <a href="/docs/android/releases/">Android</a>&nbsp;
 <a href="/docs/react/releases/">React Native</a>&nbsp;
 <a href="/docs/flutter/releases/">Flutter</a>&nbsp;  
-<a href="/docs/chrome-extension/releases/">Chrome Extension</a>&nbsp;
+<a href="/docs/chrome-extension/releases/">Chrome extension</a>&nbsp;
 </p>
 
 
@@ -17,9 +17,20 @@ title: Release notes
 
 What would you like us to build next? Upvote upcoming features and suggest new ideas on the [Public feedback board](https://feedback.shakebugs.com/).
 
+## 3.0.0
+<span class="tag-button">August 1, 2025</span>&nbsp;&nbsp;
+<span class="tag-button green-tag-button">Latest version</span>
+
+#### What's new
+
+We’ve redesigned the Shake extension interface to provide a cleaner, more intuitive experience that’s easier and more pleasant to use.
+
+#### Bug fixes
+
+We’ve fixed several bugs that were causing the interface to freeze, resulting in a smoother and more stable experience overall.
+
 ## 2.12.3
 <span class="tag-button">June 6, 2025</span>&nbsp;&nbsp;
-<span class="tag-button green-tag-button">Latest version</span>
 
 #### Bug fixes
 

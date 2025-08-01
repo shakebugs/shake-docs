@@ -1,6 +1,6 @@
 ---
 id: extension
-title: Chrome Extension
+title: Chrome extension
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
@@ -11,25 +11,25 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 <a href="/docs/android/installation/">Android</a>&nbsp;
 <a href="/docs/react/installation/">React Native</a>&nbsp;
 <a href="/docs/flutter/installation/">Flutter</a>&nbsp;  
-<a href="/docs/chrome-extension/installation/">Chrome Extension</a>&nbsp;
+<a href="/docs/chrome-extension/installation/">Chrome extension</a>&nbsp;
 </p>
 
 ## Overview
 
-The Shake Chrome Extension allows you to create and submit tickets effortlessly from your browser. With just a click, you can capture issues, send reports, and share feedback without needing a Shake account or integrating any code into your app.
+The Shake Chrome extension allows you to create and submit tickets effortlessly from your browser. With just a click, you can capture issues, send reports, and share feedback without needing a Shake account or integrating any code into your app.
 
 The extension works seamlessly with Chromium-based browsers such as Chrome, Brave, Vivaldi, Edge, and others.
 
 :::note
 
-The Shake Chrome Extension has a limited feature set compared to the Shake Web SDK.
+The Shake Chrome extension has a limited feature set compared to the Shake Web SDK.
 If you need advanced functionalities such as user registration, in-app chat, or access to previously reported tickets, you should consider integrating the Shake Web SDK instead.
 
 :::note
 
 ## Installation
 
-The Shake Chrome Extension is available on the Chrome Web Store:
+The Shake Chrome extension is available on the Chrome Web Store:
 
 [Install Shake Chrome extension](https://chromewebstore.google.com/detail/shake/fgpnklngaiahpcpjennhbcmkiahjohdk)
 
@@ -39,7 +39,7 @@ There are a few ways you can utilize Shake extension:
 
 ## Create a ticket and share a link
 
-With the Shake Chrome Extension, you can easily create a public ticket to share with others or keep for personal reference.
+With the Shake Chrome extension, you can easily create a public ticket to share with others or keep for personal reference.
 
 Simply select the option _Just a link I can share_ and submit the ticket. Once sent, the ticket will open automatically, providing instant access.
 

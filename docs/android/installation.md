@@ -3,6 +3,8 @@ id: installation
 title: Installation
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 > Learn how to add Shake to your Android app using Gradle.
 
@@ -11,7 +13,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 <a href="/docs/react/installation/">React Native</a>&nbsp;  
 <a href="/docs/flutter/installation/">Flutter</a>&nbsp;  
 <a href="/docs/web/install/npm/">Web</a>&nbsp;  
-<a href="/docs/chrome-extension/installation/">Chrome Extension</a>&nbsp;
+<a href="/docs/chrome-extension/installation/">Chrome extension</a>&nbsp;
 </p>
 
 ## Create a new app on Dashboard
@@ -32,15 +34,32 @@ Once you're done, you're ready to proceed with the steps below.
 
 import AndroidVersionBlock from '@site/src/base/AndroidVersionBlock';
 
-<AndroidVersionBlock></AndroidVersionBlock>
+<Tabs
+groupId="android"
+defaultValue="kotlin"
+values={[
+{ label: 'Groovy', value: 'java'},
+{ label: 'Kotlin', value: 'kotlin'},
+]
+}>
+
+<TabItem value="java">
+
+<AndroidVersionBlock language="groovy"></AndroidVersionBlock>
+
+</TabItem>
+
+<TabItem value="kotlin">
+
+<AndroidVersionBlock language="kotlin"></AndroidVersionBlock>
+
+</TabItem>
+</Tabs>
 
 ## Initialize Shake
 
 Initialize Shake in the `onCreate` callback of your _Application_.
 Replace `app-api-key` with the actual value you have in [your app settings](https://app.shakebugs.com/administration/apps):
-
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
 
 <Tabs
 groupId="android"

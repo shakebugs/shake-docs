@@ -39,23 +39,27 @@ Here is a list of default CSS variables - you can use those variables to set you
 
 ```css title="index.css"
 :root {
-    /* Global Shake SDK CSS */
-    /* Use this CSS variables to design components globally */
+    /* Global Shake SDK css */
+    /* Use this css variables to design components globally */
 
     --shake-sdk-font-family: "Roobert", serif;
-    --shake-sdk-overlay: transparent;
+    --shake-sdk-overlay: rgba(0, 0, 0, 0.5);
     --shake-sdk-color-accent: var(--shake-sdk-purple);
 
-    /* Primary represents right card */
-    --shake-sdk-background-color-primary: var(--shake-sdk-pureWhite);
-    --shake-sdk-highlight-color-primary: var(--shake-sdk-grey10);
-    --shake-sdk-outline-color-primary: var(--shake-sdk-grey20);
+    --shake-sdk-box-shadow: 0 2px 1px 0 #00000014;
+    --shake-sdk-active-box-shadow: 0 0 0 3px rgba(102,82,255,0.25);
+
+    /* Primary colors */
+    --shake-sdk-background-color-primary: var(--shake-sdk-dirtyWhite);
+    --shake-sdk-highlight-color-primary: var(--shake-sdk-pureWhite);
+    --shake-sdk-outline-color-primary: var(--shake-sdk-grey30);
     --shake-sdk-text-color-primary-title: var(--shake-sdk-grey90);
     --shake-sdk-text-color-primary-subtitle: var(--shake-sdk-grey60);
-    --shake-sdk-icon-color-primary: var(--shake-sdk-grey100);
+    --shake-sdk-icon-color-primary: var(--shake-sdk-grey70);
     --shake-sdk-scrollbar-color-primary: var(--shake-sdk-grey20);
+    --shake-sdk-divider-color-primary: var(--shake-sdk-grey20);
 
-    /* Secondary represents left card */
+    /* Secondary colors */
     --shake-sdk-background-color-secondary: var(--shake-sdk-black);
     --shake-sdk-highlight-color-secondary: var(--shake-sdk-grey100);
     --shake-sdk-outline-color-secondary: var(--shake-sdk-grey90);
@@ -63,31 +67,41 @@ Here is a list of default CSS variables - you can use those variables to set you
     --shake-sdk-text-color-secondary-subtitle: var(--shake-sdk-grey40);
     --shake-sdk-icon-color-secondary: var(--shake-sdk-grey50);
     --shake-sdk-scrollbar-color-secondary: var(--shake-sdk-grey100);
+    --shake-sdk-divider-color-secondary: var(--shake-sdk-grey90);
 
+    --shake-sdk-border-radius-xsmall: 5px;
     --shake-sdk-border-radius-small: 10px;
     --shake-sdk-border-radius-medium: 20px;
-    --shake-sdk-border-radius-large: 24px;
-    
-    /* Shake SDK Components CSS */
-    /* Use this CSS variables to design each component more specifically */
+    --shake-sdk-border-radius-large: 22px;
+
+    /* Shake SDK Components css */
+    /* Use this css variables to design each component more specifically */
 
     /* Accent button */
     --shake-sdk-button-accent-color: var(--shake-sdk-color-accent);
     --shake-sdk-button-accent-text-color: var(--shake-sdk-white);
-    --shake-sdk-button-accent-border: 1px solid var(--shake-sdk-transparent);
+    --shake-sdk-button-accent-border: 1px solid #0000004D;
     --shake-sdk-button-accent-border-radius: var(--shake-sdk-border-radius-small);
+    --shake-sdk-button-accent-box-shadow: var(--shake-sdk-box-shadow);
 
     /* Regular button */
     --shake-sdk-button-color: var(--shake-sdk-highlight-color-secondary);
     --shake-sdk-button-text-color: var(--shake-sdk-grey30);
-    --shake-sdk-button-border: 1px solid var(--shake-sdk-outline-color-secondary);
+    --shake-sdk-button-border: 1px solid #0000004D;
     --shake-sdk-button-border-radius: var(--shake-sdk-border-radius-small);
+    --shake-sdk-button-box-shadow: var(--shake-sdk-box-shadow);
+
+    /* Main card */
+    --shake-sdk-main-card-background: var(--shake-sdk-background-color-primary);
+    --shake-sdk-main-card-border: 1px solid var(--shake-sdk-outline-color-primary);
+    --shake-sdk-main-card-border-radius:  var(--shake-sdk-border-radius-medium);
+    --shake-sdk-main-card-box-shadow: var(--shake-sdk-box-shadow);
+    --shake-sdk-main-card-scroll-bar: var(--shake-sdk-scrollbar-color-primary);
 
     /* Attachment card */
     --shake-sdk-attachments-card-background: var(--shake-sdk-background-color-secondary);
     --shake-sdk-attachments-card-border: none;
     --shake-sdk-attachments-card-border-radius: var(--shake-sdk-border-radius-medium);
-    --shake-sdk-attachments-card-box-shadow: 0 2px 2px var(--shake-sdk-attachments-card-background);
     --shake-sdk-attachments-card-scroll-bar: var(--shake-sdk-scrollbar-color-secondary);
 
     /* Context menu */
@@ -103,13 +117,19 @@ Here is a list of default CSS variables - you can use those variables to set you
     --shake-sdk-sheet-text-color: var(--shake-sdk-text-color-primary-title);
     --shake-sdk-sheet-border: none;
     --shake-sdk-sheet-border-radius: var(--shake-sdk-border-radius-medium) var(--shake-sdk-border-radius-medium) 0 0;
-    --shake-sdk-sheet-hover-color: var(--shake-sdk-highlight-color-primary);
+    --shake-sdk-sheet-hover-color: var(--shake-sdk-outline-color-primary);
 
     /* Tooltip */
-    --shake-sdk-tooltip-background: var(--shake-sdk-highlight-color-secondary);
-    --shake-sdk-tooltip-text-color: var(--shake-sdk-text-color-secondary-title);
-    --shake-sdk-tooltip-border: 1px solid var(--shake-sdk-outline-color-secondary);
-    --shake-sdk-tooltip-border-radius: var(--shake-sdk-border-radius-small);
+    --shake-sdk-tooltip-background: var(--shake-sdk-highlight-color-primary);
+    --shake-sdk-tooltip-text-color: var(--shake-sdk-text-color-primary-title);
+    --shake-sdk-tooltip-border: 1px solid var(--shake-sdk-outline-color-primary);
+    --shake-sdk-tooltip-border-radius: var(--shake-sdk-border-radius-xsmall);
+    --shake-sdk-tooltip-box-shadow: var(--shake-sdk-box-shadow);
+
+    --shake-sdk-tooltip-background-dark: var(--shake-sdk-highlight-color-secondary);
+    --shake-sdk-tooltip-text-color-dark: var(--shake-sdk-text-color-secondary-title);
+    --shake-sdk-tooltip-border-dark: 1px solid var(--shake-sdk-outline-color-secondary);
+    --shake-sdk-tooltip-border-radius-dark: var(--shake-sdk-border-radius-xsmall);
 
     /* Drawing */
     --shake-sdk-drawing-background-color: var(--shake-sdk-highlight-color-secondary);
@@ -118,19 +138,15 @@ Here is a list of default CSS variables - you can use those variables to set you
     --shake-sdk-drawing-border: 1px solid var(--shake-sdk-outline-color-secondary);
     --shake-sdk-drawing-border-radius: var(--shake-sdk-border-radius-large);
 
-    /* Main card */
-    --shake-sdk-main-card-background: var(--shake-sdk-background-color-primary);
-    --shake-sdk-main-card-border: none;
-    --shake-sdk-main-card-border-radius:  var(--shake-sdk-border-radius-medium);
-    --shake-sdk-main-card-box-shadow: 0 2px 2px var(--shake-sdk-main-card-background);
-    --shake-sdk-main-card-scroll-bar: var(--shake-sdk-scrollbar-color-primary);
-
     /* Toolbar */
     --shake-sdk-toolbar-text-color: var(--shake-sdk-text-color-primary-title);
-    --shake-sdk-toolbar-icon-color: var(--shake-sdk-text-color-primary-title);
+    --shake-sdk-toolbar-button-icon-color: var(--shake-sdk-icon-color-primary);
+    --shake-sdk-toolbar-button-background-color: var(--shake-sdk-highlight-color-primary);
+    --shake-sdk-toolbar-button-border: 1px solid var(--shake-sdk-outline-color-primary);
+    --shake-sdk-toolbar-button-box-shadow: var(--shake-sdk-box-shadow);
+    --shake-sdk-toolbar-divider-color: var(--shake-sdk-divider-color-primary);
 
-    /* Heading */
-    --shake-sdk-heading-text-color: var(--shake-sdk-text-color-primary-title);
+    /* Subtitle */
     --shake-sdk-subtitle-text-color: var(--shake-sdk-text-color-primary-subtitle);
 
     /* Picker */
@@ -140,27 +156,36 @@ Here is a list of default CSS variables - you can use those variables to set you
     --shake-sdk-picker-hover-color: var(--shake-sdk-outline-color-primary);
     --shake-sdk-picker-border: 1px solid var(--shake-sdk-outline-color-primary);
     --shake-sdk-picker-border-selected: 1px solid var(--shake-sdk-color-accent);
+    --shake-sdk-picker-box-shadow: var(--shake-sdk-box-shadow);
+    --shake-sdk-picker-active-box-shadow: var(--shake-sdk-active-box-shadow);
     --shake-sdk-picker-border-radius: var(--shake-sdk-border-radius-small);
 
     /* Text area */
     --shake-sdk-textarea-title-color: var(--shake-sdk-text-color-primary-subtitle);
     --shake-sdk-textarea-text-color: var(--shake-sdk-text-color-primary-title);
-    --shake-sdk-textarea-background-color: var(--shake-sdk-transparent);
+    --shake-sdk-textarea-background-color: var(--shake-sdk-highlight-color-primary);
     --shake-sdk-textarea-border: 1px solid var(--shake-sdk-outline-color-primary);
     --shake-sdk-textarea-border-selected: 1px solid var(--shake-sdk-color-accent);
+    --shake-sdk-textarea-box-shadow: var(--shake-sdk-box-shadow);
+    --shake-sdk-textarea-active-box-shadow:var(--shake-sdk-active-box-shadow);
     --shake-sdk-textarea-border-radius: var(--shake-sdk-border-radius-small);
 
     /* Submit button */
     --shake-sdk-submit-button-color: var(--shake-sdk-button-accent-color);
     --shake-sdk-submit-button-text-color: var(--shake-sdk-button-accent-text-color);
-    --shake-sdk-submit-button-border: 1px solid var(--shake-sdk-button-accent-border);
     --shake-sdk-submit-button-border-radius: var(--shake-sdk-button-accent-border-radius);
+
+    /* Home buttons */
+    --shake-sdk-home-buttons-background: var(--shake-sdk-highlight-color-primary);
+    --shake-sdk-home-buttons-border-radius: var(--shake-sdk-border-radius-small);
+    --shake-sdk-home-buttons-border: 1px solid var(--shake-sdk-outline-color-primary);
+    --shake-sdk-home-buttons-box-shadow: var(--shake-sdk-box-shadow);
 
     /* Ticket item */
     --shake-sdk-ticket-item-title-color: var(--shake-sdk-text-color-primary-title);
     --shake-sdk-ticket-item-subtitle-color: var(--shake-sdk-text-color-primary-subtitle);
     --shake-sdk-ticket-item-time-color: var(--shake-sdk-text-color-primary-subtitle);
-    --shake-sdk-ticket-item-image-border: none;
+    --shake-sdk-ticket-item-image-border: 1px solid var(--shake-sdk-outline-color-primary);
     --shake-sdk-ticket-item-image-border-radius: var(--shake-sdk-border-radius-small);
 
     /* Bottom navigation */
@@ -171,26 +196,27 @@ Here is a list of default CSS variables - you can use those variables to set you
     /* Chat bubble */
     --shake-sdk-chat-bubble-sender-background: var(--shake-sdk-button-accent-color);
     --shake-sdk-chat-bubble-sender-text-color: var(--shake-sdk-button-accent-text-color);
-    --shake-sdk-chat-bubble-sender-border-radius: var(--shake-sdk-border-radius-small);
+    --shake-sdk-chat-bubble-sender-border-radius: var(--shake-sdk-border-radius-large);
+    --shake-sdk-chat-bubble-sender-box-shadow: var(--shake-sdk-box-shadow);
 
     --shake-sdk-chat-bubble-recipient-background: var(--shake-sdk-highlight-color-primary);
     --shake-sdk-chat-bubble-recipient-text-color: var(--shake-sdk-text-color-primary-title);
-    --shake-sdk-chat-bubble-recipient-border-radius: var(--shake-sdk-border-radius-small);
+    --shake-sdk-chat-bubble-recipient-border-radius: var(--shake-sdk-border-radius-large);
+    --shake-sdk-chat-bubble-recipient-border: 1px solid var(--shake-sdk-outline-color-primary);
+    --shake-sdk-chat-bubble-recipient-box-shadow: var(--shake-sdk-box-shadow);
     --shake-sdk-chat-bubble-info-text-color: var(--shake-sdk-text-color-primary-subtitle);
 
     /* Chat input */
     --shake-sdk-chat-message-input-background: var(--shake-sdk-highlight-color-primary);
     --shake-sdk-chat-message-input-text-color: var(--shake-sdk-text-color-primary-title);
     --shake-sdk-chat-message-input-hint-color: var(--shake-sdk-text-color-primary-subtitle);
-    --shake-sdk-chat-message-input-border: none;
-    --shake-sdk-chat-message-input-border-radius: var(--shake-sdk-border-radius-small);
+    --shake-sdk-chat-message-input-border: 1px solid var(--shake-sdk-outline-color-primary);
+    --shake-sdk-chat-message-input-border-radius: var(--shake-sdk-border-radius-large);
+    --shake-sdk-chat-message-input-box-shadow: var(--shake-sdk-box-shadow);
+
     --shake-sdk-chat-message-send-button-color: var(--shake-sdk-button-accent-color);
     --shake-sdk-chat-message-send-icon-color: var(--shake-sdk-button-accent-text-color);
-
-    /* Close button */
-    --shake-sdk-close-button-background-color: var(--shake-sdk-background-color-primary);
-    --shake-sdk-close-button-icon-color: var(--shake-sdk-icon-color-primary);
-    --shake-sdk-close-button-box-shadow: 0 1px 1px var(--shake-sdk-outline-color-primary);
+    --shake-sdk-chat-message-send-box-shadow: var(--shake-sdk-box-shadow);
 
     /* Toast */
     --shake-sdk-toast-background-color: var(--shake-sdk-highlight-color-secondary);
@@ -483,7 +509,7 @@ If you want to use different color scheme for dark and light mode, you can use *
 ```
 
 Optionally, if you need to change theme on a button click, you can create two distinct CSS classes (one for a light mode and one for a dark mode)
-and apply classes to the body element of your page when needed.
+and apply classes to the document element of your app when needed.
 
 Keep in mind that CSS variables are assigned at the creation time so you'll need to update them accordingly.
 
@@ -499,3 +525,41 @@ Keep in mind that CSS variables are assigned at the creation time so you'll need
     --shake-sdk-main-card-background: var(--shake-sdk-background-color-primary);
 }
 ```
+
+<Tabs
+groupId="web"
+defaultValue="javascript"
+values={[
+{ label: 'Javascript', value: 'javascript'},
+{ label: 'Typescript', value: 'typescript'},
+]
+}>
+
+<TabItem value="javascript">
+
+```javascript title='settings.js'
+const onThemeChanged = (theme) => {
+    document.documentElement.classList.remove('dark-mode');
+    document.documentElement.classList.remove('light-mode');
+    
+    // highlight-next-line
+    document.documentElement.classList.add(theme === 'dark' ? 'dark-mode' : 'light-mode');
+}
+```
+
+</TabItem>
+
+<TabItem value='typescript'>
+
+```typescript title='settings.ts'
+const onThemeChanged = (theme: string) => {
+    document.documentElement.classList.remove('dark-mode');
+    document.documentElement.classList.remove('light-mode');
+    
+    // highlight-next-line
+    document.documentElement.classList.add(theme === 'dark' ? 'dark-mode' : 'light-mode');
+}
+```
+
+</TabItem>
+</Tabs>
