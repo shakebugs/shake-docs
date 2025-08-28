@@ -17,9 +17,17 @@ title: Release notes
 
 What would you like us to build next? Upvote upcoming features and suggest new ideas on the [Public feedback board](https://feedback.shakebugs.com/).
 
+## 17.2.0
+<span class="tag-button">August 27, 2025</span>&nbsp;&nbsp;
+<span class="tag-button green-tag-button">Latest version</span>
+
+#### What's new
+
+We've changed [custom logs](/ios/configuration-and-data/activity-history.md#custom-logs) naming to avoid name clashes
+with other SDKs.
+
 ## 17.1.2
 <span class="tag-button">May 26, 2025</span>&nbsp;&nbsp;
-<span class="tag-button green-tag-button">Latest version</span>
 
 #### Bug fixes
 
