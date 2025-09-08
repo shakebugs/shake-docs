@@ -4,7 +4,8 @@ title: Release notes
 ---
 >This page lists all updates to the Shake Web SDK.
 
-<p class="p2 mt-40">Other platforms → &nbsp;
+<p class="p2 mt-40">
+Other platforms → &nbsp;
 <a href="/docs/ios/releases/">iOS</a>&nbsp; 
 <a href="/docs/android/releases/">Android</a>&nbsp;
 <a href="/docs/react/releases/">React Native</a>&nbsp;

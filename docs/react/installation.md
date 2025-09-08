@@ -8,7 +8,8 @@ import TabItem from '@theme/TabItem';
 
 > Learn how to add Shake to your React Native app.
 
-<p class="p2 mt-40">You're viewing the React Native docs. Other platforms → &nbsp;
+<p class="p2 mt-40">
+You're viewing the React Native docs. Other platforms → &nbsp;
 <a href="/docs/ios/install/spm/">iOS</a>&nbsp; 
 <a href="/docs/android/installation/">Android</a>&nbsp;
 <a href="/docs/flutter/installation/">Flutter</a>&nbsp;  

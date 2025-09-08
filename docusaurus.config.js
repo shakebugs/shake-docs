@@ -1,4 +1,5 @@
 require('dotenv').config()
+const {themes} = require('prism-react-renderer');
 
 module.exports = {
     title: 'Documentation',
@@ -48,8 +49,8 @@ module.exports = {
         scrollToTop: false,
         scrollToTopOptions: false,
         prism: {
-            theme: require('prism-react-renderer/themes/github'),
-            darkTheme: require('prism-react-renderer/themes/dracula'),
+            theme: themes.github,
+            darkTheme: themes.dracula,
             additionalLanguages: ['groovy', 'kotlin', 'java', 'swift', 'dart', 'batch'],
         },
         // algolia: {
@@ -83,6 +84,11 @@ module.exports = {
                     ],
                 },
                 {
+                    type: 'search',
+                    position: 'right',
+                    className: 'inkeep-search',
+                },
+                {
                     href: 'https://app.shakebugs.com/',
                     label: 'Dashboard',
                     position: 'right',
@@ -111,6 +117,20 @@ module.exports = {
             {
                 path: "./.env",
                 systemvars: true,
+            }
+        ],
+        [
+            '@signalwire/docusaurus-plugin-llms-txt',
+            {
+                siteTitle: 'My Documentation',
+                siteDescription: 'Comprehensive guide to our platform',
+                depth: 2,
+                content: {
+                    includeBlog: true,
+                    includePages: true,
+                    enableLlmsFullTxt: true,
+                    enableMarkdownFiles: true,
+                }
             }
         ]
     ],

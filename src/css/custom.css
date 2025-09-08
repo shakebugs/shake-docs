@@ -1192,3 +1192,10 @@ h3 .hash-link {
     position: relative;
     margin-right: 4px;
 }
+
+@media (min-width: 997px) {
+    div[class*=inkeep-search] {
+        left: calc(50% - 177px);
+        position: absolute;
+    }
+}

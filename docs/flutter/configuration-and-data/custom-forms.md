@@ -6,7 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 > Learn how to create or modify a form displayed on the [New ticket screen](flutter/shake-ui/new-ticket-screen.md).
 
-<p class="p2 mt-40">You're viewing the Flutter docs. Other platforms → &nbsp;
+<p class="p2 mt-40">
+You're viewing the Flutter docs. Other platforms → &nbsp;
 <a href="/docs/ios/configuration-and-data/custom-forms/">iOS</a>&nbsp;
 <a href="/docs/android/configuration-and-data/custom-forms/">Android</a>&nbsp;  
 <a href="/docs/react/configuration-and-data/custom-forms/">React Native</a>&nbsp; 
@@ -50,7 +51,7 @@ Shake offers several customizable elements that can be added to the Shake form:
 :::note
 Note that the Title, Inspect button, and Attachments elements can only be added to the form one-time.
 If multiple instances of these components are included, only the first instance will be displayed on the screen
-:::note
+:::
 
 ### Title
 

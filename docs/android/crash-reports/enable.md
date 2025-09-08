@@ -5,7 +5,8 @@ title: Enable
 
 >The Crash reports module is disabled by default.
 
-<p class="p2 mt-40">You're viewing the Android docs. Other platform →&nbsp;
+<p class="p2 mt-40">
+You're viewing the Android docs. Other platform →&nbsp;
 <a href="/docs/ios/crash-reports/enable/">iOS</a>&nbsp;
 </p>
 

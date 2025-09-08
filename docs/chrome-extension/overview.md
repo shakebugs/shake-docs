@@ -5,7 +5,8 @@ title: Overview
 
 > Learn how to use Shake Chrome extension.
 
-<p class="p2 mt-40">You're viewing the Chrome extension docs. Other platforms → &nbsp;
+<p class="p2 mt-40">
+You're viewing the Chrome extension docs. Other platforms → &nbsp;
 <a href="/docs/ios/overview/">iOS</a>&nbsp; 
 <a href="/docs/android/overview/">Android</a>&nbsp;
 <a href="/docs/react/overview/">React Native</a>&nbsp;

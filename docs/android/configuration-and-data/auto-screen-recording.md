@@ -9,15 +9,16 @@ import TabItem from '@theme/TabItem';
 >You can rely on your testers to record a video of their screen and attach it to their feedback and crash reports.
 Or, you can use auto screen recording to always record their screen and automatically attach that video to the ticket.
 
-<p class="p2 mt-40">You're viewing the Android docs. Other platforms →&nbsp;
-<a href="/docs/ios/configuration-and-data/auto-screen-recording/">iOS</a>&nbsp;
-<a href="/docs/react/configuration-and-data/auto-screen-recording/">React Native</a>&nbsp;
-<a href="/docs/flutter/configuration-and-data/auto-screen-recording/">Flutter</a>&nbsp;
+<p class="p2 mt-40">
+    You're viewing the Android docs. Other platforms →&nbsp;
+    <a href="/docs/ios/configuration-and-data/auto-screen-recording/">iOS</a>&nbsp;
+    <a href="/docs/react/configuration-and-data/auto-screen-recording/">React Native</a>&nbsp;
+    <a href="/docs/flutter/configuration-and-data/auto-screen-recording/">Flutter</a>&nbsp;
 </p>
 
 :::note
 Turn off this feature in production!
-:::note
+:::
 
 ## Enable
 Auto screen recording is disabled by default. To enable it:

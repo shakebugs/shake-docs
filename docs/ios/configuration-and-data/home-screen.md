@@ -8,7 +8,8 @@ import TabItem from '@theme/TabItem';
 
 > Shake enables you to customize home screen according to your preferences and needs.
 
-<p class="p2 mt-40">You're viewing the iOS docs. Other platforms → &nbsp;
+<p class="p2 mt-40">
+You're viewing the iOS docs. Other platforms → &nbsp;
 <a href="/docs/android/configuration-and-data/home-screen/">Android</a>&nbsp;
 <a href="/docs/react/configuration-and-data/home-screen/">React Native</a>&nbsp; 
 <a href="/docs/flutter/configuration-and-data/home-screen/">Flutter</a>&nbsp;  

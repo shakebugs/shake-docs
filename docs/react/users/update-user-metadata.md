@@ -9,7 +9,8 @@ import TabItem from '@theme/TabItem';
 >Once you have registered your app user, you can attach a map with key-value pairs which contain
 additional data about the app user and their behavior.
 
-<p class="p2 mt-40">You're viewing the React Native docs. Other platforms → &nbsp;
+<p class="p2 mt-40">
+You're viewing the React Native docs. Other platforms → &nbsp;
 <a href="/docs/ios/users/update-user-metadata/">iOS</a>&nbsp; 
 <a href="/docs/android/users/update-user-metadata/">Android</a>&nbsp;
 <a href="/docs/flutter/users/update-user-metadata/">Flutter</a>&nbsp;  

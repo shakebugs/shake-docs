@@ -6,7 +6,8 @@ title: Overview
 ## Modules
 > Shake Web SDK has a user feedback module that enables your users to easily send feedback and bug reports to the Shake dashboard.
 
-<p class="p2 mt-40">You're viewing the Web docs. Other platforms → &nbsp;
+<p class="p2 mt-40">
+You're viewing the Web docs. Other platforms → &nbsp;
 <a href="/docs/ios/overview/">iOS</a>&nbsp; 
 <a href="/docs/android/overview/">Android</a>&nbsp;
 <a href="/docs/react/overview/">React Native</a>&nbsp;

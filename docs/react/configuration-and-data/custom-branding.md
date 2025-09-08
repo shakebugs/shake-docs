@@ -8,7 +8,8 @@ import TabItem from '@theme/TabItem';
 
 > This feature enables you to customize the look and feel of the Shake SDK. You can reflect your brand's identity by modifying colors, fonts, and other attributes of screen elements.
 
-<p class="p2 mt-40">You're viewing the React Native docs. Other platforms → &nbsp;
+<p class="p2 mt-40">
+You're viewing the React Native docs. Other platforms → &nbsp;
 <a href="/docs/ios/configuration-and-data/custom-branding/">iOS</a>&nbsp; 
 <a href="/docs/android/configuration-and-data/custom-branding/">Android</a>&nbsp;
 <a href="/docs/flutter/configuration-and-data/custom-branding/">Flutter</a>&nbsp;  

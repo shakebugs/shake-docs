@@ -7,7 +7,8 @@ import TabItem from '@theme/TabItem';
 
 >Send yourself feedback from the app background, without showing [Shake UI](react/shake-ui/overview.md).
 
-<p class="p2 mt-40">You're viewing the React Native docs. Other platforms → &nbsp;
+<p class="p2 mt-40">
+You're viewing the React Native docs. Other platforms → &nbsp;
 <a href="/docs/ios/user-feedback/silent-user-feedback/">iOS</a>&nbsp; 
 <a href="/docs/android/user-feedback/silent-user-feedback/">Android</a>&nbsp;
 <a href="/docs/flutter/user-feedback/silent-user-feedback/">Flutter</a>&nbsp;  

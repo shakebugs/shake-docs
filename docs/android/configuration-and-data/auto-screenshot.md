@@ -6,10 +6,11 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 > When Shake's New ticket screen is invoked, a screenshot is automatically attached to it.
 
-<p class="p2 mt-40">You're viewing the Android docs. Other platforms →&nbsp;
-<a href="/docs/ios/configuration-and-data/auto-screenshot/">iOS</a>&nbsp;
-<a href="/docs/react/configuration-and-data/auto-screenshot/">React Native</a>&nbsp;
-<a href="/docs/flutter/configuration-and-data/auto-screenshot/">Flutter</a>&nbsp;
+<p class="p2 mt-40">
+    You're viewing the Android docs. Other platforms →&nbsp;
+    <a href="/docs/ios/configuration-and-data/auto-screenshot/">iOS</a>&nbsp;
+    <a href="/docs/react/configuration-and-data/auto-screenshot/">React Native</a>&nbsp;
+    <a href="/docs/flutter/configuration-and-data/auto-screenshot/">Flutter</a>&nbsp;
 </p>
 
 <table class="media-container media-container-highlighted mt-50 mb-40">

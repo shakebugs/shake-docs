@@ -10,7 +10,8 @@ import TabItem from '@theme/TabItem';
 what data is sent to Shake servers. Shake SDK allows you to filter out sensitive data on the mobile device itself,
 so it never reaches the Shake servers.
 
-<p class="p2 mt-40">You're viewing the iOS docs. Other platforms → &nbsp;
+<p class="p2 mt-40">
+You're viewing the iOS docs. Other platforms → &nbsp;
 <a href="/docs/android/configuration-and-data/manage-sensitive-data/">Android</a>&nbsp;
 <a href="/docs/react/configuration-and-data/manage-sensitive-data/">React Native</a>&nbsp; 
 <a href="/docs/flutter/configuration-and-data/manage-sensitive-data/">Flutter</a>&nbsp;  

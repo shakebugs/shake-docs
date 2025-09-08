@@ -6,7 +6,8 @@ title: Chat
 >If needed, your app users can [chat with you](/flutter/shake-ui/chat-screen) to provide you more details
 about their reported bugs, crashes or feedback. You will be able to fix issues faster and make your customers happier.
 
-<p class="p2 mt-40">You're viewing the Flutter docs. Other platforms → &nbsp;
+<p class="p2 mt-40">
+You're viewing the Flutter docs. Other platforms → &nbsp;
 <a href="/docs/ios/users/chat/">iOS</a>&nbsp;
 <a href="/docs/web/users/chat/">Android</a>&nbsp;  
 <a href="/docs/react/users/chat/">React Native</a>&nbsp; 
@@ -160,7 +161,7 @@ To enable these, you still need to request the user permission, but there is no 
 
 Important thing to note is that local notifications are not shown when app is in the background.
 
-:::note
+:::
 
 Shake uses `Shake.setPushNotificationsToken` function to determine if the app is configured to receive remote notifications.
 If that method is called in your app, Shake will disable local notifications and assume that you want to enable remote ones.
@@ -289,7 +290,7 @@ certificates or register the iOS application for remote notifications with `regi
 
 Important thing to note is that local notifications are not shown when app is in the background.
 
-:::note
+:::
 
 Shake uses `isRegisteredForRemoteNotifications` property to determine if the app is configured to receive remote notifications.
 If that method returns `true`, Shake will disable local notifications and assume that you want to enable remote ones.

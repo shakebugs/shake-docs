@@ -8,7 +8,8 @@ import TabItem from '@theme/TabItem';
 
 > Learn how to create or modify a form displayed on the [New ticket screen](/web/shake-ui#new-ticket).
 
-<p class="p2 mt-40">You're viewing the Web docs. Other platforms → &nbsp;
+<p class="p2 mt-40">
+You're viewing the Web docs. Other platforms → &nbsp;
 <a href="/docs/ios/configuration-and-data/custom-forms/">iOS</a>&nbsp;
 <a href="/docs/android/configuration-and-data/custom-forms/">Android</a>&nbsp; 
 <a href="/docs/react/configuration-and-data/custom-forms/">React Native</a>&nbsp;
@@ -54,7 +55,7 @@ Shake offers several customizable elements that can be added to the Shake form:
 :::note
 Note that the Title and Attachments elements can only be added to the form one-time.
 If multiple instances of these components are included, only the first instance will be displayed on the screen
-:::note
+:::
 
 ### Title
 
@@ -110,7 +111,7 @@ const title: ShakeTitle = new ShakeTitle('title', 'Title', '', true, 1);
 :::note
 Here's a tip that quality assurance teams often find helpful. If *#some #hashtags* are added anywhere in the title,
 they will automatically become <span class="tag-button pink-tag-button">tags</span> on your [Shake dashboard](https://app.shakebugs.com/).
-:::note
+:::
 
 ### Text input
 
@@ -216,7 +217,7 @@ const email: ShakeEmail = new ShakeEmail('email', 'Email to contact you on', '',
 :::note
 Keep in mind that email field with key **email** will be automatically hidden if app user is registered and your app user has
 metadata with key **email** set.
-:::note
+:::
 
 ### Picker
 

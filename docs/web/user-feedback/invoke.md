@@ -9,7 +9,8 @@ import TabItem from '@theme/TabItem';
 
 >Decide how you want Shake user feedback to be invoked.
 
-<p class="p2 mt-40">You're viewing the Web docs. Other platforms → &nbsp;
+<p class="p2 mt-40">
+You're viewing the Web docs. Other platforms → &nbsp;
 <a href="/docs/ios/user-feedback/invoke/">iOS</a>&nbsp; 
 <a href="/docs/android/user-feedback/invoke/">Android</a>&nbsp;
 <a href="/docs/react/user-feedback/invoke/">React Native</a>&nbsp;

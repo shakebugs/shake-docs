@@ -6,7 +6,8 @@ title: Protect sensitive data
 what data is sent to Shake servers. Shake SDK allows you to filter out sensitive data on the mobile device itself,
 so it never reaches the Shake servers.
 
-<p class="p2 mt-40">You're viewing the Flutter docs. Other platforms → &nbsp;
+<p class="p2 mt-40">
+You're viewing the Flutter docs. Other platforms → &nbsp;
 <a href="/docs/ios/configuration-and-data/manage-sensitive-data/">iOS</a>&nbsp;
 <a href="/docs/android/configuration-and-data/manage-sensitive-data/">Android</a>&nbsp;  
 <a href="/docs/react/configuration-and-data/manage-sensitive-data/">React Native</a>&nbsp; 

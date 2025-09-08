@@ -7,7 +7,8 @@ import TabItem from '@theme/TabItem';
 
 >The User feedback module is enabled by default.
 
-<p class="p2 mt-40">You're viewing the React Native docs. Other platforms → &nbsp;
+<p class="p2 mt-40">
+You're viewing the React Native docs. Other platforms → &nbsp;
 <a href="/docs/ios/user-feedback/enable/">iOS</a>&nbsp; 
 <a href="/docs/android/user-feedback/enable/">Android</a>&nbsp;
 <a href="/docs/flutter/user-feedback/enable/">Flutter</a>&nbsp;  

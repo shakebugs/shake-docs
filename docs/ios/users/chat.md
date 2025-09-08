@@ -9,7 +9,8 @@ import TabItem from '@theme/TabItem';
 >If needed, your app users can [chat with you](/ios/shake-ui/chat-screen) to provide you more details 
 about their reported bugs, crashes or feedback. You will be able to fix issues faster and make your customers happier.
 
-<p class="p2 mt-40">You're viewing the iOS docs. Other platforms → &nbsp;
+<p class="p2 mt-40">
+You're viewing the iOS docs. Other platforms → &nbsp;
 <a href="/docs/android/users/chat/">Android</a>&nbsp;
 <a href="/docs/react/users/chat/">React Native</a>&nbsp; 
 <a href="/docs/flutter/users/chat/">Flutter</a>&nbsp;  
@@ -284,38 +285,52 @@ certificates or register the iOS application for remote notifications with `regi
 
 Important thing to note is that local notifications are not shown when app is in the background.
 
-:::note
+:::
 
 Shake uses `isRegisteredForRemoteNotifications` property to determine if the app is configured to receive remote notifications.
 If that method returns `true`, Shake will disable local notifications and assume that you want to enable remote ones.
 
-<!---
-#### Remote notifications background behaviour
+[//]: # (#### Remote notifications background behaviour)
 
-When Shake sucessfully registers your _device + user_ for remote notifications, it will start sending remote notifications. 
-However, in the _event_ of unregistering your application [user](/ios/users/register-user), Shake must remove that _device + user_ entry from its servers to avoid an "unregistered" device user to receive private messages from Shake dashboard, and this "unregister" network request can potentially fail (for example when offline).
+[//]: # ()
+[//]: # (When Shake sucessfully registers your _device + user_ for remote notifications, it will start sending remote notifications. )
 
-Shake has multiple mechanisms to still provide an expected behaviour in various edge-cases, but can only cover all of them while the application is active / in foreground. 
+[//]: # (However, in the _event_ of unregistering your application [user]&#40;/ios/users/register-user&#41;, Shake must remove that _device + user_ entry from its servers to avoid an "unregistered" device user to receive private messages from Shake dashboard, and this "unregister" network request can potentially fail &#40;for example when offline&#41;.)
 
-:::caution
-Most regular Shake customers probably don't need to think about this, as this should only happen in specific edge cases and Shake will always end up
-in the "correct" final state eventually / when online.
+[//]: # ()
+[//]: # (Shake has multiple mechanisms to still provide an expected behaviour in various edge-cases, but can only cover all of them while the application is active / in foreground. )
 
-Consider this approach if you wan't to be absolutely sure that an unregistered user / device will never see the notifications for a recently unregistered user while application is in background / suspended.
-:::
+[//]: # ()
+[//]: # (:::caution)
 
-While your app is in background, the application process is suspended and won't execute code. This means that by default, 
-all remote notifications received while in background are presented, and the delegate methods won't get called.
+[//]: # (Most regular Shake customers probably don't need to think about this, as this should only happen in specific edge cases and Shake will always end up)
 
-This behaviour can be controlled with the [filtering entitlement](https://developer.apple.com/documentation/bundleresources/entitlements/com_apple_developer_usernotifications_filtering) combined with the [Notification Service Extension](https://developer.apple.com/documentation/usernotifications/unnotificationserviceextension).
+[//]: # (in the "correct" final state eventually / when online.)
 
-You can use this execution time in the extension to _double-check_ with Shake if the _pending_ remote notification would actually
-be presented if the app was in the foreground, and potentially silent it completely.
+[//]: # ()
+[//]: # (Consider this approach if you wan't to be absolutely sure that an unregistered user / device will never see the notifications for a recently unregistered user while application is in background / suspended.)
 
-The simple way of doing this is sending a custom completion handler to the _Shake.willPresentNotification_ method and checking the
-presentation option sent in the callback. If your custom completion handler reports a _UNNotificationPresentationOptionNone_ this means
-that Shake would drop this notification if the app was in foreground, so you can drop it manually in the extension.
--->
+[//]: # (:::)
+
+[//]: # ()
+[//]: # (While your app is in background, the application process is suspended and won't execute code. This means that by default, )
+
+[//]: # (all remote notifications received while in background are presented, and the delegate methods won't get called.)
+
+[//]: # ()
+[//]: # (This behaviour can be controlled with the [filtering entitlement]&#40;https://developer.apple.com/documentation/bundleresources/entitlements/com_apple_developer_usernotifications_filtering&#41; combined with the [Notification Service Extension]&#40;https://developer.apple.com/documentation/usernotifications/unnotificationserviceextension&#41;.)
+
+[//]: # ()
+[//]: # (You can use this execution time in the extension to _double-check_ with Shake if the _pending_ remote notification would actually)
+
+[//]: # (be presented if the app was in the foreground, and potentially silent it completely.)
+
+[//]: # ()
+[//]: # (The simple way of doing this is sending a custom completion handler to the _Shake.willPresentNotification_ method and checking the)
+
+[//]: # (presentation option sent in the callback. If your custom completion handler reports a _UNNotificationPresentationOptionNone_ this means)
+
+[//]: # (that Shake would drop this notification if the app was in foreground, so you can drop it manually in the extension.)
 
 ## Unread messages
 

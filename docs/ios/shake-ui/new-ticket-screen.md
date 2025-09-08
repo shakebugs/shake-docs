@@ -6,7 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 >Your users submit tickets from this screen.
 
-<p class="p2 mt-40">You're viewing the iOS docs. Other platforms → &nbsp;
+<p class="p2 mt-40">
+You're viewing the iOS docs. Other platforms → &nbsp;
 <a href="/docs/android/shake-ui/new-ticket-screen/">Android</a>&nbsp;
 <a href="/docs/react/shake-ui/new-ticket-screen/">React Native</a>&nbsp; 
 <a href="/docs/flutter/shake-ui/new-ticket-screen/">Flutter</a>&nbsp;  

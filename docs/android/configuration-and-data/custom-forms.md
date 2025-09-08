@@ -8,7 +8,8 @@ import TabItem from '@theme/TabItem';
 
 > Learn how to create or modify a form displayed on the [New ticket screen](android/shake-ui/new-ticket-screen.md).
 
-<p class="p2 mt-40">You're viewing the Android docs. Other platforms →&nbsp;
+<p class="p2 mt-40">
+You're viewing the Android docs. Other platforms →&nbsp;
 <a href="/docs/ios/configuration-and-data/custom-forms/">iOS</a>&nbsp;
 <a href="/docs/react/configuration-and-data/custom-forms/">React Native</a>&nbsp;
 <a href="/docs/flutter/configuration-and-data/custom-forms/">Flutter</a>&nbsp;
@@ -50,9 +51,11 @@ Shake offers several customizable elements that can be added to the Shake form:
 - **[Attachments](#attachments)** This element allows users to attach files or other relevant materials to their submission, providing additional context and information to help facilitate resolution. This can include images, videos, documents, or other relevant files.
 
 :::note
+
 Note that the Title, Inspect button, and Attachments elements can only be added to the form one-time.
 If multiple instances of these components are included, only the first instance will be displayed on the screen
-:::note
+
+:::
 
 ### Title
 
@@ -105,9 +108,11 @@ val title = ShakeTitle(key = "Title", label = R.string.shake_title_label, initia
 </Tabs>
 
 :::note
+
 Here's a tip that quality assurance teams often find helpful. If *#some #hashtags* are added anywhere in the title,
 they will automatically become <span class="tag-button pink-tag-button">tags</span> on your [Shake dashboard](https://app.shakebugs.com/).
-:::note
+
+:::
 
 ### Text input
 

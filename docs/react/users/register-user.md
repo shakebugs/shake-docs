@@ -8,7 +8,8 @@ import TabItem from '@theme/TabItem';
 
 >Register your app users with Shake by calling the `Shake.registerUser` method.
 
-<p class="p2 mt-40">You're viewing the React Native docs. Other platforms → &nbsp;
+<p class="p2 mt-40">
+You're viewing the React Native docs. Other platforms → &nbsp;
 <a href="/docs/ios/users/register-user/">iOS</a>&nbsp; 
 <a href="/docs/android/users/register-user/">Android</a>&nbsp;
 <a href="/docs/flutter/users/register-user/">Flutter</a>&nbsp;  
@@ -90,4 +91,4 @@ Keep in mind that if your app is already published, some users will be already l
 To handle this case, we recommend calling `Shake.registerUser` method also on the first screen app shows.
 Registered user is stored locally and this method won't send registration request if it not needed.
 
-:::note
+:::

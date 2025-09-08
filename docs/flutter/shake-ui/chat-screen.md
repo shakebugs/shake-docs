@@ -8,7 +8,8 @@ import TabItem from '@theme/TabItem';
 
 >You and your app users can live chat about every ticket they have submitted to you.
 
-<p class="p2 mt-40">You're viewing the Flutter docs. Other platforms → &nbsp;
+<p class="p2 mt-40">
+You're viewing the Flutter docs. Other platforms → &nbsp;
 <a href="/docs/ios/shake-ui/chat-screen/">iOS</a>&nbsp;
 <a href="/docs/android/shake-ui/chat-screen/">Android</a>&nbsp;  
 <a href="/docs/react/shake-ui/chat-screen/">React Native</a>&nbsp; 
