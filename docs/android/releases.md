@@ -17,9 +17,18 @@ Other platforms →&nbsp;
 
 What would you like us to build next? Upvote upcoming features and suggest new ideas on the [Public feedback board](https://feedback.shakebugs.com/).
 
+## 17.1.4
+<span class="tag-button">September 2, 2025</span>&nbsp;&nbsp;
+<span class="tag-button green-tag-button">Latest version</span>
+
+#### Bug fixes
+
+Fixed a bug that prevented Jetpack Compose dialogs from being captured.
+
+Resolved a crash that occurred when capturing animations on screens using Compose animations.
+
 ## 17.1.3
 <span class="tag-button">June 30, 2025</span>&nbsp;&nbsp;
-<span class="tag-button green-tag-button">Latest version</span>
 
 #### What's new
 
