@@ -6,7 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 > Learn how to use Shake with the Chrome extension.
 
-<p class="p2 mt-40">You're viewing the Chrome extension docs. Other platforms → &nbsp;
+<p class="p2 mt-40">
+You're viewing the Chrome extension docs. Other platforms → &nbsp;
 <a href="/docs/ios/install/spm/">iOS</a>&nbsp; 
 <a href="/docs/android/installation/">Android</a>&nbsp;
 <a href="/docs/react/installation/">React Native</a>&nbsp;

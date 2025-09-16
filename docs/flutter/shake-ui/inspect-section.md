@@ -7,7 +7,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 > Before submitting a ticket, your users can freely inspect [Data attached by default](flutter/configuration-and-data/data-attached-by-default.md),
 [Ticket metadata](flutter/configuration-and-data/ticket-metadata.md) and [User metadata](flutter/users/update-user-metadata.md). 
 
-<p class="p2 mt-40">You're viewing the Flutter docs. Other platforms → &nbsp;
+<p class="p2 mt-40">
+You're viewing the Flutter docs. Other platforms → &nbsp;
 <a href="/docs/android/shake-ui/inspect-section/">iOS</a>&nbsp;
 <a href="/docs/android/shake-ui/inspect-section/">Android</a>&nbsp;
 <a href="/docs/android/shake-ui/inspect-section/">React Native</a>&nbsp; 

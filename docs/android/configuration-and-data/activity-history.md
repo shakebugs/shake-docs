@@ -9,11 +9,12 @@ import TabItem from '@theme/TabItem';
 >Shake tracks user's interaction with your app, their network traffic, notifications, logs and system events,
 and automatically attaches all of those to the ticket.
 
-<p class="p2 mt-40">You're viewing the Android docs. Other platforms →&nbsp;
-<a href="/docs/ios/configuration-and-data/activity-history/">iOS</a>&nbsp;
-<a href="/docs/react/configuration-and-data/activity-history/">React Native</a>&nbsp;
-<a href="/docs/flutter/configuration-and-data/activity-history/">Flutter</a>&nbsp;
-<a href="/docs/web/configuration-and-data/activity-history/">Web</a>&nbsp;
+<p class="p2 mt-40">
+    You're viewing the Android docs. Other platforms →&nbsp;
+    <a href="/docs/ios/configuration-and-data/activity-history/">iOS</a>&nbsp;
+    <a href="/docs/react/configuration-and-data/activity-history/">React Native</a>&nbsp;
+    <a href="/docs/flutter/configuration-and-data/activity-history/">Flutter</a>&nbsp;
+    <a href="/docs/web/configuration-and-data/activity-history/">Web</a>&nbsp;
 </p>
 
 
@@ -28,7 +29,7 @@ Shake automatically observes taps made on your app's UI elements.
 
 This feature is disabled for apps built with Jetpack Compose.
 
-:::note
+:::
 
 ### Network traffic
 
@@ -217,9 +218,11 @@ startActivity(Intent("android.settings.ACTION_NOTIFICATION_LISTENER_SETTINGS"))
 </Tabs>
 
 :::note
+
 Keep in mind that notification listener intercepts notifications in your app.
 This can be a security issue if your notifications contains authorization codes.
 Make sure that you remove sensitive data using notification filter described on our privacy page.
+
 :::
 
 You can add your own custom notification events at any time:

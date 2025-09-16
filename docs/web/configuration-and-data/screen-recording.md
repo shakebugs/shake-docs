@@ -8,7 +8,8 @@ import TabItem from '@theme/TabItem';
 
 >You can rely on your testers to record a video of their screen and attach it to their feedback reports.
 
-<p class="p2 mt-40">You're viewing the Web docs. Other platforms → &nbsp;
+<p class="p2 mt-40">
+You're viewing the Web docs. Other platforms → &nbsp;
 <a href="/docs/ios/configuration-and-data/auto-screen-recording/">iOS</a>&nbsp;
 <a href="/docs/android/configuration-and-data/auto-screen-recording/">Android</a>&nbsp; 
 <a href="/docs/react/configuration-and-data/auto-screen-recording/">React Native</a>&nbsp;

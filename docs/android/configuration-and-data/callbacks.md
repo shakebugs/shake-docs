@@ -8,10 +8,11 @@ import TabItem from '@theme/TabItem';
 
 > Execute a block of a code when a certain action is executed by Shake
 
-<p class="p2 mt-40">You're viewing the Android docs. Other platforms →&nbsp;
-<a href="/docs/ios/configuration-and-data/callbacks/">iOS</a>&nbsp;
-<a href="/docs/react/configuration-and-data/callbacks/">React Native</a>&nbsp;
-<a href="/docs/flutter/configuration-and-data/callbacks/">Flutter</a>&nbsp;
+<p class="p2 mt-40">
+  You're viewing the Android docs. Other platforms →&nbsp;
+  <a href="/docs/ios/configuration-and-data/callbacks/">iOS</a>&nbsp;
+  <a href="/docs/react/configuration-and-data/callbacks/">React Native</a>&nbsp;
+  <a href="/docs/flutter/configuration-and-data/callbacks/">Flutter</a>&nbsp;
 </p>
 
 ## Shake open callback
@@ -23,7 +24,7 @@ groupId="android"
 defaultValue="kotlin"
 values={[
 { label: 'Java', value: 'java'},
-{ label: 'Kotlin', value: 'kotlin'},
+{ label: 'Kotlin', value: 'kotlin'}
 ]
 }>
 
@@ -66,7 +67,7 @@ groupId="android"
 defaultValue="kotlin"
 values={[
 { label: 'Java', value: 'java'},
-{ label: 'Kotlin', value: 'kotlin'},
+{ label: 'Kotlin', value: 'kotlin'}
 ]
 }>
 
@@ -106,14 +107,14 @@ To detect when user **pressed a submit button** on the New ticket screen, add a 
 
 This listener provides **type** and **fields** parameters:
 - reportType: **String** - "crash" or "feedback" depending on the type of the ticket
-- fields: **Map<String, String>** - key value pairs of submitted form fields
+- fields: **Map&lt;String, String&gt;** - key value pairs of submitted form fields
 
 <Tabs
 groupId="android"
 defaultValue="kotlin"
 values={[
 { label: 'Java', value: 'java'},
-{ label: 'Kotlin', value: 'kotlin'},
+{ label: 'Kotlin', value: 'kotlin'}
 ]
 }>
 

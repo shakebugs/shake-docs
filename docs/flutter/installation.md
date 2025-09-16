@@ -6,7 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 > Learn how to add Shake to your Flutter app.
 
-<p class="p2 mt-40">You're viewing the Flutter docs. Other platforms → &nbsp;
+<p class="p2 mt-40">
+You're viewing the Flutter docs. Other platforms → &nbsp;
 <a href="/docs/ios/install/spm/">iOS</a>&nbsp;  
 <a href="/docs/android/installation/">Android</a>&nbsp;
 <a href="/docs/react/installation/">React Native</a>&nbsp; 

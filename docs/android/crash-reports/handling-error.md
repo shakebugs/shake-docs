@@ -8,7 +8,8 @@ import TabItem from '@theme/TabItem';
 
 >Make great use of error handling and document these errors.
 
-<p class="p2 mt-40">You're viewing the Android docs. Other platform →&nbsp;
+<p class="p2 mt-40">
+You're viewing the Android docs. Other platform →&nbsp;
 <a href="/docs/ios/crash-reports/handling-error/">iOS</a>&nbsp;
 </p>
 

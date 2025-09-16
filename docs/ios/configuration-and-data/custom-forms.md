@@ -8,7 +8,8 @@ import TabItem from '@theme/TabItem';
 
 > Learn how to create or modify a form displayed on the [New ticket screen](ios/shake-ui/new-ticket-screen.md).
 
-<p class="p2 mt-40">You're viewing the iOS docs. Other platforms → &nbsp;
+<p class="p2 mt-40">
+You're viewing the iOS docs. Other platforms → &nbsp;
 <a href="/docs/android/configuration-and-data/custom-forms/">Android</a>&nbsp;
 <a href="/docs/react/configuration-and-data/custom-forms/">React Native</a>&nbsp; 
 <a href="/docs/flutter/configuration-and-data/custom-forms/">Flutter</a>&nbsp;  
@@ -52,7 +53,7 @@ Shake offers several customizable elements that can be added to the Shake form:
 :::note
 Note that the Title, Inspect button, and Attachments elements can only be added to the form one-time.
 If multiple instances of these components are included, only the first instance will be displayed on the screen
-:::note
+:::
 
 ### Title
 
@@ -107,7 +108,7 @@ let title = SHKTitle(key: "title", label:"Title" required: true, initialValue: n
 :::note
 Here's a tip that quality assurance teams often find helpful. If *#some #hashtags* are added anywhere in the title,
 they will automatically become <span class="tag-button pink-tag-button">tags</span> on your [Shake dashboard](https://app.shakebugs.com/).
-:::note
+:::
 
 ### Text input
 

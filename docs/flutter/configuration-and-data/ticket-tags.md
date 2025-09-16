@@ -6,7 +6,8 @@ title: Ticket tags
 > Sometimes you'll want to tag your tickets for easier management and organization on the dashboard.
 There are three different options you can use to add tags to the tickets.
 
-<p class="p2 mt-40">You're viewing the Flutter docs. Other platforms → &nbsp;
+<p class="p2 mt-40">
+You're viewing the Flutter docs. Other platforms → &nbsp;
 <a href="/docs/ios/configuration-and-data/ticket-tags/">iOS</a>&nbsp;
 <a href="/docs/android/configuration-and-data/ticket-tags/">Android</a>&nbsp;  
 <a href="/docs/react/configuration-and-data/ticket-tags/">React Native</a>&nbsp; 

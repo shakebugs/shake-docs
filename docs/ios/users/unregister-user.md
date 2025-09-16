@@ -9,7 +9,8 @@ import TabItem from '@theme/TabItem';
 > Unregistering an app user should be done when your app user decides to _log out_ and use your app as a _guest_ or when you no longer 
 want the subsequent tickets to be associated with the current app user.
 
-<p class="p2 mt-40">You're viewing the iOS docs. Other platforms → &nbsp;
+<p class="p2 mt-40">
+You're viewing the iOS docs. Other platforms → &nbsp;
 <a href="/docs/android/users/unregister-user/">Android</a>&nbsp;
 <a href="/docs/react/users/unregister-user/">React Native</a>&nbsp; 
 <a href="/docs/flutter/users/unregister-user/">Flutter</a>&nbsp;  

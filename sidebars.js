@@ -344,7 +344,6 @@ module.exports = {
                     items: [
                         'web/install/npm',
                         'web/install/cdn',
-                        'web/install/extension'
                     ]
                 }
             ]

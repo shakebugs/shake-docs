@@ -10,14 +10,15 @@
     "deploy": "docusaurus deploy"
   },
   "dependencies": {
-    "@docusaurus/core": "^2.0.1",
-    "@docusaurus/preset-classic": "^2.0.1",
-    "@inkeep/docusaurus": "^1.0.6",
+    "@docusaurus/core": "^3.0.0",
+    "@docusaurus/preset-classic": "^3.0.0",
+    "@inkeep/docusaurus": "^2.0.16",
+    "@signalwire/docusaurus-plugin-llms-txt": "^1.2.2",
     "classnames": "^2.2.6",
     "docusaurus-plugin-dotenv": "^1.0.1",
     "dotenv": "^16.4.1",
-    "react": "^16.8.4",
-    "react-dom": "^16.8.4"
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
   "browserslist": {
     "production": [

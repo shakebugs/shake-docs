@@ -6,7 +6,8 @@ title: Import from Instabug
 > Shake offers an option to easily migrate your bugs from Instabug to our platform.
 This feature allows you to seamlessly transition your bugs without losing important data, even after closing Instabug account.
 
-<p class="p2 mt-40">You're viewing the React Native docs. Other platforms → &nbsp;
+<p class="p2 mt-40">
+You're viewing the React Native docs. Other platforms → &nbsp;
 <a href="/docs/ios/import-from-instabug/">iOS</a>&nbsp; 
 <a href="/docs/android/import-from-instabug/">Android</a>&nbsp;
 <a href="/docs/flutter/import-from-instabug/">Flutter</a>&nbsp;  

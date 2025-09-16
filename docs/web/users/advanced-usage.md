@@ -8,7 +8,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 > Some apps might want to register the device itself as an app user or make a transition from the anonymous
 app user to the identified user.
 
-<p class="p2 mt-40">You're viewing the Web docs. Other platforms → &nbsp;
+<p class="p2 mt-40">
+You're viewing the Web docs. Other platforms → &nbsp;
 <a href="/docs/ios/users/advanced-usage/">iOS</a>&nbsp; 
 <a href="/docs/android/users/advanced-usage/">Android</a>&nbsp;
 <a href="/docs/react/users/advanced-usage/">React Native</a>&nbsp;

@@ -5,7 +5,8 @@ title: Overview
 
 > Customize both the data Shake collects and the way Shake behaves
 
-<p class="p2 mt-40">You're viewing the Web docs. Other platforms → &nbsp;
+<p class="p2 mt-40">
+You're viewing the Web docs. Other platforms → &nbsp;
 <a href="/docs/ios/configuration-and-data/overview/">iOS</a>&nbsp; 
 <a href="/docs/android/configuration-and-data/overview/">Android</a>&nbsp;
 <a href="/docs/react/configuration-and-data/overview/">React Native</a>&nbsp;

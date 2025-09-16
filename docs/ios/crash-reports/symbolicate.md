@@ -3,6 +3,9 @@ id: symbolicate
 title: Symbolicate
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 > Crash reports are a lot more useful when you see your symbolicated application frames.
 
 ## Introduction
@@ -28,7 +31,7 @@ When in your project:
 On Xcode 16+ you should also set **Enable Debug Dylib Support** to _No_. This option affects how dSYM files are generated
 and should be disabled until we support it.
 
-:::note
+:::
 
 
 ## Upload manually to Shake dashboard

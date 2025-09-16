@@ -6,7 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 > Learn how to add Shake to your iOS app using Swift Package Manager.
 
-<p class="p2 mt-40">You're viewing the iOS docs. Other platforms → &nbsp;
+<p class="p2 mt-40">
+You're viewing the iOS docs. Other platforms → &nbsp;
 <a href="/docs/android/installation/">Android</a>&nbsp;
 <a href="/docs/react/installation/">React Native</a>&nbsp; 
 <a href="/docs/flutter/installation/">Flutter</a>&nbsp;  

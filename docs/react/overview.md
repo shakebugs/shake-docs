@@ -6,7 +6,8 @@ title: Overview
 ## Modules
 > Shake React Native SDK has two modules that work together nicely. Use any one of them, or both — whatever suits your needs.
 
-<p class="p2 mt-40">You're viewing the React Native docs. Other platforms → &nbsp;
+<p class="p2 mt-40">
+You're viewing the React Native docs. Other platforms → &nbsp;
 <a href="/docs/ios/overview/">iOS</a>&nbsp; 
 <a href="/docs/android/overview/">Android</a>&nbsp;
 <a href="/docs/flutter/overview/">Flutter</a>&nbsp;  
