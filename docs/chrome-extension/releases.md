@@ -17,9 +17,22 @@ Other platforms → &nbsp;
 
 What would you like us to build next? Upvote upcoming features and suggest new ideas on the [Public feedback board](https://feedback.shakebugs.com/).
 
+## 2.0.x
+<span class="tag-button">September 22, 2025</span>&nbsp;&nbsp;
+<span class="tag-button green-tag-button">Latest version</span>
+
+#### What's new
+
+The extension now includes a popup menu, making it easier to choose between taking a screenshot or starting a screen recording.
+We’ve also introduced a new screenshot capture flow that lets you select just part of the screen instead of the whole page. 
+To enhance the experience, sound effects have been added, along with minor design upgrades for a smoother look and feel. 
+
+#### Bug fixes
+
+A bug related to streaming network requests has been fixed for smoother performance.
+
 ## 1.4.x
 <span class="tag-button">July 30, 2025</span>&nbsp;&nbsp;
-<span class="tag-button green-tag-button">Latest version</span>
 
 #### What's new
 
