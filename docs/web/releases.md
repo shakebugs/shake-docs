@@ -18,9 +18,23 @@ Other platforms → &nbsp;
 
 What would you like us to build next? Upvote upcoming features and suggest new ideas on the [Public feedback board](https://feedback.shakebugs.com/).
 
+## 3.1.0
+<span class="tag-button">September 22, 2025</span>&nbsp;&nbsp;
+<span class="tag-button green-tag-button">Latest version</span>
+
+#### What's new
+
+This update introduces a brand-new screenshot capture flow — users can now choose to capture just part of the screen 
+instead of the entire display. 
+
+We’ve also added sound effects for a more interactive experience and made several minor design improvements to polish the interface.
+
+#### Bug fixes
+
+A bug related to streaming network requests has been fixed for smoother performance.
+
 ## 3.0.1
 <span class="tag-button">September 2, 2025</span>&nbsp;&nbsp;
-<span class="tag-button green-tag-button">Latest version</span>
 
 #### Bug fixes
 
