@@ -18,7 +18,7 @@ Other platforms → &nbsp;
 
 What would you like us to build next? Upvote upcoming features and suggest new ideas on the [Public feedback board](https://feedback.shakebugs.com/).
 
-## 3.1.0
+## 3.1.1
 <span class="tag-button">September 22, 2025</span>&nbsp;&nbsp;
 <span class="tag-button green-tag-button">Latest version</span>
 
