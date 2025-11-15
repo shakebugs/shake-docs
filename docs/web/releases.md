@@ -18,6 +18,14 @@ Other platforms → &nbsp;
 
 What would you like us to build next? Upvote upcoming features and suggest new ideas on the [Public feedback board](https://feedback.shakebugs.com/).
 
+## 3.2.0
+<span class="tag-button">November 5, 2025</span>&nbsp;&nbsp;
+<span class="tag-button green-tag-button">Latest version</span>
+
+#### What's new
+
+This release brings improvements to privacy, usability, and overall stability. 
+
 ## 3.1.2
 <span class="tag-button">October 8, 2025</span>&nbsp;&nbsp;
 
@@ -27,7 +35,6 @@ We improved performance of session replay recording which was slowing down websi
 
 ## 3.1.1
 <span class="tag-button">September 22, 2025</span>&nbsp;&nbsp;
-<span class="tag-button green-tag-button">Latest version</span>
 
 #### What's new
 

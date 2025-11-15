@@ -17,9 +17,22 @@ Other platforms → &nbsp;
 
 What would you like us to build next? Upvote upcoming features and suggest new ideas on the [Public feedback board](https://feedback.shakebugs.com/).
 
+## 2.1.x
+<span class="tag-button">November 12, 2025</span>&nbsp;&nbsp;
+<span class="tag-button green-tag-button">Latest version</span>
+
+#### What's new
+
+This release brings several improvements designed to enhance privacy, usability, and overall reliability.
+
+The extension now features a new Privacy settings section, giving you full control over where Shake runs and helping protect sensitive data. 
+We’ve added a right-click menu with convenient actions, making it faster and easier to create reports and access key features.
+When videos are blocked by Content Security Policy (CSP), video placeholders now appear so you won’t miss any important context. 
+
+These updates, along with various under-the-hood improvements, ensure a smoother, more reliable experience when using extension.
+
 ## 2.0.x
 <span class="tag-button">September 22, 2025</span>&nbsp;&nbsp;
-<span class="tag-button green-tag-button">Latest version</span>
 
 #### What's new
 
