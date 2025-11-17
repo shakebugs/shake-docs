@@ -84,7 +84,8 @@ module.exports = {
                 'android/configuration-and-data/data-privacy-disclosure'
             ]
         },
-        'android/releases'
+        'android/releases',
+        'android/mcp'
     ],
     iosSidebar: [
         {
@@ -179,7 +180,8 @@ module.exports = {
                 'ios/configuration-and-data/data-privacy-disclosure'
             ]
         },
-        'ios/releases'
+        'ios/releases',
+        'ios/mcp'
     ],
     flutterSidebar: [
         {
@@ -255,7 +257,8 @@ module.exports = {
                 'flutter/configuration-and-data/data-privacy-disclosure'
             ]
         },
-        'flutter/releases'
+        'flutter/releases',
+        'flutter/mcp'
     ],
     reactSidebar: [
         {
@@ -330,7 +333,8 @@ module.exports = {
                 'react/configuration-and-data/data-privacy-disclosure'
             ]
         },
-        'react/releases'
+        'react/releases',
+        'react/mcp'
     ],
     webSidebar: [
         {
@@ -348,7 +352,6 @@ module.exports = {
                 }
             ]
         },
-
         'web/shake-ui',
         {
             type: 'category',
@@ -397,7 +400,8 @@ module.exports = {
                 'web/configuration-and-data/data-privacy-disclosure'
             ]
         },
-        'web/releases'
+        'web/releases',
+        'web/mcp'
     ],
     chromeExtensionSidebar: [
         {
@@ -422,6 +426,7 @@ module.exports = {
         },
         'chrome-extension/incognito-mode',
         'chrome-extension/mobile-inspector',
-        'chrome-extension/releases'
+        'chrome-extension/releases',
+        'chrome-extension/mcp'
     ],
 };

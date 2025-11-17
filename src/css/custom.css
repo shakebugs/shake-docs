@@ -316,6 +316,10 @@ a:hover {
     text-decoration: none;
 }
 
+a:has(img) {
+  border: none !important;
+}
+
 em, code, strong {
     margin: 0 6px;
     font-style: normal;
