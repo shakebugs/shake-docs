@@ -17,9 +17,26 @@ Other platforms → &nbsp;
 
 What would you like us to build next? Upvote upcoming features and suggest new ideas on the [Public feedback board](https://feedback.shakebugs.com/).
 
+## 2.2.x
+<span class="tag-button">December 3, 2025</span>&nbsp;&nbsp;
+<span class="tag-button green-tag-button">Latest version</span>
+
+#### What's new
+
+This release of the extension introduces powerful new features, improved capture quality, and several refinements to deliver a smoother, more reliable bug-reporting experience.
+
+The new AI Suggestions feature helps users craft clearer reports by automatically analyzing inputs and offering meaningful description suggestion.
+
+Screen recordings now support audio capture, while the screenshot delay option allows users to stage the screen before capturing.
+
+Permissions are now requested only at runtime, ensuring a more minimal and privacy-friendly setup.
+
+#### Bug fixes
+
+This update also fixes several issues, including incorrect screenshot colors on some websites and layout problems with long names in the workspace picker.
+
 ## 2.1.x
 <span class="tag-button">November 12, 2025</span>&nbsp;&nbsp;
-<span class="tag-button green-tag-button">Latest version</span>
 
 #### What's new
 
