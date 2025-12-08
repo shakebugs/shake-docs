@@ -85,7 +85,7 @@ module.exports = {
             ]
         },
         'android/releases',
-        'android/mcp'
+        // 'android/mcp'
     ],
     iosSidebar: [
         {
@@ -181,7 +181,7 @@ module.exports = {
             ]
         },
         'ios/releases',
-        'ios/mcp'
+        // 'ios/mcp'
     ],
     flutterSidebar: [
         {
@@ -258,7 +258,7 @@ module.exports = {
             ]
         },
         'flutter/releases',
-        'flutter/mcp'
+        // 'flutter/mcp'
     ],
     reactSidebar: [
         {
@@ -334,7 +334,7 @@ module.exports = {
             ]
         },
         'react/releases',
-        'react/mcp'
+        // 'react/mcp'
     ],
     webSidebar: [
         {
@@ -401,7 +401,7 @@ module.exports = {
             ]
         },
         'web/releases',
-        'web/mcp'
+        // 'web/mcp'
     ],
     chromeExtensionSidebar: [
         {
@@ -427,6 +427,6 @@ module.exports = {
         'chrome-extension/incognito-mode',
         'chrome-extension/mobile-inspector',
         'chrome-extension/releases',
-        'chrome-extension/mcp'
+        // 'chrome-extension/mcp'
     ],
 };
