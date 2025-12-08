@@ -42,7 +42,3 @@ Disable auto screenshot using the following snippet:
 // highlight-next-line
 Shake.setScreenshotIncluded(false);
 ```
-
-## Privacy
-Visit [Protect sensitive data](/flutter/configuration-and-data/manage-sensitive-data/#views) to learn
-how to easily mark any view as private so it's automatically deleted from the auto screenshot.

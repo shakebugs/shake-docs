@@ -21,7 +21,7 @@ You're viewing the Flutter docs. Other platforms → &nbsp;
 
 Here, your user can see:
 
-- A welcome message that you can change from [Shake SDK](/flutter/configuration-and-data/home-screen#changing-the-home-screen-subtitle).
+- A welcome message that you can change from [Shake SDK](/flutter/configuration-and-data/home-screen/#home-screen-subtitle).
 - A button to submit a new ticket. This section can be [customized](/flutter/configuration-and-data/home-screen#setting-up-custom-actions).
 - All their previous tickets.
   To show them their previous tickets, [register your users](/flutter/users/overview) with Shake.
