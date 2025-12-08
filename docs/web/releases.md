@@ -18,9 +18,40 @@ Other platforms → &nbsp;
 
 What would you like us to build next? Upvote upcoming features and suggest new ideas on the [Public feedback board](https://feedback.shakebugs.com/).
 
+## 3.3.0
+<span class="tag-button">December 3, 2025</span>&nbsp;&nbsp;
+<span class="tag-button green-tag-button">Latest version</span>
+
+#### What's new
+
+This release of the SDK introduces powerful new features, improved capture quality, and several refinements to deliver a smoother, more reliable bug-reporting experience.
+
+The new AI Suggestions feature helps users craft clearer reports by automatically analyzing inputs and offering meaningful description suggestion.
+
+Shake now has a screenshot delay option that allows users to stage the screen before capturing.
+
+We’ve upgraded to html2canvas-pro for more accurate visual rendering and improved performance.
+
+#### Bug fixes
+
+This update also fixes several issues, including incorrect screenshot colors on some websites and layout problems with long names in the workspace picker.
+
+## 3.2.0
+<span class="tag-button">November 5, 2025</span>&nbsp;&nbsp;
+
+#### What's new
+
+This release brings improvements to privacy, usability, and overall stability. 
+
+## 3.1.2
+<span class="tag-button">October 8, 2025</span>&nbsp;&nbsp;
+
+#### What's new
+
+We improved performance of session replay recording which was slowing down websites.
+
 ## 3.1.1
 <span class="tag-button">September 22, 2025</span>&nbsp;&nbsp;
-<span class="tag-button green-tag-button">Latest version</span>
 
 #### What's new
 
