@@ -12,7 +12,7 @@ import TabItem from '@theme/TabItem';
 You're viewing the iOS docs. Other platforms → &nbsp;
 <a href="/docs/android/users/register-user/">Android</a>&nbsp;
 <a href="/docs/react/users/register-user/">React Native</a>&nbsp; 
-<a href="/docs/flutter/users/register-user/">Flutter</a>&nbsp;  
+<a href="/docs/flutter/users/register-user/">Flutter</a>&nbsp;
 <a href="/docs/web/users/register-user/">Web</a>&nbsp;
 </p>
 

@@ -10,7 +10,7 @@ title: Overview
 You're viewing the React Native docs. Other platforms → &nbsp;
 <a href="/docs/ios/overview/">iOS</a>&nbsp; 
 <a href="/docs/android/overview/">Android</a>&nbsp;
-<a href="/docs/flutter/overview/">Flutter</a>&nbsp;  
+<a href="/docs/flutter/overview/">Flutter</a>&nbsp;
 <a href="/docs/web/overview/">Web</a>&nbsp;
 <a href="/docs/chrome-extension/overview/">Chrome extension</a>&nbsp;
 </p>

@@ -16,7 +16,7 @@ import TabItem from '@theme/TabItem';
 
 [//]: # (<a href="/docs/react/configuration-and-data/language/">React Native</a>&nbsp;)
 
-[//]: # (<a href="/docs/flutter/configuration-and-data/language/">Flutter</a>&nbsp;  )
+[//]: # (<a href="/docs/flutter/configuration-and-data/language/">Flutter</a>&nbsp;)
 
 [//]: # (</p>)
 

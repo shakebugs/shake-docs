@@ -12,7 +12,7 @@ import TabItem from '@theme/TabItem';
 You're viewing the React Native docs. Other platforms → &nbsp;
 <a href="/docs/ios/configuration-and-data/home-screen/">iOS</a>&nbsp; 
 <a href="/docs/android/configuration-and-data/home-screen/">Android</a>&nbsp;
-<a href="/docs/flutter/configuration-and-data/home-screen/">Flutter</a>&nbsp;  
+<a href="/docs/flutter/configuration-and-data/home-screen/">Flutter</a>&nbsp;
 </p>
 
 ## Home screen actions

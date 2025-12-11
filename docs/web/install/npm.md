@@ -11,7 +11,7 @@ You're viewing the Web docs. Other platforms → &nbsp;
 <a href="/docs/ios/install/spm/">iOS</a>&nbsp; 
 <a href="/docs/android/installation/">Android</a>&nbsp;
 <a href="/docs/react/installation/">React Native</a>&nbsp;
-<a href="/docs/flutter/installation/">Flutter</a>&nbsp;  
+<a href="/docs/flutter/installation/">Flutter</a>&nbsp;
 <a href="/docs/chrome-extension/installation/">Chrome extension</a>&nbsp;
 </p>
 

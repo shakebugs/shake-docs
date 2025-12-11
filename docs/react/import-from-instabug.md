@@ -10,7 +10,7 @@ This feature allows you to seamlessly transition your bugs without losing import
 You're viewing the React Native docs. Other platforms → &nbsp;
 <a href="/docs/ios/import-from-instabug/">iOS</a>&nbsp; 
 <a href="/docs/android/import-from-instabug/">Android</a>&nbsp;
-<a href="/docs/flutter/import-from-instabug/">Flutter</a>&nbsp;  
+<a href="/docs/flutter/import-from-instabug/">Flutter</a>&nbsp;
 </p>
 
 

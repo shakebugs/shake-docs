@@ -9,7 +9,7 @@ You're viewing the Web docs. Other platforms → &nbsp;
 <a href="/docs/ios/user-feedback/silent-user-feedback/">iOS</a>&nbsp; 
 <a href="/docs/android/user-feedback/silent-user-feedback/">Android</a>&nbsp;
 <a href="/docs/react/user-feedback/silent-user-feedback/">React Native</a>&nbsp;
-<a href="/docs/flutter/user-feedback/silent-user-feedback/">Flutter</a>&nbsp;  
+<a href="/docs/flutter/user-feedback/silent-user-feedback/">Flutter</a>&nbsp;
 </p>
 
 

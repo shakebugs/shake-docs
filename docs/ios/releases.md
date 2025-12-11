@@ -8,7 +8,7 @@ title: Release notes
 Other platforms → &nbsp;
 <a href="/docs/android/releases/">Android</a>&nbsp;
 <a href="/docs/react/releases/">React Native</a>&nbsp; 
-<a href="/docs/flutter/releases/">Flutter</a>&nbsp;  
+<a href="/docs/flutter/releases/">Flutter</a>&nbsp;
 <a href="/docs/web/releases/">Web</a>&nbsp;
 <a href="/docs/chrome-extension/releases/">Chrome extension</a>&nbsp;
 </p>

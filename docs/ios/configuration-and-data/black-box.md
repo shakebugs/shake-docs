@@ -11,7 +11,7 @@ profile giving you an insight into the last 60 seconds before the ticket was sub
 You're viewing the iOS docs. Other platforms → &nbsp;
 <a href="/docs/android/configuration-and-data/black-box/">Android</a>&nbsp;
 <a href="/docs/react/configuration-and-data/black-box/">React Native</a>&nbsp; 
-<a href="/docs/flutter/configuration-and-data/black-box/">Flutter</a>&nbsp;  
+<a href="/docs/flutter/configuration-and-data/black-box/">Flutter</a>&nbsp;
 </p>
 
 ## Automatically recorded charts

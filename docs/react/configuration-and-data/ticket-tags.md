@@ -12,7 +12,7 @@ There are three different options you can use to add tags to the tickets.
 You're viewing the React Native docs. Other platforms → &nbsp;
 <a href="/docs/ios/configuration-and-data/ticket-tags/">iOS</a>&nbsp; 
 <a href="/docs/android/configuration-and-data/ticket-tags/">Android</a>&nbsp;
-<a href="/docs/flutter/configuration-and-data/ticket-tags/">Flutter</a>&nbsp;  
+<a href="/docs/flutter/configuration-and-data/ticket-tags/">Flutter</a>&nbsp;
 <a href="/docs/web/configuration-and-data/ticket-tags/">Web</a>&nbsp;
 </p>
 

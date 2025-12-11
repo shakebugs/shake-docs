@@ -9,14 +9,14 @@ Or, you can use auto screen recording to always record their screen and automati
 
 <p class="p2 mt-40">
 You're viewing the Flutter docs. Other platforms → &nbsp;
-<a href="/docs/ios/configuration-and-data/auto-screen-recording/">iOS</a>&nbsp;  
+<a href="/docs/ios/configuration-and-data/auto-screen-recording/">iOS</a>&nbsp;
 <a href="/docs/android/configuration-and-data/auto-screen-recording/">Android</a>&nbsp;
 <a href="/docs/react/configuration-and-data/auto-screen-recording/">React Native</a>&nbsp; 
 </p>
 
 :::note
 Turn off this feature in production!
-:::note
+:::
 
 ## Enable
 Auto screen recording is disabled by default. To enable it:

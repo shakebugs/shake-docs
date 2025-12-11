@@ -13,7 +13,7 @@ want the subsequent tickets to be associated with the current app user.
 You're viewing the iOS docs. Other platforms → &nbsp;
 <a href="/docs/android/users/unregister-user/">Android</a>&nbsp;
 <a href="/docs/react/users/unregister-user/">React Native</a>&nbsp; 
-<a href="/docs/flutter/users/unregister-user/">Flutter</a>&nbsp;  
+<a href="/docs/flutter/users/unregister-user/">Flutter</a>&nbsp;
 <a href="/docs/web/users/unregister-user/">Web</a>&nbsp;
 </p>
 

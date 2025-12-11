@@ -11,7 +11,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 You're viewing the React Native docs. Other platforms → &nbsp;
 <a href="/docs/ios/shake-ui/inspect-section/">iOS</a>&nbsp; 
 <a href="/docs/android/shake-ui/inspect-section/">Android</a>&nbsp;
-<a href="/docs/flutter/shake-ui/inspect-section/">Flutter</a>&nbsp;  
+<a href="/docs/flutter/shake-ui/inspect-section/">Flutter</a>&nbsp;
 </p>
 
 

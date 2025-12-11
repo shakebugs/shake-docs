@@ -10,10 +10,10 @@ import TabItem from '@theme/TabItem';
 
 <p class="p2 mt-40">
 You're viewing the Android docs. Other platforms →&nbsp;
-<a href="/docs/ios/install/spm/">iOS</a>&nbsp;  
-<a href="/docs/react/installation/">React Native</a>&nbsp;  
-<a href="/docs/flutter/installation/">Flutter</a>&nbsp;  
-<a href="/docs/web/install/npm/">Web</a>&nbsp;  
+<a href="/docs/ios/install/spm/">iOS</a>&nbsp;
+<a href="/docs/react/installation/">React Native</a>&nbsp;
+<a href="/docs/flutter/installation/">Flutter</a>&nbsp;
+<a href="/docs/web/install/npm/">Web</a>&nbsp;
 <a href="/docs/chrome-extension/installation/">Chrome extension</a>&nbsp;
 </p>
 

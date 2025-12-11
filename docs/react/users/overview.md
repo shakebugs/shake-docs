@@ -11,7 +11,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 You're viewing the React Native docs. Other platforms → &nbsp;
 <a href="/docs/ios/users/overview/">iOS</a>&nbsp; 
 <a href="/docs/android/users/overview/">Android</a>&nbsp;
-<a href="/docs/flutter/users/overview/">Flutter</a>&nbsp;  
+<a href="/docs/flutter/users/overview/">Flutter</a>&nbsp;
 <a href="/docs/web/users/overview/">Web</a>&nbsp;
 </p>
 

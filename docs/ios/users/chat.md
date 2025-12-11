@@ -13,7 +13,7 @@ about their reported bugs, crashes or feedback. You will be able to fix issues f
 You're viewing the iOS docs. Other platforms → &nbsp;
 <a href="/docs/android/users/chat/">Android</a>&nbsp;
 <a href="/docs/react/users/chat/">React Native</a>&nbsp; 
-<a href="/docs/flutter/users/chat/">Flutter</a>&nbsp;  
+<a href="/docs/flutter/users/chat/">Flutter</a>&nbsp;
 <a href="/docs/web/users/chat/">Web</a>&nbsp;
 </p>
 

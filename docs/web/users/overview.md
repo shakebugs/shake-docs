@@ -12,7 +12,7 @@ You're viewing the Web docs. Other platforms → &nbsp;
 <a href="/docs/ios/users/overview/">iOS</a>&nbsp; 
 <a href="/docs/android/users/overview/">Android</a>&nbsp;
 <a href="/docs/react/users/overview/">React Native</a>&nbsp;
-<a href="/docs/flutter/users/overview/">Flutter</a>&nbsp;  
+<a href="/docs/flutter/users/overview/">Flutter</a>&nbsp;
 </p>
 
 

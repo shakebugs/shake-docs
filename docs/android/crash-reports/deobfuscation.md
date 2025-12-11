@@ -8,6 +8,11 @@ import TabItem from '@theme/TabItem';
 
 > Crash reports are a lot more useful when you see your deobfuscated stack traces.
 
+<p class="p2 mt-40">
+You're viewing the Android docs. Other platform →&nbsp;
+<a href="/docs/ios/crash-reports/symbolicate">iOS</a>&nbsp;
+</p>
+
 ## Introduction 
 
 Android is using R8 tool to shrink, obfuscate and optimize your code when app is built in release mode - this makes crash stack traces hard to read.

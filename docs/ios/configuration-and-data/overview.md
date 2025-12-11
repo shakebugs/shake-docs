@@ -9,7 +9,7 @@ title: Overview
 You're viewing the iOS docs. Other platforms → &nbsp;
 <a href="/docs/android/configuration-and-data/overview/">Android</a>&nbsp;
 <a href="/docs/react/configuration-and-data/overview/">React Native</a>&nbsp; 
-<a href="/docs/flutter/configuration-and-data/overview/">Flutter</a>&nbsp;  
+<a href="/docs/flutter/configuration-and-data/overview/">Flutter</a>&nbsp;
 <a href="/docs/web/configuration-and-data/overview/">Web</a>&nbsp;
 </p>
 

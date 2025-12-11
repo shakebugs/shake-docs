@@ -8,7 +8,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <p class="p2 mt-40">
 You're viewing the Flutter docs. Other platforms → &nbsp;
-<a href="/docs/ios/configuration-and-data/auto-screenshot/">iOS</a>&nbsp;  
+<a href="/docs/ios/configuration-and-data/auto-screenshot/">iOS</a>&nbsp;
 <a href="/docs/android/configuration-and-data/auto-screenshot/">Android</a>&nbsp;
 <a href="/docs/react/configuration-and-data/auto-screenshot/">React Native</a>&nbsp; 
 <a href="/docs/web/configuration-and-data/screen-capture/">Web</a>&nbsp; 

@@ -13,7 +13,7 @@ You're viewing the Web docs. Other platforms → &nbsp;
 <a href="/docs/ios/configuration-and-data/custom-forms/">iOS</a>&nbsp;
 <a href="/docs/android/configuration-and-data/custom-forms/">Android</a>&nbsp; 
 <a href="/docs/react/configuration-and-data/custom-forms/">React Native</a>&nbsp;
-<a href="/docs/flutter/configuration-and-data/custom-forms/">Flutter</a>&nbsp;  
+<a href="/docs/flutter/configuration-and-data/custom-forms/">Flutter</a>&nbsp;
 </p>
 
 

@@ -12,7 +12,7 @@ import TabItem from '@theme/TabItem';
 You're viewing the iOS docs. Other platforms → &nbsp;
 <a href="/docs/android/shake-ui/drawing-screen/">Android</a>&nbsp;
 <a href="/docs/react/shake-ui/drawing-screen/">React Native</a>&nbsp; 
-<a href="/docs/flutter/shake-ui/drawing-screen/">Flutter</a>&nbsp;  
+<a href="/docs/flutter/shake-ui/drawing-screen/">Flutter</a>&nbsp;
 </p>
 
 

@@ -12,8 +12,8 @@ You're viewing the Chrome extension docs. Other platforms → &nbsp;
 <a href="/docs/android/configuration-and-data/data-attached-by-default/">iOS</a>&nbsp; 
 <a href="/docs/android/configuration-and-data/data-attached-by-default/">Android</a>&nbsp;
 <a href="/docs/android/configuration-and-data/data-attached-by-default/">React Native</a>&nbsp;
-<a href="/docs/android/configuration-and-data/data-attached-by-default/">Flutter</a>&nbsp;  
-<a href="/docs/chrome-extension/configuration-and-data/data-attached-by-default/">Web</a>&nbsp;  
+<a href="/docs/android/configuration-and-data/data-attached-by-default/">Flutter</a>&nbsp;
+<a href="/docs/chrome-extension/configuration-and-data/data-attached-by-default/">Web</a>&nbsp;
 </p>
 
 

@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 <p class="p2 mt-40">
 You're viewing the Flutter docs. Other platforms → &nbsp;
 <a href="/docs/ios/configuration-and-data/custom-forms/">iOS</a>&nbsp;
-<a href="/docs/android/configuration-and-data/custom-forms/">Android</a>&nbsp;  
+<a href="/docs/android/configuration-and-data/custom-forms/">Android</a>&nbsp;
 <a href="/docs/react/configuration-and-data/custom-forms/">React Native</a>&nbsp; 
 <a href="/docs/web/configuration-and-data/custom-forms/">Web</a>&nbsp;
 </p>
@@ -81,7 +81,7 @@ ShakeTitle title = ShakeTitle('Title', 'Title', initialValue: '', required: true
 :::note
 Here's a tip that quality assurance teams often find helpful. If *#some #hashtags* are added anywhere in the title,
 they will automatically become <span class="tag-button pink-tag-button">tags</span> on your [Shake dashboard](https://app.shakebugs.com/).
-:::note
+:::
 
 ### Text input
 

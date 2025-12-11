@@ -9,7 +9,7 @@ You're viewing the Web docs. Other platforms → &nbsp;
 <a href="/docs/ios/configuration-and-data/data-privacy-disclosure/">iOS</a>&nbsp; 
 <a href="/docs/android/configuration-and-data/data-privacy-disclosure/">Android</a>&nbsp;
 <a href="/docs/react/configuration-and-data/data-privacy-disclosure/">React Native</a>&nbsp;
-<a href="/docs/flutter/configuration-and-data/data-privacy-disclosure/">Flutter</a>&nbsp;  
+<a href="/docs/flutter/configuration-and-data/data-privacy-disclosure/">Flutter</a>&nbsp;
 <a href="/docs/chrome-extension/configuration-and-data/data-privacy-disclosure/">Chrome extension</a>&nbsp;
 </p>
 

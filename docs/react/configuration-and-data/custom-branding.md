@@ -12,7 +12,7 @@ import TabItem from '@theme/TabItem';
 You're viewing the React Native docs. Other platforms → &nbsp;
 <a href="/docs/ios/configuration-and-data/custom-branding/">iOS</a>&nbsp; 
 <a href="/docs/android/configuration-and-data/custom-branding/">Android</a>&nbsp;
-<a href="/docs/flutter/configuration-and-data/custom-branding/">Flutter</a>&nbsp;  
+<a href="/docs/flutter/configuration-and-data/custom-branding/">Flutter</a>&nbsp;
 <a href="/docs/web/configuration-and-data/custom-branding/">Web</a>&nbsp;
 </p>
 

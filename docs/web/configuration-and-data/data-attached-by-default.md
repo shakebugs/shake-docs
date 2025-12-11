@@ -12,7 +12,7 @@ You're viewing the Web docs. Other platforms → &nbsp;
 <a href="/docs/ios/configuration-and-data/data-attached-by-default/">iOS</a>&nbsp; 
 <a href="/docs/android/configuration-and-data/data-attached-by-default/">Android</a>&nbsp;
 <a href="/docs/react/configuration-and-data/data-attached-by-default/">React Native</a>&nbsp;
-<a href="/docs/flutter/configuration-and-data/data-attached-by-default/">Flutter</a>&nbsp;  
+<a href="/docs/flutter/configuration-and-data/data-attached-by-default/">Flutter</a>&nbsp;
 <a href="/docs/chrome-extension/configuration-and-data/data-attached-by-default/">Chrome extension</a>&nbsp;
 </p>
 

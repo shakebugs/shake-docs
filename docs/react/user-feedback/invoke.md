@@ -13,7 +13,7 @@ import TabItem from '@theme/TabItem';
 You're viewing the React Native docs. Other platforms → &nbsp;
 <a href="/docs/ios/user-feedback/invoke/">iOS</a>&nbsp; 
 <a href="/docs/android/user-feedback/invoke/">Android</a>&nbsp;
-<a href="/docs/flutter/user-feedback/invoke/">Flutter</a>&nbsp;  
+<a href="/docs/flutter/user-feedback/invoke/">Flutter</a>&nbsp;
 <a href="/docs/web/user-feedback/invoke/">Web</a>&nbsp;
 </p>
 
