@@ -10,8 +10,8 @@ You're viewing the Chrome extension docs. Other platforms → &nbsp;
 <a href="/docs/ios/overview/">iOS</a>&nbsp; 
 <a href="/docs/android/overview/">Android</a>&nbsp;
 <a href="/docs/react/overview/">React Native</a>&nbsp;
-<a href="/docs/flutter/overview/">Flutter</a>&nbsp;  
-<a href="/docs/web/overview/">Web</a>&nbsp;  
+<a href="/docs/flutter/overview/">Flutter</a>&nbsp;
+<a href="/docs/web/overview/">Web</a>&nbsp;
 </p>
 
 <br/>
@@ -26,4 +26,4 @@ The extension works seamlessly with Chromium-based browsers such as Chrome, Brav
 [Shake Chrome extension](https://shk.sh/chrome-extension) has a limited feature set compared to the Shake Web SDK.
 If you need advanced functionalities such as user registration, in-app chat, or access to previously reported tickets, you should consider integrating the Shake Web SDK instead.
 
-:::note
+:::

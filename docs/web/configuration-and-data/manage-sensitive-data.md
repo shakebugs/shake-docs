@@ -15,7 +15,7 @@ You're viewing the Web docs. Other platforms → &nbsp;
 <a href="/docs/ios/configuration-and-data/manage-sensitive-data/">iOS</a>&nbsp; 
 <a href="/docs/android/configuration-and-data/manage-sensitive-data/">Android</a>&nbsp;
 <a href="/docs/react/configuration-and-data/manage-sensitive-data/">React Native</a>&nbsp;
-<a href="/docs/flutter/configuration-and-data/manage-sensitive-data/">Flutter</a>&nbsp;  
+<a href="/docs/flutter/configuration-and-data/manage-sensitive-data/">Flutter</a>&nbsp;
 </p>
 
 

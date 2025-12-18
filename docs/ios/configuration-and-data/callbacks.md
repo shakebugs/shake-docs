@@ -12,7 +12,7 @@ import TabItem from '@theme/TabItem';
 You're viewing the iOS docs. Other platforms → &nbsp;
 <a href="/docs/android/configuration-and-data/callbacks/">Android</a>&nbsp;
 <a href="/docs/react/configuration-and-data/callbacks/">React Native</a>&nbsp; 
-<a href="/docs/flutter/configuration-and-data/callbacks/">Flutter</a>&nbsp;  
+<a href="/docs/flutter/configuration-and-data/callbacks/">Flutter</a>&nbsp;
 </p>
 
 ## Shake open callback

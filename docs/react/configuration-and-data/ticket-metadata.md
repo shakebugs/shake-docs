@@ -13,7 +13,7 @@ That's why Shake also allows you to automatically attach any custom data from yo
 You're viewing the React Native docs. Other platforms → &nbsp;
 <a href="/docs/ios/configuration-and-data/ticket-metadata/">iOS</a>&nbsp; 
 <a href="/docs/android/configuration-and-data/ticket-metadata/">Android</a>&nbsp;
-<a href="/docs/flutter/configuration-and-data/ticket-metadata/">Flutter</a>&nbsp;  
+<a href="/docs/flutter/configuration-and-data/ticket-metadata/">Flutter</a>&nbsp;
 <a href="/docs/web/configuration-and-data/ticket-metadata/">Web</a>&nbsp;
 </p>
 

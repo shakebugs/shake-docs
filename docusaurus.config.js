@@ -44,6 +44,7 @@ module.exports = {
         },
         colorMode: {
             defaultMode: 'dark',
+            disableSwitch: true,
             respectPrefersColorScheme: false,
         },
         scrollToTop: false,
@@ -80,7 +81,8 @@ module.exports = {
                         {to: 'react/overview', label: 'React Native', activeBasePath: '/react'},
                         {to: 'flutter/overview', label: 'Flutter', activeBasePath: '/flutter'},
                         {to: 'web/overview', label: 'Web', activeBasePath: '/web'},
-                        {to: 'chrome-extension/overview', label: 'Chrome extension', activeBasePath: '/chrome-extension'}
+                        {to: 'chrome-extension/overview', label: 'Chrome extension', activeBasePath: '/chrome-extension'},
+                        {to: 'mcp/overview', label: 'MCP server', activeBasePath: '/mcp'}
                     ],
                 },
                 {

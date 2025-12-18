@@ -14,7 +14,7 @@ You're viewing the Web docs. Other platforms → &nbsp;
 <a href="/docs/ios/user-feedback/invoke/">iOS</a>&nbsp; 
 <a href="/docs/android/user-feedback/invoke/">Android</a>&nbsp;
 <a href="/docs/react/user-feedback/invoke/">React Native</a>&nbsp;
-<a href="/docs/flutter/user-feedback/invoke/">Flutter</a>&nbsp;  
+<a href="/docs/flutter/user-feedback/invoke/">Flutter</a>&nbsp;
 </p>
 
 

@@ -11,7 +11,7 @@ You're viewing the Web docs. Other platforms → &nbsp;
 <a href="/docs/ios/overview/">iOS</a>&nbsp; 
 <a href="/docs/android/overview/">Android</a>&nbsp;
 <a href="/docs/react/overview/">React Native</a>&nbsp;
-<a href="/docs/flutter/overview/">Flutter</a>&nbsp;  
+<a href="/docs/flutter/overview/">Flutter</a>&nbsp;
 <a href="/docs/chrome-extension/overview/">Chrome extension</a>&nbsp;
 </p>
 

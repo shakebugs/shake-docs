@@ -13,7 +13,7 @@ You're viewing the Web docs. Other platforms → &nbsp;
 <a href="/docs/ios/users/advanced-usage/">iOS</a>&nbsp; 
 <a href="/docs/android/users/advanced-usage/">Android</a>&nbsp;
 <a href="/docs/react/users/advanced-usage/">React Native</a>&nbsp;
-<a href="/docs/flutter/users/advanced-usage/">Flutter</a>&nbsp;  
+<a href="/docs/flutter/users/advanced-usage/">Flutter</a>&nbsp;
 </p>
 
 

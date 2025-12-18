@@ -13,7 +13,7 @@ You're viewing the Web docs. Other platforms → &nbsp;
 <a href="/docs/ios/configuration-and-data/custom-branding/">iOS</a>&nbsp; 
 <a href="/docs/android/configuration-and-data/custom-branding/">Android</a>&nbsp;
 <a href="/docs/react/configuration-and-data/custom-branding/">React Native</a>&nbsp;
-<a href="/docs/flutter/configuration-and-data/custom-branding/">Flutter</a>&nbsp;  
+<a href="/docs/flutter/configuration-and-data/custom-branding/">Flutter</a>&nbsp;
 </p>
 
 

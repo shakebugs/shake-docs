@@ -8,6 +8,11 @@ import TabItem from '@theme/TabItem';
 
 > Crash reports are a lot more useful when you see your symbolicated application frames.
 
+<p class="p2 mt-40">
+You're viewing the iOS docs. Other platform → &nbsp;
+<a href="/docs/android/crash-reports/deobfuscation">Android</a>&nbsp;
+</p>
+
 ## Introduction
 
 In order for crash reports to be symbolicated, you need to upload your dSYM files to Shake.

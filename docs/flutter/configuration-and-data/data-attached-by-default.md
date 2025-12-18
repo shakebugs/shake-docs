@@ -10,7 +10,7 @@ All of this is done out of the box, you don't need to code anything.
 <p class="p2 mt-40">
 You're viewing the Flutter docs. Other platforms → &nbsp;
 <a href="/docs/ios/configuration-and-data/data-attached-by-default/">iOS</a>&nbsp;
-<a href="/docs/android/configuration-and-data/data-attached-by-default/">Android</a>&nbsp;  
+<a href="/docs/android/configuration-and-data/data-attached-by-default/">Android</a>&nbsp;
 <a href="/docs/react/configuration-and-data/data-attached-by-default/">React Native</a>&nbsp; 
 <a href="/docs/web/configuration-and-data/data-attached-by-default/">Web</a>&nbsp;
 <a href="/docs/chrome-extension/configuration-and-data/data-attached-by-default/">Chrome extension</a>&nbsp;

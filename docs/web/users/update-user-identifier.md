@@ -13,7 +13,7 @@ You're viewing the Web docs. Other platforms → &nbsp;
 <a href="/docs/ios/users/update-user-identifier/">iOS</a>&nbsp; 
 <a href="/docs/android/users/update-user-identifier/">Android</a>&nbsp;
 <a href="/docs/react/users/update-user-identifier/">React Native</a>&nbsp;
-<a href="/docs/flutter/users/update-user-identifier/">Flutter</a>&nbsp;  
+<a href="/docs/flutter/users/update-user-identifier/">Flutter</a>&nbsp;
 </p>
 
 

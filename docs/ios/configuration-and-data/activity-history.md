@@ -14,7 +14,7 @@ and automatically attaches all of those to the ticket.
 You're viewing the iOS docs. Other platforms → &nbsp;
 <a href="/docs/android/configuration-and-data/activity-history/">Android</a>&nbsp;
 <a href="/docs/react/configuration-and-data/activity-history/">React Native</a>&nbsp; 
-<a href="/docs/flutter/configuration-and-data/activity-history/">Flutter</a>&nbsp;  
+<a href="/docs/flutter/configuration-and-data/activity-history/">Flutter</a>&nbsp;
 <a href="/docs/web/configuration-and-data/activity-history/">Web</a>&nbsp;
 </p>
 

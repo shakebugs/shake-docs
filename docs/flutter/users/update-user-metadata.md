@@ -12,7 +12,7 @@ additional data about the app user and their behavior.
 <p class="p2 mt-40">
 You're viewing the Flutter docs. Other platforms → &nbsp;
 <a href="/docs/ios/users/update-user-metadata/">iOS</a>&nbsp;
-<a href="/docs/android/users/update-user-metadata/">Android</a>&nbsp;  
+<a href="/docs/android/users/update-user-metadata/">Android</a>&nbsp;
 <a href="/docs/react/users/update-user-metadata/">React Native</a>&nbsp; 
 <a href="/docs/web/users/update-user-metadata/">Web</a>&nbsp;
 </p>

@@ -10,7 +10,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 You're viewing the React Native docs. Other platforms → &nbsp;
 <a href="/docs/ios/shake-ui/new-ticket-screen/">iOS</a>&nbsp; 
 <a href="/docs/android/shake-ui/new-ticket-screen/">Android</a>&nbsp;
-<a href="/docs/flutter/shake-ui/new-ticket-screen/">Flutter</a>&nbsp;  
+<a href="/docs/flutter/shake-ui/new-ticket-screen/">Flutter</a>&nbsp;
 <a href="/docs/web/shake-ui/#new-ticket">Web</a>&nbsp;
 </p>
 

@@ -10,7 +10,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 You're viewing the iOS docs. Other platforms → &nbsp;
 <a href="/docs/android/installation/">Android</a>&nbsp;
 <a href="/docs/react/installation/">React Native</a>&nbsp; 
-<a href="/docs/flutter/installation/">Flutter</a>&nbsp;  
+<a href="/docs/flutter/installation/">Flutter</a>&nbsp;
 <a href="/docs/web/install/npm/">Web</a>&nbsp;
 <a href="/docs/chrome-extension/installation/">Chrome extension</a>&nbsp;
 </p>

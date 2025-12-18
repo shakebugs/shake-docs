@@ -10,7 +10,7 @@ title: Overview
 You're viewing the iOS docs. Other platforms → &nbsp;
 <a href="/docs/android/overview/">Android</a>&nbsp;
 <a href="/docs/react/overview/">React Native</a>&nbsp; 
-<a href="/docs/flutter/overview/">Flutter</a>&nbsp;  
+<a href="/docs/flutter/overview/">Flutter</a>&nbsp;
 <a href="/docs/web/overview/">Web</a>&nbsp;
 <a href="/docs/chrome-extension/overview/">Chrome extension</a>&nbsp;
 </p>

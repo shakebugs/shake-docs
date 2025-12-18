@@ -12,7 +12,7 @@ In case of a [Crash report](/ios/crash-reports/ask-for-description/#enable), the
 You're viewing the iOS docs. Other platforms → &nbsp;
 <a href="/docs/android/shake-ui/inspect-section/">Android</a>&nbsp;
 <a href="/docs/react/shake-ui/inspect-section/">React Native</a>&nbsp; 
-<a href="/docs/flutter/shake-ui/inspect-section/">Flutter</a>&nbsp;  
+<a href="/docs/flutter/shake-ui/inspect-section/">Flutter</a>&nbsp;
 </p>
 
 

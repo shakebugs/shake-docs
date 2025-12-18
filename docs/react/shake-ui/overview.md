@@ -13,7 +13,7 @@ import TabItem from '@theme/TabItem';
 You're viewing the React Native docs. Other platforms → &nbsp;
 <a href="/docs/ios/shake-ui/overview/">iOS</a>&nbsp; 
 <a href="/docs/android/shake-ui/overview/">Android</a>&nbsp;
-<a href="/docs/flutter/shake-ui/overview/">Flutter</a>&nbsp;  
+<a href="/docs/flutter/shake-ui/overview/">Flutter</a>&nbsp;
 <a href="/docs/web/shake-ui/">Web</a>&nbsp;
 </p>
 

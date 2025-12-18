@@ -11,7 +11,7 @@ Or, you can use auto screen recording to always record their screen and automati
 You're viewing the iOS docs. Other platforms → &nbsp;
 <a href="/docs/android/configuration-and-data/auto-screen-recording/">Android</a>&nbsp;
 <a href="/docs/react/configuration-and-data/auto-screen-recording/">React Native</a>&nbsp; 
-<a href="/docs/flutter/configuration-and-data/auto-screen-recording/">Flutter</a>&nbsp;  
+<a href="/docs/flutter/configuration-and-data/auto-screen-recording/">Flutter</a>&nbsp;
 </p>
 
 :::note

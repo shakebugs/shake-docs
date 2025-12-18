@@ -12,7 +12,7 @@ import TabItem from '@theme/TabItem';
 You're viewing the iOS docs. Other platforms → &nbsp;
 <a href="/docs/android/configuration-and-data/auto-attach-files/">Android</a>&nbsp;
 <a href="/docs/react/configuration-and-data/auto-attach-files/">React Native</a>&nbsp; 
-<a href="/docs/flutter/configuration-and-data/auto-attach-files/">Flutter</a>&nbsp;  
+<a href="/docs/flutter/configuration-and-data/auto-attach-files/">Flutter</a>&nbsp;
 </p>
 
 

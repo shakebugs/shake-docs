@@ -11,7 +11,7 @@ import TabItem from '@theme/TabItem';
 <p class="p2 mt-40">
 You're viewing the Flutter docs. Other platforms → &nbsp;
 <a href="/docs/ios/users/update-user-identifier/">iOS</a>&nbsp;
-<a href="/docs/android/users/update-user-identifier/">Android</a>&nbsp;  
+<a href="/docs/android/users/update-user-identifier/">Android</a>&nbsp;
 <a href="/docs/react/users/update-user-identifier/">React Native</a>&nbsp; 
 <a href="/docs/web/users/update-user-identifier/">Web</a>&nbsp;
 </p>

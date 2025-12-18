@@ -11,7 +11,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 You're viewing the iOS docs. Other platforms → &nbsp;
 <a href="/docs/android/user-feedback/overview/">Android</a>&nbsp;
 <a href="/docs/react/user-feedback/overview/">React Native</a>&nbsp; 
-<a href="/docs/flutter/user-feedback/overview/">Flutter</a>&nbsp;  
+<a href="/docs/flutter/user-feedback/overview/">Flutter</a>&nbsp;
 <a href="/docs/web/user-feedback/overview/">Web</a>&nbsp;
 </p>
 

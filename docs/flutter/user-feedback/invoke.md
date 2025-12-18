@@ -10,7 +10,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 <p class="p2 mt-40">
 You're viewing the Flutter docs. Other platforms → &nbsp;
 <a href="/docs/ios/user-feedback/invoke/">iOS</a>&nbsp;
-<a href="/docs/android/user-feedback/invoke/">Android</a>&nbsp;  
+<a href="/docs/android/user-feedback/invoke/">Android</a>&nbsp;
 <a href="/docs/react/user-feedback/invoke/">React Native</a>&nbsp; 
 <a href="/docs/web/user-feedback/invoke/">Web</a>&nbsp;
 </p>
@@ -114,7 +114,7 @@ Because of that, if you opt for this invocation method, storage permission will 
 
 :::note
 App Store rejects apps that get in the way of the default screenshot behavior. For that reason, don't use this invocation method in your production releases.
-:::note
+:::
 
 ## Invoke through code
 Invoke Shake user feedback through code by calling the `Shake.show` method anywhere after `Shake.start`.

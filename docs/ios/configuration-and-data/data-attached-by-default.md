@@ -11,7 +11,7 @@ All of this is done out of the box, you don't need to code anything.
 You're viewing the iOS docs. Other platforms → &nbsp;
 <a href="/docs/android/configuration-and-data/data-attached-by-default/">Android</a>&nbsp;
 <a href="/docs/react/configuration-and-data/data-attached-by-default/">React Native</a>&nbsp; 
-<a href="/docs/flutter/configuration-and-data/data-attached-by-default/">Flutter</a>&nbsp;  
+<a href="/docs/flutter/configuration-and-data/data-attached-by-default/">Flutter</a>&nbsp;
 <a href="/docs/web/configuration-and-data/data-attached-by-default/">Web</a>&nbsp;
 <a href="/docs/chrome-extension/configuration-and-data/data-attached-by-default/">Chrome extension</a>&nbsp;
 </p>
