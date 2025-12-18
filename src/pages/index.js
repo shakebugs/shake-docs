@@ -44,6 +44,12 @@ function Home() {
             <img src="/docs/img/icon-chrome@2x.png" alt="Shake Chrome extension documentation"/>
             <p>Chrome extension</p>
           </a></div>
+          <div></div>
+          <div><a href="/docs/mcp/overview">
+            <img src="/docs/img/icon-mcp@2x.png" alt="Shake MCP documentation"/>
+            <p>MCP server</p>
+          </a></div>
+          <div></div>
         </div>
         <p class="p2">🧑‍💻 You can try Shake without signing up or coding. <a href="https://shk.sh/demo" target="_blank">See
           demo Dashboard</a></p>

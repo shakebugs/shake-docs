@@ -85,7 +85,6 @@ module.exports = {
             ]
         },
         'android/releases',
-        // 'android/mcp'
     ],
     iosSidebar: [
         {
@@ -181,7 +180,6 @@ module.exports = {
             ]
         },
         'ios/releases',
-        // 'ios/mcp'
     ],
     flutterSidebar: [
         {
@@ -258,7 +256,6 @@ module.exports = {
             ]
         },
         'flutter/releases',
-        // 'flutter/mcp'
     ],
     reactSidebar: [
         {
@@ -334,7 +331,6 @@ module.exports = {
             ]
         },
         'react/releases',
-        // 'react/mcp'
     ],
     webSidebar: [
         {
@@ -401,7 +397,6 @@ module.exports = {
             ]
         },
         'web/releases',
-        // 'web/mcp'
     ],
     chromeExtensionSidebar: [
         {
@@ -427,6 +422,22 @@ module.exports = {
         'chrome-extension/incognito-mode',
         'chrome-extension/mobile-inspector',
         'chrome-extension/releases',
-        // 'chrome-extension/mcp'
     ],
-};
+    mcpSidebar: [
+        'mcp/overview',
+        {
+            type: 'category',
+            label: 'Connect to',
+            items: [
+                'mcp/connect/chatgpt',
+                'mcp/connect/claude-desktop',
+                'mcp/connect/claude-code',
+                'mcp/connect/cursor',
+                'mcp/connect/vscode',
+                'mcp/connect/windsurf'
+            ]
+        },
+        'mcp/tools-resources-prompts',
+        'mcp/releases'
+    ],
+}

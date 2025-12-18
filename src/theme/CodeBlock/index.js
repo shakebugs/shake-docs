@@ -6,7 +6,7 @@
  */
 import React, {useEffect, useState} from 'react';
 import clsx from 'clsx';
-import { Highlight, defaultProps } from 'prism-react-renderer';
+import { Highlight, Prism } from 'prism-react-renderer';
 import rangeParser from 'parse-numeric-range';
 import {useThemeConfig} from '@docusaurus/theme-common';
 import CopyButton from '../CopyButton';
@@ -262,7 +262,7 @@ export default function CodeBlock({
 
   return (
     <Highlight
-      {...defaultProps}
+      prism={Prism}
       key={String(mounted)}
       theme={prism.darkTheme}
       code={code}
