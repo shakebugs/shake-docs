@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@docusaurus/core": "^3.0.0",
+    "@docusaurus/plugin-client-redirects": "^3.8.1",
     "@docusaurus/preset-classic": "^3.0.0",
     "@inkeep/docusaurus": "^2.0.16",
     "@signalwire/docusaurus-plugin-llms-txt": "^1.2.2",

@@ -134,6 +134,41 @@ module.exports = {
                     enableMarkdownFiles: true,
                 }
             }
+        ],
+        [
+            '@docusaurus/plugin-client-redirects',
+            {
+                redirects: [
+                    {
+                        from: '/ios',
+                        to: '/ios/overview',
+                    },
+                    {
+                        from: '/android',
+                        to: '/android/overview',
+                    },
+                    {
+                        from: '/react',
+                        to: '/react/overview',
+                    },
+                    {
+                        from: '/flutter',
+                        to: '/flutter/overview',
+                    },
+                    {
+                        from: '/web',
+                        to: '/web/overview',
+                    },
+                    {
+                        from: '/chrome-extension',
+                        to: '/chrome-extension/overview',
+                    },
+                    {
+                        from: '/mcp',
+                        to: '/mcp/overview',
+                    },
+                ],
+            },
         ]
     ],
     themes: ['@inkeep/docusaurus/searchBar'],
