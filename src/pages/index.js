@@ -21,35 +21,37 @@ function Home() {
 
         <div class="home-platforms">
           <div><a href="/docs/ios/overview">
-            <img src="/docs/img/icon-ios@2x.png" alt="Shake iOS documentation"/>
+            <img src="/docs/img/icon-ios@2x.png" alt="Shake iOS documentation" />
             <p>iOS</p>
           </a></div>
           <div><a href="/docs/android/overview">
-            <img src="/docs/img/icon-android@2x.png" alt="Shake Android documentation"/>
+            <img src="/docs/img/icon-android@2x.png" alt="Shake Android documentation" />
             <p>Android</p>
           </a></div>
           <div><a href="/docs/react/overview">
-            <img src="/docs/img/icon-rn@2x.png" alt="Shake React Native documentation"/>
+            <img src="/docs/img/icon-rn@2x.png" alt="Shake React Native documentation" />
             <p>React Native</p>
           </a></div>
           <div><a href="/docs/flutter/overview">
-            <img src="/docs/img/icon-flutter@2x.png" alt="Shake Flutter documentation"/>
+            <img src="/docs/img/icon-flutter@2x.png" alt="Shake Flutter documentation" />
             <p>Flutter</p>
           </a></div>
           <div><a href="/docs/web/overview">
-            <img src="/docs/img/icon-web@2x.png" alt="Shake Web documentation"/>
+            <img src="/docs/img/icon-web@2x.png" alt="Shake Web documentation" />
             <p>Web</p>
           </a></div>
           <div><a href="/docs/chrome-extension/overview">
-            <img src="/docs/img/icon-chrome@2x.png" alt="Shake Chrome extension documentation"/>
+            <img src="/docs/img/icon-chrome@2x.png" alt="Shake Chrome extension documentation" />
             <p>Chrome extension</p>
           </a></div>
-          <div></div>
           <div><a href="/docs/mcp/overview">
-            <img src="/docs/img/icon-mcp@2x.png" alt="Shake MCP documentation"/>
+            <img src="/docs/img/icon-mcp@2x.png" alt="Shake MCP documentation" />
             <p>MCP server</p>
           </a></div>
-          <div></div>
+          <div><a href="/docs/rest-api/overview">
+            <img src="/docs/img/icon-mcp@2x.png" alt="Shake Rest API documentation" />
+            <p>Rest API</p>
+          </a></div>
         </div>
         <p class="p2">🧑‍💻 You can try Shake without signing up or coding. <a href="https://shk.sh/demo" target="_blank">See
           demo Dashboard</a></p>
