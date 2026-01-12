@@ -44,7 +44,7 @@ Returns an array of team member objects.
 
 ```bash
 curl -H "X-API-KEY: your_api_key_here" \
-  https://api.shakebugs.com/api/rest/accounts/members
+  https://dashboard-api.shakebugs.com/api/rest/accounts/members
 ```
 
 ### Example Response

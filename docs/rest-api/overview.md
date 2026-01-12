@@ -10,7 +10,7 @@ The Shake REST API provides programmatic access to your Shake data, allowing you
 ## Base URL
 
 ```text
-https://api.shakebugs.com/api/rest
+https://dashboard-api.shakebugs.com/api/rest
 ```
 
 ## Authentication
@@ -172,9 +172,33 @@ The API uses standard HTTP status codes:
 }
 ```
 
+## API Reference
+
+Want to dive deeper into the API specifications? We've got you covered!
+
+### OpenAPI Specification
+
+The complete OpenAPI (Swagger) specification is available at:
+
+```text
+https://dashboard-api.shakebugs.com/api/rest/swagger.json
+```
+
+This JSON file contains the full technical specification of all endpoints, request/response schemas, and parameters.
+
+### Try It Out
+
+You can test API endpoints and explore the interactive documentation at:
+
+```text
+https://dashboard-api.shakebugs.com/api/rest/
+```
+
+Feel free to experiment there!
+
 ## Next Steps
 
-Explore the API endpoints:
+Explore the API through our docs:
 
 - [Accounts](/docs/rest-api/modules/accounts)
 - [Crash Reporting](/docs/rest-api/modules/crash-reporting)

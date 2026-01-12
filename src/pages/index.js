@@ -49,7 +49,7 @@ function Home() {
             <p>MCP server</p>
           </a></div>
           <div><a href="/docs/rest-api/overview">
-            <img src="/docs/img/icon-mcp@2x.png" alt="Shake Rest API documentation" />
+            <img src="/docs/img/icon-api@2x.png" style={{ width: "72px" }} alt="Shake Rest API documentation" />
             <p>Rest API</p>
           </a></div>
         </div>
