@@ -3,9 +3,9 @@ id: overview
 title: Overview
 ---
 
-# Shake REST API
+## Shake REST API
 
-The Shake REST API provides programmatic access to your Shake data, allowing you to manage crash reports, issues, and team members.
+> The Shake REST API provides programmatic access to your Shake data, allowing you to manage crash reports, issues, and team members.
 
 ## Base URL
 
