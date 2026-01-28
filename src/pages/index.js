@@ -49,8 +49,8 @@ function Home() {
             <p>MCP server</p>
           </a></div>
           <div><a href="/docs/rest-api/overview">
-            <img src="/docs/img/icon-api@2x.png" style={{ width: "72px" }} alt="Shake Rest API documentation" />
-            <p>Rest API</p>
+            <img src="/docs/img/icon-rest-api@2x.png" alt="Shake Rest API documentation" />
+            <p>REST API</p>
           </a></div>
         </div>
         <p class="p2">🧑‍💻 You can try Shake without signing up or coding. <a href="https://shk.sh/demo" target="_blank">See
