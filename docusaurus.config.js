@@ -1,175 +1,180 @@
 require('dotenv').config()
-const {themes} = require('prism-react-renderer');
+const { themes } = require('prism-react-renderer');
 
 module.exports = {
-    title: 'Documentation',
-    tagline: 'Explore guides and examples to integrate Shake into your app.',
-    url: 'https://docs.shakebugs.com',
-    baseUrl: '/docs/',
-    favicon: 'img/favicon.png',
-    trailingSlash: true,
-    organizationName: 'shakebugs', // Usually your GitHub org/user name.
-    projectName: 'shake-docs', // Usually your repo name.
-    themeConfig: {
-        inkeepConfig: {
-            baseSettings: {
-                apiKey: process.env.INKEEP_KEY || '',
-                integrationId: 'clrhxn3th00stvmh08mx2o9as',
-                organizationId: 'org_8oLDuGb1oVIA7GB3',
-                primaryBrandColor: '#6551FF',
+  title: 'Documentation',
+  tagline: 'Explore guides and examples to integrate Shake into your app.',
+  url: 'https://docs.shakebugs.com',
+  baseUrl: '/docs/',
+  favicon: 'img/favicon.png',
+  trailingSlash: true,
+  organizationName: 'shakebugs', // Usually your GitHub org/user name.
+  projectName: 'shake-docs', // Usually your repo name.
+  themeConfig: {
+    inkeepConfig: {
+      baseSettings: {
+        apiKey: process.env.INKEEP_KEY || '',
+        integrationId: 'clrhxn3th00stvmh08mx2o9as',
+        organizationId: 'org_8oLDuGb1oVIA7GB3',
+        primaryBrandColor: '#6551FF',
+      },
+      aiChatSettings: {
+        chatSubjectName: 'Shake',
+        botAvatarSrcUrl: 'https://www.shakebugs.com/wp-content/themes/shake/public/shake-banner-image.svg',
+        quickQuestions: [
+          'Can I provide my own internationalization strings?',
+          'How do I customize the theme on iOS?',
+          'Where can I view user feedback and what information does it include?',
+        ],
+        getHelpCallToActions: [
+          {
+            url: 'https://shk.sh/join-slack',
+            name: 'Slack Community',
+            icon: {
+              builtIn: 'FaSlack',
             },
-            aiChatSettings: {
-                chatSubjectName: 'Shake',
-                botAvatarSrcUrl: 'https://www.shakebugs.com/wp-content/themes/shake/public/shake-banner-image.svg',
-                quickQuestions: [
-                    'Can I provide my own internationalization strings?',
-                    'How do I customize the theme on iOS?',
-                    'Where can I view user feedback and what information does it include?',
-                ],
-                getHelpCallToActions: [
-                    {
-                        url: 'https://shk.sh/join-slack',
-                        name: 'Slack Community',
-                        icon: {
-                            builtIn: 'FaSlack',
-                        },
-                    },
-                ],
-            },
-        },
-        docs: {
-            sidebar: {
-                hideable: false
-            }
-        },
-        colorMode: {
-            defaultMode: 'dark',
-            disableSwitch: true,
-            respectPrefersColorScheme: false,
-        },
-        scrollToTop: false,
-        scrollToTopOptions: false,
-        prism: {
-            theme: themes.github,
-            darkTheme: themes.dracula,
-            additionalLanguages: ['groovy', 'kotlin', 'java', 'swift', 'dart', 'batch'],
-        },
-        // algolia: {
-        //   appId: 'Q6FOQ6DC6Q',
-        //   apiKey: '3ebbb9c4424c458a83683abfb66e7bb6',
-        //   indexName: 'shakebugs',
-        // },
-        navbar: {
-            logo: {
-                alt: 'Shake logo',
-                src: 'img/shake-full-logo.svg',
-                href: 'https://www.shakebugs.com/',
-            },
-            items: [
-                {
-                    to: '/',
-                    activeBasePath: 'docs',
-                    label: 'Docs',
-                    position: 'left',
-                },
-                {
-                    label: 'Platform',
-                    position: 'left',
-                    items: [
-                        {to: 'ios/overview', label: 'iOS', activeBasePath: '/ios'},
-                        {to: 'android/overview', label: 'Android', activeBasePath: '/android'},
-                        {to: 'react/overview', label: 'React Native', activeBasePath: '/react'},
-                        {to: 'flutter/overview', label: 'Flutter', activeBasePath: '/flutter'},
-                        {to: 'web/overview', label: 'Web', activeBasePath: '/web'},
-                        {to: 'chrome-extension/overview', label: 'Chrome extension', activeBasePath: '/chrome-extension'},
-                        {to: 'mcp/overview', label: 'MCP server', activeBasePath: '/mcp'}
-                    ],
-                },
-                {
-                    type: 'search',
-                    position: 'right',
-                    className: 'inkeep-search',
-                },
-                {
-                    href: 'https://app.shakebugs.com/',
-                    label: 'Dashboard',
-                    position: 'right',
-                },
-            ],
-        },
+          },
+        ],
+      },
     },
-    presets: [
-        [
-            '@docusaurus/preset-classic',
-            {
-                docs: {
-                    routeBasePath: '/',
-                    sidebarPath: require.resolve('./sidebars.js'),
-                },
-                theme: {
-                    customCss: require.resolve('./src/css/custom.css'),
-                },
-            },
-        ],
+    docs: {
+      sidebar: {
+        hideable: false
+      }
+    },
+    colorMode: {
+      defaultMode: 'dark',
+      disableSwitch: true,
+      respectPrefersColorScheme: false,
+    },
+    scrollToTop: false,
+    scrollToTopOptions: false,
+    prism: {
+      theme: themes.github,
+      darkTheme: themes.dracula,
+      additionalLanguages: ['groovy', 'kotlin', 'java', 'swift', 'dart', 'batch'],
+    },
+    // algolia: {
+    //   appId: 'Q6FOQ6DC6Q',
+    //   apiKey: '3ebbb9c4424c458a83683abfb66e7bb6',
+    //   indexName: 'shakebugs',
+    // },
+    navbar: {
+      logo: {
+        alt: 'Shake logo',
+        src: 'img/shake-full-logo.svg',
+        href: 'https://www.shakebugs.com/',
+      },
+      items: [
+        {
+          to: '/',
+          activeBasePath: 'docs',
+          label: 'Docs',
+          position: 'left',
+        },
+        {
+          label: 'Platform',
+          position: 'left',
+          items: [
+            { to: 'ios/overview', label: 'iOS', activeBasePath: '/ios' },
+            { to: 'android/overview', label: 'Android', activeBasePath: '/android' },
+            { to: 'react/overview', label: 'React Native', activeBasePath: '/react' },
+            { to: 'flutter/overview', label: 'Flutter', activeBasePath: '/flutter' },
+            { to: 'web/overview', label: 'Web', activeBasePath: '/web' },
+            { to: 'chrome-extension/overview', label: 'Chrome extension', activeBasePath: '/chrome-extension' },
+            { to: 'mcp/overview', label: 'MCP server', activeBasePath: '/mcp' },
+            { to: 'rest-api/overview', label: 'Rest API', activeBasePath: '/rest-api' }
+          ],
+        },
+        {
+          type: 'search',
+          position: 'right',
+          className: 'inkeep-search',
+        },
+        {
+          href: 'https://app.shakebugs.com/',
+          label: 'Dashboard',
+          position: 'right',
+        },
+      ],
+    },
+  },
+  presets: [
+    [
+      '@docusaurus/preset-classic',
+      {
+        docs: {
+          routeBasePath: '/',
+          sidebarPath: require.resolve('./sidebars.js'),
+        },
+        theme: {
+          customCss: require.resolve('./src/css/custom.css'),
+        },
+      },
     ],
-    plugins: [
-        require.resolve('./src/plugins/inject-html-tags'),
-        [
-            'docusaurus-plugin-dotenv',
-            {
-                path: "./.env",
-                systemvars: true,
-            }
-        ],
-        [
-            '@signalwire/docusaurus-plugin-llms-txt',
-            {
-                siteTitle: 'My Documentation',
-                siteDescription: 'Comprehensive guide to our platform',
-                depth: 2,
-                content: {
-                    includeBlog: true,
-                    includePages: true,
-                    enableLlmsFullTxt: true,
-                    enableMarkdownFiles: true,
-                }
-            }
-        ],
-        [
-            '@docusaurus/plugin-client-redirects',
-            {
-                redirects: [
-                    {
-                        from: '/ios',
-                        to: '/ios/overview',
-                    },
-                    {
-                        from: '/android',
-                        to: '/android/overview',
-                    },
-                    {
-                        from: '/react',
-                        to: '/react/overview',
-                    },
-                    {
-                        from: '/flutter',
-                        to: '/flutter/overview',
-                    },
-                    {
-                        from: '/web',
-                        to: '/web/overview',
-                    },
-                    {
-                        from: '/chrome-extension',
-                        to: '/chrome-extension/overview',
-                    },
-                    {
-                        from: '/mcp',
-                        to: '/mcp/overview',
-                    },
-                ],
-            },
-        ]
+  ],
+  plugins: [
+    require.resolve('./src/plugins/inject-html-tags'),
+    [
+      'docusaurus-plugin-dotenv',
+      {
+        path: "./.env",
+        systemvars: true,
+      }
     ],
-    themes: ['@inkeep/docusaurus/searchBar'],
+    [
+      '@signalwire/docusaurus-plugin-llms-txt',
+      {
+        siteTitle: 'My Documentation',
+        siteDescription: 'Comprehensive guide to our platform',
+        depth: 2,
+        content: {
+          includeBlog: true,
+          includePages: true,
+          enableLlmsFullTxt: true,
+          enableMarkdownFiles: true,
+        }
+      }
+    ],
+    [
+      '@docusaurus/plugin-client-redirects',
+      {
+        redirects: [
+          {
+            from: '/ios',
+            to: '/ios/overview',
+          },
+          {
+            from: '/android',
+            to: '/android/overview',
+          },
+          {
+            from: '/react',
+            to: '/react/overview',
+          },
+          {
+            from: '/flutter',
+            to: '/flutter/overview',
+          },
+          {
+            from: '/web',
+            to: '/web/overview',
+          },
+          {
+            from: '/chrome-extension',
+            to: '/chrome-extension/overview',
+          },
+          {
+            from: '/mcp',
+            to: '/mcp/overview',
+          },
+          {
+            from: '/rest-api',
+            to: '/rest-api/overview',
+          },
+        ],
+      },
+    ]
+  ],
+  themes: ['@inkeep/docusaurus/searchBar'],
 };
