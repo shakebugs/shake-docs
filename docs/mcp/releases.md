@@ -4,6 +4,16 @@ title: Release Notes
 ---
 >This page lists all updates to the Shake iOS SDK.
 
+## v1.1.0 — Visual debugging support
+#### Added
+ - Screenshot retrieval via `get_user_feedback_screenshot` (read-only) — returns the actual screenshot image attached to a ticket
+ - Video recording retrieval via `get_user_feedback_video` (read-only) — returns video URL and metadata (file size, content type)
+ - Session replay retrieval via `get_user_feedback_session_replay` (read-only) — returns session replay URL and metadata (file size, content type)
+
+#### Behavior
+ - Automatic tool invocation when users request screenshots, videos, session replays, or visual evidence from tickets
+ - Screenshots are returned as image data for immediate viewing; videos and session replays return URLs due to large file sizes
+
 ## v1.0.0 — Initial release
 #### Added
  - ShakeBugs ticket details retrieval via `get_user_feedback_details` (read-only)
