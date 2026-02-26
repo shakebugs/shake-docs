@@ -8,11 +8,14 @@ title: Overview
 
 ## Prompt examples
 
-After you connect to Shake, here’s what you can ask ChatGPT or any other tool you use:
+After you connect to Shake, here's what you can ask ChatGPT or any other tool you use:
 
  - How do I fix this issue https://app.shakebugs.com/acme/user-feedback/app/1 ?
  - What do you think about this feature suggestion https://app.shakebugs.com/acme/user-feedback/web/2 ?
  - Draft me a reply for this user https://app.shakebugs.com/acme/user-feedback/app/3
+ - Show me the screenshot from https://app.shakebugs.com/acme/user-feedback/app/4
+ - Analyze this issue and show me the video: https://app.shakebugs.com/acme/user-feedback/app/5
+ - Get the session replay for this ticket and tell me what happened https://app.shakebugs.com/acme/user-feedback/app/6
  - In Shake Android SDK, how do we add custom data to bug reports?
 
 ## How-to-connect guides
