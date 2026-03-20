@@ -18,9 +18,16 @@ Other platforms → &nbsp;
 
 What would you like us to build next? Upvote upcoming features and suggest new ideas on the [Public feedback board](https://feedback.shakebugs.com/).
 
+## 3.3.2
+<span class="tag-button">March 20, 2026</span>&nbsp;&nbsp;
+<span class="tag-button green-tag-button">Latest version</span>
+
+#### Bug fixes
+
+OS version information is now fixed and supported only in Chromium based browsers.
+
 ## 3.3.1
 <span class="tag-button">December 18, 2025</span>&nbsp;&nbsp;
-<span class="tag-button green-tag-button">Latest version</span>
 
 #### Bug fixes
 

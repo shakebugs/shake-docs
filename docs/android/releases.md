@@ -17,9 +17,16 @@ Other platforms →&nbsp;
 
 What would you like us to build next? Upvote upcoming features and suggest new ideas on the [Public feedback board](https://feedback.shakebugs.com/).
 
+## 17.2.1
+<span class="tag-button">March 20, 2026</span>&nbsp;&nbsp;
+<span class="tag-button green-tag-button">Latest version</span>
+
+#### What's new
+
+The database has been switched to WAL mode, improving performance and reliability. Console log types are now supported, giving you richer context in your activity history.
+
 ## 17.2.0
 <span class="tag-button">December 16, 2025</span>&nbsp;&nbsp;
-<span class="tag-button green-tag-button">Latest version</span>
 
 #### Bug fixes
 
