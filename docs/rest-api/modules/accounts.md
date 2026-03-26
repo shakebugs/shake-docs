@@ -17,7 +17,7 @@ GET /accounts/members
 
 ### Authentication
 
-Required. Use your API key in the `X-API-KEY` header.
+Required. Use your REST API key in the `X-API-KEY` header.
 
 ### Response
 
@@ -43,7 +43,7 @@ Returns an array of team member objects.
 ### Example Request
 
 ```bash
-curl -H "X-API-KEY: your_api_key_here" \
+curl -H "X-API-KEY: your_rest_api_key_here" \
   https://dashboard-api.shakebugs.com/api/rest/accounts/members
 ```
 
@@ -89,7 +89,7 @@ Returns a `204 No Content` status with an `Allow` header indicating permitted me
 ### Example Request
 
 ```bash
-curl -X OPTIONS -H "X-API-KEY: your_api_key_here" \
+curl -X OPTIONS -H "X-API-KEY: your_rest_api_key_here" \
   https://dashboard-api.shakebugs.com/api/rest/accounts/members
 ```
 

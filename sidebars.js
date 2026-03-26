@@ -446,9 +446,9 @@ module.exports = {
       type: 'category',
       label: 'Modules',
       items: [
-        'rest-api/modules/accounts',
-        'rest-api/modules/crash-reporting',
-        'rest-api/modules/issue-tracking'
+        { type: 'doc', id: 'rest-api/modules/user-feedback', label: 'User feedback' },
+        { type: 'doc', id: 'rest-api/modules/crash-reporting', label: 'Crash reports' },
+        { type: 'doc', id: 'rest-api/modules/accounts', label: 'Team members' },
       ]
     }
   ],
