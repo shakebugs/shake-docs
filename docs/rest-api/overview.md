@@ -5,7 +5,7 @@ title: Overview
 
 ## Shake REST API
 
-> The Shake REST API provides programmatic access to your Shake data, allowing you to manage crash reports, issues, and team members.
+> The Shake REST API provides programmatic access to your Shake data, allowing you to manage user feedback, crash reports, and team members.
 
 ## Base URL
 
@@ -15,18 +15,18 @@ https://dashboard-api.shakebugs.com/api/rest
 
 ## Authentication
 
-All API requests require authentication using an API key. You can find your API key in your Shake dashboard.
+All API requests require authentication using a REST API key, which you can find in [your Shake dashboard](https://app.shakebugs.com/administration/apps/): Choose an app › General › scroll down to the Authentication keys section.
 
-Include your API key in the request header:
+Include your REST API key in the request header:
 
 ```text
-X-API-KEY: your_api_key_here
+X-API-KEY: your_rest_api_key_here
 ```
 
 ### Example Request
 
 ```bash
-curl -H "X-API-KEY: your_api_key_here" \
+curl -H "X-API-KEY: your_rest_api_key_here" \
   https://dashboard-api.shakebugs.com/api/rest/crash_reporting/crash_groups
 ```
 
@@ -66,7 +66,7 @@ When you exceed the rate limit, the API returns a `429 Too Many Requests` status
 // Example: Check rate limit before making requests
 const response = await fetch('https://dashboard-api.shakebugs.com/api/rest/crash_reporting/crash_groups', {
   headers: {
-    'X-API-KEY': 'your_api_key_here'
+    'X-API-KEY': 'your_rest_api_key_here'
   }
 });
 
@@ -82,11 +82,15 @@ if (remaining < 10) {
 
 The Shake REST API provides three main categories of endpoints:
 
-### Accounts
+### User feedback
 
-Manage team members and access control for your organization.
+Track and manage user-reported feedback including:
 
-### Crash Reporting
+- User feedback management and lifecycle
+- Chat conversations with users
+- Activity logs and history
+
+### Crash reports
 
 Access and manage crash reports, crash groups, and related data including:
 
@@ -94,13 +98,9 @@ Access and manage crash reports, crash groups, and related data including:
 - Chat conversations
 - Activity logs
 
-### Issue Tracking
+### Team members
 
-Track and manage user-reported issues including:
-
-- Issue management and lifecycle
-- Chat conversations with users
-- Activity logs and history
+Manage team members and access control for your organization.
 
 ## Request Format
 
@@ -131,11 +131,11 @@ List endpoints support pagination using `limit` and `offset` query parameters:
 
 ```bash
 # Get the first 50 crash groups
-curl -H "X-API-KEY: your_api_key_here" \
+curl -H "X-API-KEY: your_rest_api_key_here" \
   "https://dashboard-api.shakebugs.com/api/rest/crash_reporting/crash_groups?limit=50&offset=0"
 
 # Get the next 50 crash groups
-curl -H "X-API-KEY: your_api_key_here" \
+curl -H "X-API-KEY: your_rest_api_key_here" \
   "https://dashboard-api.shakebugs.com/api/rest/crash_reporting/crash_groups?limit=50&offset=50"
 ```
 
@@ -200,9 +200,9 @@ Feel free to experiment there!
 
 Explore the API through our docs:
 
-- [Accounts](/docs/rest-api/modules/accounts)
-- [Crash Reporting](/docs/rest-api/modules/crash-reporting)
-- [Issue Tracking](/docs/rest-api/modules/issue-tracking)
+- [User feedback](/docs/rest-api/modules/user-feedback)
+- [Crash reports](/docs/rest-api/modules/crash-reporting)
+- [Team members](/docs/rest-api/modules/accounts)
 
 ## Feedback
 

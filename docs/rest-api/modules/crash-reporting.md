@@ -61,7 +61,7 @@ GET /crash_reporting/crash_groups
 #### Example Request
 
 ```bash
-curl -H "X-API-KEY: your_api_key_here" \
+curl -H "X-API-KEY: your_rest_api_key_here" \
   "https://dashboard-api.shakebugs.com/api/rest/crash_reporting/crash_groups?limit=20&offset=0"
 ```
 
@@ -82,7 +82,7 @@ GET /crash_reporting/crash_groups/{crash_group_id}
 #### Example Request
 
 ```bash
-curl -H "X-API-KEY: your_api_key_here" \
+curl -H "X-API-KEY: your_rest_api_key_here" \
   https://dashboard-api.shakebugs.com/api/rest/crash_reporting/crash_groups/550e8400-e29b-41d4-a716-446655440000
 ```
 
@@ -130,7 +130,7 @@ Use JSON Patch operations to update specific fields:
 
 ```bash
 curl -X PATCH \
-  -H "X-API-KEY: your_api_key_here" \
+  -H "X-API-KEY: your_rest_api_key_here" \
   -H "Content-Type: application/json" \
   -d '[{"op":"replace","path":"/status","value":"In progress"}]' \
   https://dashboard-api.shakebugs.com/api/rest/crash_reporting/crash_groups/550e8400-e29b-41d4-a716-446655440000
@@ -148,7 +148,7 @@ DELETE /crash_reporting/crash_groups/{crash_group_id}
 
 ```bash
 curl -X DELETE \
-  -H "X-API-KEY: your_api_key_here" \
+  -H "X-API-KEY: your_rest_api_key_here" \
   https://dashboard-api.shakebugs.com/api/rest/crash_reporting/crash_groups/550e8400-e29b-41d4-a716-446655440000
 ```
 
@@ -172,7 +172,7 @@ GET /crash_reporting/crash_groups/{crash_group_id}/crash_events
 #### Example Request
 
 ```bash
-curl -H "X-API-KEY: your_api_key_here" \
+curl -H "X-API-KEY: your_rest_api_key_here" \
   "https://dashboard-api.shakebugs.com/api/rest/crash_reporting/crash_groups/550e8400-e29b-41d4-a716-446655440000/crash_events?limit=20"
 ```
 
@@ -224,7 +224,7 @@ Returns detailed crash event information including device info, stack trace, and
 #### Example Request
 
 ```bash
-curl -H "X-API-KEY: your_api_key_here" \
+curl -H "X-API-KEY: your_rest_api_key_here" \
   https://dashboard-api.shakebugs.com/api/rest/crash_reporting/crash_events/660e8400-e29b-41d4-a716-446655440000
 ```
 
@@ -256,7 +256,7 @@ PATCH /crash_reporting/crash_events/{crash_event_id}
 
 ```bash
 curl -X PATCH \
-  -H "X-API-KEY: your_api_key_here" \
+  -H "X-API-KEY: your_rest_api_key_here" \
   -H "Content-Type: application/json" \
   -d '[{"op":"replace","path":"/title","value":"Updated crash title"}]' \
   https://dashboard-api.shakebugs.com/api/rest/crash_reporting/crash_events/660e8400-e29b-41d4-a716-446655440000
@@ -325,7 +325,7 @@ POST /crash_reporting/crash_events/{crash_event_id}/chat
 
 ```bash
 curl -X POST \
-  -H "X-API-KEY: your_api_key_here" \
+  -H "X-API-KEY: your_rest_api_key_here" \
   -H "Content-Type: application/json" \
   -d '{"message":"Investigating this issue","assignee_id":"550e8400-e29b-41d4-a716-446655440000","is_note":false}' \
   https://dashboard-api.shakebugs.com/api/rest/crash_reporting/crash_events/660e8400-e29b-41d4-a716-446655440000/chat
@@ -361,6 +361,6 @@ GET /crash_reporting/crash_events/{crash_event_id}/logs
 #### Example Request
 
 ```bash
-curl -H "X-API-KEY: your_api_key_here" \
+curl -H "X-API-KEY: your_rest_api_key_here" \
   https://dashboard-api.shakebugs.com/api/rest/crash_reporting/crash_events/660e8400-e29b-41d4-a716-446655440000/logs
 ```

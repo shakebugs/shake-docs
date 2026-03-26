@@ -1,17 +1,17 @@
 ---
-id: issue-tracking
-title: Issue Tracking
+id: user-feedback
+title: User feedback
 ---
 
-# Issue Tracking
+# User feedback
 
-Track and manage user-reported issues including bug reports, feature requests, and feedback.
+Track and manage user feedback including bug reports, feature requests, and questions.
 
-## Issues
+## User feedback
 
-### List Issues
+### List user feedback
 
-Get a paginated list of issues for your application.
+Get a paginated list of user feedback for your application.
 
 ```http
 GET /issue_tracking/issues
@@ -83,13 +83,13 @@ GET /issue_tracking/issues
 #### Example Request
 
 ```bash
-curl -H "X-API-KEY: your_api_key_here" \
+curl -H "X-API-KEY: your_rest_api_key_here" \
   "https://dashboard-api.shakebugs.com/api/rest/issue_tracking/issues?limit=20&offset=0"
 ```
 
-### Get Issue Details
+### Get user feedback details
 
-Get detailed information about a specific issue.
+Get detailed information about a specific user feedback.
 
 ```http
 GET /issue_tracking/issues/{issue_id}
@@ -97,13 +97,13 @@ GET /issue_tracking/issues/{issue_id}
 
 #### Path Parameters
 
-| Parameter | Type | Required | Description |
-|-----------|------|----------|-------------|
-| `issue_id` | string | Yes | Unique identifier of the issue |
+| Parameter | Type | Required | Description                            |
+|-----------|------|----------|----------------------------------------|
+| `issue_id` | string | Yes | Unique identifier of the user feedback |
 
 #### Response
 
-Returns comprehensive issue details including device information, environment data, permissions, and user context.
+Returns comprehensive user feedback details including device information, environment data, permissions, and user context.
 
 ```json
 {
@@ -174,13 +174,13 @@ Returns comprehensive issue details including device information, environment da
 #### Example Request
 
 ```bash
-curl -H "X-API-KEY: your_api_key_here" \
+curl -H "X-API-KEY: your_rest_api_key_here" \
   https://dashboard-api.shakebugs.com/api/rest/issue_tracking/issues/550e8400-e29b-41d4-a716-446655440000
 ```
 
-### Update Issue
+### Update user feedback
 
-Update issue properties using JSON Patch format.
+Update user feedback properties using JSON Patch format.
 
 ```http
 PATCH /issue_tracking/issues/{issue_id}
@@ -228,15 +228,15 @@ Use JSON Patch operations to update specific fields:
 
 ```bash
 curl -X PATCH \
-  -H "X-API-KEY: your_api_key_here" \
+  -H "X-API-KEY: your_rest_api_key_here" \
   -H "Content-Type: application/json" \
   -d '[{"op":"replace","path":"/status","value":"In progress"},{"op":"replace","path":"/assignee_id","value":"550e8400-e29b-41d4-a716-446655440000"}]' \
   https://dashboard-api.shakebugs.com/api/rest/issue_tracking/issues/550e8400-e29b-41d4-a716-446655440000
 ```
 
-### Delete Issue
+### Delete user feedback
 
-Delete an issue by ID.
+Delete a user feedback by ID.
 
 ```http
 DELETE /issue_tracking/issues/{issue_id}
@@ -250,15 +250,15 @@ Returns `204 No Content` on success.
 
 ```bash
 curl -X DELETE \
-  -H "X-API-KEY: your_api_key_here" \
+  -H "X-API-KEY: your_rest_api_key_here" \
   https://dashboard-api.shakebugs.com/api/rest/issue_tracking/issues/550e8400-e29b-41d4-a716-446655440000
 ```
 
-## Issue Chat
+## User feedback chat
 
 ### Get Chat Messages
 
-Get chat conversation for an issue.
+Get chat conversation for a user feedback.
 
 ```http
 GET /issue_tracking/issues/{issue_id}/chat
@@ -304,13 +304,13 @@ GET /issue_tracking/issues/{issue_id}/chat
 #### Example Request
 
 ```bash
-curl -H "X-API-KEY: your_api_key_here" \
+curl -H "X-API-KEY: your_rest_api_key_here" \
   https://dashboard-api.shakebugs.com/api/rest/issue_tracking/issues/550e8400-e29b-41d4-a716-446655440000/chat
 ```
 
 ### Add Chat Message
 
-Add a new message to the issue chat.
+Add a new message to the user feedback chat.
 
 ```http
 POST /issue_tracking/issues/{issue_id}/chat
@@ -340,17 +340,17 @@ Returns the updated chat and activity data.
 
 ```bash
 curl -X POST \
-  -H "X-API-KEY: your_api_key_here" \
+  -H "X-API-KEY: your_rest_api_key_here" \
   -H "Content-Type: application/json" \
   -d '{"message":"We have identified the issue and are working on a fix.","assignee_id":"550e8400-e29b-41d4-a716-446655440000","is_note":false}' \
   https://dashboard-api.shakebugs.com/api/rest/issue_tracking/issues/550e8400-e29b-41d4-a716-446655440000/chat
 ```
 
-## Issue Activity Logs
+## User feedback activity logs
 
 ### Get Activity Logs
 
-Get activity logs for an issue including user actions, network requests, system events, and custom logs.
+Get activity logs for a user feedback including user actions, network requests, system events, and custom logs.
 
 ```http
 GET /issue_tracking/issues/{issue_id}/logs
@@ -419,7 +419,7 @@ GET /issue_tracking/issues/{issue_id}/logs
 #### Example Request
 
 ```bash
-curl -H "X-API-KEY: your_api_key_here" \
+curl -H "X-API-KEY: your_rest_api_key_here" \
   https://dashboard-api.shakebugs.com/api/rest/issue_tracking/issues/550e8400-e29b-41d4-a716-446655440000/logs
 ```
 
@@ -427,22 +427,22 @@ curl -H "X-API-KEY: your_api_key_here" \
 
 ### Status Values
 
-Issues can have the following status values:
+User feedback can have the following status values:
 
-- `New` - Issue has been reported but not yet addressed
-- `In progress` - Team is actively working on the issue
-- `Closed` - Issue has been resolved or dismissed
+- `New` - User feedback has been reported but not yet addressed
+- `In progress` - Team is actively working on the user feedback
+- `Closed` - User feedback has been resolved or dismissed
 
 ### Priority Values
 
-Issues can have the following priority values:
-- `Low` - Low priority issue
-- `Medium` - Medium priority issue
-- `High` - High priority issue
+User feedback can have the following priority values:
+- `Low` - Low priority
+- `Medium` - Medium priority
+- `High` - High priority
 
 ### Tags
 
-Tags are flexible labels that can be used to categorize and filter issues. Tags are provided as an array of strings.
+Tags are flexible labels that can be used to categorize and filter user feedback. Tags are provided as an array of strings.
 
 Example:
 ```json
@@ -451,7 +451,7 @@ Example:
 
 ### Custom Fields
 
-Issues support custom fields for additional metadata:
+User feedback supports custom fields for additional metadata:
 
 ```json
 {
