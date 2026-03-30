@@ -19,8 +19,15 @@ Other platforms → &nbsp;
 What would you like us to build next? Upvote upcoming features and suggest new ideas on the [Public feedback board](https://feedback.shakebugs.com/).
 
 ## 17.2.3
-<span class="tag-button">February 12, 2026</span>&nbsp;&nbsp;
+<span class="tag-button">March 30, 2026</span>&nbsp;&nbsp;
 <span class="tag-button green-tag-button">Latest version</span>
+
+#### Bug fixes
+
+Fixed toolbar and title color issues, resolved nullability warnings, and addressed a crash that occurred when uploading files.
+
+## 17.2.3
+<span class="tag-button">February 12, 2026</span>&nbsp;&nbsp;
 
 #### What's new
 
