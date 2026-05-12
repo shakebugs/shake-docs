@@ -39,10 +39,10 @@ Shake.setShakeDismissListener(() {
 
 ## Shake submit callback
 
-To detect when user **pressed a submit button** on the New ticket screen, add a submit listener like in the example below.
+To detect when user **pressed a submit button** on the New ticket screen or **New chat** button on the Home screen, add a submit listener like in the example below.
 
 This listener provides **type** and **fields** parameters:
-- reportType: **String** - "crash" or "feedback" depending on the type of the ticket
+- reportType: **String** - "feedback" or "chat" depending on the type of the ticket
 - fields: **Map&lt;String, String&gt;** - key value pairs of submitted form fields
 
 ```dart title="main.dart"

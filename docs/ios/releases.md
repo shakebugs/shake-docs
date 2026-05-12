@@ -18,9 +18,20 @@ Other platforms → &nbsp;
 
 What would you like us to build next? Upvote upcoming features and suggest new ideas on the [Public feedback board](https://feedback.shakebugs.com/).
 
+## 17.2.5
+<span class="tag-button">May 8, 2026</span>&nbsp;&nbsp;
+<span class="tag-button green-tag-button">Latest version</span>
+
+#### Bug fixes
+
+Fixed disappearing toolbar bug and screenshot capture crash during transitions.
+
+#### What's new
+
+Shake submit listener is called on **New chat** button press on the Home screen.
+
 ## 17.2.4
 <span class="tag-button">March 30, 2026</span>&nbsp;&nbsp;
-<span class="tag-button green-tag-button">Latest version</span>
 
 #### Bug fixes
 
