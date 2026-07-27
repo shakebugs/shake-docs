@@ -27,6 +27,15 @@ module.exports = {
       items: [
         {
           type: 'category',
+          label: 'Releases',
+          items: [
+            'android/releases/overview',
+            'android/releases/session-data',
+            'android/releases/network-requests'
+          ]
+        },
+        {
+          type: 'category',
           label: 'User feedback',
           items: [
             'android/user-feedback/overview',
@@ -122,6 +131,15 @@ module.exports = {
       items: [
         {
           type: 'category',
+          label: 'Releases',
+          items: [
+            'ios/releases/overview',
+            'ios/releases/session-data',
+            'ios/releases/network-requests'
+          ]
+        },
+        {
+          type: 'category',
           label: 'User feedback',
           items: [
             'ios/user-feedback/overview',
@@ -209,6 +227,15 @@ module.exports = {
       items: [
         {
           type: 'category',
+          label: 'Releases',
+          items: [
+            'flutter/releases/overview',
+            'flutter/releases/session-data',
+            'flutter/releases/network-requests'
+          ]
+        },
+        {
+          type: 'category',
           label: 'User feedback',
           items: [
             'flutter/user-feedback/overview',
@@ -285,6 +312,15 @@ module.exports = {
       items: [
         {
           type: 'category',
+          label: 'Releases',
+          items: [
+            'react/releases/overview',
+            'react/releases/session-data',
+            'react/releases/network-requests'
+          ]
+        },
+        {
+          type: 'category',
           label: 'User feedback',
           items: [
             'react/user-feedback/overview',
@@ -353,6 +389,15 @@ module.exports = {
       type: 'category',
       label: 'Modules',
       items: [
+        {
+          type: 'category',
+          label: 'Releases',
+          items: [
+            'web/releases/overview',
+            'web/releases/session-data',
+            'web/releases/network-requests'
+          ]
+        },
         {
           type: 'category',
           label: 'User Feedback',
