@@ -27,6 +27,8 @@ Every session sent to Shake includes:
 * Network type
 * Auth state (whether the device has a lock screen secured)
 
+App version is pulled automatically from your project's configuration — you don't need to set it manually.
+
 If you've set any custom key-value data with [`Shake.setMetadata`](/android/configuration-and-data/ticket-metadata.md), it's included as well.
 
 :::note

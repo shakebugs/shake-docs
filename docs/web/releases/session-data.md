@@ -27,6 +27,8 @@ Every session sent to Shake includes:
 * Screen width and height
 * Network type
 
+Since web apps don't have a built-in versioning system, App version comes from the optional second argument to [`Shake.start()`](/web/install/npm#initialize-shake) — it defaults to `"1.0.0"` if you don't pass one.
+
 If you've set any custom key-value data with [`Shake.setMetadata`](/web/configuration-and-data/ticket-metadata.md), it's included as well.
 
 :::note
