@@ -7,13 +7,12 @@ title: Import from Instabug
 This feature allows you to seamlessly transition your bugs without losing important data, even after closing Instabug account.
 
 <p class="p2 mt-40">
-You're viewing the React Native docs. Other platforms → &nbsp;
-<a href="/docs/ios/import-from-instabug/">iOS</a>&nbsp; 
+You're viewing the Web docs. Other platforms → &nbsp;
+<a href="/docs/ios/import-from-instabug/">iOS</a>&nbsp;
 <a href="/docs/android/import-from-instabug/">Android</a>&nbsp;
+<a href="/docs/react/import-from-instabug/">React Native</a>&nbsp;
 <a href="/docs/flutter/import-from-instabug/">Flutter</a>&nbsp;
-<a href="/docs/web/import-from-instabug/">Web</a>&nbsp;
 </p>
-
 
 ## How to migrate Instabug bugs?
 
@@ -21,14 +20,6 @@ You're viewing the React Native docs. Other platforms → &nbsp;
 To begin the migration process, you must first export your bugs from the Instabug.
 To do this, log into your Instabug account and navigate to the _Bugs_ tab in the sidebar.
 From there, select the issues you want to export, press _⋯_ button and then press _Export CSV_ button.
-
-:::note
-With Instabug, you have a unified React Native app for reporting both iOS and Android bugs.
-In contrast, Shake requires separate apps for each platform, and it's recommended to create separate export files for iOS and Android bugs to be imported into the respective Shake app.
-However, it is possible to create a single export file with a mixture of both iOS and Android bugs, which can then be imported into both Shake apps.
-Any bugs that don't match the platform won't be imported.
-:::
-
 
 :::note
 Before export, you'll be prompted to select data you want to export into the CSV file.
@@ -51,8 +42,8 @@ Max import file size is _100MB_, if you have larger file you can divide it into 
 Once you've selected the file, the import process will begin. This process can take up some time, depending on the number of bugs you're migrating and size of attached files to the bugs.
 
 :::note
-Only Instabug bugs that match the platform of the Shake app (Android or iOS) will be imported during the import process.
-Ensure that you import bugs into the correct app. 
+Only Instabug bugs that match the platform of the Shake app (Web) will be imported during the import process.
+Ensure that you import bugs into the correct app.
 Also, if Shake encounters bugs with a different data structure than expected, those bugs won't be imported.
 :::
 

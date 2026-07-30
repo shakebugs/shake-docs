@@ -381,7 +381,8 @@ module.exports = {
             'web/install/npm',
             'web/install/cdn',
           ]
-        }
+        },
+        'web/import-from-instabug'
       ]
     },
     'web/shake-ui',

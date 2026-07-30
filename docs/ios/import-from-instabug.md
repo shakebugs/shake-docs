@@ -11,6 +11,7 @@ You're viewing the iOS docs. Other platforms → &nbsp;
 <a href="/docs/android/import-from-instabug/">Android</a>&nbsp;
 <a href="/docs/react/import-from-instabug/">React Native</a>&nbsp; 
 <a href="/docs/flutter/import-from-instabug/">Flutter</a>&nbsp;
+<a href="/docs/web/import-from-instabug/">Web</a>&nbsp;
 </p>
 
 
