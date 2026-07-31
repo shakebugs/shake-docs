@@ -26,6 +26,13 @@ What would you like us to build next? Upvote upcoming features and suggest new i
 
 Shake now automatically tracks app sessions, giving you visibility into network traffic and device coverage for each release right from your Shake dashboard. Learn more in [Releases](/web/releases/overview).
 
+## 3.3.3
+<span class="tag-button">July 31, 2026</span>&nbsp;&nbsp;
+
+#### Bug fixes
+
+Fixed screenshot cropping position when app content is scrolled.
+
 ## 3.3.2
 <span class="tag-button">March 20, 2026</span>&nbsp;&nbsp;
 
