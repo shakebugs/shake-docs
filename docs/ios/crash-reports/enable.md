@@ -3,16 +3,14 @@ id: enable
 title: Enable
 ---
 
->The Crash reports module is disabled by default.
+>The Crash reports module is enabled by default.
 
 <p class="p2 mt-40">
 You're viewing the iOS docs. Other platform → &nbsp;
 <a href="/docs/android/crash-reports/enable/">Android</a>&nbsp;
 </p>
 
-This is how you enable it:
-1. First, set the `isCrashReportingEnabled` flag to `true`.
-1. Then, call the `Shake.start` method.
+If you'd like to turn it off, set the `isCrashReportingEnabled` flag to `false` before calling the `Shake.start` method.
 
 import Tabs from '@theme/Tabs'; 
 import TabItem from '@theme/TabItem';
@@ -29,9 +27,8 @@ import TabItem from '@theme/TabItem';
 <TabItem value="objectivec">
 
 ```objectivec title="AppDelegate.m"
-// highlight-next-line
 //highlight-start
-SHKShake.configuration.isCrashReportingEnabled = YES;
+SHKShake.configuration.isCrashReportingEnabled = NO;
 //highlight-end
 ```
 
@@ -39,11 +36,11 @@ SHKShake.configuration.isCrashReportingEnabled = YES;
 
 ```swift title="AppDelegate.swift"
 //highlight-start
-Shake.configuration.isCrashReportingEnabled = true
+Shake.configuration.isCrashReportingEnabled = false
 //highlight-end
 ```
 
 </TabItem></Tabs>
 
-After you have enabled crash reporting, set up [symbolication](/ios/crash-reports/symbolicate) and then [test crash reporting](/ios/crash-reports/test-it-out) in your app.
+Set up [symbolication](/ios/crash-reports/symbolicate) and then [test crash reporting](/ios/crash-reports/test-it-out) in your app.
 
