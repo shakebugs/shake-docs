@@ -38,3 +38,5 @@ This is a lighter snapshot than the one attached to bug reports — it doesn't i
 ## Crash detection
 
 If your app crashes, Shake records that the session ended in a crash. This happens automatically and runs independently of [`Shake.setCrashReportingEnabled`](/android/crash-reports/enable) — it's used purely to mark the session's end reason, not to generate a crash report.
+
+Because crashes tend to happen moments after launch, a session that ended in a crash is reported even when it was shorter than the 5-second minimum that normally applies.

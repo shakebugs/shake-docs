@@ -28,8 +28,8 @@ Every session automatically collects:
 
 Session tracking requires no configuration — it starts the moment `Shake.start()` is called, with no extra flag or method call needed.
 
-A session ends when the tab is hidden for more than 30 seconds; switching back sooner continues the same session. Sessions shorter than 5 seconds are discarded, so quick tab switches don't skew your data.
+A session ends when the tab is hidden for more than 5 minutes; switching back sooner continues the same session. Sessions shorter than 5 seconds are discarded, so quick tab switches don't skew your data — unless the session ended in a crash, which is always reported no matter how short it was.
 
 ## Offline support
 
-Session data is always stored locally first, so nothing is lost if the browser is offline. Once online, pending sessions and their network request data sync to Shake in a single batch, at most once a minute.
+Session data is always stored locally first, so nothing is lost if the browser is offline. Once online, pending sessions and their network request data sync to Shake in a single batch, at most every 30 minutes.

@@ -28,7 +28,7 @@ Every session automatically collects:
 
 Session tracking requires no configuration — it starts the moment `Shake.start()` is called, with no extra flag or method call needed.
 
-A session ends after 5 minutes of inactivity (the app being backgrounded); returning to the app sooner continues the same session. Sessions shorter than 5 seconds are discarded, so quick launches or accidental app switches don't skew your data.
+A session ends after 5 minutes of inactivity (the app being backgrounded); returning to the app sooner continues the same session. Sessions shorter than 5 seconds are discarded, so quick launches or accidental app switches don't skew your data — unless the session ended in a crash, which is always reported no matter how short it was.
 
 ## Offline support
 
