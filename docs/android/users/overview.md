@@ -9,10 +9,10 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <p class="p2 mt-40">
 You're viewing the Android docs. Other platforms →&nbsp;
-<a href="/docs/ios/users/overview/">iOS</a>&nbsp;
-<a href="/docs/react/users/overview/">React Native</a>&nbsp;
-<a href="/docs/flutter/users/overview/">Flutter</a>&nbsp;
-<a href="/docs/web/users/overview/">Web</a>&nbsp;
+<a href="/docs/ios/users/overview">iOS</a>&nbsp;
+<a href="/docs/react/users/overview">React Native</a>&nbsp;
+<a href="/docs/flutter/users/overview">Flutter</a>&nbsp;
+<a href="/docs/web/users/overview">Web</a>&nbsp;
 </p>
 
 <table class="media-container">

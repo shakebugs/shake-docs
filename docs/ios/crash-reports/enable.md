@@ -7,7 +7,7 @@ title: Enable
 
 <p class="p2 mt-40">
 You're viewing the iOS docs. Other platform → &nbsp;
-<a href="/docs/android/crash-reports/enable/">Android</a>&nbsp;
+<a href="/docs/android/crash-reports/enable">Android</a>&nbsp;
 </p>
 
 This is how you enable it:

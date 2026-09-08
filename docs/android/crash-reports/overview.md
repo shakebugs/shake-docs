@@ -9,7 +9,7 @@ offering loads of contextual data to help you fix them fast.
 
 <p class="p2 mt-40">
 You're viewing the Android docs. Other platform →&nbsp;
-<a href="/docs/ios/crash-reports/overview/">iOS</a>&nbsp;
+<a href="/docs/ios/crash-reports/overview">iOS</a>&nbsp;
 </p>
 
 ## Introduction

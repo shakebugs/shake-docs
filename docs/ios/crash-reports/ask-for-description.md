@@ -11,7 +11,7 @@ import TabItem from '@theme/TabItem';
 
 <p class="p2 mt-40">
 You're viewing the iOS docs. Other platform → &nbsp;
-<a href="/docs/android/crash-reports/ask-for-description/">Android</a>&nbsp;
+<a href="/docs/android/crash-reports/ask-for-description">Android</a>&nbsp;
 </p>
 
 

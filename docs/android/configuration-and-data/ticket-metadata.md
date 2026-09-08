@@ -11,10 +11,10 @@ That's why Shake also allows you to automatically attach any custom data from yo
 
 <p class="p2 mt-40">
 You're viewing the Android docs. Other platforms →&nbsp;
-<a href="/docs/ios/configuration-and-data/ticket-metadata/">iOS</a>&nbsp;
-<a href="/docs/react/configuration-and-data/ticket-metadata/">React Native</a>&nbsp;
-<a href="/docs/flutter/configuration-and-data/ticket-metadata/">Flutter</a>&nbsp;
-<a href="/docs/web/configuration-and-data/ticket-metadata/">Web</a>&nbsp;
+<a href="/docs/ios/configuration-and-data/ticket-metadata">iOS</a>&nbsp;
+<a href="/docs/react/configuration-and-data/ticket-metadata">React Native</a>&nbsp;
+<a href="/docs/flutter/configuration-and-data/ticket-metadata">Flutter</a>&nbsp;
+<a href="/docs/web/configuration-and-data/ticket-metadata">Web</a>&nbsp;
 </p>
 
 ## How to use

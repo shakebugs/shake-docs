@@ -11,10 +11,10 @@ about their reported bugs, crashes or feedback. You will be able to fix issues f
 
 <p class="p2 mt-40">
 You're viewing the Web docs. Other platforms → &nbsp;
-<a href="/docs/ios/users/chat/">iOS</a>&nbsp; 
-<a href="/docs/android/users/chat/">Android</a>&nbsp;
-<a href="/docs/react/users/chat/">React Native</a>&nbsp;
-<a href="/docs/flutter/users/chat/">Flutter</a>&nbsp;
+<a href="/docs/ios/users/chat">iOS</a>&nbsp; 
+<a href="/docs/android/users/chat">Android</a>&nbsp;
+<a href="/docs/react/users/chat">React Native</a>&nbsp;
+<a href="/docs/flutter/users/chat">Flutter</a>&nbsp;
 </p>
 
 

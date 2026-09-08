@@ -11,10 +11,10 @@ import TabItem from '@theme/TabItem';
 
 <p class="p2 mt-40">
 You're viewing the Web docs. Other platforms → &nbsp;
-<a href="/docs/ios/shake-ui/overview/">iOS</a>&nbsp; 
-<a href="/docs/android/shake-ui/overview/">Android</a>&nbsp;
-<a href="/docs/react/shake-ui/overview/">React Native</a>&nbsp;
-<a href="/docs/flutter/shake-ui/overview/">Flutter</a>&nbsp;
+<a href="/docs/ios/shake-ui/overview">iOS</a>&nbsp; 
+<a href="/docs/android/shake-ui/overview">Android</a>&nbsp;
+<a href="/docs/react/shake-ui/overview">React Native</a>&nbsp;
+<a href="/docs/flutter/shake-ui/overview">Flutter</a>&nbsp;
 </p>
 
 

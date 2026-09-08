@@ -9,10 +9,10 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <p class="p2 mt-40">
 You're viewing the Android docs. Other platforms →&nbsp;
-<a href="/docs/ios/user-feedback/invoke/">iOS</a>&nbsp;
-<a href="/docs/react/user-feedback/invoke/">React Native</a>&nbsp;
-<a href="/docs/flutter/user-feedback/invoke/">Flutter</a>&nbsp;
-<a href="/docs/web/user-feedback/invoke/">Web</a>&nbsp;
+<a href="/docs/ios/user-feedback/invoke">iOS</a>&nbsp;
+<a href="/docs/react/user-feedback/invoke">React Native</a>&nbsp;
+<a href="/docs/flutter/user-feedback/invoke">Flutter</a>&nbsp;
+<a href="/docs/web/user-feedback/invoke">Web</a>&nbsp;
 </p>
 
 ## Invoke manually

@@ -10,10 +10,10 @@ import TabItem from '@theme/TabItem';
 
 <p class="p2 mt-40">
 You're viewing the Android docs. Other platforms →&nbsp;
-<a href="/docs/ios/users/update-user-identifier/">iOS</a>&nbsp;
-<a href="/docs/react/users/update-user-identifier/">React Native</a>&nbsp;
-<a href="/docs/flutter/users/update-user-identifier/">Flutter</a>&nbsp;
-<a href="/docs/web/users/update-user-identifier/">Web</a>&nbsp;
+<a href="/docs/ios/users/update-user-identifier">iOS</a>&nbsp;
+<a href="/docs/react/users/update-user-identifier">React Native</a>&nbsp;
+<a href="/docs/flutter/users/update-user-identifier">Flutter</a>&nbsp;
+<a href="/docs/web/users/update-user-identifier">Web</a>&nbsp;
 </p>
 
 For example, suppose that you have registered your app user with an email.

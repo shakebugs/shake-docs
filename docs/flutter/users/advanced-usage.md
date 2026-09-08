@@ -10,10 +10,10 @@ app user to the identified app user.
 
 <p class="p2 mt-40">
 You're viewing the Flutter docs. Other platforms → &nbsp;
-<a href="/docs/ios/users/advanced-usage/">iOS</a>&nbsp;
-<a href="/docs/android/users/advanced-usage/">Android</a>&nbsp;
-<a href="/docs/react/users/advanced-usage/">React Native</a>&nbsp; 
-<a href="/docs/web/users/advanced-usage/">Web</a>&nbsp;
+<a href="/docs/ios/users/advanced-usage">iOS</a>&nbsp;
+<a href="/docs/android/users/advanced-usage">Android</a>&nbsp;
+<a href="/docs/react/users/advanced-usage">React Native</a>&nbsp; 
+<a href="/docs/web/users/advanced-usage">Web</a>&nbsp;
 </p>
 
 ## Register an anonymous app user

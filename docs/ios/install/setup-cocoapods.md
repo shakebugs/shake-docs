@@ -8,11 +8,11 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <p class="p2 mt-40">
 You're viewing the iOS docs. Other platforms → &nbsp;
-<a href="/docs/android/installation/">Android</a>&nbsp;
-<a href="/docs/react/installation/">React Native</a>&nbsp; 
-<a href="/docs/flutter/installation/">Flutter</a>&nbsp;
-<a href="/docs/web/install/npm/">Web</a>&nbsp;
-<a href="/docs/chrome-extension/installation/">Chrome extension</a>&nbsp;
+<a href="/docs/android/installation">Android</a>&nbsp;
+<a href="/docs/react/installation">React Native</a>&nbsp; 
+<a href="/docs/flutter/installation">Flutter</a>&nbsp;
+<a href="/docs/web/install/npm">Web</a>&nbsp;
+<a href="/docs/chrome-extension/installation">Chrome extension</a>&nbsp;
 </p>
 
 
@@ -221,7 +221,7 @@ As the next step, try the three most popular SDK customizations:
 <div class="featuresList">
     <div>
         <img src="/docs/img/screen-recording@2x.png" alt="Turn on auto screen recording"/>
-        <p><a href="/docs/ios/configuration-and-data/auto-screen-recording/">Turn on auto screen recording</a></p>
+        <p><a href="/docs/ios/configuration-and-data/auto-screen-recording">Turn on auto screen recording</a></p>
     </div>
     <div>
         <img src="/docs/img/steps-to-reproduce@2x.png" alt="Tweak logging to your debugging needs"/>

@@ -9,9 +9,9 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <p class="p2 mt-40">
 You're viewing the Flutter docs. Other platforms → &nbsp;
-<a href="/docs/android/shake-ui/inspect-section/">iOS</a>&nbsp;
-<a href="/docs/android/shake-ui/inspect-section/">Android</a>&nbsp;
-<a href="/docs/android/shake-ui/inspect-section/">React Native</a>&nbsp; 
+<a href="/docs/android/shake-ui/inspect-section">iOS</a>&nbsp;
+<a href="/docs/android/shake-ui/inspect-section">Android</a>&nbsp;
+<a href="/docs/android/shake-ui/inspect-section">React Native</a>&nbsp; 
 </p>
 
 ## Introduction

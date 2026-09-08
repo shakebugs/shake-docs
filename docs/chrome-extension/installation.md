@@ -8,11 +8,11 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <p class="p2 mt-40">
 You're viewing the Chrome extension docs. Other platforms → &nbsp;
-<a href="/docs/ios/install/spm/">iOS</a>&nbsp; 
-<a href="/docs/android/installation/">Android</a>&nbsp;
-<a href="/docs/react/installation/">React Native</a>&nbsp;
-<a href="/docs/flutter/installation/">Flutter</a>&nbsp;
-<a href="/docs/web/install/npm/">Web</a>
+<a href="/docs/ios/install/spm">iOS</a>&nbsp; 
+<a href="/docs/android/installation">Android</a>&nbsp;
+<a href="/docs/react/installation">React Native</a>&nbsp;
+<a href="/docs/flutter/installation">Flutter</a>&nbsp;
+<a href="/docs/web/install/npm">Web</a>
 </p>
 
 <br/>

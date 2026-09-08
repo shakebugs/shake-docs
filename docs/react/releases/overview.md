@@ -7,10 +7,10 @@ title: Overview
 
 <p class="p2 mt-40">
 You're viewing the React Native docs. Other platforms → &nbsp;
-<a href="/docs/ios/releases/overview/">iOS</a>&nbsp;
-<a href="/docs/android/releases/overview/">Android</a>&nbsp;
-<a href="/docs/flutter/releases/overview/">Flutter</a>&nbsp;
-<a href="/docs/web/releases/overview/">Web</a>&nbsp;
+<a href="/docs/ios/releases/overview">iOS</a>&nbsp;
+<a href="/docs/android/releases/overview">Android</a>&nbsp;
+<a href="/docs/flutter/releases/overview">Flutter</a>&nbsp;
+<a href="/docs/web/releases/overview">Web</a>&nbsp;
 </p>
 
 ## Introduction

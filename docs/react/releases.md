@@ -6,11 +6,11 @@ title: Release notes
 
 <p class="p2 mt-40">
 Other platforms → &nbsp;
-<a href="/docs/ios/releases/">iOS</a>&nbsp; 
-<a href="/docs/android/releases/">Android</a>&nbsp;
-<a href="/docs/flutter/releases/">Flutter</a>&nbsp;
-<a href="/docs/web/releases/">Web</a>&nbsp;
-<a href="/docs/chrome-extension/releases/">Chrome extension</a>&nbsp;
+<a href="/docs/ios/releases">iOS</a>&nbsp; 
+<a href="/docs/android/releases">Android</a>&nbsp;
+<a href="/docs/flutter/releases">Flutter</a>&nbsp;
+<a href="/docs/web/releases">Web</a>&nbsp;
+<a href="/docs/chrome-extension/releases">Chrome extension</a>&nbsp;
 </p>
 
 

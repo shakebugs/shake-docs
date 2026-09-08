@@ -13,9 +13,9 @@ so it never reaches the Shake servers.
 <p class="p2 mt-40">
 You're viewing the Android docs. Other platforms →&nbsp;
 <a href="/ios/configuration-and-data/manage-sensitive-data/">iOS</a>&nbsp;
-<a href="/docs/react/configuration-and-data/manage-sensitive-data/">React Native</a>&nbsp;
-<a href="/docs/flutter/configuration-and-data/manage-sensitive-data/">Flutter</a>&nbsp;
-<a href="/docs/web/configuration-and-data/manage-sensitive-data/">Web</a>&nbsp;
+<a href="/docs/react/configuration-and-data/manage-sensitive-data">React Native</a>&nbsp;
+<a href="/docs/flutter/configuration-and-data/manage-sensitive-data">Flutter</a>&nbsp;
+<a href="/docs/web/configuration-and-data/manage-sensitive-data">Web</a>&nbsp;
 </p>
 
 ## Automatically redacted sensitive data
