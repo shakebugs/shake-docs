@@ -7,10 +7,10 @@ title: Session data
 
 <p class="p2 mt-40">
 You're viewing the React Native docs. Other platforms → &nbsp;
-<a href="/docs/ios/releases/session-data/">iOS</a>&nbsp;
-<a href="/docs/android/releases/session-data/">Android</a>&nbsp;
-<a href="/docs/flutter/releases/session-data/">Flutter</a>&nbsp;
-<a href="/docs/web/releases/session-data/">Web</a>&nbsp;
+<a href="/docs/ios/releases/session-data">iOS</a>&nbsp;
+<a href="/docs/android/releases/session-data">Android</a>&nbsp;
+<a href="/docs/flutter/releases/session-data">Flutter</a>&nbsp;
+<a href="/docs/web/releases/session-data">Web</a>&nbsp;
 </p>
 
 ## What's included

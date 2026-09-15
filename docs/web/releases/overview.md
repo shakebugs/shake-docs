@@ -7,10 +7,10 @@ title: Overview
 
 <p class="p2 mt-40">
 You're viewing the Web docs. Other platforms → &nbsp;
-<a href="/docs/ios/releases/overview/">iOS</a>&nbsp;
-<a href="/docs/android/releases/overview/">Android</a>&nbsp;
-<a href="/docs/react/releases/overview/">React Native</a>&nbsp;
-<a href="/docs/flutter/releases/overview/">Flutter</a>&nbsp;
+<a href="/docs/ios/releases/overview">iOS</a>&nbsp;
+<a href="/docs/android/releases/overview">Android</a>&nbsp;
+<a href="/docs/react/releases/overview">React Native</a>&nbsp;
+<a href="/docs/flutter/releases/overview">Flutter</a>&nbsp;
 </p>
 
 ## Introduction

@@ -8,9 +8,9 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <p class="p2 mt-40">
 You're viewing the iOS docs. Other platforms → &nbsp;
-<a href="/docs/android/configuration-and-data/auto-screenshot/">Android</a>&nbsp;
-<a href="/docs/react/configuration-and-data/auto-screenshot/">React Native</a>&nbsp; 
-<a href="/docs/flutter/configuration-and-data/auto-screenshot/">Flutter</a>&nbsp;
+<a href="/docs/android/configuration-and-data/auto-screenshot">Android</a>&nbsp;
+<a href="/docs/react/configuration-and-data/auto-screenshot">React Native</a>&nbsp; 
+<a href="/docs/flutter/configuration-and-data/auto-screenshot">Flutter</a>&nbsp;
 </p>
 
 <table class="media-container media-container-highlighted mt-50 mb-40">

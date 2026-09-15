@@ -6,11 +6,11 @@ title: Data privacy disclosure
 
 <p class="p2 mt-40">
 You're viewing the React Native docs. Other platforms → &nbsp;
-<a href="/docs/ios/configuration-and-data/data-privacy-disclosure/">iOS</a>&nbsp; 
-<a href="/docs/android/configuration-and-data/data-privacy-disclosure/">Android</a>&nbsp;
-<a href="/docs/flutter/configuration-and-data/data-privacy-disclosure/">Flutter</a>&nbsp;
-<a href="/docs/web/configuration-and-data/data-privacy-disclosure/">Web</a>&nbsp;
-<a href="/docs/chrome-extension/configuration-and-data/data-privacy-disclosure/">Chrome extension</a>&nbsp;
+<a href="/docs/ios/configuration-and-data/data-privacy-disclosure">iOS</a>&nbsp; 
+<a href="/docs/android/configuration-and-data/data-privacy-disclosure">Android</a>&nbsp;
+<a href="/docs/flutter/configuration-and-data/data-privacy-disclosure">Flutter</a>&nbsp;
+<a href="/docs/web/configuration-and-data/data-privacy-disclosure">Web</a>&nbsp;
+<a href="/docs/chrome-extension/configuration-and-data/data-privacy-disclosure">Chrome extension</a>&nbsp;
 </p>
 
 

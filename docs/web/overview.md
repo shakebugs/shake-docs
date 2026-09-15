@@ -8,17 +8,17 @@ title: Overview
 
 <p class="p2 mt-40">
 You're viewing the Web docs. Other platforms → &nbsp;
-<a href="/docs/ios/overview/">iOS</a>&nbsp; 
-<a href="/docs/android/overview/">Android</a>&nbsp;
-<a href="/docs/react/overview/">React Native</a>&nbsp;
-<a href="/docs/flutter/overview/">Flutter</a>&nbsp;
-<a href="/docs/chrome-extension/overview/">Chrome extension</a>&nbsp;
+<a href="/docs/ios/overview">iOS</a>&nbsp; 
+<a href="/docs/android/overview">Android</a>&nbsp;
+<a href="/docs/react/overview">React Native</a>&nbsp;
+<a href="/docs/flutter/overview">Flutter</a>&nbsp;
+<a href="/docs/chrome-extension/overview">Chrome extension</a>&nbsp;
 </p>
 
 
 <div class="modulesList">
     <div>
-        <a href="/docs/web/user-feedback/overview/">
+        <a href="/docs/web/user-feedback/overview">
             <img src="/docs/img/module-user-feedback@2x.png" alt="Feedback module"/>
             <h3>Feedback</h3>
             <p>Testers and users can send you bug reports, questions and suggestions seamlessly.</p>
@@ -32,15 +32,15 @@ You're viewing the Web docs. Other platforms → &nbsp;
 <div class="featuresList">
     <div>
         <img src="/docs/img/invoke-shake@2x.png" alt="Invoke Shake"/>
-        <p><a href="/docs/web/user-feedback/invoke/">Invoke Shake</a></p>
+        <p><a href="/docs/web/user-feedback/invoke">Invoke Shake</a></p>
     </div>
     <div>
         <img src="/docs/img/essential-data@2x.png" alt="Data attached by default"/>
-        <p><a href="/docs/web/configuration-and-data/data-attached-by-default/">Data attached by default</a></p>
+        <p><a href="/docs/web/configuration-and-data/data-attached-by-default">Data attached by default</a></p>
     </div>
     <div>
         <img src="/docs/img/feature-custom-ticket-data@2x.png" alt="Custom Ticket data"/>
-        <p><a href="/docs/web/configuration-and-data/ticket-metadata/">Custom Ticket data</a></p>
+        <p><a href="/docs/web/configuration-and-data/ticket-metadata">Custom Ticket data</a></p>
     </div>
 </div>
 

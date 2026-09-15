@@ -11,9 +11,9 @@ profile giving you an insight into the last 60 seconds before the ticket was sub
 
 <p class="p2 mt-40">
 You're viewing the React Native docs. Other platforms → &nbsp;
-<a href="/docs/ios/configuration-and-data/black-box/">iOS</a>&nbsp; 
-<a href="/docs/android/configuration-and-data/black-box/">Android</a>&nbsp;
-<a href="/docs/flutter/configuration-and-data/black-box/">Flutter</a>&nbsp;
+<a href="/docs/ios/configuration-and-data/black-box">iOS</a>&nbsp; 
+<a href="/docs/android/configuration-and-data/black-box">Android</a>&nbsp;
+<a href="/docs/flutter/configuration-and-data/black-box">Flutter</a>&nbsp;
 </p>
 
 

@@ -8,11 +8,11 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <p class="p2 mt-40">
 You're viewing the Web docs. Other platforms → &nbsp;
-<a href="/docs/ios/install/spm/">iOS</a>&nbsp; 
-<a href="/docs/android/installation/">Android</a>&nbsp;
-<a href="/docs/react/installation/">React Native</a>&nbsp;
-<a href="/docs/flutter/installation/">Flutter</a>&nbsp;
-<a href="/docs/chrome-extension/installation/">Chrome extension</a>&nbsp;
+<a href="/docs/ios/install/spm">iOS</a>&nbsp; 
+<a href="/docs/android/installation">Android</a>&nbsp;
+<a href="/docs/react/installation">React Native</a>&nbsp;
+<a href="/docs/flutter/installation">Flutter</a>&nbsp;
+<a href="/docs/chrome-extension/installation">Chrome extension</a>&nbsp;
 </p>
 
 
@@ -105,10 +105,10 @@ As the next step, try the three most popular SDK customizations:
 <div class="featuresList">
     <div>
         <img src="/docs/img/screen-recording@2x.png" alt="Screen recording"/>
-        <p><a href="/docs/web/configuration-and-data/screen-recording/">Screen recording</a></p>
+        <p><a href="/docs/web/configuration-and-data/screen-recording">Screen recording</a></p>
     </div>
     <div>
         <img src="/docs/img/feature-custom-ticket-data@2x.png" alt="Custom Ticket data"/>
-        <p><a href="/docs/web/configuration-and-data/ticket-metadata/">Custom Ticket data</a></p>
+        <p><a href="/docs/web/configuration-and-data/ticket-metadata">Custom Ticket data</a></p>
     </div>
 </div>

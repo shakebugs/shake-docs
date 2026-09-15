@@ -7,10 +7,10 @@ title: Network requests
 
 <p class="p2 mt-40">
 You're viewing the Android docs. Other platforms → &nbsp;
-<a href="/docs/ios/releases/network-requests/">iOS</a>&nbsp;
-<a href="/docs/react/releases/network-requests/">React Native</a>&nbsp;
-<a href="/docs/flutter/releases/network-requests/">Flutter</a>&nbsp;
-<a href="/docs/web/releases/network-requests/">Web</a>&nbsp;
+<a href="/docs/ios/releases/network-requests">iOS</a>&nbsp;
+<a href="/docs/react/releases/network-requests">React Native</a>&nbsp;
+<a href="/docs/flutter/releases/network-requests">Flutter</a>&nbsp;
+<a href="/docs/web/releases/network-requests">Web</a>&nbsp;
 </p>
 
 ## Why it matters

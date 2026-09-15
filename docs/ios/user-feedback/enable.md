@@ -7,9 +7,9 @@ title: Enable
 
 <p class="p2 mt-40">
 You're viewing the iOS docs. Other platforms → &nbsp;
-<a href="/docs/android/user-feedback/enable/">Android</a>&nbsp;
-<a href="/docs/react/user-feedback/enable/">React Native</a>&nbsp; 
-<a href="/docs/flutter/user-feedback/enable/">Flutter</a>&nbsp;
+<a href="/docs/android/user-feedback/enable">Android</a>&nbsp;
+<a href="/docs/react/user-feedback/enable">React Native</a>&nbsp; 
+<a href="/docs/flutter/user-feedback/enable">Flutter</a>&nbsp;
 </p>
 
 

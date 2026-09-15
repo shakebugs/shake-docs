@@ -8,10 +8,10 @@ This feature allows you to seamlessly transition your bugs without losing import
 
 <p class="p2 mt-40">
 You're viewing the Flutter docs. Other platforms → &nbsp;
-<a href="/docs/ios/import-from-instabug/">iOS</a>&nbsp;
-<a href="/docs/android/import-from-instabug/">Android</a>&nbsp;
-<a href="/docs/react/import-from-instabug/">React Native</a>&nbsp; 
-<a href="/docs/web/import-from-instabug/">Web</a>&nbsp;
+<a href="/docs/ios/import-from-instabug">iOS</a>&nbsp;
+<a href="/docs/android/import-from-instabug">Android</a>&nbsp;
+<a href="/docs/react/import-from-instabug">React Native</a>&nbsp; 
+<a href="/docs/web/import-from-instabug">Web</a>&nbsp;
 </p>
 
 ## How to migrate Instabug bugs?

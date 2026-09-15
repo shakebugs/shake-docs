@@ -10,9 +10,9 @@ import TabItem from '@theme/TabItem';
 
 <p class="p2 mt-40">
 You're viewing the React Native docs. Other platforms → &nbsp;
-<a href="/docs/ios/shake-ui/drawing-screen/">iOS</a>&nbsp; 
-<a href="/docs/android/shake-ui/drawing-screen/">Android</a>&nbsp;
-<a href="/docs/flutter/shake-ui/drawing-screen/">Flutter</a>&nbsp;
+<a href="/docs/ios/shake-ui/drawing-screen">iOS</a>&nbsp; 
+<a href="/docs/android/shake-ui/drawing-screen">Android</a>&nbsp;
+<a href="/docs/flutter/shake-ui/drawing-screen">Flutter</a>&nbsp;
 </p>
 
 

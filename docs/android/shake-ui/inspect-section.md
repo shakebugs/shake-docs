@@ -10,9 +10,9 @@ In case of a [Crash report](/android/crash-reports/ask-for-description/#enable),
 
 <p class="p2 mt-40">
 You're viewing the Android docs. Other platforms →&nbsp;
-<a href="/docs/ios/shake-ui/inspect-section/">iOS</a>&nbsp;
-<a href="/docs/react/shake-ui/inspect-section/">React Native</a>&nbsp;
-<a href="/docs/flutter/shake-ui/inspect-section/">Flutter</a>&nbsp;
+<a href="/docs/ios/shake-ui/inspect-section">iOS</a>&nbsp;
+<a href="/docs/react/shake-ui/inspect-section">React Native</a>&nbsp;
+<a href="/docs/flutter/shake-ui/inspect-section">Flutter</a>&nbsp;
 </p>
 
 ## Introduction

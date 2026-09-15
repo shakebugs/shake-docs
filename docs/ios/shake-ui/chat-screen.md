@@ -10,10 +10,10 @@ import TabItem from '@theme/TabItem';
 
 <p class="p2 mt-40">
 You're viewing the iOS docs. Other platforms → &nbsp;
-<a href="/docs/android/shake-ui/chat-screen/">Android</a>&nbsp;
-<a href="/docs/react/shake-ui/chat-screen/">React Native</a>&nbsp; 
-<a href="/docs/flutter/shake-ui/chat-screen/">Flutter</a>&nbsp;
-<a href="/docs/web/shake-ui/#chat-screen">Web</a>&nbsp;
+<a href="/docs/android/shake-ui/chat-screen">Android</a>&nbsp;
+<a href="/docs/react/shake-ui/chat-screen">React Native</a>&nbsp; 
+<a href="/docs/flutter/shake-ui/chat-screen">Flutter</a>&nbsp;
+<a href="/docs/web/shake-ui#chat-screen">Web</a>&nbsp;
 </p>
 
 

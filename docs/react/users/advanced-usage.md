@@ -10,10 +10,10 @@ user to the identified app user.
 
 <p class="p2 mt-40">
 You're viewing the React Native docs. Other platforms → &nbsp;
-<a href="/docs/ios/users/advanced-usage/">iOS</a>&nbsp; 
-<a href="/docs/android/users/advanced-usage/">Android</a>&nbsp;
-<a href="/docs/flutter/users/advanced-usage/">Flutter</a>&nbsp;
-<a href="/docs/web/users/advanced-usage/">Web</a>&nbsp;
+<a href="/docs/ios/users/advanced-usage">iOS</a>&nbsp; 
+<a href="/docs/android/users/advanced-usage">Android</a>&nbsp;
+<a href="/docs/flutter/users/advanced-usage">Flutter</a>&nbsp;
+<a href="/docs/web/users/advanced-usage">Web</a>&nbsp;
 </p>
 
 
