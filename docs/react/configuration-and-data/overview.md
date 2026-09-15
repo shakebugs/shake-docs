@@ -15,7 +15,7 @@ You're viewing the React Native docs. Other platforms → &nbsp;
 
 ## Introduction
 
-Whatever you tweak, your configuration settings apply to the [User feedback](/react/user-feedback/overview) module.
+Whatever you tweak, your configuration settings apply to the [Feedback](/react/user-feedback/overview) module.
 
 ## Elements of the New ticket screen
 

@@ -19,8 +19,8 @@ You're viewing the iOS docs. Other platforms → &nbsp;
 <div class="modulesList">
     <div>
         <a href="/docs/ios/user-feedback/overview/">
-            <img src="/docs/img/module-user-feedback@2x.png" alt="User feedback module"/>
-            <h3>User feedback</h3>
+            <img src="/docs/img/module-user-feedback@2x.png" alt="Feedback module"/>
+            <h3>Feedback</h3>
             <p>Testers and users can send you bug reports, questions and suggestions seamlessly.</p>
         </a>
     </div>
@@ -33,8 +33,8 @@ You're viewing the iOS docs. Other platforms → &nbsp;
     </div>
     <div>
         <a href="/docs/ios/crash-reports/overview/">
-            <img src="/docs/img/module-crash-reports@2x.png" alt="Crash reports module"/>
-            <h3>Crash reports</h3>
+            <img src="/docs/img/module-crash-reports@2x.png" alt="Crashes module"/>
+            <h3>Crashes</h3>
             <p>Receive stack trace, logs, users’ comments and more whenever your app crashes.</p>
         </a>
     </div>

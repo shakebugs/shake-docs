@@ -16,8 +16,8 @@ You're viewing the Android docs. Other platforms →&nbsp;
 ## Introduction
 
 Whatever you tweak, your configuration settings apply to all Shake modules:
-* [User feedback](/docs/android/user-feedback/overview)
-* [Crash reports](/docs/android/crash-reports/overview)
+* [Feedback](/docs/android/user-feedback/overview)
+* [Crashes](/docs/android/crash-reports/overview)
 
 ## Elements of the New ticket screen
 

@@ -3,7 +3,7 @@ id: enable
 title: Enable
 ---
 
->The User feedback module is enabled by default.
+>The Feedback module is enabled by default.
 
 <p class="p2 mt-40">
 You're viewing the Flutter docs. Other platforms → &nbsp;

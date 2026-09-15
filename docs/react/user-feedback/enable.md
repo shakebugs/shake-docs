@@ -5,7 +5,7 @@ title: Enable
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
->The User feedback module is enabled by default.
+>The Feedback module is enabled by default.
 
 <p class="p2 mt-40">
 You're viewing the React Native docs. Other platforms → &nbsp;

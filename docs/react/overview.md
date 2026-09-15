@@ -19,8 +19,8 @@ You're viewing the React Native docs. Other platforms → &nbsp;
 <div class="modulesList">
     <div>
         <a href="/docs/react/user-feedback/overview/">
-            <img src="/docs/img/module-user-feedback@2x.png" alt="User feedback module"/>
-            <h3>User feedback</h3>
+            <img src="/docs/img/module-user-feedback@2x.png" alt="Feedback module"/>
+            <h3>Feedback</h3>
             <p>Testers and users can send you bug reports, questions and suggestions seamlessly.</p>
         </a>
     </div>

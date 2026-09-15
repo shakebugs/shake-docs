@@ -17,8 +17,8 @@ You're viewing the iOS docs. Other platforms → &nbsp;
 ## Introduction
 
 Whatever you tweak, your configuration settings apply to all Shake modules:
-* [User feedback](/ios/user-feedback/overview)
-* [Crash reports](/ios/crash-reports/overview)
+* [Feedback](/ios/user-feedback/overview)
+* [Crashes](/ios/crash-reports/overview)
 
 ## Elements of the New ticket screen
 

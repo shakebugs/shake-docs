@@ -1,13 +1,13 @@
 ---
 id: user-feedback
-title: User feedback
+title: Feedback
 ---
 
-# User feedback
+# Feedback
 
 Track and manage user feedback including bug reports, feature requests, and questions.
 
-## User feedback
+## Feedback
 
 ### List user feedback
 
@@ -254,7 +254,7 @@ curl -X DELETE \
   https://dashboard-api.shakebugs.com/api/rest/issue_tracking/issues/550e8400-e29b-41d4-a716-446655440000
 ```
 
-## User feedback chat
+## Feedback chat
 
 ### Get Chat Messages
 
@@ -346,7 +346,7 @@ curl -X POST \
   https://dashboard-api.shakebugs.com/api/rest/issue_tracking/issues/550e8400-e29b-41d4-a716-446655440000/chat
 ```
 
-## User feedback activity logs
+## Feedback activity logs
 
 ### Get Activity Logs
 

@@ -15,7 +15,7 @@ You're viewing the Flutter docs. Other platforms → &nbsp;
 
 <table class="media-container media-container-highlighted mt-50 pb-80">
 <img
-  alt="User feedback intro message"
+  alt="Feedback intro message"
   width="380"
   src={useBaseUrl('screens/android-macro-intro-message@2x.png')}
 />

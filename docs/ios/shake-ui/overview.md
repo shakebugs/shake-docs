@@ -65,7 +65,7 @@ There, they have a **Submit feedback** button that opens Shake's [Home screen](/
 ### Internal and production crash reporting
 
 Lastly, Shake can open automatically after your app crashes.
-[Enable Crash reports](/ios/crash-reports/enable.md) and [enable the Ask for crash description sheet](/ios/crash-reports/ask-for-description.md)
+[Enable Crashes](/ios/crash-reports/enable.md) and [enable the Ask for crash description sheet](/ios/crash-reports/ask-for-description.md)
 so your users can describe what happened before your app crashed on them:
 
 <table class="media-container mt-40 mb-40">

@@ -5,7 +5,7 @@ title: Overview
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
->The User feedback module allows your users and testers to seamlessly report their feedback to you.
+>The Feedback module allows your users and testers to seamlessly report their feedback to you.
 
 <p class="p2 mt-40">
 You're viewing the Web docs. Other platforms → &nbsp;
@@ -19,7 +19,7 @@ You're viewing the Web docs. Other platforms → &nbsp;
 ## Introduction
 
 You have various options for how, when and where to invoke Shake in your app.
-Explore the docs and customize Shake's User feedback module to your needs.
+Explore the docs and customize Shake's Feedback module to your needs.
 
 To get you started, here are just two examples:
 
@@ -28,7 +28,7 @@ To get you started, here are just two examples:
 
 ## Configuration & data
 
-User feedback module pulls your [Configuration and data](/web/configuration-and-data/overview.md) settings.
+Feedback module pulls your [Configuration and data](/web/configuration-and-data/overview.md) settings.
 
 This means that all user feedback comes to you with an [auto screenshot](/web/configuration-and-data/screen-capture.md),
 of what happened before the ticket was submitted and other useful data.

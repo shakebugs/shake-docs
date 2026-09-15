@@ -5,7 +5,7 @@ title: Overview
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
->The User feedback module allows your users and testers to seamlessly report their feedback to you.
+>The Feedback module allows your users and testers to seamlessly report their feedback to you.
 
 <p class="p2 mt-40">
 You're viewing the iOS docs. Other platforms → &nbsp;
@@ -19,7 +19,7 @@ You're viewing the iOS docs. Other platforms → &nbsp;
 ## Introduction
 
 When this module is enabled, you have various options for how, when and where to invoke Shake in your app.
-Explore the docs and customize Shake's User feedback module to your needs.
+Explore the docs and customize Shake's Feedback module to your needs.
 To get you started, here are just two examples:
 
 <table class="media-container mt-50">
@@ -44,7 +44,7 @@ To get you started, here are just two examples:
 
 ## Shared configuration
 
-Just like the [Crash reports](/ios/crash-reports/overview.md) module, the User feedback module pulls your
+Just like the [Crashes](/ios/crash-reports/overview.md) module, the Feedback module pulls your
 [Configuration and data](/ios/configuration-and-data/overview.md) settings.
 
 This means that all user feedback comes to you with an [auto screenshot](/ios/configuration-and-data/auto-screenshot.md),

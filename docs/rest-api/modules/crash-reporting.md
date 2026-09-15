@@ -1,9 +1,9 @@
 ---
 id: crash-reporting
-title: Crash Reporting
+title: Crashes
 ---
 
-# Crash Reporting
+# Crashes
 
 Access and manage crash reports, crash groups, and related data.
 

@@ -15,7 +15,7 @@ You're viewing the Flutter docs. Other platforms → &nbsp;
 
 ## Introduction
 
-Whatever you tweak, your configuration settings apply to the [User feedback](/flutter/user-feedback/overview) module.
+Whatever you tweak, your configuration settings apply to the [Feedback](/flutter/user-feedback/overview) module.
 
 ## Elements of the New ticket screen
 
