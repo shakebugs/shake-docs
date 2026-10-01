@@ -10,15 +10,15 @@ import TabItem from '@theme/TabItem';
 
 <p class="p2 mt-40">
 You're viewing the React Native docs. Other platforms → &nbsp;
-<a href="/docs/ios/user-feedback/intro-message/">iOS</a>&nbsp; 
-<a href="/docs/android/user-feedback/intro-message/">Android</a>&nbsp;
-<a href="/docs/flutter/user-feedback/intro-message/">Flutter</a>&nbsp;
+<a href="/docs/ios/user-feedback/intro-message">iOS</a>&nbsp; 
+<a href="/docs/android/user-feedback/intro-message">Android</a>&nbsp;
+<a href="/docs/flutter/user-feedback/intro-message">Flutter</a>&nbsp;
 </p>
 
 
 <table class="media-container media-container-highlighted mt-50 pb-80">
 <img
-  alt="User feedback intro message"
+  alt="Feedback intro message"
   width="380"
   src={useBaseUrl('screens/android-macro-intro-message@2x.png')}
 />

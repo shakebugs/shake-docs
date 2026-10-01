@@ -7,7 +7,7 @@ module.exports = {
   url: 'https://docs.shakebugs.com',
   baseUrl: '/docs/',
   favicon: 'img/favicon.png',
-  trailingSlash: true,
+  trailingSlash: false,
   organizationName: 'shakebugs', // Usually your GitHub org/user name.
   projectName: 'shake-docs', // Usually your repo name.
   themeConfig: {

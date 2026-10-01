@@ -27,7 +27,16 @@ module.exports = {
       items: [
         {
           type: 'category',
-          label: 'User feedback',
+          label: 'Releases',
+          items: [
+            'android/releases/overview',
+            'android/releases/session-data',
+            'android/releases/network-requests'
+          ]
+        },
+        {
+          type: 'category',
+          label: 'Feedback',
           items: [
             'android/user-feedback/overview',
             'android/user-feedback/enable',
@@ -38,7 +47,7 @@ module.exports = {
         },
         {
           type: 'category',
-          label: 'Crash reports',
+          label: 'Crashes',
           items: [
             'android/crash-reports/overview',
             'android/crash-reports/enable',
@@ -50,7 +59,7 @@ module.exports = {
         },
         {
           type: 'category',
-          label: 'App users',
+          label: 'Users',
           items: [
             'android/users/overview',
             'android/users/register-user',
@@ -122,7 +131,16 @@ module.exports = {
       items: [
         {
           type: 'category',
-          label: 'User feedback',
+          label: 'Releases',
+          items: [
+            'ios/releases/overview',
+            'ios/releases/session-data',
+            'ios/releases/network-requests'
+          ]
+        },
+        {
+          type: 'category',
+          label: 'Feedback',
           items: [
             'ios/user-feedback/overview',
             'ios/user-feedback/enable',
@@ -133,7 +151,7 @@ module.exports = {
         },
         {
           type: 'category',
-          label: 'Crash reports',
+          label: 'Crashes',
           items: [
             'ios/crash-reports/overview',
             'ios/crash-reports/enable',
@@ -145,7 +163,7 @@ module.exports = {
         },
         {
           type: 'category',
-          label: 'App users',
+          label: 'Users',
           items: [
             'ios/users/overview',
             'ios/users/register-user',
@@ -209,7 +227,16 @@ module.exports = {
       items: [
         {
           type: 'category',
-          label: 'User feedback',
+          label: 'Releases',
+          items: [
+            'flutter/releases/overview',
+            'flutter/releases/session-data',
+            'flutter/releases/network-requests'
+          ]
+        },
+        {
+          type: 'category',
+          label: 'Feedback',
           items: [
             'flutter/user-feedback/overview',
             'flutter/user-feedback/enable',
@@ -220,7 +247,7 @@ module.exports = {
         },
         {
           type: 'category',
-          label: 'App users',
+          label: 'Users',
           items: [
             'flutter/users/overview',
             'flutter/users/register-user',
@@ -285,7 +312,16 @@ module.exports = {
       items: [
         {
           type: 'category',
-          label: 'User feedback',
+          label: 'Releases',
+          items: [
+            'react/releases/overview',
+            'react/releases/session-data',
+            'react/releases/network-requests'
+          ]
+        },
+        {
+          type: 'category',
+          label: 'Feedback',
           items: [
             'react/user-feedback/overview',
             'react/user-feedback/enable',
@@ -296,7 +332,7 @@ module.exports = {
         },
         {
           type: 'category',
-          label: 'App users',
+          label: 'Users',
           items: [
             'react/users/overview',
             'react/users/register-user',
@@ -345,7 +381,8 @@ module.exports = {
             'web/install/npm',
             'web/install/cdn',
           ]
-        }
+        },
+        'web/import-from-instabug'
       ]
     },
     'web/shake-ui',
@@ -355,7 +392,16 @@ module.exports = {
       items: [
         {
           type: 'category',
-          label: 'User Feedback',
+          label: 'Releases',
+          items: [
+            'web/releases/overview',
+            'web/releases/session-data',
+            'web/releases/network-requests'
+          ]
+        },
+        {
+          type: 'category',
+          label: 'Feedback',
           items: [
             'web/user-feedback/overview',
             'web/user-feedback/invoke',
@@ -364,7 +410,7 @@ module.exports = {
         },
         {
           type: 'category',
-          label: 'App users',
+          label: 'Users',
           items: [
             'web/users/overview',
             'web/users/register-user',
@@ -446,8 +492,8 @@ module.exports = {
       type: 'category',
       label: 'Modules',
       items: [
-        { type: 'doc', id: 'rest-api/modules/user-feedback', label: 'User feedback' },
-        { type: 'doc', id: 'rest-api/modules/crash-reporting', label: 'Crash reports' },
+        { type: 'doc', id: 'rest-api/modules/user-feedback', label: 'Feedback' },
+        { type: 'doc', id: 'rest-api/modules/crash-reporting', label: 'Crashes' },
         { type: 'doc', id: 'rest-api/modules/accounts', label: 'Team members' },
       ]
     }

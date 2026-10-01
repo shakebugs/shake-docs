@@ -6,20 +6,27 @@ title: Release notes
 
 <p class="p2 mt-40">
 Other platforms → &nbsp;
-<a href="/docs/ios/releases/">iOS</a>&nbsp;
-<a href="/docs/android/releases/">Android</a>&nbsp;
-<a href="/docs/react/releases/">React Native</a>&nbsp; 
-<a href="/docs/web/releases/">Web</a>&nbsp;
-<a href="/docs/chrome-extension/releases/">Chrome extension</a>&nbsp;
+<a href="/docs/ios/releases">iOS</a>&nbsp;
+<a href="/docs/android/releases">Android</a>&nbsp;
+<a href="/docs/react/releases">React Native</a>&nbsp; 
+<a href="/docs/web/releases">Web</a>&nbsp;
+<a href="/docs/chrome-extension/releases">Chrome extension</a>&nbsp;
 </p>
 
 ## What's next?
 
 What would you like us to build next? Upvote upcoming features and suggest new ideas on the [Public feedback board](https://feedback.shakebugs.com/).
 
+## 18.0.0
+<span class="tag-button">October 1, 2026</span>&nbsp;&nbsp;
+<span class="tag-button green-tag-button">Latest version</span>
+
+#### What's new
+
+Shake now automatically tracks app sessions, giving you visibility into network traffic and device coverage for each release right from your Shake dashboard. Learn more in [Releases](/flutter/releases/overview).
+
 ## 17.2.3
 <span class="tag-button">May 13, 2026</span>&nbsp;&nbsp;
-<span class="tag-button green-tag-button">Latest version</span>
 
 #### What's new
 

@@ -8,32 +8,32 @@ title: Overview
 
 <p class="p2 mt-40">
     You're viewing the Android docs. Other platforms →&nbsp;
-    <a href="/docs/ios/overview/">iOS</a>&nbsp;
-    <a href="/docs/react/overview/">React Native</a>&nbsp;
-    <a href="/docs/flutter/overview/">Flutter</a>&nbsp;
-    <a href="/docs/web/overview/">Web</a>&nbsp;
-    <a href="/docs/chrome-extension/overview/">Chrome extension</a>&nbsp;
+    <a href="/docs/ios/overview">iOS</a>&nbsp;
+    <a href="/docs/react/overview">React Native</a>&nbsp;
+    <a href="/docs/flutter/overview">Flutter</a>&nbsp;
+    <a href="/docs/web/overview">Web</a>&nbsp;
+    <a href="/docs/chrome-extension/overview">Chrome extension</a>&nbsp;
 </p>
 
 <div class="modulesList">
     <div>
-        <a href="/docs/android/user-feedback/overview/">
-            <img src="/docs/img/module-user-feedback@2x.png" alt="User feedback module"/>
-            <h3>User feedback</h3>
+        <a href="/docs/android/user-feedback/overview">
+            <img src="/docs/img/module-user-feedback@2x.png" alt="Feedback module"/>
+            <h3>Feedback</h3>
             <p>Testers and users can send you bug reports, questions and suggestions seamlessly.</p>
         </a>
     </div>
     <div>
-        <a href="/docs/android/users/overview/">
+        <a href="/docs/android/users/overview">
             <img src="/docs/img/module-users@2x.png" alt="Users module"/>
             <h3>Users</h3>
             <p>List of all your app users, their attributes and reported tickets, plus live chat.</p>
         </a>
     </div>
     <div>
-        <a href="/docs/android/crash-reports/overview/">
-            <img src="/docs/img/module-crash-reports@2x.png" alt="Crash reports module"/>
-            <h3>Crash reports</h3>
+        <a href="/docs/android/crash-reports/overview">
+            <img src="/docs/img/module-crash-reports@2x.png" alt="Crashes module"/>
+            <h3>Crashes</h3>
             <p>Receive stack trace, logs, users’ comments and more whenever your app crashes.</p>
         </a>
     </div>
@@ -45,39 +45,39 @@ title: Overview
 <div class="featuresList">
     <div>
         <img src="/docs/img/invoke-shake@2x.png" alt="Invoke Shake"/>
-        <p><a href="/docs/android/user-feedback/invoke/">Invoke Shake</a></p>
+        <p><a href="/docs/android/user-feedback/invoke">Invoke Shake</a></p>
     </div>
     <div>
         <img src="/docs/img/essential-data@2x.png" alt="Data attached by default"/>
-        <p><a href="/docs/android/configuration-and-data/data-attached-by-default/">Data attached by default</a></p>
+        <p><a href="/docs/android/configuration-and-data/data-attached-by-default">Data attached by default</a></p>
     </div>
     <div>
         <img src="/docs/img/screen-recording@2x.png" alt="Auto screen recording"/>
-        <p><a href="/docs/android/configuration-and-data/auto-screen-recording/">Auto screen recording</a></p>
+        <p><a href="/docs/android/configuration-and-data/auto-screen-recording">Auto screen recording</a></p>
     </div>
     <div>
         <img src="/docs/img/steps-to-reproduce@2x.png" alt="Auto steps to reproduce"/>
-        <p><a href="/docs/android/configuration-and-data/activity-history/">Auto steps to reproduce</a></p>
+        <p><a href="/docs/android/configuration-and-data/activity-history">Auto steps to reproduce</a></p>
     </div>
     <div>
         <img src="/docs/img/black-box@2x.png" alt="Black box"/>
-        <p><a href="/docs/android/configuration-and-data/black-box/">Black box</a></p>
+        <p><a href="/docs/android/configuration-and-data/black-box">Black box</a></p>
     </div>
     <div>
         <img src="/docs/img/feature-auto-attach-files@2x.png" alt="Auto attach files"/>
-        <p><a href="/docs/android/configuration-and-data/auto-attach-files/">Auto attach files</a></p>
+        <p><a href="/docs/android/configuration-and-data/auto-attach-files">Auto attach files</a></p>
     </div>
     <div>
         <img src="/docs/img/feature-custom-ticket-data@2x.png" alt="Custom Ticket data"/>
-        <p><a href="/docs/android/configuration-and-data/ticket-metadata/">Custom Ticket data</a></p>
+        <p><a href="/docs/android/configuration-and-data/ticket-metadata">Custom Ticket data</a></p>
     </div>
     <div>
         <img src="/docs/img/feature-custom-user-data@2x.png" alt="Custom User data"/>
-        <p><a href="/docs/android/users/update-user-metadata/">Custom User data</a></p>
+        <p><a href="/docs/android/users/update-user-metadata">Custom User data</a></p>
     </div>
     <div>
         <img src="/docs/img/protect-sensitive-data@2x.png" alt="Protect sensitive data"/>
-        <p><a href="/docs/android/configuration-and-data/manage-sensitive-data/">Protect sensitive data</a></p>
+        <p><a href="/docs/android/configuration-and-data/manage-sensitive-data">Protect sensitive data</a></p>
     </div>
 </div>
 

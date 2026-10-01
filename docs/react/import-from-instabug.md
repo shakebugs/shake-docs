@@ -8,9 +8,10 @@ This feature allows you to seamlessly transition your bugs without losing import
 
 <p class="p2 mt-40">
 You're viewing the React Native docs. Other platforms → &nbsp;
-<a href="/docs/ios/import-from-instabug/">iOS</a>&nbsp; 
-<a href="/docs/android/import-from-instabug/">Android</a>&nbsp;
-<a href="/docs/flutter/import-from-instabug/">Flutter</a>&nbsp;
+<a href="/docs/ios/import-from-instabug">iOS</a>&nbsp; 
+<a href="/docs/android/import-from-instabug">Android</a>&nbsp;
+<a href="/docs/flutter/import-from-instabug">Flutter</a>&nbsp;
+<a href="/docs/web/import-from-instabug">Web</a>&nbsp;
 </p>
 
 
@@ -42,7 +43,7 @@ and download the CSV file from the email sent by Instabug.
 
 ### Step 3: Import bugs into the Shake
 Once you've downloaded the CSV file, log into your Shake account and navigate to the [Workspace administration → Apps](https://app.shakebugs.com) page.
-Select the app where you want to import Instabug bugs and press _Choose a file_ button under the _User feedback → Import user feedback tickets_ section.
+Select the app where you want to import Instabug bugs and press _Choose a file_ button under the _Feedback → Import tickets_ section.
 
 Now, you'll be prompted to select the CSV file that you want to import.
 Max import file size is _100MB_, if you have larger file you can divide it into separate files.

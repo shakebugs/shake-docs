@@ -9,10 +9,10 @@ import TabItem from '@theme/TabItem';
 
 <p class="p2 mt-40">
 You're viewing the React Native docs. Other platforms → &nbsp;
-<a href="/docs/ios/user-feedback/silent-user-feedback/">iOS</a>&nbsp; 
-<a href="/docs/android/user-feedback/silent-user-feedback/">Android</a>&nbsp;
-<a href="/docs/flutter/user-feedback/silent-user-feedback/">Flutter</a>&nbsp;
-<a href="/docs/web/user-feedback/silent-user-feedback/">Web</a>&nbsp;
+<a href="/docs/ios/user-feedback/silent-user-feedback">iOS</a>&nbsp; 
+<a href="/docs/android/user-feedback/silent-user-feedback">Android</a>&nbsp;
+<a href="/docs/flutter/user-feedback/silent-user-feedback">Flutter</a>&nbsp;
+<a href="/docs/web/user-feedback/silent-user-feedback">Web</a>&nbsp;
 </p>
 
 

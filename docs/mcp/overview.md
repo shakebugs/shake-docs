@@ -45,26 +45,26 @@ Anything that reaches a real person — replying to a reporter, notifying everyo
 <div class="featuresList">
     <div>
         <img src="/docs/img/mcp/chatgpt.png" alt="ChatGPT"/>
-        <p><a href="/docs/mcp/connect/chatgpt/">ChatGPT</a></p>
+        <p><a href="/docs/mcp/connect/chatgpt">ChatGPT</a></p>
     </div>
     <div>
         <img src="/docs/img/mcp/claude.png" alt="Claude Desktop"/>
-        <p><a href="/docs/mcp/connect/claude-desktop/">Claude Desktop</a></p>
+        <p><a href="/docs/mcp/connect/claude-desktop">Claude Desktop</a></p>
     </div>
     <div>
         <img src="/docs/img/mcp/claude-code.png" alt="Claude Code"/>
-        <p><a href="/docs/mcp/connect/claude-code/">Claude Code</a></p>
+        <p><a href="/docs/mcp/connect/claude-code">Claude Code</a></p>
     </div>
     <div>
         <img src="/docs/img/mcp/cursor.png" alt="Cursor"/>
-        <p><a href="/docs/mcp/connect/cursor/">Cursor</a></p>
+        <p><a href="/docs/mcp/connect/cursor">Cursor</a></p>
     </div>
     <div>
         <img src="/docs/img/mcp/vscode.png" alt="VS Code"/>
-        <p><a href="/docs/mcp/connect/vscode/">VS Code</a></p>
+        <p><a href="/docs/mcp/connect/vscode">VS Code</a></p>
     </div>
     <div>
         <img src="/docs/img/mcp/windsurf.png" alt="Windsurf"/>
-        <p><a href="/docs/mcp/connect/windsurf/">Windsurf</a></p>
+        <p><a href="/docs/mcp/connect/windsurf">Windsurf</a></p>
     </div>
 </div>

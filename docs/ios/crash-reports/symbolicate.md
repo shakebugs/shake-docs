@@ -50,7 +50,7 @@ To upload dSYM files to the Shake dashboard:
 
 1. Visit [Workspace administration → Apps](https://app.shakebugs.com/administration)
 1. Click your app name to expand it
-1. Select **Crash reports** menu and click **Choose a file** button
+1. Select **Crashes** menu and click **Choose a file** button
 1. Drag and drop your zipped symbolication files there
 
 ## Upload dSYM files using RunPhase script

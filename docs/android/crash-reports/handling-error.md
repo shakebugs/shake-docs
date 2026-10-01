@@ -10,7 +10,7 @@ import TabItem from '@theme/TabItem';
 
 <p class="p2 mt-40">
 You're viewing the Android docs. Other platform →&nbsp;
-<a href="/docs/ios/crash-reports/handling-error/">iOS</a>&nbsp;
+<a href="/docs/ios/crash-reports/handling-error">iOS</a>&nbsp;
 </p>
 
 Shake allows you to report those caught errors and group them together.

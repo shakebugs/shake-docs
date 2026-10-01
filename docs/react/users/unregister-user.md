@@ -11,10 +11,10 @@ want the subsequent tickets to be associated with the current app user.
 
 <p class="p2 mt-40">
 You're viewing the React Native docs. Other platforms → &nbsp;
-<a href="/docs/ios/users/unregister-user/">iOS</a>&nbsp; 
-<a href="/docs/android/users/unregister-user/">Android</a>&nbsp;
-<a href="/docs/flutter/users/unregister-user/">Flutter</a>&nbsp;
-<a href="/docs/web/users/unregister-user/">Web</a>&nbsp;
+<a href="/docs/ios/users/unregister-user">iOS</a>&nbsp; 
+<a href="/docs/android/users/unregister-user">Android</a>&nbsp;
+<a href="/docs/flutter/users/unregister-user">Flutter</a>&nbsp;
+<a href="/docs/web/users/unregister-user">Web</a>&nbsp;
 </p>
 
 

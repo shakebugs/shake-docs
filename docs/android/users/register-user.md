@@ -10,10 +10,10 @@ import TabItem from '@theme/TabItem';
 
 <p class="p2 mt-40">
 You're viewing the Android docs. Other platforms →&nbsp;
-<a href="/docs/ios/users/register-user/">iOS</a>&nbsp;
-<a href="/docs/react/users/register-user/">React Native</a>&nbsp;
-<a href="/docs/flutter/users/register-user/">Flutter</a>&nbsp;
-<a href="/docs/web/users/register-user/">Web</a>&nbsp;
+<a href="/docs/ios/users/register-user">iOS</a>&nbsp;
+<a href="/docs/react/users/register-user">React Native</a>&nbsp;
+<a href="/docs/flutter/users/register-user">Flutter</a>&nbsp;
+<a href="/docs/web/users/register-user">Web</a>&nbsp;
 </p>
 
 The passed _user identifier_ argument should ideally reflect the identifier that uniquely represents the app user in your database.

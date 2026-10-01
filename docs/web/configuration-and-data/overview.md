@@ -7,10 +7,10 @@ title: Overview
 
 <p class="p2 mt-40">
 You're viewing the Web docs. Other platforms → &nbsp;
-<a href="/docs/ios/configuration-and-data/overview/">iOS</a>&nbsp; 
-<a href="/docs/android/configuration-and-data/overview/">Android</a>&nbsp;
-<a href="/docs/react/configuration-and-data/overview/">React Native</a>&nbsp;
-<a href="/docs/flutter/configuration-and-data/overview/">Flutter</a>&nbsp;
+<a href="/docs/ios/configuration-and-data/overview">iOS</a>&nbsp; 
+<a href="/docs/android/configuration-and-data/overview">Android</a>&nbsp;
+<a href="/docs/react/configuration-and-data/overview">React Native</a>&nbsp;
+<a href="/docs/flutter/configuration-and-data/overview">Flutter</a>&nbsp;
 </p>
 
 
@@ -34,23 +34,23 @@ Shake attaches useful data to user feedback. Read all about it:
     </div>
 	<div>
         <img src="/docs/img/essential-data@2x.png" alt="Data attached by default"/>
-        <p><a href="/docs/web/configuration-and-data/data-attached-by-default/">Data attached by default</a></p>
+        <p><a href="/docs/web/configuration-and-data/data-attached-by-default">Data attached by default</a></p>
     </div>
     <div>
         <img src="/docs/img/steps-to-reproduce@2x.png" alt="Activity history"/>
-        <p><a href="/docs/web/configuration-and-data/activity-history/">Activity history</a></p>
+        <p><a href="/docs/web/configuration-and-data/activity-history">Activity history</a></p>
     </div>
 	<div>
         <img src="/docs/img/auto-screenshot@2x.png" alt="Auto screenshot"/>
-        <p><a href="/docs/web/configuration-and-data/screen-capture/">Screen capture</a></p>
+        <p><a href="/docs/web/configuration-and-data/screen-capture">Screen capture</a></p>
     </div>
     <div>
         <img src="/docs/img/screen-recording@2x.png" alt="Auto screen recording"/>
-        <p><a href="/docs/web/configuration-and-data/screen-recording/">Screen recording</a></p>
+        <p><a href="/docs/web/configuration-and-data/screen-recording">Screen recording</a></p>
     </div>
 	<div>
         <img src="/docs/img/feature-custom-ticket-data@2x.png" alt="Custom Ticket data"/>
-        <p><a href="/docs/web/configuration-and-data/ticket-metadata/">Custom Ticket data</a></p>
+        <p><a href="/docs/web/configuration-and-data/ticket-metadata">Custom Ticket data</a></p>
     </div>
 </div>
 

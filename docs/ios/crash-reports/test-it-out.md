@@ -10,7 +10,7 @@ import TabItem from '@theme/TabItem';
 
 <p class="p2 mt-40">
 You're viewing the iOS docs. Other platform → &nbsp;
-<a href="/docs/android/crash-reports/test-it-out/">Android</a>&nbsp;
+<a href="/docs/android/crash-reports/test-it-out">Android</a>&nbsp;
 </p>
 
 
@@ -91,7 +91,7 @@ Reopen your app, describe the crash and tap *Submit*.
 
 To see your crash report:
 1. Visit your [Shake dashboard](https://app.shakebugs.com)
-1. Switch to the **Crash reports** tab in the left sidebar
+1. Switch to the **Crashes** tab in the left sidebar
 
 If your crash report is not visible instantly, wait a minute until the system processes it.
 

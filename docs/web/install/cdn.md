@@ -8,11 +8,11 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <p class="p2 mt-40">
 You're viewing the Web docs. Other platforms → &nbsp;
-<a href="/docs/ios/install/spm/">iOS</a>&nbsp; 
-<a href="/docs/android/installation/">Android</a>&nbsp;
-<a href="/docs/react/installation/">React Native</a>&nbsp;
-<a href="/docs/flutter/installation/">Flutter</a>&nbsp;
-<a href="/docs/chrome-extension/installation/">Chrome extension</a>&nbsp;
+<a href="/docs/ios/install/spm">iOS</a>&nbsp; 
+<a href="/docs/android/installation">Android</a>&nbsp;
+<a href="/docs/react/installation">React Native</a>&nbsp;
+<a href="/docs/flutter/installation">Flutter</a>&nbsp;
+<a href="/docs/chrome-extension/installation">Chrome extension</a>&nbsp;
 </p>
 
 
@@ -61,6 +61,16 @@ window.Shake.start('app-api-key');
 
 Now build and run your project. Shake should be working, as simple as that.
 
+### Setting your app version
+
+Unlike native mobile apps, web apps don't have a built-in versioning system, so Shake can't detect your app version automatically. Pass it as the optional second argument to `Shake.start()`:
+
+```js title="index.js"
+window.Shake.start('app-api-key', '1.0.0');
+```
+
+If you don't pass a version, it defaults to `"1.0.0"`. This version is shown alongside each session on your [Releases dashboard](/web/releases/overview).
+
 ## Conditional initialization
 
 We recommend initializing Shake in the entry point of your app.
@@ -90,6 +100,6 @@ As the next step, try the three most popular SDK customizations:
     </div>
     <div>
         <img src="/docs/img/feature-custom-ticket-data@2x.png" alt="Custom Ticket data"/>
-        <p><a href="/docs/web/configuration-and-data/ticket-metadata/">Custom Ticket data</a></p>
+        <p><a href="/docs/web/configuration-and-data/ticket-metadata">Custom Ticket data</a></p>
     </div>
 </div>

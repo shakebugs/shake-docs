@@ -3,11 +3,11 @@ id: enable
 title: Enable
 ---
 
->The Crash reports module is disabled by default.
+>The Crashes module is disabled by default.
 
 <p class="p2 mt-40">
 You're viewing the iOS docs. Other platform → &nbsp;
-<a href="/docs/android/crash-reports/enable/">Android</a>&nbsp;
+<a href="/docs/android/crash-reports/enable">Android</a>&nbsp;
 </p>
 
 This is how you enable it:

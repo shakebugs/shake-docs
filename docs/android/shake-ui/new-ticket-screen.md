@@ -8,10 +8,10 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <p class="p2 mt-40">
 You're viewing the Android docs. Other platforms →&nbsp;
-<a href="/docs/ios/shake-ui/new-ticket-screen/">iOS</a>&nbsp;
-<a href="/docs/react/shake-ui/new-ticket-screen/">React Native</a>&nbsp;
-<a href="/docs/flutter/shake-ui/new-ticket-screen/">Flutter</a>&nbsp;
-<a href="/docs/web/shake-ui/#screens">Web</a>&nbsp;
+<a href="/docs/ios/shake-ui/new-ticket-screen">iOS</a>&nbsp;
+<a href="/docs/react/shake-ui/new-ticket-screen">React Native</a>&nbsp;
+<a href="/docs/flutter/shake-ui/new-ticket-screen">Flutter</a>&nbsp;
+<a href="/docs/web/shake-ui#screens">Web</a>&nbsp;
 </p>
 
 ## Introduction

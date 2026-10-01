@@ -7,15 +7,15 @@ title: Overview
 
 <p class="p2 mt-40">
 You're viewing the Flutter docs. Other platforms → &nbsp;
-<a href="/docs/ios/configuration-and-data/overview/">iOS</a>&nbsp;
-<a href="/docs/android/configuration-and-data/overview/">Android</a>&nbsp;
-<a href="/docs/react/configuration-and-data/overview/">React Native</a>&nbsp; 
-<a href="/docs/web/configuration-and-data/overview/">Web</a>&nbsp;
+<a href="/docs/ios/configuration-and-data/overview">iOS</a>&nbsp;
+<a href="/docs/android/configuration-and-data/overview">Android</a>&nbsp;
+<a href="/docs/react/configuration-and-data/overview">React Native</a>&nbsp; 
+<a href="/docs/web/configuration-and-data/overview">Web</a>&nbsp;
 </p>
 
 ## Introduction
 
-Whatever you tweak, your configuration settings apply to the [User feedback](/flutter/user-feedback/overview) module.
+Whatever you tweak, your configuration settings apply to the [Feedback](/flutter/user-feedback/overview) module.
 
 ## Elements of the New ticket screen
 
@@ -33,31 +33,31 @@ Shake attaches useful data to user feedback. Read all about it:
     </div>
 	<div>
         <img src="/docs/img/essential-data@2x.png" alt="Data attached by default"/>
-        <p><a href="/docs/flutter/configuration-and-data/data-attached-by-default/">Data attached by default</a></p>
+        <p><a href="/docs/flutter/configuration-and-data/data-attached-by-default">Data attached by default</a></p>
     </div>
 	<div>
         <img src="/docs/img/auto-screenshot@2x.png" alt="Auto screenshot"/>
-        <p><a href="/docs/flutter/configuration-and-data/auto-screenshot/">Auto screenshot</a></p>
+        <p><a href="/docs/flutter/configuration-and-data/auto-screenshot">Auto screenshot</a></p>
     </div>
     <div>
         <img src="/docs/img/screen-recording@2x.png" alt="Auto screen recording"/>
-        <p><a href="/docs/flutter/configuration-and-data/auto-screen-recording/">Auto screen recording</a></p>
+        <p><a href="/docs/flutter/configuration-and-data/auto-screen-recording">Auto screen recording</a></p>
     </div>
     <div>
         <img src="/docs/img/steps-to-reproduce@2x.png" alt="Activity history"/>
-        <p><a href="/docs/flutter/configuration-and-data/activity-history/">Activity history</a></p>
+        <p><a href="/docs/flutter/configuration-and-data/activity-history">Activity history</a></p>
     </div>
     <div>
         <img src="/docs/img/black-box@2x.png" alt="Black box"/>
-        <p><a href="/docs/flutter/configuration-and-data/black-box/">Black box</a></p>
+        <p><a href="/docs/flutter/configuration-and-data/black-box">Black box</a></p>
     </div>
 	<div>
         <img src="/docs/img/feature-custom-ticket-data@2x.png" alt="Custom Ticket data"/>
-        <p><a href="/docs/flutter/configuration-and-data/ticket-metadata/">Custom Ticket data</a></p>
+        <p><a href="/docs/flutter/configuration-and-data/ticket-metadata">Custom Ticket data</a></p>
     </div>
 	<div>
         <img src="/docs/img/feature-auto-attach-files@2x.png" alt="Auto attach files"/>
-        <p><a href="/docs/flutter/configuration-and-data/auto-attach-files/">Auto attach files</a></p>
+        <p><a href="/docs/flutter/configuration-and-data/auto-attach-files">Auto attach files</a></p>
     </div>
 </div>
 

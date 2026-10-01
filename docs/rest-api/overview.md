@@ -82,7 +82,7 @@ if (remaining < 10) {
 
 The Shake REST API provides three main categories of endpoints:
 
-### User feedback
+### Feedback
 
 Track and manage user-reported feedback including:
 
@@ -90,7 +90,7 @@ Track and manage user-reported feedback including:
 - Chat conversations with users
 - Activity logs and history
 
-### Crash reports
+### Crashes
 
 Access and manage crash reports, crash groups, and related data including:
 
@@ -200,8 +200,8 @@ Feel free to experiment there!
 
 Explore the API through our docs:
 
-- [User feedback](/docs/rest-api/modules/user-feedback)
-- [Crash reports](/docs/rest-api/modules/crash-reporting)
+- [Feedback](/docs/rest-api/modules/user-feedback)
+- [Crashes](/docs/rest-api/modules/crash-reporting)
 - [Team members](/docs/rest-api/modules/accounts)
 
 ## Feedback

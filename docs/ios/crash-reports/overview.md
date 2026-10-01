@@ -4,12 +4,12 @@ title: Overview
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
->The Crash reports module tracks crashes and uncaught exceptions in your app. They are then intelligently grouped on your Shake dashboard,
+>The Crashes module tracks crashes and uncaught exceptions in your app. They are then intelligently grouped on your Shake dashboard,
 offering loads of contextual data to help you fix them fast.
 
 <p class="p2 mt-40">
 You're viewing the iOS docs. Other platform → &nbsp;
-<a href="/docs/android/crash-reports/overview/">Android</a>&nbsp;
+<a href="/docs/android/crash-reports/overview">Android</a>&nbsp;
 </p>
 
 
@@ -29,7 +29,7 @@ When this module is [enabled](/ios/crash-reports/enable) and your user opens you
 
 ## Shared configuration
 
-Just like the [User feedback](/ios/user-feedback/overview.md) module, the Crash reports module pulls your
+Just like the [Feedback](/ios/user-feedback/overview.md) module, the Crashes module pulls your
 [Configuration and data](/ios/configuration-and-data/overview.md) settings.
 
 This means that crash reports also come to you with an [auto screenshot](/ios/configuration-and-data/auto-screenshot.md),

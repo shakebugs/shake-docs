@@ -10,10 +10,10 @@ import TabItem from '@theme/TabItem';
 
 <p class="p2 mt-40">
 You're viewing the iOS docs. Other platforms → &nbsp;
-<a href="/docs/android/configuration-and-data/custom-branding/">Android</a>&nbsp;
-<a href="/docs/react/configuration-and-data/custom-branding/">React Native</a>&nbsp; 
-<a href="/docs/flutter/configuration-and-data/custom-branding/">Flutter</a>&nbsp;
-<a href="/docs/web/configuration-and-data/custom-branding/">Web</a>&nbsp;
+<a href="/docs/android/configuration-and-data/custom-branding">Android</a>&nbsp;
+<a href="/docs/react/configuration-and-data/custom-branding">React Native</a>&nbsp; 
+<a href="/docs/flutter/configuration-and-data/custom-branding">Flutter</a>&nbsp;
+<a href="/docs/web/configuration-and-data/custom-branding">Web</a>&nbsp;
 </p>
 
 <div class="imagesList">
