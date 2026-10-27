@@ -17,9 +17,18 @@ Other platforms →&nbsp;
 
 What would you like us to build next? Upvote upcoming features and suggest new ideas on the [Public feedback board](https://feedback.shakebugs.com/).
 
+## 18.1.0
+<span class="tag-button">October 27, 2026</span>&nbsp;&nbsp;
+<span class="tag-button green-tag-button">Latest version</span>
+
+#### What's new
+
+Shake now detects ANRs — moments when your app's main thread freezes and stops responding. ANRs are reported to the **Crashes** tab on your Shake dashboard, along with whether the app recovered or was terminated while frozen. Detection is enabled by default and the threshold is configurable. Learn more in [ANRs](/android/crash-reports/anrs).
+
+Crash reporting is now enabled by default. If you'd like to turn it off, set the `setCrashReportingEnabled` flag to `false` before calling the `Shake.start` method. Learn more in [Crash reports](/android/crash-reports/enable).
+
 ## 18.0.0
 <span class="tag-button">October 1, 2026</span>&nbsp;&nbsp;
-<span class="tag-button green-tag-button">Latest version</span>
 
 #### What's new
 
