@@ -3,7 +3,7 @@ id: enable
 title: Enable
 ---
 
->Turn the Crashes module on or off with a single flag.
+>The Crash reports module is enabled by default.
 
 <p class="p2 mt-40">
 You're viewing the Flutter docs. Other platforms → &nbsp;
@@ -12,16 +12,12 @@ You're viewing the Flutter docs. Other platforms → &nbsp;
 <a href="/docs/react/crash-reports/enable">React Native</a>&nbsp;
 </p>
 
-This is how you enable it:
-1. First, set the `setCrashReportingEnabled` flag to `true`.
-1. Then, call the `Shake.start` method.
+If you'd like to turn it off, set the `setCrashReportingEnabled` flag to `false` before calling the `Shake.start` method.
 
 ```dart title="main.dart"
 // highlight-next-line
-Shake.setCrashReportingEnabled(true);
+Shake.setCrashReportingEnabled(false);
 ```
-
-To disable crash reporting, set the flag to `false` in the same way.
 
 :::note
 
@@ -33,5 +29,5 @@ and Shake no longer sees those errors.
 
 :::
 
-After you have enabled crash reporting, set up [symbolication](/flutter/crash-reports/symbolicate)
+Set up [symbolication](/flutter/crash-reports/symbolicate)
 and then [test crash reporting](/flutter/crash-reports/test-it-out) in your app.

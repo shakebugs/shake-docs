@@ -5,7 +5,7 @@ title: Enable
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
->Turn the Crashes module on or off with a single flag.
+>The Crash reports module is enabled by default.
 
 <p class="p2 mt-40">
 You're viewing the React Native docs. Other platforms → &nbsp;
@@ -14,9 +14,7 @@ You're viewing the React Native docs. Other platforms → &nbsp;
 <a href="/docs/flutter/crash-reports/enable">Flutter</a>&nbsp;
 </p>
 
-This is how you enable it:
-1. First, set the `setCrashReportingEnabled` flag to `true`.
-1. Then, call the `Shake.start` method.
+If you'd like to turn it off, set the `setCrashReportingEnabled` flag to `false` before calling the `Shake.start` method.
 
 <Tabs
 groupId="react"
@@ -31,7 +29,7 @@ values={[
 
 ```javascript title="index.js"
 // highlight-next-line
-Shake.setCrashReportingEnabled(true);
+Shake.setCrashReportingEnabled(false);
 ```
 
 </TabItem>
@@ -40,13 +38,11 @@ Shake.setCrashReportingEnabled(true);
 
 ```typescript title="index.ts"
 // highlight-next-line
-Shake.setCrashReportingEnabled(true);
+Shake.setCrashReportingEnabled(false);
 ```
 
 </TabItem>
 </Tabs>
-
-To disable crash reporting, set the flag to `false` in the same way.
 
 :::note
 
@@ -58,5 +54,5 @@ and Shake no longer sees those errors.
 
 :::
 
-After you have enabled crash reporting, set up [symbolication](/react/crash-reports/symbolicate)
+Set up [symbolication](/react/crash-reports/symbolicate)
 and then [test crash reporting](/react/crash-reports/test-it-out) in your app.
