@@ -9,8 +9,10 @@ import TabItem from '@theme/TabItem';
 > Crash reports are a lot more useful when you see your deobfuscated stack traces.
 
 <p class="p2 mt-40">
-You're viewing the Android docs. Other platform →&nbsp;
+You're viewing the Android docs. Other platforms → &nbsp;
 <a href="/docs/ios/crash-reports/symbolicate">iOS</a>&nbsp;
+<a href="/docs/flutter/crash-reports/symbolicate">Flutter</a>&nbsp;
+<a href="/docs/react/crash-reports/symbolicate">React Native</a>&nbsp;
 </p>
 
 ## Introduction 

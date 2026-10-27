@@ -10,8 +10,10 @@ import TabItem from '@theme/TabItem';
 >On the first app launch after the crash, you decide whether or not you want Shake to ask your user to describe the crash.
 
 <p class="p2 mt-40">
-You're viewing the Android docs. Other platform →&nbsp;
+You're viewing the Android docs. Other platforms → &nbsp;
 <a href="/docs/ios/crash-reports/ask-for-description">iOS</a>&nbsp;
+<a href="/docs/flutter/crash-reports/ask-for-description">Flutter</a>&nbsp;
+<a href="/docs/react/crash-reports/ask-for-description">React Native</a>&nbsp;
 </p>
 
 

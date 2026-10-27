@@ -9,8 +9,10 @@ import TabItem from '@theme/TabItem';
 > Crash reports are a lot more useful when you see your symbolicated application frames.
 
 <p class="p2 mt-40">
-You're viewing the iOS docs. Other platform → &nbsp;
+You're viewing the iOS docs. Other platforms → &nbsp;
 <a href="/docs/android/crash-reports/deobfuscation">Android</a>&nbsp;
+<a href="/docs/flutter/crash-reports/symbolicate">Flutter</a>&nbsp;
+<a href="/docs/react/crash-reports/symbolicate">React Native</a>&nbsp;
 </p>
 
 ## Introduction

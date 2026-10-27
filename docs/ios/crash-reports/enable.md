@@ -6,8 +6,10 @@ title: Enable
 >The Crashes module is disabled by default.
 
 <p class="p2 mt-40">
-You're viewing the iOS docs. Other platform → &nbsp;
+You're viewing the iOS docs. Other platforms → &nbsp;
 <a href="/docs/android/crash-reports/enable">Android</a>&nbsp;
+<a href="/docs/flutter/crash-reports/enable">Flutter</a>&nbsp;
+<a href="/docs/react/crash-reports/enable">React Native</a>&nbsp;
 </p>
 
 This is how you enable it:

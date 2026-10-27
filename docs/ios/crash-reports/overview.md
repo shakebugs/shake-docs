@@ -8,8 +8,10 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 offering loads of contextual data to help you fix them fast.
 
 <p class="p2 mt-40">
-You're viewing the iOS docs. Other platform → &nbsp;
+You're viewing the iOS docs. Other platforms → &nbsp;
 <a href="/docs/android/crash-reports/overview">Android</a>&nbsp;
+<a href="/docs/flutter/crash-reports/overview">Flutter</a>&nbsp;
+<a href="/docs/react/crash-reports/overview">React Native</a>&nbsp;
 </p>
 
 

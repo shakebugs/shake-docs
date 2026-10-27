@@ -9,8 +9,10 @@ import TabItem from '@theme/TabItem';
 >Make great use of error handling and document these errors.
 
 <p class="p2 mt-40">
-You're viewing the iOS docs. Other platform → &nbsp;
+You're viewing the iOS docs. Other platforms → &nbsp;
 <a href="/docs/android/crash-reports/handling-error">Android</a>&nbsp;
+<a href="/docs/flutter/crash-reports/handling-error">Flutter</a>&nbsp;
+<a href="/docs/react/crash-reports/handling-error">React Native</a>&nbsp;
 </p>
 
 

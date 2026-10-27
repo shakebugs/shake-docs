@@ -247,6 +247,18 @@ module.exports = {
         },
         {
           type: 'category',
+          label: 'Crashes',
+          items: [
+            'flutter/crash-reports/overview',
+            'flutter/crash-reports/enable',
+            'flutter/crash-reports/symbolicate',
+            'flutter/crash-reports/test-it-out',
+            'flutter/crash-reports/ask-for-description',
+            'flutter/crash-reports/handling-error'
+          ]
+        },
+        {
+          type: 'category',
           label: 'Users',
           items: [
             'flutter/users/overview',
@@ -328,6 +340,18 @@ module.exports = {
             'react/user-feedback/invoke',
             'react/user-feedback/intro-message',
             'react/user-feedback/silent-user-feedback',
+          ]
+        },
+        {
+          type: 'category',
+          label: 'Crashes',
+          items: [
+            'react/crash-reports/overview',
+            'react/crash-reports/enable',
+            'react/crash-reports/symbolicate',
+            'react/crash-reports/test-it-out',
+            'react/crash-reports/ask-for-description',
+            'react/crash-reports/handling-error'
           ]
         },
         {

@@ -9,8 +9,10 @@ import TabItem from '@theme/TabItem';
 >Make great use of error handling and document these errors.
 
 <p class="p2 mt-40">
-You're viewing the Android docs. Other platform →&nbsp;
+You're viewing the Android docs. Other platforms → &nbsp;
 <a href="/docs/ios/crash-reports/handling-error">iOS</a>&nbsp;
+<a href="/docs/flutter/crash-reports/handling-error">Flutter</a>&nbsp;
+<a href="/docs/react/crash-reports/handling-error">React Native</a>&nbsp;
 </p>
 
 Shake allows you to report those caught errors and group them together.
