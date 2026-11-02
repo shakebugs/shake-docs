@@ -18,9 +18,16 @@ Other platforms → &nbsp;
 
 What would you like us to build next? Upvote upcoming features and suggest new ideas on the [Public feedback board](https://feedback.shakebugs.com/).
 
+## 18.0.1
+<span class="tag-button">November 2, 2026</span>&nbsp;&nbsp;
+<span class="tag-button green-tag-button">Latest version</span>
+
+#### Bug fixes
+
+We fixed an Android build failure on React Native 0.88 (Expo SDK 58). Shake now reads the current activity in a way that works on all supported React Native versions.
+
 ## 18.0.0
 <span class="tag-button">October 1, 2026</span>&nbsp;&nbsp;
-<span class="tag-button green-tag-button">Latest version</span>
 
 #### What's new
 
